@@ -1,7 +1,7 @@
 id=TsinbeiPixelXpert
 name=Tsinbei Pixel Xpert
-version=canary-500
-versionCode=500
+version=canary-518
+versionCode=518
 author=TsinbeiLabs, Pixel Xpert Team
 description=Xposed based module for customizations on Pixel roms. Android 13+
 updateJson=https://raw.githubusercontent.com/TsinbeiLabs/PixelXpert/canary/MagiskModuleUpdate_Xposed.json

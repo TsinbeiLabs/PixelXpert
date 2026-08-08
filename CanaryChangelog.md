@@ -1,3 +1,8 @@
+**canary-518**
+
+- Established the Tsinbei PixelXpert Canary baseline for Android Canary ZP11.260717.006
+- Added package manager, lock screen security, and Gboard enhancements
+
 **canary-499**  
 - Reverted some unintentional changes  
   
