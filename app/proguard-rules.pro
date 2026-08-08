@@ -17,7 +17,7 @@
 -keep class de.robv.android.xposed.**
 
 # PixelXpert - for debug and trace
--keep class sh.siava.pixelxpert.** { public protected private *; }
+-keep class com.tsinbei.pixelxpert.** { public protected private *; }
 
 # AndroidX
 -keepnames class androidx.compose.ui.**
@@ -41,11 +41,11 @@
 -keep interface **.I* { *; }
 -keep class **.I*$Stub { *; }
 -keep class **.I*$Stub$Proxy { *; }
--keep class sh.siava.pixelxpert.service.* { *; }
+-keep class com.tsinbei.pixelxpert.service.* { *; }
 
 # Keep all inner classes and their names within the specified package
 # but allow optimization of their internal code
--keep class sh.siava.pixelxpert.**$* {
+-keep class com.tsinbei.pixelxpert.**$* {
     public protected private *;
 }
 

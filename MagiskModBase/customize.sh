@@ -1,5 +1,5 @@
-PKGNAME="sh.siava.pixelxpert"
-PKGPATH="/system/priv-app/PixelXpert/PixelXpert.apk"
+PKGNAME="com.tsinbei.pixelxpert"
+PKGPATH="/system/priv-app/TsinbeiPixelXpert/PixelXpert.apk"
 LSPDDBPATH="/data/adb/lspd/config/modules_config.db"
 MAGISKDBPATH="/data/adb/magisk.db"
 
@@ -18,7 +18,7 @@ runSQL(){
 #grant silent root access to given UID
 grantRootUID(){
 	DBPATH=$MAGISKDBPATH
-	
+
 	#new record - older magisk compatibility
 	CMD="insert into policies (uid, package_name, policy, until, logging, notification) values ($1, '$2', 2, 0, 1, 0);" && runSQL
 	#new record
@@ -30,7 +30,7 @@ grantRootUID(){
 
 #grant root access to given package name
 grantRootPkg(){
-	ui_print "- 	Granting root access to $1..."
+	ui_print "- \tGranting root access to $1..."
 	UID=$(pm list packages -U $1 --user 0 | grep ":$1 " | awk -F 'uid:' '{ print $2 }' | cut -d ',' -f 1)
 
 	grantRootUID $UID $1
@@ -42,30 +42,30 @@ grantRootApps(){
 }
 
 migratePrefs(){
-  am start -n "$PKGNAME/.ui.activities.SettingsActivity" -e migratePrefs true > /dev/null
+	am start -n "$PKGNAME/.ui.activities.SettingsActivity" -e migratePrefs true > /dev/null
 }
 
 testKernelSU()
 {
 	if [[ $(ksud -V 2>&1 | grep "not found" | wc -c) -eq 0 ]]; then #KSU installed
-    	if [[ $(pm list packages | grep $PKGNAME | wc -c) -eq 0 ]]; then #PixelXpert NOT installed yet
-    		ui_print ''
-    		ui_print '*******************************'
-    		ui_print 'KernelSU binaries found!'
-    		ui_print ''
-    		ui_print '                CAUTION!:'
-    		ui_print 'Before installation, you MUST disable'
-    		ui_print '"Umount modules by default"'
-    		ui_print 'Otherwise, your device will fall into BOOTLOOP!'
-    		ui_print ''
-    		ui_print 'Do you wish to continue?'
-    		ui_print 'Volume Up: Continue'
-    		ui_print 'Volume Down: Abort'
-    		if [[ "$(getevent -l | grep -m 1 KEY_VOLUME)" == *"VOLUMEDOWN"* ]]; then
-    			abort 'Installation cancelled'
-    		fi;
-    	fi;
-    fi;
+		if [[ $(pm list packages | grep $PKGNAME | wc -c) -eq 0 ]]; then #PixelXpert NOT installed yet
+			ui_print ''
+			ui_print '*******************************'
+			ui_print 'KernelSU binaries found!'
+			ui_print ''
+			ui_print '                CAUTION!:'
+			ui_print 'Before installation, you MUST disable'
+			ui_print '"Umount modules by default"'
+			ui_print 'Otherwise, your device will fall into BOOTLOOP!'
+			ui_print ''
+			ui_print 'Do you wish to continue?'
+			ui_print 'Volume Up: Continue'
+			ui_print 'Volume Down: Abort'
+			if [[ "$(getevent -l | grep -m 1 KEY_VOLUME)" == *"VOLUMEDOWN"* ]]; then
+				abort 'Installation cancelled'
+			fi
+		fi
+	fi
 }
 
 assertPixelRom()
@@ -73,29 +73,28 @@ assertPixelRom()
 	PixelTipsPattern="TipsPrebuilt*"
 	PixelTipsParent="/product/priv-app"
 
-  if ! find "$PixelTipsParent" -maxdepth 1 -name "$PixelTipsPattern" -print -quit | grep -q .; then
-  	ui_print 'Device does not seem to be a Pixel'
-  	ui_print 'phone, containing an original ROM.'
-
-    abort 'Installation aborted due to incompatibility'
-  fi
-}
-
-assert16QPR()
-{
-	if [ -z $(getprop ro.build.id | grep -e "[BC][DP][1-5]") ]; then
-		ui_print 'This build is not compatible with'
-    ui_print 'your ROM. Please install the stable'
-    ui_print 'version 4.3.x instead'
+	if ! find "$PixelTipsParent" -maxdepth 1 -name "$PixelTipsPattern" -print -quit | grep -q .; then
+		ui_print 'Device does not seem to be a Pixel'
+		ui_print 'phone, containing an original ROM.'
 
 		abort 'Installation aborted due to incompatibility'
-  fi
+	fi
+}
+
+assertSupportedAndroid()
+{
+	if [ "$(getprop ro.build.version.sdk)" -lt 36 ]; then
+		ui_print 'This build is not compatible with'
+		ui_print 'your Android version.'
+
+		abort 'Installation aborted due to incompatibility'
+	fi
 }
 
 
 assertPixelRom
 
-assert16QPR
+assertSupportedAndroid
 
 testKernelSU
 
@@ -104,15 +103,15 @@ prepareSQL
 ui_print ''
 ui_print ''
 
-grantRootApps
+if command -v magisk > /dev/null 2>&1; then
+	grantRootApps
+fi
 
 set_perm $MODPATH/service.sh 0 0 0755
 
 if [ $(ls $LSPDDBPATH) = $LSPDDBPATH ]; then
 	ui_print ''
 	ui_print ''
-
-	migratePrefs
 
 	ui_print ''
 	ui_print ''
@@ -128,10 +127,10 @@ else
 #	ui_print '- Reboot'
 fi
 
-	ui_print ''
-	ui_print '  **********************'
-	ui_print '  * Brought to you by: *'
-	ui_print '  *                    *'
-	ui_print '  * PixelXpert team    *'
-	ui_print '  **********************'
-	ui_print ''
+ui_print ''
+ui_print '  **********************'
+ui_print '  * Brought to you by: *'
+ui_print '  *                    *'
+ui_print '  * PixelXpert team    *'
+ui_print '  **********************'
+ui_print ''

@@ -6,7 +6,7 @@
     app:startDestination="@id/headerFragment">
     <fragment
         android:id="@+id/headerFragment"
-        android:name="sh.siava.pixelxpert.ui.fragments.HeaderFragment">
+        android:name="com.tsinbei.pixelxpert.ui.fragments.HeaderFragment">
         <action
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
@@ -17,19 +17,19 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="sh.siava.pixelxpert.ui.fragments.UpdateFragment"
+        android:name="com.tsinbei.pixelxpert.ui.fragments.UpdateFragment"
         app:popUpTo="@+id/headerFragment"
         tools:layout="@layout/update_fragment" />
     <fragment
         android:id="@+id/hooksFragment"
-        android:name="sh.siava.pixelxpert.ui.fragments.HooksFragment"
+        android:name="com.tsinbei.pixelxpert.ui.fragments.HooksFragment"
         app:popUpTo="@+id/headerFragment"
         tools:layout="@layout/fragment_hooks" />
     <fragment
         android:id="@+id/ownPrefsFragment"
-        android:name="sh.siava.pixelxpert.ui.fragments.OwnPrefsFragment"
+        android:name="com.tsinbei.pixelxpert.ui.fragments.OwnPrefsFragment"
         app:popUpTo="@+id/headerFragment" />
     <fragment
         android:id="@+id/searchPreferenceFragment"
-        android:name="sh.siava.pixelxpert.ui.preferences.preferencesearch.SearchPreferenceFragment" />
+        android:name="com.tsinbei.pixelxpert.ui.preferences.preferencesearch.SearchPreferenceFragment" />
 </navigation>

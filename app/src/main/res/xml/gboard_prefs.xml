@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:search="http://schemas.android.com/apk/com.tsinbei.pixelxpert.ui.preferencesearch">
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/gboard_theme_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardAmoledBlack"
+			android:summary="@string/gboard_amoled_black_summary"
+			android:title="@string/gboard_amoled_black_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/gboard_clipboard_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardClipboardHistory"
+			android:summary="@string/gboard_clipboard_history_summary"
+			android:title="@string/gboard_clipboard_history_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
+			android:defaultValue="10"
+			android:dependency="GboardClipboardHistory"
+			android:inputType="number"
+			android:key="GboardClipboardSize"
+			android:selectAllOnFocus="true"
+			android:singleLine="true"
+			android:summary="@string/gboard_clipboard_size_summary"
+			android:title="@string/gboard_clipboard_size_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
+			android:defaultValue="3"
+			android:dependency="GboardClipboardHistory"
+			android:inputType="number"
+			android:key="GboardClipboardDays"
+			android:selectAllOnFocus="true"
+			android:singleLine="true"
+			android:summary="@string/gboard_clipboard_days_summary"
+			android:title="@string/gboard_clipboard_days_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardSecureClipboard"
+			android:summary="@string/gboard_secure_clipboard_summary"
+			android:title="@string/gboard_secure_clipboard_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardClipboardChips"
+			android:summary="@string/gboard_clipboard_chips_summary"
+			android:title="@string/gboard_clipboard_chips_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/gboard_privacy_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardForceIncognito"
+			android:summary="@string/gboard_force_incognito_summary"
+			android:title="@string/gboard_force_incognito_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardPrivacyFlags"
+			android:summary="@string/gboard_privacy_flags_summary"
+			android:title="@string/gboard_privacy_flags_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/gboard_input_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardMultilingualFeatures"
+			android:summary="@string/gboard_multilingual_summary"
+			android:title="@string/gboard_multilingual_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardAiFeatures"
+			android:summary="@string/gboard_ai_summary"
+			android:title="@string/gboard_ai_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardGrammarFeatures"
+			android:summary="@string/gboard_grammar_summary"
+			android:title="@string/gboard_grammar_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardFloatingFeatures"
+			android:summary="@string/gboard_floating_summary"
+			android:title="@string/gboard_floating_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardEmojiKitchen"
+			android:summary="@string/gboard_emoji_kitchen_summary"
+			android:title="@string/gboard_emoji_kitchen_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardAccessPointRedesign"
+			android:summary="@string/gboard_access_point_summary"
+			android:title="@string/gboard_access_point_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardMeteredDownloads"
+			android:summary="@string/gboard_metered_downloads_summary"
+			android:title="@string/gboard_metered_downloads_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/gboard_experimental_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardInlineSuggestions"
+			android:summary="@string/gboard_experimental_summary"
+			android:title="@string/gboard_inline_suggestions_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardProactiveEmoji"
+			android:summary="@string/gboard_experimental_summary"
+			android:title="@string/gboard_proactive_emoji_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardTfliteEngine"
+			android:summary="@string/gboard_experimental_summary"
+			android:title="@string/gboard_tflite_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="GboardFastAccessBar"
+			android:summary="@string/gboard_experimental_summary"
+			android:title="@string/gboard_fast_access_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+</PreferenceScreen>

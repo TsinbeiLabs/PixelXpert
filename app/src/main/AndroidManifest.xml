@@ -120,7 +120,7 @@
 
 		<provider
 			android:name=".utils.RemotePrefProvider"
-			android:authorities="sh.siava.pixelxpert"
+			android:authorities="${applicationId}"
 			android:directBootAware="true"
 			android:exported="true"
 			tools:ignore="ExportedContentProvider" />

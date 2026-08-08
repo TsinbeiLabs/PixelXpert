@@ -40,3 +40,7 @@ local.properties
 /ReleaseKey.properties
 /.kotlin
 /.idea/
+/output/
+/device-backup-*/
+*.apk
+*.zip

@@ -1,27 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:search="http://schemas.android.com/apk/sh.siava.pixelxpert.ui.preferencesearch">
+	xmlns:search="http://schemas.android.com/apk/com.tsinbei.pixelxpert.ui.preferencesearch">
 
-	<sh.siava.pixelxpert.ui.preferences.IllustrationPreference
+	<com.tsinbei.pixelxpert.ui.preferences.IllustrationPreference
 		android:key="package_manager_illustration"
 		app:lottie_rawRes="@raw/package_manager"
 		search:ignore="true" />
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 		android:defaultValue="false"
 		android:key="PM_AllowMismatchedSignature"
 		android:summaryOff="@string/general_off"
-		android:summaryOn="@string/auto_off_five_minutes"
+		android:summaryOn="@string/general_on"
 		android:title="@string/pm_bypass_signature_title"
 		app:iconSpaceReserved="false" />
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 		android:defaultValue="false"
 		android:key="PM_AllowDowngrade"
 		android:summaryOff="@string/general_off"
-		android:summaryOn="@string/auto_off_five_minutes"
+		android:summaryOn="@string/general_on"
 		android:title="@string/pm_allow_downgrade_title"
 		app:iconSpaceReserved="false" />
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/pm_advanced_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_AllowExactSignatureMismatch"
+			android:summary="@string/pm_exact_signature_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/pm_exact_signature_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_AllowSharedUidSignatureMismatch"
+			android:summary="@string/pm_shared_uid_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/pm_shared_uid_title"
+			app:iconSpaceReserved="false" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/app_info_enhancements_category"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="appInfoShowVersionCode"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/app_info_show_version_code_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="appInfoAllowDisableUserApps"
+			android:summary="@string/app_info_allow_disable_user_apps_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/app_info_allow_disable_user_apps_title"
+			app:iconSpaceReserved="false" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
 </PreferenceScreen>

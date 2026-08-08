@@ -3,5 +3,6 @@ com.google.android.apps.nexuslauncher
 android
 com.android.settings
 com.google.android.dialer
+com.google.android.inputmethod.latin
 me.weishu.kernelsu
 com.rifsxd.ksunext

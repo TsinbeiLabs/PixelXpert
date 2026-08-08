@@ -31,6 +31,7 @@ Currently, PixelXpert offers customizations on different aspects of system frame
 - Notifications
 - Gesture Navigations
 - Phone & Dialer
+- Gboard
 - Hotspot
 - Package Manager
 - Screen properties
@@ -89,6 +90,11 @@ This project is open source and free for usage, build or copy. However, if you r
 - Team LSPosed
 - apsun@github for remote-preferences
 - @nijel8 for double-tap to wake
+- [Juby210/AppInfoFix](https://github.com/Juby210/AppInfoFix) by Juby210 for the app info version-code and user-app enable/disable enhancements (MIT License)
+- [theDjay2529/TouchMeNot](https://github.com/theDjay2529/TouchMeNot) by Dhananjaya K for the lockscreen power-menu, sensitive Quick Settings, and ringer-mode protection design (Apache License 2.0)
+- [gboard-material-expressive-black](https://github.com/hxreborn/gboard-material-expressive-black) by rafareborn for the AMOLED Material Expressive color-matching design (MIT License)
+- [chenyue404/GboardHook](https://github.com/chenyue404/GboardHook) by chenyue404 for the Gboard clipboard history query and compatibility research (GPLv3)
+- [NawafCode/KeyFlux](https://github.com/NawafCode/KeyFlux) contributors for Gboard feature-flag, privacy, clipboard, and input enhancement research (MIT License)
 
 
 **UI design:**  

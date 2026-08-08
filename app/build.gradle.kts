@@ -1,6 +1,7 @@
 
 import com.android.build.api.artifact.SingleArtifact
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.gradle.api.tasks.Copy
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -12,6 +13,13 @@ plugins {
 
 apply(from = rootProject.file("app/PXTasks.gradle.kts"))
 
+val generatedLicenseResources = layout.buildDirectory.dir("generated/licenseResources")
+val copyProjectLicense = tasks.register<Copy>("copyProjectLicense") {
+	from(rootProject.file("LICENSE"))
+	rename { "PixelXpert-GPL-3.0.txt" }
+	into(generatedLicenseResources.map { it.dir("META-INF/licenses") })
+}
+
 kotlin {
 	compilerOptions {
 		jvmTarget = JvmTarget.JVM_17
@@ -19,11 +27,11 @@ kotlin {
 }
 
 android {
-	namespace = "sh.siava.pixelxpert"
+	namespace = "com.tsinbei.pixelxpert"
 	compileSdk = 36
 
 	defaultConfig {
-		applicationId = "sh.siava.pixelxpert"
+		applicationId = "com.tsinbei.pixelxpert"
 		minSdk = 36
 		targetSdk = 36
 		versionCode = getVersionCode()
@@ -38,9 +46,15 @@ android {
 	var releaseSigning = signingConfigs.getByName("debug")
 
 	try {
-		val keystoreProperties = Properties()
-		FileInputStream(keystorePropertiesFile).use { inputStream ->
-			keystoreProperties.load(inputStream)
+		val keystoreProperties = Properties().apply {
+			if (keystorePropertiesFile.exists()) {
+				FileInputStream(keystorePropertiesFile).use(::load)
+			} else {
+				setProperty("keyAlias", System.getenv("PIXELXPERT_KEY_ALIAS"))
+				setProperty("keyPassword", System.getenv("PIXELXPERT_KEY_PASSWORD"))
+				setProperty("storeFile", System.getenv("PIXELXPERT_STORE_FILE"))
+				setProperty("storePassword", System.getenv("PIXELXPERT_STORE_PASSWORD"))
+			}
 		}
 
 		releaseSigning = signingConfigs.create("release") {
@@ -73,6 +87,10 @@ android {
 		aidl = true
 	}
 
+	sourceSets.getByName("main") {
+		resources.srcDir("build/generated/licenseResources")
+	}
+
 	compileOptions {
 		isCoreLibraryDesugaringEnabled = true
 
@@ -84,6 +102,12 @@ android {
 		jniLibs.excludes += setOf(
 			"**/libpytorch_jni_lite.so"
 		)
+	}
+}
+
+tasks.configureEach {
+	if (name.startsWith("process") && name.endsWith("JavaRes")) {
+		dependsOn(copyProjectLicense)
 	}
 }
 
@@ -202,6 +226,7 @@ dependencies {
 
 	compileOnly(libs.lsposed.api)
 	implementation(libs.lsposed.service)
+	implementation(libs.dexkit)
 
 	//mark-down view for changelog
 	implementation(libs.markdownview.android)

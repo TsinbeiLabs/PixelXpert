@@ -6,7 +6,7 @@
 	app:startDestination="@id/headerFragment">
 	<fragment
 		android:id="@+id/headerFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.HeaderFragment">
+		android:name="com.tsinbei.pixelxpert.ui.fragments.HeaderFragment">
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -49,6 +49,13 @@
 			app:popExitAnim="@anim/nav_default_pop_exit_anim"
 			android:id="@+id/action_headerFragment_to_dialerFragment"
 			app:destination="@id/dialerFragment" />
+		<action
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			android:id="@+id/action_headerFragment_to_gboardFragment"
+			app:destination="@id/gboardFragment" />
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -101,21 +108,21 @@
 	</fragment>
 	<fragment
 		android:id="@+id/updateFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.UpdateFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.UpdateFragment"
 		app:popUpTo="@+id/headerFragment"
 		tools:layout="@layout/update_fragment" />
 	<fragment
 		android:id="@+id/hooksFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.HooksFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.HooksFragment"
 		app:popUpTo="@+id/headerFragment"
 		tools:layout="@layout/fragment_hooks" />
 	<fragment
 		android:id="@+id/ownPrefsFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.OwnPrefsFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.OwnPrefsFragment"
 		app:popUpTo="@+id/headerFragment" />
 	<fragment
 		android:id="@+id/quickSettingsFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.QuickSettingsFragment" >
+		android:name="com.tsinbei.pixelxpert.ui.fragments.QuickSettingsFragment" >
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -133,10 +140,10 @@
 	</fragment>
 	<fragment
 		android:id="@+id/lockScreenFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.LockScreenFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.LockScreenFragment" />
 	<fragment
 		android:id="@+id/themingFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.ThemingFragment" >
+		android:name="com.tsinbei.pixelxpert.ui.fragments.ThemingFragment" >
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -147,7 +154,7 @@
 	</fragment>
 	<fragment
 		android:id="@+id/statusbarFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.StatusbarFragment" >
+		android:name="com.tsinbei.pixelxpert.ui.fragments.StatusbarFragment" >
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -179,7 +186,7 @@
 	</fragment>
 	<fragment
 		android:id="@+id/navFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.NavFragment" >
+		android:name="com.tsinbei.pixelxpert.ui.fragments.NavFragment" >
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -204,16 +211,19 @@
 	</fragment>
 	<fragment
 		android:id="@+id/dialerFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.DialerFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.DialerFragment" />
+	<fragment
+		android:id="@+id/gboardFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.GboardFragment" />
 	<fragment
 		android:id="@+id/hotSpotFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.HotSpotFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.HotSpotFragment" />
 	<fragment
 		android:id="@+id/packageManagerFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.PackageManagerFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.PackageManagerFragment" />
 	<fragment
 		android:id="@+id/miscFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.MiscFragment" >
+		android:name="com.tsinbei.pixelxpert.ui.fragments.MiscFragment" >
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -238,7 +248,7 @@
 	</fragment>
 	<fragment
 		android:id="@+id/searchPreferenceFragment"
-		android:name="sh.siava.pixelxpert.ui.preferences.preferencesearch.SearchPreferenceFragment">
+		android:name="com.tsinbei.pixelxpert.ui.preferences.preferencesearch.SearchPreferenceFragment">
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -302,6 +312,13 @@
 			app:popExitAnim="@anim/nav_default_pop_exit_anim"
 			android:id="@+id/action_searchPreferenceFragment_to_dialerFragment"
 			app:destination="@id/dialerFragment" />
+		<action
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			android:id="@+id/action_searchPreferenceFragment_to_gboardFragment"
+			app:destination="@id/gboardFragment" />
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"
@@ -396,43 +413,43 @@
 	</fragment>
 	<fragment
 		android:id="@+id/QSTileQtyFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.QSTileQtyFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.QSTileQtyFragment" />
 	<fragment
 		android:id="@+id/networkFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.NetworkFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.NetworkFragment" />
 	<fragment
 		android:id="@+id/SBCFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.SBCFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.SBCFragment" />
 	<fragment
 		android:id="@+id/SBBBFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.SBBBFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.SBBBFragment" />
 	<fragment
 		android:id="@+id/threeButtonNavFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.ThreeButtonNavFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.ThreeButtonNavFragment" />
 	<fragment
 		android:id="@+id/taskbarNavFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.TaskbarNavFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.TaskbarNavFragment" />
 	<fragment
 		android:id="@+id/gestureNavFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.GestureNavFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.GestureNavFragment" />
 	<fragment
 		android:id="@+id/physicalButtonRemapFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.PhysicalButtonRemapFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.PhysicalButtonRemapFragment" />
 	<fragment
 		android:id="@+id/networkStatFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.NetworkStatFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.NetworkStatFragment" />
 	<fragment
 		android:id="@+id/sleepOnFlatFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.SleepOnFlatFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.SleepOnFlatFragment" />
 	<fragment
 		android:id="@+id/iconPackFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.iconpack.IconPackFragment" />
+		android:name="com.tsinbei.pixelxpert.ui.fragments.iconpack.IconPackFragment" />
 	<fragment
 		android:id="@+id/iconPackListFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.iconpack.IconPackListFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.iconpack.IconPackListFragment"
 		tools:layout="@layout/fragment_icon_pack_list" />
 	<fragment
 		android:id="@+id/iconPackCustomizationFragment"
-		android:name="sh.siava.pixelxpert.ui.fragments.iconpack.IconPackCustomizationFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.iconpack.IconPackCustomizationFragment"
 		tools:layout="@layout/fragment_icon_pack_customization" />
 </navigation>

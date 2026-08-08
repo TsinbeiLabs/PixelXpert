@@ -103,6 +103,16 @@
     <string name="wakeup_to_security_title">Show security input on device wake</string>
     <string name="easy_unlock_title">Easy unlock (Pin/Password)</string>
     <string name="easy_unlock_summary">If it didn\'t work the first time, try again</string>
+    <string name="lockscreen_security_category">Lockscreen security</string>
+    <string name="lockscreen_block_power_menu_title">Block power menu while locked</string>
+    <string name="lockscreen_block_power_menu_summary">Also blocks the Quick Settings power button and hardware shortcut</string>
+    <string name="lockscreen_block_internet_title">Block Internet controls while locked</string>
+    <string name="lockscreen_block_airplane_title">Block Airplane mode while locked</string>
+    <string name="lockscreen_block_bluetooth_title">Block Bluetooth while locked</string>
+    <string name="lockscreen_block_hotspot_title">Block hotspot while locked</string>
+    <string name="lockscreen_block_dnd_title">Block Do Not Disturb while locked</string>
+    <string name="lockscreen_block_ringer_title">Block ringer mode changes while locked</string>
+    <string name="lockscreen_unlock_to_use">Unlock to use</string>
     <string name="charging_info_title">Charging information on lockscreen</string>
     <string name="disable_lockscreen_pill_title">Don\'t show \"Customize Lock Screen\" pill</string>
     <string name="imperial_units_title">Use imperial units</string>
@@ -302,6 +312,15 @@
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">Bypass package signature check</string>
     <string name="pm_allow_downgrade_title">Allow app downgrade</string>
+    <string name="pm_advanced_category">Advanced installation checks</string>
+    <string name="pm_exact_signature_title">Bypass exact split signature matching</string>
+    <string name="pm_exact_signature_summary">High risk: allows base and split APK signing details to differ during installation</string>
+    <string name="pm_shared_uid_title">Bypass shared UID signature checks</string>
+    <string name="pm_shared_uid_summary">High risk: allows differently signed user apps to update while using a shared UID; platform shared UID restrictions remain</string>
+    <string name="app_info_enhancements_category">App info</string>
+    <string name="app_info_show_version_code_title">Show version code</string>
+    <string name="app_info_allow_disable_user_apps_title">Allow disabling user apps</string>
+    <string name="app_info_allow_disable_user_apps_summary">Adds an enable/disable action to app info for non-system apps</string>
     <string name="auto_off_five_minutes">Enabled for the next 5 minutes</string>
 
     <!--Miscellaneous section related-->
@@ -597,5 +616,49 @@
     <string name="restart_now">Reboot now</string>
     <string name="watts">Watts</string>
     <string name="fast_charging_threshold_title">Fast charging threshold</string>
+
+    <!-- Gboard -->
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Theme, clipboard, privacy, and experimental typing features</string>
+    <string name="gboard_theme_category">Theme</string>
+    <string name="gboard_amoled_black_title">AMOLED black in dark mode</string>
+    <string name="gboard_amoled_black_summary">Turn Material Expressive surface containers pure black while retaining accent colors</string>
+    <string name="gboard_clipboard_category">Clipboard</string>
+    <string name="gboard_clipboard_history_title">Customize clipboard history</string>
+    <string name="gboard_clipboard_history_summary">Change the number and age of entries requested by Gboard; older entries already deleted by Gboard cannot be restored</string>
+    <string name="gboard_clipboard_size_title">Maximum visible entries</string>
+    <string name="gboard_clipboard_size_summary">Allowed range: 5 to 100</string>
+    <string name="gboard_clipboard_days_title">Visible history in days</string>
+    <string name="gboard_clipboard_days_summary">Allowed range: 0 to 3650; 0 requests all retained entries</string>
+    <string name="gboard_secure_clipboard_title">Keep sensitive text out of Gboard history</string>
+    <string name="gboard_secure_clipboard_summary">Block entries copied from password fields and likely verification codes, PINs, or long account numbers</string>
+    <string name="gboard_clipboard_chips_title">Clipboard action chips</string>
+    <string name="gboard_clipboard_chips_summary">Enable Gboard action chips, entity extraction, and copy-to-reply experiments</string>
+    <string name="gboard_privacy_category">Privacy</string>
+    <string name="gboard_force_incognito_title">Disable personalized learning</string>
+    <string name="gboard_force_incognito_summary">Request no personalized learning for every input field; this does not force the complete Gboard Incognito UI</string>
+    <string name="gboard_privacy_flags_title">Reduce telemetry and training</string>
+    <string name="gboard_privacy_flags_summary">Override known Gboard flags for correction storage, content capture, logging, metrics, and training caches</string>
+    <string name="gboard_input_category">Input enhancements</string>
+    <string name="gboard_multilingual_title">Multilingual typing</string>
+    <string name="gboard_multilingual_summary">Enable known multilingual typing, candidate, Pixel, and speech enhancement experiments</string>
+    <string name="gboard_ai_title">AI and smart input</string>
+    <string name="gboard_ai_summary">Enable known Smart Reply, Smart Compose, emojify, sticker, and AI Core experiments</string>
+    <string name="gboard_grammar_title">Grammar and proofreading</string>
+    <string name="gboard_grammar_summary">Enable known on-device proofread, grammar checker, writing tools, and text conversion experiments</string>
+    <string name="gboard_floating_title">Floating and split keyboard</string>
+    <string name="gboard_floating_summary">Enable landscape, multi-window, freeform, tablet split keyboard, size slider, and transition experiments</string>
+    <string name="gboard_emoji_kitchen_title">Emoji Kitchen enhancements</string>
+    <string name="gboard_emoji_kitchen_summary">Enable browse, search, recommendation, animation, and embedded picker experiments</string>
+    <string name="gboard_access_point_title">Shortcut menu redesign</string>
+    <string name="gboard_access_point_summary">Enable access point menu, Silk theme, system font, Google Sans, custom theme, and animation experiments</string>
+    <string name="gboard_metered_downloads_title">Allow downloads on metered networks</string>
+    <string name="gboard_metered_downloads_summary">Allow known language, language ID, and speech pack downloads over mobile or other metered data</string>
+    <string name="gboard_experimental_category">Experimental engines</string>
+    <string name="gboard_experimental_summary">Uses private Gboard flags and may change or stop working after an update; restart Gboard after changing</string>
+    <string name="gboard_inline_suggestions_title">Inline multiword suggestions</string>
+    <string name="gboard_proactive_emoji_title">Proactive emoji suggestions</string>
+    <string name="gboard_tflite_title">TFLite prediction engines</string>
+    <string name="gboard_fast_access_title">Fast access bar</string>
 
 </resources>

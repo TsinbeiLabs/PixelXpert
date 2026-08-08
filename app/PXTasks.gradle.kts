@@ -59,8 +59,10 @@ tasks.register<Zip>("createZip") {
 	mustRunAfter("incrementStableVersion")
 	mustRunAfter("assembleRelease")
 
-	from(file("../MagiskModBase"))
-	from(file("build/outputs/apk/release/PixelXpert.apk")){into("system/priv-app/PixelXpert")}
+	from(file("../MagiskModBase")) {
+		exclude("system/priv-app/PixelXpert/**")
+	}
+	from(file("build/outputs/apk/release/PixelXpert.apk")){into("system/priv-app/TsinbeiPixelXpert")}
 
 	destinationDirectory.set(file("../output"))
 	archiveFileName.set("PixelXpert.zip")
