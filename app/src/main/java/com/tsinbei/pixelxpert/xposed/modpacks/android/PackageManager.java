@@ -5,9 +5,14 @@ import static de.robv.android.xposed.XposedHelpers.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.Context;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 
+import java.io.File;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
@@ -25,6 +30,16 @@ public class PackageManager extends XposedModPack {
 	private static final String ALLOW_DOWNGRADE_PREF = "PM_AllowDowngrade";
 	private static final String ALLOW_EXACT_SIGNATURE_PREF = "PM_AllowExactSignatureMismatch";
 	private static final String ALLOW_SHARED_UID_PREF = "PM_AllowSharedUidSignatureMismatch";
+	private static final String INSTALLER_REDIRECT_PREF = "PM_InstallerRedirectEnabled";
+	private static final String INSTALLER_TARGET_PREF = "PM_InstallerRedirectTarget";
+	private static final String FORCE_EXPLICIT_PREF = "PM_ForceExplicitInstaller";
+	private static final String INTERCEPT_UNINSTALL_PREF = "PM_InterceptUninstall";
+	private static final String FOLLOW_INSTALLER_PREF = "PM_UninstallFollowInstaller";
+	private static final String UNINSTALLER_TARGET_PREF = "PM_UninstallerRedirectTarget";
+	private static final String INTERCEPT_SESSION_PREF = "PM_InterceptSessionInstall";
+	private static final String FIX_SESSION_PERMISSIONS_PREF = "PM_FixSessionPermissions";
+	private static final String ACTION_CONFIRM_INSTALL = "android.content.pm.action.CONFIRM_INSTALL";
+	private static final String ACTION_CONFIRM_PERMISSIONS = "android.content.pm.action.CONFIRM_PERMISSIONS";
 
 	private static final int PERMISSION = 4;
 	private static final int AUTH = 16;
@@ -34,6 +49,15 @@ public class PackageManager extends XposedModPack {
 	private static boolean allowDowngrade;
 	private static boolean allowExactSignatureMismatch;
 	private static boolean allowSharedUidSignatureMismatch;
+	private static boolean installerRedirectEnabled;
+	private static boolean forceExplicitInstaller;
+	private static boolean interceptUninstall;
+	private static boolean followInstaller;
+	private static boolean interceptSessionInstall;
+	private static boolean fixSessionPermissions;
+	private static String installerTarget;
+	private static String uninstallerTarget;
+	private static final ThreadLocal<Boolean> resolvingSessionPath = ThreadLocal.withInitial(() -> false);
 
 	public PackageManager(Context context) {
 		super(context);
@@ -45,11 +69,21 @@ public class PackageManager extends XposedModPack {
 		allowDowngrade = Xprefs.getBoolean(ALLOW_DOWNGRADE_PREF, false);
 		allowExactSignatureMismatch = Xprefs.getBoolean(ALLOW_EXACT_SIGNATURE_PREF, false);
 		allowSharedUidSignatureMismatch = Xprefs.getBoolean(ALLOW_SHARED_UID_PREF, false);
+		installerRedirectEnabled = Xprefs.getBoolean(INSTALLER_REDIRECT_PREF, false);
+		installerTarget = Xprefs.getString(INSTALLER_TARGET_PREF, "");
+		forceExplicitInstaller = Xprefs.getBoolean(FORCE_EXPLICIT_PREF, false);
+		interceptUninstall = Xprefs.getBoolean(INTERCEPT_UNINSTALL_PREF, false);
+		followInstaller = Xprefs.getBoolean(FOLLOW_INSTALLER_PREF, true);
+		uninstallerTarget = Xprefs.getString(UNINSTALLER_TARGET_PREF, "");
+		interceptSessionInstall = Xprefs.getBoolean(INTERCEPT_SESSION_PREF, false);
+		fixSessionPermissions = Xprefs.getBoolean(FIX_SESSION_PERMISSIONS_PREF, false);
 	}
 
 	@Override
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) {
 		hookActivityManager();
+		hookInstallerRedirection();
+		hookSessionPathAccess();
 		hookDowngradeChecks();
 		hookPackageSignatureChecks();
 		hookUpgradeKeySets();
@@ -57,6 +91,124 @@ public class PackageManager extends XposedModPack {
 		hookPermissionSignatureCheck();
 		hookSharedUidChecks();
 		deoptimizePackageInstallCallers();
+	}
+
+	private void hookInstallerRedirection() {
+		try {
+			Class<?> activityStarter = ReflectedClass.of("com.android.server.wm.ActivityStarter").getClazz();
+			Method execute = activityStarter.getDeclaredMethod("execute");
+			ReflectedClass.of(activityStarter).before(execute).run(param -> {
+				if (!installerRedirectEnabled) return;
+				try {
+					Object request = findField(param.thisObject.getClass(), "mRequest").get(param.thisObject);
+					Field intentField = findField(request.getClass(), "intent");
+					Intent intent = (Intent) intentField.get(request);
+					if (redirectInstallerIntent(intent)) intentField.set(request, intent);
+				} catch (Throwable t) {
+					Logger.log("PackageManager: failed to redirect installer intent", t);
+				}
+			});
+		} catch (Throwable t) {
+			Logger.log("PackageManager: failed to hook installer redirection", t);
+		}
+	}
+
+	private boolean redirectInstallerIntent(Intent intent) {
+		if (intent == null || !isInstallerIntent(intent)) return false;
+		boolean uninstall = Intent.ACTION_DELETE.equals(intent.getAction())
+				|| Intent.ACTION_UNINSTALL_PACKAGE.equals(intent.getAction());
+		boolean session = ACTION_CONFIRM_INSTALL.equals(intent.getAction())
+				|| ACTION_CONFIRM_PERMISSIONS.equals(intent.getAction());
+		if (uninstall && !interceptUninstall) return false;
+		if (session && !interceptSessionInstall) return false;
+		if (intent.getComponent() != null && !forceExplicitInstaller) return false;
+
+		String target = uninstall && !followInstaller ? uninstallerTarget : installerTarget;
+		if (target == null || target.isBlank()) {
+			if (!uninstall) return false;
+			intent.setComponent(null);
+			intent.setPackage(null);
+			return true;
+		}
+
+		ComponentName component = ComponentName.unflattenFromString(target);
+		if (component == null) return false;
+		if (forceExplicitInstaller) {
+			if (component.equals(intent.getComponent())) return false;
+			intent.setPackage(null);
+			intent.setComponent(component);
+		} else {
+			if (component.getPackageName().equals(intent.getPackage()) && intent.getComponent() == null) return false;
+			intent.setComponent(null);
+			intent.setPackage(component.getPackageName());
+		}
+		if (Intent.ACTION_INSTALL_PACKAGE.equals(intent.getAction())) intent.setAction(Intent.ACTION_VIEW);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
+				| Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		return true;
+	}
+
+	private boolean isInstallerIntent(Intent intent) {
+		String action = intent.getAction();
+		if (!Intent.ACTION_VIEW.equals(action)
+				&& !Intent.ACTION_INSTALL_PACKAGE.equals(action)
+				&& !Intent.ACTION_DELETE.equals(action)
+				&& !Intent.ACTION_UNINSTALL_PACKAGE.equals(action)
+				&& !ACTION_CONFIRM_INSTALL.equals(action)
+				&& !ACTION_CONFIRM_PERMISSIONS.equals(action)) return false;
+		if (Intent.ACTION_DELETE.equals(action) || Intent.ACTION_UNINSTALL_PACKAGE.equals(action)
+				|| ACTION_CONFIRM_INSTALL.equals(action) || ACTION_CONFIRM_PERMISSIONS.equals(action)
+				|| Intent.ACTION_INSTALL_PACKAGE.equals(action)) return true;
+		if ("application/vnd.android.package-archive".equals(intent.getType())) return true;
+		Uri data = intent.getData();
+		if (data == null || !("content".equals(data.getScheme()) || "file".equals(data.getScheme()))) return false;
+		String path = data.toString().toLowerCase();
+		return path.endsWith(".apk") || path.endsWith(".apks") || path.endsWith(".apk.1");
+	}
+
+	private void hookSessionPathAccess() {
+		if (Build.VERSION.SDK_INT < 34) return;
+		try {
+			ReflectedClass.of("com.android.server.pm.PackageInstallerSession")
+					.before("generateInfoInternal").run(param -> {
+						if (fixSessionPermissions) resolvingSessionPath.set(true);
+					});
+			ReflectedClass.of("com.android.server.pm.PackageInstallerSession")
+					.after("generateInfoInternal").run(param -> {
+						if (!resolvingSessionPath.get()) return;
+						resolvingSessionPath.set(false);
+						try {
+							Object info = param.getResult();
+							Field pathField = findField(info.getClass(), "resolvedBaseCodePath");
+							String path = (String) pathField.get(info);
+							if (path == null || path.isEmpty()) {
+								File baseFile = (File) findField(param.thisObject.getClass(), "mResolvedBaseFile").get(param.thisObject);
+								if (baseFile != null) pathField.set(info, baseFile.getAbsolutePath());
+							}
+						} catch (Throwable ignored) {
+						}
+					});
+			ReflectedClass.of("android.app.ContextImpl").after("checkCallingOrSelfPermission").run(param -> {
+				if (resolvingSessionPath.get()
+						&& "android.permission.READ_INSTALLED_SESSION_PATHS".equals(param.args[0])) {
+					param.setResult(PERMISSION_GRANTED);
+				}
+			});
+		} catch (Throwable t) {
+			Logger.log("PackageManager: failed to hook session path access", t);
+		}
+	}
+
+	private static Field findField(Class<?> clazz, String name) throws NoSuchFieldException {
+		for (Class<?> current = clazz; current != null; current = current.getSuperclass()) {
+			try {
+				Field field = current.getDeclaredField(name);
+				field.setAccessible(true);
+				return field;
+			} catch (NoSuchFieldException ignored) {
+			}
+		}
+		throw new NoSuchFieldException(name);
 	}
 
 	private void hookActivityManager() {
@@ -131,16 +283,16 @@ public class PackageManager extends XposedModPack {
 	private void hookUpgradeKeySets() {
 		try {
 			Class<?> keySetManager = ReflectedClass.of("com.android.server.pm.KeySetManagerService").getClazz();
+			ThreadLocal<Boolean> bypassUpgradeKeySet = ThreadLocal.withInitial(() -> false);
 			Arrays.stream(keySetManager.getDeclaredMethods())
 					.filter(method -> method.getName().equals("shouldCheckUpgradeKeySetLocked"))
 					.filter(method -> method.getReturnType() == Boolean.TYPE)
 					.forEach(method -> {
 						ReflectedClass.deoptimize(method);
-						ReflectedClass.of(keySetManager).after(method).run(param -> {
-							if (allowMismatchedSignature && Boolean.TRUE.equals(param.getResult())) {
-								// Fall back to verifySignatures instead of accepting an unrelated keyset.
-								param.setResult(false);
-							}
+						ReflectedClass.of(keySetManager).before(method).run(param -> {
+							boolean bypass = allowMismatchedSignature && isPackageInstallCall();
+							bypassUpgradeKeySet.set(bypass);
+							if (bypass) param.setResult(true);
 						});
 					});
 
@@ -149,8 +301,8 @@ public class PackageManager extends XposedModPack {
 					.filter(method -> method.getReturnType() == Boolean.TYPE)
 					.forEach(method -> {
 						ReflectedClass.deoptimize(method);
-						ReflectedClass.of(keySetManager).after(method).run(param -> {
-							if (allowMismatchedSignature && Boolean.FALSE.equals(param.getResult())) {
+						ReflectedClass.of(keySetManager).before(method).run(param -> {
+							if (allowMismatchedSignature && Boolean.TRUE.equals(bypassUpgradeKeySet.get())) {
 								param.setResult(true);
 							}
 						});
@@ -254,6 +406,17 @@ public class PackageManager extends XposedModPack {
 	}
 
 	private void deoptimizePackageInstallCallers() {
+		if (allowMismatchedSignature && allowSharedUidSignatureMismatch) {
+			try {
+				Class<?> reconcilePackageUtils = ReflectedClass.of("com.android.server.pm.ReconcilePackageUtils").getClazz();
+				Field allowNonPreloads = reconcilePackageUtils.getDeclaredField("ALLOW_NON_PRELOADS_SYSTEM_SHAREDUIDS");
+				allowNonPreloads.setAccessible(true);
+				allowNonPreloads.setBoolean(null, true);
+			} catch (NoSuchFieldException ignored) {
+			} catch (Throwable t) {
+				Logger.log("PackageManager: failed to allow system shared UID installs", t);
+			}
+		}
 		for (String className : new String[]{
 				"com.android.server.pm.ReconcilePackageUtils",
 				"com.android.server.pm.InstallPackageHelper"

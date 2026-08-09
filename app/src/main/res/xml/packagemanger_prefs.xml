@@ -25,6 +25,65 @@
 		app:iconSpaceReserved="false" />
 
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/pm_installer_redirect_category"
+		app:iconSpaceReserved="false">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_InstallerRedirectEnabled"
+			android:summary="@string/pm_installer_redirect_summary"
+			android:title="@string/pm_installer_redirect_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.AppListPreference
+			android:defaultValue=""
+			android:key="PM_InstallerRedirectTarget"
+			android:title="@string/pm_installer_target_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_ForceExplicitInstaller"
+			android:summary="@string/pm_force_explicit_installer_summary"
+			android:title="@string/pm_force_explicit_installer_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_InterceptSessionInstall"
+			android:summary="@string/pm_intercept_session_summary"
+			android:title="@string/pm_intercept_session_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_FixSessionPermissions"
+			android:summary="@string/pm_fix_session_permissions_summary"
+			android:title="@string/pm_fix_session_permissions_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="PM_InterceptUninstall"
+			android:summary="@string/pm_intercept_uninstall_summary"
+			android:title="@string/pm_intercept_uninstall_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="true"
+			android:key="PM_UninstallFollowInstaller"
+			android:title="@string/pm_uninstall_follow_installer_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.AppListPreference
+			android:defaultValue=""
+			android:key="PM_UninstallerRedirectTarget"
+			android:title="@string/pm_uninstaller_target_title"
+			app:iconSpaceReserved="false" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/pm_advanced_category"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
