@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Ukryj plakietkę skrótu</string>
+    <string name="launcher_hide_shortcut_badge_summary">Ukryj małą ikonę aplikacji źródłowej na skrótach</string>
+    <string name="launcher_lock_desktop">Zablokuj ekran główny</string>
+    <string name="launcher_lock_desktop_summary">Uniemożliwiaj dodawanie, usuwanie lub przenoszenie aplikacji, skrótów i widżetów</string>
+    <string name="launcher_hide_at_a_glance">Ukryj „W skrócie”</string>
+    <string name="launcher_hide_at_a_glance_summary">Ukryj widżet „W skrócie” na ekranie głównym</string>
+    <string name="launcher_wallpaper_zooming">Powiększ tapetę</string>
+    <string name="launcher_wallpaper_zooming_summary">Powiększaj tapetę podczas otwierania szuflady aplikacji i widoku ostatnich</string>
+    <string name="launcher_quick_launch">Uruchom pierwszy wynik wyszukiwania klawiszem Enter</string>
+    <string name="launcher_quick_launch_summary">Naciśnij Enter w wyszukiwarce aplikacji, aby uruchomić pierwszy wynik</string>
+    <string name="launcher_hide_drawer_apps">Ukryj aplikacje z szuflady aplikacji</string>
+    <string name="launcher_hide_drawer_apps_summary">Ukryj wybrane aplikacje z szuflady aplikacji i sugestii</string>
+    <string name="launcher_hidden_apps">Ukryte aplikacje</string>
+    <string name="launcher_search_hidden_apps">Pokazuj ukryte aplikacje w wyszukiwaniu</string>
+    <string name="launcher_search_hidden_apps_summary">Nadal pokazuj ukryte aplikacje w wynikach wyszukiwania szuflady aplikacji</string>
+    <string name="launcher_hidden_apps_search">Wyszukaj aplikacje lub nazwy pakietów</string>
+    <string name="launcher_apps_all">Wszystkie</string>
+    <string name="launcher_apps_user">Użytkownika</string>
+    <string name="launcher_apps_system">Systemowe</string>
+</resources>

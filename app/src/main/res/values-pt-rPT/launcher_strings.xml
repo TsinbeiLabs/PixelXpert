@@ -1,0 +1,21 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Ocultar emblemas de origem dos atalhos</string>
+	<string name="launcher_hide_shortcut_badge_summary">Oculta o pequeno ícone da aplicação de origem nos atalhos</string>
+	<string name="launcher_lock_desktop">Bloquear ecrã inicial</string>
+	<string name="launcher_lock_desktop_summary">Impede adicionar, remover ou mover aplicações, atalhos e widgets</string>
+	<string name="launcher_hide_at_a_glance">Ocultar "À primeira vista"</string>
+	<string name="launcher_hide_at_a_glance_summary">Oculta o widget "À primeira vista" do ecrã inicial</string>
+	<string name="launcher_wallpaper_zooming">Zoom do fundo</string>
+	<string name="launcher_wallpaper_zooming_summary">Amplia o fundo ao abrir a gaveta de aplicações e a vista geral</string>
+	<string name="launcher_quick_launch">Abrir o primeiro resultado com Enter</string>
+	<string name="launcher_quick_launch_summary">Prima Enter na pesquisa da gaveta para abrir o primeiro resultado de aplicação</string>
+	<string name="launcher_hide_drawer_apps">Ocultar aplicações da gaveta</string>
+	<string name="launcher_hide_drawer_apps_summary">Oculta as aplicações selecionadas da gaveta e das sugestões</string>
+	<string name="launcher_hidden_apps">Aplicações ocultas</string>
+	<string name="launcher_search_hidden_apps">Mostrar aplicações ocultas na pesquisa</string>
+	<string name="launcher_search_hidden_apps_summary">Mantém as aplicações ocultas disponíveis nos resultados de pesquisa da gaveta</string>
+    <string name="launcher_hidden_apps_search">Pesquisar aplicações ou nomes de pacotes</string>
+    <string name="launcher_apps_all">Todas</string>
+    <string name="launcher_apps_user">Utilizador</string>
+    <string name="launcher_apps_system">Sistema</string>
+</resources>

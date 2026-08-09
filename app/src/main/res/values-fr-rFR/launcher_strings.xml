@@ -1,0 +1,21 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Masquer les badges source des raccourcis</string>
+	<string name="launcher_hide_shortcut_badge_summary">Masque la petite icône de l\'application source sur les raccourcis</string>
+	<string name="launcher_lock_desktop">Verrouiller l\'écran d\'accueil</string>
+	<string name="launcher_lock_desktop_summary">Empêche d\'ajouter, supprimer ou déplacer des applications, raccourcis et widgets</string>
+	<string name="launcher_hide_at_a_glance">Masquer "En un coup d'œil"</string>
+	<string name="launcher_hide_at_a_glance_summary">Masque le widget "En un coup d\'œil" de l\'écran d\'accueil</string>
+	<string name="launcher_wallpaper_zooming">Zoom du fond d\'écran</string>
+	<string name="launcher_wallpaper_zooming_summary">Zoome le fond d\'écran à l\'ouverture du tiroir d\'applications et de l\'aperçu</string>
+	<string name="launcher_quick_launch">Lancer le premier résultat avec Entrée</string>
+	<string name="launcher_quick_launch_summary">Appuyez sur Entrée dans la recherche du tiroir pour lancer la première application</string>
+	<string name="launcher_hide_drawer_apps">Masquer des applications du tiroir</string>
+	<string name="launcher_hide_drawer_apps_summary">Masque les applications sélectionnées du tiroir et des suggestions</string>
+	<string name="launcher_hidden_apps">Applications masquées</string>
+	<string name="launcher_search_hidden_apps">Afficher les applications masquées dans la recherche</string>
+	<string name="launcher_search_hidden_apps_summary">Conserve les applications masquées dans les résultats de recherche du tiroir</string>
+	<string name="launcher_hidden_apps_search">Rechercher des applications ou des noms de paquet</string>
+	<string name="launcher_apps_all">Toutes</string>
+	<string name="launcher_apps_user">Utilisateur</string>
+	<string name="launcher_apps_system">Système</string>
+</resources>

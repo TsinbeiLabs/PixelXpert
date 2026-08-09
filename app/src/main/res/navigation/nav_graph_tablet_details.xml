@@ -27,6 +27,13 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_headerFragment_to_launcherFragment"
+            app:destination="@id/launcherFragment" />
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             android:id="@+id/action_headerFragment_to_themingFragment"
             app:destination="@id/themingFragment" />
         <action
@@ -57,6 +64,13 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             android:id="@+id/action_headerFragment_to_gboardFragment"
             app:destination="@id/gboardFragment" />
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_headerFragment_to_documentsUIFragment"
+            app:destination="@id/documentsUIFragment" />
         <action
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
@@ -219,6 +233,12 @@
     <fragment
         android:id="@+id/lockScreenFragment"
         android:name="com.tsinbei.pixelxpert.ui.fragments.LockScreenFragment" />
+	<fragment
+		android:id="@+id/launcherFragment"
+		android:name="com.tsinbei.pixelxpert.ui.fragments.LauncherFragment">
+		<action android:id="@+id/action_launcherFragment_to_hiddenAppsFragment" app:destination="@id/hiddenAppsFragment" />
+	</fragment>
+	<fragment android:id="@+id/hiddenAppsFragment" android:name="com.tsinbei.pixelxpert.ui.fragments.HiddenAppsFragment" />
     <fragment
         android:id="@+id/themingFragment"
         android:name="com.tsinbei.pixelxpert.ui.fragments.ThemingFragment">
@@ -293,6 +313,9 @@
     <fragment
         android:id="@+id/gboardFragment"
         android:name="com.tsinbei.pixelxpert.ui.fragments.GboardFragment" />
+    <fragment
+        android:id="@+id/documentsUIFragment"
+        android:name="com.tsinbei.pixelxpert.ui.fragments.DocumentsUIFragment" />
     <fragment
         android:id="@+id/hotSpotFragment"
         android:name="com.tsinbei.pixelxpert.ui.fragments.HotSpotFragment" />

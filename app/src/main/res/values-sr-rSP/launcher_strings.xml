@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Sakrij značku prečice</string>
+    <string name="launcher_hide_shortcut_badge_summary">Sakrij malu ikonu izvorne aplikacije na prečicama</string>
+    <string name="launcher_lock_desktop">Zaključaj početni ekran</string>
+    <string name="launcher_lock_desktop_summary">Spreči dodavanje, uklanjanje ili premeštanje aplikacija, prečica i vidžeta</string>
+    <string name="launcher_hide_at_a_glance">Sakrij „Na prvi pogled“</string>
+    <string name="launcher_hide_at_a_glance_summary">Sakrij vidžet „Na prvi pogled“ sa početnog ekrana</string>
+    <string name="launcher_wallpaper_zooming">Zumiraj pozadinu</string>
+    <string name="launcher_wallpaper_zooming_summary">Zumiraj pozadinu pri otvaranju fioke aplikacija i pregleda</string>
+    <string name="launcher_quick_launch">Pokreni prvi rezultat pretrage tasterom Enter</string>
+    <string name="launcher_quick_launch_summary">Pritisnite Enter u pretrazi aplikacija da pokrenete prvi rezultat</string>
+    <string name="launcher_hide_drawer_apps">Sakrij aplikacije iz fioke aplikacija</string>
+    <string name="launcher_hide_drawer_apps_summary">Sakrij izabrane aplikacije iz fioke aplikacija i predloga</string>
+    <string name="launcher_hidden_apps">Skrivene aplikacije</string>
+    <string name="launcher_search_hidden_apps">Prikaži skrivene aplikacije u pretrazi</string>
+    <string name="launcher_search_hidden_apps_summary">Nastavi da prikazuješ skrivene aplikacije u rezultatima pretrage fioke aplikacija</string>
+    <string name="launcher_hidden_apps_search">Претражи апликације или називе пакета</string>
+    <string name="launcher_apps_all">Све</string>
+    <string name="launcher_apps_user">Корисничке</string>
+    <string name="launcher_apps_system">Системске</string>
+</resources>

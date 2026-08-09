@@ -1,0 +1,21 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Ocultar insignias de origen de accesos directos</string>
+	<string name="launcher_hide_shortcut_badge_summary">Oculta el pequeño icono de la aplicación de origen en los accesos directos</string>
+	<string name="launcher_lock_desktop">Bloquear pantalla de inicio</string>
+	<string name="launcher_lock_desktop_summary">Impide añadir, eliminar o mover aplicaciones, accesos directos y widgets</string>
+	<string name="launcher_hide_at_a_glance">Ocultar "De un vistazo"</string>
+	<string name="launcher_hide_at_a_glance_summary">Oculta el widget "De un vistazo" de la pantalla de inicio</string>
+	<string name="launcher_wallpaper_zooming">Zoom del fondo de pantalla</string>
+	<string name="launcher_wallpaper_zooming_summary">Amplía el fondo de pantalla al abrir el cajón de aplicaciones y la vista general</string>
+	<string name="launcher_quick_launch">Abrir el primer resultado con Intro</string>
+	<string name="launcher_quick_launch_summary">Pulsa Intro en la búsqueda del cajón para abrir el primer resultado de aplicación</string>
+	<string name="launcher_hide_drawer_apps">Ocultar aplicaciones del cajón</string>
+	<string name="launcher_hide_drawer_apps_summary">Oculta las aplicaciones seleccionadas del cajón y de las predicciones</string>
+	<string name="launcher_hidden_apps">Aplicaciones ocultas</string>
+	<string name="launcher_search_hidden_apps">Mostrar aplicaciones ocultas en la búsqueda</string>
+	<string name="launcher_search_hidden_apps_summary">Mantiene disponibles las aplicaciones ocultas en los resultados de búsqueda del cajón</string>
+    <string name="launcher_hidden_apps_search">Buscar aplicaciones o nombres de paquetes</string>
+    <string name="launcher_apps_all">Todas</string>
+    <string name="launcher_apps_user">Usuario</string>
+    <string name="launcher_apps_system">Sistema</string>
+</resources>

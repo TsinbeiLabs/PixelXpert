@@ -1,0 +1,13 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">隱藏捷徑來源標記</string><string name="launcher_hide_shortcut_badge_summary">隱藏捷徑上的來源應用程式小圖示</string>
+	<string name="launcher_lock_desktop">鎖定主畫面</string><string name="launcher_lock_desktop_summary">禁止新增、移除或移動應用程式、捷徑和小工具</string>
+	<string name="launcher_hide_at_a_glance">隱藏「一覽」</string><string name="launcher_hide_at_a_glance_summary">從主畫面隱藏「一覽」小工具</string>
+	<string name="launcher_wallpaper_zooming">桌布縮放</string><string name="launcher_wallpaper_zooming_summary">開啟應用程式抽屜和總覽時縮放桌布</string>
+	<string name="launcher_quick_launch">按 Enter 啟動第一個搜尋結果</string><string name="launcher_quick_launch_summary">在應用程式抽屜搜尋中按 Enter 以啟動第一個應用程式結果</string>
+	<string name="launcher_hide_drawer_apps">從應用程式抽屜隱藏應用程式</string><string name="launcher_hide_drawer_apps_summary">從應用程式抽屜和預測建議中隱藏選取的應用程式</string>
+	<string name="launcher_hidden_apps">已隱藏的應用程式</string><string name="launcher_search_hidden_apps">在搜尋中顯示已隱藏的應用程式</string><string name="launcher_search_hidden_apps_summary">讓已隱藏的應用程式仍顯示於應用程式抽屜搜尋結果</string>
+	<string name="launcher_hidden_apps_search">搜尋應用程式或套件名稱</string>
+	<string name="launcher_apps_all">全部</string>
+	<string name="launcher_apps_user">使用者</string>
+	<string name="launcher_apps_system">系統</string>
+</resources>

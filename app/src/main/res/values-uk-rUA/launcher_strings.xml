@@ -1,0 +1,13 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Приховувати позначки джерела ярликів</string><string name="launcher_hide_shortcut_badge_summary">Приховує маленьку піктограму програми-джерела на ярликах</string>
+	<string name="launcher_lock_desktop">Заблокувати головний екран</string><string name="launcher_lock_desktop_summary">Забороняє додавати, вилучати чи переміщувати програми, ярлики та віджети</string>
+	<string name="launcher_hide_at_a_glance">Приховати "Огляд"</string><string name="launcher_hide_at_a_glance_summary">Приховує віджет "Огляд" з головного екрана</string>
+	<string name="launcher_wallpaper_zooming">Масштабування шпалер</string><string name="launcher_wallpaper_zooming_summary">Масштабує шпалери під час відкриття списку програм і огляду</string>
+	<string name="launcher_quick_launch">Запускати перший результат клавішею Enter</string><string name="launcher_quick_launch_summary">Натисніть Enter у пошуку списку програм, щоб запустити першу знайдену програму</string>
+	<string name="launcher_hide_drawer_apps">Приховати програми зі списку</string><string name="launcher_hide_drawer_apps_summary">Приховує вибрані програми зі списку та прогнозів</string>
+	<string name="launcher_hidden_apps">Приховані програми</string><string name="launcher_search_hidden_apps">Показувати приховані програми в пошуку</string><string name="launcher_search_hidden_apps_summary">Залишає приховані програми доступними в результатах пошуку списку</string>
+    <string name="launcher_hidden_apps_search">Шукати програми або назви пакетів</string>
+    <string name="launcher_apps_all">Усі</string>
+    <string name="launcher_apps_user">Користувацькі</string>
+    <string name="launcher_apps_system">Системні</string>
+</resources>

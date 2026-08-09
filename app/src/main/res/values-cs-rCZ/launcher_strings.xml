@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Skrýt odznak zástupce</string>
+    <string name="launcher_hide_shortcut_badge_summary">Skrýt malou ikonu zdrojové aplikace na zástupcích</string>
+    <string name="launcher_lock_desktop">Zamknout plochu</string>
+    <string name="launcher_lock_desktop_summary">Zabránit přidávání, odebírání nebo přesouvání aplikací, zástupců a widgetů</string>
+    <string name="launcher_hide_at_a_glance">Skrýt „Na první pohled“</string>
+    <string name="launcher_hide_at_a_glance_summary">Skrýt widget „Na první pohled“ z plochy</string>
+    <string name="launcher_wallpaper_zooming">Přiblížení tapety</string>
+    <string name="launcher_wallpaper_zooming_summary">Přiblížit tapetu při otevření zásuvky aplikací a přehledu</string>
+    <string name="launcher_quick_launch">Spustit první výsledek hledání klávesou Enter</string>
+    <string name="launcher_quick_launch_summary">Stisknutím klávesy Enter při hledání aplikací spusťte první výsledek</string>
+    <string name="launcher_hide_drawer_apps">Skrýt aplikace ze zásuvky aplikací</string>
+    <string name="launcher_hide_drawer_apps_summary">Skrýt vybrané aplikace ze zásuvky aplikací a návrhů</string>
+    <string name="launcher_hidden_apps">Skryté aplikace</string>
+    <string name="launcher_search_hidden_apps">Zobrazit skryté aplikace ve vyhledávání</string>
+    <string name="launcher_search_hidden_apps_summary">Nadále zobrazovat skryté aplikace ve výsledcích hledání v zásuvce aplikací</string>
+    <string name="launcher_hidden_apps_search">Hledat aplikace nebo názvy balíčků</string>
+    <string name="launcher_apps_all">Vše</string>
+    <string name="launcher_apps_user">Uživatel</string>
+    <string name="launcher_apps_system">Systém</string>
+</resources>

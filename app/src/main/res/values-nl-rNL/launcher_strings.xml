@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Snelkoppelingsbadge verbergen</string>
+    <string name="launcher_hide_shortcut_badge_summary">Het kleine pictogram van de bronapp op snelkoppelingen verbergen</string>
+    <string name="launcher_lock_desktop">Startscherm vergrendelen</string>
+    <string name="launcher_lock_desktop_summary">Voorkomen dat apps, snelkoppelingen en widgets worden toegevoegd, verwijderd of verplaatst</string>
+    <string name="launcher_hide_at_a_glance">"In één oogopslag" verbergen</string>
+    <string name="launcher_hide_at_a_glance_summary">De widget "In één oogopslag" van het startscherm verbergen</string>
+    <string name="launcher_wallpaper_zooming">Achtergrond zoomen</string>
+    <string name="launcher_wallpaper_zooming_summary">De achtergrond zoomen bij het openen van de app-lade en het overzicht</string>
+    <string name="launcher_quick_launch">Eerste zoekresultaat starten met Enter</string>
+    <string name="launcher_quick_launch_summary">Druk op Enter in het zoeken naar apps om het eerste app-resultaat te starten</string>
+    <string name="launcher_hide_drawer_apps">Apps uit de app-lade verbergen</string>
+    <string name="launcher_hide_drawer_apps_summary">Geselecteerde apps uit de app-lade en suggesties verbergen</string>
+    <string name="launcher_hidden_apps">Verborgen apps</string>
+    <string name="launcher_search_hidden_apps">Verborgen apps in zoeken tonen</string>
+    <string name="launcher_search_hidden_apps_summary">Verborgen apps blijven tonen in de zoekresultaten van de app-lade</string>
+    <string name="launcher_hidden_apps_search">Apps of pakketnamen zoeken</string>
+    <string name="launcher_apps_all">Alle</string>
+    <string name="launcher_apps_user">Gebruiker</string>
+    <string name="launcher_apps_system">Systeem</string>
+</resources>

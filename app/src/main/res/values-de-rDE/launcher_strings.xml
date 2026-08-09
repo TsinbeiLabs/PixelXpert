@@ -1,0 +1,21 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Quellabzeichen von Verknüpfungen ausblenden</string>
+	<string name="launcher_hide_shortcut_badge_summary">Kleines Symbol der Quell-App auf Verknüpfungen ausblenden</string>
+	<string name="launcher_lock_desktop">Startbildschirm sperren</string>
+	<string name="launcher_lock_desktop_summary">Hinzufügen, Entfernen oder Verschieben von Apps, Verknüpfungen und Widgets verhindern</string>
+	<string name="launcher_hide_at_a_glance">"Auf einen Blick" ausblenden</string>
+	<string name="launcher_hide_at_a_glance_summary">Das "Auf einen Blick"-Widget vom Startbildschirm ausblenden</string>
+	<string name="launcher_wallpaper_zooming">Hintergrundbild zoomen</string>
+	<string name="launcher_wallpaper_zooming_summary">Hintergrundbild beim Öffnen der App-Übersicht und der Übersicht zoomen</string>
+	<string name="launcher_quick_launch">Erstes Suchergebnis mit Enter starten</string>
+	<string name="launcher_quick_launch_summary">In der App-Suche Enter drücken, um das erste App-Ergebnis zu starten</string>
+	<string name="launcher_hide_drawer_apps">Apps aus der App-Übersicht ausblenden</string>
+	<string name="launcher_hide_drawer_apps_summary">Ausgewählte Apps aus der App-Übersicht und Vorschlägen ausblenden</string>
+	<string name="launcher_hidden_apps">Ausgeblendete Apps</string>
+	<string name="launcher_search_hidden_apps">Ausgeblendete Apps in der Suche anzeigen</string>
+	<string name="launcher_search_hidden_apps_summary">Ausgeblendete Apps weiterhin in den Suchergebnissen der App-Übersicht anzeigen</string>
+    <string name="launcher_hidden_apps_search">Apps oder Paketnamen suchen</string>
+    <string name="launcher_apps_all">Alle</string>
+    <string name="launcher_apps_user">Nutzer</string>
+    <string name="launcher_apps_system">System</string>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Ascunde insigna comenzii rapide</string>
+    <string name="launcher_hide_shortcut_badge_summary">Ascunde pictograma mică a aplicației sursă de pe comenzile rapide</string>
+    <string name="launcher_lock_desktop">Blochează ecranul de pornire</string>
+    <string name="launcher_lock_desktop_summary">Împiedică adăugarea, eliminarea sau mutarea aplicațiilor, comenzilor rapide și widgeturilor</string>
+    <string name="launcher_hide_at_a_glance">Ascunde „Dintr-o privire”</string>
+    <string name="launcher_hide_at_a_glance_summary">Ascunde widgetul „Dintr-o privire” de pe ecranul de pornire</string>
+    <string name="launcher_wallpaper_zooming">Mărește fundalul</string>
+    <string name="launcher_wallpaper_zooming_summary">Mărește fundalul când se deschid sertarul de aplicații și prezentarea generală</string>
+    <string name="launcher_quick_launch">Lansează primul rezultat al căutării cu Enter</string>
+    <string name="launcher_quick_launch_summary">Apasă Enter în căutarea de aplicații pentru a lansa primul rezultat</string>
+    <string name="launcher_hide_drawer_apps">Ascunde aplicațiile din sertarul de aplicații</string>
+    <string name="launcher_hide_drawer_apps_summary">Ascunde aplicațiile selectate din sertarul de aplicații și sugestii</string>
+    <string name="launcher_hidden_apps">Aplicații ascunse</string>
+    <string name="launcher_search_hidden_apps">Afișează aplicațiile ascunse în căutare</string>
+    <string name="launcher_search_hidden_apps_summary">Continuă să afișezi aplicațiile ascunse în rezultatele căutării din sertarul de aplicații</string>
+    <string name="launcher_hidden_apps_search">Caută aplicații sau nume de pachete</string>
+    <string name="launcher_apps_all">Toate</string>
+    <string name="launcher_apps_user">Utilizator</string>
+    <string name="launcher_apps_system">Sistem</string>
+</resources>

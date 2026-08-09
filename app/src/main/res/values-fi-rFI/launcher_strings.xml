@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Piilota pikakuvakkeen merkki</string>
+    <string name="launcher_hide_shortcut_badge_summary">Piilota lähdesovelluksen pieni kuvake pikakuvakkeista</string>
+    <string name="launcher_lock_desktop">Lukitse aloitusnäyttö</string>
+    <string name="launcher_lock_desktop_summary">Estä sovellusten, pikakuvakkeiden ja pienoisohjelmien lisääminen, poistaminen ja siirtäminen</string>
+    <string name="launcher_hide_at_a_glance">Piilota "Yhdellä silmäyksellä"</string>
+    <string name="launcher_hide_at_a_glance_summary">Piilota "Yhdellä silmäyksellä" -pienoisohjelma aloitusnäytöstä</string>
+    <string name="launcher_wallpaper_zooming">Lähennä taustakuvaa</string>
+    <string name="launcher_wallpaper_zooming_summary">Lähennä taustakuvaa, kun sovellusvalikko ja yleiskatsaus avataan</string>
+    <string name="launcher_quick_launch">Käynnistä ensimmäinen hakutulos Enterillä</string>
+    <string name="launcher_quick_launch_summary">Käynnistä ensimmäinen sovellustulos painamalla Enter sovellushaussa</string>
+    <string name="launcher_hide_drawer_apps">Piilota sovelluksia sovellusvalikosta</string>
+    <string name="launcher_hide_drawer_apps_summary">Piilota valitut sovellukset sovellusvalikosta ja ehdotuksista</string>
+    <string name="launcher_hidden_apps">Piilotetut sovellukset</string>
+    <string name="launcher_search_hidden_apps">Näytä piilotetut sovellukset haussa</string>
+    <string name="launcher_search_hidden_apps_summary">Näytä edelleen piilotetut sovellukset sovellusvalikon hakutuloksissa</string>
+    <string name="launcher_hidden_apps_search">Hae sovelluksia tai pakettien nimiä</string>
+    <string name="launcher_apps_all">Kaikki</string>
+    <string name="launcher_apps_user">Käyttäjä</string>
+    <string name="launcher_apps_system">Järjestelmä</string>
+</resources>

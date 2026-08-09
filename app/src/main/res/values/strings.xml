@@ -34,7 +34,8 @@
     <string name="update_over_wifi_title">Check updates over WiFi only</string>
     <string name="update_over_wifi_summary">Check for updates in background only when connected to wifi</string>
     <string name="github_repo_title">GitHub repository</string>
-    <string name="github_repo_summary" translatable="false">siavash79/PixelXpert</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
     <string name="telegram_group_title">Telegram channel</string>
     <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
     <string name="usage_title">Usage</string>
@@ -45,6 +46,10 @@
     <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
 
     <!--Category titles-->
+	<string name="home_category_personalization">Personalization</string>
+	<string name="home_category_system_interface">System interface</string>
+	<string name="home_category_app_enhancements">App enhancements</string>
+	<string name="home_category_system_tools">System tools</string>
     <string name="lockscreen_header_title">Lock screen</string>
     <string name="lockscreen_header_summary">Change your keyguard to match your taste</string>
     <string name="statusbar_header">Status bar</string>
@@ -172,6 +177,8 @@
     <string name="nt_mode_txonly">Upload only</string>
     <string name="nt_unit_show_bits">Show in bits/s</string>
     <string name="statusbar_general_options">Status Bar Options</string>
+    <string name="landscape_split_shade_title">Tablet-style notification shade in landscape</string>
+    <string name="landscape_split_shade_summary">Show Quick Settings and notifications side by side when the phone is rotated horizontally</string>
     <string name="status_bar_height">Status bar height (rotate screen to apply)</string>
     <string name="sb_padding_title">Status bar Padding</string>
     <string name="sb_padding_summary">Setting the values to min/max is equivalent to device Default</string>
@@ -325,6 +332,36 @@
 
     <!--Miscellaneous section related-->
     <string name="launcher_section">Launcher options</string>
+    <string name="launcher_header">Launcher</string>
+    <string name="launcher_header_summary">Overview and home screen enhancements</string>
+    <string name="launcher_home_section">Home screen</string>
+    <string name="launcher_drawer_section">App drawer</string>
+    <string name="launcher_recents_section">Recent tasks</string>
+    <string name="launcher_hide_desktop_labels">Hide home screen icon labels</string>
+	<string name="launcher_hide_shortcut_badge">Hide shortcut source badges</string>
+	<string name="launcher_hide_shortcut_badge_summary">Hide the small source app icon on shortcuts</string>
+	<string name="launcher_lock_desktop">Lock home screen</string>
+	<string name="launcher_lock_desktop_summary">Prevent adding, removing, or moving apps, shortcuts, and widgets</string>
+	<string name="launcher_hide_at_a_glance">Hide At a Glance</string>
+	<string name="launcher_hide_at_a_glance_summary">Hide the At a Glance widget from the home screen</string>
+	<string name="launcher_wallpaper_zooming">Wallpaper zooming</string>
+	<string name="launcher_wallpaper_zooming_summary">Zoom the wallpaper when opening the app drawer and overview</string>
+    <string name="launcher_hide_desktop_search">Hide home screen search bar</string>
+    <string name="launcher_hide_drawer_labels">Hide app drawer icon labels</string>
+    <string name="launcher_hide_drawer_search">Hide app drawer search bar</string>
+	<string name="launcher_quick_launch">Launch first search result with Enter</string>
+	<string name="launcher_quick_launch_summary">Press Enter in app drawer search to launch the first app result</string>
+	<string name="launcher_hide_drawer_apps">Hide apps from app drawer</string>
+	<string name="launcher_hide_drawer_apps_summary">Hide selected apps from the app drawer and predictions</string>
+	<string name="launcher_hidden_apps">Hidden apps</string>
+	<string name="launcher_search_hidden_apps">Show hidden apps in search</string>
+	<string name="launcher_search_hidden_apps_summary">Keep hidden apps available in app drawer search results</string>
+	<string name="launcher_hidden_apps_search">Search apps or package names</string>
+	<string name="launcher_apps_all">All</string>
+	<string name="launcher_apps_user">User</string>
+	<string name="launcher_apps_system">System</string>
+    <string name="recents_remove_screenshot">Remove Screenshot action</string>
+    <string name="recents_equal_action_widths">Use equal action button widths</string>
     <string name="screenshot_sound_disable_title">Disable screenshot sound</string>
     <!--string name="screenshot_chord_insecure">VolDown+Power unrestricted screenshot</string-->
     <string name="screenshot_insecure">Allow screenshot from restricted content</string>
@@ -333,7 +370,8 @@
     <string name="allow_all_screen_rotations">Force-unlock all screen rotations</string>
     <string name="allow_all_screen_rotations_summary">Will also ignore manual rotation floating button</string>
     <string name="force_no_cutout">Ignore the camera cutout</string>
-    <string name="clear_all_reposition_title">Add an accessible clear-all button to recents page</string>
+    <string name="clear_all_reposition_title">Add Clear all below overview actions</string>
+    <string name="recents_clear_all">Clear all</string>
     <string name="force_themed_icons_title">Auto-generate missing themed icons</string>
     <string name="force_themed_icons_summary">Pixel launcher only</string>
     <string name="volume_button_step_title">Volume steps (0 to 100%)</string>
@@ -405,6 +443,8 @@
     <string name="vibration_type_notification">Intensity defined by system notification vibration settings</string>
     <string name="dialer_mute_record_message_title">Remove call recording announcement</string>
     <string name="dialer_mute_record_message_summary">Only applies to Google phone app with call recording enabled</string>
+    <string name="dialer_force_enable_call_recording_title">Force enable call recording</string>
+    <string name="dialer_force_enable_call_recording_summary">Unlocks native call recording in Google phone app in unsupported regions</string>
     <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
 
     <!-- Arrays strings -->
@@ -540,6 +580,7 @@
     <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
     <string name="package_hook_bootlooped">Hook failed due to bootloop</string>
     <string name="package_hook_no_response">Package not responding</string>
+	<string name="package_not_running">App not running</string>
     <string name="package_not_found">Package not found</string>
     <string name="package_checking">Loading%s</string>
     <string name="package_activated">Package successfully activated</string>
@@ -552,6 +593,7 @@
     <string name="whats_wrong">What\'s wrong?</string>
     <string name="package_not_launchable">Package is not launch-able</string>
     <string name="menu_launch_app">Launch app</string>
+	<string name="menu_stop_app">Stop app</string>
     <string name="menu_restart_app">Restart app</string>
     <string name="why">why?</string>
     <string name="okay">Okay</string>
@@ -661,4 +703,27 @@
     <string name="gboard_tflite_title">TFLite prediction engines</string>
     <string name="gboard_fast_access_title">Fast access bar</string>
 
+    <!-- DocumentsUI sorting -->
+    <string name="documentsui_header">Files &amp; document picker</string>
+    <string name="documentsui_header_summary">File browsing and sorting behavior</string>
+    <string name="documentsui_remember_sort_title">Remember sort order</string>
+    <string name="documentsui_remember_sort_summary">Keep a global sort order and optional per-folder overrides in the system file picker</string>
+    <string name="documentsui_remember_sort_usage">In the file picker sort menu, tap normally to update the global sort. Long-press a sort option to save it only for the current folder. A normal selection also clears that folder override.</string>
+
+    <!-- Package installer redirection -->
+    <string name="pm_installer_redirect_category">Installer redirection</string>
+    <string name="pm_installer_redirect_title">Redirect package installer</string>
+    <string name="pm_installer_redirect_summary">Send APK installation requests and optional uninstall requests to a selected app</string>
+    <string name="pm_installer_target_title">Installer</string>
+    <string name="pm_installer_system_default">System default</string>
+    <string name="pm_force_explicit_installer_title">Override explicitly selected installer</string>
+    <string name="pm_force_explicit_installer_summary">Also redirect requests hard-coded to a specific installer component</string>
+    <string name="pm_intercept_session_title">Redirect session installation confirmation</string>
+    <string name="pm_intercept_session_summary">Intercept CONFIRM_INSTALL and CONFIRM_PERMISSIONS requests</string>
+    <string name="pm_fix_session_permissions_title">Fix session APK path access</string>
+    <string name="pm_fix_session_permissions_summary">Experimental Android 14+ compatibility fix for external installers</string>
+    <string name="pm_intercept_uninstall_title">Redirect uninstall requests</string>
+    <string name="pm_intercept_uninstall_summary">Send ACTION_DELETE and ACTION_UNINSTALL_PACKAGE requests to the selected app</string>
+    <string name="pm_uninstall_follow_installer_title">Use installer for uninstall requests</string>
+    <string name="pm_uninstaller_target_title">Uninstaller</string>
 </resources>

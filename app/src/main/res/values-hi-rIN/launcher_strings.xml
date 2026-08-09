@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">शॉर्टकट बैज छिपाएं</string>
+    <string name="launcher_hide_shortcut_badge_summary">शॉर्टकट पर स्रोत ऐप का छोटा आइकन छिपाएं</string>
+    <string name="launcher_lock_desktop">होम स्क्रीन लॉक करें</string>
+    <string name="launcher_lock_desktop_summary">ऐप्स, शॉर्टकट और विजेट जोड़ने, हटाने या स्थानांतरित करने से रोकें</string>
+    <string name="launcher_hide_at_a_glance">"एक नज़र में" छिपाएं</string>
+    <string name="launcher_hide_at_a_glance_summary">होम स्क्रीन से "एक नज़र में" विजेट छिपाएं</string>
+    <string name="launcher_wallpaper_zooming">वॉलपेपर ज़ूम करें</string>
+    <string name="launcher_wallpaper_zooming_summary">ऐप ड्रॉअर और ओवरव्यू खोलते समय वॉलपेपर ज़ूम करें</string>
+    <string name="launcher_quick_launch">Enter से पहला खोज परिणाम लॉन्च करें</string>
+    <string name="launcher_quick_launch_summary">पहला ऐप परिणाम लॉन्च करने के लिए ऐप खोज में Enter दबाएं</string>
+    <string name="launcher_hide_drawer_apps">ऐप ड्रॉअर से ऐप्स छिपाएं</string>
+    <string name="launcher_hide_drawer_apps_summary">चुने गए ऐप्स को ऐप ड्रॉअर और सुझावों से छिपाएं</string>
+    <string name="launcher_hidden_apps">छिपे हुए ऐप्स</string>
+    <string name="launcher_search_hidden_apps">खोज में छिपे हुए ऐप्स दिखाएं</string>
+    <string name="launcher_search_hidden_apps_summary">ऐप ड्रॉअर के खोज परिणामों में छिपे हुए ऐप्स दिखाते रहें</string>
+    <string name="launcher_hidden_apps_search">ऐप्स या पैकेज नाम खोजें</string>
+    <string name="launcher_apps_all">सभी</string>
+    <string name="launcher_apps_user">उपयोगकर्ता</string>
+    <string name="launcher_apps_system">सिस्टम</string>
+</resources>

@@ -475,6 +475,10 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 				if (isTabletDevice) navController.popBackStack(R.id.headerFragment, false);
 				yield navigateTo(navController, R.id.action_headerFragment_to_lockScreenFragment);
 			}
+			case "launcher_header" -> {
+				if (isTabletDevice) navController.popBackStack(R.id.headerFragment, false);
+				yield navigateTo(navController, R.id.action_headerFragment_to_launcherFragment);
+			}
 			case "theming_header" -> {
 				if (isTabletDevice) navController.popBackStack(R.id.headerFragment, false);
 				yield navigateTo(navController, R.id.action_headerFragment_to_themingFragment);
@@ -494,6 +498,10 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 			case "gboard_header" -> {
 				if (isTabletDevice) navController.popBackStack(R.id.headerFragment, false);
 				yield navigateTo(navController, R.id.action_headerFragment_to_gboardFragment);
+			}
+			case "documentsui_header" -> {
+				if (isTabletDevice) navController.popBackStack(R.id.headerFragment, false);
+				yield navigateTo(navController, R.id.action_headerFragment_to_documentsUIFragment);
 			}
 			case "hotspot_header" -> {
 				if (isTabletDevice) navController.popBackStack(R.id.headerFragment, false);
@@ -539,6 +547,8 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 					navigateTo(navController, R.id.action_miscFragment_to_sleepOnFlatFragment);
 			case "icon_packs" ->
 					navigateTo(navController, R.id.action_themingFragment_to_iconPackFragment);
+			case "LauncherHiddenApps" ->
+					navigateTo(navController, R.id.action_launcherFragment_to_hiddenAppsFragment);
 			default -> false;
 		};
 	}

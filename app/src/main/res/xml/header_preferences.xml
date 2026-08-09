@@ -10,18 +10,11 @@
 
 	</PreferenceCategory>
 
-	<PreferenceCategory
-		android:key="top_level_category"
-		android:layout="@layout/settingslib_preference_category_no_title">
-
-		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
-			android:layout="@layout/custom_preference"
-			app:fragment="com.tsinbei.pixelxpert.ui.fragments.QuickSettingsFragment"
-			app:icon="@drawable/ic_settings_quicksettings"
-			app:key="quicksettings_header"
-			app:summary="@string/qs_panel_category_summary"
-			app:title="@string/qs_panel_category_title"
-			search:ignore="true" />
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:key="personalization_category"
+		android:title="@string/home_category_personalization"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
 			android:layout="@layout/custom_preference"
@@ -34,6 +27,15 @@
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
 			android:layout="@layout/custom_preference"
+			app:fragment="com.tsinbei.pixelxpert.ui.fragments.LauncherFragment"
+			app:icon="@drawable/ic_settings_launcher"
+			app:key="launcher_header"
+			app:summary="@string/launcher_header_summary"
+			app:title="@string/launcher_header"
+			search:ignore="true" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
+			android:layout="@layout/custom_preference"
 			app:fragment="com.tsinbei.pixelxpert.ui.fragments.ThemingFragment"
 			app:icon="@drawable/ic_settings_themes"
 			app:key="theming_header"
@@ -41,11 +43,22 @@
 			app:title="@string/theme_customization_category"
 			search:ignore="true" />
 
-	</PreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
-	<PreferenceCategory
-		android:key="mid_level_category"
-		android:layout="@layout/settingslib_preference_category_no_title">
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:key="system_interface_category"
+		android:title="@string/home_category_system_interface"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
+			android:layout="@layout/custom_preference"
+			app:fragment="com.tsinbei.pixelxpert.ui.fragments.QuickSettingsFragment"
+			app:icon="@drawable/ic_settings_quicksettings"
+			app:key="quicksettings_header"
+			app:summary="@string/qs_panel_category_summary"
+			app:title="@string/qs_panel_category_title"
+			search:ignore="true" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
 			android:layout="@layout/custom_preference"
@@ -65,11 +78,13 @@
 			app:title="@string/nav_header"
 			search:ignore="true" />
 
-	</PreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
-	<PreferenceCategory
-		android:key="bottom_level_category"
-		android:layout="@layout/settingslib_preference_category_no_title">
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:key="app_enhancements_category"
+		android:title="@string/home_category_app_enhancements"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
 			android:layout="@layout/custom_preference"
@@ -88,6 +103,23 @@
 			app:summary="@string/gboard_header_summary"
 			app:title="@string/gboard_header"
 			search:ignore="true" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
+			android:layout="@layout/custom_preference"
+			app:fragment="com.tsinbei.pixelxpert.ui.fragments.DocumentsUIFragment"
+			app:icon="@drawable/ic_settings_files"
+			app:key="documentsui_header"
+			app:summary="@string/documentsui_header_summary"
+			app:title="@string/documentsui_header"
+			search:ignore="true" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:key="system_tools_category"
+		android:title="@string/home_category_system_tools"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain
 			android:layout="@layout/custom_preference"
@@ -116,7 +148,7 @@
 			app:title="@string/misc_header"
 			search:ignore="true" />
 
-	</PreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
 	<!--	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceMain-->
 	<!--		android:layout="@layout/custom_preference"-->

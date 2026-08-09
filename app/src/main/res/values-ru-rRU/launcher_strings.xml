@@ -1,0 +1,13 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Скрывать значки источника ярлыков</string><string name="launcher_hide_shortcut_badge_summary">Скрывает маленький значок приложения-источника на ярлыках</string>
+	<string name="launcher_lock_desktop">Заблокировать главный экран</string><string name="launcher_lock_desktop_summary">Запрещает добавлять, удалять и перемещать приложения, ярлыки и виджеты</string>
+	<string name="launcher_hide_at_a_glance">Скрыть "Краткий обзор"</string><string name="launcher_hide_at_a_glance_summary">Скрывает виджет "Краткий обзор" с главного экрана</string>
+	<string name="launcher_wallpaper_zooming">Масштабирование обоев</string><string name="launcher_wallpaper_zooming_summary">Масштабирует обои при открытии списка приложений и обзора</string>
+	<string name="launcher_quick_launch">Запускать первый результат клавишей Enter</string><string name="launcher_quick_launch_summary">Нажмите Enter в поиске списка приложений, чтобы запустить первое найденное приложение</string>
+	<string name="launcher_hide_drawer_apps">Скрыть приложения из списка</string><string name="launcher_hide_drawer_apps_summary">Скрывает выбранные приложения из списка и рекомендаций</string>
+	<string name="launcher_hidden_apps">Скрытые приложения</string><string name="launcher_search_hidden_apps">Показывать скрытые приложения в поиске</string><string name="launcher_search_hidden_apps_summary">Сохраняет скрытые приложения в результатах поиска списка приложений</string>
+    <string name="launcher_hidden_apps_search">Поиск приложений или названий пакетов</string>
+    <string name="launcher_apps_all">Все</string>
+    <string name="launcher_apps_user">Пользовательские</string>
+    <string name="launcher_apps_system">Системные</string>
+</resources>

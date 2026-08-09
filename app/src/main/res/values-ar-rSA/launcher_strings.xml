@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">إخفاء شارة الاختصار</string>
+    <string name="launcher_hide_shortcut_badge_summary">إخفاء الرمز الصغير للتطبيق المصدر على الاختصارات</string>
+    <string name="launcher_lock_desktop">قفل الشاشة الرئيسية</string>
+    <string name="launcher_lock_desktop_summary">منع إضافة التطبيقات والاختصارات والأدوات أو إزالتها أو نقلها</string>
+    <string name="launcher_hide_at_a_glance">إخفاء "لمحة سريعة"</string>
+    <string name="launcher_hide_at_a_glance_summary">إخفاء أداة "لمحة سريعة" من الشاشة الرئيسية</string>
+    <string name="launcher_wallpaper_zooming">تكبير الخلفية</string>
+    <string name="launcher_wallpaper_zooming_summary">تكبير الخلفية عند فتح درج التطبيقات ونظرة عامة</string>
+    <string name="launcher_quick_launch">تشغيل أول نتيجة بحث باستخدام Enter</string>
+    <string name="launcher_quick_launch_summary">اضغط Enter في بحث التطبيقات لتشغيل أول نتيجة تطبيق</string>
+    <string name="launcher_hide_drawer_apps">إخفاء التطبيقات من درج التطبيقات</string>
+    <string name="launcher_hide_drawer_apps_summary">إخفاء التطبيقات المحددة من درج التطبيقات والاقتراحات</string>
+    <string name="launcher_hidden_apps">التطبيقات المخفية</string>
+    <string name="launcher_search_hidden_apps">إظهار التطبيقات المخفية في البحث</string>
+    <string name="launcher_search_hidden_apps_summary">استمرار إظهار التطبيقات المخفية في نتائج بحث درج التطبيقات</string>
+    <string name="launcher_hidden_apps_search">البحث عن التطبيقات أو أسماء الحزم</string>
+    <string name="launcher_apps_all">الكل</string>
+    <string name="launcher_apps_user">المستخدم</string>
+    <string name="launcher_apps_system">النظام</string>
+</resources>

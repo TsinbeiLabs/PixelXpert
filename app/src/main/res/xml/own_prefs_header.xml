@@ -83,6 +83,12 @@
 			android:title="@string/github_repo_title" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+			android:icon="@drawable/ic_github"
+			android:key="OriginalGitHubRepo"
+			android:summary="@string/github_original_repo_summary"
+			android:title="@string/github_repo_title" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
 			android:icon="@drawable/ic_telegram"
 			android:key="TelegramGroup"
 			android:summary="@string/telegram_group_summary"

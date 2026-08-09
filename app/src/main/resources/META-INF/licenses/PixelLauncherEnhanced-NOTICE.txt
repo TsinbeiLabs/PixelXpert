@@ -1,0 +1,11 @@
+PixelLauncherEnhanced derived Launcher implementations
+
+Copyright (C) 2025-2026 Mahmud0808 and PixelLauncherEnhanced contributors
+Source: https://github.com/Mahmud0808/PixelLauncherEnhanced
+Source revision: da7139b7e6ac41377cfacfcc45610b5014e59f51
+License: GNU General Public License, version 3.0 only
+
+PixelXpert's ClearAllButtonMod and LauncherVisualMods are derived from and adapted from
+app/src/main/java/com/drdisagree/pixellauncherenhanced/xposed/mods/ClearAllButton.kt,
+HideApps.kt, LockLayout.kt, QuickLaunch.kt, ShortcutBadge.kt, SmartSpace.kt, and WallpaperZoom.kt.
+The derived work is distributed under GPL-3.0 as part of PixelXpert.

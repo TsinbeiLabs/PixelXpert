@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Parancsikon jelvényének elrejtése</string>
+    <string name="launcher_hide_shortcut_badge_summary">A forrásalkalmazás kis ikonjának elrejtése a parancsikonokon</string>
+    <string name="launcher_lock_desktop">Kezdőképernyő zárolása</string>
+    <string name="launcher_lock_desktop_summary">Alkalmazások, parancsikonok és widgetek hozzáadásának, eltávolításának vagy áthelyezésének megakadályozása</string>
+    <string name="launcher_hide_at_a_glance">„Egy pillantásra” elrejtése</string>
+    <string name="launcher_hide_at_a_glance_summary">Az „Egy pillantásra” widget elrejtése a kezdőképernyőről</string>
+    <string name="launcher_wallpaper_zooming">Háttérkép nagyítása</string>
+    <string name="launcher_wallpaper_zooming_summary">Háttérkép nagyítása az alkalmazásfiók és az áttekintés megnyitásakor</string>
+    <string name="launcher_quick_launch">Első keresési találat indítása Enterrel</string>
+    <string name="launcher_quick_launch_summary">Az első alkalmazástalálat indításához nyomja meg az Entert az alkalmazáskeresésben</string>
+    <string name="launcher_hide_drawer_apps">Alkalmazások elrejtése az alkalmazásfiókból</string>
+    <string name="launcher_hide_drawer_apps_summary">Kijelölt alkalmazások elrejtése az alkalmazásfiókból és a javaslatokból</string>
+    <string name="launcher_hidden_apps">Rejtett alkalmazások</string>
+    <string name="launcher_search_hidden_apps">Rejtett alkalmazások megjelenítése a keresésben</string>
+    <string name="launcher_search_hidden_apps_summary">Rejtett alkalmazások további megjelenítése az alkalmazásfiók keresési találataiban</string>
+    <string name="launcher_hidden_apps_search">Alkalmazások vagy csomagnevek keresése</string>
+    <string name="launcher_apps_all">Összes</string>
+    <string name="launcher_apps_user">Felhasználói</string>
+    <string name="launcher_apps_system">Rendszer</string>
+</resources>

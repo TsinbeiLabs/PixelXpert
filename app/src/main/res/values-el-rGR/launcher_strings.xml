@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Απόκρυψη σήματος συντόμευσης</string>
+    <string name="launcher_hide_shortcut_badge_summary">Απόκρυψη του μικρού εικονιδίου της εφαρμογής προέλευσης στις συντομεύσεις</string>
+    <string name="launcher_lock_desktop">Κλείδωμα αρχικής οθόνης</string>
+    <string name="launcher_lock_desktop_summary">Αποτροπή προσθήκης, αφαίρεσης ή μετακίνησης εφαρμογών, συντομεύσεων και γραφικών στοιχείων</string>
+    <string name="launcher_hide_at_a_glance">Απόκρυψη "Με μια ματιά"</string>
+    <string name="launcher_hide_at_a_glance_summary">Απόκρυψη του γραφικού στοιχείου "Με μια ματιά" από την αρχική οθόνη</string>
+    <string name="launcher_wallpaper_zooming">Μεγέθυνση ταπετσαρίας</string>
+    <string name="launcher_wallpaper_zooming_summary">Μεγέθυνση της ταπετσαρίας κατά το άνοιγμα του συρταριού εφαρμογών και της επισκόπησης</string>
+    <string name="launcher_quick_launch">Εκκίνηση πρώτου αποτελέσματος αναζήτησης με Enter</string>
+    <string name="launcher_quick_launch_summary">Πατήστε Enter στην αναζήτηση εφαρμογών για να εκκινήσετε το πρώτο αποτέλεσμα</string>
+    <string name="launcher_hide_drawer_apps">Απόκρυψη εφαρμογών από το συρτάρι εφαρμογών</string>
+    <string name="launcher_hide_drawer_apps_summary">Απόκρυψη επιλεγμένων εφαρμογών από το συρτάρι εφαρμογών και τις προτάσεις</string>
+    <string name="launcher_hidden_apps">Κρυφές εφαρμογές</string>
+    <string name="launcher_search_hidden_apps">Εμφάνιση κρυφών εφαρμογών στην αναζήτηση</string>
+    <string name="launcher_search_hidden_apps_summary">Συνέχιση εμφάνισης κρυφών εφαρμογών στα αποτελέσματα αναζήτησης του συρταριού εφαρμογών</string>
+    <string name="launcher_hidden_apps_search">Αναζήτηση εφαρμογών ή ονομάτων πακέτων</string>
+    <string name="launcher_apps_all">Όλες</string>
+    <string name="launcher_apps_user">Χρήστης</string>
+    <string name="launcher_apps_system">Σύστημα</string>
+</resources>
