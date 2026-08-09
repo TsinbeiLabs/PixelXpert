@@ -228,21 +228,21 @@
     <string name="status_bar_battery">Akkustand</string>
     <string name="status_bar_sensors_off">Sensoren aus</string>
     <string name="sunday">Sonntag</string>
-    <string name="monday">Monntag</string>
+    <string name="monday">Montag</string>
     <string name="tuesday">Dienstag</string>
     <string name="wednesday">Mittwoch</string>
-    <string name="thursday">Donerstag</string>
-    <string name="friday">Frietag</string>
+    <string name="thursday">Donnerstag</string>
+    <string name="friday">Freitag</string>
     <string name="saturday">Samstag</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Taschenlampen Kachel</string>
+    <string name="qs_leveled_flashlight_title">Kachel zur Einstellung der Taschenlampenhelligkeit</string>
     <string name="qs_flashlight_level_global_title">Wenden die Taschenlampenstufe global an</string>
     <string name="qs_tile_qty_title">Schnelleinstellungen Kachelanzahl Einstellungen</string>
-    <string name="qs_leveled_flashlight_summary">Langes Drücken auf Kachel, um den Schieberegler anzuzeigen.\nBenötigt unterstützte Hardware</string>
-    <string name="qs_pulldown_size">Schnell herunterziehen Größe</string>
-    <string name="qs_pulldown_switch_title">Schnelles herunterziehen des Schnelleinstellungsmenüs von der Statusleiste </string>
-    <string name="qs_pulldown_side_title">Schnelles herunterziehen Seite</string>
-    <string name="qs_pulldown_category">Schnelleinstellungen herunterziehen</string>
+    <string name="qs_leveled_flashlight_summary">Kachel lange gedrückt halten, um den Schieberegler anzuzeigen.\nUnterstützte Hardware erforderlich</string>
+    <string name="qs_pulldown_size">Breite des Schnellzugriffs</string>
+    <string name="qs_pulldown_switch_title">Schnelleinstellungen über die Statusleiste herunterziehen</string>
+    <string name="qs_pulldown_side_title">Seite für den Schnellzugriff</string>
+    <string name="qs_pulldown_category">Schnellzugriff auf die Schnelleinstellungen</string>
     <string name="qs_pullup_switch_title">Schnelleinstellungen mit einem Wischen schließen</string>
     <string name="qs_tile_qty_portrait">Im Hochformat</string>
     <string name="qs_tile_qty_landscape">Im Querformat</string>
@@ -250,9 +250,9 @@
     <string name="qs_rows_number">Anzahl Reihen in den Schnelleinstellungen</string>
     <string name="qs_cols_number">Anzahl der QS-Spalten</string>
     <string name="qs_tile_label_size">QS-Kacheletikettengröße</string>
-    <string name="qs_tile_secondary_label_size">Zusammenfassungsgröße des QS Tile-Labels</string>
-    <string name="quick_settings_tiles_category">Schnelleinstellungsverknüpfingsoptionen</string>
-    <string name="qs_volume_unmute_title">Lautstärke Kachel Wert aufheben</string>
+    <string name="qs_tile_secondary_label_size">Größe der Kurzbeschreibung von Schnelleinstellungskacheln</string>
+    <string name="quick_settings_tiles_category">Optionen für Schnelleinstellungskacheln</string>
+    <string name="qs_volume_unmute_title">Lautstärkewert beim Aufheben der Stummschaltung</string>
     <!--Navigation bar related-->
     <string name="back_gesture_category_title">Anpassen der Zurück-Geste</string>
     <string name="back_from_left_title">linker Bildschirmrand</string>
@@ -260,16 +260,16 @@
     <string name="back_height_title">Gestenhöhe</string>
     <string name="gesturenav_header">Gesten Navigation</string>
     <string name="gesture_nav_pill_cat">Gestennavigationsleistenbreite</string>
-    <string name="gesture_nav_pill_width_title">Breite im Vergleich zu der Standartbreite</string>
-    <string name="gesture_nav_pill_height_title">Höhe im Vergleich zu der Standartbreite</string>
+    <string name="gesture_nav_pill_width_title">Breite im Vergleich zur Standardbreite</string>
+    <string name="gesture_nav_pill_height_title">Höhe im Vergleich zur Standardhöhe</string>
     <string name="threebutton_header_title">3-Schaltflächen Navigation</string>
-    <string name="taskbar_header_title">Taskbar navigation</string>
+    <string name="taskbar_header_title">Taskleisten-Navigation</string>
     <string name="modify_3button_title">Ändern Sie die Reihenfolge der Schaltflächen</string>
     <string name="three_button_left_title">Linker Knopf</string>
     <string name="three_button_center_title">Mittler Knopf</string>
     <string name="three_button_right_title">Rechter Knopf</string>
     <string name="hide_navbar_title">Verstecke Gestennavigationsleiste</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">Aussparung der Navigationsleiste ausblenden</string>
     <string name="taskbar_as_recents_title">Konvertieren Sie die Taskbar zu PixelXpert\'s Recents-Leiste</string>
     <string name="taskbar_enable_google_recents">Aktiviere Android Recents in der Taskleiste</string>
     <string name="taskbar_height_title">Höhe der Taskleiste</string>
@@ -296,7 +296,7 @@
     <string name="allow_all_screen_rotations">Entsperre alle Bildschirmdrehungen</string>
     <string name="allow_all_screen_rotations_summary">Ignoriert auch die schwebende Schaltfläche für die manuelle Drehung</string>
     <string name="force_no_cutout">Kameraausschnitt ignorieren</string>
-    <string name="clear_all_reposition_title">Fügen Sie \'alles löschen\' unten auf die Recents-Leiste</string>
+    <string name="clear_all_reposition_title">"Alle löschen" unter den Übersicht-Aktionen hinzufügen</string>
     <string name="force_themed_icons_title">Fehlende Icons automatisch generieren</string>
     <string name="force_themed_icons_summary">Nur Pixel Launcher</string>
     <string name="volume_button_step_title">Lautstärkeschritte (0 bis 100%)</string>
@@ -331,7 +331,7 @@
     <string name="notif_always_expand">Immer erweitern</string>
     <string name="notif_always_collapse">Immer einklappen</string>
     <string name="control_flashlight_with_volume_keys">Taschenlampe mit Lautstärketasten steuern</string>
-    <string name="flashlight_fade_effect">Taschenlampe verblas Effekt</string>
+    <string name="flashlight_fade_effect">Ausblendeffekt der Taschenlampe</string>
     <string name="milliseconds">Millisekunden</string>
     <string name="duration_seconds">%d Sekunden</string>
     <string name="hours">Stunden</string>
@@ -379,7 +379,7 @@
     <string name="date_after">Nach der Uhr (100%)</string>
     <string name="date_after_small">Nach der Uhr (70%)</string>
     <!-- 4G | LTE -->
-    <string name="fourg_lte_default">Systemstandart</string>
+    <string name="fourg_lte_default">Systemstandard</string>
     <string name="fourg_lte_lte">Erzwinge LTE Symbol</string>
     <string name="fourg_lte_fourg">Erzwinge 4G Symbol</string>
     <!-- QS Rows overlays -->
@@ -459,18 +459,19 @@
     <!-- Search Preference -->
     <string name="searchpreference_title">Suchen</string>
     <string name="searchpreference_search">Suche…</string>
-    <string name="searchpreference_clear">Klar</string>
-    <string name="searchpreference_history_entry">Geschichtseintrag</string>
+    <string name="searchpreference_clear">Löschen</string>
+    <string name="searchpreference_history_entry">Verlaufseintrag</string>
     <string name="searchpreference_more">Mehr</string>
-    <string name="searchpreference_clear_history">Klare Geschichte</string>
+    <string name="searchpreference_clear_history">Verlauf löschen</string>
     <string name="searchpreference_no_results">Keine Ergebnisse</string>
     <!-- Hooked Packages Activity -->
     <string name="hooked_packages_title">Verbundene Pakete</string>
     <string name="package_hooked_successful">Paket reaktionsschnell</string>
     <string name="package_not_hook_enabled">Paket in LSposed nicht aktiviert</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert ist in LSPosed noch nicht aktiviert. Öffnen Sie den LSPosed Manager, aktivieren Sie Pixel Xpert und starten Sie anschließend diese App neu</string>
     <string name="package_hook_bootlooped">Hook aufgrund von Bootloop fehlgeschlagen</string>
     <string name="package_hook_no_response">Paket reagiert nicht</string>
+    <string name="package_not_running">App wird nicht ausgeführt</string>
     <string name="package_not_found">Paket nicht gefunden</string>
     <string name="package_checking">Laden%s</string>
     <string name="package_activated">Paket erfolgreich aktiviert</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Was ist falsch?</string>
     <string name="package_not_launchable">Paket kann nicht gestartet werden</string>
     <string name="menu_launch_app">App öffnen</string>
+	<string name="menu_stop_app">App beenden</string>
     <string name="menu_restart_app">App neu starten</string>
     <string name="why">warum?</string>
     <string name="okay">Okay</string>
@@ -491,7 +493,7 @@
     <string name="connecting_root_service">Verbindung zum Root-Dienst herstellen…</string>
     <string name="root_access_denied">Root-Zugriff verweigert. Bitte erlauben Sie Root-Zugriff.</string>
     <string name="root_service_failed">Keine Verbindung zu Root-Diensten möglich. Bitte versuchen Sie es später erneut</string>
-    <string name="exit">Ausfahrt</string>
+    <string name="exit">Beenden</string>
     <!-- Bottom Navigation -->
     <string name="navigation_home">Startseite</string>
     <string name="navigation_update">Update</string>
@@ -523,7 +525,7 @@
     <string name="icon_pack_author">von %s</string>
     <string name="icon_pack_unknown_author">von unbekannter Autor</string>
     <string name="icon_pack_unknown_name">Unbekanntes Icon-Paket</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
+    <string name="icon_pack_pack_reset">Symbole zurücksetzen</string>
     <string name="icon_pack_info">Icon-Pack-Info</string>
     <string name="no_icon_pack_installed">Kein Icon-Pack installiert</string>
     <string name="icon_pack_disclaimer_title">Haftungsausschluss</string>
@@ -540,4 +542,116 @@
     <string name="restart_now">Neustarten</string>
     <string name="watts">Watt</string>
     <string name="fast_charging_threshold_title">Schnelle Ladeschwelle</string>
+    <!-- DocumentsUI, package manager, and Gboard -->
+    <string name="documentsui_header">Dateien &amp; Dokumentauswahl</string>
+    <string name="documentsui_header_summary">Verhalten beim Durchsuchen und Sortieren von Dateien</string>
+    <string name="documentsui_remember_sort_title">Sortierreihenfolge merken</string>
+    <string name="documentsui_remember_sort_summary">Globale Sortierreihenfolge und optionale Abweichungen pro Ordner in der System-Dateiauswahl beibehalten</string>
+    <string name="documentsui_remember_sort_usage">Im Sortiermenü der Dateiauswahl normal tippen, um die globale Sortierung zu ändern. Eine Sortieroption lange drücken, um sie nur für den aktuellen Ordner zu speichern. Eine normale Auswahl löscht außerdem die Abweichung dieses Ordners.</string>
+    <string name="lockscreen_security_category">Sicherheit des Sperrbildschirms</string>
+    <string name="lockscreen_block_power_menu_title">Ein-/Aus-Menü im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_block_power_menu_summary">Blockiert auch die Ein-/Aus-Schaltfläche in den Schnelleinstellungen und die Hardware-Tastenkombination</string>
+    <string name="lockscreen_block_internet_title">Internetsteuerung im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_block_airplane_title">Flugmodus im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_block_bluetooth_title">Bluetooth im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_block_hotspot_title">Hotspot im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_block_dnd_title">„Bitte nicht stören“ im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_block_ringer_title">Änderungen des Klingelmodus im gesperrten Zustand blockieren</string>
+    <string name="lockscreen_unlock_to_use">Zum Verwenden entsperren</string>
+    <string name="pm_advanced_category">Erweiterte Installationsprüfungen</string>
+    <string name="pm_exact_signature_title">Exakte Signaturübereinstimmung geteilter APKs umgehen</string>
+    <string name="pm_exact_signature_summary">Hohes Risiko: Basis-APK und geteilte APKs dürfen bei der Installation unterschiedliche Signaturdaten aufweisen</string>
+    <string name="pm_shared_uid_title">Signaturprüfungen für gemeinsame UID umgehen</string>
+    <string name="pm_shared_uid_summary">Hohes Risiko: unterschiedlich signierte Benutzer-Apps dürfen bei gemeinsamer UID aktualisiert werden; die Einschränkungen für gemeinsame Plattform-UIDs bleiben bestehen</string>
+    <string name="pm_installer_redirect_category">Installer-Umleitung</string>
+    <string name="pm_installer_redirect_title">Paketinstaller umleiten</string>
+    <string name="pm_installer_redirect_summary">APK-Installationsanfragen und optional Deinstallationsanfragen an eine ausgewählte App senden</string>
+    <string name="pm_installer_target_title">Installer</string>
+    <string name="pm_installer_system_default">Systemstandard</string>
+    <string name="pm_force_explicit_installer_title">Explizit ausgewählten Installer überschreiben</string>
+    <string name="pm_force_explicit_installer_summary">Auch Anfragen umleiten, die fest auf eine bestimmte Installer-Komponente verweisen</string>
+    <string name="pm_intercept_session_title">Bestätigung der Sitzungsinstallation umleiten</string>
+    <string name="pm_intercept_session_summary">Anfragen vom Typ CONFIRM_INSTALL und CONFIRM_PERMISSIONS abfangen</string>
+    <string name="pm_fix_session_permissions_title">Zugriff auf APK-Pfade der Sitzung korrigieren</string>
+    <string name="pm_fix_session_permissions_summary">Experimentelle Kompatibilitätskorrektur für externe Installer unter Android 14+</string>
+    <string name="pm_intercept_uninstall_title">Deinstallationsanfragen umleiten</string>
+    <string name="pm_intercept_uninstall_summary">ACTION_DELETE und ACTION_UNINSTALL_PACKAGE an die ausgewählte App senden</string>
+    <string name="pm_uninstall_follow_installer_title">Installer auch für Deinstallationsanfragen verwenden</string>
+    <string name="pm_uninstaller_target_title">Deinstallationsprogramm</string>
+    <string name="app_info_enhancements_category">App-Info</string>
+    <string name="app_info_show_version_code_title">Versionscode anzeigen</string>
+    <string name="app_info_allow_disable_user_apps_title">Deaktivieren von Benutzer-Apps zulassen</string>
+    <string name="app_info_allow_disable_user_apps_summary">Fügt der App-Info für Nicht-System-Apps eine Aktion zum Aktivieren und Deaktivieren hinzu</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Design, Zwischenablage, Datenschutz und experimentelle Eingabefunktionen</string>
+    <string name="gboard_theme_category">Design</string>
+    <string name="gboard_amoled_black_title">AMOLED-Schwarz im Dunkelmodus</string>
+    <string name="gboard_amoled_black_summary">Material-Expressive-Oberflächencontainer tiefschwarz darstellen und Akzentfarben beibehalten</string>
+    <string name="gboard_clipboard_category">Zwischenablage</string>
+    <string name="gboard_clipboard_history_title">Verlauf der Zwischenablage anpassen</string>
+    <string name="gboard_clipboard_history_summary">Anzahl und Alter der von Gboard angeforderten Einträge ändern; bereits von Gboard gelöschte ältere Einträge können nicht wiederhergestellt werden</string>
+    <string name="gboard_clipboard_size_title">Maximal sichtbare Einträge</string>
+    <string name="gboard_clipboard_size_summary">Zulässiger Bereich: 5 bis 100</string>
+    <string name="gboard_clipboard_days_title">Sichtbarer Verlauf in Tagen</string>
+    <string name="gboard_clipboard_days_summary">Zulässiger Bereich: 0 bis 3650; 0 fordert alle gespeicherten Einträge an</string>
+    <string name="gboard_secure_clipboard_title">Vertrauliche Texte nicht im Gboard-Verlauf speichern</string>
+    <string name="gboard_secure_clipboard_summary">Einträge aus Passwortfeldern sowie wahrscheinliche Bestätigungscodes, PINs oder lange Kontonummern blockieren</string>
+    <string name="gboard_clipboard_chips_title">Aktionschips der Zwischenablage</string>
+    <string name="gboard_clipboard_chips_summary">Gboard-Aktionschips, Entitätserkennung und Experimente zum Kopieren in Antworten aktivieren</string>
+    <string name="gboard_privacy_category">Datenschutz</string>
+    <string name="gboard_force_incognito_title">Personalisiertes Lernen deaktivieren</string>
+    <string name="gboard_force_incognito_summary">Für jedes Eingabefeld personalisiertes Lernen unterbinden; die vollständige Inkognito-Oberfläche von Gboard wird dadurch nicht erzwungen</string>
+    <string name="gboard_privacy_flags_title">Telemetrie und Training reduzieren</string>
+    <string name="gboard_privacy_flags_summary">Bekannte Gboard-Flags für Korrekturspeicherung, Inhaltserfassung, Protokollierung, Messwerte und Trainingscaches überschreiben</string>
+    <string name="gboard_input_category">Eingabeverbesserungen</string>
+    <string name="gboard_multilingual_title">Mehrsprachige Eingabe</string>
+    <string name="gboard_multilingual_summary">Bekannte Experimente für mehrsprachige Eingabe, Vorschläge sowie Pixel- und Sprachverbesserungen aktivieren</string>
+    <string name="gboard_ai_title">KI und intelligente Eingabe</string>
+    <string name="gboard_ai_summary">Bekannte Experimente für Smart Reply, Smart Compose, Emojify, Sticker und AI Core aktivieren</string>
+    <string name="gboard_grammar_title">Grammatik und Korrekturlesen</string>
+    <string name="gboard_grammar_summary">Bekannte lokale Experimente für Korrekturlesen, Grammatikprüfung, Schreibwerkzeuge und Textumwandlung aktivieren</string>
+    <string name="gboard_floating_title">Schwebende und geteilte Tastatur</string>
+    <string name="gboard_floating_summary">Experimente für Querformat, Mehrfenstermodus, freie Fenster, geteilte Tablet-Tastatur, Größenregler und Übergänge aktivieren</string>
+    <string name="gboard_emoji_kitchen_title">Erweiterungen für Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Experimente zum Durchsuchen, Suchen, Empfehlen, Animieren und zur eingebetteten Auswahl aktivieren</string>
+    <string name="gboard_access_point_title">Neugestaltung des Kurzbefehlmenüs</string>
+    <string name="gboard_access_point_summary">Experimente für Zugriffspunktmenü, Silk-Design, Systemschrift, Google Sans, benutzerdefinierte Designs und Animationen aktivieren</string>
+    <string name="gboard_metered_downloads_title">Downloads über getaktete Netzwerke zulassen</string>
+    <string name="gboard_metered_downloads_summary">Bekannte Downloads von Sprach-, Spracherkennungs- und Sprachpaketen über Mobilfunk oder andere getaktete Verbindungen zulassen</string>
+    <string name="gboard_experimental_category">Experimentelle Engines</string>
+    <string name="gboard_experimental_summary">Verwendet private Gboard-Flags und kann sich nach einem Update ändern oder nicht mehr funktionieren; Gboard nach Änderungen neu starten</string>
+    <string name="gboard_inline_suggestions_title">Mehrwortvorschläge im Textfeld</string>
+    <string name="gboard_proactive_emoji_title">Proaktive Emoji-Vorschläge</string>
+    <string name="gboard_tflite_title">TFLite-Vorhersage-Engines</string>
+    <string name="gboard_fast_access_title">Schnellzugriffsleiste</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="dialer_force_enable_call_recording_title">Anrufaufzeichnung erzwingen</string>
+    <string name="dialer_force_enable_call_recording_summary">Schaltet die integrierte Anrufaufzeichnung in der Google-Telefon-App in nicht unterstützten Regionen frei</string>
+    <string name="landscape_split_shade_title">Tablet-ähnliche Benachrichtigungsleiste im Querformat</string>
+    <string name="landscape_split_shade_summary">Zeigt Schnelleinstellungen und Benachrichtigungen nebeneinander, wenn das Telefon waagerecht gedreht wird</string>
+    <string name="recents_clear_all">Alle schließen</string>
+    <string name="launcher_header">Launcher</string>
+    <string name="launcher_header_summary">Verbesserungen für Übersicht und Startbildschirm</string>
+    <string name="launcher_home_section">Startbildschirm</string>
+    <string name="launcher_drawer_section">App-Übersicht</string>
+    <string name="launcher_recents_section">Letzte Aufgaben</string>
+    <string name="launcher_hide_desktop_labels">App-Namen auf dem Startbildschirm ausblenden</string>
+    <string name="launcher_hide_desktop_search">Suchleiste auf dem Startbildschirm ausblenden</string>
+    <string name="launcher_hide_drawer_labels">App-Namen in der App-Übersicht ausblenden</string>
+    <string name="launcher_hide_drawer_search">Suchleiste in der App-Übersicht ausblenden</string>
+    <string name="recents_remove_screenshot">Aktion „Screenshot“ entfernen</string>
+    <string name="recents_equal_action_widths">Gleiche Breite für Aktionsschaltflächen verwenden</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Personalisierung</string>
+	<string name="home_category_system_interface">Systemoberfläche</string>
+	<string name="home_category_app_enhancements">App-Optimierungen</string>
+	<string name="home_category_system_tools">Systemwerkzeuge</string>
 </resources>

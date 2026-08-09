@@ -71,6 +71,17 @@ public class RootProvider extends RootService {
 		}
 
 		@Override
+		public boolean isPackageRunning(String packageName) throws RemoteException {
+			if (Constants.SYSTEM_FRAMEWORK_PACKAGE.equals(packageName)) {
+				packageName = "system_server";
+			}
+			String escapedPackageName = packageName.replace("'", "'\\\"'\\\"'");
+			return Shell.cmd("ps -A -o NAME | awk -v package='" + escapedPackageName
+					+ "' '$1 == package || index($1, package \":\") == 1 { found = 1 } END { exit !found }'")
+					.exec().isSuccess();
+		}
+
+		@Override
 		public boolean activateInLSPosed(String packageName) throws RemoteException {
 			if (Constants.SYSTEM_FRAMEWORK_PACKAGE.equals(packageName)) //new LSPosed versions renamed framework
 				packageName = "system";

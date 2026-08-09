@@ -89,7 +89,7 @@ public class MaterialPreferenceMain extends Preference {
 	}
 
 	private Pair<Integer, Integer> getColors(int index) {
-		return switch (index % 10) {
+		return switch (index % 12) {
 			case 0 ->
 					new Pair<>(R.color.main_preference_color_1, R.color.main_preference_on_color_1);
 			case 1 ->
@@ -108,8 +108,12 @@ public class MaterialPreferenceMain extends Preference {
 					new Pair<>(R.color.main_preference_color_8, R.color.main_preference_on_color_8);
 			case 8 ->
 					new Pair<>(R.color.main_preference_color_9, R.color.main_preference_on_color_9);
-			default ->
+			case 9 ->
 					new Pair<>(R.color.main_preference_color_10, R.color.main_preference_on_color_10);
+			case 10 ->
+					new Pair<>(R.color.main_preference_color_11, R.color.main_preference_on_color_11);
+			default ->
+					new Pair<>(R.color.main_preference_color_12, R.color.main_preference_on_color_12);
 		};
 	}
 }

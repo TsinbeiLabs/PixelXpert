@@ -33,11 +33,11 @@
     <string name="update_over_wifi_title">WiFi 経由でのみアップデートを確認する</string>
     <string name="update_over_wifi_summary">Wi-Fi に接続している場合にのみバックグラウンドでアップデートを確認する</string>
     <string name="github_repo_title">GitHub リポジトリ</string>
-    <string name="telegram_group_title">Telegram channel</string>
+    <string name="telegram_group_title">Telegram チャンネル</string>
     <string name="usage_title">使用法</string>
     <string name="usage_summary">ウィキページを開く</string>
     <string name="crowdin_title">翻訳</string>
-    <string name="crowdin_summary"></string>
+    <string name="crowdin_summary">%s の日本語翻訳にご協力ください</string>
     <string name="nothing_to_show">利用できるコンテンツはありません</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">ロック画面</string>
@@ -64,7 +64,7 @@
     <string name="hotspot_max_client_title">最大クライアント数</string>
     <string name="hotspot_disable_approval_title">アクセスポイント接続の問題を回避</string>
     <string name="hotspot_disable_approval_summary">事前に承認されていないクライアントがシームレスに接続できるようにする</string>
-    <string name="hotspot_force_unsupported_regions">Remove hotspot limitations in unsupported regions</string>
+    <string name="hotspot_force_unsupported_regions">未対応地域でのアクセス ポイントの制限を解除</string>
     <!--Lock screen related-->
     <string name="depth_wallpaper_options">壁紙の被写体深度エフェクト</string>
     <string name="depth_wallpaper_title">被写体深度エフェクト</string>
@@ -114,7 +114,7 @@
     <string name="caution_mobile_costs">注意 - ローミングの接続をしている事に気づかずに高額な料金請求をされてしまう可能性があります。</string>
     <string name="volte_icon_title">VoLTEアイコンを表示</string>
     <string name="vowifi_icon_title">利用可能な場合は VoWiFi アイコンを表示</string>
-    <string name="hide_privacychip_title">プライバシーインジケーターを非表示 (カメラ、マイク)</string>
+    <string name="hide_privacychip_title">プライバシー インジケーターを非表示\n(カメラ、マイク)</string>
     <!-- \n means next line-->
     <string name="sbc_position_title">時計の位置</string>
     <string name="sbc_ampm_style">AM/PMを表示</string>
@@ -235,10 +235,10 @@
     <string name="friday">金曜日</string>
     <string name="saturday">土曜日</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">ライトの輝度タイル</string>
+    <string name="qs_leveled_flashlight_title">ライトの明るさ調整タイル</string>
     <string name="qs_flashlight_level_global_title">懐中電灯のレベルを全体的に変更</string>
     <string name="qs_tile_qty_title">クイック設定のタイルの数</string>
-    <string name="qs_leveled_flashlight_summary">タイルを長押ししてスライダーを表示します\nハードウェアが対応してある必要があります</string>
+    <string name="qs_leveled_flashlight_summary">タイルを長押しするとスライダーが表示されます\n対応するハードウェアが必要です</string>
     <string name="qs_pulldown_size">クイックプルダウンの幅</string>
     <string name="qs_pulldown_switch_title">ステータスバーからクイック設定をプルダウン</string>
     <string name="qs_pulldown_side_title">クイックプルダウンの側面</string>
@@ -247,40 +247,40 @@
     <string name="qs_tile_qty_portrait">縦方向時</string>
     <string name="qs_tile_qty_landscape">横方向時</string>
     <string name="qqs_rows_number">クイック設定の行数</string>
-    <string name="qs_rows_number">クイック設定の列数</string>
+    <string name="qs_rows_number">クイック設定の行数</string>
     <string name="qs_cols_number">クイック設定のカラム数</string>
     <string name="qs_tile_label_size">クイック設定のラベルの大きさ</string>
     <string name="qs_tile_secondary_label_size">クイック設定の説明ラベルの文字の大きさ</string>
     <string name="quick_settings_tiles_category">クイック設定タイルのオプション</string>
     <string name="qs_volume_unmute_title">ボリュームタイルのミュート解除値</string>
     <!--Navigation bar related-->
-    <string name="back_gesture_category_title">Configure back gesture</string>
-    <string name="back_from_left_title">Left side of the screen</string>
-    <string name="back_from_right_title">Right side of the screen</string>
-    <string name="back_height_title">Gesture height</string>
-    <string name="gesturenav_header">Gesture navigation</string>
-    <string name="gesture_nav_pill_cat">Navigation bar pill</string>
-    <string name="gesture_nav_pill_width_title">Width compared to standard size</string>
-    <string name="gesture_nav_pill_height_title">Height compared to standard size</string>
-    <string name="threebutton_header_title">3-Button navigation</string>
+    <string name="back_gesture_category_title">戻るジェスチャーの設定</string>
+    <string name="back_from_left_title">画面の左側</string>
+    <string name="back_from_right_title">画面の右側</string>
+    <string name="back_height_title">ジェスチャーの高さ</string>
+    <string name="gesturenav_header">ジェスチャーナビゲーション</string>
+    <string name="gesture_nav_pill_cat">ナビゲーションバーのピル</string>
+    <string name="gesture_nav_pill_width_title">標準サイズに対する幅</string>
+    <string name="gesture_nav_pill_height_title">標準サイズに対する高さ</string>
+    <string name="threebutton_header_title">3 ボタン ナビゲーション</string>
     <string name="taskbar_header_title">タスクバーナビゲーション</string>
-    <string name="modify_3button_title">Modify the buttons order</string>
+    <string name="modify_3button_title">ボタンの順序を変更</string>
     <string name="three_button_left_title">左のボタン</string>
     <string name="three_button_center_title">中央のボタン</string>
     <string name="three_button_right_title">右のボタン</string>
     <string name="hide_navbar_title">ナビゲーションバーを非表示</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">ナビゲーション バーの余白も非表示</string>
     <string name="taskbar_as_recents_title">タスクバーをPixelXpertのアプリ履歴バーに切り替える</string>
     <string name="taskbar_enable_google_recents">タスクバーにアプリ履歴を表示する</string>
     <string name="taskbar_height_title">タスクバーの高さ</string>
     <string name="taskbar_radius_title">タスクバーの角の丸み</string>
-    <string name="colorpill">Accent colored gesture pill</string>
+    <string name="colorpill">ジェスチャー バーにアクセント カラーを使用</string>
     <string name="taskbar_status_title">Androidタスクバー</string>
     <string name="taskbar_force_enable_title">強制的に有効</string>
     <string name="taskbar_force_disable_title">強制的に無効</string>
     <string name="taskbar_transient_title">自動非表示</string>
     <string name="taskbar_on_launcher_title">ホームに表示</string>
-    <string name="remap_physical_buttons_title">Remap physical button</string>
+    <string name="remap_physical_buttons_title">物理ボタンの機能を変更</string>
     <string name="taskbar_on_ime_title">キーボードが開いているときに表示</string>
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">パッケージ署名チェックをバイパスする</string>
@@ -293,10 +293,10 @@
     <string name="screenshot_insecure">制限されたコンテンツからのスクリーンショットを許可する</string>
     <string name="screen_record_insecure">制限されたコンテンツからの画面録画を許可する</string>
     <string name="clipboard_smart_actions_title">クリップボードのオーバーレイ上のスマートアクション</string>
-    <string name="allow_all_screen_rotations">Force-unlock all screen rotations</string>
-    <string name="allow_all_screen_rotations_summary">Will also ignore manual rotation floating button</string>
-    <string name="force_no_cutout">Ignore the camera cutout</string>
-    <string name="clear_all_reposition_title">Add an accessible clear-all button to recents page</string>
+    <string name="allow_all_screen_rotations">すべての画面回転方向を強制的に許可</string>
+    <string name="allow_all_screen_rotations_summary">手動回転用のフローティング ボタンも無視します</string>
+    <string name="force_no_cutout">カメラの切り欠きを無視</string>
+    <string name="clear_all_reposition_title">最近の操作の下に「すべてクリア」を追加</string>
     <string name="force_themed_icons_title">不足しているテーマアイコンを自動生成</string>
     <string name="force_themed_icons_summary">Pixel launcher のみ</string>
     <string name="volume_button_step_title">ボリュームステップ (0から100%)</string>
@@ -304,7 +304,7 @@
     <string name="display_resolution_switch_summary">これを有効にする前に、すべての表示サイズ/dpiの変更をデフォルトに設定してください</string>
     <string name="display_resolution_title">画面の解像度</string>
     <string name="brightness_range_title">ディスプレイの明るさ制限</string>
-    <string name="brightness_range_not_linear">This range is NOT linear: Sometimes a small difference leads to considerable changes</string>
+    <string name="brightness_range_not_linear">この範囲は線形ではありません。わずかな値の違いで明るさが大きく変わる場合があります</string>
     <string name="so_taptaptorch_title">ロック画面をダブルタップで懐中電灯を起動</string>
     <string name="so_taptaptorch_summary">ダブルタップと長押しで懐中電灯に素早くアクセス可能になります</string>
     <string name="so_fingerprint_sensor_enabled">画面オフ時の指紋認証を許可</string>
@@ -312,11 +312,11 @@
     <string name="so_double_tap_wake_summary">シングルタップで画面を点灯を無効化します</string>
     <string name="so_tap_to_show_ambient_title">タップしてアンビエント表示を表示</string>
     <string name="so_tap_to_show_ambient_summary">【常時表示オフ時】 画面をタップするとアンビエント表示になります</string>
-    <string name="so_pick_to_show_ambient_title">選択してアンビエント表示を表示します</string>
-    <string name="so_pick_to_show_ambient_summary">【常時表示オフ時】受話器を取るとアンビエント表示が表示されます</string>
+    <string name="so_pick_to_show_ambient_title">持ち上げてアンビエント表示を表示</string>
+    <string name="so_pick_to_show_ambient_summary">【常時表示オフ時】スマートフォンを持ち上げるとアンビエント表示を表示します</string>
     <string name="force_aod_while_charging_title">強制的にAODを使用</string>
     <string name="force_aod_while_charging_summary">充電中は常に画面をオンにする</string>
-    <string name="doze_header">While screen is off…</string>
+    <string name="doze_header">画面がオフのとき…</string>
     <string name="px_in_settings_title">PixelXpert を設定画面に追加</string>
     <string name="advanced_power_menu_title">高度な電源メニュー</string>
     <string name="sleep_on_flat_screen_title">平らな面で画面をオフにする</string>
@@ -324,9 +324,9 @@
     <string name="flat_screen_timeout_title">フラットサーフェスでの画面タイムアウト</string>
     <string name="flat_screen_timeout_respect_wakelock_title">ウェイクロックを尊重する</string>
     <string name="notifications_header">通知のオプション</string>
-    <string name="expand_notifications_icons_title">Add expand/collapse all buttons</string>
+    <string name="expand_notifications_icons_title">すべて展開／折りたたむボタンを追加</string>
     <string name="disbale_ongoing_notif_dismiss_title">進行中の通知を削除しない</string>
-    <string name="heads_up_notification_duration">Heads-up notification duration</string>
+    <string name="heads_up_notification_duration">ポップアップ通知の表示時間</string>
     <string name="notif_default_expansion_title">通知のデフォルト展開</string>
     <string name="notif_always_expand">常に展開</string>
     <string name="notif_always_collapse">常に折りたたむ</string>
@@ -359,7 +359,7 @@
     <string name="vibration_type_notification">システム通知の振動設定によって定義される強度</string>
     <string name="dialer_mute_record_message_title">通話録音アナウンスを削除する</string>
     <string name="dialer_mute_record_message_summary">通話録音が有効になっている Google 電話アプリにのみ適用されます</string>
-    <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
+    <string name="radio_force_volte_nr">未対応地域で VoLTE/NR を強制的に有効化</string>
     <!-- Arrays strings -->
     <!-- Quick pull down -->
     <string name="pull_down_left">左</string>
@@ -371,13 +371,13 @@
     <string name="clock_center">中央</string>
     <string name="clock_right">右</string>
     <!-- AM/PM style -->
-    <string name="am_pm_normal">100% size of the clock</string>
-    <string name="am_pm_small">70% size of the clock</string>
+    <string name="am_pm_normal">時計と同じサイズ (100%)</string>
+    <string name="am_pm_small">時計の 70% のサイズ</string>
     <!-- Date position -->
-    <string name="date_before">Before Clock (100%)</string>
-    <string name="date_before_small">Before Clock (70%)</string>
-    <string name="date_after">After Clock (100%)</string>
-    <string name="date_after_small">After Clock (70%)</string>
+    <string name="date_before">時計の前 (100%)</string>
+    <string name="date_before_small">時計の前 (70%)</string>
+    <string name="date_after">時計の後 (100%)</string>
+    <string name="date_after_small">時計の後 (70%)</string>
     <!-- 4G | LTE -->
     <string name="fourg_lte_default">システムの既定</string>
     <string name="fourg_lte_lte">LTEアイコンを強制</string>
@@ -446,10 +446,10 @@
     <string name="gesture_nav_long_swipe_fc_title">画面を上にスワイプしてフォアグラウンドアプリを終了します</string>
     <string name="gesture_nav_left_swipe_up_title">ナビゲーションバーの左から上にスワイプ</string>
     <string name="gesture_nav_right_swipe_up_title">ナビゲーションバーの右から上にスワイプ</string>
-    <string name="gesture_nav_left_swipe_up_percent">Left swipe-up area width (%)</string>
-    <string name="gesture_nav_right_swipe_up_percent">Right swipe-up area width (%)</string>
+    <string name="gesture_nav_left_swipe_up_percent">左側の上スワイプ領域の幅 (%)</string>
+    <string name="gesture_nav_right_swipe_up_percent">右側の上スワイプ領域の幅 (%)</string>
     <string name="gesture_nav_two_finger_title">2本指でのスワイプアップアクション</string>
-    <string name="gesture_nav_swipe_up_height">Swipe-up actions minimum trigger height</string>
+    <string name="gesture_nav_swipe_up_height">上スワイプ操作が反応する最小の高さ</string>
     <string name="none">なし</string>
     <string name="screenshot">スクリーンショット</string>
     <string name="kill_foreground_app">フォアグラウンドアプリを終了</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">接続されたパッケージ</string>
     <string name="package_hooked_successful">パッケージレスポンシブ</string>
     <string name="package_not_hook_enabled">LSposed でパッケージが有効になっていません</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert はまだ LSPosed で有効になっていません。LSPosed マネージャーを開いて Pixel Xpert を有効にしてから、このアプリを再起動してください</string>
     <string name="package_hook_bootlooped">ブートループのためフックに失敗しました</string>
     <string name="package_hook_no_response">パッケージが応答しない</string>
+    <string name="package_not_running">アプリは実行されていません</string>
     <string name="package_not_found">パッケージが見つかりません</string>
     <string name="package_checking">%sを読み込み中</string>
     <string name="package_activated">パッケージが正常にアクティブ化されました</string>
     <string name="package_activation_failed">パッケージのアクティベーションに失敗しました</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed がインストールされていません</string>
     <string name="activate_in_lsposed">LSPosed でアクティブ化する</string>
     <string name="package_not_hook_enabled_info">アプリがインストールされていますが、LSPosed はフックするように設定されていません。「%s」をクリックして有効にしてください。</string>
     <string name="package_hook_bootlooped_info">アプリのフックによりブートループが発生したため、さらなる問題を防ぐために無効化されています。</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">どうしたの？</string>
     <string name="package_not_launchable">起動可能パッケージではありません</string>
     <string name="menu_launch_app">アプリを起動</string>
+	<string name="menu_stop_app">アプリを停止</string>
     <string name="menu_restart_app">アプリを再起動</string>
     <string name="why">どうして?</string>
     <string name="okay">OK</string>
@@ -523,7 +525,7 @@
     <string name="icon_pack_author">作成者： %s</string>
     <string name="icon_pack_unknown_author">不明な作者による</string>
     <string name="icon_pack_unknown_name">不明なアイコンパック</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
+    <string name="icon_pack_pack_reset">アイコンをリセット</string>
     <string name="icon_pack_info">アイコンパック情報</string>
     <string name="no_icon_pack_installed">アイコンパックがインストールされていません</string>
     <string name="icon_pack_disclaimer_title">免責事項</string>
@@ -540,4 +542,116 @@
     <string name="restart_now">今すぐ再起動</string>
     <string name="watts">ワット数</string>
     <string name="fast_charging_threshold_title">急速充電しきい値</string>
+    <!-- Newly introduced strings -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">ファイルとドキュメント選択</string>
+    <string name="documentsui_header_summary">ファイルの参照方法と並べ替え動作を変更</string>
+    <string name="documentsui_remember_sort_title">並べ替え順を記憶</string>
+    <string name="documentsui_remember_sort_summary">システムのファイル選択画面で、共通の並べ替え順とフォルダごとの並べ替え順を記憶します</string>
+    <string name="documentsui_remember_sort_usage">ファイル選択画面の並べ替えメニューで項目をタップすると、共通の並べ替え順が更新されます。並べ替え項目を長押しすると、現在のフォルダだけに適用する順序として保存されます。通常どおりタップすると、そのフォルダ固有の設定も解除されます。</string>
+    <string name="lockscreen_security_category">ロック画面のセキュリティ</string>
+    <string name="lockscreen_block_power_menu_title">ロック中は電源メニューを無効にする</string>
+    <string name="lockscreen_block_power_menu_summary">クイック設定の電源ボタンとハードウェアキーのショートカットも無効になります</string>
+    <string name="lockscreen_block_internet_title">ロック中はインターネットの操作を無効にする</string>
+    <string name="lockscreen_block_airplane_title">ロック中は機内モードの切り替えを無効にする</string>
+    <string name="lockscreen_block_bluetooth_title">ロック中は Bluetooth の操作を無効にする</string>
+    <string name="lockscreen_block_hotspot_title">ロック中はアクセス ポイントの操作を無効にする</string>
+    <string name="lockscreen_block_dnd_title">ロック中はサイレント モードの操作を無効にする</string>
+    <string name="lockscreen_block_ringer_title">ロック中は着信音モードの変更を無効にする</string>
+    <string name="lockscreen_unlock_to_use">使用するにはロックを解除してください</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">高度なインストール チェック</string>
+    <string name="pm_exact_signature_title">split APK の厳密な署名照合を回避</string>
+    <string name="pm_exact_signature_summary">高リスク: インストール時にベース APK と split APK の署名情報が異なることを許可します</string>
+    <string name="pm_shared_uid_title">共有 UID の署名チェックを回避</string>
+    <string name="pm_shared_uid_summary">高リスク: 共有 UID を使用する、署名が異なるユーザーアプリの更新を許可します。プラットフォームの共有 UID に関する制限は維持されます</string>
+    <string name="pm_installer_redirect_category">インストーラのリダイレクト</string>
+    <string name="pm_installer_redirect_title">パッケージ インストーラをリダイレクト</string>
+    <string name="pm_installer_redirect_summary">APK のインストール要求と、必要に応じてアンインストール要求を選択したアプリに送ります</string>
+    <string name="pm_installer_target_title">インストーラ</string>
+    <string name="pm_installer_system_default">システムのデフォルト</string>
+    <string name="pm_force_explicit_installer_title">明示的に指定されたインストーラも置き換える</string>
+    <string name="pm_force_explicit_installer_summary">特定のインストーラ コンポーネントが直接指定された要求もリダイレクトします</string>
+    <string name="pm_intercept_session_title">セッション インストールの確認画面をリダイレクト</string>
+    <string name="pm_intercept_session_summary">CONFIRM_INSTALL と CONFIRM_PERMISSIONS の要求をインターセプトします</string>
+    <string name="pm_fix_session_permissions_title">セッション APK のパスへのアクセスを修正</string>
+    <string name="pm_fix_session_permissions_summary">外部インストーラ向けの Android 14 以降の試験的な互換性修正です</string>
+    <string name="pm_intercept_uninstall_title">アンインストール要求をリダイレクト</string>
+    <string name="pm_intercept_uninstall_summary">ACTION_DELETE と ACTION_UNINSTALL_PACKAGE を選択したアプリに送ります</string>
+    <string name="pm_uninstall_follow_installer_title">アンインストール要求にもインストーラを使用</string>
+    <string name="pm_uninstaller_target_title">アンインストーラ</string>
+    <string name="app_info_enhancements_category">アプリ情報</string>
+    <string name="app_info_show_version_code_title">バージョン コードを表示</string>
+    <string name="app_info_allow_disable_user_apps_title">ユーザーアプリの無効化を許可</string>
+    <string name="app_info_allow_disable_user_apps_summary">システムアプリ以外のアプリ情報に、有効化または無効化する操作を追加します</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">テーマ、クリップボード、プライバシー、試験的な入力機能</string>
+    <string name="gboard_theme_category">テーマ</string>
+    <string name="gboard_amoled_black_title">ダークモードで AMOLED ブラックを使用</string>
+    <string name="gboard_amoled_black_summary">アクセント カラーを維持したまま、Material Expressive のサーフェス コンテナを完全な黒にします</string>
+    <string name="gboard_clipboard_category">クリップボード</string>
+    <string name="gboard_clipboard_history_title">クリップボード履歴をカスタマイズ</string>
+    <string name="gboard_clipboard_history_summary">Gboard が取得する項目数と保存期間を変更します。Gboard によってすでに削除された古い項目は復元できません</string>
+    <string name="gboard_clipboard_size_title">表示する項目の最大数</string>
+    <string name="gboard_clipboard_size_summary">設定可能な範囲: 5～100</string>
+    <string name="gboard_clipboard_days_title">履歴を表示する日数</string>
+    <string name="gboard_clipboard_days_summary">設定可能な範囲: 0～3650。0 にすると保持されているすべての項目を取得します</string>
+    <string name="gboard_secure_clipboard_title">機密テキストを Gboard の履歴に保存しない</string>
+    <string name="gboard_secure_clipboard_summary">パスワード欄からコピーした項目や、確認コード、PIN、長い口座番号と思われる項目を除外します</string>
+    <string name="gboard_clipboard_chips_title">クリップボードのアクション チップ</string>
+    <string name="gboard_clipboard_chips_summary">Gboard のアクション チップ、エンティティ抽出、コピーして返信する試験機能を有効にします</string>
+    <string name="gboard_privacy_category">プライバシー</string>
+    <string name="gboard_force_incognito_title">パーソナライズ学習を無効にする</string>
+    <string name="gboard_force_incognito_summary">すべての入力欄でパーソナライズ学習を行わないよう要求します。Gboard のシークレット モード画面全体を強制するものではありません</string>
+    <string name="gboard_privacy_flags_title">テレメトリーと学習を削減</string>
+    <string name="gboard_privacy_flags_summary">修正履歴の保存、コンテンツ取得、ログ、指標、学習キャッシュに関する既知の Gboard フラグを上書きします</string>
+    <string name="gboard_input_category">入力機能の強化</string>
+    <string name="gboard_multilingual_title">多言語入力</string>
+    <string name="gboard_multilingual_summary">多言語入力、候補、Pixel、音声入力の強化に関する既知の試験機能を有効にします</string>
+    <string name="gboard_ai_title">AI とスマート入力</string>
+    <string name="gboard_ai_summary">スマート リプライ、スマート作成、絵文字化、ステッカー、AI Core に関する既知の試験機能を有効にします</string>
+    <string name="gboard_grammar_title">文法チェックと校正</string>
+    <string name="gboard_grammar_summary">端末上での校正、文法チェック、文章作成ツール、テキスト変換に関する既知の試験機能を有効にします</string>
+    <string name="gboard_floating_title">フローティング キーボードと分割キーボード</string>
+    <string name="gboard_floating_summary">横向き、マルチウィンドウ、フリーフォーム、タブレットの分割キーボード、サイズ スライダー、切り替え効果に関する試験機能を有効にします</string>
+    <string name="gboard_emoji_kitchen_title">Emoji Kitchen の機能強化</string>
+    <string name="gboard_emoji_kitchen_summary">閲覧、検索、おすすめ、アニメーション、埋め込み選択画面に関する試験機能を有効にします</string>
+    <string name="gboard_access_point_title">ショートカット メニューのデザインを変更</string>
+    <string name="gboard_access_point_summary">アクセス ポイント メニュー、Silk テーマ、システム フォント、Google Sans、カスタムテーマ、アニメーションに関する試験機能を有効にします</string>
+    <string name="gboard_metered_downloads_title">従量制ネットワークでのダウンロードを許可</string>
+    <string name="gboard_metered_downloads_summary">言語、言語識別、音声パックをモバイルデータなどの従量制ネットワークでダウンロードできるようにします</string>
+    <string name="gboard_experimental_category">試験的なエンジン</string>
+    <string name="gboard_experimental_summary">Gboard の非公開フラグを使用するため、アップデート後に変更されたり動作しなくなったりする場合があります。変更後は Gboard を再起動してください</string>
+    <string name="gboard_inline_suggestions_title">複数語のインライン候補</string>
+    <string name="gboard_proactive_emoji_title">先回りして絵文字を提案</string>
+    <string name="gboard_tflite_title">TFLite 予測エンジン</string>
+    <string name="gboard_fast_access_title">クイック アクセスバー</string>
+    <string name="dialer_force_enable_call_recording_title">通話録音を強制的に有効化</string>
+    <string name="dialer_force_enable_call_recording_summary">未対応の地域で Google 電話アプリの標準通話録音を有効にします</string>
+    <string name="landscape_split_shade_title">横向き時のタブレット風通知シェード</string>
+    <string name="landscape_split_shade_summary">端末を横向きにすると、クイック設定と通知を左右に並べて表示します</string>
+    <string name="recents_clear_all">すべて閉じる</string>
+    <string name="launcher_header">ランチャー</string>
+    <string name="launcher_header_summary">最近のタスクとホーム画面の機能拡張</string>
+    <string name="launcher_home_section">ホーム画面</string>
+    <string name="launcher_drawer_section">アプリドロワー</string>
+    <string name="launcher_recents_section">最近のタスク</string>
+    <string name="launcher_hide_desktop_labels">ホーム画面のアイコン名を非表示</string>
+    <string name="launcher_hide_desktop_search">ホーム画面の検索バーを非表示</string>
+    <string name="launcher_hide_drawer_labels">ドロワーのアイコン名を非表示</string>
+    <string name="launcher_hide_drawer_search">ドロワーの検索バーを非表示</string>
+    <string name="recents_remove_screenshot">スクリーンショット操作を削除</string>
+    <string name="recents_equal_action_widths">操作ボタンを同じ幅にする</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">パーソナライズ</string>
+	<string name="home_category_system_interface">システム インターフェース</string>
+	<string name="home_category_app_enhancements">アプリの拡張機能</string>
+	<string name="home_category_system_tools">システムツール</string>
 </resources>

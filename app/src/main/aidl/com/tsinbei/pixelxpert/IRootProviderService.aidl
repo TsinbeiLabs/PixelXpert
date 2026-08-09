@@ -6,6 +6,7 @@ package com.tsinbei.pixelxpert;
 interface IRootProviderService {
 	boolean checkLSPosedDB(String packageName);
 	boolean isPackageInstalled(String packageName);
+	boolean isPackageRunning(String packageName);
 	boolean activateInLSPosed(String packageName);
 	IBinder getFileSystemService();
 }

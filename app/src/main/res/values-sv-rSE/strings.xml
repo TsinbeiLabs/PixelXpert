@@ -26,19 +26,19 @@
     <string name="settings_general_section_title">Allmän</string>
     <string name="settings_update_section_title">Uppdatering</string>
     <string name="settings_misc_section_title">Övrigt</string>
-    <string name="settings_about_section_title">Handla om</string>
+    <string name="settings_about_section_title">Om</string>
     <string name="settings_check_for_update_title">Sök efter uppdateringar</string>
     <string name="auto_update_title">Sök automatiskt efter uppdateringar</string>
     <string name="auto_update_summary">Kolla efter nya versioner då och då</string>
     <string name="update_over_wifi_title">Kontrollera endast uppdateringar via WiFi</string>
     <string name="update_over_wifi_summary">Sök efter uppdateringar i bakgrunden endast när du är ansluten till wifi</string>
     <string name="github_repo_title">GitHub-förråd</string>
-    <string name="telegram_group_title">Telegram channel</string>
+    <string name="telegram_group_title">Telegram-kanal</string>
     <string name="usage_title">Användande</string>
     <string name="usage_summary">Öppna wikisidan</string>
     <string name="crowdin_title">Översätt till ditt språk</string>
     <string name="crowdin_summary">Hjälp oss att översätta %s till ditt eget språk</string>
-    <string name="nothing_to_show">Nothing to show</string>
+    <string name="nothing_to_show">Inget att visa</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Låsskärm</string>
     <string name="lockscreen_header_summary">Ändra din målvakt för att matcha din smak</string>
@@ -64,9 +64,9 @@
     <string name="hotspot_max_client_title">Maximalt antal kunder</string>
     <string name="hotspot_disable_approval_title">Hotspot konnektivitet problem workaround</string>
     <string name="hotspot_disable_approval_summary">Tillåt icke-\"förgodkända\" klienter att ansluta sömlöst</string>
-    <string name="hotspot_force_unsupported_regions">Remove hotspot limitations in unsupported regions</string>
+    <string name="hotspot_force_unsupported_regions">Ta bort begränsningar för surfzon i områden utan stöd</string>
     <!--Lock screen related-->
-    <string name="depth_wallpaper_options">Depth effect wallpaper</string>
+    <string name="depth_wallpaper_options">Bakgrund med djupeffekt</string>
     <string name="depth_wallpaper_title">Djup effekt bakgrundsbild</string>
     <string name="depth_wallpaper_summary">Dynamiskt integrera tapetens förgrund med klockan</string>
     <string name="depth_wallpaper_ai_model_title">Föredragen AI-modell</string>
@@ -92,7 +92,7 @@
     <string name="keyguard_dim_amount_title">Tangentbords tapet dim</string>
     <string name="keyguard_bottom_category">Genvägar i bottenområdet</string>
     <string name="keyguard_bottom_buttons_transparent_title">Ta bort cirkeln runt ikoner</string>
-    <string name="shufflePin_title">Shuffle Pin</string>
+    <string name="shufflePin_title">Blanda PIN-koden</string>
     <string name="wakeup_to_security_title">Visa säkerhetsingång när enheten väcks</string>
     <string name="easy_unlock_title">Enkel upplåsning (Pin/Lösenord)</string>
     <string name="easy_unlock_summary">Om det inte fungerade första gången, försök igen</string>
@@ -181,52 +181,52 @@
     <string name="nt_stat_mode_today">I dag</string>
     <string name="nt_stat_mode_week">Denna vecka</string>
     <string name="nt_stat_mode_month">Denna månad</string>
-    <string name="sb_ignored_icons_category">Status Bar ignored icons</string>
-    <string name="sb_ignored_icons">Status Bar</string>
-    <string name="sb_ignored_icons_statusbar">Select which icon will be hidden in statusbar</string>
+    <string name="sb_ignored_icons_category">Ignorerade ikoner i statusfältet</string>
+    <string name="sb_ignored_icons">Statusfält</string>
+    <string name="sb_ignored_icons_statusbar">Välj vilken ikon som ska döljas i statusfältet</string>
     <string name="sb_kg_ignored_icons">Låsskärm</string>
-    <string name="sb_ignored_icons_kg">Select which icon will be hidden in keyguard statusbar</string>
+    <string name="sb_ignored_icons_kg">Välj vilken ikon som ska döljas i låsskärmens statusfält</string>
     <string name="sb_qs_ignored_icons">Snabba inställningar</string>
     <string name="sb_ignored_icons_qs">Välj vilken ikon som ska döljas i snabb inställningar</string>
     <string name="status_bar_volte">VoLTE</string>
     <string name="status_bar_vowifi">VoWiFi</string>
-    <string name="status_bar_no_calling">No Calling</string>
-    <string name="status_bar_call_strength">Call Strength</string>
+    <string name="status_bar_no_calling">Ingen samtalstjänst</string>
+    <string name="status_bar_call_strength">Samtalssignal</string>
     <string name="status_bar_alarm_clock">Alarm Klocka</string>
     <string name="status_bar_rotate">Rotera automatiskt</string>
     <string name="status_bar_headset">Hörlurar Anslutna</string>
-    <string name="status_bar_data_saver">Data Saver</string>
-    <string name="status_bar_ime">Input Method</string>
-    <string name="status_bar_sync_failing">Sync Failing</string>
-    <string name="status_bar_sync_active">Sync Active</string>
+    <string name="status_bar_data_saver">Datasparläge</string>
+    <string name="status_bar_ime">Inmatningsmetod</string>
+    <string name="status_bar_sync_failing">Synkronisering misslyckas</string>
+    <string name="status_bar_sync_active">Synkronisering aktiv</string>
     <string name="status_bar_nfc">NFC Aktiv</string>
-    <string name="status_bar_tty">TTY Mode</string>
+    <string name="status_bar_tty">TTY-läge</string>
     <string name="status_bar_speakerphone">Högtalare På</string>
     <string name="status_bar_cdma_eri">CDMA ERI</string>
-    <string name="status_bar_data_connection">Data Connection</string>
+    <string name="status_bar_data_connection">Dataanslutning</string>
     <string name="status_bar_phone_evdo_signal">EVDO Signal</string>
-    <string name="status_bar_phone_signal">Phone Signal</string>
-    <string name="status_bar_secure">Secure Mode</string>
-    <string name="status_bar_managed_profile">Managed Profile</string>
-    <string name="status_bar_connected_display">Connected Display</string>
-    <string name="status_bar_vpn">VPN Active</string>
+    <string name="status_bar_phone_signal">Telefonsignal</string>
+    <string name="status_bar_secure">Säkert läge</string>
+    <string name="status_bar_managed_profile">Hanterad profil</string>
+    <string name="status_bar_connected_display">Ansluten skärm</string>
+    <string name="status_bar_vpn">VPN aktivt</string>
     <string name="status_bar_bluetooth">Bluetooth Anslutet</string>
     <string name="status_bar_camera">Kameran används</string>
     <string name="status_bar_microphone">Mikrofonen används</string>
-    <string name="status_bar_location">Location Active</string>
-    <string name="status_bar_mute">Muted</string>
-    <string name="status_bar_volume">Volume Level</string>
+    <string name="status_bar_location">Plats aktiv</string>
+    <string name="status_bar_mute">Ljud av</string>
+    <string name="status_bar_volume">Volymnivå</string>
     <string name="status_bar_zen">Stör Ej</string>
     <string name="status_bar_screen_record">Skärminspelning</string>
-    <string name="status_bar_cast">Casting</string>
+    <string name="status_bar_cast">Castning</string>
     <string name="status_bar_ethernet">Internet anslutet</string>
-    <string name="status_bar_oem_satellite">Satellite Connection</string>
+    <string name="status_bar_oem_satellite">Satellitanslutning</string>
     <string name="status_bar_wifi">Wi-Fi Anslutet</string>
-    <string name="status_bar_hotspot">Hotspot Active</string>
+    <string name="status_bar_hotspot">Surfzon aktiv</string>
     <string name="status_bar_mobile">Mobildata</string>
     <string name="status_bar_airplane">Flygplansläge</string>
     <string name="status_bar_battery">Batterinivå</string>
-    <string name="status_bar_sensors_off">Sensors Off</string>
+    <string name="status_bar_sensors_off">Sensorer av</string>
     <string name="sunday">söndag</string>
     <string name="monday">måndag</string>
     <string name="tuesday">tisdag</string>
@@ -235,10 +235,10 @@
     <string name="friday">fredag</string>
     <string name="saturday">lördag</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Flashlight-leveled tile</string>
+    <string name="qs_leveled_flashlight_title">Ruta för justering av ficklampsljusstyrka</string>
     <string name="qs_flashlight_level_global_title">Använd ficklampans nivå globalt</string>
     <string name="qs_tile_qty_title">Snabbinställningar för antal brickor</string>
-    <string name="qs_leveled_flashlight_summary">Longpress on tile to show the slider.\nRequires supported hardware</string>
+    <string name="qs_leveled_flashlight_summary">Tryck länge på rutan för att visa reglaget.\nKräver maskinvara med stöd</string>
     <string name="qs_pulldown_size">Snabb neddragbar bredd</string>
     <string name="qs_pulldown_switch_title">Snabb QS-panelrullgardin från statusfältet</string>
     <string name="qs_pulldown_side_title">Snabb neddragbar sida</string>
@@ -246,12 +246,12 @@
     <string name="qs_pullup_switch_title">Stäng snabbinställningar med ett svep</string>
     <string name="qs_tile_qty_portrait">I stående orientering</string>
     <string name="qs_tile_qty_landscape">I landskapsorientering</string>
-    <string name="qqs_rows_number">Number of quick QS rows</string>
+    <string name="qqs_rows_number">Antal rader i snabba Snabbinställningar</string>
     <string name="qs_rows_number">Antal QS-rader</string>
     <string name="qs_cols_number">Antal QS-kolumner</string>
     <string name="qs_tile_label_size">QS Tile-etikettstorlek</string>
     <string name="qs_tile_secondary_label_size">QS Tile etikett sammanfattning storlek</string>
-    <string name="quick_settings_tiles_category">QS Tile Options</string>
+    <string name="quick_settings_tiles_category">Alternativ för snabbinställningsrutor</string>
     <string name="qs_volume_unmute_title">Värde för ljud på volympanel</string>
     <!--Navigation bar related-->
     <string name="back_gesture_category_title">Konfigurera bakåtgest</string>
@@ -263,25 +263,25 @@
     <string name="gesture_nav_pill_width_title">Bredd jämfört med standardstorlek</string>
     <string name="gesture_nav_pill_height_title">Höjd jämfört med standardstorlek</string>
     <string name="threebutton_header_title">3-knapps navigering</string>
-    <string name="taskbar_header_title">Taskbar navigation</string>
+    <string name="taskbar_header_title">Navigering med aktivitetsfältet</string>
     <string name="modify_3button_title">Ändra knapparnas ordning</string>
     <string name="three_button_left_title">Vänster knapp</string>
     <string name="three_button_center_title">Mittknappen</string>
     <string name="three_button_right_title">Höger knapp</string>
     <string name="hide_navbar_title">Dölj navigeringsfältet</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
-    <string name="taskbar_as_recents_title">Convert Taskbar to PixelXpert recents bar</string>
-    <string name="taskbar_enable_google_recents">Enable Android recents on the Taskbar</string>
+    <string name="hide_navbar_insets_title">Dölj navigeringsfältets utrymme</string>
+    <string name="taskbar_as_recents_title">Gör om aktivitetsfältet till PixelXperts fält för senaste appar</string>
+    <string name="taskbar_enable_google_recents">Aktivera Androids senaste appar i aktivitetsfältet</string>
     <string name="taskbar_height_title">Aktivitetsfältets höjd</string>
     <string name="taskbar_radius_title">Aktivitetsfältets hörnkurva</string>
     <string name="colorpill">Accent färgat gest piller</string>
     <string name="taskbar_status_title">Android aktivitetsfält</string>
-    <string name="taskbar_force_enable_title">Force Enabled</string>
+    <string name="taskbar_force_enable_title">Tvinga aktiverad</string>
     <string name="taskbar_force_disable_title">Tvinga inaktiverad</string>
     <string name="taskbar_transient_title">Dölj automatiskt</string>
-    <string name="taskbar_on_launcher_title">Show on home</string>
+    <string name="taskbar_on_launcher_title">Visa på startskärmen</string>
     <string name="remap_physical_buttons_title">Remap fysiska knappar</string>
-    <string name="taskbar_on_ime_title">Show with keyboard open</string>
+    <string name="taskbar_on_ime_title">Visa när tangentbordet är öppet</string>
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">Förbigå paketsignaturkontroll</string>
     <string name="pm_allow_downgrade_title">Tillåt appnedgradering</string>
@@ -296,9 +296,9 @@
     <string name="allow_all_screen_rotations">Tvinga upp alla skärmrotationer</string>
     <string name="allow_all_screen_rotations_summary">Kommer också att ignorera manuell rotation flytande knapp</string>
     <string name="force_no_cutout">Ignorera kamerautskärningen</string>
-    <string name="clear_all_reposition_title">Lägg till en tillgänglig rensa-allt-knapp på sidan Senaste</string>
-    <string name="force_themed_icons_title">Auto-generate missing themed icons</string>
-    <string name="force_themed_icons_summary">Pixel launcher only</string>
+    <string name="clear_all_reposition_title">Lägg till Rensa alla under de senaste åtgärderna</string>
+    <string name="force_themed_icons_title">Generera saknade temaikoner automatiskt</string>
+    <string name="force_themed_icons_summary">Endast Pixel Launcher</string>
     <string name="volume_button_step_title">Volymsteg (0 till 100 %)</string>
     <string name="display_resolution_switch_title">Ändra skärmupplösning</string>
     <string name="display_resolution_switch_summary">Innan du aktiverar detta, se till att återställa alla visningsstorlek/dpi ändringar till standard</string>
@@ -318,7 +318,7 @@
     <string name="force_aod_while_charging_summary">Håll alltid på displayen aktiverad medan enheten laddas</string>
     <string name="doze_header">Medan skärmen är avstängd…</string>
     <string name="px_in_settings_title">Lägg till PixelXpert till inställningsobjekt</string>
-    <string name="advanced_power_menu_title">Advanced power menu</string>
+    <string name="advanced_power_menu_title">Avancerad strömmeny</string>
     <string name="sleep_on_flat_screen_title">Stäng av skärmen på plan yta</string>
     <string name="sleep_on_flat_screen_tile_title">Sov på ytan</string>
     <string name="flat_screen_timeout_title">Skärmens tidsgräns på plan yta</string>
@@ -331,7 +331,7 @@
     <string name="notif_always_expand">Utöka alltid</string>
     <string name="notif_always_collapse">Kollapsa alltid</string>
     <string name="control_flashlight_with_volume_keys">Styr ficklampan med volymknappar</string>
-    <string name="flashlight_fade_effect">Flashlight fade effect</string>
+    <string name="flashlight_fade_effect">Ficklampans toningseffekt</string>
     <string name="milliseconds">Millisekunder</string>
     <string name="duration_seconds">%d sekunder</string>
     <string name="hours">Timmar</string>
@@ -359,7 +359,7 @@
     <string name="vibration_type_notification">Intensitet definieras av vibrationsinställningar för systemaviseringar</string>
     <string name="dialer_mute_record_message_title">Ta bort meddelande om samtalsinspelning</string>
     <string name="dialer_mute_record_message_summary">Gäller endast Googles telefonapp med samtalsinspelning aktiverad</string>
-    <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
+    <string name="radio_force_volte_nr">Tvinga VoLTE/NR i områden utan stöd</string>
     <!-- Arrays strings -->
     <!-- Quick pull down -->
     <string name="pull_down_left">Vänster</string>
@@ -377,9 +377,9 @@
     <string name="date_before">Före klockan (100 %)</string>
     <string name="date_before_small">Före klockan (70 %)</string>
     <string name="date_after">Efter klockan (100 %)</string>
-    <string name="date_after_small">After Clock (70 %)</string>
+    <string name="date_after_small">Efter klockan (70 %)</string>
     <!-- 4G | LTE -->
-    <string name="fourg_lte_default">Systemfel</string>
+    <string name="fourg_lte_default">Systemstandard</string>
     <string name="fourg_lte_lte">Tvinga LTE-ikonen</string>
     <string name="fourg_lte_fourg">Force 4G-ikon</string>
     <!-- QS Rows overlays -->
@@ -402,8 +402,8 @@
     <string name="depth_effect_alert_body">Använd en lämplig låsskärm tapet där förgrundselementen inte hindrar hela klockan på låsskärmen, säkerställa både visuell attraktion och funktionell tydlighet på låsskärmen.\n\nObs: %s.</string>
     <string name="depth_effect_ok_btn">Ok</string>
     <!-- Reboot alert -->
-    <string name="pending_actions">Pending actions</string>
-    <string name="btn_dismiss">Dismiss</string>
+    <string name="pending_actions">Väntande åtgärder</string>
+    <string name="btn_dismiss">Stäng</string>
     <!-- Menu Items -->
     <string name="menu_settings_title">Import Export</string>
     <string name="menu_reset_defaults">Återställ alla inställningar</string>
@@ -421,7 +421,7 @@
     <string name="download_channel_name">Nedladdningar</string>
     <string name="assets_download_title">Laddar ner filer</string>
     <string name="assets_download_body">Laddar ner kompanjonfiler</string>
-    <string name="assets_download_size_body">Progress: %s</string>
+    <string name="assets_download_size_body">Förlopp: %s</string>
     <string name="update_notification_title">Uppdatering nedladdad</string>
     <string name="update_notification_text">Tryck här för att installera</string>
     <string name="download_failed">Det gick inte att ladda ner uppdateringen</string>
@@ -459,7 +459,7 @@
     <!-- Search Preference -->
     <string name="searchpreference_title">Sök</string>
     <string name="searchpreference_search">Sök…</string>
-    <string name="searchpreference_clear">Klar</string>
+    <string name="searchpreference_clear">Rensa</string>
     <string name="searchpreference_history_entry">Historik inträde</string>
     <string name="searchpreference_more">Mer</string>
     <string name="searchpreference_clear_history">Rensa historik</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">Anslutna paket</string>
     <string name="package_hooked_successful">Paketresponsivt</string>
     <string name="package_not_hook_enabled">Paketet är inte aktiverat i LSposed</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert är ännu inte aktiverat i LSPosed. Öppna LSPosed Manager, aktivera Pixel Xpert och starta sedan om appen</string>
     <string name="package_hook_bootlooped">Krok misslyckades på grund av bootloop</string>
     <string name="package_hook_no_response">Paketet svarar inte</string>
+    <string name="package_not_running">Appen körs inte</string>
     <string name="package_not_found">Paketet hittades inte</string>
     <string name="package_checking">Laddar%s</string>
     <string name="package_activated">Paketet har aktiverats</string>
     <string name="package_activation_failed">Paketaktiveringen misslyckades</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed är inte installerat</string>
     <string name="activate_in_lsposed">Aktivera i LSPosed</string>
     <string name="package_not_hook_enabled_info">Appen är installerad, men LSPosed är inte konfigurerad att ansluta till den. Aktivera den genom att klicka på \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Appens krok orsakade en bootloop, så den har inaktiverats för att förhindra ytterligare problem.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Vad är fel?</string>
     <string name="package_not_launchable">Paketet kan inte startas</string>
     <string name="menu_launch_app">Starta app</string>
+	<string name="menu_stop_app">Stoppa app</string>
     <string name="menu_restart_app">Starta om appen</string>
     <string name="why">varför?</string>
     <string name="okay">Okej</string>
@@ -491,7 +493,7 @@
     <string name="connecting_root_service">Ansluter till rottjänsten…</string>
     <string name="root_access_denied">Rotåtkomst nekad. Vänligen tillåt root-åtkomst.</string>
     <string name="root_service_failed">Kunde inte ansluta till root services. Vänligen försök igen senare</string>
-    <string name="exit">Utgång</string>
+    <string name="exit">Avsluta</string>
     <!-- Bottom Navigation -->
     <string name="navigation_home">Hem</string>
     <string name="navigation_update">Uppdatera</string>
@@ -523,21 +525,125 @@
     <string name="icon_pack_author">av %s</string>
     <string name="icon_pack_unknown_author">av okänd författare</string>
     <string name="icon_pack_unknown_name">Okänt ikonpaket</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
+    <string name="icon_pack_pack_reset">Återställ ikoner</string>
     <string name="icon_pack_info">Information om ikonpaket</string>
     <string name="no_icon_pack_installed">Inget ikonpaket installerat</string>
     <string name="icon_pack_disclaimer_title">Ansvarsfriskrivning</string>
     <string name="icon_pack_disclaimer_desc">Ikonpaket utvecklas eller distribueras inte av PixelXpert. Som sådan, PixelXpert laget kan inte ge stöd för ikonpaket. Stöd för hur PixelXpert hanterar ikonpaket kommer endast att tillhandahållas till respektive paketutvecklare.\n\nFör instruktioner om hur man kompilerar ett ikonpaket, se guiden här: %s</string>
     <!--Advanced power options-->
-    <string name="advanced_option_button_title">Advanced…</string>
-    <string name="reboot_bootloader_title">Reboot to Bootloader</string>
-    <string name="soft_reboot_title">Soft Reboot</string>
-    <string name="restart_systemui_title">Restart SystemUI</string>
+    <string name="advanced_option_button_title">Avancerat…</string>
+    <string name="reboot_bootloader_title">Starta om till bootloader</string>
+    <string name="soft_reboot_title">Mjuk omstart</string>
+    <string name="restart_systemui_title">Starta om SystemUI</string>
     <!--Optimization restart request-->
-    <string name="optimization_restart_needed_title">Restart Recommended</string>
-    <string name="optimization_restart_needed_message">A reboot is recommended to increase system integration</string>
+    <string name="optimization_restart_needed_title">Omstart rekommenderas</string>
+    <string name="optimization_restart_needed_message">En omstart rekommenderas för bättre systemintegration</string>
     <string name="restart_postpone">Senare</string>
     <string name="restart_now">Starta om nu</string>
     <string name="watts">Watt</string>
-    <string name="fast_charging_threshold_title">Fast charging threshold</string>
+    <string name="fast_charging_threshold_title">Tröskel för snabbladdning</string>
+    <!-- DocumentsUI, pakethantering och Gboard -->
+    <string name="documentsui_header">Filer &amp; dokumentväljare</string>
+    <string name="documentsui_header_summary">Beteende för filbläddring och sortering</string>
+    <string name="documentsui_remember_sort_title">Kom ihåg sorteringsordning</string>
+    <string name="documentsui_remember_sort_summary">Behåll en global sorteringsordning och valfria åsidosättningar per mapp i systemets filväljare</string>
+    <string name="documentsui_remember_sort_usage">Tryck normalt i filväljarens sorteringsmeny för att uppdatera den globala sorteringen. Håll ett sorteringsalternativ intryckt för att spara det enbart för den aktuella mappen. Ett normalt val rensar även mappens åsidosättning.</string>
+    <string name="lockscreen_security_category">Låsskärmssäkerhet</string>
+    <string name="lockscreen_block_power_menu_title">Blockera strömmenyn när enheten är låst</string>
+    <string name="lockscreen_block_power_menu_summary">Blockerar även strömknappen i Snabbinställningar och maskinvarugenvägen</string>
+    <string name="lockscreen_block_internet_title">Blockera internetkontroller när enheten är låst</string>
+    <string name="lockscreen_block_airplane_title">Blockera flygplansläge när enheten är låst</string>
+    <string name="lockscreen_block_bluetooth_title">Blockera Bluetooth när enheten är låst</string>
+    <string name="lockscreen_block_hotspot_title">Blockera surfzon när enheten är låst</string>
+    <string name="lockscreen_block_dnd_title">Blockera Stör ej när enheten är låst</string>
+    <string name="lockscreen_block_ringer_title">Blockera ändringar av ringsignalsläge när enheten är låst</string>
+    <string name="lockscreen_unlock_to_use">Lås upp för att använda</string>
+    <string name="pm_advanced_category">Avancerade installationskontroller</string>
+    <string name="pm_exact_signature_title">Kringgå exakt signaturmatchning för split-APK:er</string>
+    <string name="pm_exact_signature_summary">Hög risk: tillåter olika signaturuppgifter för bas- och split-APK:er under installation</string>
+    <string name="pm_shared_uid_title">Kringgå signaturkontroller för delat UID</string>
+    <string name="pm_shared_uid_summary">Hög risk: tillåter uppdatering av olika signerade användarappar med delat UID; plattformens begränsningar för delat UID gäller fortfarande</string>
+    <string name="pm_installer_redirect_category">Omdirigering av installationsprogram</string>
+    <string name="pm_installer_redirect_title">Omdirigera paketinstallationsprogrammet</string>
+    <string name="pm_installer_redirect_summary">Skicka APK-installationsbegäranden och valfria avinstallationsbegäranden till en vald app</string>
+    <string name="pm_installer_target_title">Installationsprogram</string>
+    <string name="pm_installer_system_default">Systemstandard</string>
+    <string name="pm_force_explicit_installer_title">Åsidosätt uttryckligen valt installationsprogram</string>
+    <string name="pm_force_explicit_installer_summary">Omdirigera även begäranden som är hårdkodade till en viss installationskomponent</string>
+    <string name="pm_intercept_session_title">Omdirigera bekräftelse av sessionsinstallation</string>
+    <string name="pm_intercept_session_summary">Fånga upp begärandena CONFIRM_INSTALL och CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Åtgärda åtkomst till sessionens APK-sökväg</string>
+    <string name="pm_fix_session_permissions_summary">Experimentell kompatibilitetsåtgärd för externa installationsprogram på Android 14+</string>
+    <string name="pm_intercept_uninstall_title">Omdirigera avinstallationsbegäranden</string>
+    <string name="pm_intercept_uninstall_summary">Skicka ACTION_DELETE och ACTION_UNINSTALL_PACKAGE till den valda appen</string>
+    <string name="pm_uninstall_follow_installer_title">Använd installationsprogrammet för avinstallationsbegäranden</string>
+    <string name="pm_uninstaller_target_title">Avinstallationsprogram</string>
+    <string name="app_info_enhancements_category">Appinformation</string>
+    <string name="app_info_show_version_code_title">Visa versionskod</string>
+    <string name="app_info_allow_disable_user_apps_title">Tillåt inaktivering av användarappar</string>
+    <string name="app_info_allow_disable_user_apps_summary">Lägger till en åtgärd för aktivering och inaktivering i appinformationen för appar som inte är systemappar</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Tema, urklipp, integritet och experimentella skrivfunktioner</string>
+    <string name="gboard_theme_category">Tema</string>
+    <string name="gboard_amoled_black_title">AMOLED-svart i mörkt läge</string>
+    <string name="gboard_amoled_black_summary">Gör Material Expressive-ytbehållare helt svarta men behåll accentfärgerna</string>
+    <string name="gboard_clipboard_category">Urklipp</string>
+    <string name="gboard_clipboard_history_title">Anpassa urklippshistoriken</string>
+    <string name="gboard_clipboard_history_summary">Ändra antalet och åldern på poster som Gboard begär; äldre poster som Gboard redan har raderat kan inte återställas</string>
+    <string name="gboard_clipboard_size_title">Högsta antal synliga poster</string>
+    <string name="gboard_clipboard_size_summary">Tillåtet intervall: 5 till 100</string>
+    <string name="gboard_clipboard_days_title">Synlig historik i dagar</string>
+    <string name="gboard_clipboard_days_summary">Tillåtet intervall: 0 till 3650; 0 begär alla sparade poster</string>
+    <string name="gboard_secure_clipboard_title">Håll känslig text borta från Gboard-historiken</string>
+    <string name="gboard_secure_clipboard_summary">Blockera poster från lösenordsfält samt troliga verifieringskoder, PIN-koder eller långa kontonummer</string>
+    <string name="gboard_clipboard_chips_title">Åtgärdschips för urklipp</string>
+    <string name="gboard_clipboard_chips_summary">Aktivera Gboard-åtgärdschips, entitetsextrahering och experiment med kopiering till svar</string>
+    <string name="gboard_privacy_category">Integritet</string>
+    <string name="gboard_force_incognito_title">Inaktivera personligt anpassad inlärning</string>
+    <string name="gboard_force_incognito_summary">Begär ingen personligt anpassad inlärning för alla inmatningsfält; detta tvingar inte fram hela Gboards inkognitogränssnitt</string>
+    <string name="gboard_privacy_flags_title">Minska telemetri och träning</string>
+    <string name="gboard_privacy_flags_summary">Åsidosätt kända Gboard-flaggor för lagring av korrigeringar, innehållsinsamling, loggning, mätvärden och träningscache</string>
+    <string name="gboard_input_category">Inmatningsförbättringar</string>
+    <string name="gboard_multilingual_title">Flerspråkig inmatning</string>
+    <string name="gboard_multilingual_summary">Aktivera kända experiment för flerspråkig inmatning, förslag samt Pixel- och talförbättringar</string>
+    <string name="gboard_ai_title">AI och smart inmatning</string>
+    <string name="gboard_ai_summary">Aktivera kända experiment för Smart Reply, Smart Compose, emojify, dekaler och AI Core</string>
+    <string name="gboard_grammar_title">Grammatik och korrekturläsning</string>
+    <string name="gboard_grammar_summary">Aktivera kända lokala experiment för korrekturläsning, grammatikkontroll, skrivverktyg och textkonvertering</string>
+    <string name="gboard_floating_title">Flytande och delat tangentbord</string>
+    <string name="gboard_floating_summary">Aktivera experiment för liggande läge, flera fönster, fri form, delat surfplattetangentbord, storleksreglage och övergångar</string>
+    <string name="gboard_emoji_kitchen_title">Förbättringar för Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Aktivera experiment för bläddring, sökning, rekommendationer, animering och inbyggd väljare</string>
+    <string name="gboard_access_point_title">Ny utformning av genvägsmenyn</string>
+    <string name="gboard_access_point_summary">Aktivera experiment för åtkomstpunktsmeny, Silk-tema, systemteckensnitt, Google Sans, anpassat tema och animeringar</string>
+    <string name="gboard_metered_downloads_title">Tillåt hämtningar via anslutningar med datakvot</string>
+    <string name="gboard_metered_downloads_summary">Tillåt kända hämtningar av språk-, språk-ID- och talpaket via mobilnät eller andra anslutningar med datakvot</string>
+    <string name="gboard_experimental_category">Experimentella motorer</string>
+    <string name="gboard_experimental_summary">Använder privata Gboard-flaggor och kan ändras eller sluta fungera efter en uppdatering; starta om Gboard efter ändringar</string>
+    <string name="gboard_inline_suggestions_title">Förslag med flera ord i textfältet</string>
+    <string name="gboard_proactive_emoji_title">Proaktiva emojiförslag</string>
+    <string name="gboard_tflite_title">TFLite-prediktionsmotorer</string>
+    <string name="gboard_fast_access_title">Snabbåtkomstfält</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="dialer_force_enable_call_recording_title">Tvinga aktivering av samtalsinspelning</string>
+    <string name="dialer_force_enable_call_recording_summary">Låser upp inbyggd samtalsinspelning i Google Telefon-appen i regioner som inte stöds</string>
+    <string name="landscape_split_shade_title">Surfplattelikt meddelandefält i liggande läge</string>
+    <string name="landscape_split_shade_summary">Visar snabbinställningar och aviseringar sida vid sida när telefonen vrids horisontellt</string>
+    <string name="recents_clear_all">Rensa alla</string>
+    <string name="launcher_header">Startprogram</string>
+    <string name="launcher_header_summary">Förbättringar för senaste uppgifter och startskärmen</string>
+    <string name="launcher_home_section">Startskärm</string><string name="launcher_drawer_section">Appfack</string><string name="launcher_recents_section">Senaste uppgifter</string><string name="launcher_hide_desktop_labels">Dölj ikonnamn på startskärmen</string><string name="launcher_hide_desktop_search">Dölj sökfältet på startskärmen</string><string name="launcher_hide_drawer_labels">Dölj ikonnamn i appfacket</string><string name="launcher_hide_drawer_search">Dölj sökfältet i appfacket</string><string name="recents_remove_screenshot">Ta bort skärmbildsåtgärd</string><string name="recents_equal_action_widths">Använd åtgärdsknappar med samma bredd</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Anpassning</string>
+	<string name="home_category_system_interface">Systemgränssnitt</string>
+	<string name="home_category_app_enhancements">Appförbättringar</string>
+	<string name="home_category_system_tools">Systemverktyg</string>
 </resources>

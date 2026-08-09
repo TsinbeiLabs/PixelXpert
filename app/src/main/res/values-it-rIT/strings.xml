@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--General strings-->
-    <string name="app_themed_icon_title">Abilita l\'icona dell\'app a tema AOSP Mods alternativa</string>
+    <string name="app_themed_icon_title">Icona a tema alternativa</string>
     <string name="xposed_desc">Personalizzazioni per dispositivi Google Pixel</string>
     <string name="volume_tile_title">Volume multimedia</string>
     <string name="sliding_tile_subtitle">Tocca per regolare</string>
     <string name="app_switch_tile_title">Cambia profilo dell\'app</string>
-    <string name="hide_default">Nascondi (Default)</string>
+    <string name="hide_default">Nascondi (predefinito)</string>
     <string name="percent_of_default_size">% della dimensione di default</string>
-    <string name="overlay_none_title">(Default)</string>
+    <string name="overlay_none_title">(Predefinito)</string>
     <string name="general_section">Opzioni generali</string>
-    <string name="general_on">On</string>
-    <string name="general_off">Off</string>
+    <string name="general_on">Attivo</string>
+    <string name="general_off">Disattivo</string>
     <string name="sysui_restart_needed">Richiede un riavvio di SystemUI per essere applicato</string>
     <string name="restart_needed">Richiede un riavvio per essere applicato</string>
     <string name="more_area">più spazio</string>
@@ -26,7 +26,7 @@
     <string name="settings_general_section_title">Generale</string>
     <string name="settings_update_section_title">Aggiornamento</string>
     <string name="settings_misc_section_title">Varie</string>
-    <string name="settings_about_section_title">Di</string>
+    <string name="settings_about_section_title">Informazioni</string>
     <string name="settings_check_for_update_title">Controlla gli aggiornamenti</string>
     <string name="auto_update_title">Controlla automaticamente gli aggiornamenti</string>
     <string name="auto_update_summary">Controlla la presenza di nuove versioni di tanto in tanto</string>
@@ -41,7 +41,7 @@
     <string name="nothing_to_show">Niente da mostrare</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Blocco schermo</string>
-    <string name="lockscreen_header_summary">Cambia il tuo keyguard in base al tuo gusto</string>
+    <string name="lockscreen_header_summary">Personalizza la schermata di blocco secondo i tuoi gusti</string>
     <string name="statusbar_header">Status Bar</string>
     <string name="statusbar_header_summary">Quella barra sottile che mostra i dati utili</string>
     <string name="nav_header">NavBar</string>
@@ -50,7 +50,7 @@
     <string name="dialer_header_summary">Un po\' di aiuto per le telefonate</string>
     <string name="misc_header">Varie</string>
     <string name="misc_header_summary">Qualsiasi altra cosa offerta da PixelXpert</string>
-    <string name="qs_panel_category_title">Pannello Quick Settings</string>
+    <string name="qs_panel_category_title">Pannello Impostazioni rapide</string>
     <string name="qs_panel_category_summary">Cursore luminosità, livello torcia e molto altro</string>
     <string name="theme_customization_category">Temi</string>
     <string name="theme_customization_summary">Personalizza lo stile visivo e l\'iconografia</string>
@@ -107,7 +107,7 @@
     <string name="sb_icon_sort_mode">Metodo posizionamento icone</string>
     <string name="sort_clean">Ordina in griglia</string>
     <string name="sort_tight">Adatta il massimo degli elementi</string>
-    <string name="sb_notification_limit">N. massimo icone di notifica (vuoto per Default)</string>
+    <string name="sb_notification_limit">Numero massimo di icone di notifica (lascia vuoto per il valore predefinito)</string>
     <string name="lte_4g_icon_title">Icona LTE / 4G</string>
     <string name="combined_signal_icon_title">Icone di segnale combinate</string>
     <string name="hide_roaming_title">Nascondi indicatori roaming rete mobile</string>
@@ -148,10 +148,10 @@
     <string name="network_opacity_title">Opacità</string>
     <string name="network_interval_title">Intervallo aggiornamento (secondi)</string>
     <string name="network_show_icons_title">Mostra icone direzione traffico</string>
-    <string name="nt_mode_rxtx">Download &amp; Upload</string>
-    <string name="nt_mode_total">Download + Upload (Combinato)</string>
-    <string name="nt_mode_rxonly">Solo download</string>
-    <string name="nt_mode_txonly">Solo upload</string>
+    <string name="nt_mode_rxtx">Scaricamento e caricamento</string>
+    <string name="nt_mode_total">Scaricamento + caricamento (combinati)</string>
+    <string name="nt_mode_rxonly">Solo scaricamento</string>
+    <string name="nt_mode_txonly">Solo caricamento</string>
     <string name="nt_unit_show_bits">Mostra in bit/s</string>
     <string name="statusbar_general_options">Opzioni Status Bar</string>
     <string name="status_bar_height">Altezza Status Bar (ruota lo schermo per applicare)</string>
@@ -185,7 +185,7 @@
     <string name="sb_ignored_icons">Barra di stato</string>
     <string name="sb_ignored_icons_statusbar">Seleziona quale icona verrà nascosta nella barra di stato</string>
     <string name="sb_kg_ignored_icons">Blocco schermo</string>
-    <string name="sb_ignored_icons_kg">Seleziona quale icona sarà nascosta nella barra di stato del keyguard</string>
+    <string name="sb_ignored_icons_kg">Seleziona le icone da nascondere nella barra di stato della schermata di blocco</string>
     <string name="sb_qs_ignored_icons">Impostazioni rapide</string>
     <string name="sb_ignored_icons_qs">Seleziona quale icona sarà nascosta nelle impostazioni rapide</string>
     <string name="status_bar_volte">VoLTE</string>
@@ -218,7 +218,7 @@
     <string name="status_bar_volume">Livello volume</string>
     <string name="status_bar_zen">Non disturbare</string>
     <string name="status_bar_screen_record">Registrazione schermo</string>
-    <string name="status_bar_cast">Casting</string>
+    <string name="status_bar_cast">Trasmissione</string>
     <string name="status_bar_ethernet">Ethernet connesso</string>
     <string name="status_bar_oem_satellite">Connessione satellitare</string>
     <string name="status_bar_wifi">Wi-Fi connesso</string>
@@ -235,24 +235,24 @@
     <string name="friday">Venerdì</string>
     <string name="saturday">Sabato</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Tile torcia livellata</string>
+    <string name="qs_leveled_flashlight_title">Riquadro per regolare la luminosità della torcia</string>
     <string name="qs_flashlight_level_global_title">Applica livello torcia globalmente</string>
-    <string name="qs_tile_qty_title">Impostazioni numero QS Tile</string>
-    <string name="qs_leveled_flashlight_summary">Premi a lungo sul tile per mostrare il cursore.\nRichiede hardware supportato</string>
-    <string name="qs_pulldown_size">Larghezza quick pull-down</string>
-    <string name="qs_pulldown_switch_title">Pannello quick QS pull-down dalla Status Bar</string>
-    <string name="qs_pulldown_side_title">Lato quick pull-down</string>
-    <string name="qs_pulldown_category">Quick settings pull-down</string>
+    <string name="qs_tile_qty_title">Numero di riquadri delle Impostazioni rapide</string>
+    <string name="qs_leveled_flashlight_summary">Tieni premuto il riquadro per mostrare il cursore.\nRichiede hardware compatibile</string>
+    <string name="qs_pulldown_size">Larghezza dell’apertura rapida</string>
+    <string name="qs_pulldown_switch_title">Apri rapidamente le Impostazioni rapide dalla barra di stato</string>
+    <string name="qs_pulldown_side_title">Lato dell’apertura rapida</string>
+    <string name="qs_pulldown_category">Apertura delle Impostazioni rapide</string>
     <string name="qs_pullup_switch_title">Chiudi le impostazioni rapide con un solo scorrimento</string>
     <string name="qs_tile_qty_portrait">In orientamento verticale</string>
     <string name="qs_tile_qty_landscape">In orientamento orizzontale</string>
     <string name="qqs_rows_number">Numero di righe rapide delle impostazioni rapide</string>
     <string name="qs_rows_number">Numero di righe QS</string>
     <string name="qs_cols_number">Numero di colonne QS</string>
-    <string name="qs_tile_label_size">Dimensione etichetta QS Tile</string>
-    <string name="qs_tile_secondary_label_size">Dimensione etichetta sommario QS Tile</string>
-    <string name="quick_settings_tiles_category">Opzioni QS Tile</string>
-    <string name="qs_volume_unmute_title">Valore riattivazione suono tile volume</string>
+    <string name="qs_tile_label_size">Dimensione etichetta dei riquadri</string>
+    <string name="qs_tile_secondary_label_size">Dimensione etichetta secondaria dei riquadri</string>
+    <string name="quick_settings_tiles_category">Opzioni dei riquadri</string>
+    <string name="qs_volume_unmute_title">Volume ripristinato dal riquadro del volume</string>
     <!--Navigation bar related-->
     <string name="back_gesture_category_title">Configura gesture indietro</string>
     <string name="back_from_left_title">Bordo sinistro dello schermo</string>
@@ -275,7 +275,7 @@
     <string name="taskbar_height_title">Altezza taskbar</string>
     <string name="taskbar_radius_title">Angolo curvatura taskbar</string>
     <string name="colorpill">Pillola con colore accento</string>
-    <string name="taskbar_status_title">Android Taskbar</string>
+    <string name="taskbar_status_title">Barra delle applicazioni Android</string>
     <string name="taskbar_force_enable_title">Forza abilitata</string>
     <string name="taskbar_force_disable_title">Forza disabilitata</string>
     <string name="taskbar_transient_title">Nascondi automaticamente</string>
@@ -296,7 +296,7 @@
     <string name="allow_all_screen_rotations">Sblocca forzatamente tutte le rotazioni dello schermo</string>
     <string name="allow_all_screen_rotations_summary">Ignorerà anche il pulsante per rotazione manuale</string>
     <string name="force_no_cutout">Ignora foro fotocamera</string>
-    <string name="clear_all_reposition_title">Aggiungi il pulsante cancella tutto sulla schermata app recenti</string>
+    <string name="clear_all_reposition_title">Aggiungi Cancella tutto sotto le azioni recenti</string>
     <string name="force_themed_icons_title">Generazione automatica di icone a tema mancanti</string>
     <string name="force_themed_icons_summary">Solo Pixel launcher</string>
     <string name="volume_button_step_title">Step volume (0 – 100%)</string>
@@ -332,7 +332,7 @@
     <string name="notif_always_collapse">Comprimi sempre</string>
     <string name="control_flashlight_with_volume_keys">Controllo torcia con pulsanti volume</string>
     <string name="flashlight_fade_effect">Effetto dissolvenza torcia</string>
-    <string name="milliseconds">Milliseconds</string>
+    <string name="milliseconds">Millisecondi</string>
     <string name="duration_seconds">%d Secondi</string>
     <string name="hours">Ore</string>
     <string name="system_time_title">Ora di sistema</string>
@@ -365,9 +365,9 @@
     <string name="pull_down_left">Sinistra</string>
     <string name="pull_down_right">Destra</string>
     <!-- Battery styles -->
-    <string name="word_default">Default</string>
+    <string name="word_default">Predefinito</string>
     <!-- Clock position -->
-    <string name="clock_default">Sinistra (Default)</string>
+    <string name="clock_default">Sinistra (predefinito)</string>
     <string name="clock_center">Centro</string>
     <string name="clock_right">Destra</string>
     <!-- AM/PM style -->
@@ -379,7 +379,7 @@
     <string name="date_after">Dopo l\'orologio (100%)</string>
     <string name="date_after_small">Dopo l\'orologio (70%)</string>
     <!-- 4G | LTE -->
-    <string name="fourg_lte_default">Default di sistema</string>
+    <string name="fourg_lte_default">Predefinito di sistema</string>
     <string name="fourg_lte_lte">Forza icona LTE</string>
     <string name="fourg_lte_fourg">Forza icona 4G</string>
     <!-- QS Rows overlays -->
@@ -419,7 +419,7 @@
     <string name="string_formatter_manual_body_v3">Oltre al testo normale, sono disponibili anche variabili dinamiche, come Data, Utilizzo dati e Temperatura:\n\n$G\&lt;format\&gt; : Data gregoriana, in base al formato*\n$P&lt;format&gt; : Data persiana, in base al formato*\n$Nrx : Download totali nel periodo specificato ** ***\n$Ntx: Caricamenti totali nel periodo specificato ** ***\n$Nall : Traffico totale nel periodo specificato ** ***\n$Nssid : Nome SSID WiFi (se applicabile)\n\n$T\&lt;format\&gt;[interval] : Temperatura; \nil formato può essere b (per batteria), c (per CPU), g (per GPU) e s (per skin) \nInfine, è disponibile un numero FACOLTATIVO di intervallo di aggiornamento in secondi (impostazione predefinita: 60 secondi)\n\n*per formato documentazione, cercare \"Java Date Format\"\n**È possibile specificare il periodo delle statistiche in PixelXpert/menu Varie/Impostazioni statistiche di rete\n***Se si sostituisce $N con $Nc si otterranno statistiche sui dati mobili (ad esempio $Ncrx invece di Nrx )</string>
     <string name="update_channel_name">Aggiornamenti</string>
     <string name="download_channel_name">Download</string>
-    <string name="assets_download_title">Download files in corso</string>
+    <string name="assets_download_title">Download dei file in corso</string>
     <string name="assets_download_body">Download file compagni in corso</string>
     <string name="assets_download_size_body">Avanzamento: %s</string>
     <string name="update_notification_title">Aggiornamento scaricato</string>
@@ -427,7 +427,7 @@
     <string name="download_failed">Errore download aggiornamento</string>
     <string name="try_again_later">Per favore riprova più tardi</string>
     <string name="update_flavor_title">Canale di aggiornamento</string>
-    <string name="stable_flavor">Stable</string>
+    <string name="stable_flavor">Stabile</string>
     <string name="update_type_title">Tipo di pacchetto</string>
     <string name="currentVersionTitle">Versione installata: </string>
     <string name="lastestVersionTitle">Ultima versione: </string>
@@ -440,9 +440,9 @@
     <string name="switch_branches">Cambia branch</string>
     <string name="reinstall_word">Reinstalla</string>
     <string name="changelog_title">Registro delle modifiche</string>
-    <string name="own_prefs_header">Impostazioni AOSPMods</string>
+    <string name="own_prefs_header">Impostazioni</string>
     <string name="language_title">Lingua</string>
-    <string name="gesture_nav_extra_cat">Extra gestures NavBar</string>
+    <string name="gesture_nav_extra_cat">Gesti aggiuntivi della barra di navigazione</string>
     <string name="gesture_nav_long_swipe_fc_title">Scorri dalla parte superiore dello schermo per terminare l\'app in primo piano</string>
     <string name="gesture_nav_left_swipe_up_title">Scorri verso l\'alto dal lato sinistro della NavBar</string>
     <string name="gesture_nav_right_swipe_up_title">Scorri verso l\'alto dal lato destro della NavBar</string>
@@ -471,6 +471,7 @@
     <string name="enable_px_manually">Pixel Xpert non è ancora attivato in LSposed. Si prega di aprire il manager LSposed e abilitare Pixel Xpert, quindi riavviare questa app</string>
     <string name="package_hook_bootlooped">Hook fallito a causa del bootloop</string>
     <string name="package_hook_no_response">Il pacchetto non risponde</string>
+    <string name="package_not_running">L\'app non è in esecuzione</string>
     <string name="package_not_found">Pacchetto non trovato</string>
     <string name="package_checking">Caricamento%s</string>
     <string name="package_activated">Pacchetto attivato con successo</string>
@@ -483,9 +484,10 @@
     <string name="whats_wrong">Cosa c\'è che non va?</string>
     <string name="package_not_launchable">Il pacchetto non è avviabile</string>
     <string name="menu_launch_app">Avvia app</string>
+	<string name="menu_stop_app">Arresta app</string>
     <string name="menu_restart_app">Riavvia app</string>
     <string name="why">perché?</string>
-    <string name="okay">Okay</string>
+    <string name="okay">OK</string>
     <!-- Splash Activity -->
     <string name="checking_root_permissions">Verifica permessi root…</string>
     <string name="connecting_root_service">Connessione al servizio root…</string>
@@ -493,7 +495,7 @@
     <string name="root_service_failed">Impossibile connettersi ai servizi root. Riprova più tardi</string>
     <string name="exit">Uscita</string>
     <!-- Bottom Navigation -->
-    <string name="navigation_home">Home</string>
+    <string name="navigation_home">Pagina iniziale</string>
     <string name="navigation_update">Aggiornamenti</string>
     <string name="navigation_hooks">Hooks</string>
     <string name="navigation_settings">Impostazioni</string>
@@ -540,4 +542,115 @@
     <string name="restart_now">Riavvia ora</string>
     <string name="watts">Watt</string>
     <string name="fast_charging_threshold_title">Soglia di ricarica rapida</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">File e selettore documenti</string>
+    <string name="documentsui_header_summary">Comportamento di navigazione e ordinamento dei file</string>
+    <string name="documentsui_remember_sort_title">Ricorda l’ordinamento</string>
+    <string name="documentsui_remember_sort_summary">Mantiene un ordinamento globale e, facoltativamente, impostazioni specifiche per cartella nel selettore file di sistema</string>
+    <string name="documentsui_remember_sort_usage">Nel menu di ordinamento del selettore file, tocca un’opzione per aggiornare l’ordinamento globale. Tieni premuta un’opzione per salvarla solo per la cartella corrente. Un tocco normale elimina anche l’impostazione specifica della cartella.</string>
+    <string name="lockscreen_security_category">Sicurezza della schermata di blocco</string>
+    <string name="lockscreen_block_power_menu_title">Blocca il menu di spegnimento quando il dispositivo è bloccato</string>
+    <string name="lockscreen_block_power_menu_summary">Blocca anche il pulsante di spegnimento nelle Impostazioni rapide e la scorciatoia hardware</string>
+    <string name="lockscreen_block_internet_title">Blocca i controlli Internet quando il dispositivo è bloccato</string>
+    <string name="lockscreen_block_airplane_title">Blocca la modalità aereo quando il dispositivo è bloccato</string>
+    <string name="lockscreen_block_bluetooth_title">Blocca il Bluetooth quando il dispositivo è bloccato</string>
+    <string name="lockscreen_block_hotspot_title">Blocca l’hotspot quando il dispositivo è bloccato</string>
+    <string name="lockscreen_block_dnd_title">Blocca la modalità Non disturbare quando il dispositivo è bloccato</string>
+    <string name="lockscreen_block_ringer_title">Blocca le modifiche alla modalità suoneria quando il dispositivo è bloccato</string>
+    <string name="lockscreen_unlock_to_use">Sblocca il dispositivo per usare questa funzione</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Controlli di installazione avanzati</string>
+    <string name="pm_exact_signature_title">Ignora la corrispondenza esatta delle firme degli APK suddivisi</string>
+    <string name="pm_exact_signature_summary">Rischio elevato: consente differenze tra i dati di firma dell’APK di base e degli APK suddivisi durante l’installazione</string>
+    <string name="pm_shared_uid_title">Ignora i controlli della firma dell’UID condiviso</string>
+    <string name="pm_shared_uid_summary">Rischio elevato: consente l’aggiornamento di app utente con firme diverse che usano un UID condiviso; restano valide le restrizioni della piattaforma sugli UID condivisi</string>
+    <string name="pm_installer_redirect_category">Reindirizzamento del programma di installazione</string>
+    <string name="pm_installer_redirect_title">Reindirizza il programma di installazione pacchetti</string>
+    <string name="pm_installer_redirect_summary">Invia le richieste di installazione APK e, facoltativamente, di disinstallazione all’app selezionata</string>
+    <string name="pm_installer_target_title">Programma di installazione</string>
+    <string name="pm_installer_system_default">Predefinito di sistema</string>
+    <string name="pm_force_explicit_installer_title">Sostituisci il programma di installazione selezionato esplicitamente</string>
+    <string name="pm_force_explicit_installer_summary">Reindirizza anche le richieste associate esplicitamente a uno specifico componente di installazione</string>
+    <string name="pm_intercept_session_title">Reindirizza la conferma dell’installazione di sessione</string>
+    <string name="pm_intercept_session_summary">Intercetta le richieste CONFIRM_INSTALL e CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Correggi l’accesso al percorso APK della sessione</string>
+    <string name="pm_fix_session_permissions_summary">Correzione sperimentale di compatibilità con Android 14 e versioni successive per programmi di installazione esterni</string>
+    <string name="pm_intercept_uninstall_title">Reindirizza le richieste di disinstallazione</string>
+    <string name="pm_intercept_uninstall_summary">Invia ACTION_DELETE e ACTION_UNINSTALL_PACKAGE all’app selezionata</string>
+    <string name="pm_uninstall_follow_installer_title">Usa il programma di installazione per le richieste di disinstallazione</string>
+    <string name="pm_uninstaller_target_title">Programma di disinstallazione</string>
+    <string name="app_info_enhancements_category">Informazioni app</string>
+    <string name="app_info_show_version_code_title">Mostra codice versione</string>
+    <string name="app_info_allow_disable_user_apps_title">Consenti di disattivare le app utente</string>
+    <string name="app_info_allow_disable_user_apps_summary">Aggiunge un’azione per attivare o disattivare le app non di sistema nella schermata Informazioni app</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Tema, appunti, privacy e funzioni di digitazione sperimentali</string>
+    <string name="gboard_theme_category">Tema</string>
+    <string name="gboard_amoled_black_title">Nero AMOLED in modalità scura</string>
+    <string name="gboard_amoled_black_summary">Rende completamente neri i contenitori di superficie Material Expressive mantenendo i colori in risalto</string>
+    <string name="gboard_clipboard_category">Appunti</string>
+    <string name="gboard_clipboard_history_title">Personalizza la cronologia degli appunti</string>
+    <string name="gboard_clipboard_history_summary">Modifica il numero e l’età degli elementi richiesti da Gboard; gli elementi meno recenti già eliminati da Gboard non possono essere ripristinati</string>
+    <string name="gboard_clipboard_size_title">Numero massimo di elementi visibili</string>
+    <string name="gboard_clipboard_size_summary">Intervallo consentito: da 5 a 100</string>
+    <string name="gboard_clipboard_days_title">Giorni di cronologia visibili</string>
+    <string name="gboard_clipboard_days_summary">Intervallo consentito: da 0 a 3650; 0 richiede tutti gli elementi conservati</string>
+    <string name="gboard_secure_clipboard_title">Escludi il testo sensibile dalla cronologia di Gboard</string>
+    <string name="gboard_secure_clipboard_summary">Blocca gli elementi copiati dai campi password e i probabili codici di verifica, PIN o numeri di conto lunghi</string>
+    <string name="gboard_clipboard_chips_title">Suggerimenti di azione degli appunti</string>
+    <string name="gboard_clipboard_chips_summary">Attiva i suggerimenti di azione, l’estrazione di entità e gli esperimenti di copia per rispondere di Gboard</string>
+    <string name="gboard_privacy_category">Privacy</string>
+    <string name="gboard_force_incognito_title">Disattiva l’apprendimento personalizzato</string>
+    <string name="gboard_force_incognito_summary">Richiede di non usare l’apprendimento personalizzato in tutti i campi di immissione; non forza l’interfaccia completa della modalità di navigazione in incognito di Gboard</string>
+    <string name="gboard_privacy_flags_title">Riduci telemetria e addestramento</string>
+    <string name="gboard_privacy_flags_summary">Modifica le opzioni note di Gboard per archiviazione delle correzioni, acquisizione dei contenuti, registrazione, metriche e cache di addestramento</string>
+    <string name="gboard_input_category">Miglioramenti della digitazione</string>
+    <string name="gboard_multilingual_title">Digitazione multilingue</string>
+    <string name="gboard_multilingual_summary">Attiva gli esperimenti noti di digitazione multilingue, suggerimenti, funzioni Pixel e miglioramento vocale</string>
+    <string name="gboard_ai_title">AI e digitazione intelligente</string>
+    <string name="gboard_ai_summary">Attiva gli esperimenti noti di Risposta rapida, Scrittura intelligente, emojify, adesivi e AI Core</string>
+    <string name="gboard_grammar_title">Grammatica e revisione</string>
+    <string name="gboard_grammar_summary">Attiva gli esperimenti noti di revisione sul dispositivo, controllo grammaticale, strumenti di scrittura e conversione del testo</string>
+    <string name="gboard_floating_title">Tastiera mobile e divisa</string>
+    <string name="gboard_floating_summary">Attiva gli esperimenti per orientamento orizzontale, multi-finestra, finestre libere, tastiera divisa su tablet, cursore delle dimensioni e transizioni</string>
+    <string name="gboard_emoji_kitchen_title">Miglioramenti di Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Attiva gli esperimenti di esplorazione, ricerca, suggerimenti, animazioni e selettore integrato</string>
+    <string name="gboard_access_point_title">Nuovo design del menu delle scorciatoie</string>
+    <string name="gboard_access_point_summary">Attiva gli esperimenti del menu di accesso, del tema Silk, del carattere di sistema, di Google Sans, dei temi personalizzati e delle animazioni</string>
+    <string name="gboard_metered_downloads_title">Consenti i download su reti a consumo</string>
+    <string name="gboard_metered_downloads_summary">Consente di scaricare lingue, dati di identificazione della lingua e pacchetti vocali noti tramite rete mobile o altre reti a consumo</string>
+    <string name="gboard_experimental_category">Motori sperimentali</string>
+    <string name="gboard_experimental_summary">Usa opzioni private di Gboard che possono cambiare o smettere di funzionare dopo un aggiornamento; riavvia Gboard dopo le modifiche</string>
+    <string name="gboard_inline_suggestions_title">Suggerimenti in linea di più parole</string>
+    <string name="gboard_proactive_emoji_title">Suggerimenti proattivi di emoji</string>
+    <string name="gboard_tflite_title">Motori di previsione TFLite</string>
+    <string name="gboard_fast_access_title">Barra di accesso rapido</string>
+    <string name="dialer_force_enable_call_recording_title">Forza l’attivazione della registrazione chiamate</string>
+    <string name="dialer_force_enable_call_recording_summary">Sblocca la registrazione nativa delle chiamate nell’app Telefono di Google nelle regioni non supportate</string>
+    <string name="landscape_split_shade_title">Pannello notifiche stile tablet in orizzontale</string>
+    <string name="landscape_split_shade_summary">Mostra Impostazioni rapide e notifiche affiancate quando il telefono viene ruotato orizzontalmente</string>
+    <string name="recents_clear_all">Cancella tutto</string>
+    <string name="launcher_header">Launcher</string>
+    <string name="launcher_header_summary">Miglioramenti della schermata Home e delle attività recenti</string>
+    <string name="launcher_home_section">Schermata Home</string>
+    <string name="launcher_drawer_section">Cassetto app</string>
+    <string name="launcher_recents_section">Attività recenti</string>
+    <string name="launcher_hide_desktop_labels">Nascondi nomi icone nella schermata Home</string>
+    <string name="launcher_hide_desktop_search">Nascondi barra di ricerca nella schermata Home</string>
+    <string name="launcher_hide_drawer_labels">Nascondi nomi icone nel cassetto app</string>
+    <string name="launcher_hide_drawer_search">Nascondi barra di ricerca del cassetto app</string>
+    <string name="recents_remove_screenshot">Rimuovi azione Screenshot</string>
+    <string name="recents_equal_action_widths">Usa pulsanti azione di uguale larghezza</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Personalizzazione</string>
+	<string name="home_category_system_interface">Interfaccia di sistema</string>
+	<string name="home_category_app_enhancements">Miglioramenti delle app</string>
+	<string name="home_category_system_tools">Strumenti di sistema</string>
 </resources>

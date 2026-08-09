@@ -1,0 +1,11 @@
+Remember My Sort
+Copyright (C) hxreborn / rafareborn and contributors
+https://github.com/hxreborn/remember-my-sort
+
+This feature is derived from Remember My Sort commit
+de76517c015ddd7524b9e24af2371527ce93509f and was modified for PixelXpert
+on 2026-08-08.
+
+Remember My Sort is licensed under the GNU General Public License version 3.
+The complete GPLv3 license text is included in this APK as
+META-INF/licenses/PixelXpert-GPL-3.0.txt.

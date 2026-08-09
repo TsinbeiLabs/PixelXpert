@@ -43,27 +43,25 @@ android {
 	}
 
 	val keystorePropertiesFile = rootProject.file("ReleaseKey.properties")
-	var releaseSigning = signingConfigs.getByName("debug")
-
-	try {
-		val keystoreProperties = Properties().apply {
-			if (keystorePropertiesFile.exists()) {
-				FileInputStream(keystorePropertiesFile).use(::load)
-			} else {
-				setProperty("keyAlias", System.getenv("PIXELXPERT_KEY_ALIAS"))
-				setProperty("keyPassword", System.getenv("PIXELXPERT_KEY_PASSWORD"))
-				setProperty("storeFile", System.getenv("PIXELXPERT_STORE_FILE"))
-				setProperty("storePassword", System.getenv("PIXELXPERT_STORE_PASSWORD"))
-			}
+	val keystoreProperties = Properties().apply {
+		if (keystorePropertiesFile.exists()) {
+			FileInputStream(keystorePropertiesFile).use(::load)
+		} else {
+			setProperty("keyAlias", System.getenv("PIXELXPERT_KEY_ALIAS") ?: "")
+			setProperty("keyPassword", System.getenv("PIXELXPERT_KEY_PASSWORD") ?: "")
+			setProperty("storeFile", System.getenv("PIXELXPERT_STORE_FILE") ?: "")
+			setProperty("storePassword", System.getenv("PIXELXPERT_STORE_PASSWORD") ?: "")
 		}
-
-		releaseSigning = signingConfigs.create("release") {
-			keyAlias = keystoreProperties.getProperty("keyAlias")
-			keyPassword = keystoreProperties.getProperty("keyPassword")
-			storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
-			storePassword = keystoreProperties.getProperty("storePassword")
-		}
-	} catch (_: Exception) {
+	}
+	val requiredSigningProperties = listOf("keyAlias", "keyPassword", "storeFile", "storePassword")
+	require(requiredSigningProperties.all { keystoreProperties.getProperty(it).isNullOrBlank().not() }) {
+		"Release signing requires ReleaseKey.properties or PIXELXPERT_* signing environment variables."
+	}
+	val releaseSigning = signingConfigs.create("release") {
+		keyAlias = keystoreProperties.getProperty("keyAlias")
+		keyPassword = keystoreProperties.getProperty("keyPassword")
+		storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
+		storePassword = keystoreProperties.getProperty("storePassword")
 	}
 
 	buildTypes {
@@ -77,7 +75,6 @@ android {
 			isDebuggable = true
 			isMinifyEnabled = false
 			isShrinkResources = false
-			signingConfig = releaseSigning
 		}
 	}
 

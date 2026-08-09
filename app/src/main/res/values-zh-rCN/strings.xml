@@ -5,7 +5,7 @@
     <string name="xposed_desc">自定义 Google Pixel 设备</string>
     <string name="volume_tile_title">媒体音量</string>
     <string name="sliding_tile_subtitle">点击调整</string>
-    <string name="app_switch_tile_title">Switch App Profile</string>
+    <string name="app_switch_tile_title">切换应用配置文件</string>
     <string name="hide_default">隐藏 (默认)</string>
     <string name="percent_of_default_size">% 默认</string>
     <string name="overlay_none_title">(默认)</string>
@@ -20,7 +20,7 @@
     <string name="notification_channel_update">更新</string>
     <string name="notification_channel_update_desc">此频道会展示最新更新的通知。</string>
     <string name="new_update_title">有可用更新</string>
-    <string name="new_update_desc">有新本的 PixelXpert 可用</string>
+    <string name="new_update_desc">PixelXpert 有新版本可用</string>
     <string name="skip_this_update">跳过此更新</string>
     <string name="browser_not_found">未找到浏览器</string>
     <string name="settings_general_section_title">通用</string>
@@ -33,13 +33,19 @@
     <string name="update_over_wifi_title">仅通过 WiFi 检查更新</string>
     <string name="update_over_wifi_summary">仅当连接到 WiFi 时才在后台检查更新</string>
     <string name="github_repo_title">GitHub 仓库</string>
-    <string name="telegram_group_title">Telegram channel</string>
+	<string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+    <string name="telegram_group_title">Telegram 频道</string>
     <string name="usage_title">用途</string>
     <string name="usage_summary">打开 Wiki 页面</string>
     <string name="crowdin_title">翻译到你的语言</string>
     <string name="crowdin_summary">帮助我们将 %s 翻译成您的语言</string>
     <string name="nothing_to_show">无内容</string>
     <!--Category titles-->
+	<string name="home_category_personalization">个性化</string>
+	<string name="home_category_system_interface">系统界面</string>
+	<string name="home_category_app_enhancements">应用增强</string>
+	<string name="home_category_system_tools">系统工具</string>
     <string name="lockscreen_header_title">锁屏</string>
     <string name="lockscreen_header_summary">把屏幕锁改成合你口味的样子</string>
     <string name="statusbar_header">状态栏</string>
@@ -48,23 +54,29 @@
     <string name="nav_header_summary">改变您穿梭于 App 之间的方式</string>
     <string name="dialer_header">电话与拨号</string>
     <string name="dialer_header_summary">为您的电话拨打提供一些助力</string>
+    <string name="documentsui_header">文件与文档选择器</string>
+    <string name="documentsui_header_summary">文件浏览和排序行为</string>
     <string name="misc_header">杂项</string>
     <string name="misc_header_summary">PixelXpert 提供的其他功能</string>
-    <string name="qs_panel_category_title">磁贴面板</string>
-    <string name="qs_panel_category_summary">亮度滑块，闪光灯级别等更多内容</string>
+    <string name="qs_panel_category_title">快捷设置面板</string>
+    <string name="qs_panel_category_summary">亮度滑块、手电筒亮度等更多功能</string>
     <string name="theme_customization_category">主题</string>
     <string name="theme_customization_summary">自定义视觉风格和图标</string>
     <string name="pm_header">包管理器</string>
     <string name="pm_header_summary">跳过 APK 文件的安全检查</string>
     <string name="hotspot_header">热点</string>
     <string name="hotspot_header_summary">如果您要深挖 WiFi 热点的隐藏功能</string>
+    <!-- DocumentsUI settings -->
+    <string name="documentsui_remember_sort_title">记住排序方式</string>
+    <string name="documentsui_remember_sort_summary">在系统文件选择器中保留全局排序，并支持单独保存每个文件夹的排序</string>
+    <string name="documentsui_remember_sort_usage">在文件选择器的排序菜单中，普通点击会更新全局排序；长按某个排序选项会仅为当前文件夹保存。普通点击也会清除当前文件夹的单独设置。</string>
     <!-- Hotspot settings-->
     <string name="hotspot_hide_ssid_title">隐藏 SSID</string>
     <string name="hotspot_inactivity_timeout_title">自动关闭时间</string>
     <string name="hotspot_max_client_title">最大连接数</string>
-    <string name="hotspot_disable_approval_title">已绕过热点的问题</string>
+    <string name="hotspot_disable_approval_title">修复热点连接问题</string>
     <string name="hotspot_disable_approval_summary">允许非“预先批准”客户端无缝连接</string>
-    <string name="hotspot_force_unsupported_regions">Remove hotspot limitations in unsupported regions</string>
+    <string name="hotspot_force_unsupported_regions">移除不受支持地区的热点限制</string>
     <!--Lock screen related-->
     <string name="depth_wallpaper_options">深度效果的壁纸</string>
     <string name="depth_wallpaper_title">深度效果壁纸</string>
@@ -73,7 +85,7 @@
     <string name="depth_wallpaper_opacity_title">壁纸前景透明度</string>
     <string name="depth_wallpaper_aod_title">也在“息屏显示”上展示</string>
     <string name="depth_wallpaper_model_ready">AI 模型已下载到设备</string>
-    <string name="depth_wallpaper_model_not_available">AI 模型在设备上(目前暂)不可用</string>
+    <string name="depth_wallpaper_model_not_available">设备上尚未提供 AI 模型</string>
     <string name="ls_general_options">锁屏选项</string>
     <string name="hide_avatar_title">隐藏用户头像 (多用户模式)</string>
     <string name="fingerprint_options">指纹</string>
@@ -94,7 +106,7 @@
     <string name="keyguard_bottom_buttons_transparent_title">隐藏图标背景</string>
     <string name="shufflePin_title">打乱密码盘</string>
     <string name="wakeup_to_security_title">设备唤醒时显示密码输入界面</string>
-    <string name="easy_unlock_title">简易解锁 (Pin/密码)</string>
+    <string name="easy_unlock_title">快速解锁（PIN/密码）</string>
     <string name="easy_unlock_summary">如果第一次未生效，请重试</string>
     <string name="lockscreen_security_category">锁屏安全</string>
     <string name="lockscreen_block_power_menu_title">锁定时阻止电源菜单</string>
@@ -124,7 +136,7 @@
     <string name="caution_mobile_costs">注意 - 不知情下漫游会增加你的流量费用</string>
     <string name="volte_icon_title">可用时显示 VoLTE 图标</string>
     <string name="vowifi_icon_title">可用时显示 VoWiFi 图标</string>
-    <string name="hide_privacychip_title">隐藏隐私指示器</string>
+    <string name="hide_privacychip_title">隐藏隐私指示器\n（相机、麦克风）</string>
     <!-- \n means next line-->
     <string name="sbc_position_title">时钟位置</string>
     <string name="sbc_ampm_style">AM / PM 样式</string>
@@ -196,7 +208,7 @@
     <string name="sb_ignored_icons_statusbar">选择在状态栏隐藏哪个图标</string>
     <string name="sb_kg_ignored_icons">锁屏</string>
     <string name="sb_ignored_icons_kg">选择在锁屏状态栏隐藏哪个图标</string>
-    <string name="sb_qs_ignored_icons">快速设定</string>
+    <string name="sb_qs_ignored_icons">快捷设置</string>
     <string name="sb_ignored_icons_qs">选择在快速设置中隐藏哪个图标</string>
     <string name="status_bar_volte">VoLTE</string>
     <string name="status_bar_vowifi">VoWiFi</string>
@@ -245,15 +257,15 @@
     <string name="friday">周五</string>
     <string name="saturday">周六</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">闪光灯级别的磁贴</string>
+    <string name="qs_leveled_flashlight_title">手电筒亮度调节磁贴</string>
     <string name="qs_flashlight_level_global_title">全局应用手电筒亮度</string>
-    <string name="qs_tile_qty_title">磁贴面板数量设定</string>
-    <string name="qs_leveled_flashlight_summary">长按瓷块显示滑动条\n 需要硬件支持</string>
-    <string name="qs_pulldown_size">快速下拉磁贴面板</string>
-    <string name="qs_pulldown_switch_title">快速下拉磁贴面板</string>
-    <string name="qs_pulldown_side_title">快速下拉宽度</string>
-    <string name="qs_pulldown_category">磁贴面板下拉选项</string>
-    <string name="qs_pullup_switch_title">滑动关闭快速设置</string>
+    <string name="qs_tile_qty_title">快捷设置磁贴数量</string>
+    <string name="qs_leveled_flashlight_summary">长按磁贴显示滑块\n需要受支持的硬件</string>
+    <string name="qs_pulldown_size">快速下拉区域宽度</string>
+    <string name="qs_pulldown_switch_title">从状态栏快速下拉快捷设置面板</string>
+    <string name="qs_pulldown_side_title">快速下拉侧</string>
+    <string name="qs_pulldown_category">快捷设置下拉</string>
+    <string name="qs_pullup_switch_title">一次上滑关闭快捷设置</string>
     <string name="qs_tile_qty_portrait">竖屏时</string>
     <string name="qs_tile_qty_landscape">横屏时</string>
     <string name="qqs_rows_number">磁贴面板行数</string>
@@ -273,13 +285,13 @@
     <string name="gesture_nav_pill_width_title">对比标准大小的宽度</string>
     <string name="gesture_nav_pill_height_title">对比标准大小的高度</string>
     <string name="threebutton_header_title">三按钮导航</string>
-    <string name="taskbar_header_title">任务量导航</string>
+    <string name="taskbar_header_title">任务栏导航</string>
     <string name="modify_3button_title">更改按钮顺序</string>
     <string name="three_button_left_title">左按钮</string>
     <string name="three_button_center_title">中按钮</string>
     <string name="three_button_right_title">右按钮</string>
     <string name="hide_navbar_title">隐藏小白条</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">隐藏导航栏边距</string>
     <string name="taskbar_as_recents_title">将任务栏替换为 PixelXpert 最近任务栏</string>
     <string name="taskbar_enable_google_recents">在任务栏上启用 Android 最近任务</string>
     <string name="taskbar_height_title">任务栏高度</string>
@@ -288,10 +300,10 @@
     <string name="taskbar_status_title">任务栏</string>
     <string name="taskbar_force_enable_title">强制开启</string>
     <string name="taskbar_force_disable_title">强制关闭</string>
-    <string name="taskbar_transient_title">Auto hide</string>
+    <string name="taskbar_transient_title">自动隐藏</string>
     <string name="taskbar_on_launcher_title">在首页显示</string>
     <string name="remap_physical_buttons_title">重映射物理按钮</string>
-    <string name="taskbar_on_ime_title">显示时打开键盘</string>
+    <string name="taskbar_on_ime_title">键盘打开时显示</string>
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">绕过应用签名检查</string>
     <string name="pm_allow_downgrade_title">允许应用降级</string>
@@ -300,6 +312,21 @@
     <string name="pm_exact_signature_summary">高风险：允许安装时基础 APK 与分包 APK 的签名信息不同</string>
     <string name="pm_shared_uid_title">绕过共享 UID 签名检查</string>
     <string name="pm_shared_uid_summary">高风险：允许签名不同的用户应用在使用共享 UID 时更新；平台共享 UID 限制仍然保留</string>
+    <string name="pm_installer_redirect_category">安装器重定向</string>
+    <string name="pm_installer_redirect_title">重定向应用安装器</string>
+    <string name="pm_installer_redirect_summary">将 APK 安装请求和可选的卸载请求交给指定程序处理</string>
+    <string name="pm_installer_target_title">安装器</string>
+    <string name="pm_installer_system_default">系统默认</string>
+    <string name="pm_force_explicit_installer_title">覆盖明确指定的安装器</string>
+    <string name="pm_force_explicit_installer_summary">同时重定向硬编码到特定安装器组件的请求</string>
+    <string name="pm_intercept_session_title">重定向会话安装确认</string>
+    <string name="pm_intercept_session_summary">拦截 CONFIRM_INSTALL 和 CONFIRM_PERMISSIONS 请求</string>
+    <string name="pm_fix_session_permissions_title">修复会话 APK 路径访问</string>
+    <string name="pm_fix_session_permissions_summary">适用于外部安装器的 Android 14+ 实验性兼容修复</string>
+    <string name="pm_intercept_uninstall_title">重定向卸载请求</string>
+    <string name="pm_intercept_uninstall_summary">将 ACTION_DELETE 和 ACTION_UNINSTALL_PACKAGE 交给指定程序处理</string>
+    <string name="pm_uninstall_follow_installer_title">卸载请求使用同一安装器</string>
+    <string name="pm_uninstaller_target_title">卸载器</string>
     <string name="app_info_enhancements_category">应用信息</string>
     <string name="app_info_show_version_code_title">显示版本代码</string>
     <string name="app_info_allow_disable_user_apps_title">允许停用用户应用</string>
@@ -315,7 +342,7 @@
     <string name="allow_all_screen_rotations">强制解锁屏幕旋转</string>
     <string name="allow_all_screen_rotations_summary">将同时无视手动旋转悬浮钮</string>
     <string name="force_no_cutout">无视屏幕开孔</string>
-    <string name="clear_all_reposition_title">最近任务右侧添加 清除所有 按钮</string>
+    <string name="clear_all_reposition_title">最近任务下方添加 清除所有 按钮</string>
     <string name="force_themed_icons_title">自动生成缺少的主题图标</string>
     <string name="force_themed_icons_summary">仅 Pixel 启动器</string>
     <string name="volume_button_step_title">音量步进 (0至100%)</string>
@@ -350,7 +377,7 @@
     <string name="notif_always_expand">始终展开</string>
     <string name="notif_always_collapse">始终折叠</string>
     <string name="control_flashlight_with_volume_keys">使用音量键控制手电筒亮度</string>
-    <string name="flashlight_fade_effect">闪光灯淡入淡出效果</string>
+    <string name="flashlight_fade_effect">手电筒渐隐效果</string>
     <string name="milliseconds">毫秒</string>
     <string name="duration_seconds">%d 秒</string>
     <string name="hours">小时</string>
@@ -378,7 +405,7 @@
     <string name="vibration_type_notification">强度由系统通知振动设置定义</string>
     <string name="dialer_mute_record_message_title">删除通话录音通知</string>
     <string name="dialer_mute_record_message_summary">仅适用于已启用通话录制的谷歌电话应用</string>
-    <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
+    <string name="radio_force_volte_nr">在不受支持的地区强制启用 VoLTE/NR</string>
     <!-- Arrays strings -->
     <!-- Quick pull down -->
     <string name="pull_down_left">左侧</string>
@@ -410,7 +437,7 @@
     <string name="network_stat_month">月起始日</string>
     <!-- Incompatibility Alert -->
     <string name="incompatible_alert_title">不兼容</string>
-    <string name="incompatible_alert_body">你当前的 ROM 不是该模组的直接目标,你可以继续使用它,但一些(或所有)功能可能不会预期工作</string>
+    <string name="incompatible_alert_body">当前 ROM 并非此模块的直接适配目标。你可以继续使用，但部分或全部选项可能无法正常工作。\n\n请勿提交错误报告</string>
     <string name="incompatible_alert_ok_btn">我已知晓</string>
     <!-- App kill Alert -->
     <string name="app_kill_alert_title">通知</string>
@@ -418,11 +445,11 @@
     <string name="app_kill_ok_btn">好的</string>
     <!-- Depth Effect Alert -->
     <string name="depth_effect_alert_title">请注意</string>
-    <string name="depth_effect_alert_body">使用合适的锁屏壁纸，让前台元素不会阻挡您锁屏上的整个时钟， 确保您锁屏界面的视觉吸引力和功能清晰度。\n\n注：%s.</string>
+    <string name="depth_effect_alert_body">请选择前景不会完全遮挡锁屏时钟的合适壁纸，以兼顾视觉效果和信息可读性。\n\n注意：%s。</string>
     <string name="depth_effect_ok_btn">确定</string>
     <!-- Reboot alert -->
-    <string name="pending_actions"></string>
-    <string name="btn_dismiss">Dismiss</string>
+    <string name="pending_actions">待执行操作</string>
+    <string name="btn_dismiss">关闭</string>
     <!-- Menu Items -->
     <string name="menu_settings_title">导入/导出</string>
     <string name="menu_reset_defaults">重置所有设置</string>
@@ -435,7 +462,7 @@
     <string name="menu_updates">App 更新</string>
     <string name="monitoring_category_title">监控选项</string>
     <string name="netstat_header">网络统计设置</string>
-    <string name="string_formatter_manual_body_v3">除了普通文本之外，还可以使用动态变量，例如日期、数据使用情况和温度：\n\n$G\&lt;format\&gt; ：公历日期，基于格式*\n$P&lt;format&gt; ：波斯日期，基于格式*\n$Nrx ：下载总量指定时间段内的总上传量 ** ***\n$Ntx：指定时间段内的总上传量 ** ***\n$Nall ：指定时间段内的总流量 ** ***\n$Nssid ：WiFi SSID 名称（如适用）\n\n$T\&lt;format\&gt;[interval] ： 温度; \n格式可以是 b（针对电池）、c（针对 CPU）、g（针对 GPU）和 s（针对皮肤） \n最后，还有可选的更新间隔数（以秒为单位）（默认值：60 秒）\n\n*针对格式文档，搜索“Java 日期格式”\n**您可以在 PixelXpert/杂项菜单/网络统计设置中指定统计周期\n***如果将 $N 替换为 $Nc ，您将获得移动数据统计信息（例如 $Ncrx 而不是 Nrx ）</string>
+    <string name="string_formatter_manual_body_v3">除普通文本外，还可使用日期、流量和温度等动态变量：\n\n$G\&lt;format\&gt;：按指定格式显示公历日期*\n$P&lt;format&gt;：按指定格式显示波斯历日期*\n$Nrx：指定统计周期内的总下载量** ***\n$Ntx：指定统计周期内的总上传量** ***\n$Nall：指定统计周期内的总流量** ***\n$Nssid：Wi-Fi SSID 名称（如适用）\n\n$T\&lt;format\&gt;[interval]：温度；\nformat 可取 b（电池）、c（CPU）、g（GPU）或 s（机身表面）\n末尾还可选填更新间隔秒数，默认 60 秒\n\n*有关格式说明，请搜索“Java Date Format”\n**可在 PixelXpert/杂项/网络统计设置中指定统计周期\n***将 $N 替换为 $Nc 可显示移动数据统计信息（例如用 $Ncrx 代替 $Nrx）</string>
     <string name="update_channel_name">更新</string>
     <string name="download_channel_name">下载</string>
     <string name="assets_download_title">正在下载文件</string>
@@ -459,10 +486,10 @@
     <string name="switch_branches">更换分支</string>
     <string name="reinstall_word">重装</string>
     <string name="changelog_title">更新日志</string>
-    <string name="own_prefs_header">AOSP Mods 设置</string>
-    <string name="language_title">语言(Language)</string>
+    <string name="own_prefs_header">设置</string>
+    <string name="language_title">语言</string>
     <string name="gesture_nav_extra_cat">更多导航栏手势</string>
-    <string name="gesture_nav_long_swipe_fc_title">上滑至屏幕顶部杀死前台APP</string>
+    <string name="gesture_nav_long_swipe_fc_title">上滑至屏幕顶部结束前台应用</string>
     <string name="gesture_nav_left_swipe_up_title">左侧上滑动作</string>
     <string name="gesture_nav_right_swipe_up_title">右侧上滑动作</string>
     <string name="gesture_nav_left_swipe_up_percent">左侧上滑区域 (%)</string>
@@ -471,9 +498,9 @@
     <string name="gesture_nav_swipe_up_height">上滑动作触发最低高度</string>
     <string name="none">无</string>
     <string name="screenshot">截图</string>
-    <string name="kill_foreground_app">杀死前台app</string>
-    <string name="toggle_notification">打开通知面板</string>
-    <string name="toggle_one_handed">打开单手模式</string>
+    <string name="kill_foreground_app">结束前台应用</string>
+    <string name="toggle_notification">切换通知面板</string>
+    <string name="toggle_one_handed">切换单手模式</string>
     <string name="sleep">睡眠</string>
     <!-- Search Preference -->
     <string name="searchpreference_title">搜索</string>
@@ -487,21 +514,23 @@
     <string name="hooked_packages_title">已连接的软件包</string>
     <string name="package_hooked_successful">软件包有响应</string>
     <string name="package_not_hook_enabled">软件包未在 LSposed 中启用</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
-    <string name="package_hook_bootlooped">由于不断重启，hook 失败</string>
+    <string name="enable_px_manually">Pixel Xpert 尚未在 LSPosed 中激活。请打开 LSPosed 管理器并启用 Pixel Xpert，然后重启本应用</string>
+    <string name="package_hook_bootlooped">因启动循环而注入失败</string>
     <string name="package_hook_no_response">软件包没有响应</string>
+	<string name="package_not_running">软件未运行</string>
     <string name="package_not_found">软件包未找到</string>
     <string name="package_checking">正在加载 %s</string>
-    <string name="package_activated">软件包已成功启动</string>
-    <string name="package_activation_failed">软件包启动失败</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="package_activated">软件包已成功激活</string>
+    <string name="package_activation_failed">软件包激活失败</string>
+    <string name="lsposed_not_found">未安装 LSPosed</string>
     <string name="activate_in_lsposed">在 LSposed 中启用</string>
-    <string name="package_not_hook_enabled_info">应用已安装，但 LSPosed 中没有启用 hook。点击\'%s \'启用。</string>
-    <string name="package_hook_bootlooped_info">应用的 hook 导致启动循环，因此它已被禁用，以防产生更多问题。</string>
-    <string name="package_hook_no_response_info">该应用没有响应 hook 状态。它可能没有运行，或者可能没有 hook 到我们的连接。</string>
+    <string name="package_not_hook_enabled_info">应用已安装，但 LSPosed 尚未配置为注入该应用。点击“%s”即可启用。</string>
+    <string name="package_hook_bootlooped_info">对该应用的注入导致启动循环，因此已停用，以免继续引发问题。</string>
+    <string name="package_hook_no_response_info">应用未响应注入状态查询。它可能尚未运行，或未正确连接到本模块。</string>
     <string name="whats_wrong">出了什么问题？</string>
     <string name="package_not_launchable">软件包不可启动</string>
     <string name="menu_launch_app">启动应用</string>
+	<string name="menu_stop_app">停止应用</string>
     <string name="menu_restart_app">重启应用</string>
     <string name="why">为什么？</string>
     <string name="okay">好的</string>
@@ -510,7 +539,7 @@
     <string name="connecting_root_service">正在连接 root 服务…</string>
     <string name="root_access_denied">root 访问被拒绝。请允许 root 访问。</string>
     <string name="root_service_failed">无法连接服务器，请稍后再试</string>
-    <string name="exit">Exit</string>
+    <string name="exit">退出</string>
     <!-- Bottom Navigation -->
     <string name="navigation_home">首页</string>
     <string name="navigation_update">更新</string>
@@ -557,8 +586,8 @@
     <string name="optimization_restart_needed_message">建议重启以提高系统集成度</string>
     <string name="restart_postpone">稍后重启</string>
     <string name="restart_now">立即重启</string>
-    <string name="watts">Watts</string>
-    <string name="fast_charging_threshold_title">Fast charging threshold</string>
+    <string name="watts">瓦</string>
+    <string name="fast_charging_threshold_title">快充阈值</string>
     <!-- Gboard -->
     <string name="gboard_header">Gboard</string>
     <string name="gboard_header_summary">主题、剪贴板、隐私与实验性输入功能</string>
@@ -602,4 +631,48 @@
     <string name="gboard_proactive_emoji_title">主动 Emoji 建议</string>
     <string name="gboard_tflite_title">TFLite 预测引擎</string>
     <string name="gboard_fast_access_title">快速访问栏</string>
+    <!-- Non-translatable resources -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="dialer_force_enable_call_recording_title">强制启用通话录音</string>
+    <string name="dialer_force_enable_call_recording_summary">在不受支持的地区解锁 Google 电话应用的原生通话录音功能</string>
+    <string name="landscape_split_shade_title">横屏时使用平板式通知栏</string>
+    <string name="landscape_split_shade_summary">将手机横向旋转时，并排显示快捷设置和通知</string>
+    <string name="recents_clear_all">清除全部</string>
+    <string name="launcher_header">启动器</string>
+    <string name="launcher_header_summary">最近任务和主屏幕增强功能</string>
+    <string name="launcher_home_section">主屏幕</string>
+    <string name="launcher_drawer_section">应用抽屉</string>
+    <string name="launcher_recents_section">最近任务</string>
+    <string name="launcher_hide_desktop_labels">隐藏主屏幕图标文字</string>
+	<string name="launcher_hide_shortcut_badge">隐藏快捷方式来源角标</string>
+	<string name="launcher_hide_shortcut_badge_summary">隐藏快捷方式右下角的来源应用小图标</string>
+	<string name="launcher_lock_desktop">锁定桌面</string>
+	<string name="launcher_lock_desktop_summary">禁止新增、删除或移动应用、快捷方式和小组件</string>
+	<string name="launcher_hide_at_a_glance">隐藏一目了然</string>
+	<string name="launcher_hide_at_a_glance_summary">从主屏幕隐藏一目了然组件</string>
+	<string name="launcher_wallpaper_zooming">壁纸缩放</string>
+	<string name="launcher_wallpaper_zooming_summary">在开启应用抽屉及预览时缩放壁纸</string>
+    <string name="launcher_hide_desktop_search">隐藏主屏幕搜索栏</string>
+    <string name="launcher_hide_drawer_labels">隐藏应用抽屉图标文字</string>
+    <string name="launcher_hide_drawer_search">隐藏应用抽屉搜索栏</string>
+	<string name="launcher_quick_launch">按回车启动第一个搜索结果</string>
+	<string name="launcher_quick_launch_summary">在应用抽屉搜索中按回车，启动第一个应用结果</string>
+	<string name="launcher_hide_drawer_apps">从应用抽屉隐藏应用</string>
+	<string name="launcher_hide_drawer_apps_summary">从应用抽屉和预测建议中隐藏选定应用</string>
+	<string name="launcher_hidden_apps">隐藏的应用</string>
+	<string name="launcher_search_hidden_apps">在搜索中显示隐藏应用</string>
+	<string name="launcher_search_hidden_apps_summary">让隐藏应用仍显示在应用抽屉搜索结果中</string>
+	<string name="launcher_hidden_apps_search">搜索应用名或包名</string>
+	<string name="launcher_apps_all">全部</string>
+	<string name="launcher_apps_user">用户</string>
+	<string name="launcher_apps_system">系统</string>
+    <string name="recents_remove_screenshot">移除截图操作</string>
+    <string name="recents_equal_action_widths">使用等宽操作按钮</string>
 </resources>

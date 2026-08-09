@@ -9,7 +9,7 @@
     <string name="hide_default">Скрыть (по умолчанию)</string>
     <string name="percent_of_default_size">% от стандартного размера</string>
     <string name="overlay_none_title">(по умолчанию)</string>
-    <string name="general_section">General options</string>
+    <string name="general_section">Общие параметры</string>
     <string name="general_on">Вкл</string>
     <string name="general_off">Выкл</string>
     <string name="sysui_restart_needed">Требуется перезагрузка SystemUI для применения</string>
@@ -235,7 +235,7 @@
     <string name="friday">Пятница</string>
     <string name="saturday">Суббота</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Плитка яркости фонарика</string>
+    <string name="qs_leveled_flashlight_title">Плитка для регулировки яркости фонарика</string>
     <string name="qs_flashlight_level_global_title">Применить уровень яркости глобально</string>
     <string name="qs_tile_qty_title">Настройки быстрых настроек счетчик плиток</string>
     <string name="qs_leveled_flashlight_summary">Удерживайте плитку для показа слайдера.\nТребует поддерживаемое оборудование</string>
@@ -269,7 +269,7 @@
     <string name="three_button_center_title">Центральная кнопка</string>
     <string name="three_button_right_title">Правая кнопка</string>
     <string name="hide_navbar_title">Скрыть панель жестов</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">Скрыть отступы панели навигации</string>
     <string name="taskbar_as_recents_title">Преобразование панели задач в панель недавних PixelXpert</string>
     <string name="taskbar_enable_google_recents">Использовать недавние приложения Android на панели задач</string>
     <string name="taskbar_height_title">Высота панели задач</string>
@@ -296,7 +296,7 @@
     <string name="allow_all_screen_rotations">Разблокировать все повороты экрана</string>
     <string name="allow_all_screen_rotations_summary">Будет игнорировать плавающую кнопку ручного вращения</string>
     <string name="force_no_cutout">Игнорировать вырез камеры</string>
-    <string name="clear_all_reposition_title">Добавить кнопку для очистки приложений внизу панель задач</string>
+    <string name="clear_all_reposition_title">Добавить «Очистить всё» под действиями недавних задач</string>
     <string name="force_themed_icons_title">Автоматическия генерация недостающих тематических значков</string>
     <string name="force_themed_icons_summary">Только Pixel лаунчер</string>
     <string name="volume_button_step_title">Шаг громкости (от 0 до 100%)</string>
@@ -371,7 +371,7 @@
     <string name="clock_center">По центру</string>
     <string name="clock_right">Справа</string>
     <!-- AM/PM style -->
-    <string name="am_pm_normal">70% размера часов</string>
+    <string name="am_pm_normal">100% размера часов</string>
     <string name="am_pm_small">70% размера часов</string>
     <!-- Date position -->
     <string name="date_before">До часов (100%)</string>
@@ -416,7 +416,7 @@
     <string name="menu_updates">Обновление приложения</string>
     <string name="monitoring_category_title">Параметры мониторинга</string>
     <string name="netstat_header">Настройки сетевой статистики</string>
-    <string name="string_formatter_manual_body_v3">В дополнение к обычному тексту доступны динамические переменные, такие как дата, использование данных и температура:\n\n$G\&lt;format\&gt; : григорианская дата, основанная на формате*\n$P&lt;format&gt; : персидская дата, основанная на формате*\n$Nrx : Общее количество скачиваний за указанный период ** ***\n$Ntx: Всего загрузок за указанный период ** ***\n$Nall: Общий трафик за указанный период ** ***\n$Nssid: Имя WiFi SSID (если применимо)\n\n$T\&lt;format\&gt;[interval]: Температура; \nформат может быть b (для батареи), c (для CPU), g (для GPU) и s (для кожи)\nИ наконец, есть ОПЦИОНАЛЬНОЕ количество интервалов обновления в секундах (по умолчанию: 60 секунд)\n\n*Для получения документации по формату ищите \"Java Date Format\"\n**Вы можете указать период статистики в PixelXpert/Miscellaneous menu/Network Statistics Settings\n***Если вы замените $N на $Nc, то получите статистику по мобильным данным (например, $Ncrx вместо Nrx)</string>
+    <string name="string_formatter_manual_body_v3">В дополнение к обычному тексту доступны динамические переменные, такие как дата, использование данных и температура:\n\n$G\&lt;format\&gt; : григорианская дата, основанная на формате*\n$P&lt;format&gt; : персидская дата, основанная на формате*\n$Nrx : Общее количество скачиваний за указанный период ** ***\n$Ntx: Общий объём отправленных данных за указанный период ** ***\n$Nall: Общий трафик за указанный период ** ***\n$Nssid: Имя WiFi SSID (если применимо)\n\n$T\&lt;format\&gt;[interval]: Температура; \nформат может быть b (для батареи), c (для CPU), g (для GPU) и s (для поверхности устройства)\nИ наконец, можно указать НЕОБЯЗАТЕЛЬНЫЙ интервал обновления в секундах (по умолчанию: 60 секунд)\n\n*Для получения документации по формату ищите \"Java Date Format\"\n**Период статистики можно указать в меню PixelXpert/Прочее/Настройки сетевой статистики\n***Если заменить $N на $Nc, будет показана статистика мобильных данных (например, $Ncrx вместо Nrx)</string>
     <string name="update_channel_name">Обновления</string>
     <string name="download_channel_name">Загрузки</string>
     <string name="assets_download_title">Загрузка файлов</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">Подключенные пакеты</string>
     <string name="package_hooked_successful">Ответ пакета</string>
     <string name="package_not_hook_enabled">Пакет не включен в LSposed</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert ещё не активирован в LSPosed. Откройте менеджер LSPosed, включите Pixel Xpert, затем перезапустите это приложение</string>
     <string name="package_hook_bootlooped">Перехват был не успешным из-за циклической перезагрузки</string>
     <string name="package_hook_no_response">Пакет не отвечает</string>
+    <string name="package_not_running">Приложение не запущено</string>
     <string name="package_not_found">Пакет не найден</string>
     <string name="package_checking">Загрузка%s</string>
     <string name="package_activated">Пакет успешно активирован</string>
     <string name="package_activation_failed">Не удалось активировать пакет</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed не установлен</string>
     <string name="activate_in_lsposed">Активировать в LSPosed</string>
     <string name="package_not_hook_enabled_info">Приложение установлено, но LSPosed не настроен для подключения к нему. Включите его, нажав \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Перехват приложения вызвал циклическую перезагрузку, поэтому оно было отключено, чтобы предотвратить дальнейшие проблемы.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Что-то не так?</string>
     <string name="package_not_launchable">Пакет не может быть запущен</string>
     <string name="menu_launch_app">Запустить приложение</string>
+	<string name="menu_stop_app">Остановить приложение</string>
     <string name="menu_restart_app">Перезапустить приложение</string>
     <string name="why">Как?</string>
     <string name="okay">Хорошо</string>
@@ -523,7 +525,7 @@
     <string name="icon_pack_author">от %s</string>
     <string name="icon_pack_unknown_author">по неизвестному автору</string>
     <string name="icon_pack_unknown_name">Неизвестный набор иконок</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
+    <string name="icon_pack_pack_reset">Сбросить иконки</string>
     <string name="icon_pack_info">Информация о наборе иконок</string>
     <string name="no_icon_pack_installed">Набор иконок не установлен</string>
     <string name="icon_pack_disclaimer_title">Оговорка</string>
@@ -540,4 +542,108 @@
     <string name="restart_now">Перезагрузить сейчас</string>
     <string name="watts">Ваты</string>
     <string name="fast_charging_threshold_title">Порог быстрой зарядки</string>
+    <!-- Newly introduced strings -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">Файлы и выбор документов</string>
+    <string name="documentsui_header_summary">Просмотр и сортировка файлов</string>
+    <string name="documentsui_remember_sort_title">Запоминать порядок сортировки</string>
+    <string name="documentsui_remember_sort_summary">Сохранять общий порядок сортировки и необязательные настройки отдельных папок в системном средстве выбора файлов</string>
+    <string name="documentsui_remember_sort_usage">В меню сортировки средства выбора файлов обычное нажатие обновляет общий порядок. Удерживайте вариант сортировки, чтобы сохранить его только для текущей папки. Обычный выбор также сбрасывает настройку этой папки.</string>
+    <string name="lockscreen_security_category">Безопасность экрана блокировки</string>
+    <string name="lockscreen_block_power_menu_title">Блокировать меню питания на заблокированном экране</string>
+    <string name="lockscreen_block_power_menu_summary">Также блокирует кнопку питания в быстрых настройках и аппаратное сочетание клавиш</string>
+    <string name="lockscreen_block_internet_title">Блокировать управление интернетом на заблокированном экране</string>
+    <string name="lockscreen_block_airplane_title">Блокировать режим полёта на заблокированном экране</string>
+    <string name="lockscreen_block_bluetooth_title">Блокировать Bluetooth на заблокированном экране</string>
+    <string name="lockscreen_block_hotspot_title">Блокировать точку доступа на заблокированном экране</string>
+    <string name="lockscreen_block_dnd_title">Блокировать режим «Не беспокоить» на заблокированном экране</string>
+    <string name="lockscreen_block_ringer_title">Блокировать смену режима звонка на заблокированном экране</string>
+    <string name="lockscreen_unlock_to_use">Разблокируйте устройство</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Расширенные проверки установки</string>
+    <string name="pm_exact_signature_title">Обход точного совпадения подписей split APK</string>
+    <string name="pm_exact_signature_summary">Высокий риск: разрешает различия в данных подписи базового и разделённых APK при установке</string>
+    <string name="pm_shared_uid_title">Обход проверки подписи общего UID</string>
+    <string name="pm_shared_uid_summary">Высокий риск: позволяет обновлять по-разному подписанные пользовательские приложения с общим UID; ограничения платформы для общего UID сохраняются</string>
+    <string name="pm_installer_redirect_category">Перенаправление установщика</string>
+    <string name="pm_installer_redirect_title">Перенаправлять установщик пакетов</string>
+    <string name="pm_installer_redirect_summary">Отправлять запросы установки APK и при необходимости удаления выбранному обработчику</string>
+    <string name="pm_installer_target_title">Установщик</string>
+    <string name="pm_installer_system_default">Системный по умолчанию</string>
+    <string name="pm_force_explicit_installer_title">Заменять явно выбранный установщик</string>
+    <string name="pm_force_explicit_installer_summary">Также перенаправлять запросы, жёстко привязанные к определённому компоненту установщика</string>
+    <string name="pm_intercept_session_title">Перенаправлять подтверждение сеансовой установки</string>
+    <string name="pm_intercept_session_summary">Перехватывать запросы CONFIRM_INSTALL и CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Исправить доступ к пути APK сеанса</string>
+    <string name="pm_fix_session_permissions_summary">Экспериментальное исправление совместимости внешних установщиков с Android 14+</string>
+    <string name="pm_intercept_uninstall_title">Перенаправлять запросы удаления</string>
+    <string name="pm_intercept_uninstall_summary">Отправлять ACTION_DELETE и ACTION_UNINSTALL_PACKAGE выбранному обработчику</string>
+    <string name="pm_uninstall_follow_installer_title">Использовать установщик для запросов удаления</string>
+    <string name="pm_uninstaller_target_title">Средство удаления</string>
+    <string name="app_info_enhancements_category">О приложении</string>
+    <string name="app_info_show_version_code_title">Показывать код версии</string>
+    <string name="app_info_allow_disable_user_apps_title">Разрешить отключение пользовательских приложений</string>
+    <string name="app_info_allow_disable_user_apps_summary">Добавляет действие включения/отключения в сведения о несистемных приложениях</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Тема, буфер обмена, конфиденциальность и экспериментальные функции ввода</string>
+    <string name="gboard_theme_category">Тема</string>
+    <string name="gboard_amoled_black_title">Чёрный AMOLED в тёмном режиме</string>
+    <string name="gboard_amoled_black_summary">Делает контейнеры поверхностей Material Expressive полностью чёрными, сохраняя акцентные цвета</string>
+    <string name="gboard_clipboard_category">Буфер обмена</string>
+    <string name="gboard_clipboard_history_title">Настроить историю буфера обмена</string>
+    <string name="gboard_clipboard_history_summary">Изменить число и срок хранения записей, запрашиваемых Gboard; уже удалённые Gboard старые записи восстановить нельзя</string>
+    <string name="gboard_clipboard_size_title">Максимум видимых записей</string>
+    <string name="gboard_clipboard_size_summary">Допустимый диапазон: от 5 до 100</string>
+    <string name="gboard_clipboard_days_title">Видимая история в днях</string>
+    <string name="gboard_clipboard_days_summary">Допустимый диапазон: от 0 до 3650; 0 запрашивает все сохранённые записи</string>
+    <string name="gboard_secure_clipboard_title">Не сохранять конфиденциальный текст в истории Gboard</string>
+    <string name="gboard_secure_clipboard_summary">Блокировать записи из полей паролей, а также вероятные коды подтверждения, PIN-коды и длинные номера счетов</string>
+    <string name="gboard_clipboard_chips_title">Кнопки действий буфера обмена</string>
+    <string name="gboard_clipboard_chips_summary">Включить кнопки действий Gboard, извлечение сущностей и эксперименты копирования в ответ</string>
+    <string name="gboard_privacy_category">Конфиденциальность</string>
+    <string name="gboard_force_incognito_title">Отключить персонализированное обучение</string>
+    <string name="gboard_force_incognito_summary">Запрашивать отказ от персонализированного обучения для каждого поля ввода; полный интерфейс инкогнито Gboard при этом не включается</string>
+    <string name="gboard_privacy_flags_title">Сократить телеметрию и обучение</string>
+    <string name="gboard_privacy_flags_summary">Переопределить известные флаги Gboard для хранения исправлений, захвата содержимого, журналов, метрик и кешей обучения</string>
+    <string name="gboard_input_category">Улучшения ввода</string>
+    <string name="gboard_multilingual_title">Многоязычный ввод</string>
+    <string name="gboard_multilingual_summary">Включить известные эксперименты многоязычного ввода, подсказок, функций Pixel и улучшения речи</string>
+    <string name="gboard_ai_title">ИИ и умный ввод</string>
+    <string name="gboard_ai_summary">Включить известные эксперименты Smart Reply, Smart Compose, emojify, стикеров и AI Core</string>
+    <string name="gboard_grammar_title">Грамматика и корректура</string>
+    <string name="gboard_grammar_summary">Включить известные эксперименты локальной корректуры, проверки грамматики, инструментов письма и преобразования текста</string>
+    <string name="gboard_floating_title">Плавающая и разделённая клавиатура</string>
+    <string name="gboard_floating_summary">Включить эксперименты альбомного режима, нескольких окон, свободной формы, разделённой клавиатуры планшета, ползунка размера и переходов</string>
+    <string name="gboard_emoji_kitchen_title">Улучшения Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Включить эксперименты просмотра, поиска, рекомендаций, анимации и встроенного выбора</string>
+    <string name="gboard_access_point_title">Новый дизайн меню ярлыков</string>
+    <string name="gboard_access_point_summary">Включить эксперименты меню точек доступа, темы Silk, системного шрифта, Google Sans, пользовательской темы и анимации</string>
+    <string name="gboard_metered_downloads_title">Разрешить загрузки в тарифицируемых сетях</string>
+    <string name="gboard_metered_downloads_summary">Разрешить загрузку известных языковых пакетов, идентификации языка и речи по мобильной или другой тарифицируемой сети</string>
+    <string name="gboard_experimental_category">Экспериментальные движки</string>
+    <string name="gboard_experimental_summary">Использует закрытые флаги Gboard и после обновления может измениться или перестать работать; после изменения перезапустите Gboard</string>
+    <string name="gboard_inline_suggestions_title">Многословные подсказки в строке</string>
+    <string name="gboard_proactive_emoji_title">Проактивные подсказки эмодзи</string>
+    <string name="gboard_tflite_title">Движки прогнозирования TFLite</string>
+    <string name="gboard_fast_access_title">Панель быстрого доступа</string>
+    <string name="dialer_force_enable_call_recording_title">Принудительно включить запись звонков</string>
+    <string name="dialer_force_enable_call_recording_summary">Разблокирует встроенную запись звонков в приложении «Телефон Google» в неподдерживаемых регионах</string>
+    <string name="landscape_split_shade_title">Панель уведомлений в стиле планшета в горизонтальном режиме</string>
+    <string name="landscape_split_shade_summary">Показывает быстрые настройки и уведомления рядом при горизонтальном повороте телефона</string>
+    <string name="recents_clear_all">Закрыть все</string>
+    <string name="launcher_header">Лаунчер</string>
+    <string name="launcher_header_summary">Улучшения недавних задач и главного экрана</string>
+    <string name="launcher_home_section">Главный экран</string><string name="launcher_drawer_section">Список приложений</string><string name="launcher_recents_section">Недавние задачи</string><string name="launcher_hide_desktop_labels">Скрыть названия значков на главном экране</string><string name="launcher_hide_desktop_search">Скрыть строку поиска на главном экране</string><string name="launcher_hide_drawer_labels">Скрыть названия значков в списке приложений</string><string name="launcher_hide_drawer_search">Скрыть строку поиска в списке приложений</string><string name="recents_remove_screenshot">Удалить действие «Снимок экрана»</string><string name="recents_equal_action_widths">Использовать кнопки действий одинаковой ширины</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Персонализация</string>
+	<string name="home_category_system_interface">Интерфейс системы</string>
+	<string name="home_category_app_enhancements">Улучшения приложений</string>
+	<string name="home_category_system_tools">Системные инструменты</string>
 </resources>

@@ -46,7 +46,7 @@
     <string name="statusbar_header_summary">Cette fine barre qui montre des données utiles</string>
     <string name="nav_header">Barre de navigation</string>
     <string name="nav_header_summary">Changez la façon dont vous naviguez à travers les applications</string>
-    <string name="dialer_header">Numéroteur du téléphone &amp;</string>
+    <string name="dialer_header">Téléphone et numéroteur</string>
     <string name="dialer_header_summary">Un peu d\'aide pour vos appels téléphoniques</string>
     <string name="misc_header">Divers</string>
     <string name="misc_header_summary">Quelles que soient les autres offres de PixelXpert</string>
@@ -89,7 +89,7 @@
     <string name="carrier_text_mod_enabled">Texte du fournisseur personnalisé</string>
     <string name="carrier_text_value">Texte personnalisé</string>
     <string name="lockscreen_center_text_value">Texte personnalisé de l‘horloge</string>
-    <string name="keyguard_dim_amount_title">Niveau d’obscurité du fond de l’écran de verrrouillage</string>
+    <string name="keyguard_dim_amount_title">Assombrissement du fond de l’écran de verrouillage</string>
     <string name="keyguard_bottom_category">Raccourcis du bas de l’écran</string>
     <string name="keyguard_bottom_buttons_transparent_title">Retirer le disque autour des icônes</string>
     <string name="shufflePin_title">Mélanger les chiffres du code</string>
@@ -122,7 +122,7 @@
     <string name="sbc_date_cat">Préférences pour la date</string>
     <string name="sbc_day_of_week_options">Montrer le jour de la semaine</string>
     <string name="sbc_advanced_cat">Paramètres avancés (remplace les autres paramètres)</string>
-    <string name="sbc_custom_date_before">Texte personnalisé avant l’holorge</string>
+    <string name="sbc_custom_date_before">Texte personnalisé avant l’horloge</string>
     <string name="sbc_date_small">Plus petite police (70%)</string>
     <string name="sbc_custom_date_after">Texte personnalisé après l’horloge</string>
     <string name="sbc_header">Personnalisation de l’horloge de la barre d’état</string>
@@ -185,7 +185,7 @@
     <string name="sb_ignored_icons">Barre d\'État</string>
     <string name="sb_ignored_icons_statusbar">Sélectionnez l\'icône qui sera masquée dans la barre d\'état</string>
     <string name="sb_kg_ignored_icons">Écran de verrouillage</string>
-    <string name="sb_ignored_icons_kg">Sélectionnez l\'icône qui sera masquée dans la barre d\'état keyguard</string>
+    <string name="sb_ignored_icons_kg">Sélectionnez les icônes à masquer dans la barre d’état de l’écran de verrouillage</string>
     <string name="sb_qs_ignored_icons">Paramètres rapides</string>
     <string name="sb_ignored_icons_qs">Sélectionnez l\'icône qui sera masquée dans les paramètres rapides</string>
     <string name="status_bar_volte">VoLTE</string>
@@ -235,7 +235,7 @@
     <string name="friday">Vendredi</string>
     <string name="saturday">Samedi</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Tuile pour lampe torche</string>
+    <string name="qs_leveled_flashlight_title">Tuile de réglage de la luminosité de la lampe torche</string>
     <string name="qs_flashlight_level_global_title">Change le niveau pour tout l’appareil</string>
     <string name="qs_tile_qty_title">Préférences du nombre de blocs</string>
     <string name="qs_leveled_flashlight_summary">Appui long sur la tuile pour afficher le curseur.\nNécessite un matériel compatible</string>
@@ -269,7 +269,7 @@
     <string name="three_button_center_title">Bouton central</string>
     <string name="three_button_right_title">Bouton droit</string>
     <string name="hide_navbar_title">Cacher la barre de navigation</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">Masquer l’espace réservé à la barre de navigation</string>
     <string name="taskbar_as_recents_title">Convertir la barre des tâches en récente barre PixelXpert</string>
     <string name="taskbar_enable_google_recents">Activer les applications récentes Android dans la barre de tâches</string>
     <string name="taskbar_height_title">Hauteur de la TaskBar</string>
@@ -296,10 +296,10 @@
     <string name="allow_all_screen_rotations">Autoriser l’utilisation de toutes les orientations d’écran</string>
     <string name="allow_all_screen_rotations_summary">Ignorera le bouton de changement d’orientation</string>
     <string name="force_no_cutout">Ne pas prendre en compte l’encoche de l’appareil photo</string>
-    <string name="clear_all_reposition_title">Ajouter un bouton pour retirer toutes les applications récentes facilement</string>
+    <string name="clear_all_reposition_title">Ajouter Tout effacer sous les actions récentes</string>
     <string name="force_themed_icons_title">Générer automatiquement les icônes de thème manquantes</string>
     <string name="force_themed_icons_summary">Pixel Launcher uniquement</string>
-    <string name="volume_button_step_title">Pas du volume (0% à 100%)</string>
+    <string name="volume_button_step_title">Pas du volume, du minimum au maximum</string>
     <string name="display_resolution_switch_title">Modifier la résolution d\'affichage</string>
     <string name="display_resolution_switch_summary">Avant de l\'activer, assurez-vous de réinitialiser toutes les modifications de taille d\'affichage/dpi par défaut</string>
     <string name="display_resolution_title">Résolution de l’écran</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">Forfaits connectés</string>
     <string name="package_hooked_successful">Paquet réactif</string>
     <string name="package_not_hook_enabled">Paquet non activé dans LSposed</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert n’est pas encore activé dans LSPosed. Ouvrez le gestionnaire LSPosed, activez Pixel Xpert, puis redémarrez cette application</string>
     <string name="package_hook_bootlooped">Le Hook a échoué en raison de la boucle de démarrage</string>
     <string name="package_hook_no_response">Le paquet ne répond pas</string>
+    <string name="package_not_running">L\'application n\'est pas en cours d\'exécution</string>
     <string name="package_not_found">Paquet introuvable</string>
     <string name="package_checking">Chargement%s</string>
     <string name="package_activated">Paquet activé avec succès</string>
     <string name="package_activation_failed">L\'activation du paquet a échoué</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed n’est pas installé</string>
     <string name="activate_in_lsposed">Activer dans LSPosed</string>
     <string name="package_not_hook_enabled_info">L\'application est installée, mais LSPosed n\'est pas configurée pour s\'y connecter. Activez-la en cliquant sur «%s».</string>
     <string name="package_hook_bootlooped_info">Le point d\'accroche de l\'application a causé un bootloop, donc il a été désactivé pour éviter d\'autres problèmes.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Qu\'est-ce qui ne va pas?</string>
     <string name="package_not_launchable">Le paquet ne peut pas être lancé</string>
     <string name="menu_launch_app">Lancer l\'application</string>
+	<string name="menu_stop_app">Arrêter l\'application</string>
     <string name="menu_restart_app">Redémarrez l\'application</string>
     <string name="why">Pourquoi?</string>
     <string name="okay">Ok</string>
@@ -523,7 +525,7 @@
     <string name="icon_pack_author">par %s</string>
     <string name="icon_pack_unknown_author">par un auteur inconnu</string>
     <string name="icon_pack_unknown_name">Pack d\'icônes inconnu</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
+    <string name="icon_pack_pack_reset">Réinitialiser les icônes</string>
     <string name="icon_pack_info">Informations sur le pack d\'icônes</string>
     <string name="no_icon_pack_installed">Aucun pack d\'icônes installé</string>
     <string name="icon_pack_disclaimer_title">Clause de non-responsabilité</string>
@@ -540,4 +542,115 @@
     <string name="restart_now">Redémarrer maintenant</string>
     <string name="watts">Watts</string>
     <string name="fast_charging_threshold_title">Seuil de recharge rapide</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">Fichiers et sélecteur de documents</string>
+    <string name="documentsui_header_summary">Comportement de navigation et de tri des fichiers</string>
+    <string name="documentsui_remember_sort_title">Mémoriser l’ordre de tri</string>
+    <string name="documentsui_remember_sort_summary">Conserve un ordre de tri global avec, si nécessaire, un réglage propre à chaque dossier dans le sélecteur de fichiers du système</string>
+    <string name="documentsui_remember_sort_usage">Dans le menu de tri du sélecteur de fichiers, appuyez sur une option pour modifier le tri global. Effectuez un appui prolongé sur une option pour l’enregistrer uniquement pour le dossier actuel. Un appui simple supprime également le réglage propre à ce dossier.</string>
+    <string name="lockscreen_security_category">Sécurité de l’écran de verrouillage</string>
+    <string name="lockscreen_block_power_menu_title">Bloquer le menu Marche/Arrêt lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_block_power_menu_summary">Bloque également le bouton Marche/Arrêt des réglages rapides et le raccourci matériel</string>
+    <string name="lockscreen_block_internet_title">Bloquer les commandes Internet lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_block_airplane_title">Bloquer le mode Avion lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_block_bluetooth_title">Bloquer le Bluetooth lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_block_hotspot_title">Bloquer le point d’accès lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_block_dnd_title">Bloquer le mode Ne pas déranger lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_block_ringer_title">Bloquer les changements de mode de sonnerie lorsque l’appareil est verrouillé</string>
+    <string name="lockscreen_unlock_to_use">Déverrouillez l’appareil pour utiliser cette fonction</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Contrôles d’installation avancés</string>
+    <string name="pm_exact_signature_title">Ignorer la correspondance exacte des signatures des APK fractionnés</string>
+    <string name="pm_exact_signature_summary">Risque élevé : autorise des informations de signature différentes entre l’APK de base et les APK fractionnés pendant l’installation</string>
+    <string name="pm_shared_uid_title">Ignorer les contrôles de signature de l’UID partagé</string>
+    <string name="pm_shared_uid_summary">Risque élevé : autorise la mise à jour d’applications utilisateur signées différemment lorsqu’elles utilisent un UID partagé ; les restrictions de la plate-forme sur les UID partagés restent appliquées</string>
+    <string name="pm_installer_redirect_category">Redirection du programme d’installation</string>
+    <string name="pm_installer_redirect_title">Rediriger le programme d’installation de paquets</string>
+    <string name="pm_installer_redirect_summary">Envoie les demandes d’installation d’APK et, éventuellement, de désinstallation vers l’application sélectionnée</string>
+    <string name="pm_installer_target_title">Programme d’installation</string>
+    <string name="pm_installer_system_default">Valeur par défaut du système</string>
+    <string name="pm_force_explicit_installer_title">Remplacer le programme d’installation explicitement sélectionné</string>
+    <string name="pm_force_explicit_installer_summary">Redirige également les demandes associées explicitement à un composant d’installation précis</string>
+    <string name="pm_intercept_session_title">Rediriger la confirmation d’installation de session</string>
+    <string name="pm_intercept_session_summary">Intercepte les demandes CONFIRM_INSTALL et CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Corriger l’accès au chemin de l’APK de la session</string>
+    <string name="pm_fix_session_permissions_summary">Correctif expérimental de compatibilité avec Android 14 et versions ultérieures pour les programmes d’installation externes</string>
+    <string name="pm_intercept_uninstall_title">Rediriger les demandes de désinstallation</string>
+    <string name="pm_intercept_uninstall_summary">Envoie ACTION_DELETE et ACTION_UNINSTALL_PACKAGE vers l’application sélectionnée</string>
+    <string name="pm_uninstall_follow_installer_title">Utiliser le programme d’installation pour les demandes de désinstallation</string>
+    <string name="pm_uninstaller_target_title">Programme de désinstallation</string>
+    <string name="app_info_enhancements_category">Informations sur l’application</string>
+    <string name="app_info_show_version_code_title">Afficher le code de version</string>
+    <string name="app_info_allow_disable_user_apps_title">Autoriser la désactivation des applications utilisateur</string>
+    <string name="app_info_allow_disable_user_apps_summary">Ajoute une action d’activation ou de désactivation dans les informations des applications non système</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Thème, presse-papiers, confidentialité et fonctions de saisie expérimentales</string>
+    <string name="gboard_theme_category">Thème</string>
+    <string name="gboard_amoled_black_title">Noir AMOLED en mode sombre</string>
+    <string name="gboard_amoled_black_summary">Rend les conteneurs de surface Material Expressive entièrement noirs tout en conservant les couleurs d’accentuation</string>
+    <string name="gboard_clipboard_category">Presse-papiers</string>
+    <string name="gboard_clipboard_history_title">Personnaliser l’historique du presse-papiers</string>
+    <string name="gboard_clipboard_history_summary">Modifie le nombre et l’ancienneté des éléments demandés par Gboard ; les anciens éléments déjà supprimés par Gboard ne peuvent pas être restaurés</string>
+    <string name="gboard_clipboard_size_title">Nombre maximal d’éléments visibles</string>
+    <string name="gboard_clipboard_size_summary">Plage autorisée : de 5 à 100</string>
+    <string name="gboard_clipboard_days_title">Historique visible en jours</string>
+    <string name="gboard_clipboard_days_summary">Plage autorisée : de 0 à 3650 ; 0 demande tous les éléments conservés</string>
+    <string name="gboard_secure_clipboard_title">Exclure les textes sensibles de l’historique Gboard</string>
+    <string name="gboard_secure_clipboard_summary">Bloque les éléments copiés depuis les champs de mot de passe ainsi que les codes de validation, codes PIN ou longs numéros de compte probables</string>
+    <string name="gboard_clipboard_chips_title">Suggestions d’action du presse-papiers</string>
+    <string name="gboard_clipboard_chips_summary">Active les suggestions d’action, l’extraction d’entités et les expériences de copie pour répondre de Gboard</string>
+    <string name="gboard_privacy_category">Confidentialité</string>
+    <string name="gboard_force_incognito_title">Désactiver l’apprentissage personnalisé</string>
+    <string name="gboard_force_incognito_summary">Demande de ne recourir à aucun apprentissage personnalisé dans tous les champs de saisie ; cela ne force pas l’interface complète du mode navigation privée de Gboard</string>
+    <string name="gboard_privacy_flags_title">Réduire la télémétrie et l’entraînement</string>
+    <string name="gboard_privacy_flags_summary">Modifie les options connues de Gboard concernant le stockage des corrections, la capture de contenu, la journalisation, les statistiques et les caches d’entraînement</string>
+    <string name="gboard_input_category">Améliorations de la saisie</string>
+    <string name="gboard_multilingual_title">Saisie multilingue</string>
+    <string name="gboard_multilingual_summary">Active les expériences connues de saisie multilingue, de suggestions, de fonctions Pixel et d’amélioration vocale</string>
+    <string name="gboard_ai_title">IA et saisie intelligente</string>
+    <string name="gboard_ai_summary">Active les expériences connues de réponse suggérée, de rédaction intelligente, d’emojification, de stickers et d’AI Core</string>
+    <string name="gboard_grammar_title">Grammaire et relecture</string>
+    <string name="gboard_grammar_summary">Active les expériences connues de relecture sur l’appareil, de correction grammaticale, d’outils d’écriture et de conversion de texte</string>
+    <string name="gboard_floating_title">Clavier flottant et partagé</string>
+    <string name="gboard_floating_summary">Active les expériences en mode paysage, multifenêtre, fenêtre libre, clavier partagé sur tablette, curseur de taille et transitions</string>
+    <string name="gboard_emoji_kitchen_title">Améliorations d’Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Active les expériences de navigation, de recherche, de recommandation, d’animation et de sélecteur intégré</string>
+    <string name="gboard_access_point_title">Nouvelle conception du menu des raccourcis</string>
+    <string name="gboard_access_point_summary">Active les expériences du menu d’accès, du thème Silk, de la police système, de Google Sans, des thèmes personnalisés et des animations</string>
+    <string name="gboard_metered_downloads_title">Autoriser les téléchargements sur les réseaux facturés à l’usage</string>
+    <string name="gboard_metered_downloads_summary">Autorise le téléchargement des langues, des données d’identification de langue et des packs vocaux connus via les données mobiles ou d’autres réseaux facturés à l’usage</string>
+    <string name="gboard_experimental_category">Moteurs expérimentaux</string>
+    <string name="gboard_experimental_summary">Utilise des options privées de Gboard susceptibles de changer ou de cesser de fonctionner après une mise à jour ; redémarrez Gboard après toute modification</string>
+    <string name="gboard_inline_suggestions_title">Suggestions intégrées de plusieurs mots</string>
+    <string name="gboard_proactive_emoji_title">Suggestions proactives d’emojis</string>
+    <string name="gboard_tflite_title">Moteurs de prédiction TFLite</string>
+    <string name="gboard_fast_access_title">Barre d’accès rapide</string>
+    <string name="dialer_force_enable_call_recording_title">Forcer l’activation de l’enregistrement des appels</string>
+    <string name="dialer_force_enable_call_recording_summary">Débloque l’enregistrement natif des appels dans l’application Téléphone de Google dans les régions non prises en charge</string>
+    <string name="landscape_split_shade_title">Volet de notifications type tablette en paysage</string>
+    <string name="landscape_split_shade_summary">Affiche les réglages rapides et les notifications côte à côte lorsque le téléphone est tourné à l’horizontale</string>
+    <string name="recents_clear_all">Tout effacer</string>
+    <string name="launcher_header">Lanceur</string>
+    <string name="launcher_header_summary">Améliorations de l’aperçu des tâches et de l’écran d’accueil</string>
+    <string name="launcher_home_section">Écran d’accueil</string>
+    <string name="launcher_drawer_section">Tiroir d’applications</string>
+    <string name="launcher_recents_section">Tâches récentes</string>
+    <string name="launcher_hide_desktop_labels">Masquer les noms d’icônes de l’accueil</string>
+    <string name="launcher_hide_desktop_search">Masquer la barre de recherche de l’accueil</string>
+    <string name="launcher_hide_drawer_labels">Masquer les noms d’icônes du tiroir</string>
+    <string name="launcher_hide_drawer_search">Masquer la barre de recherche du tiroir</string>
+    <string name="recents_remove_screenshot">Supprimer l’action Capture d’écran</string>
+    <string name="recents_equal_action_widths">Utiliser des boutons d’action de largeur égale</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Personnalisation</string>
+	<string name="home_category_system_interface">Interface système</string>
+	<string name="home_category_app_enhancements">Améliorations des applications</string>
+	<string name="home_category_system_tools">Outils système</string>
 </resources>

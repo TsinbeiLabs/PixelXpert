@@ -33,7 +33,7 @@
     <string name="update_over_wifi_title">Перевіряйте оновлення лише через Wi-Fi</string>
     <string name="update_over_wifi_summary">Перевіряти наявність оновлень у фоновому режимі лише під час підключення до Wi-Fi</string>
     <string name="github_repo_title">Репозиторій GitHub</string>
-    <string name="telegram_group_title">Telegram channel</string>
+    <string name="telegram_group_title">Канал Telegram</string>
     <string name="usage_title">Використання</string>
     <string name="usage_summary">Відкрити вікі-сторінку</string>
     <string name="crowdin_title">Перекладіть на свою мову</string>
@@ -64,7 +64,7 @@
     <string name="hotspot_max_client_title">Максимум клієнтів</string>
     <string name="hotspot_disable_approval_title">Обхід проблем із підключенням до точки доступу</string>
     <string name="hotspot_disable_approval_summary">Дозволити безперешкодно підключатися \"попередньо не схваленим\" користувачам</string>
-    <string name="hotspot_force_unsupported_regions">Remove hotspot limitations in unsupported regions</string>
+    <string name="hotspot_force_unsupported_regions">Зняти обмеження точки доступу в непідтримуваних регіонах</string>
     <!--Lock screen related-->
     <string name="depth_wallpaper_options">Ефект глибини шпалер</string>
     <string name="depth_wallpaper_title">Шпалери з ефектом глибини</string>
@@ -181,52 +181,52 @@
     <string name="nt_stat_mode_today">Сьогодні</string>
     <string name="nt_stat_mode_week">Поточний тиждень</string>
     <string name="nt_stat_mode_month">Поточний місяць</string>
-    <string name="sb_ignored_icons_category">Status Bar ignored icons</string>
+    <string name="sb_ignored_icons_category">Приховувані значки рядка стану</string>
     <string name="sb_ignored_icons">Рядок стану</string>
-    <string name="sb_ignored_icons_statusbar">Select which icon will be hidden in statusbar</string>
+    <string name="sb_ignored_icons_statusbar">Виберіть значки, які буде приховано в рядку стану</string>
     <string name="sb_kg_ignored_icons">Екран блокування</string>
-    <string name="sb_ignored_icons_kg">Select which icon will be hidden in keyguard statusbar</string>
+    <string name="sb_ignored_icons_kg">Виберіть значки, які буде приховано в рядку стану екрана блокування</string>
     <string name="sb_qs_ignored_icons">Швидкі налаштування</string>
     <string name="sb_ignored_icons_qs">Оберіть іконку, яка буде схована у швидких налаштуваннях</string>
     <string name="status_bar_volte">VoLTE</string>
     <string name="status_bar_vowifi">VoWiFi</string>
-    <string name="status_bar_no_calling">No Calling</string>
-    <string name="status_bar_call_strength">Call Strength</string>
+    <string name="status_bar_no_calling">Немає викликів</string>
+    <string name="status_bar_call_strength">Рівень сигналу виклику</string>
     <string name="status_bar_alarm_clock">Будильник</string>
     <string name="status_bar_rotate">Автообертання</string>
     <string name="status_bar_headset">Навушники підключенні</string>
     <string name="status_bar_data_saver">Заощадження трафіку</string>
-    <string name="status_bar_ime">Input Method</string>
-    <string name="status_bar_sync_failing">Sync Failing</string>
-    <string name="status_bar_sync_active">Sync Active</string>
-    <string name="status_bar_nfc">NFC Active</string>
-    <string name="status_bar_tty">TTY Mode</string>
-    <string name="status_bar_speakerphone">Speakerphone On</string>
+    <string name="status_bar_ime">Метод введення</string>
+    <string name="status_bar_sync_failing">Помилка синхронізації</string>
+    <string name="status_bar_sync_active">Синхронізація активна</string>
+    <string name="status_bar_nfc">NFC активний</string>
+    <string name="status_bar_tty">Режим TTY</string>
+    <string name="status_bar_speakerphone">Гучномовець увімкнено</string>
     <string name="status_bar_cdma_eri">CDMA ERI</string>
-    <string name="status_bar_data_connection">Data Connection</string>
-    <string name="status_bar_phone_evdo_signal">EVDO Signal</string>
-    <string name="status_bar_phone_signal">Phone Signal</string>
+    <string name="status_bar_data_connection">З’єднання для передавання даних</string>
+    <string name="status_bar_phone_evdo_signal">Сигнал EVDO</string>
+    <string name="status_bar_phone_signal">Сигнал телефону</string>
     <string name="status_bar_secure">Безпечний режим</string>
-    <string name="status_bar_managed_profile">Managed Profile</string>
-    <string name="status_bar_connected_display">Connected Display</string>
+    <string name="status_bar_managed_profile">Керований профіль</string>
+    <string name="status_bar_connected_display">Підключений дисплей</string>
     <string name="status_bar_vpn">VPN активний</string>
     <string name="status_bar_bluetooth">Bluetooth з\'єднаний</string>
     <string name="status_bar_camera">Використовується камера</string>
     <string name="status_bar_microphone">Використовується мікрофон</string>
-    <string name="status_bar_location">Location Active</string>
-    <string name="status_bar_mute">Muted</string>
+    <string name="status_bar_location">Місцезнаходження активне</string>
+    <string name="status_bar_mute">Без звуку</string>
     <string name="status_bar_volume">Рівень гучності</string>
     <string name="status_bar_zen">Не турбувати</string>
     <string name="status_bar_screen_record">Запис Екрану</string>
-    <string name="status_bar_cast">Casting</string>
-    <string name="status_bar_ethernet">Ethernet Connected</string>
-    <string name="status_bar_oem_satellite">Satellite Connection</string>
-    <string name="status_bar_wifi">Wi-Fi Connected</string>
-    <string name="status_bar_hotspot">Hotspot Active</string>
-    <string name="status_bar_mobile">Mobile Data</string>
+    <string name="status_bar_cast">Трансляція</string>
+    <string name="status_bar_ethernet">Ethernet підключено</string>
+    <string name="status_bar_oem_satellite">Супутникове з’єднання</string>
+    <string name="status_bar_wifi">Wi-Fi підключено</string>
+    <string name="status_bar_hotspot">Точка доступу активна</string>
+    <string name="status_bar_mobile">Мобільні дані</string>
     <string name="status_bar_airplane">Режим польоту</string>
-    <string name="status_bar_battery">Battery Level</string>
-    <string name="status_bar_sensors_off">Sensors Off</string>
+    <string name="status_bar_battery">Рівень заряду батареї</string>
+    <string name="status_bar_sensors_off">Датчики вимкнено</string>
     <string name="sunday">неділя</string>
     <string name="monday">понеділок</string>
     <string name="tuesday">вівторок</string>
@@ -235,10 +235,10 @@
     <string name="friday">П\'ятниця</string>
     <string name="saturday">Субота</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Flashlight-leveled tile</string>
+    <string name="qs_leveled_flashlight_title">Плитка регулювання яскравості ліхтарика</string>
     <string name="qs_flashlight_level_global_title">Застосувати рівень ліхтарика глобально</string>
     <string name="qs_tile_qty_title">Налаштування кількості плиток швидкого налаштування</string>
-    <string name="qs_leveled_flashlight_summary">Longpress on tile to show the slider.\nRequires supported hardware</string>
+    <string name="qs_leveled_flashlight_summary">Натисніть і утримуйте плитку, щоб показати повзунок.\nПотрібне підтримуване обладнання</string>
     <string name="qs_pulldown_size">Ширина Швидких налагтувань</string>
     <string name="qs_pulldown_switch_title">Розкривний список панелі швидких налаштувань у рядку стану</string>
     <string name="qs_pulldown_side_title">Потягніть вниз</string>
@@ -246,7 +246,7 @@
     <string name="qs_pullup_switch_title">Закрити швидкі налаштування одним свайпом</string>
     <string name="qs_tile_qty_portrait">У книжковій орієнтації</string>
     <string name="qs_tile_qty_landscape">В альбомній орієнтації</string>
-    <string name="qqs_rows_number">Number of quick QS rows</string>
+    <string name="qqs_rows_number">Кількість рядків швидкої панелі</string>
     <string name="qs_rows_number">Номер рядків Швидких налаштувань</string>
     <string name="qs_cols_number">Кількість колонок QS</string>
     <string name="qs_tile_label_size">Розмір етикетки плитки QS</string>
@@ -263,15 +263,15 @@
     <string name="gesture_nav_pill_width_title">Ширина у порівнянні з оригінальним розміром</string>
     <string name="gesture_nav_pill_height_title">Висота у порівнянні з оригінальним розміром</string>
     <string name="threebutton_header_title">Навігація з трьома кнопками</string>
-    <string name="taskbar_header_title">Taskbar navigation</string>
+    <string name="taskbar_header_title">Навігація панеллю завдань</string>
     <string name="modify_3button_title">Змінити порядок кнопок</string>
     <string name="three_button_left_title">Ліва кнопка</string>
     <string name="three_button_center_title">Центральна кнопка</string>
     <string name="three_button_right_title">Права кнопка</string>
     <string name="hide_navbar_title">Сховати панель навігації</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
-    <string name="taskbar_as_recents_title">Convert Taskbar to PixelXpert recents bar</string>
-    <string name="taskbar_enable_google_recents">Enable Android recents on the Taskbar</string>
+    <string name="hide_navbar_insets_title">Приховати відступи панелі навігації</string>
+    <string name="taskbar_as_recents_title">Перетворити панель завдань на панель останніх застосунків PixelXpert</string>
+    <string name="taskbar_enable_google_recents">Увімкнути останні застосунки Android на панелі завдань</string>
     <string name="taskbar_height_title">Висота панелі завдань</string>
     <string name="taskbar_radius_title">Крива кута панелі завдань</string>
     <string name="colorpill">Колір акценту таблетки жестів</string>
@@ -281,7 +281,7 @@
     <string name="taskbar_transient_title">Автоматичне приховування</string>
     <string name="taskbar_on_launcher_title">Показати на головному екрані</string>
     <string name="remap_physical_buttons_title">Переналаштування фізичних кнопок</string>
-    <string name="taskbar_on_ime_title">Show with keyboard open</string>
+    <string name="taskbar_on_ime_title">Показувати з відкритою клавіатурою</string>
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">Обійти перевірку підпису пакета</string>
     <string name="pm_allow_downgrade_title">Дозволити програмі повернутися до версії</string>
@@ -296,7 +296,7 @@
     <string name="allow_all_screen_rotations">Примусово розблокувати всі повороти екрана</string>
     <string name="allow_all_screen_rotations_summary">Також ігноруватиме плаваючу кнопку ручного обертання</string>
     <string name="force_no_cutout">Не звертайте уваги на виріз камери</string>
-    <string name="clear_all_reposition_title">Додайте доступну кнопку очищення всього на сторінку останніх</string>
+    <string name="clear_all_reposition_title">Додати «Очистити все» під діями останніх завдань</string>
     <string name="force_themed_icons_title">Автогенерування відсутніх тематичних іконок</string>
     <string name="force_themed_icons_summary">Тільки для Pixel Launcher</string>
     <string name="volume_button_step_title">Кроки гучності (від 0 до 100%)</string>
@@ -318,7 +318,7 @@
     <string name="force_aod_while_charging_summary">Залишати екран увімкненим коли пристрій заряджається</string>
     <string name="doze_header">Поки екран вимкнено…</string>
     <string name="px_in_settings_title">Додати PixelXpert до системних налаштувань</string>
-    <string name="advanced_power_menu_title">Advanced power menu</string>
+    <string name="advanced_power_menu_title">Розширене меню живлення</string>
     <string name="sleep_on_flat_screen_title">Вимкнути екран на плоскій поверхні</string>
     <string name="sleep_on_flat_screen_tile_title">Сон на поверхні</string>
     <string name="flat_screen_timeout_title">Тайм-аут екрану на рівній поверхні</string>
@@ -331,7 +331,7 @@
     <string name="notif_always_expand">Завжди розгорнутий</string>
     <string name="notif_always_collapse">Завжди згортати</string>
     <string name="control_flashlight_with_volume_keys">Керувати ліхтариком за допомогою кнопок гучності</string>
-    <string name="flashlight_fade_effect">Flashlight fade effect</string>
+    <string name="flashlight_fade_effect">Ефект згасання ліхтарика</string>
     <string name="milliseconds">мілісекунди</string>
     <string name="duration_seconds">%d секунд</string>
     <string name="hours">Години</string>
@@ -359,7 +359,7 @@
     <string name="vibration_type_notification">Інтенсивність визначається налаштуваннями вібрації сповіщень системи</string>
     <string name="dialer_mute_record_message_title">Видалити повідомлення про запис розмови</string>
     <string name="dialer_mute_record_message_summary">Застосовується лише до телефонної програми Google із увімкненим записом дзвінків</string>
-    <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
+    <string name="radio_force_volte_nr">Примусово ввімкнути VoLTE/NR у непідтримуваних регіонах</string>
     <!-- Arrays strings -->
     <!-- Quick pull down -->
     <string name="pull_down_left">Ліворуч</string>
@@ -371,8 +371,8 @@
     <string name="clock_center">По центру</string>
     <string name="clock_right">Праворуч</string>
     <!-- AM/PM style -->
-    <string name="am_pm_normal">100% size of the clock</string>
-    <string name="am_pm_small">70% size of the clock</string>
+    <string name="am_pm_normal">100% розміру годинника</string>
+    <string name="am_pm_small">70% розміру годинника</string>
     <!-- Date position -->
     <string name="date_before">До годинника (100%)</string>
     <string name="date_before_small">До годинника (70%)</string>
@@ -402,13 +402,13 @@
     <string name="depth_effect_alert_body">Використовуйте підхожі шпалери для екрана блокування, де їх елементи переднього плану не закривають увесь годинник на екрані блокування, забезпечуючи як візуальну привабливість, так і функціональну чіткість екрана блокування.\n\nNote: %s.</string>
     <string name="depth_effect_ok_btn">ОК</string>
     <!-- Reboot alert -->
-    <string name="pending_actions">Pending actions</string>
-    <string name="btn_dismiss">Dismiss</string>
+    <string name="pending_actions">Очікувані дії</string>
+    <string name="btn_dismiss">Закрити</string>
     <!-- Menu Items -->
     <string name="menu_settings_title">Імпортувати/Експортувати</string>
     <string name="menu_reset_defaults">Скинути всі налаштування</string>
     <string name="menu_import_settings">Імпортувати налаштування з файлу…</string>
-    <string name="menu_export_settings">Експортувати налаштування settings до файлу…</string>
+    <string name="menu_export_settings">Експортувати налаштування до файлу…</string>
     <string name="menu_restart">Перезавантажити</string>
     <string name="menu_restart_system">Перезапустіть систему</string>
     <string name="menu_soft_restart">М\'яке перезавантаження</string>
@@ -421,7 +421,7 @@
     <string name="download_channel_name">Завантаження</string>
     <string name="assets_download_title">Завантаження файлів</string>
     <string name="assets_download_body">Завантаження супутніх файлів</string>
-    <string name="assets_download_size_body">Progress: %s</string>
+    <string name="assets_download_size_body">Перебіг: %s</string>
     <string name="update_notification_title">Оновлення завантажено</string>
     <string name="update_notification_text">Тицьніть сюди, щоб встановити</string>
     <string name="download_failed">Не вдалося завантажити оновлення</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">Підключені пакети</string>
     <string name="package_hooked_successful">Пакет чуйний</string>
     <string name="package_not_hook_enabled">Пакет не ввімкнено в LSposed</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert ще не активовано в LSPosed. Відкрийте менеджер LSPosed, увімкніть Pixel Xpert, а потім перезапустіть цей застосунок</string>
     <string name="package_hook_bootlooped">Не вдалося виконати перехоплення через циклічне перезавантаження</string>
     <string name="package_hook_no_response">Пакет не відповідає</string>
+    <string name="package_not_running">Застосунок не запущено</string>
     <string name="package_not_found">Пакет не знайдено</string>
     <string name="package_checking">Завантаження%s</string>
     <string name="package_activated">Пакет успішно активований</string>
     <string name="package_activation_failed">Не вдалося активувати пакет</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed не встановлено</string>
     <string name="activate_in_lsposed">Активувати в ЛСПосед</string>
     <string name="package_not_hook_enabled_info">Застосунок встановлено, але LSPosed не налаштовано на його перехоплення. Увімкніть його, натиснувши «%s».</string>
     <string name="package_hook_bootlooped_info">Перехоплення для застосунку спричиняло зациклення, тому його було вимкнено, щоб запобігти подальшим проблемам.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Що сталося?</string>
     <string name="package_not_launchable">Пакунок не запускається</string>
     <string name="menu_launch_app">Запустити додаток</string>
+	<string name="menu_stop_app">Зупинити застосунок</string>
     <string name="menu_restart_app">Перезапустити додаток</string>
     <string name="why">Як?</string>
     <string name="okay">Гаразд</string>
@@ -529,15 +531,119 @@
     <string name="icon_pack_disclaimer_title">Відмова від відповідальності</string>
     <string name="icon_pack_disclaimer_desc">PixelXpert не розробляє і не розповсюджує наборів значків. Таким чином, команда PixelXpert не може надавати підтримку щодо цих наборів. Підтримка щодо того, як PixelXpert працює з пакетами значків, надається лише розробникам відповідних пакетів.\n\nДля отримання інструкцій щодо компіляції пакета значків, зверніться до посібника тут: %s</string>
     <!--Advanced power options-->
-    <string name="advanced_option_button_title">Advanced…</string>
-    <string name="reboot_bootloader_title">Reboot to Bootloader</string>
-    <string name="soft_reboot_title">Soft Reboot</string>
-    <string name="restart_systemui_title">Restart SystemUI</string>
+    <string name="advanced_option_button_title">Розширені…</string>
+    <string name="reboot_bootloader_title">Перезавантажити в завантажувач</string>
+    <string name="soft_reboot_title">М’яке перезавантаження</string>
+    <string name="restart_systemui_title">Перезапустити SystemUI</string>
     <!--Optimization restart request-->
-    <string name="optimization_restart_needed_title">Restart Recommended</string>
-    <string name="optimization_restart_needed_message">A reboot is recommended to increase system integration</string>
-    <string name="restart_postpone">Later</string>
-    <string name="restart_now">Reboot now</string>
-    <string name="watts">Watts</string>
-    <string name="fast_charging_threshold_title">Fast charging threshold</string>
+    <string name="optimization_restart_needed_title">Рекомендовано перезавантаження</string>
+    <string name="optimization_restart_needed_message">Для кращої інтеграції із системою рекомендовано перезавантажити пристрій</string>
+    <string name="restart_postpone">Пізніше</string>
+    <string name="restart_now">Перезавантажити зараз</string>
+    <string name="watts">Вати</string>
+    <string name="fast_charging_threshold_title">Поріг швидкого заряджання</string>
+    <!-- Newly introduced strings -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">Файли й вибір документів</string>
+    <string name="documentsui_header_summary">Поведінка перегляду та сортування файлів</string>
+    <string name="documentsui_remember_sort_title">Запам’ятовувати порядок сортування</string>
+    <string name="documentsui_remember_sort_summary">Зберігати загальний порядок сортування та необов’язкові налаштування окремих папок у системному засобі вибору файлів</string>
+    <string name="documentsui_remember_sort_usage">У меню сортування засобу вибору файлів звичайний дотик оновлює загальне сортування. Натисніть і утримуйте варіант сортування, щоб зберегти його лише для поточної папки. Звичайний вибір також скидає налаштування цієї папки.</string>
+    <string name="lockscreen_security_category">Безпека екрана блокування</string>
+    <string name="lockscreen_block_power_menu_title">Блокувати меню живлення на заблокованому екрані</string>
+    <string name="lockscreen_block_power_menu_summary">Також блокує кнопку живлення у Швидких налаштуваннях і апаратне скорочення</string>
+    <string name="lockscreen_block_internet_title">Блокувати керування інтернетом на заблокованому екрані</string>
+    <string name="lockscreen_block_airplane_title">Блокувати режим польоту на заблокованому екрані</string>
+    <string name="lockscreen_block_bluetooth_title">Блокувати Bluetooth на заблокованому екрані</string>
+    <string name="lockscreen_block_hotspot_title">Блокувати точку доступу на заблокованому екрані</string>
+    <string name="lockscreen_block_dnd_title">Блокувати режим «Не турбувати» на заблокованому екрані</string>
+    <string name="lockscreen_block_ringer_title">Блокувати зміну режиму дзвінка на заблокованому екрані</string>
+    <string name="lockscreen_unlock_to_use">Розблокуйте пристрій</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Розширені перевірки встановлення</string>
+    <string name="pm_exact_signature_title">Обхід точного збігу підписів split APK</string>
+    <string name="pm_exact_signature_summary">Високий ризик: дозволяє відмінності в даних підпису базового й розділених APK під час встановлення</string>
+    <string name="pm_shared_uid_title">Обхід перевірки підпису спільного UID</string>
+    <string name="pm_shared_uid_summary">Високий ризик: дозволяє оновлювати по-різному підписані користувацькі застосунки зі спільним UID; обмеження платформи для спільного UID залишаються</string>
+    <string name="pm_installer_redirect_category">Переспрямування інсталятора</string>
+    <string name="pm_installer_redirect_title">Переспрямовувати інсталятор пакетів</string>
+    <string name="pm_installer_redirect_summary">Надсилати запити на встановлення APK і, за бажанням, видалення вибраному обробнику</string>
+    <string name="pm_installer_target_title">Інсталятор</string>
+    <string name="pm_installer_system_default">Системний типовий</string>
+    <string name="pm_force_explicit_installer_title">Замінювати явно вибраний інсталятор</string>
+    <string name="pm_force_explicit_installer_summary">Також переспрямовувати запити, жорстко прив’язані до певного компонента інсталятора</string>
+    <string name="pm_intercept_session_title">Переспрямовувати підтвердження сеансового встановлення</string>
+    <string name="pm_intercept_session_summary">Перехоплювати запити CONFIRM_INSTALL і CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Виправити доступ до шляху APK сеансу</string>
+    <string name="pm_fix_session_permissions_summary">Експериментальне виправлення сумісності зовнішніх інсталяторів з Android 14+</string>
+    <string name="pm_intercept_uninstall_title">Переспрямовувати запити на видалення</string>
+    <string name="pm_intercept_uninstall_summary">Надсилати ACTION_DELETE і ACTION_UNINSTALL_PACKAGE вибраному обробнику</string>
+    <string name="pm_uninstall_follow_installer_title">Використовувати інсталятор для запитів на видалення</string>
+    <string name="pm_uninstaller_target_title">Засіб видалення</string>
+    <string name="app_info_enhancements_category">Відомості про застосунок</string>
+    <string name="app_info_show_version_code_title">Показувати код версії</string>
+    <string name="app_info_allow_disable_user_apps_title">Дозволити вимикати користувацькі застосунки</string>
+    <string name="app_info_allow_disable_user_apps_summary">Додає дію ввімкнення/вимкнення у відомості про несистемні застосунки</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Тема, буфер обміну, конфіденційність та експериментальні функції введення</string>
+    <string name="gboard_theme_category">Тема</string>
+    <string name="gboard_amoled_black_title">Чорний AMOLED у темному режимі</string>
+    <string name="gboard_amoled_black_summary">Робить контейнери поверхонь Material Expressive цілком чорними, зберігаючи акцентні кольори</string>
+    <string name="gboard_clipboard_category">Буфер обміну</string>
+    <string name="gboard_clipboard_history_title">Налаштувати історію буфера обміну</string>
+    <string name="gboard_clipboard_history_summary">Змінити кількість і вік записів, які запитує Gboard; старіші записи, уже видалені Gboard, відновити неможливо</string>
+    <string name="gboard_clipboard_size_title">Максимум видимих записів</string>
+    <string name="gboard_clipboard_size_summary">Допустимий діапазон: від 5 до 100</string>
+    <string name="gboard_clipboard_days_title">Видима історія в днях</string>
+    <string name="gboard_clipboard_days_summary">Допустимий діапазон: від 0 до 3650; 0 запитує всі збережені записи</string>
+    <string name="gboard_secure_clipboard_title">Не зберігати конфіденційний текст в історії Gboard</string>
+    <string name="gboard_secure_clipboard_summary">Блокувати записи з полів паролів, а також імовірні коди підтвердження, PIN-коди й довгі номери рахунків</string>
+    <string name="gboard_clipboard_chips_title">Кнопки дій буфера обміну</string>
+    <string name="gboard_clipboard_chips_summary">Увімкнути кнопки дій Gboard, виділення сутностей та експерименти копіювання у відповідь</string>
+    <string name="gboard_privacy_category">Конфіденційність</string>
+    <string name="gboard_force_incognito_title">Вимкнути персоналізоване навчання</string>
+    <string name="gboard_force_incognito_summary">Запитувати відмову від персоналізованого навчання для кожного поля введення; повний інтерфейс інкогніто Gboard при цьому не вмикається</string>
+    <string name="gboard_privacy_flags_title">Зменшити телеметрію та навчання</string>
+    <string name="gboard_privacy_flags_summary">Перевизначити відомі прапорці Gboard для зберігання виправлень, захоплення вмісту, журналювання, метрик і кешів навчання</string>
+    <string name="gboard_input_category">Покращення введення</string>
+    <string name="gboard_multilingual_title">Багатомовне введення</string>
+    <string name="gboard_multilingual_summary">Увімкнути відомі експерименти багатомовного введення, підказок, функцій Pixel і покращення мовлення</string>
+    <string name="gboard_ai_title">ШІ та розумне введення</string>
+    <string name="gboard_ai_summary">Увімкнути відомі експерименти Smart Reply, Smart Compose, emojify, наліпок і AI Core</string>
+    <string name="gboard_grammar_title">Граматика й коректура</string>
+    <string name="gboard_grammar_summary">Увімкнути відомі експерименти локальної коректури, перевірки граматики, інструментів письма й перетворення тексту</string>
+    <string name="gboard_floating_title">Плавуча й розділена клавіатура</string>
+    <string name="gboard_floating_summary">Увімкнути експерименти альбомного режиму, кількох вікон, довільної форми, розділеної клавіатури планшета, повзунка розміру й переходів</string>
+    <string name="gboard_emoji_kitchen_title">Покращення Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Увімкнути експерименти перегляду, пошуку, рекомендацій, анімації та вбудованого вибору</string>
+    <string name="gboard_access_point_title">Новий дизайн меню скорочень</string>
+    <string name="gboard_access_point_summary">Увімкнути експерименти меню точок доступу, теми Silk, системного шрифту, Google Sans, власної теми й анімації</string>
+    <string name="gboard_metered_downloads_title">Дозволити завантаження в тарифікованих мережах</string>
+    <string name="gboard_metered_downloads_summary">Дозволити завантаження відомих мовних пакетів, ідентифікації мови й мовлення через мобільну або іншу тарифіковану мережу</string>
+    <string name="gboard_experimental_category">Експериментальні рушії</string>
+    <string name="gboard_experimental_summary">Використовує приватні прапорці Gboard і після оновлення може змінитися або припинити працювати; після зміни перезапустіть Gboard</string>
+    <string name="gboard_inline_suggestions_title">Багатослівні підказки в рядку</string>
+    <string name="gboard_proactive_emoji_title">Проактивні підказки емодзі</string>
+    <string name="gboard_tflite_title">Рушії прогнозування TFLite</string>
+    <string name="gboard_fast_access_title">Панель швидкого доступу</string>
+    <string name="dialer_force_enable_call_recording_title">Примусово ввімкнути запис дзвінків</string>
+    <string name="dialer_force_enable_call_recording_summary">Розблоковує вбудований запис дзвінків у додатку Google Телефон у непідтримуваних регіонах</string>
+    <string name="landscape_split_shade_title">Панель сповіщень у стилі планшета в горизонтальному режимі</string>
+    <string name="landscape_split_shade_summary">Показує швидкі налаштування та сповіщення поруч під час горизонтального повороту телефона</string>
+    <string name="recents_clear_all">Закрити всі</string>
+    <string name="launcher_header">Запускач</string>
+    <string name="launcher_header_summary">Покращення останніх завдань і головного екрана</string>
+    <string name="launcher_home_section">Головний екран</string><string name="launcher_drawer_section">Список програм</string><string name="launcher_recents_section">Останні завдання</string><string name="launcher_hide_desktop_labels">Сховати назви значків головного екрана</string><string name="launcher_hide_desktop_search">Сховати рядок пошуку головного екрана</string><string name="launcher_hide_drawer_labels">Сховати назви значків у списку програм</string><string name="launcher_hide_drawer_search">Сховати рядок пошуку в списку програм</string><string name="recents_remove_screenshot">Вилучити дію знімка екрана</string><string name="recents_equal_action_widths">Використовувати кнопки дій однакової ширини</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Персоналізація</string>
+	<string name="home_category_system_interface">Інтерфейс системи</string>
+	<string name="home_category_app_enhancements">Покращення програм</string>
+	<string name="home_category_system_tools">Системні інструменти</string>
 </resources>

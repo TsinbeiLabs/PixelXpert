@@ -235,7 +235,7 @@
     <string name="friday">Vineri</string>
     <string name="saturday">Sâmbătă</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Dală lanternă</string>
+    <string name="qs_leveled_flashlight_title">Dală pentru reglarea luminozității lanternei</string>
     <string name="qs_flashlight_level_global_title">Aplică nivelul lanternei global</string>
     <string name="qs_tile_qty_title">Setarea numărului plăcilor</string>
     <string name="qs_leveled_flashlight_summary">Apasă lung pe dală pentru a afișa glisorul.\nNecesită suport hardware</string>
@@ -296,7 +296,7 @@
     <string name="allow_all_screen_rotations">Deblocare forțată a tuturor rotațiilor ecranului</string>
     <string name="allow_all_screen_rotations_summary">Va ignora, de asemenea, butonul plutitor de rotație manuală</string>
     <string name="force_no_cutout">Ignoră decuparea camerei</string>
-    <string name="clear_all_reposition_title">Adăugați un buton accesibil de ștergere toate la pagina de recente</string>
+    <string name="clear_all_reposition_title">Adaugă Șterge tot sub acțiunile recente</string>
     <string name="force_themed_icons_title">Generează automat pictogramele tematice lipsă</string>
     <string name="force_themed_icons_summary">Doar lansator Pixel</string>
     <string name="volume_button_step_title">Pași volum (0 la 100%)</string>
@@ -468,9 +468,10 @@
     <string name="hooked_packages_title">Pachete conectate</string>
     <string name="package_hooked_successful">Pachetul receptiv</string>
     <string name="package_not_hook_enabled">Pachetul nu este activat în LSposed</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert nu este încă activat în LSPosed. Deschide managerul LSPosed, activează Pixel Xpert, apoi repornește această aplicație</string>
     <string name="package_hook_bootlooped">Atașarea a eșuat din cauza bootloop-ului</string>
     <string name="package_hook_no_response">Pachetul nu răspunde</string>
+    <string name="package_not_running">Aplicația nu rulează</string>
     <string name="package_not_found">Pachetul nu a fost găsit</string>
     <string name="package_checking">Se încarcă%s</string>
     <string name="package_activated">Pachetul a fost activat cu succes</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Ce s-a întâmplat?</string>
     <string name="package_not_launchable">Pachetul nu poate fi lansat</string>
     <string name="menu_launch_app">Lansează aplicația</string>
+	<string name="menu_stop_app">Oprește aplicația</string>
     <string name="menu_restart_app">Repornește aplicația</string>
     <string name="why">de ce?</string>
     <string name="okay">Bine</string>
@@ -540,4 +542,108 @@
     <string name="restart_now">Repornește acum</string>
     <string name="watts">Wați</string>
     <string name="fast_charging_threshold_title">Prag de încărcare rapidă</string>
+    <!-- Newly introduced strings -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">Fișiere și selector de documente</string>
+    <string name="documentsui_header_summary">Comportamentul de navigare și sortare a fișierelor</string>
+    <string name="documentsui_remember_sort_title">Memorează ordinea de sortare</string>
+    <string name="documentsui_remember_sort_summary">Păstrează o ordine globală de sortare și opțional setări individuale pentru dosare în selectorul de fișiere al sistemului</string>
+    <string name="documentsui_remember_sort_usage">În meniul de sortare al selectorului de fișiere, o atingere normală actualizează sortarea globală. Apasă lung o opțiune de sortare pentru a o salva numai pentru dosarul curent. O selecție normală șterge și setarea acelui dosar.</string>
+    <string name="lockscreen_security_category">Securitatea ecranului de blocare</string>
+    <string name="lockscreen_block_power_menu_title">Blochează meniul de alimentare cât timp ecranul este blocat</string>
+    <string name="lockscreen_block_power_menu_summary">Blochează și butonul de alimentare din Setări rapide și scurtătura hardware</string>
+    <string name="lockscreen_block_internet_title">Blochează comenzile pentru internet cât timp ecranul este blocat</string>
+    <string name="lockscreen_block_airplane_title">Blochează modul avion cât timp ecranul este blocat</string>
+    <string name="lockscreen_block_bluetooth_title">Blochează Bluetooth cât timp ecranul este blocat</string>
+    <string name="lockscreen_block_hotspot_title">Blochează hotspotul cât timp ecranul este blocat</string>
+    <string name="lockscreen_block_dnd_title">Blochează modul Nu deranjați cât timp ecranul este blocat</string>
+    <string name="lockscreen_block_ringer_title">Blochează schimbarea modului soneriei cât timp ecranul este blocat</string>
+    <string name="lockscreen_unlock_to_use">Deblochează pentru utilizare</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Verificări avansate de instalare</string>
+    <string name="pm_exact_signature_title">Omite potrivirea exactă a semnăturilor split APK</string>
+    <string name="pm_exact_signature_summary">Risc ridicat: permite ca detaliile semnăturii APK-ului de bază și ale celor divizate să difere în timpul instalării</string>
+    <string name="pm_shared_uid_title">Omite verificările semnăturii UID-ului partajat</string>
+    <string name="pm_shared_uid_summary">Risc ridicat: permite actualizarea aplicațiilor de utilizator semnate diferit care folosesc un UID partajat; restricțiile platformei pentru UID partajat rămân valabile</string>
+    <string name="pm_installer_redirect_category">Redirecționarea programului de instalare</string>
+    <string name="pm_installer_redirect_title">Redirecționează programul de instalare a pachetelor</string>
+    <string name="pm_installer_redirect_summary">Trimite solicitările de instalare APK și opțional de dezinstalare către gestionarul selectat</string>
+    <string name="pm_installer_target_title">Program de instalare</string>
+    <string name="pm_installer_system_default">Implicit al sistemului</string>
+    <string name="pm_force_explicit_installer_title">Înlocuiește programul de instalare selectat explicit</string>
+    <string name="pm_force_explicit_installer_summary">Redirecționează și solicitările asociate explicit unei anumite componente de instalare</string>
+    <string name="pm_intercept_session_title">Redirecționează confirmarea instalării prin sesiune</string>
+    <string name="pm_intercept_session_summary">Interceptează solicitările CONFIRM_INSTALL și CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Repară accesul la calea APK-ului sesiunii</string>
+    <string name="pm_fix_session_permissions_summary">Remediere experimentală de compatibilitate pentru instalatoare externe pe Android 14+</string>
+    <string name="pm_intercept_uninstall_title">Redirecționează solicitările de dezinstalare</string>
+    <string name="pm_intercept_uninstall_summary">Trimite ACTION_DELETE și ACTION_UNINSTALL_PACKAGE către gestionarul selectat</string>
+    <string name="pm_uninstall_follow_installer_title">Folosește programul de instalare pentru solicitările de dezinstalare</string>
+    <string name="pm_uninstaller_target_title">Program de dezinstalare</string>
+    <string name="app_info_enhancements_category">Informații despre aplicație</string>
+    <string name="app_info_show_version_code_title">Afișează codul versiunii</string>
+    <string name="app_info_allow_disable_user_apps_title">Permite dezactivarea aplicațiilor utilizatorului</string>
+    <string name="app_info_allow_disable_user_apps_summary">Adaugă o acțiune de activare/dezactivare în informațiile aplicațiilor care nu sunt de sistem</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Temă, clipboard, confidențialitate și funcții experimentale de tastare</string>
+    <string name="gboard_theme_category">Temă</string>
+    <string name="gboard_amoled_black_title">Negru AMOLED în modul întunecat</string>
+    <string name="gboard_amoled_black_summary">Transformă containerele de suprafață Material Expressive în negru pur, păstrând culorile de accent</string>
+    <string name="gboard_clipboard_category">Clipboard</string>
+    <string name="gboard_clipboard_history_title">Personalizează istoricul clipboardului</string>
+    <string name="gboard_clipboard_history_summary">Schimbă numărul și vechimea intrărilor solicitate de Gboard; intrările mai vechi șterse deja de Gboard nu pot fi restaurate</string>
+    <string name="gboard_clipboard_size_title">Număr maxim de intrări vizibile</string>
+    <string name="gboard_clipboard_size_summary">Interval permis: de la 5 la 100</string>
+    <string name="gboard_clipboard_days_title">Istoric vizibil în zile</string>
+    <string name="gboard_clipboard_days_summary">Interval permis: de la 0 la 3650; 0 solicită toate intrările păstrate</string>
+    <string name="gboard_secure_clipboard_title">Nu păstra textul sensibil în istoricul Gboard</string>
+    <string name="gboard_secure_clipboard_summary">Blochează intrările copiate din câmpurile de parole și codurile de verificare probabile, codurile PIN sau numerele lungi de cont</string>
+    <string name="gboard_clipboard_chips_title">Butoane de acțiune pentru clipboard</string>
+    <string name="gboard_clipboard_chips_summary">Activează butoanele de acțiune Gboard, extragerea entităților și experimentele de copiere în răspuns</string>
+    <string name="gboard_privacy_category">Confidențialitate</string>
+    <string name="gboard_force_incognito_title">Dezactivează învățarea personalizată</string>
+    <string name="gboard_force_incognito_summary">Solicită dezactivarea învățării personalizate pentru fiecare câmp de introducere; aceasta nu forțează interfața completă Incognito Gboard</string>
+    <string name="gboard_privacy_flags_title">Reduce telemetria și antrenarea</string>
+    <string name="gboard_privacy_flags_summary">Înlocuiește marcajele Gboard cunoscute pentru stocarea corecțiilor, capturarea conținutului, jurnalizare, metrici și cache-urile de antrenare</string>
+    <string name="gboard_input_category">Îmbunătățiri pentru introducere</string>
+    <string name="gboard_multilingual_title">Tastare multilingvă</string>
+    <string name="gboard_multilingual_summary">Activează experimentele cunoscute pentru tastare multilingvă, sugestii, funcții Pixel și îmbunătățirea vorbirii</string>
+    <string name="gboard_ai_title">AI și introducere inteligentă</string>
+    <string name="gboard_ai_summary">Activează experimentele cunoscute Smart Reply, Smart Compose, emojify, cu autocolante și AI Core</string>
+    <string name="gboard_grammar_title">Gramatică și corectură</string>
+    <string name="gboard_grammar_summary">Activează experimentele cunoscute pentru corectură pe dispozitiv, verificarea gramaticii, instrumente de scriere și conversia textului</string>
+    <string name="gboard_floating_title">Tastatură flotantă și divizată</string>
+    <string name="gboard_floating_summary">Activează experimentele pentru orientare peisaj, ferestre multiple, formă liberă, tastatură divizată pe tabletă, glisor de dimensiune și tranziții</string>
+    <string name="gboard_emoji_kitchen_title">Îmbunătățiri Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Activează experimentele de navigare, căutare, recomandare, animație și selector încorporat</string>
+    <string name="gboard_access_point_title">Reproiectarea meniului de scurtături</string>
+    <string name="gboard_access_point_summary">Activează experimentele pentru meniul punctelor de acces, tema Silk, fontul sistemului, Google Sans, tema personalizată și animații</string>
+    <string name="gboard_metered_downloads_title">Permite descărcări în rețele contorizate</string>
+    <string name="gboard_metered_downloads_summary">Permite descărcarea pachetelor cunoscute de limbă, identificare a limbii și vorbire prin date mobile sau alte rețele contorizate</string>
+    <string name="gboard_experimental_category">Motoare experimentale</string>
+    <string name="gboard_experimental_summary">Folosește marcaje Gboard private și se poate schimba sau poate înceta să funcționeze după o actualizare; repornește Gboard după modificare</string>
+    <string name="gboard_inline_suggestions_title">Sugestii în linie cu mai multe cuvinte</string>
+    <string name="gboard_proactive_emoji_title">Sugestii proactive de emoji</string>
+    <string name="gboard_tflite_title">Motoare de predicție TFLite</string>
+    <string name="gboard_fast_access_title">Bară de acces rapid</string>
+    <string name="dialer_force_enable_call_recording_title">Forțează activarea înregistrării apelurilor</string>
+    <string name="dialer_force_enable_call_recording_summary">Deblochează înregistrarea nativă a apelurilor în aplicația Telefon Google în regiunile neacceptate</string>
+    <string name="landscape_split_shade_title">Panou de notificări tip tabletă în orientare peisaj</string>
+    <string name="landscape_split_shade_summary">Afișează Setările rapide și notificările una lângă alta când telefonul este rotit orizontal</string>
+    <string name="recents_clear_all">Șterge tot</string>
+    <string name="launcher_header">Lansator</string>
+    <string name="launcher_header_summary">Îmbunătățiri pentru sarcinile recente și ecranul de pornire</string>
+    <string name="launcher_home_section">Ecran de pornire</string><string name="launcher_drawer_section">Sertar de aplicații</string><string name="launcher_recents_section">Sarcini recente</string><string name="launcher_hide_desktop_labels">Ascunde numele pictogramelor de pe ecranul de pornire</string><string name="launcher_hide_desktop_search">Ascunde bara de căutare de pe ecranul de pornire</string><string name="launcher_hide_drawer_labels">Ascunde numele pictogramelor din sertar</string><string name="launcher_hide_drawer_search">Ascunde bara de căutare din sertar</string><string name="recents_remove_screenshot">Elimină acțiunea Captură de ecran</string><string name="recents_equal_action_widths">Folosește butoane de acțiune cu lățime egală</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Personalizare</string>
+	<string name="home_category_system_interface">Interfața sistemului</string>
+	<string name="home_category_app_enhancements">Îmbunătățiri ale aplicațiilor</string>
+	<string name="home_category_system_tools">Instrumente de sistem</string>
 </resources>

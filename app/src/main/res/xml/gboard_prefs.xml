@@ -3,6 +3,12 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:search="http://schemas.android.com/apk/com.tsinbei.pixelxpert.ui.preferencesearch">
 
+	<com.tsinbei.pixelxpert.ui.preferences.IllustrationPreference
+		android:key="gboard_illustration"
+		app:lottie_cacheComposition="false"
+		app:lottie_rawRes="@raw/gboard_keyboard"
+		search:ignore="true" />
+
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/gboard_theme_category"
 		app:iconSpaceReserved="false"

@@ -34,7 +34,19 @@ public class OwnPrefsFragment extends ControlledPreferenceFragmentCompat {
 				.setOnPreferenceClickListener(preference -> {
 					try {
 						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setData(Uri.parse("https://pixelxpert.siava.sh"));
+					intent.setData(Uri.parse("https://github.com/TsinbeiLabs/PixelXpert"));
+						startActivity(intent);
+					} catch (Exception ignored) {
+						Toast.makeText(getContext(), getString(R.string.browser_not_found), Toast.LENGTH_SHORT).show();
+					}
+					return true;
+				});
+
+		findPreference("OriginalGitHubRepo")
+				.setOnPreferenceClickListener(preference -> {
+					try {
+						Intent intent = new Intent(Intent.ACTION_VIEW);
+						intent.setData(Uri.parse("https://github.com/siavash79/PixelXpert"));
 						startActivity(intent);
 					} catch (Exception ignored) {
 						Toast.makeText(getContext(), getString(R.string.browser_not_found), Toast.LENGTH_SHORT).show();
@@ -71,7 +83,7 @@ public class OwnPrefsFragment extends ControlledPreferenceFragmentCompat {
 				.setOnPreferenceClickListener(preference -> {
 					try {
 						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setData(Uri.parse("https://pixelxpert.siava.sh/wiki"));
+					intent.setData(Uri.parse("https://github.com/TsinbeiLabs/PixelXpert/wiki"));
 						startActivity(intent);
 					} catch (Exception ignored) {
 						Toast.makeText(getContext(), getString(R.string.browser_not_found), Toast.LENGTH_SHORT).show();

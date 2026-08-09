@@ -3,7 +3,7 @@
     <!--General strings-->
     <string name="app_themed_icon_title">نماد تم جایگزین</string>
     <string name="xposed_desc">شخصی سازی گوشی های گوگل پیکسل</string>
-    <string name="volume_tile_title">صدای موسیقی</string>
+    <string name="volume_tile_title">صدای رسانه</string>
     <string name="sliding_tile_subtitle">برای تنظیم ضربه بزنید</string>
     <string name="app_switch_tile_title">تغییر پروفایل برنامه</string>
     <string name="hide_default">پنهان (پیش‌فرض)</string>
@@ -53,7 +53,7 @@
     <string name="qs_panel_category_title">پنل تنظیمات سریع</string>
     <string name="qs_panel_category_summary">نوار تنظیم نور، قدرت چراغ قوه و غیره</string>
     <string name="theme_customization_category">ظواهر</string>
-    <string name="theme_customization_summary"></string>
+    <string name="theme_customization_summary">سفارشی‌سازی سبک بصری و شکل نمادها</string>
     <string name="pm_header">مدیریت نرم افزار</string>
     <string name="pm_header_summary">دور زدن امنیت نصب برنامه‌ها</string>
     <string name="hotspot_header">نقطه اتصال</string>
@@ -64,7 +64,7 @@
     <string name="hotspot_max_client_title">حداکثر تعداد کاربران</string>
     <string name="hotspot_disable_approval_title">حل مشکلات اتصال هات اسپات</string>
     <string name="hotspot_disable_approval_summary">به مشتریان غیر\"از قبل تایید شده\" اجازه دهید به طور یکپارچه متصل شوند</string>
-    <string name="hotspot_force_unsupported_regions">حذف محدودیتهای hotspot برای تمام دنیا</string>
+    <string name="hotspot_force_unsupported_regions">حذف محدودیت‌های نقطه اتصال در مناطق پشتیبانی‌نشده</string>
     <!--Lock screen related-->
     <string name="depth_wallpaper_options">تصویر‌زمینه با افکت عمق</string>
     <string name="depth_wallpaper_title">والپیپر افکت عمق</string>
@@ -114,7 +114,7 @@
     <string name="caution_mobile_costs">توجه: عدم اطلاع از اینکه در حالت رومینگ هستید ممکن است هزینه موبایل سنگینی برای شما داشته باشد</string>
     <string name="volte_icon_title">نمایش نماد VoLTE</string>
     <string name="vowifi_icon_title">نمایش نماد VoWiFi زمانی که در دسترس است</string>
-    <string name="hide_privacychip_title">حذف نشانگرهای استفاده از دوربین و میکروفون</string>
+    <string name="hide_privacychip_title">پنهان کردن نشانگرهای حریم خصوصی\n(دوربین، میکروفون)</string>
     <!-- \n means next line-->
     <string name="sbc_position_title">موقعیت ساعت</string>
     <string name="sbc_ampm_style">نمایش AM/PM</string>
@@ -202,7 +202,7 @@
     <string name="status_bar_nfc">میدان‌نزدیک فعال</string>
     <string name="status_bar_tty">حالت کم شنوا</string>
     <string name="status_bar_speakerphone">اسپیکر روشن</string>
-    <string name="status_bar_cdma_eri">اصطلاحات CDMA</string>
+    <string name="status_bar_cdma_eri">نشانگر رومینگ CDMA</string>
     <string name="status_bar_data_connection">اتصال داده</string>
     <string name="status_bar_phone_evdo_signal">سیگنال EVDO</string>
     <string name="status_bar_phone_signal">سیگنال تلفن</string>
@@ -235,29 +235,29 @@
     <string name="friday">جمعه</string>
     <string name="saturday">شنبه</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">کاشی تراز چراغ قوه</string>
-    <string name="qs_flashlight_level_global_title">درجه نور چراغ قوه همه جا اعمال گردد</string>
-    <string name="qs_tile_qty_title">تنظیمات سریع تعداد کاشی تنظیمات</string>
-    <string name="qs_leveled_flashlight_summary">برای نمایش لغزنده، روی کاشی را طولانی فشار دهید.\nبه سخت‌افزار پشتیبانی‌شده نیاز دارد</string>
-    <string name="qs_pulldown_size">عرض پایین کشی سریع</string>
-    <string name="qs_pulldown_switch_title">کشویی سریع پانل QS از نوار وضعیت</string>
-    <string name="qs_pulldown_side_title">سمت پایین کشی سریع</string>
-    <string name="qs_pulldown_category">تنظیمات سریع کشویی</string>
-    <string name="qs_pullup_switch_title">تنظیمات سریع را با یک سوایپ ببندید</string>
-    <string name="qs_tile_qty_portrait">در جهت پرتره</string>
-    <string name="qs_tile_qty_landscape">در جهت گیری منظره</string>
-    <string name="qqs_rows_number">تعداد ردیف‌های ت. س سریع</string>
-    <string name="qs_rows_number">تعداد ردیفهای تنظیمات سریع</string>
-    <string name="qs_cols_number">تعداد ستونهای تنظیمات سریع</string>
-    <string name="qs_tile_label_size">اندازه فونت تنظیمات سریع</string>
-    <string name="qs_tile_secondary_label_size">اندازه فونت زیر نویس تنظیمات سریع</string>
-    <string name="quick_settings_tiles_category">گزینه های تنظیمات سریع</string>
-    <string name="qs_volume_unmute_title">مقدار نادیده گرفتن کاشی حجم</string>
+    <string name="qs_leveled_flashlight_title">کاشی تنظیم‌پذیر روشنایی چراغ‌قوه</string>
+    <string name="qs_flashlight_level_global_title">اعمال سطح روشنایی چراغ‌قوه در سراسر سیستم</string>
+    <string name="qs_tile_qty_title">تنظیم تعداد کاشی‌های تنظیمات سریع</string>
+    <string name="qs_leveled_flashlight_summary">برای نمایش نوار لغزنده، کاشی را لمس طولانی کنید.\nبه سخت‌افزار پشتیبانی‌شده نیاز دارد</string>
+    <string name="qs_pulldown_size">عرض ناحیه پایین‌کشیدن سریع</string>
+    <string name="qs_pulldown_switch_title">پایین‌کشیدن سریع پنل تنظیمات سریع از نوار وضعیت</string>
+    <string name="qs_pulldown_side_title">سمت پایین‌کشیدن سریع</string>
+    <string name="qs_pulldown_category">پایین‌کشیدن تنظیمات سریع</string>
+    <string name="qs_pullup_switch_title">بستن تنظیمات سریع با یک حرکت</string>
+    <string name="qs_tile_qty_portrait">در حالت عمودی</string>
+    <string name="qs_tile_qty_landscape">در حالت افقی</string>
+    <string name="qqs_rows_number">تعداد ردیف‌های تنظیمات سریع فشرده</string>
+    <string name="qs_rows_number">تعداد ردیف‌های تنظیمات سریع</string>
+    <string name="qs_cols_number">تعداد ستون‌های تنظیمات سریع</string>
+    <string name="qs_tile_label_size">اندازه برچسب کاشی تنظیمات سریع</string>
+    <string name="qs_tile_secondary_label_size">اندازه برچسب فرعی کاشی تنظیمات سریع</string>
+    <string name="quick_settings_tiles_category">گزینه‌های کاشی تنظیمات سریع</string>
+    <string name="qs_volume_unmute_title">سطح رفع بی‌صدایی کاشی صدا</string>
     <!--Navigation bar related-->
-    <string name="back_gesture_category_title">تنظیمات حرکت Back</string>
+    <string name="back_gesture_category_title">پیکربندی حرکت بازگشت</string>
     <string name="back_from_left_title">سمت چپ صفحه نمایش</string>
     <string name="back_from_right_title">سمت راست صفحه نمایش</string>
-    <string name="back_height_title">ارتفاع قابل استفاده برای Back</string>
+    <string name="back_height_title">ارتفاع حرکت بازگشت</string>
     <string name="gesturenav_header">ناوبری کشیدنی</string>
     <string name="gesture_nav_pill_cat">نوار ناوبری</string>
     <string name="gesture_nav_pill_width_title">عرض در نسبت به اندازه استاندارد</string>
@@ -269,7 +269,7 @@
     <string name="three_button_center_title">دکمه وسط</string>
     <string name="three_button_right_title">دکمه سمت راست</string>
     <string name="hide_navbar_title">پنهان کردن نوار ناوبری</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">پنهان کردن حاشیه‌های نوار پیمایش</string>
     <string name="taskbar_as_recents_title">تبدیل نوار وظیفه را به نوار اخیر PixelXpert</string>
     <string name="taskbar_enable_google_recents">فعال کردن اخیراً اندروید در نوار وظیفه</string>
     <string name="taskbar_height_title">ارتفاع نوار برنامه</string>
@@ -296,24 +296,24 @@
     <string name="allow_all_screen_rotations">باز کردن چرخش صفحه به تمام جهات</string>
     <string name="allow_all_screen_rotations_summary">همچنین دکمه شناور چرخش دستی را نادیده می گیرد</string>
     <string name="force_no_cutout">فرض کن صفحه نمایش بریدگی دوربین ندارد</string>
-    <string name="clear_all_reposition_title">دکمه بستن تمام برنامه ها در پایین صفحه Recent اضافه شود</string>
+    <string name="clear_all_reposition_title">افزودن «پاک کردن همه» زیر اقدامات برنامه‌های اخیر</string>
     <string name="force_themed_icons_title">تولید خودکار نمادهای تم‌دار گمشده</string>
     <string name="force_themed_icons_summary">فقط لانچر پیکسل</string>
     <string name="volume_button_step_title">مراحل صدای موزیک (0 تا 100%)</string>
     <string name="display_resolution_switch_title">تغییر رزولوشن صفحه نمایش</string>
-    <string name="display_resolution_switch_summary">قبل از فعال کردن این، لطفاً تمام تنظیمات مربوط به اندازه/dpi صفحه نمایش را به حالت پیش‌فرض برگردانید</string>
+    <string name="display_resolution_switch_summary">پیش از فعال کردن، همه تغییرات اندازه و تراکم نمایشگر را به حالت پیش‌فرض برگردانید</string>
     <string name="display_resolution_title">ابعاد صفحه نمایش</string>
     <string name="brightness_range_title">محدوده مجاز نور صفحه</string>
     <string name="brightness_range_not_linear">این محدوده خطی نیست: بعضی اوقات باید آزمون و خطا کنید</string>
-    <string name="so_taptaptorch_title">استفاده از امکان کنترل چراغ قوه با دوضربه در صفحه قفل</string>
+    <string name="so_taptaptorch_title">فعال کردن دو ضربه برای چراغ‌قوه صفحه قفل</string>
     <string name="so_taptaptorch_summary">برای دسترسی سریع به چراغ قوه، روی صفحه قفل دو ضربه سریع بزنید و نگه دارید</string>
     <string name="so_fingerprint_sensor_enabled">وقتی صفحه نمایش خاموش است حسگر اثر انگشت فعال باشد</string>
     <string name="so_double_tap_wake_title">روشن شدن صفحه با دوضربه</string>
     <string name="so_double_tap_wake_summary">این گزینه امکان روشن شده صفحه با یک ضربه را قطع میکند</string>
-    <string name="so_tap_to_show_ambient_title">برای نشان دادن صفحه نمایش محیط ضربه بزنید</string>
-    <string name="so_tap_to_show_ambient_summary">[هنگامی که نمایشگر همیشه روشن خاموش است] ضربه زدن روی صفحه نمایشگر محیط را نشان می دهد</string>
-    <string name="so_pick_to_show_ambient_title">برای نشان دادن نمایشگر محیطی انتخاب کنید</string>
-    <string name="so_pick_to_show_ambient_summary">[وقتی نمایشگر همیشه روشن خاموش است] انتخاب تلفن صفحه نمایش محیط را نشان می دهد</string>
+    <string name="so_tap_to_show_ambient_title">ضربه برای نمایش صفحه محیطی</string>
+    <string name="so_tap_to_show_ambient_summary">[وقتی نمایشگر همیشه روشن خاموش است] ضربه روی صفحه، نمایشگر محیطی را نشان می‌دهد</string>
+    <string name="so_pick_to_show_ambient_title">برداشتن گوشی برای نمایش صفحه محیطی</string>
+    <string name="so_pick_to_show_ambient_summary">[وقتی نمایشگر همیشه روشن خاموش است] برداشتن گوشی، نمایشگر محیطی را نشان می‌دهد</string>
     <string name="force_aod_while_charging_title">مجبور کردن صفحه نمایش همیشه روشن هنگام شارژ</string>
     <string name="force_aod_while_charging_summary">وقتی دستگاه در حال شارژ شدن است، همیشه روشن بماند</string>
     <string name="doze_header">وقتی که صفحه نمایش خاموش است…</string>
@@ -329,7 +329,7 @@
     <string name="heads_up_notification_duration">مدت زمان اعلان هدآپ</string>
     <string name="notif_default_expansion_title">گسترش پیش‌فرض اعلان</string>
     <string name="notif_always_expand">همیشه گسترش دهید</string>
-    <string name="notif_always_collapse">همیشه فرو ریختن</string>
+    <string name="notif_always_collapse">همیشه جمع شود</string>
     <string name="control_flashlight_with_volume_keys">چراغ قوه را با دکمه های تنظیم صدا کنترل کنید</string>
     <string name="flashlight_fade_effect">جلوه محو شدن چراغ قوه</string>
     <string name="milliseconds">هزارم ثانیه</string>
@@ -391,7 +391,7 @@
     <string name="network_stat_month">روز شروع ماه</string>
     <!-- Incompatibility Alert -->
     <string name="incompatible_alert_title">ناسازگار</string>
-    <string name="incompatible_alert_body">این برنامه برای سیستم عامل فعلی شما ساخته نشده است. ممکن است برخی (یا حتی همه) امکانات این برنامه به طور صحیح کار نکند.\\n\\nلطفاً گزارش اشکال نفرمایید</string>
+    <string name="incompatible_alert_body">رام فعلی شما هدف مستقیم این ماژول نیست. می‌توانید به استفاده از آن ادامه دهید، اما ممکن است برخی یا همه گزینه‌ها مطابق انتظار کار نکنند\n\nلطفاً اشکال گزارش نکنید</string>
     <string name="incompatible_alert_ok_btn">فهمیدم</string>
     <!-- App kill Alert -->
     <string name="app_kill_alert_title">اطلاع</string>
@@ -416,7 +416,7 @@
     <string name="menu_updates">به روز رسانی برنامه</string>
     <string name="monitoring_category_title">گزینه های نظارت</string>
     <string name="netstat_header">تنظیمات آمار شبکه</string>
-    <string name="string_formatter_manual_body_v3">علاوه بر متن معمولی، متغیرهای پویا نیز موجود است، مانند تاریخ، مصرف داده و دما:\n\n$G\&lt;format\&gt; : تاریخ میلادی، بر اساس فرمت*\n$P&lt;format&gt; : تاریخ فارسی، بر اساس فرمت*\n$Nrx : کل دانلودها در دوره مشخص شده ** ***\n$Ntx: کل آپلودها در دوره مشخص شده ** ***\n$Nall : کل ترافیک در دوره مشخص شده ** ***\n$Nssid : نام SSID WiFi (در صورت وجود)\n\n$T\&lt;format\&gt;[interval] : درجه حرارت؛ فرمت \nمی تواند b (برای باتری)، c (برای CPU)، g (برای GPU) و s (برای پوست) باشد \nدر نهایت، تعداد اختیاری فاصله به روز رسانی بر حسب ثانیه وجود دارد (پیش فرض: 60 ثانیه)\n\n*برای قالب مستندات، جستجوی \"فرمت تاریخ جاوا\"\n**می توانید دوره آمار را در PixelXpert/منو متفرقه/تنظیمات آمار شبکه\nمشخص کنید ***اگر $N با $Nc جایگزین کنید، آمار داده های تلفن همراه را دریافت خواهید کرد (مثلاً $Ncrx به جای Nrx )</string>
+    <string name="string_formatter_manual_body_v3">علاوه بر متن عادی، متغیرهای پویایی مانند تاریخ، مصرف داده و دما نیز در دسترس هستند:\n\n$G\&lt;format\&gt; : تاریخ میلادی بر پایه قالب*\n$P&lt;format&gt; : تاریخ فارسی بر پایه قالب*\n$Nrx : مجموع دانلود در دوره مشخص‌شده ** ***\n$Ntx: مجموع آپلود در دوره مشخص‌شده ** ***\n$Nall : مجموع ترافیک در دوره مشخص‌شده ** ***\n$Nssid : نام SSID شبکه Wi-Fi (در صورت وجود)\n\n$T\&lt;format\&gt;[interval] : دما؛ \nقالب می‌تواند b برای باتری، c برای CPU، g برای GPU و s برای سطح دستگاه باشد \nدر پایان می‌توان فاصله به‌روزرسانی را به‌صورت اختیاری برحسب ثانیه تعیین کرد (پیش‌فرض: 60 ثانیه)\n\n*برای مستندات قالب، «Java Date Format» را جستجو کنید\n**می‌توانید دوره آمار را در PixelXpert/متفرقه/تنظیمات آمار شبکه تعیین کنید\n***اگر $N را با $Nc جایگزین کنید، آمار داده تلفن همراه نمایش داده می‌شود (برای نمونه $Ncrx به‌جای Nrx)</string>
     <string name="update_channel_name">به روز رسانی ها</string>
     <string name="download_channel_name">دانلودها</string>
     <string name="assets_download_title">دانلود فایل ها</string>
@@ -440,7 +440,7 @@
     <string name="switch_branches">تغییر نسخه</string>
     <string name="reinstall_word">نصب مجدد</string>
     <string name="changelog_title">تغییرات</string>
-    <string name="own_prefs_header">تنظیمات AOSPMods</string>
+    <string name="own_prefs_header">تنظیمات</string>
     <string name="language_title">زبان</string>
     <string name="gesture_nav_extra_cat">حرکات از پایین صفحه</string>
     <string name="gesture_nav_long_swipe_fc_title">بستن برنامه با کشیدن بالا از پایین تا بالای صفحه</string>
@@ -467,15 +467,16 @@
     <!-- Hooked Packages Activity -->
     <string name="hooked_packages_title">بسته های متصل</string>
     <string name="package_hooked_successful">بسته پاسخگو</string>
-    <string name="package_not_hook_enabled">بسته در LSposed فعال نیست</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="package_not_hook_enabled">بسته در LSPosed فعال نیست</string>
+    <string name="enable_px_manually">Pixel Xpert هنوز در LSPosed فعال نشده است. مدیر LSPosed را باز کنید، Pixel Xpert را فعال کنید و سپس این برنامه را دوباره راه‌اندازی کنید</string>
     <string name="package_hook_bootlooped">هوک به دلیل بوت لوپ ناموفق بود</string>
     <string name="package_hook_no_response">بسته پاسخ نمی دهد</string>
+    <string name="package_not_running">برنامه در حال اجرا نیست</string>
     <string name="package_not_found">بسته پیدا نشد</string>
     <string name="package_checking">در حال بارگذاری%s</string>
     <string name="package_activated">بسته با موفقیت فعال شد</string>
     <string name="package_activation_failed">فعال سازی بسته انجام نشد</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed نصب نشده است</string>
     <string name="activate_in_lsposed">در LSPosed فعال کنید</string>
     <string name="package_not_hook_enabled_info">برنامه نصب شده است، اما LSPosed برای اتصال به آن پیکربندی نشده است. با کلیک کردن روی \"%s\" آن را فعال کنید.</string>
     <string name="package_hook_bootlooped_info">قلاب برنامه باعث بوت لوپ شد، بنابراین برای جلوگیری از مشکلات بیشتر غیرفعال شده است.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">چه اشکالی دارد؟</string>
     <string name="package_not_launchable">این برنامه قابل اجرا نیست</string>
     <string name="menu_launch_app">اجرا</string>
+	<string name="menu_stop_app">توقف برنامه</string>
     <string name="menu_restart_app">راه‌اندازی مجدد</string>
     <string name="why">چرا؟</string>
     <string name="okay">باشه</string>
@@ -504,7 +506,7 @@
     <string name="remap_long_press_volume_up_button_title">دکمه افزایش صدا را طولانی فشار دهید</string>
     <string name="remap_long_press_volume_down_button_title">دکمه کاهش صدا را طولانی فشار دهید</string>
     <string name="remap_double_press_power_button_title">دکمه پاور را دوبار فشار دهید</string>
-    <string name="torch">روشن کردن مشعل</string>
+    <string name="torch">تغییر وضعیت چراغ‌قوه</string>
     <string name="camera">راه‌اندازی دوربین</string>
     <string name="assistant">راه‌اندازی دستیار</string>
     <string name="pause_media">پخش/توقف رسانه</string>
@@ -540,4 +542,107 @@
     <string name="restart_now">راه‌اندازی دوباره</string>
     <string name="watts">وات</string>
     <string name="fast_charging_threshold_title">آستانه شارژ سریع</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">فایل‌ها &amp; انتخاب‌گر سند</string>
+    <string name="documentsui_header_summary">رفتار مرور و مرتب‌سازی فایل‌ها</string>
+    <string name="documentsui_remember_sort_title">به‌خاطر سپردن ترتیب مرتب‌سازی</string>
+    <string name="documentsui_remember_sort_summary">حفظ یک ترتیب مرتب‌سازی سراسری همراه با امکان تعیین ترتیب جداگانه برای هر پوشه در انتخاب‌گر فایل سیستم</string>
+    <string name="documentsui_remember_sort_usage">در منوی مرتب‌سازی انتخاب‌گر فایل، به‌طور عادی ضربه بزنید تا ترتیب سراسری به‌روز شود. یک گزینه مرتب‌سازی را لمس طولانی کنید تا فقط برای پوشه فعلی ذخیره شود. انتخاب عادی، ترتیب اختصاصی آن پوشه را نیز پاک می‌کند.</string>
+    <string name="lockscreen_security_category">امنیت صفحه قفل</string>
+    <string name="lockscreen_block_power_menu_title">مسدود کردن منوی نیرو هنگام قفل بودن</string>
+    <string name="lockscreen_block_power_menu_summary">دکمه نیرو در تنظیمات سریع و میان‌بر سخت‌افزاری را نیز مسدود می‌کند</string>
+    <string name="lockscreen_block_internet_title">مسدود کردن کنترل‌های اینترنت هنگام قفل بودن</string>
+    <string name="lockscreen_block_airplane_title">مسدود کردن حالت هواپیما هنگام قفل بودن</string>
+    <string name="lockscreen_block_bluetooth_title">مسدود کردن بلوتوث هنگام قفل بودن</string>
+    <string name="lockscreen_block_hotspot_title">مسدود کردن نقطه اتصال هنگام قفل بودن</string>
+    <string name="lockscreen_block_dnd_title">مسدود کردن مزاحم نشوید هنگام قفل بودن</string>
+    <string name="lockscreen_block_ringer_title">مسدود کردن تغییر حالت زنگ هنگام قفل بودن</string>
+    <string name="lockscreen_unlock_to_use">برای استفاده قفل را باز کنید</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">بررسی‌های پیشرفته نصب</string>
+    <string name="pm_exact_signature_title">دور زدن تطبیق دقیق امضای بخش‌های APK</string>
+    <string name="pm_exact_signature_summary">خطر زیاد: اجازه می‌دهد جزئیات امضای APK پایه و بخش‌های آن هنگام نصب متفاوت باشند</string>
+    <string name="pm_shared_uid_title">دور زدن بررسی امضای UID مشترک</string>
+    <string name="pm_shared_uid_summary">خطر زیاد: به برنامه‌های کاربر با امضاهای متفاوت اجازه می‌دهد هنگام استفاده از UID مشترک به‌روز شوند؛ محدودیت‌های UID مشترک پلتفرم همچنان برقرار است</string>
+    <string name="pm_installer_redirect_category">تغییر مسیر نصب‌کننده</string>
+    <string name="pm_installer_redirect_title">تغییر مسیر نصب‌کننده بسته</string>
+    <string name="pm_installer_redirect_summary">ارسال درخواست‌های نصب APK و در صورت انتخاب، حذف نصب به گرداننده تعیین‌شده</string>
+    <string name="pm_installer_target_title">نصب‌کننده</string>
+    <string name="pm_installer_system_default">پیش‌فرض سیستم</string>
+    <string name="pm_force_explicit_installer_title">نادیده گرفتن نصب‌کننده‌ای که صریحاً انتخاب شده است</string>
+    <string name="pm_force_explicit_installer_summary">درخواست‌هایی را که به یک مؤلفه نصب‌کننده مشخص کدنویسی شده‌اند نیز تغییر مسیر می‌دهد</string>
+    <string name="pm_intercept_session_title">تغییر مسیر تأیید نصب جلسه‌ای</string>
+    <string name="pm_intercept_session_summary">رهگیری درخواست‌های CONFIRM_INSTALL و CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">اصلاح دسترسی به مسیر APK جلسه</string>
+    <string name="pm_fix_session_permissions_summary">اصلاح آزمایشی سازگاری Android 14+ برای نصب‌کننده‌های خارجی</string>
+    <string name="pm_intercept_uninstall_title">تغییر مسیر درخواست‌های حذف نصب</string>
+    <string name="pm_intercept_uninstall_summary">ارسال ACTION_DELETE و ACTION_UNINSTALL_PACKAGE به گرداننده انتخاب‌شده</string>
+    <string name="pm_uninstall_follow_installer_title">استفاده از نصب‌کننده برای درخواست‌های حذف نصب</string>
+    <string name="pm_uninstaller_target_title">حذف‌کننده</string>
+    <string name="app_info_enhancements_category">اطلاعات برنامه</string>
+    <string name="app_info_show_version_code_title">نمایش کد نسخه</string>
+    <string name="app_info_allow_disable_user_apps_title">اجازه غیرفعال کردن برنامه‌های کاربر</string>
+    <string name="app_info_allow_disable_user_apps_summary">کنش فعال/غیرفعال کردن را برای برنامه‌های غیرسیستمی به اطلاعات برنامه اضافه می‌کند</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">طرح زمینه، کلیپ‌بورد، حریم خصوصی و قابلیت‌های آزمایشی تایپ</string>
+    <string name="gboard_theme_category">طرح زمینه</string>
+    <string name="gboard_amoled_black_title">سیاهی AMOLED در حالت تیره</string>
+    <string name="gboard_amoled_black_summary">تبدیل محفظه‌های سطح Material Expressive به سیاه خالص، همراه با حفظ رنگ‌های تأکیدی</string>
+    <string name="gboard_clipboard_category">کلیپ‌بورد</string>
+    <string name="gboard_clipboard_history_title">سفارشی‌سازی تاریخچه کلیپ‌بورد</string>
+    <string name="gboard_clipboard_history_summary">تعداد و عمر موارد درخواستی Gboard را تغییر می‌دهد؛ موارد قدیمی‌تری که Gboard قبلاً حذف کرده است بازیابی نمی‌شوند</string>
+    <string name="gboard_clipboard_size_title">حداکثر موارد قابل مشاهده</string>
+    <string name="gboard_clipboard_size_summary">محدوده مجاز: 5 تا 100</string>
+    <string name="gboard_clipboard_days_title">تاریخچه قابل مشاهده برحسب روز</string>
+    <string name="gboard_clipboard_days_summary">محدوده مجاز: 0 تا 3650؛ مقدار 0 همه موارد نگه‌داری‌شده را درخواست می‌کند</string>
+    <string name="gboard_secure_clipboard_title">حذف متن‌های حساس از تاریخچه Gboard</string>
+    <string name="gboard_secure_clipboard_summary">مسدود کردن موارد کپی‌شده از فیلدهای گذرواژه و کدهای تأیید احتمالی، PINها یا شماره‌حساب‌های طولانی</string>
+    <string name="gboard_clipboard_chips_title">تراشه‌های کنش کلیپ‌بورد</string>
+    <string name="gboard_clipboard_chips_summary">فعال کردن تراشه‌های کنش Gboard، استخراج موجودیت و آزمایش‌های کپی برای پاسخ</string>
+    <string name="gboard_privacy_category">حریم خصوصی</string>
+    <string name="gboard_force_incognito_title">غیرفعال کردن یادگیری شخصی‌سازی‌شده</string>
+    <string name="gboard_force_incognito_summary">برای هر فیلد ورودی درخواست می‌کند یادگیری شخصی انجام نشود؛ این گزینه رابط کامل حالت ناشناس Gboard را اجباری نمی‌کند</string>
+    <string name="gboard_privacy_flags_title">کاهش داده‌سنجی و آموزش</string>
+    <string name="gboard_privacy_flags_summary">بازنویسی پرچم‌های شناخته‌شده Gboard برای ذخیره اصلاحات، ضبط محتوا، ثبت رویداد، سنجه‌ها و حافظه‌های نهان آموزش</string>
+    <string name="gboard_input_category">بهبودهای ورودی</string>
+    <string name="gboard_multilingual_title">تایپ چندزبانه</string>
+    <string name="gboard_multilingual_summary">فعال کردن آزمایش‌های شناخته‌شده تایپ چندزبانه، پیشنهادها، Pixel و بهبود گفتار</string>
+    <string name="gboard_ai_title">هوش مصنوعی و ورودی هوشمند</string>
+    <string name="gboard_ai_summary">فعال کردن آزمایش‌های شناخته‌شده پاسخ هوشمند، نوشتن هوشمند، تبدیل به ایموجی، برچسب و AI Core</string>
+    <string name="gboard_grammar_title">دستور زبان و نمونه‌خوانی</string>
+    <string name="gboard_grammar_summary">فعال کردن آزمایش‌های شناخته‌شده نمونه‌خوانی روی دستگاه، بررسی دستور زبان، ابزارهای نوشتن و تبدیل متن</string>
+    <string name="gboard_floating_title">صفحه‌کلید شناور و دونیم‌شده</string>
+    <string name="gboard_floating_summary">فعال کردن آزمایش‌های حالت افقی، چندپنجره‌ای، پنجره آزاد، صفحه‌کلید دونیم‌شده تبلت، نوار اندازه و گذارها</string>
+    <string name="gboard_emoji_kitchen_title">بهبودهای Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">فعال کردن آزمایش‌های مرور، جستجو، پیشنهاد، پویانمایی و انتخاب‌گر توکار</string>
+    <string name="gboard_access_point_title">بازطراحی منوی میان‌بر</string>
+    <string name="gboard_access_point_summary">فعال کردن آزمایش‌های منوی نقطه دسترسی، طرح Silk، قلم سیستم، Google Sans، طرح سفارشی و پویانمایی</string>
+    <string name="gboard_metered_downloads_title">اجازه دانلود در شبکه‌های اندازه‌گیری‌شده</string>
+    <string name="gboard_metered_downloads_summary">اجازه دانلود بسته‌های شناخته‌شده زبان، شناسه زبان و گفتار از طریق داده تلفن همراه یا شبکه‌های اندازه‌گیری‌شده دیگر</string>
+    <string name="gboard_experimental_category">موتورهای آزمایشی</string>
+    <string name="gboard_experimental_summary">از پرچم‌های خصوصی Gboard استفاده می‌کند و ممکن است پس از به‌روزرسانی تغییر کند یا از کار بیفتد؛ پس از تغییر، Gboard را دوباره راه‌اندازی کنید</string>
+    <string name="gboard_inline_suggestions_title">پیشنهادهای چندواژه‌ای درون‌خطی</string>
+    <string name="gboard_proactive_emoji_title">پیشنهادهای پیش‌دستانه ایموجی</string>
+    <string name="gboard_tflite_title">موتورهای پیش‌بینی TFLite</string>
+    <string name="gboard_fast_access_title">نوار دسترسی سریع</string>
+    <string name="dialer_force_enable_call_recording_title">فعال‌سازی اجباری ضبط تماس</string>
+    <string name="dialer_force_enable_call_recording_summary">ضبط تماس داخلی را در برنامه تلفن Google برای مناطق پشتیبانی‌نشده فعال می‌کند</string>
+    <string name="landscape_split_shade_title">پنل اعلان به سبک تبلت در حالت افقی</string>
+    <string name="landscape_split_shade_summary">هنگام چرخاندن افقی گوشی، تنظیمات سریع و اعلان‌ها را کنار هم نشان می‌دهد</string>
+    <string name="recents_clear_all">پاک کردن همه</string>
+    <string name="launcher_header">لانچر</string>
+    <string name="launcher_header_summary">بهبودهای صفحه اصلی و برنامه‌های اخیر</string>
+    <string name="launcher_home_section">صفحه اصلی</string><string name="launcher_drawer_section">کشوی برنامه‌ها</string><string name="launcher_recents_section">کارهای اخیر</string><string name="launcher_hide_desktop_labels">پنهان کردن نام آیکون‌های صفحه اصلی</string><string name="launcher_hide_desktop_search">پنهان کردن نوار جستجوی صفحه اصلی</string><string name="launcher_hide_drawer_labels">پنهان کردن نام آیکون‌های کشوی برنامه‌ها</string><string name="launcher_hide_drawer_search">پنهان کردن نوار جستجوی کشوی برنامه‌ها</string><string name="recents_remove_screenshot">حذف عمل عکس صفحه</string><string name="recents_equal_action_widths">استفاده از دکمه‌های عمل با عرض یکسان</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">شخصی‌سازی</string>
+	<string name="home_category_system_interface">رابط سیستم</string>
+	<string name="home_category_app_enhancements">بهبودهای برنامه</string>
+	<string name="home_category_system_tools">ابزارهای سیستم</string>
 </resources>

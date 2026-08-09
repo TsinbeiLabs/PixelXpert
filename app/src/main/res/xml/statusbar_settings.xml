@@ -14,13 +14,20 @@
         app:iconSpaceReserved="false"
         search:ignore="true">
 
-        <com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
-            android:defaultValue="false"
-            android:key="DoubleTapSleep"
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="DoubleTapSleep"
             android:summaryOff="@string/general_off"
             android:summaryOn="@string/general_on"
-            android:title="@string/double_tap_sleep_title"
-            app:iconSpaceReserved="false" />
+			android:title="@string/double_tap_sleep_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LandscapeSplitShade"
+			android:summary="@string/landscape_split_shade_summary"
+			android:title="@string/landscape_split_shade_title"
+			app:iconSpaceReserved="false" />
 
         <!--SeekBarPreference
             android:layout_width="wrap_content"

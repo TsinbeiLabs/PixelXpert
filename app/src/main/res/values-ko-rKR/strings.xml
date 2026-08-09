@@ -64,7 +64,7 @@
     <string name="hotspot_max_client_title">최대 사용자</string>
     <string name="hotspot_disable_approval_title">핫스팟 연결 문제 해결하기</string>
     <string name="hotspot_disable_approval_summary">\"사전 승인\"되지 않은 사용자도 원활하게 연결할 수 있도록 허용</string>
-    <string name="hotspot_force_unsupported_regions">Remove hotspot limitations in unsupported regions</string>
+    <string name="hotspot_force_unsupported_regions">지원되지 않는 지역의 핫스팟 제한 해제</string>
     <!--Lock screen related-->
     <string name="depth_wallpaper_options">배경화면 심도 효과</string>
     <string name="depth_wallpaper_title">배경화면 심도 효과</string>
@@ -235,18 +235,18 @@
     <string name="friday">금요일</string>
     <string name="saturday">토요일</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Flashlight-leveled tile</string>
+    <string name="qs_leveled_flashlight_title">손전등 밝기 조절 타일</string>
     <string name="qs_flashlight_level_global_title">손전등 밝기 전역 설정</string>
     <string name="qs_tile_qty_title">빠른 설정 타일 배치 설정</string>
-    <string name="qs_leveled_flashlight_summary">Longpress on tile to show the slider.\nRequires supported hardware</string>
+    <string name="qs_leveled_flashlight_summary">슬라이더를 표시하려면 타일을 길게 누르세요.\n지원되는 하드웨어가 필요합니다</string>
     <string name="qs_pulldown_size">바로 열기 영역 너비</string>
     <string name="qs_pulldown_switch_title">상태 표시줄로부터 빠른 설정 바로 열기</string>
     <string name="qs_pulldown_side_title">바로 열기 영역 위치</string>
     <string name="qs_pulldown_category">빠른 설정 바로 열기</string>
-    <string name="qs_pullup_switch_title">Close quick settings with one swipe</string>
+    <string name="qs_pullup_switch_title">한 번 스와이프하여 빠른 설정 닫기</string>
     <string name="qs_tile_qty_portrait">세로 화면 설정</string>
     <string name="qs_tile_qty_landscape">가로 화면 설정</string>
-    <string name="qqs_rows_number">Number of quick QS rows</string>
+    <string name="qqs_rows_number">축소된 빠른 설정의 행 수</string>
     <string name="qs_rows_number">빠른 설정 가로 행 개수</string>
     <string name="qs_cols_number">빠른 설정 세로 열 개수</string>
     <string name="qs_tile_label_size">타일 라벨 크기</string>
@@ -263,15 +263,15 @@
     <string name="gesture_nav_pill_width_title">기본값 대비 너비 설정</string>
     <string name="gesture_nav_pill_height_title">기본값 대비 높이 설정</string>
     <string name="threebutton_header_title">3-버튼 네비게이션 바</string>
-    <string name="taskbar_header_title">Taskbar navigation</string>
+    <string name="taskbar_header_title">작업 표시줄 탐색</string>
     <string name="modify_3button_title">버튼 순서 수정하기</string>
     <string name="three_button_left_title">왼쪽 버튼</string>
     <string name="three_button_center_title">가운데 버튼</string>
     <string name="three_button_right_title">오른쪽 버튼</string>
     <string name="hide_navbar_title">네비게이션 바 숨기기</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
-    <string name="taskbar_as_recents_title">Convert Taskbar to PixelXpert recents bar</string>
-    <string name="taskbar_enable_google_recents">Enable Android recents on the Taskbar</string>
+    <string name="hide_navbar_insets_title">탐색 모음 여백도 숨기기</string>
+    <string name="taskbar_as_recents_title">작업 표시줄을 PixelXpert 최근 앱 표시줄로 전환</string>
+    <string name="taskbar_enable_google_recents">작업 표시줄에서 Android 최근 앱 사용</string>
     <string name="taskbar_height_title">작업표시줄 높이</string>
     <string name="taskbar_radius_title">작업표시줄 곡률</string>
     <string name="colorpill">제스쳐 알약 강조 색상으로 설정</string>
@@ -279,9 +279,9 @@
     <string name="taskbar_force_enable_title">강제 활성화</string>
     <string name="taskbar_force_disable_title">강제 비활성화</string>
     <string name="taskbar_transient_title">자동 숨김</string>
-    <string name="taskbar_on_launcher_title">Show on home</string>
-    <string name="remap_physical_buttons_title">Remap physical buttons</string>
-    <string name="taskbar_on_ime_title">Show with keyboard open</string>
+    <string name="taskbar_on_launcher_title">홈 화면에 표시</string>
+    <string name="remap_physical_buttons_title">물리 버튼 기능 변경</string>
+    <string name="taskbar_on_ime_title">키보드가 열려 있을 때 표시</string>
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">패키지 인증서 확인 절차 우회</string>
     <string name="pm_allow_downgrade_title">앱 다운그레이드 허용</string>
@@ -296,12 +296,12 @@
     <string name="allow_all_screen_rotations">화면 회전 방향 고정 강제 비활성화</string>
     <string name="allow_all_screen_rotations_summary">화면 회전 플로팅 버튼을 무시합니다</string>
     <string name="force_no_cutout">화면 속 카메라 무시</string>
-    <string name="clear_all_reposition_title">최근 앱 화면에 모두 삭제 버튼 추가</string>
-    <string name="force_themed_icons_title">Auto-generate missing themed icons</string>
-    <string name="force_themed_icons_summary">Pixel launcher only</string>
+    <string name="clear_all_reposition_title">최근 작업 아래에 모두 삭제 추가</string>
+    <string name="force_themed_icons_title">없는 테마 아이콘 자동 생성</string>
+    <string name="force_themed_icons_summary">Pixel 런처 전용</string>
     <string name="volume_button_step_title">볼륨 단계 (0에서 100%까지)</string>
-    <string name="display_resolution_switch_title">Modify display resolution</string>
-    <string name="display_resolution_switch_summary">Before enabling this, make sure to reset all display size/dpi changes to default</string>
+    <string name="display_resolution_switch_title">디스플레이 해상도 변경</string>
+    <string name="display_resolution_switch_summary">사용 설정하기 전에 디스플레이 크기 및 DPI 변경값을 모두 기본값으로 재설정하세요</string>
     <string name="display_resolution_title">화면 해상도</string>
     <string name="brightness_range_title">화면 밝기 제한</string>
     <string name="brightness_range_not_linear">해당 범위는 선형적으로 적용되지 않을 수 있습니다: 경우에 따라 작은 설정 차이가 큰 밝기 차이를 야기할 수 있습니다.</string>
@@ -314,32 +314,32 @@
     <string name="so_tap_to_show_ambient_summary">[AOD 기능이 비활성화된 상태에서] 화면을 탭하면 앰비언트 디스플레이를 표시합니다</string>
     <string name="so_pick_to_show_ambient_title">기기를 들어 앰비언트 디스플레이 보기</string>
     <string name="so_pick_to_show_ambient_summary">[AOD 기능이 비활성화된 상태에서] 기기를 들면 앰비언트 디스플레이를 표시합니다</string>
-    <string name="force_aod_while_charging_title">Force AOD while charging</string>
-    <string name="force_aod_while_charging_summary">Keep always on display enabled while device is charging</string>
+    <string name="force_aod_while_charging_title">충전 중 AOD 강제 사용</string>
+    <string name="force_aod_while_charging_summary">기기를 충전하는 동안 화면 상시표시를 계속 사용합니다</string>
     <string name="doze_header">화면이 꺼진 상태에서…</string>
     <string name="px_in_settings_title">설정 타일에 PixelXpert 추가</string>
-    <string name="advanced_power_menu_title">Advanced power menu</string>
-    <string name="sleep_on_flat_screen_title">Turn off the screen on flat surface</string>
-    <string name="sleep_on_flat_screen_tile_title">Sleep on surface</string>
-    <string name="flat_screen_timeout_title">Screen timeout on flat surface</string>
-    <string name="flat_screen_timeout_respect_wakelock_title">Respect wake locks</string>
+    <string name="advanced_power_menu_title">고급 전원 메뉴</string>
+    <string name="sleep_on_flat_screen_title">평평한 곳에 놓으면 화면 끄기</string>
+    <string name="sleep_on_flat_screen_tile_title">바닥에 놓으면 화면 끄기</string>
+    <string name="flat_screen_timeout_title">평평한 곳에서의 화면 자동 꺼짐 시간</string>
+    <string name="flat_screen_timeout_respect_wakelock_title">Wake lock 유지</string>
     <string name="notifications_header">알림 설정</string>
     <string name="expand_notifications_icons_title">전부 펼치기 / 전부 접기 버튼 추가</string>
-    <string name="disbale_ongoing_notif_dismiss_title">Never dismiss ongoing notifications</string>
+    <string name="disbale_ongoing_notif_dismiss_title">진행 중인 알림을 지우지 않기</string>
     <string name="heads_up_notification_duration">헤드업 알림 지속 시간</string>
     <string name="notif_default_expansion_title">기본 알림 확장</string>
     <string name="notif_always_expand">항상 확장</string>
     <string name="notif_always_collapse">항상 축소</string>
-    <string name="control_flashlight_with_volume_keys">Control flashlight with volume buttons</string>
-    <string name="flashlight_fade_effect">Flashlight fade effect</string>
+    <string name="control_flashlight_with_volume_keys">볼륨 버튼으로 손전등 제어</string>
+    <string name="flashlight_fade_effect">손전등 페이드 효과</string>
     <string name="milliseconds">밀리초</string>
     <string name="duration_seconds">%d 초</string>
     <string name="hours">시간</string>
     <string name="system_time_title">시스템 시간</string>
     <string name="sync_ntp_time_title">NTP를 동기화 된 시간으로 사용</string>
-    <string name="ntp_time_interval_title">Time synchronization interval</string>
+    <string name="ntp_time_interval_title">시간 동기화 간격</string>
     <string name="ntp_servers_title">NTP 서버</string>
-    <string name="ntp_servers_summary">Use semicolon to separate multiple servers</string>
+    <string name="ntp_servers_summary">여러 서버는 세미콜론으로 구분하세요</string>
     <string name="sync_ntp_time_now_title">지금 동기화</string>
     <string name="sync_ntp_successful">시간 동기화 성공</string>
     <string name="sync_ntp_failed">NTP 서버 연결 오류!</string>
@@ -350,16 +350,16 @@
     <string name="statusbar_long_press_app_switch">상태표시줄을 길게 눌러 프로필 전환하기</string>
     <string name="statusbar_app_switch_icon">프로필 전환이 가능할 때 상태표시줄에 아이콘을 표시합니다</string>
     <!-- Cloned apps bragging message -->
-    <string name="settings_cloned_apps_active">Unlocked for all apps via <font fgcolor="#FF64A829"><b><u>Pixel Xpert</u></b></font>: Enjoy!</string>
+    <string name="settings_cloned_apps_active"><font fgcolor="#FF64A829"><b><u>Pixel Xpert</u></b></font>를 통해 모든 앱에서 사용할 수 있습니다. 마음껏 이용하세요!</string>
     <!-- SystemUI hook -->
-    <string name="power_indication_error">Error fetching charging data</string>
+    <string name="power_indication_error">충전 데이터를 가져오지 못했습니다</string>
     <!-- Call section -->
     <string name="vibrate_on_call_active_title">상대방이 나의 전화를 받은 경우 진동 알림</string>
     <string name="vibrate_on_call_drop_title">전화가 끊어진 경우 진동 알림</string>
     <string name="vibration_type_notification">시스템 알림 진동 설정에 따른 강도</string>
     <string name="dialer_mute_record_message_title">통화 녹음 알림 제거</string>
     <string name="dialer_mute_record_message_summary">통화 녹음이 활성화된 구글 전화 앱에서만 적용됩니다</string>
-    <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
+    <string name="radio_force_volte_nr">지원되지 않는 지역에서 VoLTE/NR 강제 사용</string>
     <!-- Arrays strings -->
     <!-- Quick pull down -->
     <string name="pull_down_left">왼쪽</string>
@@ -399,11 +399,11 @@
     <string name="app_kill_ok_btn">확인</string>
     <!-- Depth Effect Alert -->
     <string name="depth_effect_alert_title">주목</string>
-    <string name="depth_effect_alert_body">Use a suitable lockscreen wallpaper where the foreground elements do not obstruct the entire clock on your lock screen, ensuring both visual appeal and functional clarity on your lock screen.\n\nNote: %s.</string>
+    <string name="depth_effect_alert_body">잠금 화면 시계를 전부 가리지 않는 적절한 전경의 배경화면을 사용하세요. 그래야 잠금 화면의 디자인과 가독성을 모두 유지할 수 있습니다.\n\n참고: %s.</string>
     <string name="depth_effect_ok_btn">OK</string>
     <!-- Reboot alert -->
-    <string name="pending_actions">Pending actions</string>
-    <string name="btn_dismiss">Dismiss</string>
+    <string name="pending_actions">대기 중인 작업</string>
+    <string name="btn_dismiss">닫기</string>
     <!-- Menu Items -->
     <string name="menu_settings_title">불러오기/내보내기</string>
     <string name="menu_reset_defaults">모든 설정 초기화</string>
@@ -420,14 +420,14 @@
     <string name="update_channel_name">업데이트</string>
     <string name="download_channel_name">다운로드</string>
     <string name="assets_download_title">파일 다운로드중</string>
-    <string name="assets_download_body">Downloading companion files</string>
-    <string name="assets_download_size_body">Progress: %s</string>
+    <string name="assets_download_body">보조 파일을 다운로드하는 중</string>
+    <string name="assets_download_size_body">진행률: %s</string>
     <string name="update_notification_title">업데이트 다운로드됨</string>
     <string name="update_notification_text">여기를 눌러 설치하세요</string>
     <string name="download_failed">업데이트 다운로드 실패</string>
     <string name="try_again_later">나중에 다시 시도해주세요</string>
     <string name="update_flavor_title">업데이트 채널</string>
-    <string name="stable_flavor">Stable</string>
+    <string name="stable_flavor">안정 버전</string>
     <string name="update_type_title">패키지 타입</string>
     <string name="currentVersionTitle">설치된 버전: </string>
     <string name="lastestVersionTitle">최신 버전: </string>
@@ -468,76 +468,182 @@
     <string name="hooked_packages_title">연결된 패키지</string>
     <string name="package_hooked_successful">패키지 연결 성공</string>
     <string name="package_not_hook_enabled">패키지가 LSposed 앱에서 활성화되지 않았습니다</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
-    <string name="package_hook_bootlooped">Hook failed due to bootloop</string>
+    <string name="enable_px_manually">Pixel Xpert가 아직 LSPosed에서 활성화되지 않았습니다. LSPosed 관리자를 열어 Pixel Xpert를 활성화한 다음 이 앱을 다시 시작하세요</string>
+    <string name="package_hook_bootlooped">부팅 반복으로 인해 후킹하지 못했습니다</string>
     <string name="package_hook_no_response">패키지가 응답하지 않습니다</string>
+    <string name="package_not_running">앱이 실행 중이 아닙니다</string>
     <string name="package_not_found">패키지를 찾을 수 없습니다</string>
     <string name="package_checking">불러오는 중%s</string>
     <string name="package_activated">패키지가 성공적으로 활성화되었습니다.</string>
     <string name="package_activation_failed">패키지 활성화 실패</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed가 설치되지 않았습니다</string>
     <string name="activate_in_lsposed">LSPosed에서 활성화</string>
-    <string name="package_not_hook_enabled_info">The app is installed, but LSPosed is not configured to hook into it. Enable it by clicking \'%s\'.</string>
-    <string name="package_hook_bootlooped_info">The hook for the app caused a bootloop, so it has been disabled to prevent further issues.</string>
-    <string name="package_hook_no_response_info">The app is not responding to the hook status. It may not be actively running, or it\'s possible that it\'s not hooked to our connection.</string>
+    <string name="package_not_hook_enabled_info">앱은 설치되어 있지만 LSPosed가 이 앱을 후킹하도록 설정되지 않았습니다. \'%s\'을(를) 눌러 활성화하세요.</string>
+    <string name="package_hook_bootlooped_info">이 앱의 후킹으로 부팅 반복이 발생하여 추가 문제를 방지하기 위해 비활성화되었습니다.</string>
+    <string name="package_hook_no_response_info">앱이 후킹 상태에 응답하지 않습니다. 앱이 실행 중이 아니거나 연결 후킹이 적용되지 않았을 수 있습니다.</string>
     <string name="whats_wrong">무슨 문제 있나요?</string>
-    <string name="package_not_launchable">Package is not launch-able</string>
+    <string name="package_not_launchable">실행할 수 없는 패키지입니다</string>
     <string name="menu_launch_app">애플리케이션 실행</string>
-    <string name="menu_restart_app">Restart app</string>
-    <string name="why">why?</string>
-    <string name="okay">Okay</string>
+	<string name="menu_stop_app">앱 중지</string>
+    <string name="menu_restart_app">앱 다시 시작</string>
+    <string name="why">왜 그런가요?</string>
+    <string name="okay">확인</string>
     <!-- Splash Activity -->
     <string name="checking_root_permissions">루트 권한 확인 중…</string>
     <string name="connecting_root_service">루트 서비스에 연결 중…</string>
     <string name="root_access_denied">루트 액세스가 거부되었습니다. 루트 액세스를 허용해 주세요.</string>
-    <string name="root_service_failed">Unable to connect to root services. Please try again later</string>
+    <string name="root_service_failed">루트 서비스에 연결할 수 없습니다. 나중에 다시 시도하세요</string>
     <string name="exit">출구</string>
     <!-- Bottom Navigation -->
     <string name="navigation_home">홈</string>
     <string name="navigation_update">업데이트</string>
-    <string name="navigation_hooks">Hooks</string>
+    <string name="navigation_hooks">후킹</string>
     <string name="navigation_settings">설정</string>
     <!-- Remap Physical Buttons -->
-    <string name="while_screen_is_off_title">While screen is off</string>
-    <string name="while_screen_is_on_title">While screen is on</string>
-    <string name="remap_long_press_power_button_title">Long press power button</string>
-    <string name="remap_long_press_volume_up_button_title">Long press volume up button</string>
-    <string name="remap_long_press_volume_down_button_title">Long press volume down button</string>
-    <string name="remap_double_press_power_button_title">Double press power button</string>
-    <string name="torch">Toggle torch</string>
+    <string name="while_screen_is_off_title">화면이 꺼져 있을 때</string>
+    <string name="while_screen_is_on_title">화면이 켜져 있을 때</string>
+    <string name="remap_long_press_power_button_title">전원 버튼 길게 누르기</string>
+    <string name="remap_long_press_volume_up_button_title">볼륨 높이기 버튼 길게 누르기</string>
+    <string name="remap_long_press_volume_down_button_title">볼륨 낮추기 버튼 길게 누르기</string>
+    <string name="remap_double_press_power_button_title">전원 버튼 두 번 누르기</string>
+    <string name="torch">손전등 전환</string>
     <string name="camera">카메라 실행</string>
     <string name="assistant">어시스턴트 실행</string>
-    <string name="pause_media">Play/Pause media</string>
-    <string name="skip_media_next">Media control - Skip</string>
-    <string name="skip_media_prev">Media control - Previous</string>
+    <string name="pause_media">미디어 재생/일시중지</string>
+    <string name="skip_media_next">미디어 제어 - 다음</string>
+    <string name="skip_media_prev">미디어 제어 - 이전</string>
     <!-- Icon Packs -->
     <string name="icon_packs_title">아이콘 팩</string>
     <string name="icon_pack_selection_title">팩 선택</string>
-    <string name="icon_pack_customization_title">Customize icons</string>
-    <string name="menu_more_info">More info</string>
-    <string name="menu_show_icons">Show icons</string>
+    <string name="icon_pack_customization_title">아이콘 맞춤설정</string>
+    <string name="menu_more_info">자세한 정보</string>
+    <string name="menu_show_icons">아이콘 표시</string>
     <string name="select_replacement_icon">변경 가능한 아이콘 선택</string>
-    <string name="icon_default">Default</string>
-    <string name="partially_enabled">(Partially enabled)</string>
-    <string name="icon_pack_icon_disabled">Disabled</string>
-    <string name="icon_pack_author">by %s</string>
-    <string name="icon_pack_unknown_author">by unknown author</string>
-    <string name="icon_pack_unknown_name">Unknown icon pack</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
-    <string name="icon_pack_info">Icon pack info</string>
-    <string name="no_icon_pack_installed">No icon pack installed</string>
-    <string name="icon_pack_disclaimer_title">Disclaimer</string>
-    <string name="icon_pack_disclaimer_desc">Icon packs are not developed or distributed by PixelXpert. As such, the PixelXpert team is unable to provide support for icon packs. Support regarding how PixelXpert handles icon packs will only be provided to the respective pack developers.\n\nFor instructions on how to compile an icon pack, please refer to the guide here: %s</string>
+    <string name="icon_default">기본값</string>
+    <string name="partially_enabled">(일부 사용)</string>
+    <string name="icon_pack_icon_disabled">사용 중지됨</string>
+    <string name="icon_pack_author">제작자: %s</string>
+    <string name="icon_pack_unknown_author">제작자 알 수 없음</string>
+    <string name="icon_pack_unknown_name">알 수 없는 아이콘 팩</string>
+    <string name="icon_pack_pack_reset">아이콘 재설정</string>
+    <string name="icon_pack_info">아이콘 팩 정보</string>
+    <string name="no_icon_pack_installed">설치된 아이콘 팩이 없습니다</string>
+    <string name="icon_pack_disclaimer_title">면책 조항</string>
+    <string name="icon_pack_disclaimer_desc">아이콘 팩은 PixelXpert에서 개발하거나 배포하지 않습니다. 따라서 PixelXpert 팀은 아이콘 팩 자체를 지원할 수 없습니다. PixelXpert의 아이콘 팩 처리 방식에 관한 지원은 해당 팩 개발자에게만 제공됩니다.\n\n아이콘 팩 컴파일 방법은 다음 가이드를 참고하세요: %s</string>
     <!--Advanced power options-->
-    <string name="advanced_option_button_title">Advanced…</string>
-    <string name="reboot_bootloader_title">Reboot to Bootloader</string>
-    <string name="soft_reboot_title">Soft Reboot</string>
-    <string name="restart_systemui_title">Restart SystemUI</string>
+    <string name="advanced_option_button_title">고급…</string>
+    <string name="reboot_bootloader_title">부트로더로 재부팅</string>
+    <string name="soft_reboot_title">소프트 재부팅</string>
+    <string name="restart_systemui_title">SystemUI 다시 시작</string>
     <!--Optimization restart request-->
-    <string name="optimization_restart_needed_title">Restart Recommended</string>
-    <string name="optimization_restart_needed_message">A reboot is recommended to increase system integration</string>
-    <string name="restart_postpone">Later</string>
-    <string name="restart_now">Reboot now</string>
-    <string name="watts">Watts</string>
-    <string name="fast_charging_threshold_title">Fast charging threshold</string>
+    <string name="optimization_restart_needed_title">다시 시작 권장</string>
+    <string name="optimization_restart_needed_message">시스템 통합을 개선하려면 기기를 다시 시작하는 것이 좋습니다</string>
+    <string name="restart_postpone">나중에</string>
+    <string name="restart_now">지금 재부팅</string>
+    <string name="watts">와트</string>
+    <string name="fast_charging_threshold_title">고속 충전 기준값</string>
+    <!-- Newly introduced strings -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">파일 및 문서 선택 도구</string>
+    <string name="documentsui_header_summary">파일 탐색 및 정렬 동작 설정</string>
+    <string name="documentsui_remember_sort_title">정렬 순서 기억</string>
+    <string name="documentsui_remember_sort_summary">시스템 파일 선택 도구에서 전체 정렬 순서와 폴더별 정렬 순서를 기억합니다</string>
+    <string name="documentsui_remember_sort_usage">파일 선택 도구의 정렬 메뉴에서 항목을 탭하면 전체 정렬 순서가 변경됩니다. 정렬 항목을 길게 누르면 현재 폴더에만 적용할 순서로 저장됩니다. 일반적으로 탭하면 해당 폴더의 개별 설정도 삭제됩니다.</string>
+    <string name="lockscreen_security_category">잠금 화면 보안</string>
+    <string name="lockscreen_block_power_menu_title">잠긴 동안 전원 메뉴 차단</string>
+    <string name="lockscreen_block_power_menu_summary">빠른 설정의 전원 버튼과 하드웨어 단축키도 차단합니다</string>
+    <string name="lockscreen_block_internet_title">잠긴 동안 인터넷 제어 차단</string>
+    <string name="lockscreen_block_airplane_title">잠긴 동안 비행기 모드 차단</string>
+    <string name="lockscreen_block_bluetooth_title">잠긴 동안 블루투스 차단</string>
+    <string name="lockscreen_block_hotspot_title">잠긴 동안 핫스팟 차단</string>
+    <string name="lockscreen_block_dnd_title">잠긴 동안 방해 금지 모드 차단</string>
+    <string name="lockscreen_block_ringer_title">잠긴 동안 벨소리 모드 변경 차단</string>
+    <string name="lockscreen_unlock_to_use">사용하려면 잠금을 해제하세요</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">고급 설치 검사</string>
+    <string name="pm_exact_signature_title">분할 APK의 정확한 서명 일치 검사 우회</string>
+    <string name="pm_exact_signature_summary">높은 위험: 설치 중 기본 APK와 분할 APK의 서명 정보가 달라도 허용합니다</string>
+    <string name="pm_shared_uid_title">공유 UID 서명 검사 우회</string>
+    <string name="pm_shared_uid_summary">높은 위험: 공유 UID를 사용하는 서명이 다른 사용자 앱의 업데이트를 허용합니다. 플랫폼 공유 UID 제한은 유지됩니다</string>
+    <string name="pm_installer_redirect_category">설치 프로그램 리디렉션</string>
+    <string name="pm_installer_redirect_title">패키지 설치 프로그램 리디렉션</string>
+    <string name="pm_installer_redirect_summary">APK 설치 요청과 선택적인 제거 요청을 선택한 앱으로 보냅니다</string>
+    <string name="pm_installer_target_title">설치 프로그램</string>
+    <string name="pm_installer_system_default">시스템 기본값</string>
+    <string name="pm_force_explicit_installer_title">명시적으로 선택된 설치 프로그램도 재정의</string>
+    <string name="pm_force_explicit_installer_summary">특정 설치 프로그램 구성요소가 직접 지정된 요청도 리디렉션합니다</string>
+    <string name="pm_intercept_session_title">세션 설치 확인 리디렉션</string>
+    <string name="pm_intercept_session_summary">CONFIRM_INSTALL 및 CONFIRM_PERMISSIONS 요청을 가로챕니다</string>
+    <string name="pm_fix_session_permissions_title">세션 APK 경로 접근 수정</string>
+    <string name="pm_fix_session_permissions_summary">외부 설치 프로그램을 위한 Android 14 이상 실험적 호환성 수정입니다</string>
+    <string name="pm_intercept_uninstall_title">앱 제거 요청 리디렉션</string>
+    <string name="pm_intercept_uninstall_summary">ACTION_DELETE 및 ACTION_UNINSTALL_PACKAGE 요청을 선택한 앱으로 보냅니다</string>
+    <string name="pm_uninstall_follow_installer_title">앱 제거 요청에도 설치 프로그램 사용</string>
+    <string name="pm_uninstaller_target_title">제거 프로그램</string>
+    <string name="app_info_enhancements_category">앱 정보</string>
+    <string name="app_info_show_version_code_title">버전 코드 표시</string>
+    <string name="app_info_allow_disable_user_apps_title">사용자 앱 사용 중지 허용</string>
+    <string name="app_info_allow_disable_user_apps_summary">시스템 앱이 아닌 앱의 앱 정보에 사용 또는 사용 중지 작업을 추가합니다</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">테마, 클립보드, 개인정보 보호 및 실험적 입력 기능</string>
+    <string name="gboard_theme_category">테마</string>
+    <string name="gboard_amoled_black_title">다크 모드에서 AMOLED 블랙 사용</string>
+    <string name="gboard_amoled_black_summary">강조 색상은 유지하면서 Material Expressive 표면 컨테이너를 완전한 검은색으로 표시합니다</string>
+    <string name="gboard_clipboard_category">클립보드</string>
+    <string name="gboard_clipboard_history_title">클립보드 기록 맞춤설정</string>
+    <string name="gboard_clipboard_history_summary">Gboard가 요청하는 항목 수와 보관 기간을 변경합니다. Gboard에서 이미 삭제한 이전 항목은 복원할 수 없습니다</string>
+    <string name="gboard_clipboard_size_title">표시할 최대 항목 수</string>
+    <string name="gboard_clipboard_size_summary">허용 범위: 5~100</string>
+    <string name="gboard_clipboard_days_title">기록을 표시할 일수</string>
+    <string name="gboard_clipboard_days_summary">허용 범위: 0~3650. 0을 선택하면 보관 중인 모든 항목을 요청합니다</string>
+    <string name="gboard_secure_clipboard_title">민감한 텍스트를 Gboard 기록에 저장하지 않기</string>
+    <string name="gboard_secure_clipboard_summary">비밀번호 입력란에서 복사한 항목과 인증 코드, PIN 또는 긴 계좌번호로 추정되는 항목을 차단합니다</string>
+    <string name="gboard_clipboard_chips_title">클립보드 작업 칩</string>
+    <string name="gboard_clipboard_chips_summary">Gboard 작업 칩, 항목 추출 및 복사하여 답장하기 실험을 사용 설정합니다</string>
+    <string name="gboard_privacy_category">개인정보 보호</string>
+    <string name="gboard_force_incognito_title">맞춤 학습 사용 중지</string>
+    <string name="gboard_force_incognito_summary">모든 입력란에서 맞춤 학습을 하지 않도록 요청합니다. Gboard의 전체 시크릿 모드 UI를 강제로 표시하지는 않습니다</string>
+    <string name="gboard_privacy_flags_title">원격 측정 및 학습 줄이기</string>
+    <string name="gboard_privacy_flags_summary">수정 기록 저장, 콘텐츠 캡처, 로깅, 측정항목 및 학습 캐시에 관한 알려진 Gboard 플래그를 재정의합니다</string>
+    <string name="gboard_input_category">입력 기능 개선</string>
+    <string name="gboard_multilingual_title">다국어 입력</string>
+    <string name="gboard_multilingual_summary">다국어 입력, 추천 단어, Pixel 및 음성 입력 개선에 관한 알려진 실험을 사용 설정합니다</string>
+    <string name="gboard_ai_title">AI 및 스마트 입력</string>
+    <string name="gboard_ai_summary">스마트 답장, 스마트 편지쓰기, 이모지 변환, 스티커 및 AI Core에 관한 알려진 실험을 사용 설정합니다</string>
+    <string name="gboard_grammar_title">문법 검사 및 교정</string>
+    <string name="gboard_grammar_summary">기기 내 교정, 문법 검사기, 글쓰기 도구 및 텍스트 변환에 관한 알려진 실험을 사용 설정합니다</string>
+    <string name="gboard_floating_title">플로팅 및 분할 키보드</string>
+    <string name="gboard_floating_summary">가로 모드, 멀티 윈도우, 자유 형식, 태블릿 분할 키보드, 크기 슬라이더 및 전환 효과 실험을 사용 설정합니다</string>
+    <string name="gboard_emoji_kitchen_title">Emoji Kitchen 기능 개선</string>
+    <string name="gboard_emoji_kitchen_summary">탐색, 검색, 추천, 애니메이션 및 내장 선택 도구 실험을 사용 설정합니다</string>
+    <string name="gboard_access_point_title">바로가기 메뉴 디자인 변경</string>
+    <string name="gboard_access_point_summary">액세스 포인트 메뉴, Silk 테마, 시스템 글꼴, Google Sans, 맞춤 테마 및 애니메이션 실험을 사용 설정합니다</string>
+    <string name="gboard_metered_downloads_title">데이터 통신 연결에서 다운로드 허용</string>
+    <string name="gboard_metered_downloads_summary">언어, 언어 ID 및 음성 팩을 모바일 데이터 등 데이터 통신 연결을 통해 다운로드하도록 허용합니다</string>
+    <string name="gboard_experimental_category">실험적 엔진</string>
+    <string name="gboard_experimental_summary">비공개 Gboard 플래그를 사용하므로 업데이트 후 변경되거나 작동하지 않을 수 있습니다. 변경 후 Gboard를 다시 시작하세요</string>
+    <string name="gboard_inline_suggestions_title">여러 단어 인라인 추천</string>
+    <string name="gboard_proactive_emoji_title">선제적 이모지 추천</string>
+    <string name="gboard_tflite_title">TFLite 예측 엔진</string>
+    <string name="gboard_fast_access_title">빠른 액세스 바</string>
+    <string name="dialer_force_enable_call_recording_title">통화 녹음 강제 사용</string>
+    <string name="dialer_force_enable_call_recording_summary">지원되지 않는 지역에서 Google 전화 앱의 기본 통화 녹음을 사용할 수 있게 합니다</string>
+    <string name="landscape_split_shade_title">가로 화면의 태블릿 스타일 알림 창</string>
+    <string name="landscape_split_shade_summary">휴대전화를 가로로 돌리면 빠른 설정과 알림을 나란히 표시합니다</string>
+    <string name="recents_clear_all">모두 닫기</string>
+    <string name="launcher_header">런처</string>
+    <string name="launcher_header_summary">최근 작업 및 홈 화면 개선 기능</string>
+    <string name="launcher_home_section">홈 화면</string><string name="launcher_drawer_section">앱 서랍</string><string name="launcher_recents_section">최근 작업</string><string name="launcher_hide_desktop_labels">홈 화면 아이콘 이름 숨기기</string><string name="launcher_hide_desktop_search">홈 화면 검색창 숨기기</string><string name="launcher_hide_drawer_labels">앱 서랍 아이콘 이름 숨기기</string><string name="launcher_hide_drawer_search">앱 서랍 검색창 숨기기</string><string name="recents_remove_screenshot">스크린샷 작업 제거</string><string name="recents_equal_action_widths">동일한 너비의 작업 버튼 사용</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">개인 설정</string>
+	<string name="home_category_system_interface">시스템 인터페이스</string>
+	<string name="home_category_app_enhancements">앱 개선</string>
+	<string name="home_category_system_tools">시스템 도구</string>
 </resources>

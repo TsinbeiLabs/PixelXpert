@@ -1,0 +1,11 @@
+InxLocker
+Copyright (C) Chimioo and contributors
+https://github.com/Chimioo/InxLocker
+
+The installer redirection feature is derived from InxLocker commit
+4cc836a0bbb8c62818ff1c5f423b79096e298215 and was modified for PixelXpert
+on 2026-08-08.
+
+InxLocker is licensed under the GNU General Public License version 3.
+The complete GPLv3 license text is included in this APK as
+META-INF/licenses/PixelXpert-GPL-3.0.txt.

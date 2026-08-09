@@ -235,7 +235,7 @@
     <string name="friday">Cuma</string>
     <string name="saturday">Cumartesi</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Seviyeli el feneri düğmesi</string>
+    <string name="qs_leveled_flashlight_title">El feneri parlaklığını ayarlama düğmesi</string>
     <string name="qs_flashlight_level_global_title">El feneri seviyesini genel olarak uygula</string>
     <string name="qs_tile_qty_title">Hızlı ayarlar düğme sayısı ayarları</string>
     <string name="qs_leveled_flashlight_summary">Kaydırıcıyı göstermek için düğmeye uzun basın.\nDesteklenen donanım gerektirir</string>
@@ -269,7 +269,7 @@
     <string name="three_button_center_title">Orta düğme</string>
     <string name="three_button_right_title">Sağ düğme</string>
     <string name="hide_navbar_title">Gezinme çubuğunu gizle</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">Gezinme çubuğunun ayırdığı alanı gizle</string>
     <string name="taskbar_as_recents_title">Görev çubuğunu PixelXpert son uygulamalar çubuğuna dönüştür</string>
     <string name="taskbar_enable_google_recents">Görev Çubuğunda Android son uygulamaları etkinleştir</string>
     <string name="taskbar_height_title">Görev çubuğu yüksekliği</string>
@@ -296,10 +296,10 @@
     <string name="allow_all_screen_rotations">Tüm ekran döndürme kilitlerini zorla kaldır</string>
     <string name="allow_all_screen_rotations_summary">Manuel döndürme kayan düğmesini de yoksayacak</string>
     <string name="force_no_cutout">Kamera çentiğini yoksay</string>
-    <string name="clear_all_reposition_title">Son uygulamalar sayfasına erişilebilir bir tümünü temizle düğmesi ekle</string>
+    <string name="clear_all_reposition_title">Tümünü temizle seçeneğini son işlemlerin altına ekle</string>
     <string name="force_themed_icons_title">Eksik temalı simgeleri otomatik olarak oluştur</string>
     <string name="force_themed_icons_summary">Sadece Pixel başlatıcısı</string>
-    <string name="volume_button_step_title">Ses adımları (%0 ila %100)</string>
+    <string name="volume_button_step_title">Ses düzeyi adımları, en düşükten en yükseğe</string>
     <string name="display_resolution_switch_title">Ekran çözünürlüğünü değiştir</string>
     <string name="display_resolution_switch_summary">Bunu etkinleştirmeden önce, tüm ekran boyutu/dpi değişikliklerini varsayılana sıfırladığınızdan emin olun</string>
     <string name="display_resolution_title">Ekran çözünürlüğü</string>
@@ -416,7 +416,7 @@
     <string name="menu_updates">Güncellemeler</string>
     <string name="monitoring_category_title">İzleme seçenekleri</string>
     <string name="netstat_header">Ağ istatistikleri ayarları</string>
-    <string name="string_formatter_manual_body_v3">Normal metne ek olarak, Tarih, Veri kullanımı ve Sıcaklık gibi dinamik değişkenler de mevcuttur:\n\n$G&lt;biçim&gt; : Miladi takvim, biçime göre*\n$P&lt;biçim&gt; : Hicri takvim, biçime göre*\n$Nrx : Belirtilen dönemdeki Toplam İndirmeler ** ***\n$Ntx: Belirtilen dönemdeki Toplam Yüklemeler ** ***\n$Nall : Belirtilen dönemdeki Toplam Trafik ** ***\n$Nssid : WiFi SSID adı (varsa)\n\n$T&lt;biçim&gt;[aralık] : Sıcaklık; \nbiçim b (pil için), c (CPU için), g (GPU için) ve s (kasa için) olabilir \nSon olarak, saniye cinsinden İSTEĞE BAĞLI güncelleme aralığı sayısı vardır (varsayılan: 60 saniye)\n\n*biçim belgeleri için \"Java Tarih Biçimi\" araması yapın\n**İstatistik dönemini PixelXpert/Çeşitli menüsü/Ağ İstatistikleri Ayarları\'nda belirleyebilirsiniz\n***Eğer $N\'yi $Nc ile değiştirirseniz mobil veri istatistiklerini alırsınız (ör. Nrx yerine $Ncrx)</string>
+    <string name="string_formatter_manual_body_v3">Normal metne ek olarak tarih, veri kullanımı ve sıcaklık gibi dinamik değişkenler de kullanılabilir:\n\n$G\&lt;format\&gt; : Belirtilen biçime göre Miladi tarih*\n$P&lt;format&gt; : Belirtilen biçime göre Fars takvimi tarihi*\n$Nrx : Belirtilen dönemdeki toplam indirme miktarı ** ***\n$Ntx: Belirtilen dönemdeki toplam yükleme miktarı ** ***\n$Nall : Belirtilen dönemdeki toplam trafik ** ***\n$Nssid : Wi-Fi SSID adı (varsa)\n\n$T\&lt;format\&gt;[interval] : Sıcaklık; \nformat değeri pil için b, CPU için c, GPU için g ve cihaz yüzeyi için s olabilir. \nSonuna saniye cinsinden isteğe bağlı yenileme aralığı eklenebilir (varsayılan: 60 saniye).\n\n*Biçim belgeleri için \"Java Date Format\" ifadesini arayın\n**İstatistik dönemini PixelXpert/Çeşitli/Ağ İstatistikleri Ayarları bölümünden belirleyebilirsiniz\n***$N yerine $Nc kullanırsanız mobil veri istatistikleri gösterilir (ör. $Nrx yerine $Ncrx)</string>
     <string name="update_channel_name">Güncellemeler</string>
     <string name="download_channel_name">İndirmeler</string>
     <string name="assets_download_title">Dosyalar İndiriliyor</string>
@@ -468,9 +468,10 @@
     <string name="hooked_packages_title">Bağlı paketler</string>
     <string name="package_hooked_successful">Paket yanıt veriyor</string>
     <string name="package_not_hook_enabled">Paket LSposed\'da etkin değil</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert henüz LSPosed içinde etkinleştirilmedi. LSPosed yöneticisini açıp Pixel Xpert\'i etkinleştirin, ardından bu uygulamayı yeniden başlatın</string>
     <string name="package_hook_bootlooped">Açılış döngüsü nedeniyle bağlantı başarısız oldu</string>
     <string name="package_hook_no_response">Paket yanıt vermiyor</string>
+    <string name="package_not_running">Uygulama çalışmıyor</string>
     <string name="package_not_found">Paket bulunamadı</string>
     <string name="package_checking">Yükleniyor%s</string>
     <string name="package_activated">Paket başarıyla etkinleştirildi</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Sorun ne?</string>
     <string name="package_not_launchable">Paket başlatılamıyor</string>
     <string name="menu_launch_app">Uygulamayı başlat</string>
+	<string name="menu_stop_app">Uygulamayı durdur</string>
     <string name="menu_restart_app">Uygulamayı yeniden başlat</string>
     <string name="why">neden?</string>
     <string name="okay">Tamam</string>
@@ -540,4 +542,107 @@
     <string name="restart_now">Şimdi Yeniden Başlat</string>
     <string name="watts">Watt</string>
     <string name="fast_charging_threshold_title">Hızlı şarj eşiği</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">Dosyalar &amp; belge seçici</string>
+    <string name="documentsui_header_summary">Dosyalara göz atma ve sıralama davranışı</string>
+    <string name="documentsui_remember_sort_title">Sıralama düzenini hatırla</string>
+    <string name="documentsui_remember_sort_summary">Sistem dosya seçicisinde genel bir sıralama düzeni ve isteğe bağlı klasör bazlı geçersiz kılmalar kullan</string>
+    <string name="documentsui_remember_sort_usage">Dosya seçicinin sıralama menüsünde genel sıralamayı güncellemek için normal şekilde dokunun. Bir sıralama seçeneğini yalnızca geçerli klasör için kaydetmek üzere uzun basın. Normal seçim, o klasöre ait geçersiz kılmayı da temizler.</string>
+    <string name="lockscreen_security_category">Kilit ekranı güvenliği</string>
+    <string name="lockscreen_block_power_menu_title">Kilitliyken güç menüsünü engelle</string>
+    <string name="lockscreen_block_power_menu_summary">Hızlı Ayarlar güç düğmesini ve donanım kısayolunu da engeller</string>
+    <string name="lockscreen_block_internet_title">Kilitliyken internet denetimlerini engelle</string>
+    <string name="lockscreen_block_airplane_title">Kilitliyken Uçak modunu engelle</string>
+    <string name="lockscreen_block_bluetooth_title">Kilitliyken Bluetooth\'u engelle</string>
+    <string name="lockscreen_block_hotspot_title">Kilitliyken hotspot\'u engelle</string>
+    <string name="lockscreen_block_dnd_title">Kilitliyken Rahatsız Etmeyin modunu engelle</string>
+    <string name="lockscreen_block_ringer_title">Kilitliyken zil modu değişikliklerini engelle</string>
+    <string name="lockscreen_unlock_to_use">Kullanmak için kilidi açın</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Gelişmiş yükleme kontrolleri</string>
+    <string name="pm_exact_signature_title">Split APK imzalarının tam eşleşmesini atla</string>
+    <string name="pm_exact_signature_summary">Yüksek risk: yükleme sırasında temel APK ile split APK imza bilgilerinin farklı olmasına izin verir</string>
+    <string name="pm_shared_uid_title">Paylaşılan UID imza kontrollerini atla</string>
+    <string name="pm_shared_uid_summary">Yüksek risk: farklı imzalanmış kullanıcı uygulamalarının paylaşılan UID kullanırken güncellenmesine izin verir; platformun paylaşılan UID kısıtlamaları devam eder</string>
+    <string name="pm_installer_redirect_category">Yükleyici yönlendirmesi</string>
+    <string name="pm_installer_redirect_title">Paket yükleyiciyi yönlendir</string>
+    <string name="pm_installer_redirect_summary">APK yükleme ve isteğe bağlı kaldırma isteklerini seçilen işleyiciye gönder</string>
+    <string name="pm_installer_target_title">Yükleyici</string>
+    <string name="pm_installer_system_default">Sistem varsayılanı</string>
+    <string name="pm_force_explicit_installer_title">Açıkça seçilmiş yükleyiciyi geçersiz kıl</string>
+    <string name="pm_force_explicit_installer_summary">Belirli bir yükleyici bileşenine sabitlenmiş istekleri de yönlendirir</string>
+    <string name="pm_intercept_session_title">Oturum yükleme onayını yönlendir</string>
+    <string name="pm_intercept_session_summary">CONFIRM_INSTALL ve CONFIRM_PERMISSIONS isteklerini yakala</string>
+    <string name="pm_fix_session_permissions_title">Oturum APK yolu erişimini düzelt</string>
+    <string name="pm_fix_session_permissions_summary">Harici yükleyiciler için deneysel Android 14+ uyumluluk düzeltmesi</string>
+    <string name="pm_intercept_uninstall_title">Kaldırma isteklerini yönlendir</string>
+    <string name="pm_intercept_uninstall_summary">ACTION_DELETE ve ACTION_UNINSTALL_PACKAGE isteklerini seçilen işleyiciye gönder</string>
+    <string name="pm_uninstall_follow_installer_title">Kaldırma istekleri için yükleyiciyi kullan</string>
+    <string name="pm_uninstaller_target_title">Kaldırıcı</string>
+    <string name="app_info_enhancements_category">Uygulama bilgileri</string>
+    <string name="app_info_show_version_code_title">Sürüm kodunu göster</string>
+    <string name="app_info_allow_disable_user_apps_title">Kullanıcı uygulamalarını devre dışı bırakmaya izin ver</string>
+    <string name="app_info_allow_disable_user_apps_summary">Sistem dışı uygulamaların uygulama bilgilerine etkinleştirme/devre dışı bırakma eylemi ekler</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Tema, pano, gizlilik ve deneysel yazma özellikleri</string>
+    <string name="gboard_theme_category">Tema</string>
+    <string name="gboard_amoled_black_title">Koyu modda AMOLED siyahı</string>
+    <string name="gboard_amoled_black_summary">Vurgu renklerini korurken Material Expressive yüzey kapsayıcılarını tam siyaha dönüştürür</string>
+    <string name="gboard_clipboard_category">Pano</string>
+    <string name="gboard_clipboard_history_title">Pano geçmişini özelleştir</string>
+    <string name="gboard_clipboard_history_summary">Gboard tarafından istenen girdilerin sayısını ve yaşını değiştirir; Gboard tarafından önceden silinmiş eski girdiler geri yüklenemez</string>
+    <string name="gboard_clipboard_size_title">Görünür maksimum girdi sayısı</string>
+    <string name="gboard_clipboard_size_summary">İzin verilen aralık: 5 ila 100</string>
+    <string name="gboard_clipboard_days_title">Gün cinsinden görünür geçmiş</string>
+    <string name="gboard_clipboard_days_summary">İzin verilen aralık: 0 ila 3650; 0, saklanan tüm girdileri ister</string>
+    <string name="gboard_secure_clipboard_title">Hassas metinleri Gboard geçmişinin dışında tut</string>
+    <string name="gboard_secure_clipboard_summary">Şifre alanlarından kopyalanan girdileri ve olası doğrulama kodlarını, PIN\'leri veya uzun hesap numaralarını engeller</string>
+    <string name="gboard_clipboard_chips_title">Pano eylem düğmeleri</string>
+    <string name="gboard_clipboard_chips_summary">Gboard eylem düğmeleri, varlık çıkarma ve yanıtlamak için kopyalama deneylerini etkinleştirir</string>
+    <string name="gboard_privacy_category">Gizlilik</string>
+    <string name="gboard_force_incognito_title">Kişiselleştirilmiş öğrenmeyi devre dışı bırak</string>
+    <string name="gboard_force_incognito_summary">Her giriş alanı için kişiselleştirilmiş öğrenme yapılmamasını ister; Gboard Gizli Mod arayüzünün tamamını zorlamaz</string>
+    <string name="gboard_privacy_flags_title">Telemetriyi ve eğitimi azalt</string>
+    <string name="gboard_privacy_flags_summary">Düzeltme depolama, içerik yakalama, günlük kaydı, ölçümler ve eğitim önbellekleri için bilinen Gboard bayraklarını geçersiz kılar</string>
+    <string name="gboard_input_category">Giriş geliştirmeleri</string>
+    <string name="gboard_multilingual_title">Çok dilli yazma</string>
+    <string name="gboard_multilingual_summary">Bilinen çok dilli yazma, aday sözcük, Pixel ve konuşma geliştirme deneylerini etkinleştirir</string>
+    <string name="gboard_ai_title">Yapay zeka ve akıllı giriş</string>
+    <string name="gboard_ai_summary">Bilinen Akıllı Yanıt, Akıllı Yazma, emojiye dönüştürme, çıkartma ve AI Core deneylerini etkinleştirir</string>
+    <string name="gboard_grammar_title">Dil bilgisi ve düzeltme</string>
+    <string name="gboard_grammar_summary">Bilinen cihaz içi düzeltme, dil bilgisi denetimi, yazma araçları ve metin dönüştürme deneylerini etkinleştirir</string>
+    <string name="gboard_floating_title">Kayan ve bölünmüş klavye</string>
+    <string name="gboard_floating_summary">Yatay görünüm, çoklu pencere, serbest biçim, tablet bölünmüş klavyesi, boyut kaydırıcısı ve geçiş deneylerini etkinleştirir</string>
+    <string name="gboard_emoji_kitchen_title">Emoji Kitchen geliştirmeleri</string>
+    <string name="gboard_emoji_kitchen_summary">Göz atma, arama, öneri, animasyon ve gömülü seçici deneylerini etkinleştirir</string>
+    <string name="gboard_access_point_title">Kısayol menüsünü yeniden tasarla</string>
+    <string name="gboard_access_point_summary">Erişim noktası menüsü, Silk teması, sistem yazı tipi, Google Sans, özel tema ve animasyon deneylerini etkinleştirir</string>
+    <string name="gboard_metered_downloads_title">Ölçülü ağlarda indirmelere izin ver</string>
+    <string name="gboard_metered_downloads_summary">Bilinen dil, dil kimliği ve konuşma paketi indirmelerine mobil veya diğer ölçülü veri bağlantıları üzerinden izin verir</string>
+    <string name="gboard_experimental_category">Deneysel motorlar</string>
+    <string name="gboard_experimental_summary">Gboard\'un özel bayraklarını kullanır ve bir güncellemeden sonra değişebilir veya çalışmayı durdurabilir; değişiklikten sonra Gboard\'u yeniden başlatın</string>
+    <string name="gboard_inline_suggestions_title">Satır içi çok sözcüklü öneriler</string>
+    <string name="gboard_proactive_emoji_title">Önceden sunulan emoji önerileri</string>
+    <string name="gboard_tflite_title">TFLite tahmin motorları</string>
+    <string name="gboard_fast_access_title">Hızlı erişim çubuğu</string>
+    <string name="dialer_force_enable_call_recording_title">Arama kaydını zorla etkinleştir</string>
+    <string name="dialer_force_enable_call_recording_summary">Desteklenmeyen bölgelerde Google Telefon uygulamasındaki yerel arama kaydını etkinleştirir</string>
+    <string name="landscape_split_shade_title">Yatayda tablet tarzı bildirim paneli</string>
+    <string name="landscape_split_shade_summary">Telefon yatay çevrildiğinde Hızlı Ayarlar ve bildirimleri yan yana gösterir</string>
+    <string name="recents_clear_all">Tümünü temizle</string>
+    <string name="launcher_header">Başlatıcı</string>
+    <string name="launcher_header_summary">Son görevler ve ana ekran iyileştirmeleri</string>
+    <string name="launcher_home_section">Ana ekran</string><string name="launcher_drawer_section">Uygulama çekmecesi</string><string name="launcher_recents_section">Son görevler</string><string name="launcher_hide_desktop_labels">Ana ekrandaki simge adlarını gizle</string><string name="launcher_hide_desktop_search">Ana ekran arama çubuğunu gizle</string><string name="launcher_hide_drawer_labels">Uygulama çekmecesindeki simge adlarını gizle</string><string name="launcher_hide_drawer_search">Uygulama çekmecesi arama çubuğunu gizle</string><string name="recents_remove_screenshot">Ekran görüntüsü işlemini kaldır</string><string name="recents_equal_action_widths">Eşit genişlikte işlem düğmeleri kullan</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Kişiselleştirme</string>
+	<string name="home_category_system_interface">Sistem arayüzü</string>
+	<string name="home_category_app_enhancements">Uygulama iyileştirmeleri</string>
+	<string name="home_category_system_tools">Sistem araçları</string>
 </resources>

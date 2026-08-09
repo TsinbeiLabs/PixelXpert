@@ -91,22 +91,18 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 		hook17BetaAudioManagerSRWorkaround(PRParam);
 
 		if (isSystemServer && !PRParam.getPackageName().equals(Constants.TELECOM_SERVER_PACKAGE)) {
+			// PackageReady can arrive after PhoneWindowManager.init on newer systems.
+			// Initialize here when the system context is already available, while keeping
+			// the policy hook below as a fallback for earlier boot stages.
+			initializeSystemServer(PRParam);
+
 			ReflectedClass PhoneWindowManagerClass = ReflectedClass.of("com.android.server.policy.PhoneWindowManager");
 
 			PhoneWindowManagerClass
 					.before("init")
 					.run(instance,param -> {
 						try {
-							if (mContext == null) {
-								mContext = (Context) param.args[0];
-
-								moduleResources = mContext.createPackageContext(APPLICATION_ID, CONTEXT_IGNORE_SECURITY)
-										.getResources();
-
-								XPrefs.init(mContext);
-
-								CompletableFuture.runAsync(() -> waitForXprefsLoad(PRParam));
-							}
+							initializeSystemServer(PRParam, (Context) param.args[0]);
 						} catch (Throwable t) {
 							Logger.log(t);
 						}
@@ -136,6 +132,28 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 				}
 			});
 		}
+	}
+
+	private void initializeSystemServer(PackageReadyParam PRParam) {
+		try {
+			Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");
+			Object activityThread = activityThreadClass.getDeclaredMethod("currentActivityThread").invoke(null);
+			if (activityThread == null) return;
+			Context systemContext = (Context) activityThreadClass.getDeclaredMethod("getSystemContext").invoke(activityThread);
+			initializeSystemServer(PRParam, systemContext);
+		} catch (Throwable ignored) {
+			// PhoneWindowManager.init will initialize the module if system context is not ready yet.
+		}
+	}
+
+	private synchronized void initializeSystemServer(PackageReadyParam PRParam, Context context) throws Exception {
+		if (mContext != null || context == null) return;
+
+		mContext = context;
+		moduleResources = mContext.createPackageContext(APPLICATION_ID, CONTEXT_IGNORE_SECURITY)
+				.getResources();
+		XPrefs.init(mContext);
+		CompletableFuture.runAsync(() -> waitForXprefsLoad(PRParam));
 	}
 
 	private void waitForXprefsLoad(PackageReadyParam PRParam) {

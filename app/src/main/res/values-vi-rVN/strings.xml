@@ -33,7 +33,7 @@
     <string name="update_over_wifi_title">Chỉ kiểm tra cập nhật qua WiFi</string>
     <string name="update_over_wifi_summary">Chỉ kiểm tra các bản cập nhật ở chế độ nền khi kết nối với wifi</string>
     <string name="github_repo_title">Nguồn Github</string>
-    <string name="telegram_group_title">Telegram channel</string>
+    <string name="telegram_group_title">Kênh Telegram</string>
     <string name="usage_title">Cách sử dụng</string>
     <string name="usage_summary">Mở trang wiki</string>
     <string name="crowdin_title">Dịch sang ngôn ngữ của bạn</string>
@@ -109,7 +109,7 @@
     <string name="sort_tight">Phù hợp với tối đa các biểu tượng</string>
     <string name="sb_notification_limit">Số biểu tượng thông báo tối đa (Mặc định là 4)</string>
     <string name="lte_4g_icon_title">Biểu tượng LTE / 4G</string>
-    <string name="combined_signal_icon_title">Biểu tượng tín hiệu kết hợp\n(Wifi,Dữ liệu mạng di động)</string>
+    <string name="combined_signal_icon_title">Biểu tượng tín hiệu kết hợp (Wi-Fi và dữ liệu di động)</string>
     <string name="hide_roaming_title">Ẩn chỉ báo chuyển vùng di động</string>
     <string name="caution_mobile_costs">THẬN TRỌNG - Không biết việc bạn đang chuyển vùng có thể làm tăng chi phí di động của bạn</string>
     <string name="volte_icon_title">Hiển thị biểu tượng VoLTE khi có sẵn</string>
@@ -235,10 +235,10 @@
     <string name="friday">Thứ sáu</string>
     <string name="saturday">Thứ bảy</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Mức sáng đèn pin</string>
+    <string name="qs_leveled_flashlight_title">Ô điều chỉnh độ sáng đèn pin</string>
     <string name="qs_flashlight_level_global_title">Áp dụng mức đèn pin mặc định</string>
     <string name="qs_tile_qty_title">Cài đặt nhanh số lượng ô cài đặt</string>
-    <string name="qs_leveled_flashlight_summary">Nhấn giữ trên dấu gạch để hiển thị thanh trượt. \nYêu cầu phần cứng hỗ trợ</string>
+    <string name="qs_leveled_flashlight_summary">Nhấn giữ ô để hiển thị thanh trượt.\nYêu cầu phần cứng hỗ trợ</string>
     <string name="qs_pulldown_size">Chiều rộng kéo xuống nhanh</string>
     <string name="qs_pulldown_switch_title">Kéo xuống nhanh bảng cài đặt từ thanh trạng thái</string>
     <string name="qs_pulldown_side_title">Mặt kéo xuống nhanh</string>
@@ -269,7 +269,7 @@
     <string name="three_button_center_title">Phím trung tâm</string>
     <string name="three_button_right_title">Phím bên phải</string>
     <string name="hide_navbar_title">Ẩn thanh điều hướng</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
+    <string name="hide_navbar_insets_title">Ẩn cả khoảng trống của thanh điều hướng</string>
     <string name="taskbar_as_recents_title">Chuyển đổi Thanh tác vụ thành Thanh gần đây PixelXpert</string>
     <string name="taskbar_enable_google_recents">Bật ứng dụng gần đây trên Thanh tác vụ</string>
     <string name="taskbar_height_title">Chiều cao thanh tác vụ</string>
@@ -296,7 +296,7 @@
     <string name="allow_all_screen_rotations">Mở khóa tất cả các chiều xoay của màn hình</string>
     <string name="allow_all_screen_rotations_summary">Bỏ qua nút nổi xoay thủ công</string>
     <string name="force_no_cutout">Bỏ qua phần cắt máy ảnh (với các thiết bị có màn hình đục lỗ)</string>
-    <string name="clear_all_reposition_title">Thêm nút \"Xóa tất cả\" vào cuối trang ứng dụng gần đây</string>
+    <string name="clear_all_reposition_title">Thêm \"Xóa tất cả\" bên dưới các thao tác gần đây</string>
     <string name="force_themed_icons_title">Tự động tổ chức các biểu tượng theo chủ đề bị thiếu</string>
     <string name="force_themed_icons_summary">Chỉ cho Pixel launcher</string>
     <string name="volume_button_step_title">Tăng mức âm lượng (0 đến 100%)</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">Các gói được kết nối</string>
     <string name="package_hooked_successful">Gói đáp ứng</string>
     <string name="package_not_hook_enabled">Gói không được kích hoạt trong LSpose</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert chưa được kích hoạt trong LSPosed. Hãy mở trình quản lý LSPosed, bật Pixel Xpert rồi khởi động lại ứng dụng này</string>
     <string name="package_hook_bootlooped">Móc nối không thành công dẫn tới lỗi vòng lặp khởi động</string>
     <string name="package_hook_no_response">Gói không phản hồi</string>
+    <string name="package_not_running">Ứng dụng chưa chạy</string>
     <string name="package_not_found">Không tìm thấy gói</string>
     <string name="package_checking">Đang tải%s</string>
     <string name="package_activated">Gói kích hoạt thành công</string>
     <string name="package_activation_failed">Kích hoạt gói không thành công</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">Chưa cài đặt LSPosed</string>
     <string name="activate_in_lsposed">Kích hoạt trong LSPosed</string>
     <string name="package_not_hook_enabled_info">Ứng dụng đã được cài đặt nhưng LPosed chưa được định cấu hình để kết nối với ứng dụng. Kích hoạt bằng cách nhấp vào \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Móc nối của ứng dụng đã gây ra vòng lặp khởi động nên nó đã bị vô hiệu hóa để ngăn chặn các sự cố tiếp theo.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Chuyện gì xảy ra vậy?</string>
     <string name="package_not_launchable">Gói không thể khởi động</string>
     <string name="menu_launch_app">Khởi động ứng dụng</string>
+	<string name="menu_stop_app">Dừng ứng dụng</string>
     <string name="menu_restart_app">Khởi động lại ứng dụng</string>
     <string name="why">tại sao?</string>
     <string name="okay">Đồng ý</string>
@@ -540,4 +542,108 @@
     <string name="restart_now">Khởi động lại ngay</string>
     <string name="watts">W</string>
     <string name="fast_charging_threshold_title">Ngưỡng sạc nhanh</string>
+    <!-- Newly introduced strings -->
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="documentsui_header">Tệp và trình chọn tài liệu</string>
+    <string name="documentsui_header_summary">Cách duyệt và sắp xếp tệp</string>
+    <string name="documentsui_remember_sort_title">Ghi nhớ thứ tự sắp xếp</string>
+    <string name="documentsui_remember_sort_summary">Ghi nhớ thứ tự sắp xếp chung và tùy chọn riêng cho từng thư mục trong trình chọn tệp hệ thống</string>
+    <string name="documentsui_remember_sort_usage">Trong trình đơn sắp xếp của trình chọn tệp, hãy nhấn bình thường để cập nhật thứ tự sắp xếp chung. Nhấn giữ một tùy chọn sắp xếp để chỉ lưu cho thư mục hiện tại. Khi chọn bình thường, tùy chọn riêng của thư mục đó cũng sẽ bị xóa.</string>
+    <string name="lockscreen_security_category">Bảo mật màn hình khóa</string>
+    <string name="lockscreen_block_power_menu_title">Chặn trình đơn nguồn khi thiết bị đang khóa</string>
+    <string name="lockscreen_block_power_menu_summary">Đồng thời chặn nút nguồn trong Cài đặt nhanh và phím tắt phần cứng</string>
+    <string name="lockscreen_block_internet_title">Chặn điều khiển Internet khi thiết bị đang khóa</string>
+    <string name="lockscreen_block_airplane_title">Chặn Chế độ trên máy bay khi thiết bị đang khóa</string>
+    <string name="lockscreen_block_bluetooth_title">Chặn Bluetooth khi thiết bị đang khóa</string>
+    <string name="lockscreen_block_hotspot_title">Chặn điểm phát sóng khi thiết bị đang khóa</string>
+    <string name="lockscreen_block_dnd_title">Chặn chế độ Không làm phiền khi thiết bị đang khóa</string>
+    <string name="lockscreen_block_ringer_title">Chặn thay đổi chế độ chuông khi thiết bị đang khóa</string>
+    <string name="lockscreen_unlock_to_use">Mở khóa để sử dụng</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="pm_advanced_category">Kiểm tra cài đặt nâng cao</string>
+    <string name="pm_exact_signature_title">Bỏ qua đối chiếu chính xác chữ ký của split APK</string>
+    <string name="pm_exact_signature_summary">Rủi ro cao: cho phép thông tin chữ ký của APK cơ sở và split APK khác nhau trong khi cài đặt</string>
+    <string name="pm_shared_uid_title">Bỏ qua kiểm tra chữ ký của UID dùng chung</string>
+    <string name="pm_shared_uid_summary">Rủi ro cao: cho phép cập nhật các ứng dụng người dùng có chữ ký khác nhau khi dùng chung UID; các giới hạn UID dùng chung của nền tảng vẫn được áp dụng</string>
+    <string name="pm_installer_redirect_category">Chuyển hướng trình cài đặt</string>
+    <string name="pm_installer_redirect_title">Chuyển hướng trình cài đặt gói</string>
+    <string name="pm_installer_redirect_summary">Gửi yêu cầu cài đặt APK và yêu cầu gỡ cài đặt tùy chọn đến ứng dụng đã chọn</string>
+    <string name="pm_installer_target_title">Trình cài đặt</string>
+    <string name="pm_installer_system_default">Mặc định của hệ thống</string>
+    <string name="pm_force_explicit_installer_title">Ghi đè cả trình cài đặt được chọn rõ ràng</string>
+    <string name="pm_force_explicit_installer_summary">Đồng thời chuyển hướng các yêu cầu chỉ định trực tiếp một thành phần trình cài đặt cụ thể</string>
+    <string name="pm_intercept_session_title">Chuyển hướng xác nhận cài đặt theo phiên</string>
+    <string name="pm_intercept_session_summary">Chặn và chuyển tiếp các yêu cầu CONFIRM_INSTALL và CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Khắc phục quyền truy cập đường dẫn APK của phiên</string>
+    <string name="pm_fix_session_permissions_summary">Bản sửa lỗi tương thích thử nghiệm trên Android 14 trở lên dành cho trình cài đặt bên ngoài</string>
+    <string name="pm_intercept_uninstall_title">Chuyển hướng yêu cầu gỡ cài đặt</string>
+    <string name="pm_intercept_uninstall_summary">Gửi ACTION_DELETE và ACTION_UNINSTALL_PACKAGE đến ứng dụng đã chọn</string>
+    <string name="pm_uninstall_follow_installer_title">Dùng trình cài đặt cho cả yêu cầu gỡ cài đặt</string>
+    <string name="pm_uninstaller_target_title">Trình gỡ cài đặt</string>
+    <string name="app_info_enhancements_category">Thông tin ứng dụng</string>
+    <string name="app_info_show_version_code_title">Hiển thị mã phiên bản</string>
+    <string name="app_info_allow_disable_user_apps_title">Cho phép tắt ứng dụng người dùng</string>
+    <string name="app_info_allow_disable_user_apps_summary">Thêm thao tác bật hoặc tắt vào trang thông tin của ứng dụng không thuộc hệ thống</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Chủ đề, bảng nhớ tạm, quyền riêng tư và các tính năng nhập thử nghiệm</string>
+    <string name="gboard_theme_category">Chủ đề</string>
+    <string name="gboard_amoled_black_title">Màu đen AMOLED trong giao diện tối</string>
+    <string name="gboard_amoled_black_summary">Chuyển các vùng bề mặt Material Expressive thành màu đen thuần nhưng vẫn giữ màu nhấn</string>
+    <string name="gboard_clipboard_category">Bảng nhớ tạm</string>
+    <string name="gboard_clipboard_history_title">Tùy chỉnh nhật ký bảng nhớ tạm</string>
+    <string name="gboard_clipboard_history_summary">Thay đổi số lượng và thời gian lưu mục mà Gboard yêu cầu; không thể khôi phục các mục cũ đã bị Gboard xóa</string>
+    <string name="gboard_clipboard_size_title">Số mục hiển thị tối đa</string>
+    <string name="gboard_clipboard_size_summary">Phạm vi cho phép: 5 đến 100</string>
+    <string name="gboard_clipboard_days_title">Số ngày hiển thị nhật ký</string>
+    <string name="gboard_clipboard_days_summary">Phạm vi cho phép: 0 đến 3650; đặt 0 để yêu cầu tất cả các mục còn được lưu</string>
+    <string name="gboard_secure_clipboard_title">Không lưu văn bản nhạy cảm vào nhật ký Gboard</string>
+    <string name="gboard_secure_clipboard_summary">Chặn các mục được sao chép từ trường mật khẩu và nội dung có thể là mã xác minh, mã PIN hoặc số tài khoản dài</string>
+    <string name="gboard_clipboard_chips_title">Thẻ hành động của bảng nhớ tạm</string>
+    <string name="gboard_clipboard_chips_summary">Bật các thử nghiệm về thẻ hành động, trích xuất thực thể và sao chép để trả lời của Gboard</string>
+    <string name="gboard_privacy_category">Quyền riêng tư</string>
+    <string name="gboard_force_incognito_title">Tắt tính năng học cá nhân hóa</string>
+    <string name="gboard_force_incognito_summary">Yêu cầu không học cá nhân hóa trong mọi trường nhập; tùy chọn này không buộc Gboard hiển thị toàn bộ giao diện Ẩn danh</string>
+    <string name="gboard_privacy_flags_title">Giảm dữ liệu đo từ xa và dữ liệu huấn luyện</string>
+    <string name="gboard_privacy_flags_summary">Ghi đè các cờ Gboard đã biết về lưu nội dung sửa, thu thập nội dung, ghi nhật ký, số liệu và bộ nhớ đệm huấn luyện</string>
+    <string name="gboard_input_category">Cải tiến nhập liệu</string>
+    <string name="gboard_multilingual_title">Nhập đa ngôn ngữ</string>
+    <string name="gboard_multilingual_summary">Bật các thử nghiệm đã biết về nhập đa ngôn ngữ, từ gợi ý, Pixel và cải tiến giọng nói</string>
+    <string name="gboard_ai_title">AI và nhập liệu thông minh</string>
+    <string name="gboard_ai_summary">Bật các thử nghiệm đã biết về Trả lời thông minh, Soạn thư thông minh, chuyển thành biểu tượng cảm xúc, nhãn dán và AI Core</string>
+    <string name="gboard_grammar_title">Ngữ pháp và hiệu đính</string>
+    <string name="gboard_grammar_summary">Bật các thử nghiệm đã biết về hiệu đính trên thiết bị, kiểm tra ngữ pháp, công cụ viết và chuyển đổi văn bản</string>
+    <string name="gboard_floating_title">Bàn phím nổi và bàn phím tách</string>
+    <string name="gboard_floating_summary">Bật các thử nghiệm về chế độ ngang, nhiều cửa sổ, cửa sổ tự do, bàn phím tách trên máy tính bảng, thanh trượt kích thước và hiệu ứng chuyển tiếp</string>
+    <string name="gboard_emoji_kitchen_title">Cải tiến Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Bật các thử nghiệm về duyệt, tìm kiếm, đề xuất, hiệu ứng và trình chọn nhúng</string>
+    <string name="gboard_access_point_title">Thiết kế lại trình đơn phím tắt</string>
+    <string name="gboard_access_point_summary">Bật các thử nghiệm về trình đơn điểm truy cập, chủ đề Silk, phông chữ hệ thống, Google Sans, chủ đề tùy chỉnh và hiệu ứng</string>
+    <string name="gboard_metered_downloads_title">Cho phép tải xuống qua mạng có tính phí dữ liệu</string>
+    <string name="gboard_metered_downloads_summary">Cho phép tải gói ngôn ngữ, nhận dạng ngôn ngữ và giọng nói qua dữ liệu di động hoặc mạng có tính phí dữ liệu khác</string>
+    <string name="gboard_experimental_category">Công cụ thử nghiệm</string>
+    <string name="gboard_experimental_summary">Sử dụng các cờ riêng của Gboard nên có thể thay đổi hoặc ngừng hoạt động sau khi cập nhật; hãy khởi động lại Gboard sau khi thay đổi</string>
+    <string name="gboard_inline_suggestions_title">Gợi ý nhiều từ trong dòng</string>
+    <string name="gboard_proactive_emoji_title">Chủ động gợi ý biểu tượng cảm xúc</string>
+    <string name="gboard_tflite_title">Công cụ dự đoán TFLite</string>
+    <string name="gboard_fast_access_title">Thanh truy cập nhanh</string>
+    <string name="dialer_force_enable_call_recording_title">Buộc bật ghi âm cuộc gọi</string>
+    <string name="dialer_force_enable_call_recording_summary">Mở khóa tính năng ghi âm cuộc gọi tích hợp trong ứng dụng Điện thoại Google tại các khu vực không được hỗ trợ</string>
+    <string name="landscape_split_shade_title">Bảng thông báo kiểu máy tính bảng khi xoay ngang</string>
+    <string name="landscape_split_shade_summary">Hiển thị Cài đặt nhanh và thông báo cạnh nhau khi xoay điện thoại theo chiều ngang</string>
+    <string name="recents_clear_all">Đóng tất cả</string>
+    <string name="launcher_header">Trình khởi chạy</string>
+    <string name="launcher_header_summary">Cải tiến màn hình chính và tác vụ gần đây</string>
+    <string name="launcher_home_section">Màn hình chính</string><string name="launcher_drawer_section">Ngăn kéo ứng dụng</string><string name="launcher_recents_section">Tác vụ gần đây</string><string name="launcher_hide_desktop_labels">Ẩn tên biểu tượng màn hình chính</string><string name="launcher_hide_desktop_search">Ẩn thanh tìm kiếm màn hình chính</string><string name="launcher_hide_drawer_labels">Ẩn tên biểu tượng ngăn kéo ứng dụng</string><string name="launcher_hide_drawer_search">Ẩn thanh tìm kiếm ngăn kéo ứng dụng</string><string name="recents_remove_screenshot">Xóa thao tác Chụp màn hình</string><string name="recents_equal_action_widths">Dùng các nút thao tác có chiều rộng bằng nhau</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Cá nhân hóa</string>
+	<string name="home_category_system_interface">Giao diện hệ thống</string>
+	<string name="home_category_app_enhancements">Cải tiến ứng dụng</string>
+	<string name="home_category_system_tools">Công cụ hệ thống</string>
 </resources>

@@ -4,7 +4,7 @@
     <string name="app_themed_icon_title">Alternativt tema-ikon</string>
     <string name="xposed_desc">Tilpasninger til Google Pixel enheder</string>
     <string name="volume_tile_title">Medievolumen</string>
-    <string name="sliding_tile_subtitle">Tap to adjust</string>
+    <string name="sliding_tile_subtitle">Tryk for at justere</string>
     <string name="app_switch_tile_title">Skift appprofil</string>
     <string name="hide_default">Skjul (standard)</string>
     <string name="percent_of_default_size">% af standardstørrelsen</string>
@@ -21,7 +21,7 @@
     <string name="notification_channel_update_desc">Denne kanal viser besked om de seneste opdateringer.</string>
     <string name="new_update_title">Opdatering tilgængelig</string>
     <string name="new_update_desc">En ny version af PixelXpert er tilgængelig</string>
-    <string name="skip_this_update">Skip this update</string>
+    <string name="skip_this_update">Spring denne opdatering over</string>
     <string name="browser_not_found">Browser ikke fundet</string>
     <string name="settings_general_section_title">Generel</string>
     <string name="settings_update_section_title">Opdatering</string>
@@ -33,12 +33,12 @@
     <string name="update_over_wifi_title">Tjek kun opdateringer via WiFi</string>
     <string name="update_over_wifi_summary">Tjek kun for opdateringer i baggrunden, når du er tilsluttet wifi</string>
     <string name="github_repo_title">GitHub-depot</string>
-    <string name="telegram_group_title">Telegram channel</string>
+    <string name="telegram_group_title">Telegram-kanal</string>
     <string name="usage_title">Brug</string>
     <string name="usage_summary">Åbn wiki-side</string>
     <string name="crowdin_title">Oversæt til dit sprog</string>
     <string name="crowdin_summary">Hjælp os med at oversætte %s til dit eget sprog</string>
-    <string name="nothing_to_show">Nothing to show</string>
+    <string name="nothing_to_show">Intet at vise</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Låse skærm</string>
     <string name="lockscreen_header_summary">Skift din keyguard for at matche din smag</string>
@@ -64,9 +64,9 @@
     <string name="hotspot_max_client_title">Maksimalt antal kunder</string>
     <string name="hotspot_disable_approval_title">Hotspot forbindelsesproblemer virker omkring</string>
     <string name="hotspot_disable_approval_summary">Tillad ikke-\"forhåndsgodkendte\" kunder at forbinde problemfrit</string>
-    <string name="hotspot_force_unsupported_regions">Remove hotspot limitations in unsupported regions</string>
+    <string name="hotspot_force_unsupported_regions">Fjern hotspotbegrænsninger i ikke-understøttede områder</string>
     <!--Lock screen related-->
-    <string name="depth_wallpaper_options">Depth effect wallpaper</string>
+    <string name="depth_wallpaper_options">Baggrund med dybdeeffekt</string>
     <string name="depth_wallpaper_title">Dybde effekt baggrund</string>
     <string name="depth_wallpaper_summary">Integrer tapetets forgrund dynamisk med uret</string>
     <string name="depth_wallpaper_ai_model_title">Foretrukken AI-model</string>
@@ -76,7 +76,7 @@
     <string name="depth_wallpaper_model_not_available">AI model er ikke tilgængelig på enheden (endnu)</string>
     <string name="ls_general_options">Indstillinger for låseskærm</string>
     <string name="hide_avatar_title">Fjern brugeravatar (multibrugertilstand)</string>
-    <string name="fingerprint_options">Fingerprint</string>
+    <string name="fingerprint_options">Fingeraftryk</string>
     <string name="transparent_fingerprint_circle">Fjern baggrundscirkel fra fingeraftryk under skærmen</string>
     <string name="transparent_fingerprint_circle_off">Cirkel omkring fingeraftryksikonet er aktivt</string>
     <string name="transparent_fingerprint_circle_on">Cirkel omkring fingeraftryksikonet vil blive skjult</string>
@@ -92,7 +92,7 @@
     <string name="keyguard_dim_amount_title">Tastatur dæmp</string>
     <string name="keyguard_bottom_category">Nederste område genveje</string>
     <string name="keyguard_bottom_buttons_transparent_title">Fjern cirkel omkring ikoner</string>
-    <string name="shufflePin_title">Shuffle Pin</string>
+    <string name="shufflePin_title">Bland pinkode</string>
     <string name="wakeup_to_security_title">Vis sikkerhedsinput ved aktivering af enheden</string>
     <string name="easy_unlock_title">Nem oplåsning (pinkode/adgangskode)</string>
     <string name="easy_unlock_summary">Hvis det ikke virkede første gang, så prøv igen</string>
@@ -181,52 +181,52 @@
     <string name="nt_stat_mode_today">I dag</string>
     <string name="nt_stat_mode_week">Nuværende uge</string>
     <string name="nt_stat_mode_month">Indeværende måned</string>
-    <string name="sb_ignored_icons_category">Status Bar ignored icons</string>
-    <string name="sb_ignored_icons">Status Bar</string>
-    <string name="sb_ignored_icons_statusbar">Select which icon will be hidden in statusbar</string>
-    <string name="sb_kg_ignored_icons">Lockscreen</string>
-    <string name="sb_ignored_icons_kg">Select which icon will be hidden in keyguard statusbar</string>
-    <string name="sb_qs_ignored_icons">Quick Settings</string>
-    <string name="sb_ignored_icons_qs">Select which icon will be hidden in quick settings</string>
+    <string name="sb_ignored_icons_category">Ignorerede ikoner på statuslinjen</string>
+    <string name="sb_ignored_icons">Statuslinje</string>
+    <string name="sb_ignored_icons_statusbar">Vælg, hvilket ikon der skal skjules på statuslinjen</string>
+    <string name="sb_kg_ignored_icons">Låseskærm</string>
+    <string name="sb_ignored_icons_kg">Vælg, hvilket ikon der skal skjules på låseskærmens statuslinje</string>
+    <string name="sb_qs_ignored_icons">Hurtigindstillinger</string>
+    <string name="sb_ignored_icons_qs">Vælg, hvilket ikon der skal skjules i Hurtigindstillinger</string>
     <string name="status_bar_volte">VoLTE</string>
     <string name="status_bar_vowifi">VoWiFi</string>
-    <string name="status_bar_no_calling">No Calling</string>
-    <string name="status_bar_call_strength">Call Strength</string>
-    <string name="status_bar_alarm_clock">Alarm Clock</string>
-    <string name="status_bar_rotate">Auto Rotate</string>
-    <string name="status_bar_headset">Headset Connected</string>
-    <string name="status_bar_data_saver">Data Saver</string>
-    <string name="status_bar_ime">Input Method</string>
-    <string name="status_bar_sync_failing">Sync Failing</string>
-    <string name="status_bar_sync_active">Sync Active</string>
-    <string name="status_bar_nfc">NFC Active</string>
-    <string name="status_bar_tty">TTY Mode</string>
-    <string name="status_bar_speakerphone">Speakerphone On</string>
+    <string name="status_bar_no_calling">Ingen opkaldstjeneste</string>
+    <string name="status_bar_call_strength">Opkaldssignal</string>
+    <string name="status_bar_alarm_clock">Vækkeur</string>
+    <string name="status_bar_rotate">Automatisk rotation</string>
+    <string name="status_bar_headset">Headset tilsluttet</string>
+    <string name="status_bar_data_saver">Databesparelse</string>
+    <string name="status_bar_ime">Inputmetode</string>
+    <string name="status_bar_sync_failing">Synkronisering mislykkes</string>
+    <string name="status_bar_sync_active">Synkronisering aktiv</string>
+    <string name="status_bar_nfc">NFC aktiv</string>
+    <string name="status_bar_tty">TTY-tilstand</string>
+    <string name="status_bar_speakerphone">Højttalertelefon til</string>
     <string name="status_bar_cdma_eri">CDMA ERI</string>
-    <string name="status_bar_data_connection">Data Connection</string>
-    <string name="status_bar_phone_evdo_signal">EVDO Signal</string>
-    <string name="status_bar_phone_signal">Phone Signal</string>
-    <string name="status_bar_secure">Secure Mode</string>
-    <string name="status_bar_managed_profile">Managed Profile</string>
-    <string name="status_bar_connected_display">Connected Display</string>
-    <string name="status_bar_vpn">VPN Active</string>
-    <string name="status_bar_bluetooth">Bluetooth Connected</string>
-    <string name="status_bar_camera">Camera In Use</string>
-    <string name="status_bar_microphone">Microphone In Use</string>
-    <string name="status_bar_location">Location Active</string>
-    <string name="status_bar_mute">Muted</string>
-    <string name="status_bar_volume">Volume Level</string>
-    <string name="status_bar_zen">Do Not Disturb</string>
-    <string name="status_bar_screen_record">Screen Recording</string>
-    <string name="status_bar_cast">Casting</string>
-    <string name="status_bar_ethernet">Ethernet Connected</string>
-    <string name="status_bar_oem_satellite">Satellite Connection</string>
-    <string name="status_bar_wifi">Wi-Fi Connected</string>
-    <string name="status_bar_hotspot">Hotspot Active</string>
-    <string name="status_bar_mobile">Mobile Data</string>
-    <string name="status_bar_airplane">Airplane Mode</string>
-    <string name="status_bar_battery">Battery Level</string>
-    <string name="status_bar_sensors_off">Sensors Off</string>
+    <string name="status_bar_data_connection">Dataforbindelse</string>
+    <string name="status_bar_phone_evdo_signal">EVDO-signal</string>
+    <string name="status_bar_phone_signal">Telefonsignal</string>
+    <string name="status_bar_secure">Sikker tilstand</string>
+    <string name="status_bar_managed_profile">Administreret profil</string>
+    <string name="status_bar_connected_display">Tilsluttet skærm</string>
+    <string name="status_bar_vpn">VPN aktiv</string>
+    <string name="status_bar_bluetooth">Bluetooth tilsluttet</string>
+    <string name="status_bar_camera">Kamera i brug</string>
+    <string name="status_bar_microphone">Mikrofon i brug</string>
+    <string name="status_bar_location">Placering aktiv</string>
+    <string name="status_bar_mute">Lyd slået fra</string>
+    <string name="status_bar_volume">Lydstyrkeniveau</string>
+    <string name="status_bar_zen">Forstyr ikke</string>
+    <string name="status_bar_screen_record">Skærmoptagelse</string>
+    <string name="status_bar_cast">Caster</string>
+    <string name="status_bar_ethernet">Ethernet tilsluttet</string>
+    <string name="status_bar_oem_satellite">Satellitforbindelse</string>
+    <string name="status_bar_wifi">Wi-Fi tilsluttet</string>
+    <string name="status_bar_hotspot">Hotspot aktivt</string>
+    <string name="status_bar_mobile">Mobildata</string>
+    <string name="status_bar_airplane">Flytilstand</string>
+    <string name="status_bar_battery">Batteriniveau</string>
+    <string name="status_bar_sensors_off">Sensorer slået fra</string>
     <string name="sunday">Søndag</string>
     <string name="monday">Mandag</string>
     <string name="tuesday">tirsdag</string>
@@ -235,10 +235,10 @@
     <string name="friday">Fredag</string>
     <string name="saturday">lørdag</string>
     <!--Quick settings panel related-->
-    <string name="qs_leveled_flashlight_title">Flashlight-leveled tile</string>
+    <string name="qs_leveled_flashlight_title">Felt til justering af lommelygtens lysstyrke</string>
     <string name="qs_flashlight_level_global_title">Anvend lommelygteniveau globalt</string>
     <string name="qs_tile_qty_title">Hurtige indstillinger indstillinger for antal fliser</string>
-    <string name="qs_leveled_flashlight_summary">Longpress on tile to show the slider.\nRequires supported hardware</string>
+    <string name="qs_leveled_flashlight_summary">Tryk længe på feltet for at vise skyderen.\nKræver understøttet hardware</string>
     <string name="qs_pulldown_size">Hurtig nedtræksbredde</string>
     <string name="qs_pulldown_switch_title">Hurtig QS panel pull-down fra statuslinjen</string>
     <string name="qs_pulldown_side_title">Hurtig nedtræksside</string>
@@ -246,7 +246,7 @@
     <string name="qs_pullup_switch_title">Luk hurtigindstillinger med et stryg</string>
     <string name="qs_tile_qty_portrait">I stående retning</string>
     <string name="qs_tile_qty_landscape">I landskabsorientering</string>
-    <string name="qqs_rows_number">Number of quick QS rows</string>
+    <string name="qqs_rows_number">Antal rækker i hurtige Hurtigindstillinger</string>
     <string name="qs_rows_number">Antal QS-rækker</string>
     <string name="qs_cols_number">Antal QS-kolonner</string>
     <string name="qs_tile_label_size">QS Tile etiketstørrelse</string>
@@ -263,15 +263,15 @@
     <string name="gesture_nav_pill_width_title">Bredde i forhold til standardstørrelse</string>
     <string name="gesture_nav_pill_height_title">Højde i forhold til standardstørrelse</string>
     <string name="threebutton_header_title">3-knaps navigation</string>
-    <string name="taskbar_header_title">Taskbar navigation</string>
+    <string name="taskbar_header_title">Navigation med proceslinje</string>
     <string name="modify_3button_title">Rediger knappernes rækkefølge</string>
     <string name="three_button_left_title">Venstre knap</string>
     <string name="three_button_center_title">Midterknap</string>
     <string name="three_button_right_title">Højre knap</string>
     <string name="hide_navbar_title">Skjul navigationslinjen</string>
-    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
-    <string name="taskbar_as_recents_title">Convert Taskbar to PixelXpert recents bar</string>
-    <string name="taskbar_enable_google_recents">Enable Android recents on the Taskbar</string>
+    <string name="hide_navbar_insets_title">Skjul navigationslinjens indrykning</string>
+    <string name="taskbar_as_recents_title">Konvertér proceslinjen til PixelXperts linje med seneste apps</string>
+    <string name="taskbar_enable_google_recents">Aktiver Androids seneste apps på proceslinjen</string>
     <string name="taskbar_height_title">Højde på proceslinjen</string>
     <string name="taskbar_radius_title">Proceslinjens hjørnekurve</string>
     <string name="colorpill">Accent farvet gestus pille</string>
@@ -279,9 +279,9 @@
     <string name="taskbar_force_enable_title">Tving aktiveret</string>
     <string name="taskbar_force_disable_title">Tving deaktiveret</string>
     <string name="taskbar_transient_title">Skjul automatisk</string>
-    <string name="taskbar_on_launcher_title">Show on home</string>
+    <string name="taskbar_on_launcher_title">Vis på startskærmen</string>
     <string name="remap_physical_buttons_title">Forbliv fysiske knapper</string>
-    <string name="taskbar_on_ime_title">Show with keyboard open</string>
+    <string name="taskbar_on_ime_title">Vis, når tastaturet er åbent</string>
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">Omgå kontrol af pakkesignatur</string>
     <string name="pm_allow_downgrade_title">Tillad app-nedgradering</string>
@@ -296,9 +296,9 @@
     <string name="allow_all_screen_rotations">Tvangslås alle skærmrotationer op</string>
     <string name="allow_all_screen_rotations_summary">Vil også ignorere manuel rotation flydende knap</string>
     <string name="force_no_cutout">Ignorer kameraets udskæring</string>
-    <string name="clear_all_reposition_title">Føj en tilgængelig knap til at rydde alt til siden for seneste nyheder</string>
-    <string name="force_themed_icons_title">Auto-generate missing themed icons</string>
-    <string name="force_themed_icons_summary">Pixel launcher only</string>
+    <string name="clear_all_reposition_title">Tilføj Ryd alle under de seneste handlinger</string>
+    <string name="force_themed_icons_title">Generer manglende temaikoner automatisk</string>
+    <string name="force_themed_icons_summary">Kun Pixel Launcher</string>
     <string name="volume_button_step_title">Lydstyrketrin (0 til 100 %)</string>
     <string name="display_resolution_switch_title">Ændr skærmopløsning</string>
     <string name="display_resolution_switch_summary">Før du aktiverer dette, skal du sørge for at nulstille alle visningsstørrelse/dpi ændringer til standard</string>
@@ -318,7 +318,7 @@
     <string name="force_aod_while_charging_summary">Hold altid aktiveret, mens enheden oplades</string>
     <string name="doze_header">Mens skærmen er slukket…</string>
     <string name="px_in_settings_title">Tilføj PixelXpert til opsætning af elementer</string>
-    <string name="advanced_power_menu_title">Advanced power menu</string>
+    <string name="advanced_power_menu_title">Avanceret tænd/sluk-menu</string>
     <string name="sleep_on_flat_screen_title">Slå skærmen fra på den flade overflade</string>
     <string name="sleep_on_flat_screen_tile_title">Søvn på overfladen</string>
     <string name="flat_screen_timeout_title">Skærmens timeout på flad overflade</string>
@@ -331,7 +331,7 @@
     <string name="notif_always_expand">Udvid altid</string>
     <string name="notif_always_collapse">Sammenfold altid</string>
     <string name="control_flashlight_with_volume_keys">Styr lommelygte med lydstyrkeknapper</string>
-    <string name="flashlight_fade_effect">Flashlight fade effect</string>
+    <string name="flashlight_fade_effect">Lommelygtens udtoningseffekt</string>
     <string name="milliseconds">Millisekunder</string>
     <string name="duration_seconds">%d Sekunder</string>
     <string name="hours">Timer</string>
@@ -359,7 +359,7 @@
     <string name="vibration_type_notification">Intensitet defineret af vibrationsindstillinger for systemmeddelelser</string>
     <string name="dialer_mute_record_message_title">Fjern opkaldsoptagelsesmeddelelse</string>
     <string name="dialer_mute_record_message_summary">Gælder kun for Google-telefonappen med opkaldsoptagelse aktiveret</string>
-    <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
+    <string name="radio_force_volte_nr">Gennemtving VoLTE/NR i ikke-understøttede områder</string>
     <!-- Arrays strings -->
     <!-- Quick pull down -->
     <string name="pull_down_left">Venstre</string>
@@ -402,8 +402,8 @@
     <string name="depth_effect_alert_body">Brug en passende lockscreen tapet, hvor forgrundselementerne ikke blokerer hele uret på din låseskærm, sikre både visuel appel og funktionel klarhed på din låseskærm.\n\nNote: %s.</string>
     <string name="depth_effect_ok_btn">Ok</string>
     <!-- Reboot alert -->
-    <string name="pending_actions">Pending actions</string>
-    <string name="btn_dismiss">Dismiss</string>
+    <string name="pending_actions">Afventende handlinger</string>
+    <string name="btn_dismiss">Luk</string>
     <!-- Menu Items -->
     <string name="menu_settings_title">Import Eksport</string>
     <string name="menu_reset_defaults">Nulstil alle indstillinger</string>
@@ -421,7 +421,7 @@
     <string name="download_channel_name">Downloads</string>
     <string name="assets_download_title">Downloader Filer</string>
     <string name="assets_download_body">Downloader følgefiler</string>
-    <string name="assets_download_size_body">Progress: %s</string>
+    <string name="assets_download_size_body">Fremskridt: %s</string>
     <string name="update_notification_title">Opdatering downloadet</string>
     <string name="update_notification_text">Tryk her for at installere</string>
     <string name="download_failed">Kunne ikke downloade opdateringen</string>
@@ -459,7 +459,7 @@
     <!-- Search Preference -->
     <string name="searchpreference_title">Søg</string>
     <string name="searchpreference_search">Søg…</string>
-    <string name="searchpreference_clear">Klar</string>
+    <string name="searchpreference_clear">Ryd</string>
     <string name="searchpreference_history_entry">Historieindgang</string>
     <string name="searchpreference_more">Mere</string>
     <string name="searchpreference_clear_history">Ryd historik</string>
@@ -468,14 +468,15 @@
     <string name="hooked_packages_title">Forbundne pakker</string>
     <string name="package_hooked_successful">Pakke responsiv</string>
     <string name="package_not_hook_enabled">Pakke ikke aktiveret i LSposed</string>
-    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
+    <string name="enable_px_manually">Pixel Xpert er endnu ikke aktiveret i LSPosed. Åbn LSPosed Manager, aktiver Pixel Xpert, og genstart derefter denne app</string>
     <string name="package_hook_bootlooped">Hook fejlede på grund af bootloop</string>
     <string name="package_hook_no_response">Pakken svarer ikke</string>
+    <string name="package_not_running">Appen kører ikke</string>
     <string name="package_not_found">Pakken blev ikke fundet</string>
     <string name="package_checking">Indlæser%s</string>
     <string name="package_activated">Pakken blev aktiveret</string>
     <string name="package_activation_failed">Pakkeaktivering mislykkedes</string>
-    <string name="lsposed_not_found">LSPosed not installed</string>
+    <string name="lsposed_not_found">LSPosed er ikke installeret</string>
     <string name="activate_in_lsposed">Aktiver i LSPosed</string>
     <string name="package_not_hook_enabled_info">Appen er installeret, men LSPosed er ikke konfigureret til at tilslutte sig den. Aktiver den ved at klikke på \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Krogen til appen forårsagede en bootloop, så det er blevet deaktiveret for at forhindre yderligere problemer.</string>
@@ -483,6 +484,7 @@
     <string name="whats_wrong">Hvad er forkert?</string>
     <string name="package_not_launchable">Pakken kan ikke startes</string>
     <string name="menu_launch_app">Start app</string>
+	<string name="menu_stop_app">Stop app</string>
     <string name="menu_restart_app">Genstart app</string>
     <string name="why">hvorfor?</string>
     <string name="okay">Okay</string>
@@ -523,21 +525,125 @@
     <string name="icon_pack_author">af %s</string>
     <string name="icon_pack_unknown_author">af ukendt forfatter</string>
     <string name="icon_pack_unknown_name">Ukendt ikonpakke</string>
-    <string name="icon_pack_pack_reset">Reset icons</string>
+    <string name="icon_pack_pack_reset">Nulstil ikoner</string>
     <string name="icon_pack_info">Ikon pakke info</string>
     <string name="no_icon_pack_installed">Ingen ikonpakke installeret</string>
     <string name="icon_pack_disclaimer_title">Ansvarsfraskrivelse</string>
     <string name="icon_pack_disclaimer_desc">Ikonpakker er ikke udviklet eller distribueret af PixelXpert. Som sådan kan PixelXpert-holdet ikke yde understøttelse af ikonpakker. Understøttelse af, hvordan PixelXpert håndterer ikonpakker, vil kun blive leveret til de respektive pakkeudviklere.\n\nFor instruktioner om hvordan man udarbejder en ikonpakke, henvises til guiden her: %s</string>
     <!--Advanced power options-->
-    <string name="advanced_option_button_title">Advanced…</string>
-    <string name="reboot_bootloader_title">Reboot to Bootloader</string>
-    <string name="soft_reboot_title">Soft Reboot</string>
-    <string name="restart_systemui_title">Restart SystemUI</string>
+    <string name="advanced_option_button_title">Avanceret…</string>
+    <string name="reboot_bootloader_title">Genstart til bootloader</string>
+    <string name="soft_reboot_title">Blød genstart</string>
+    <string name="restart_systemui_title">Genstart SystemUI</string>
     <!--Optimization restart request-->
-    <string name="optimization_restart_needed_title">Restart Recommended</string>
-    <string name="optimization_restart_needed_message">A reboot is recommended to increase system integration</string>
-    <string name="restart_postpone">Later</string>
-    <string name="restart_now">Reboot now</string>
+    <string name="optimization_restart_needed_title">Genstart anbefales</string>
+    <string name="optimization_restart_needed_message">En genstart anbefales for at forbedre systemintegrationen</string>
+    <string name="restart_postpone">Senere</string>
+    <string name="restart_now">Genstart nu</string>
     <string name="watts">Watts</string>
-    <string name="fast_charging_threshold_title">Fast charging threshold</string>
+    <string name="fast_charging_threshold_title">Tærskel for hurtig opladning</string>
+    <!-- DocumentsUI, pakkehåndtering og Gboard -->
+    <string name="documentsui_header">Filer &amp; dokumentvælger</string>
+    <string name="documentsui_header_summary">Adfærd ved filgennemgang og sortering</string>
+    <string name="documentsui_remember_sort_title">Husk sorteringsrækkefølge</string>
+    <string name="documentsui_remember_sort_summary">Bevar en global sorteringsrækkefølge og valgfrie tilsidesættelser pr. mappe i systemets filvælger</string>
+    <string name="documentsui_remember_sort_usage">Tryk normalt i filvælgerens sorteringsmenu for at opdatere den globale sortering. Hold en sorteringsmulighed nede for kun at gemme den for den aktuelle mappe. Et normalt valg rydder også mappens tilsidesættelse.</string>
+    <string name="lockscreen_security_category">Sikkerhed på låseskærmen</string>
+    <string name="lockscreen_block_power_menu_title">Bloker tænd/sluk-menuen, mens enheden er låst</string>
+    <string name="lockscreen_block_power_menu_summary">Blokerer også tænd/sluk-knappen i Hurtigindstillinger og hardwaregenvejen</string>
+    <string name="lockscreen_block_internet_title">Bloker internetstyring, mens enheden er låst</string>
+    <string name="lockscreen_block_airplane_title">Bloker flytilstand, mens enheden er låst</string>
+    <string name="lockscreen_block_bluetooth_title">Bloker Bluetooth, mens enheden er låst</string>
+    <string name="lockscreen_block_hotspot_title">Bloker hotspot, mens enheden er låst</string>
+    <string name="lockscreen_block_dnd_title">Bloker Forstyr ikke, mens enheden er låst</string>
+    <string name="lockscreen_block_ringer_title">Bloker ændringer af ringetilstand, mens enheden er låst</string>
+    <string name="lockscreen_unlock_to_use">Lås op for at bruge</string>
+    <string name="pm_advanced_category">Avancerede installationskontroller</string>
+    <string name="pm_exact_signature_title">Omgå nøjagtig signaturmatchning for split-APK\'er</string>
+    <string name="pm_exact_signature_summary">Høj risiko: tillader forskellige signaturoplysninger for basis- og split-APK\'er under installation</string>
+    <string name="pm_shared_uid_title">Omgå signaturkontrol for delt UID</string>
+    <string name="pm_shared_uid_summary">Høj risiko: tillader opdatering af forskelligt signerede brugerapps med en delt UID; platformens begrænsninger for delt UID gælder fortsat</string>
+    <string name="pm_installer_redirect_category">Omdirigering af installationsprogram</string>
+    <string name="pm_installer_redirect_title">Omdiriger pakkeinstallationsprogrammet</string>
+    <string name="pm_installer_redirect_summary">Send APK-installationsanmodninger og eventuelt afinstallationsanmodninger til en valgt app</string>
+    <string name="pm_installer_target_title">Installationsprogram</string>
+    <string name="pm_installer_system_default">Systemstandard</string>
+    <string name="pm_force_explicit_installer_title">Tilsidesæt udtrykkeligt valgt installationsprogram</string>
+    <string name="pm_force_explicit_installer_summary">Omdiriger også anmodninger, der er fast kodet til en bestemt installationskomponent</string>
+    <string name="pm_intercept_session_title">Omdiriger bekræftelse af sessionsinstallation</string>
+    <string name="pm_intercept_session_summary">Opfang anmodningerne CONFIRM_INSTALL og CONFIRM_PERMISSIONS</string>
+    <string name="pm_fix_session_permissions_title">Ret adgang til sessionens APK-sti</string>
+    <string name="pm_fix_session_permissions_summary">Eksperimentel kompatibilitetsrettelse til eksterne installationsprogrammer på Android 14+</string>
+    <string name="pm_intercept_uninstall_title">Omdiriger afinstallationsanmodninger</string>
+    <string name="pm_intercept_uninstall_summary">Send ACTION_DELETE og ACTION_UNINSTALL_PACKAGE til den valgte app</string>
+    <string name="pm_uninstall_follow_installer_title">Brug installationsprogrammet til afinstallationsanmodninger</string>
+    <string name="pm_uninstaller_target_title">Afinstallationsprogram</string>
+    <string name="app_info_enhancements_category">Appoplysninger</string>
+    <string name="app_info_show_version_code_title">Vis versionskode</string>
+    <string name="app_info_allow_disable_user_apps_title">Tillad deaktivering af brugerapps</string>
+    <string name="app_info_allow_disable_user_apps_summary">Føjer en handling til aktivering/deaktivering til appoplysninger for ikke-systemapps</string>
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Tema, udklipsholder, privatliv og eksperimentelle skrivefunktioner</string>
+    <string name="gboard_theme_category">Tema</string>
+    <string name="gboard_amoled_black_title">AMOLED-sort i mørk tilstand</string>
+    <string name="gboard_amoled_black_summary">Gør Material Expressive-overfladebeholdere helt sorte, men bevar accentfarver</string>
+    <string name="gboard_clipboard_category">Udklipsholder</string>
+    <string name="gboard_clipboard_history_title">Tilpas udklipsholderhistorik</string>
+    <string name="gboard_clipboard_history_summary">Rediger antal og alder for de poster, Gboard anmoder om; ældre poster, som Gboard allerede har slettet, kan ikke gendannes</string>
+    <string name="gboard_clipboard_size_title">Maksimalt antal synlige poster</string>
+    <string name="gboard_clipboard_size_summary">Tilladt interval: 5 til 100</string>
+    <string name="gboard_clipboard_days_title">Synlig historik i dage</string>
+    <string name="gboard_clipboard_days_summary">Tilladt interval: 0 til 3650; 0 anmoder om alle bevarede poster</string>
+    <string name="gboard_secure_clipboard_title">Hold følsom tekst ude af Gboard-historikken</string>
+    <string name="gboard_secure_clipboard_summary">Bloker poster kopieret fra adgangskodefelter samt sandsynlige bekræftelseskoder, pinkoder eller lange kontonumre</string>
+    <string name="gboard_clipboard_chips_title">Handlingschips til udklipsholderen</string>
+    <string name="gboard_clipboard_chips_summary">Aktiver Gboard-handlingschips, enhedsudtrækning og forsøg med kopiering til svar</string>
+    <string name="gboard_privacy_category">Privatliv</string>
+    <string name="gboard_force_incognito_title">Deaktiver personligt tilpasset læring</string>
+    <string name="gboard_force_incognito_summary">Anmod om ingen personligt tilpasset læring i alle inputfelter; dette gennemtvinger ikke hele Gboards inkognito-brugerflade</string>
+    <string name="gboard_privacy_flags_title">Reducer telemetri og træning</string>
+    <string name="gboard_privacy_flags_summary">Tilsidesæt kendte Gboard-flag for lagring af rettelser, indholdsregistrering, logning, målinger og træningscache</string>
+    <string name="gboard_input_category">Inputforbedringer</string>
+    <string name="gboard_multilingual_title">Flersproget indtastning</string>
+    <string name="gboard_multilingual_summary">Aktiver kendte forsøg med flersproget indtastning, forslag samt Pixel- og taleforbedringer</string>
+    <string name="gboard_ai_title">AI og smart input</string>
+    <string name="gboard_ai_summary">Aktiver kendte forsøg med Smart Reply, Smart Compose, emojify, klistermærker og AI Core</string>
+    <string name="gboard_grammar_title">Grammatik og korrektur</string>
+    <string name="gboard_grammar_summary">Aktiver kendte lokale forsøg med korrektur, grammatikkontrol, skriveværktøjer og tekstkonvertering</string>
+    <string name="gboard_floating_title">Flydende og opdelt tastatur</string>
+    <string name="gboard_floating_summary">Aktiver forsøg med liggende visning, flere vinduer, fri form, opdelt tablettastatur, størrelsesskyder og overgange</string>
+    <string name="gboard_emoji_kitchen_title">Forbedringer til Emoji Kitchen</string>
+    <string name="gboard_emoji_kitchen_summary">Aktiver forsøg med gennemgang, søgning, anbefalinger, animationer og indbygget vælger</string>
+    <string name="gboard_access_point_title">Nyt design af genvejsmenuen</string>
+    <string name="gboard_access_point_summary">Aktiver forsøg med adgangspunktsmenu, Silk-tema, systemskrifttype, Google Sans, brugerdefineret tema og animationer</string>
+    <string name="gboard_metered_downloads_title">Tillad downloads på forbrugsafregnede netværk</string>
+    <string name="gboard_metered_downloads_summary">Tillad kendte downloads af sprog-, sprog-id- og talepakker via mobilnetværk eller andre forbrugsafregnede forbindelser</string>
+    <string name="gboard_experimental_category">Eksperimentelle motorer</string>
+    <string name="gboard_experimental_summary">Bruger private Gboard-flag og kan ændre sig eller holde op med at virke efter en opdatering; genstart Gboard efter ændringer</string>
+    <string name="gboard_inline_suggestions_title">Forslag med flere ord i tekstfeltet</string>
+    <string name="gboard_proactive_emoji_title">Proaktive emojiforslag</string>
+    <string name="gboard_tflite_title">TFLite-forudsigelsesmotorer</string>
+    <string name="gboard_fast_access_title">Hurtigadgangslinje</string>
+    <string name="app_name" translatable="false">Pixel Xpert</string>
+    <string name="title_activity_settings" translatable="false">@string/app_name</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+    <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
+    <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
+    <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
+    <string name="am_pm_default" translatable="false">@string/hide_default</string>
+    <string name="date_default" translatable="false">@string/hide_default</string>
+    <string name="canary_flavor" translatable="false">Canary</string>
+    <string name="dialer_force_enable_call_recording_title">Gennemtving opkaldsoptagelse</string>
+    <string name="dialer_force_enable_call_recording_summary">Aktiverer indbygget opkaldsoptagelse i Google Telefon-appen i regioner, der ikke understøttes</string>
+    <string name="landscape_split_shade_title">Tablet-lignende meddelelsespanel i landskab</string>
+    <string name="landscape_split_shade_summary">Vis Hurtige indstillinger og meddelelser side om side, når telefonen drejes vandret</string>
+    <string name="recents_clear_all">Ryd alle</string>
+    <string name="launcher_header">Launcher</string>
+    <string name="launcher_header_summary">Forbedringer af seneste opgaver og startskærm</string>
+    <string name="launcher_home_section">Startskærm</string><string name="launcher_drawer_section">Appskuffe</string><string name="launcher_recents_section">Seneste opgaver</string><string name="launcher_hide_desktop_labels">Skjul ikonnavne på startskærmen</string><string name="launcher_hide_desktop_search">Skjul søgefelt på startskærmen</string><string name="launcher_hide_drawer_labels">Skjul ikonnavne i appskuffen</string><string name="launcher_hide_drawer_search">Skjul søgefelt i appskuffen</string><string name="recents_remove_screenshot">Fjern skærmbilledehandling</string><string name="recents_equal_action_widths">Brug handlingsknapper med samme bredde</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
+	<string name="home_category_personalization">Tilpasning</string>
+	<string name="home_category_system_interface">Systemgrænseflade</string>
+	<string name="home_category_app_enhancements">Appforbedringer</string>
+	<string name="home_category_system_tools">Systemværktøjer</string>
 </resources>
