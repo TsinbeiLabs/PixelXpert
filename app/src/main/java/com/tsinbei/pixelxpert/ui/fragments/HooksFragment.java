@@ -5,6 +5,9 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.tsinbei.pixelxpert.Constants.KSU_NEXT_PACKAGE;
 import static com.tsinbei.pixelxpert.Constants.KSU_PACKAGE;
+import static com.tsinbei.pixelxpert.Constants.RESUKISU_PACKAGE;
+import static com.tsinbei.pixelxpert.Constants.SUKISU_PACKAGE;
+import static com.tsinbei.pixelxpert.Constants.SUKISU_PR_PACKAGE;
 import static com.tsinbei.pixelxpert.Constants.SYSTEM_FRAMEWORK_PACKAGE;
 import static com.tsinbei.pixelxpert.Constants.SYSTEM_UI_PACKAGE;
 import static com.tsinbei.pixelxpert.xposed.utils.BootLoopProtector.PACKAGE_STRIKE_KEY_KEY;
@@ -79,6 +82,8 @@ public class HooksFragment extends BaseFragment {
 	private ServiceConnection mCoreRootServiceConnection;
 	private IRootProviderService mRootServiceIPC = null;
 	private boolean rebootPending = false;
+	private boolean isReceiverRegistered = false;
+	private boolean isViewActive = false;
 	private final String reboot_key = "reboot_pending";
 
 	@Override
@@ -111,6 +116,7 @@ public class HooksFragment extends BaseFragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		binding = FragmentHooksBinding.inflate(inflater, container, false);
+		isViewActive = true;
 
 		if (savedInstanceState != null) {
 			rebootPending = savedInstanceState.getBoolean(reboot_key);
@@ -133,8 +139,9 @@ public class HooksFragment extends BaseFragment {
 		mCoreRootServiceConnection = new ServiceConnection() {
 			@Override
 			public void onServiceConnected(ComponentName name, IBinder service) {
-				binding.loadingIndicator.setVisibility(GONE);
 				mRootServiceIPC = IRootProviderService.Stub.asInterface(service);
+				if (!isViewActive) return;
+				binding.loadingIndicator.setVisibility(GONE);
 				onRootServiceStarted();
 			}
 
@@ -147,12 +154,13 @@ public class HooksFragment extends BaseFragment {
 	}
 
 	private void onRootServiceStarted() {
-		if (getContext() == null) {
+		if (!isViewActive || getContext() == null) {
 			return;
 		}
 
 		intentFilterHookedPackages.addAction(Constants.ACTION_XPOSED_CONFIRMED);
 		requireContext().registerReceiver(receiverHookedPackages, intentFilterHookedPackages, RECEIVER_EXPORTED);
+		isReceiverRegistered = true;
 
 		monitorPackageList = Arrays.asList(getResources().getStringArray(R.array.module_scope));
 		checkHookedPackages();
@@ -166,7 +174,7 @@ public class HooksFragment extends BaseFragment {
 	private final BroadcastReceiver receiverHookedPackages = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			if (Objects.equals(intent.getAction(), Constants.ACTION_XPOSED_CONFIRMED)) {
+			if (isViewActive && Objects.equals(intent.getAction(), Constants.ACTION_XPOSED_CONFIRMED)) {
 				String broadcastPackageName = intent.getStringExtra("packageName");
 
 				for (int i = 0; i < binding.content.getChildCount(); i++) {
@@ -176,8 +184,9 @@ public class HooksFragment extends BaseFragment {
 
 					if (pkgName.equals(broadcastPackageName)) {
 						binding.content.post(() -> {
-							desc.setText(getText(R.string.package_hooked_successful));
-							desc.setTextColor(requireContext().getColor(R.color.success));
+							if (!isViewActive || getContext() == null) return;
+							desc.setText(R.string.package_hooked_successful);
+							desc.setTextColor(context.getColor(R.color.success));
 						});
 					}
 				}
@@ -192,6 +201,8 @@ public class HooksFragment extends BaseFragment {
 	private final CountDownTimer countDownTimer = new CountDownTimer(5000, 500) {
 		@Override
 		public void onTick(long millisUntilFinished) {
+			if (!isViewActive) return;
+
 			dotCount = (dotCount + 1) % 4;
 			String dots = new String(new char[dotCount]).replace('\0', '.');
 
@@ -207,6 +218,8 @@ public class HooksFragment extends BaseFragment {
 
 		@Override
 		public void onFinish() {
+			if (!isViewActive) return;
+
 			dotCount = 0;
 			refreshListItem();
 			if (mXposedService == null && getContext() != null) {
@@ -242,10 +255,13 @@ public class HooksFragment extends BaseFragment {
 	}
 
 	private void checkHookedPackages() {
+		Context context = getContext();
+		if (!isViewActive || context == null) return;
+
 		hookedPackageList.clear();
 
 		initListItem(monitorPackageList);
-		new Thread(() -> requireContext().sendBroadcast(new Intent().setAction(Constants.ACTION_CHECK_XPOSED_ENABLED))).start();
+		context.sendBroadcast(new Intent().setAction(Constants.ACTION_CHECK_XPOSED_ENABLED));
 		waitAndRefresh();
 	}
 
@@ -263,7 +279,7 @@ public class HooksFragment extends BaseFragment {
 
 		List<String> filteredPack = new ArrayList<>();
 		for (String packageName : pack) {
-			if (isAppInstalled(packageName) || (!packageName.equals(KSU_PACKAGE) && !packageName.equals(KSU_NEXT_PACKAGE))) {
+			if (isAppInstalled(packageName) || !Arrays.asList(KSU_PACKAGE, KSU_NEXT_PACKAGE, SUKISU_PACKAGE, SUKISU_PR_PACKAGE, RESUKISU_PACKAGE).contains(packageName)) {
 				filteredPack.add(packageName);
 			}
 		}
@@ -311,6 +327,7 @@ public class HooksFragment extends BaseFragment {
 						@Override
 						public void onScopeRequestApproved(@NonNull List<String> approvedPacks) {
 							activateInLSPosed.post(() -> {
+								if (!isViewActive || getContext() == null) return;
 								activateInLSPosed.animate().setDuration(300).withEndAction(() -> activateInLSPosed.setVisibility(GONE)).start();
 								Toast.makeText(requireContext(), getText(R.string.package_activated), Toast.LENGTH_SHORT).show();
 								binding.rebootButton.show();
@@ -321,6 +338,7 @@ public class HooksFragment extends BaseFragment {
 						@Override
 						public void onScopeRequestFailed(@NonNull String reason) {
 							activateInLSPosed.post(() -> {
+								if (!isViewActive || getContext() == null) return;
 								Toast.makeText(requireContext(), getText(R.string.package_activation_failed), Toast.LENGTH_SHORT).show();
 								activateInLSPosed.setEnabled(true);
 							});
@@ -340,6 +358,11 @@ public class HooksFragment extends BaseFragment {
 			PopupMenu popupMenu = new PopupMenu(requireContext(), list, Gravity.END);
 			MenuInflater inflater = popupMenu.getMenuInflater();
 			inflater.inflate(R.menu.hooks_menu, popupMenu.getMenu());
+			boolean isSystemServer = SYSTEM_FRAMEWORK_PACKAGE.equals(filteredPack.get(finalI));
+			boolean isRunning = isPackageRunning(filteredPack.get(finalI));
+			popupMenu.getMenu().findItem(R.id.launch_app).setVisible(!isSystemServer && !isRunning);
+			popupMenu.getMenu().findItem(R.id.stop_app).setVisible(!isSystemServer && isRunning);
+			popupMenu.getMenu().findItem(R.id.restart_app).setVisible(!isSystemServer);
 
 			popupMenu.setOnMenuItemClickListener(item -> {
 				int itemId = item.getItemId();
@@ -359,16 +382,18 @@ public class HooksFragment extends BaseFragment {
 					}
 				} else if (itemId == R.id.restart_app) {
 					handleApplicationRestart(filteredPack.get(finalI));
+				} else if (itemId == R.id.stop_app) {
+					handleApplicationStop(filteredPack.get(finalI));
 				}
 
 				return true;
 			});
 
 			list.setOnLongClickListener(v -> {
-				if (isAppInstalled) {
+				if (isAppInstalled && !isSystemServer) {
 					popupMenu.show();
 				}
-				return isAppInstalled;
+				return isAppInstalled && !isSystemServer;
 			});
 
 			binding.content.addView(list);
@@ -406,8 +431,8 @@ public class HooksFragment extends BaseFragment {
 				desc.setText(getText(R.string.package_hooked_successful));
 				desc.setTextColor(requireContext().getColor(R.color.success));
 			} else {
-				desc.setTextColor(requireContext().getColor(R.color.error));
 				String description;
+				boolean packageNotRunning = false;
 
 				if (!isAppInstalled(pkgName)) {
 					description = getText(R.string.package_not_found).toString();
@@ -418,11 +443,20 @@ public class HooksFragment extends BaseFragment {
 				} else if (hasBootLooped(pkgName)) {
 					description = getText(R.string.package_hook_bootlooped).toString();
 					reason = getString(R.string.package_hook_bootlooped_info);
+				} else if (!isPackageRunning(pkgName)) {
+					description = getText(R.string.package_not_running).toString();
+					reason = "";
+					packageNotRunning = true;
 				} else {
 					description = getText(R.string.package_hook_no_response).toString();
 					reason = getString(R.string.package_hook_no_response_info);
 				}
 
+				if (packageNotRunning) {
+					desc.setTextColor(desc.getTextColors().getDefaultColor());
+				} else {
+					desc.setTextColor(requireContext().getColor(R.color.error));
+				}
 				desc.setText(description);
 			}
 
@@ -448,6 +482,21 @@ public class HooksFragment extends BaseFragment {
 	private boolean isAppInstalled(String packageName) {
 		try {
 			return mRootServiceIPC.isPackageInstalled(packageName);
+		} catch (RemoteException e) {
+			return false;
+		}
+	}
+
+	private void handleApplicationStop(String packageName) {
+		Shell.cmd(
+				"killall " + packageName,
+				"am force-stop " + packageName
+		).exec();
+	}
+
+	private boolean isPackageRunning(String packageName) {
+		try {
+			return mRootServiceIPC.isPackageRunning(packageName);
 		} catch (RemoteException e) {
 			return false;
 		}
@@ -516,12 +565,13 @@ public class HooksFragment extends BaseFragment {
 	}
 
 	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		try {
+	public void onDestroyView() {
+		isViewActive = false;
+		if (isReceiverRegistered && getContext() != null) {
 			requireContext().unregisterReceiver(receiverHookedPackages);
-		} catch (Exception ignored) {
+			isReceiverRegistered = false;
 		}
 		countDownTimer.cancel();
+		super.onDestroyView();
 	}
 }

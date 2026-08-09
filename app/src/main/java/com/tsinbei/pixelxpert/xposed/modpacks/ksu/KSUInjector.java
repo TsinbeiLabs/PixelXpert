@@ -19,6 +19,7 @@ import org.objenesis.ObjenesisHelper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.lang.reflect.Constructor;
 
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.BuildConfig;
@@ -27,6 +28,8 @@ import com.tsinbei.pixelxpert.xposed.XposedModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.KSUModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.KSUNextModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.ReSukiSUModPack;
+import com.tsinbei.pixelxpert.xposed.annotations.SukiSUModPack;
+import com.tsinbei.pixelxpert.xposed.annotations.SukiSUPrModPack;
 import com.tsinbei.pixelxpert.xposed.utils.SystemUtils;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
 
@@ -36,6 +39,8 @@ import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
 @KSUModPack
 @KSUNextModPack
 @ReSukiSUModPack
+@SukiSUModPack
+@SukiSUPrModPack
 public class KSUInjector extends XposedModPack {
 	private ReflectedClass NativesClass;
 	private ReflectedClass ProfileClass;
@@ -86,8 +91,7 @@ public class KSUInjector extends XposedModPack {
 				boolean haveRoot = Arrays.stream(rootUIDs).anyMatch(uid -> uid == ownUID);
 
 				if (!haveRoot) {
-					Object ownRootProfile = ProfileClass.getClazz().getConstructor(String.class, int.class, boolean.class, boolean.class, String.class, int.class, int.class, List.class, List.class, String.class, int.class, boolean.class, boolean.class, String.class)
-							.newInstance(BuildConfig.APPLICATION_ID, ownUID, true, true, null, 0, 0, new ArrayList<>(), new ArrayList<>(), "u:r:su:s0", 0, true, true, "");
+					Object ownRootProfile = createRootProfile(ownUID);
 
 					callMethod(nativeObject, "setAppProfile", ownRootProfile);
 
@@ -98,6 +102,26 @@ public class KSUInjector extends XposedModPack {
 			} catch (Throwable ignored) {
 			}
 		}).start();
+	}
+
+	private Object createRootProfile(int ownUid) throws Throwable {
+		for (Constructor<?> constructor : ProfileClass.getClazz().getConstructors()) {
+			Class<?>[] parameterTypes = constructor.getParameterTypes();
+			if (parameterTypes.length != 14 && parameterTypes.length != 15) continue;
+			if (parameterTypes[0] != String.class || parameterTypes[1] != Integer.TYPE
+					|| (parameterTypes.length == 14 && parameterTypes[13] != String.class)
+					|| (parameterTypes.length == 15 && parameterTypes[14] != Long.TYPE)) continue;
+			Object[] arguments = {
+					BuildConfig.APPLICATION_ID, ownUid, true, true, null, 0, 0,
+					new ArrayList<>(), new ArrayList<>(), "u:r:su:s0", 0, true, true, ""
+			};
+			if (parameterTypes.length == 15 && parameterTypes[14] == Long.TYPE) {
+				arguments = Arrays.copyOf(arguments, 15);
+				arguments[14] = 1L;
+			}
+			if (arguments.length == parameterTypes.length) return constructor.newInstance(arguments);
+		}
+		throw new NoSuchMethodException("Unsupported KernelSU Profile constructor");
 	}
 
 	private void restartPX(boolean launch) throws InterruptedException {

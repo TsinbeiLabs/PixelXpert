@@ -62,6 +62,8 @@ public class AppUtils {
 		try {
 			String managerPackage = Arrays.asList(
 					Constants.RESUKISU_PACKAGE,
+					Constants.SUKISU_PACKAGE,
+					Constants.SUKISU_PR_PACKAGE,
 					Constants.KSU_NEXT_PACKAGE,
 					Constants.KSU_PACKAGE
 			).stream().filter(packageName -> {

@@ -30,8 +30,11 @@ public final class Constants {
 	public static final String SETTINGS_PACKAGE = "com.android.settings";
 	public static final String DIALER_PACKAGE = "com.google.android.dialer";
 	public static final String GBOARD_PACKAGE = "com.google.android.inputmethod.latin";
+	public static final String DOCUMENTS_UI_PACKAGE = "com.google.android.documentsui";
 	public static final String KSU_PACKAGE = "me.weishu.kernelsu";
 	public static final String KSU_NEXT_PACKAGE = "com.rifsxd.ksunext";
+	public static final String SUKISU_PACKAGE = "com.sukisu.ultra";
+	public static final String SUKISU_PR_PACKAGE = "com.sukisu.ultra.pr";
 	public static final String RESUKISU_PACKAGE = "com.resukisu.resukisu";
 
 	public static final String LAUNCH_REASON_EXTRA = "LAUNCH_REASON";
