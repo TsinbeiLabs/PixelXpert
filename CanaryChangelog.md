@@ -1,3 +1,8 @@
+**canary-525**
+
+- Reject downloaded update ZIPs whose module version does not match the advertised update
+- Show the download-failed notification instead of offering installation while the new Canary binary is not yet available
+
 **canary-524**
 
 - Fixed in-app module updates to install the bundled APK as well as the Magisk or KernelSU module

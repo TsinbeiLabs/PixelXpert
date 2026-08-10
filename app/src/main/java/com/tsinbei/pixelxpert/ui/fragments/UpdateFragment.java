@@ -46,8 +46,11 @@ import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import com.tsinbei.pixelxpert.BuildConfig;
 import com.tsinbei.pixelxpert.PixelXpert;
@@ -73,6 +76,7 @@ public class UpdateFragment extends BaseFragment {
 	static boolean canaryUpdate = BuildConfig.VERSION_NAME.toLowerCase().contains("canary");
 	HashMap<String, Object> latestVersion = null;
 	private String downloadedFilePath;
+	private int downloadVersionCode = -1;
 	private static final String updateDir = String.format("%s/%s", MAGISK_UPDATE_DIR, MOD_NAME);
 	private static final String moduleDir = String.format("%s/%s", MAGISK_MODULES_DIR, MOD_NAME);
 
@@ -89,17 +93,17 @@ public class UpdateFragment extends BaseFragment {
 				try (Cursor downloadData = downloadManager.query(
 						new DownloadManager.Query()
 								.setFilterById(downloadID))) {
-					downloadData.moveToFirst();
+					if (downloadData.moveToFirst()
+							&& downloadData.getInt(downloadData.getColumnIndexOrThrow(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+						int uriColIndex = downloadData.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI);
+						File downloadedFile = new File(URI.create(downloadData.getString(uriColIndex)));
 
-					int uriColIndex = downloadData.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI);
+						if (downloadedFile.exists() && getModuleVersionCode(downloadedFile) == downloadVersionCode) {
+							downloadedFilePath = new File(URI.create(downloadData.getString(uriColIndex))).getAbsolutePath();
 
-					File downloadedFile = new File(URI.create(downloadData.getString(uriColIndex)));
-
-					if (downloadedFile.exists()) {
-						downloadedFilePath = new File(URI.create(downloadData.getString(uriColIndex))).getAbsolutePath();
-
-						notifyInstall();
-						successful = true;
+							notifyInstall();
+							successful = true;
+						}
 					}
 				} catch (Throwable ignored) {
 				}
@@ -330,6 +334,7 @@ public class UpdateFragment extends BaseFragment {
 	}
 
 	public void startDownload(String zipURL, int versionNumber) {
+		downloadVersionCode = versionNumber;
 		IntentFilter filters = new IntentFilter();
 		filters.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
 		filters.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED);
@@ -342,6 +347,24 @@ public class UpdateFragment extends BaseFragment {
 		//noinspection ConstantConditions
 		if (getContext() != null) {
 			getContext().registerReceiver(downloadCompletionReceiver, filters, RECEIVER_EXPORTED);
+		}
+	}
+
+	private int getModuleVersionCode(File moduleZip) {
+		try (ZipFile zipFile = new ZipFile(moduleZip)) {
+			ZipEntry moduleProp = zipFile.getEntry("module.prop");
+			if (moduleProp == null) {
+				return -1;
+			}
+
+			Properties properties = new Properties();
+			try (InputStream stream = zipFile.getInputStream(moduleProp)) {
+				properties.load(stream);
+			}
+			return Integer.parseInt(properties.getProperty("versionCode", "-1"));
+		} catch (Exception e) {
+			Log.w("UpdateFragment", "Downloaded update is not a valid module ZIP", e);
+			return -1;
 		}
 	}
 
