@@ -66,12 +66,12 @@ public class OwnPrefsFragment extends ControlledPreferenceFragmentCompat {
 					return true;
 				});
 
-		findPreference("CrowdinProject").setSummary(getString(R.string.crowdin_summary, getString(R.string.app_name)));
-		findPreference("CrowdinProject")
+		findPreference("WeblateProject").setSummary(getString(R.string.weblate_summary, getString(R.string.app_name)));
+		findPreference("WeblateProject")
 				.setOnPreferenceClickListener(preference -> {
 					try {
 						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setData(Uri.parse("https://pixelxpert.siava.sh/translate"));
+						intent.setData(Uri.parse("https://weblate.milthm.com/"));
 						startActivity(intent);
 					} catch (Exception ignored) {
 						Toast.makeText(getContext(), getString(R.string.browser_not_found), Toast.LENGTH_SHORT).show();

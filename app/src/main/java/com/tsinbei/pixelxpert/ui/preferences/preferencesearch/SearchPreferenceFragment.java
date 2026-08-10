@@ -229,7 +229,7 @@ public class SearchPreferenceFragment extends Fragment implements SearchPreferen
 			viewHolder.searchView.requestFocus();
 			InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 			if (imm != null) {
-				imm.showSoftInput(viewHolder.searchView, InputMethodManager.SHOW_IMPLICIT);
+				imm.showSoftInput(viewHolder.searchView, 0);
 			}
 		});
 	}

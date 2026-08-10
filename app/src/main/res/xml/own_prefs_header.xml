@@ -86,7 +86,7 @@
 			android:icon="@drawable/ic_github"
 			android:key="OriginalGitHubRepo"
 			android:summary="@string/github_original_repo_summary"
-			android:title="@string/github_repo_title" />
+			android:title="@string/github_original_repo_title" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
 			android:icon="@drawable/ic_telegram"
@@ -95,10 +95,10 @@
 			android:title="@string/telegram_group_title" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
-			android:icon="@drawable/ic_crowdin"
-			android:key="CrowdinProject"
-			android:summary="@string/crowdin_summary"
-			android:title="@string/crowdin_title" />
+			android:icon="@drawable/ic_language"
+			android:key="WeblateProject"
+			android:summary="@string/weblate_summary"
+			android:title="@string/weblate_title" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
 			android:icon="@drawable/ic_usage"

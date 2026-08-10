@@ -54,6 +54,7 @@ import java.util.List;
 import java.util.Objects;
 
 import io.github.libxposed.service.XposedService;
+import io.github.libxposed.service.HookedTarget;
 import com.tsinbei.pixelxpert.IRootProviderService;
 import com.tsinbei.pixelxpert.PixelXpert;
 import com.tsinbei.pixelxpert.R;
@@ -363,6 +364,7 @@ public class HooksFragment extends BaseFragment {
 			popupMenu.getMenu().findItem(R.id.launch_app).setVisible(!isSystemServer && !isRunning);
 			popupMenu.getMenu().findItem(R.id.stop_app).setVisible(!isSystemServer && isRunning);
 			popupMenu.getMenu().findItem(R.id.restart_app).setVisible(!isSystemServer);
+			popupMenu.getMenu().findItem(R.id.hot_reload_module).setVisible(hasHotReloadTarget(filteredPack.get(finalI)));
 
 			popupMenu.setOnMenuItemClickListener(item -> {
 				int itemId = item.getItemId();
@@ -384,6 +386,8 @@ public class HooksFragment extends BaseFragment {
 					handleApplicationRestart(filteredPack.get(finalI));
 				} else if (itemId == R.id.stop_app) {
 					handleApplicationStop(filteredPack.get(finalI));
+				} else if (itemId == R.id.hot_reload_module) {
+					hotReloadPackage(filteredPack.get(finalI));
 				}
 
 				return true;
@@ -485,6 +489,48 @@ public class HooksFragment extends BaseFragment {
 		} catch (RemoteException e) {
 			return false;
 		}
+	}
+
+	private boolean hasHotReloadTarget(String packageName) {
+		if (mXposedService == null || mXposedService.getApiVersion() < XposedService.API_102) return false;
+		try {
+			return mXposedService.getRunningTargets().stream()
+					.anyMatch(target -> matchesTargetPackage(target, packageName));
+		} catch (RuntimeException ignored) {
+			return false;
+		}
+	}
+
+	private void hotReloadPackage(String packageName) {
+		if (mXposedService == null) return;
+		final List<HookedTarget> targets;
+		try {
+			targets = mXposedService.getRunningTargets().stream()
+					.filter(target -> matchesTargetPackage(target, packageName))
+					.toList();
+		} catch (RuntimeException exception) {
+			Toast.makeText(requireContext(), R.string.hot_reload_failed, Toast.LENGTH_SHORT).show();
+			return;
+		}
+		if (targets.isEmpty()) return;
+		Toast.makeText(requireContext(), R.string.hot_reload_requested, Toast.LENGTH_SHORT).show();
+		for (HookedTarget target : targets) {
+			mXposedService.hotReloadModule(target, null, (reloadedTarget, result) -> {
+				if (!isAdded()) return;
+				requireActivity().runOnUiThread(() -> Toast.makeText(
+						requireContext(),
+						result.status() == io.github.libxposed.service.HotReloadResult.Status.SUCCEEDED
+								? R.string.hot_reload_succeeded : R.string.hot_reload_failed,
+						Toast.LENGTH_SHORT
+				).show());
+			});
+		}
+	}
+
+	private boolean matchesTargetPackage(HookedTarget target, String packageName) {
+		String processName = target.getProcessName();
+		if (SYSTEM_FRAMEWORK_PACKAGE.equals(packageName)) return "system_server".equals(processName);
+		return processName.equals(packageName) || processName.startsWith(packageName + ":");
 	}
 
 	private void handleApplicationStop(String packageName) {
