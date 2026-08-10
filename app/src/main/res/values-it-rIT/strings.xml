@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Controlla la presenza di nuove versioni di tanto in tanto</string>
     <string name="update_over_wifi_title">Controlla gli aggiornamenti solo tramite WiFi</string>
     <string name="update_over_wifi_summary">Controlla gli aggiornamenti in background solo quando sei connesso al Wi-Fi</string>
-    <string name="github_repo_title">Repositorio GitHub</string>
+    <string name="github_repo_title">Il nostro repository GitHub</string>
+    <string name="github_original_repo_title">Repository GitHub originale</string>
     <string name="telegram_group_title">Canale Telegram</string>
     <string name="usage_title">Utilizzo</string>
     <string name="usage_summary">Apri la pagina wiki</string>
-    <string name="crowdin_title">Traduci nella tua lingua</string>
-    <string name="crowdin_summary">Aiutaci a tradurre %s nella tua lingua</string>
+    <string name="weblate_title">Traduci nella tua lingua</string>
+    <string name="weblate_summary">Aiutaci a tradurre %s nella tua lingua</string>
     <string name="nothing_to_show">Niente da mostrare</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Blocco schermo</string>
@@ -420,7 +421,7 @@
     <string name="update_channel_name">Aggiornamenti</string>
     <string name="download_channel_name">Download</string>
     <string name="assets_download_title">Download dei file in corso</string>
-    <string name="assets_download_body">Download file compagni in corso</string>
+    <string name="assets_download_body">Download dei file complementari in corso</string>
     <string name="assets_download_size_body">Avanzamento: %s</string>
     <string name="update_notification_title">Aggiornamento scaricato</string>
     <string name="update_notification_text">Tocca qui per installare</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Attiva in LSPosed</string>
     <string name="package_not_hook_enabled_info">L\'app è installata, ma LSPosed non è configurata per collegarla. Abilitalo facendo clic su \'%s\'.</string>
     <string name="package_hook_bootlooped_info">L\'hook per l\'applicazione ha causato un bootloop, quindi è stato disabilitato per evitare ulteriori problemi.</string>
-    <string name="package_hook_no_response_info">L\'app non risponde allo stato dell\'hook. Potrebbe non essere attiva in esecuzione, o è possibile che non sia agganciata alla nostra connessione.</string>
+    <string name="package_hook_no_response_info">L\'app non risponde allo stato dell\'hook. È possibile che non sia collegata alla nostra connessione.</string>
     <string name="whats_wrong">Cosa c\'è che non va?</string>
     <string name="package_not_launchable">Il pacchetto non è avviabile</string>
     <string name="menu_launch_app">Avvia app</string>
 	<string name="menu_stop_app">Arresta app</string>
     <string name="menu_restart_app">Riavvia app</string>
+    <string name="menu_hot_reload_module">Ricarica il modulo a caldo</string>
+    <string name="hot_reload_requested">Ricarica a caldo richiesta</string>
+    <string name="hot_reload_succeeded">Modulo ricaricato</string>
+    <string name="hot_reload_failed">Ricarica a caldo non riuscita</string>
     <string name="why">perché?</string>
     <string name="okay">OK</string>
     <!-- Splash Activity -->
@@ -497,7 +502,7 @@
     <!-- Bottom Navigation -->
     <string name="navigation_home">Pagina iniziale</string>
     <string name="navigation_update">Aggiornamenti</string>
-    <string name="navigation_hooks">Hooks</string>
+    <string name="navigation_hooks">Hook</string>
     <string name="navigation_settings">Impostazioni</string>
     <!-- Remap Physical Buttons -->
     <string name="while_screen_is_off_title">Mentre lo schermo è spento</string>

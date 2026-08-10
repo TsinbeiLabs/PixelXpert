@@ -32,12 +32,13 @@
     <string name="auto_update_summary">تحقق من وجود إصدارات جديدة مرة واحدة في فترة</string>
     <string name="update_over_wifi_title">التحقق من التحديثات عبر الواي فاي فقط</string>
     <string name="update_over_wifi_summary">التحقق من وجود تحديثات في الخلفية فقط عند الاتصال بشبكة Wi-Fi</string>
-    <string name="github_repo_title">مستودع GitHub</string>
+    <string name="github_repo_title">مستودع GitHub الخاص بنا</string>
+    <string name="github_original_repo_title">مستودع GitHub الأصلي</string>
     <string name="telegram_group_title">قناة Telegram</string>
     <string name="usage_title">الاستخدام</string>
     <string name="usage_summary">فتح صفحة الويكي</string>
-    <string name="crowdin_title">ترجم إلى لغتك</string>
-    <string name="crowdin_summary">ساعدنا في ترجمة %s إلى لغتك</string>
+    <string name="weblate_title">ترجم إلى لغتك</string>
+    <string name="weblate_summary">ساعدنا في ترجمة %s إلى لغتك</string>
     <string name="nothing_to_show">لا يوجد شيء لعرضه</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">قفل الشاشة</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">تنشيط في LSPosed</string>
     <string name="package_not_hook_enabled_info">تم تثبيت التطبيق، ولكن LSPosed لم يتم تكوينه للربط به. فعله بالنقر على \'%s\'.</string>
     <string name="package_hook_bootlooped_info">تسبب خطاف التطبيق في حلقة إقلاع، لذلك عُطّل لمنع حدوث مشكلات أخرى.</string>
-    <string name="package_hook_no_response_info">لا يستجيب التطبيق لحالة الخطاف. قد لا يكون قيد التشغيل حاليًا، أو ربما لم يُربط باتصالنا.</string>
+    <string name="package_hook_no_response_info">لا يستجيب التطبيق لحالة الخطاف. ربما لم يُربط باتصالنا.</string>
     <string name="whats_wrong">ما الخطأ؟</string>
     <string name="package_not_launchable">الحزمة غير قابلة للتشغيل</string>
     <string name="menu_launch_app">تشغيل التطبيق</string>
 	<string name="menu_stop_app">إيقاف التطبيق</string>
     <string name="menu_restart_app">إعادة تشغيل التطبيق</string>
+    <string name="menu_hot_reload_module">إعادة تحميل الوحدة مباشرةً</string>
+    <string name="hot_reload_requested">تم طلب إعادة التحميل المباشر</string>
+    <string name="hot_reload_succeeded">تمت إعادة تحميل الوحدة</string>
+    <string name="hot_reload_failed">فشلت إعادة التحميل المباشر</string>
     <string name="why">لماذا؟</string>
     <string name="okay">حسنًا</string>
     <!-- Splash Activity -->

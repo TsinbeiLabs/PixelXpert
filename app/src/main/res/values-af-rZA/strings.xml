@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Kyk af en toe vir nuwe weergawes</string>
     <string name="update_over_wifi_title">Gaan opdaterings slegs oor WiFi na</string>
     <string name="update_over_wifi_summary">Kyk net vir opdaterings in die agtergrond wanneer dit aan wifi gekoppel is</string>
-    <string name="github_repo_title">GitHub-bewaarplek</string>
+    <string name="github_repo_title">Ons GitHub-bewaarplek</string>
+    <string name="github_original_repo_title">Oorspronklike GitHub-bewaarplek</string>
     <string name="telegram_group_title">Telegram-kanaal</string>
     <string name="usage_title">Gebruik</string>
     <string name="usage_summary">Maak die wiki-bladsy oop</string>
-    <string name="crowdin_title">Vertaal na jou taal</string>
-    <string name="crowdin_summary">Help ons om %s na jou eie taal te vertaal</string>
+    <string name="weblate_title">Vertaal na jou taal</string>
+    <string name="weblate_summary">Help ons om %s na jou eie taal te vertaal</string>
     <string name="nothing_to_show">Niks om te wys nie</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Sluit skerm</string>
@@ -159,7 +160,7 @@
     <string name="sb_padding_summary">Om die waardes op min/maks te stel, is gelykstaande aan toestelverstek</string>
     <string name="sbbb_header_title">Batterybalk</string>
     <string name="sbbb_header">Batterybalkinstellings</string>
-    <string name="BB_enable_title">Aktiveer batterybalk</string>
+    <string name="BB_enable_title">Aktiveer batterystaaf</string>
     <string name="BB_onlycharging_title">Slegs tydens laai</string>
     <string name="BB_move_SB_bottom_title">Onderaan Statusbalk</string>
     <string name="BB_colorful_title">Maak dit kleurvol</string>
@@ -276,8 +277,8 @@
     <string name="taskbar_radius_title">Taakbalk hoekkurwe</string>
     <string name="colorpill">Aksentkleurige gebaarpil</string>
     <string name="taskbar_status_title">Android-taakbalk</string>
-    <string name="taskbar_force_enable_title">Force geaktiveer</string>
-    <string name="taskbar_force_disable_title">Dwing gedeaktiveer</string>
+    <string name="taskbar_force_enable_title">Geforseerde aktivering</string>
+    <string name="taskbar_force_disable_title">Geforseerde deaktivering</string>
     <string name="taskbar_transient_title">Versteek outomaties</string>
     <string name="taskbar_on_launcher_title">Wys op tuisskerm</string>
     <string name="remap_physical_buttons_title">Herkoppel fisiese knoppies</string>
@@ -294,7 +295,7 @@
     <string name="screen_record_insecure">Laat skermopname van beperkte inhoud toe</string>
     <string name="clipboard_smart_actions_title">Slim handelinge op knipbord-oorleg</string>
     <string name="allow_all_screen_rotations">Dwing-ontsluit alle skermrotasies</string>
-    <string name="allow_all_screen_rotations_summary">Sal ook handrotasie drywende knoppie ignoreer</string>
+    <string name="allow_all_screen_rotations_summary">Sal ook die drywende knoppie vir handrotasie ignoreer</string>
     <string name="force_no_cutout">Ignoreer die kamera-uitsny</string>
     <string name="clear_all_reposition_title">Voeg \'n "Vee alles uit"-knoppie onder onlangse aksies by</string>
     <string name="force_themed_icons_title">Genereer ontbrekende tema-ikone outomaties</string>
@@ -320,9 +321,9 @@
     <string name="px_in_settings_title">Voeg PixelXpert by Instellings</string>
     <string name="advanced_power_menu_title">Gevorderde kragkieslys</string>
     <string name="sleep_on_flat_screen_title">Skakel die skerm af op \'n plat oppervlak</string>
-    <string name="sleep_on_flat_screen_tile_title">Slaap op oppervlak</string>
+    <string name="sleep_on_flat_screen_tile_title">Slaap op plat oppervlak</string>
     <string name="flat_screen_timeout_title">Skermtydlimiet op \'n plat oppervlak</string>
-    <string name="flat_screen_timeout_respect_wakelock_title">Eerbiedig wakslotte</string>
+    <string name="flat_screen_timeout_respect_wakelock_title">Respekteer wakkerhou-slotte</string>
     <string name="notifications_header">Kennisgewings opsies</string>
     <string name="expand_notifications_icons_title">Voeg alle knoppies uit/vou alle knoppies in</string>
     <string name="disbale_ongoing_notif_dismiss_title">Moet nooit deurlopende kennisgewings wegvee nie</string>
@@ -480,14 +481,18 @@
     <string name="activate_in_lsposed">Aktiveer in LSPosed</string>
     <string name="package_not_hook_enabled_info">Die program is geïnstalleer, maar LSPosed is nie ingestel om dit te hook nie. Aktiveer dit deur op \'%s\' te tik.</string>
     <string name="package_hook_bootlooped_info">Die program se hook het \'n selflaailus veroorsaak en is gedeaktiveer om verdere probleme te voorkom.</string>
-    <string name="package_hook_no_response_info">Die program reageer nie op die hook-status nie. Dit loop moontlik nie tans nie, of is dalk nie aan ons verbinding ge-hook nie.</string>
+    <string name="package_hook_no_response_info">Die program reageer nie op die hook-status nie. Dit is dalk nie aan ons verbinding ge-hook nie.</string>
     <string name="whats_wrong">Wat is fout?</string>
     <string name="package_not_launchable">Pakket kan nie begin word nie</string>
     <string name="menu_launch_app">Begin program</string>
 	<string name="menu_stop_app">Stop program</string>
     <string name="menu_restart_app">Herbegin program</string>
+    <string name="menu_hot_reload_module">Laai module warm</string>
+    <string name="hot_reload_requested">Warm herlaai aangevra</string>
+    <string name="hot_reload_succeeded">Module herlaai</string>
+    <string name="hot_reload_failed">Warm herlaai het misluk</string>
     <string name="why">hoekom?</string>
-    <string name="okay">Okay</string>
+    <string name="okay">Goed</string>
     <!-- Splash Activity -->
     <string name="checking_root_permissions">Kontroleer worteltoestemmings…</string>
     <string name="connecting_root_service">Koppel aan die worteldiens…</string>
@@ -497,7 +502,7 @@
     <!-- Bottom Navigation -->
     <string name="navigation_home">Tuis</string>
     <string name="navigation_update">Opdateer</string>
-    <string name="navigation_hooks">Hooks</string>
+    <string name="navigation_hooks">Koppelpunte</string>
     <string name="navigation_settings">Instellings</string>
     <!-- Remap Physical Buttons -->
     <string name="while_screen_is_off_title">Terwyl die skerm af is</string>
@@ -538,7 +543,7 @@
     <!--Optimization restart request-->
     <string name="optimization_restart_needed_title">Herbegin word aanbeveel</string>
     <string name="optimization_restart_needed_message">\'n Herbegin word aanbeveel om stelselintegrasie te verbeter</string>
-    <string name="restart_postpone">Later</string>
+    <string name="restart_postpone">Later weer</string>
     <string name="restart_now">Herbegin nou</string>
     <string name="watts">Watts</string>
     <string name="fast_charging_threshold_title">Drempel vir vinnige laai</string>

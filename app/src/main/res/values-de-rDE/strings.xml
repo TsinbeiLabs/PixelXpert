@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Suchen Sie ab und zu nach neuen Versionen</string>
     <string name="update_over_wifi_title">Updates nur über WLAN suchen</string>
     <string name="update_over_wifi_summary">Suchen Sie nur dann im Hintergrund nach Updates, wenn eine WLAN-Verbindung besteht</string>
-    <string name="github_repo_title">GitHub-Repository</string>
+    <string name="github_repo_title">Unser GitHub-Repository</string>
+    <string name="github_original_repo_title">Originales GitHub-Repository</string>
     <string name="telegram_group_title">Telegram Kanal</string>
     <string name="usage_title">Verwendung</string>
     <string name="usage_summary">Wiki-Seite öffnen</string>
-    <string name="crowdin_title">In Deine Sprache übersetzen</string>
-    <string name="crowdin_summary">Hilf uns, %s in deine eigene Sprache zu übersetzen</string>
+    <string name="weblate_title">In Deine Sprache übersetzen</string>
+    <string name="weblate_summary">Hilf uns, %s in deine eigene Sprache zu übersetzen</string>
     <string name="nothing_to_show">Nichts zu sehen</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Sperrbildschirm</string>
@@ -399,7 +400,7 @@
     <string name="app_kill_ok_btn">OK</string>
     <!-- Depth Effect Alert -->
     <string name="depth_effect_alert_title">Aufmerksamkeit</string>
-    <string name="depth_effect_alert_body">Verwenden Sie einen geeigneten Sperrbildschirm-Hintergrund, bei dem die Vordergrundelemente nicht die gesamte Uhr auf Ihrem Sperrbildschirm behindern, Damit sowohl visuelle als auch funktionale Klarheit auf Ihrem Sperrbildschirm gewährleistet sind.\n\nHinweis: %s.</string>
+    <string name="depth_effect_alert_body">Verwenden Sie ein geeignetes Sperrbild, dessen Vordergrundelemente die Uhr auf dem Sperrbildschirm nicht vollständig verdecken, damit sowohl die Optik als auch die Funktionalität erhalten bleiben.\n\nHinweis: %s.</string>
     <string name="depth_effect_ok_btn">Ok</string>
     <!-- Reboot alert -->
     <string name="pending_actions">Ausstehende Aufgaben</string>
@@ -480,14 +481,18 @@
     <string name="activate_in_lsposed">In LSPosed aktivieren</string>
     <string name="package_not_hook_enabled_info">Die App ist installiert, aber LSPosed ist nicht so konfiguriert, dass sie in sie eingehängt wird. Aktivieren Sie sie durch Klicken auf \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Der Hook für die App verursachte eine Bootschleife, daher wurde er deaktiviert, um weitere Probleme zu verhindern.</string>
-    <string name="package_hook_no_response_info">Die App reagiert nicht auf den Hook-Status. Sie läuft möglicherweise nicht aktiv oder es ist möglich, dass sie nicht an unsere Verbindung angeschlossen ist.</string>
+    <string name="package_hook_no_response_info">Die App reagiert nicht auf den Hook-Status. Möglicherweise ist sie nicht mit unserer Verbindung verbunden.</string>
     <string name="whats_wrong">Was ist falsch?</string>
     <string name="package_not_launchable">Paket kann nicht gestartet werden</string>
     <string name="menu_launch_app">App öffnen</string>
 	<string name="menu_stop_app">App beenden</string>
     <string name="menu_restart_app">App neu starten</string>
+    <string name="menu_hot_reload_module">Modul direkt neu laden</string>
+    <string name="hot_reload_requested">Direktes Neuladen angefordert</string>
+    <string name="hot_reload_succeeded">Modul neu geladen</string>
+    <string name="hot_reload_failed">Direktes Neuladen fehlgeschlagen</string>
     <string name="why">warum?</string>
-    <string name="okay">Okay</string>
+    <string name="okay">OK</string>
     <!-- Splash Activity -->
     <string name="checking_root_permissions">Root-Berechtigungen prüfen…</string>
     <string name="connecting_root_service">Verbindung zum Root-Dienst herstellen…</string>
@@ -496,7 +501,7 @@
     <string name="exit">Beenden</string>
     <!-- Bottom Navigation -->
     <string name="navigation_home">Startseite</string>
-    <string name="navigation_update">Update</string>
+    <string name="navigation_update">Aktualisierung</string>
     <string name="navigation_hooks">Hooks</string>
     <string name="navigation_settings">Einstellungen</string>
     <!-- Remap Physical Buttons -->

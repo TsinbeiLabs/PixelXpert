@@ -32,12 +32,13 @@
     <string name="auto_update_summary">自動的に新しいバージョンを確認</string>
     <string name="update_over_wifi_title">WiFi 経由でのみアップデートを確認する</string>
     <string name="update_over_wifi_summary">Wi-Fi に接続している場合にのみバックグラウンドでアップデートを確認する</string>
-    <string name="github_repo_title">GitHub リポジトリ</string>
+    <string name="github_repo_title">私たちの GitHub リポジトリ</string>
+    <string name="github_original_repo_title">元の GitHub リポジトリ</string>
     <string name="telegram_group_title">Telegram チャンネル</string>
     <string name="usage_title">使用法</string>
     <string name="usage_summary">ウィキページを開く</string>
-    <string name="crowdin_title">翻訳</string>
-    <string name="crowdin_summary">%s の日本語翻訳にご協力ください</string>
+    <string name="weblate_title">翻訳</string>
+    <string name="weblate_summary">%s の日本語翻訳にご協力ください</string>
     <string name="nothing_to_show">利用できるコンテンツはありません</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">ロック画面</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">LSPosed でアクティブ化する</string>
     <string name="package_not_hook_enabled_info">アプリがインストールされていますが、LSPosed はフックするように設定されていません。「%s」をクリックして有効にしてください。</string>
     <string name="package_hook_bootlooped_info">アプリのフックによりブートループが発生したため、さらなる問題を防ぐために無効化されています。</string>
-    <string name="package_hook_no_response_info">アプリがフック状態に応答していません。アクティブに実行されていないか、接続に接続されていない可能性があります。</string>
+    <string name="package_hook_no_response_info">アプリがフック状態に応答していません。接続されていない可能性があります。</string>
     <string name="whats_wrong">どうしたの？</string>
     <string name="package_not_launchable">起動可能パッケージではありません</string>
     <string name="menu_launch_app">アプリを起動</string>
 	<string name="menu_stop_app">アプリを停止</string>
     <string name="menu_restart_app">アプリを再起動</string>
+    <string name="menu_hot_reload_module">モジュールをホットリロード</string>
+    <string name="hot_reload_requested">ホットリロードを要求しました</string>
+    <string name="hot_reload_succeeded">モジュールを再読み込みしました</string>
+    <string name="hot_reload_failed">ホットリロードに失敗しました</string>
     <string name="why">どうして?</string>
     <string name="okay">OK</string>
     <!-- Splash Activity -->

@@ -6,7 +6,7 @@
 	<string name="launcher_hide_at_a_glance">"Auf einen Blick" ausblenden</string>
 	<string name="launcher_hide_at_a_glance_summary">Das "Auf einen Blick"-Widget vom Startbildschirm ausblenden</string>
 	<string name="launcher_wallpaper_zooming">Hintergrundbild zoomen</string>
-	<string name="launcher_wallpaper_zooming_summary">Hintergrundbild beim Öffnen der App-Übersicht und der Übersicht zoomen</string>
+ <string name="launcher_wallpaper_zooming_summary">Hintergrundbild beim Öffnen der App-Übersicht und der zuletzt verwendeten Apps zoomen</string>
 	<string name="launcher_quick_launch">Erstes Suchergebnis mit Enter starten</string>
 	<string name="launcher_quick_launch_summary">In der App-Suche Enter drücken, um das erste App-Ergebnis zu starten</string>
 	<string name="launcher_hide_drawer_apps">Apps aus der App-Übersicht ausblenden</string>

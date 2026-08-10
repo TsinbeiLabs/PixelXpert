@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Időnként ellenőrizze az új verziókat</string>
     <string name="update_over_wifi_title">Csak WiFi-n keresztül ellenőrizze a frissítéseket</string>
     <string name="update_over_wifi_summary">Csak akkor ellenőrizze a frissítéseket a háttérben, ha csatlakozik wifi-hez</string>
-    <string name="github_repo_title">GitHub adattár</string>
+    <string name="github_repo_title">Saját GitHub-adattárunk</string>
+    <string name="github_original_repo_title">Eredeti GitHub-adattár</string>
     <string name="telegram_group_title">Telegram-csatorna</string>
     <string name="usage_title">Használat</string>
     <string name="usage_summary">Nyissa meg a wiki oldalt</string>
-    <string name="crowdin_title">Fordítsd le a saját nyelvedre</string>
-    <string name="crowdin_summary">Segíts lefordítani a %s a saját nyelvedre</string>
+    <string name="weblate_title">Fordítsd le a saját nyelvedre</string>
+    <string name="weblate_summary">Segíts lefordítani a %s a saját nyelvedre</string>
     <string name="nothing_to_show">Nincs megjeleníthető tartalom</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Lezárási képernyő</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Aktiválás az LSPosedben</string>
     <string name="package_not_hook_enabled_info">Az alkalmazás telepítve van, de az LSPosed nincs beállítva a kapcsolódásra. Engedélyezze a(z) \'%s\' lehetőséggel.</string>
     <string name="package_hook_bootlooped_info">Az alkalmazás kapcsolódása rendszerindítási ciklust okozott, ezért a további problémák elkerülése érdekében le lett tiltva.</string>
-    <string name="package_hook_no_response_info">Az alkalmazás nem válaszol a kapcsolódási állapot ellenőrzésére. Lehet, hogy nem fut, vagy nincs csatlakoztatva a kapcsolatunkhoz.</string>
+    <string name="package_hook_no_response_info">Az alkalmazás nem válaszol a kapcsolódási állapot ellenőrzésére. Lehet, hogy nincs csatlakoztatva a kapcsolatunkhoz.</string>
     <string name="whats_wrong">Mi a probléma?</string>
     <string name="package_not_launchable">A csomag nem futtatható</string>
     <string name="menu_launch_app">App futtatása</string>
 	<string name="menu_stop_app">App leállítása</string>
     <string name="menu_restart_app">App újraindítása</string>
+    <string name="menu_hot_reload_module">Modul újratöltése futás közben</string>
+    <string name="hot_reload_requested">Futás közbeni újratöltés kérve</string>
+    <string name="hot_reload_succeeded">A modul újratöltve</string>
+    <string name="hot_reload_failed">A futás közbeni újratöltés sikertelen</string>
     <string name="why">miért?</string>
     <string name="okay">Rendben</string>
     <!-- Splash Activity -->

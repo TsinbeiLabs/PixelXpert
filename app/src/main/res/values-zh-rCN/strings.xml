@@ -32,14 +32,15 @@
     <string name="auto_update_summary">每隔一段时间检查新版本</string>
     <string name="update_over_wifi_title">仅通过 WiFi 检查更新</string>
     <string name="update_over_wifi_summary">仅当连接到 WiFi 时才在后台检查更新</string>
-    <string name="github_repo_title">GitHub 仓库</string>
+    <string name="github_repo_title">我们的 GitHub 仓库</string>
+    <string name="github_original_repo_title">原版 GitHub 仓库</string>
 	<string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
 	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
     <string name="telegram_group_title">Telegram 频道</string>
     <string name="usage_title">用途</string>
     <string name="usage_summary">打开 Wiki 页面</string>
-    <string name="crowdin_title">翻译到你的语言</string>
-    <string name="crowdin_summary">帮助我们将 %s 翻译成您的语言</string>
+    <string name="weblate_title">翻译到你的语言</string>
+    <string name="weblate_summary">帮助我们将 %s 翻译成您的语言</string>
     <string name="nothing_to_show">无内容</string>
     <!--Category titles-->
 	<string name="home_category_personalization">个性化</string>
@@ -526,12 +527,16 @@
     <string name="activate_in_lsposed">在 LSposed 中启用</string>
     <string name="package_not_hook_enabled_info">应用已安装，但 LSPosed 尚未配置为注入该应用。点击“%s”即可启用。</string>
     <string name="package_hook_bootlooped_info">对该应用的注入导致启动循环，因此已停用，以免继续引发问题。</string>
-    <string name="package_hook_no_response_info">应用未响应注入状态查询。它可能尚未运行，或未正确连接到本模块。</string>
+    <string name="package_hook_no_response_info">应用未响应注入状态查询，可能未正确连接到本模块。</string>
     <string name="whats_wrong">出了什么问题？</string>
     <string name="package_not_launchable">软件包不可启动</string>
     <string name="menu_launch_app">启动应用</string>
 	<string name="menu_stop_app">停止应用</string>
     <string name="menu_restart_app">重启应用</string>
+    <string name="menu_hot_reload_module">热重载模块</string>
+    <string name="hot_reload_requested">已请求热重载</string>
+    <string name="hot_reload_succeeded">模块已重新加载</string>
+    <string name="hot_reload_failed">热重载失败</string>
     <string name="why">为什么？</string>
     <string name="okay">好的</string>
     <!-- Splash Activity -->

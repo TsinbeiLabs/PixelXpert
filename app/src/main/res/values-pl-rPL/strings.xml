@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Co jakiś czas sprawdzaj dostępność nowych wersji</string>
     <string name="update_over_wifi_title">Sprawdzaj aktualizacje tylko przez Wi-Fi</string>
     <string name="update_over_wifi_summary">Sprawdzaj dostępność aktualizacji w tle tylko po podłączeniu do sieci Wi-Fi</string>
-    <string name="github_repo_title">Repozytorium GitHuba</string>
+    <string name="github_repo_title">Nasze repozytorium GitHub</string>
+    <string name="github_original_repo_title">Oryginalne repozytorium GitHub</string>
     <string name="telegram_group_title">Kanał Telegram</string>
     <string name="usage_title">Stosowanie</string>
     <string name="usage_summary">Otwórz stronę wiki</string>
-    <string name="crowdin_title">Przetłumacz na swój język</string>
-    <string name="crowdin_summary">Pomóż nam w tłumaczeniu %s na swój własny język</string>
+    <string name="weblate_title">Przetłumacz na swój język</string>
+    <string name="weblate_summary">Pomóż nam w tłumaczeniu %s na swój własny język</string>
     <string name="nothing_to_show">Nie ma nic do pokazania</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Ekran blokady</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Aktywuj w LSPosed</string>
     <string name="package_not_hook_enabled_info">Aplikacja jest zainstalowana, ale LSPosed nie jest skonfigurowany do zaczepu. Włącz ją, klikając \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Hak dla aplikacji spowodował bootloop, więc został wyłączony, aby zapobiec dalszym problemom.</string>
-    <string name="package_hook_no_response_info">Aplikacja nie odpowiada na status zaczepu. Może nie być aktywna, lub jest możliwe, że nie jest zaczepiona do naszego połączenia.</string>
+    <string name="package_hook_no_response_info">Aplikacja nie odpowiada na status hooka. Możliwe, że nie jest połączona z naszym połączeniem.</string>
     <string name="whats_wrong">Co jest nie tak?</string>
     <string name="package_not_launchable">Pakiet nie może być uruchomiony</string>
     <string name="menu_launch_app">Uruchom aplikację</string>
 	<string name="menu_stop_app">Zatrzymaj aplikację</string>
     <string name="menu_restart_app">Uruchom ponownie aplikację</string>
+    <string name="menu_hot_reload_module">Przeładuj moduł na gorąco</string>
+    <string name="hot_reload_requested">Zażądano przeładowania na gorąco</string>
+    <string name="hot_reload_succeeded">Moduł przeładowany</string>
+    <string name="hot_reload_failed">Przeładowanie na gorąco nie powiodło się</string>
     <string name="why">Dlaczego?</string>
     <string name="okay">OK</string>
     <!-- Splash Activity -->

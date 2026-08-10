@@ -32,12 +32,13 @@
     <string name="auto_update_summary">هر چند وقت یکبار نسخه های جدید را بررسی کنید</string>
     <string name="update_over_wifi_title">به‌روزرسانی‌ها را فقط از طریق WiFi بررسی کنید</string>
     <string name="update_over_wifi_summary">فقط زمانی که به وای فای متصل هستید، به‌روزرسانی‌ها را در پس‌زمینه بررسی کنید</string>
-    <string name="github_repo_title">منبع GitHub</string>
+    <string name="github_repo_title">مخزن GitHub ما</string>
+    <string name="github_original_repo_title">مخزن اصلی GitHub</string>
     <string name="telegram_group_title">کانال تلگرام</string>
     <string name="usage_title">استفاده</string>
     <string name="usage_summary">صفحه ویکی را باز کنید</string>
-    <string name="crowdin_title">همکاری در ترجمه این برنامه</string>
-    <string name="crowdin_summary">کمک کنید که ترجمه %s تکمیل شود</string>
+    <string name="weblate_title">همکاری در ترجمه این برنامه</string>
+    <string name="weblate_summary">کمک کنید که ترجمه %s تکمیل شود</string>
     <string name="nothing_to_show">چیزی برای نمایش وجود ندارد</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">صفحه قفل</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">در LSPosed فعال کنید</string>
     <string name="package_not_hook_enabled_info">برنامه نصب شده است، اما LSPosed برای اتصال به آن پیکربندی نشده است. با کلیک کردن روی \"%s\" آن را فعال کنید.</string>
     <string name="package_hook_bootlooped_info">قلاب برنامه باعث بوت لوپ شد، بنابراین برای جلوگیری از مشکلات بیشتر غیرفعال شده است.</string>
-    <string name="package_hook_no_response_info">برنامه به وضعیت هوک پاسخ نمی دهد. ممکن است به طور فعال در حال اجرا نباشد، یا این امکان وجود دارد که به اتصال ما متصل نباشد.</string>
+    <string name="package_hook_no_response_info">برنامه به وضعیت هوک پاسخ نمی‌دهد. ممکن است به اتصال ما متصل نباشد.</string>
     <string name="whats_wrong">چه اشکالی دارد؟</string>
     <string name="package_not_launchable">این برنامه قابل اجرا نیست</string>
     <string name="menu_launch_app">اجرا</string>
 	<string name="menu_stop_app">توقف برنامه</string>
     <string name="menu_restart_app">راه‌اندازی مجدد</string>
+    <string name="menu_hot_reload_module">بارگذاری مجدد سریع ماژول</string>
+    <string name="hot_reload_requested">درخواست بارگذاری مجدد سریع ارسال شد</string>
+    <string name="hot_reload_succeeded">ماژول دوباره بارگذاری شد</string>
+    <string name="hot_reload_failed">بارگذاری مجدد سریع ناموفق بود</string>
     <string name="why">چرا؟</string>
     <string name="okay">باشه</string>
     <!-- Splash Activity -->

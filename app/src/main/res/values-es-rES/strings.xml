@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Buscar nuevas versiones de vez en cuando</string>
     <string name="update_over_wifi_title">Comprobar actualizaciones solo por WiFi</string>
     <string name="update_over_wifi_summary">Buscar actualizaciones en segundo plano sólo cuando se conecta a wifi</string>
-    <string name="github_repo_title">Repositorio de GitHub</string>
+    <string name="github_repo_title">Nuestro repositorio de GitHub</string>
+    <string name="github_original_repo_title">Repositorio original de GitHub</string>
     <string name="telegram_group_title">Canal de Telegram</string>
     <string name="usage_title">Uso</string>
     <string name="usage_summary">Abrir página wiki</string>
-    <string name="crowdin_title">Traducir a mi idioma</string>
-    <string name="crowdin_summary">Ayúdanos a traducir %s a tu propio idioma</string>
+    <string name="weblate_title">Traducir a mi idioma</string>
+    <string name="weblate_summary">Ayúdanos a traducir %s a tu propio idioma</string>
     <string name="nothing_to_show">No hay nada que mostrar</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Pantalla de bloqueo</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Activar en LSPosed</string>
     <string name="package_not_hook_enabled_info">La aplicación está instalada, pero LSPosed no está configurado para conectarla. Habilítelo haciendo clic en \'%s\'.</string>
     <string name="package_hook_bootlooped_info">El gancho para la aplicación causó un bucle de arranque, por lo que ha sido desactivado para evitar más problemas.</string>
-    <string name="package_hook_no_response_info">La aplicación no está respondiendo al estado del gancho. Puede que no esté funcionando activamente, o es posible que no esté conectado a nuestra conexión.</string>
+    <string name="package_hook_no_response_info">La aplicación no responde al estado del hook. Es posible que no esté conectada a nuestra conexión.</string>
     <string name="whats_wrong">¿Qué hay mal?</string>
     <string name="package_not_launchable">El paquete no se puede lanzar</string>
     <string name="menu_launch_app">Abrir aplicación</string>
 	<string name="menu_stop_app">Detener aplicación</string>
     <string name="menu_restart_app">Reiniciar aplicación</string>
+    <string name="menu_hot_reload_module">Recargar módulo en caliente</string>
+    <string name="hot_reload_requested">Recarga en caliente solicitada</string>
+    <string name="hot_reload_succeeded">Módulo recargado</string>
+    <string name="hot_reload_failed">La recarga en caliente ha fallado</string>
     <string name="why">¿Por qué?</string>
     <string name="okay">Ok</string>
     <!-- Splash Activity -->

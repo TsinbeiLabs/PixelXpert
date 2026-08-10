@@ -721,7 +721,7 @@
   
 **canary-294**  
 - Recents taskbar now shows suggested apps if there's no recent app to show  
-- New language: Arabic (You can contribute to translations on: https://crowdin.com/project/aospmods)  
+- New language: Arabic (translation contributions are welcome)  
   
 **canary-293**  
 - A14: Added option to disable lockscreen customization pill  
@@ -730,12 +730,12 @@
 - UI Improvement  
 - removed the remaining "reduce keyboard space" option from the app  
 - A14QPR1: Fixed taskbar (Note: Activating the taskbar with this release will trigger "tablet mode" on pixel launcher)  
-- New language: Hungarian! (translate your language via: https://crowdin.com/project/aospmods)  
+- New language: Hungarian! (translation contributions are welcome)  
   
 **canary-291**  
 - Added option to disable dismissing the ongoing notifications (A14+)  
 - A14: Fixed lockscreen customization button showing up during lockscreen double-tap-torch  
-- Moved translations to crowdin  
+- Moved translations to an external translation platform  
   
 **canary-290**  
 - Introducing Pixel Xpert! From the beginning, AOSPMods was designed using AOSP source code, with Pixel phones in mind. But the name was confusing to many people running AOSP based custom roms. So, in favor of more clarity, we've decided to rename to module to Pixel Xpert Also, since we are not maintaining the fonts and overlays which were part of "Full Package", they are now removed from the module permanently.  

@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Thỉnh thoảng kiểm tra các phiên bản mới</string>
     <string name="update_over_wifi_title">Chỉ kiểm tra cập nhật qua WiFi</string>
     <string name="update_over_wifi_summary">Chỉ kiểm tra các bản cập nhật ở chế độ nền khi kết nối với wifi</string>
-    <string name="github_repo_title">Nguồn Github</string>
+    <string name="github_repo_title">Kho GitHub của chúng tôi</string>
+    <string name="github_original_repo_title">Kho GitHub gốc</string>
     <string name="telegram_group_title">Kênh Telegram</string>
     <string name="usage_title">Cách sử dụng</string>
     <string name="usage_summary">Mở trang wiki</string>
-    <string name="crowdin_title">Dịch sang ngôn ngữ của bạn</string>
-    <string name="crowdin_summary">Hãy giúp chúng tôi dịch %s sang ngôn ngữ của bạn</string>
+    <string name="weblate_title">Dịch sang ngôn ngữ của bạn</string>
+    <string name="weblate_summary">Hãy giúp chúng tôi dịch %s sang ngôn ngữ của bạn</string>
     <string name="nothing_to_show">Không có gì để hiển thị</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Màn hình khóa</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Kích hoạt trong LSPosed</string>
     <string name="package_not_hook_enabled_info">Ứng dụng đã được cài đặt nhưng LPosed chưa được định cấu hình để kết nối với ứng dụng. Kích hoạt bằng cách nhấp vào \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Móc nối của ứng dụng đã gây ra vòng lặp khởi động nên nó đã bị vô hiệu hóa để ngăn chặn các sự cố tiếp theo.</string>
-    <string name="package_hook_no_response_info">Ứng dụng không phản hồi với trạng thái móc nối. Nó có thể đang không hoạt động tích cực hoặc khả năng nó không được móc nối với liên kết của chúng tôi.</string>
+    <string name="package_hook_no_response_info">Ứng dụng không phản hồi với trạng thái móc nối. Có thể ứng dụng chưa được móc nối với kết nối của chúng tôi.</string>
     <string name="whats_wrong">Chuyện gì xảy ra vậy?</string>
     <string name="package_not_launchable">Gói không thể khởi động</string>
     <string name="menu_launch_app">Khởi động ứng dụng</string>
 	<string name="menu_stop_app">Dừng ứng dụng</string>
     <string name="menu_restart_app">Khởi động lại ứng dụng</string>
+    <string name="menu_hot_reload_module">Tải lại mô-đun nhanh</string>
+    <string name="hot_reload_requested">Đã yêu cầu tải lại nhanh</string>
+    <string name="hot_reload_succeeded">Đã tải lại mô-đun</string>
+    <string name="hot_reload_failed">Tải lại nhanh không thành công</string>
     <string name="why">tại sao?</string>
     <string name="okay">Đồng ý</string>
     <!-- Splash Activity -->

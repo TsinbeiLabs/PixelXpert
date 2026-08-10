@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Ara sıra yeni sürümleri kontrol et</string>
     <string name="update_over_wifi_title">Güncellemeleri sadece WiFi üzerinden kontrol et</string>
     <string name="update_over_wifi_summary">Güncellemeleri arka planda sadece WiFi\'ye bağlıyken kontrol et</string>
-    <string name="github_repo_title">GitHub deposu</string>
+    <string name="github_repo_title">GitHub depomuz</string>
+    <string name="github_original_repo_title">Orijinal GitHub deposu</string>
     <string name="telegram_group_title">Telegram kanalı</string>
     <string name="usage_title">Kullanım</string>
     <string name="usage_summary">Wiki sayfasını aç</string>
-    <string name="crowdin_title">Kendi dilinize çevirin</string>
-    <string name="crowdin_summary">%s uygulamasını kendi dilinize çevirmemize yardımcı olun</string>
+    <string name="weblate_title">Kendi dilinize çevirin</string>
+    <string name="weblate_summary">%s uygulamasını kendi dilinize çevirmemize yardımcı olun</string>
     <string name="nothing_to_show">Gösterilecek bir şey yok</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Kilit ekranı</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">LSPosed\'da etkinleştir</string>
     <string name="package_not_hook_enabled_info">Uygulama yüklü, ancak LSPosed uygulamaya bağlanacak şekilde yapılandırılmamış. \'%s\' seçeneğine tıklayarak etkinleştirin.</string>
     <string name="package_hook_bootlooped_info">Uygulama için yapılan bağlantı bir açılış döngüsüne (bootloop) neden oldu, bu nedenle daha fazla sorunu önlemek için devre dışı bırakıldı.</string>
-    <string name="package_hook_no_response_info">Uygulama, bağlantı durumuna yanıt vermiyor. Aktif olarak çalışmıyor olabilir veya bağlantımıza bağlı olmaması mümkündür.</string>
+    <string name="package_hook_no_response_info">Uygulama, bağlantı durumuna yanıt vermiyor. Bağlantımıza bağlı olmayabilir.</string>
     <string name="whats_wrong">Sorun ne?</string>
     <string name="package_not_launchable">Paket başlatılamıyor</string>
     <string name="menu_launch_app">Uygulamayı başlat</string>
 	<string name="menu_stop_app">Uygulamayı durdur</string>
     <string name="menu_restart_app">Uygulamayı yeniden başlat</string>
+    <string name="menu_hot_reload_module">Modülü anında yeniden yükle</string>
+    <string name="hot_reload_requested">Anında yeniden yükleme istendi</string>
+    <string name="hot_reload_succeeded">Modül yeniden yüklendi</string>
+    <string name="hot_reload_failed">Anında yeniden yükleme başarısız oldu</string>
     <string name="why">neden?</string>
     <string name="okay">Tamam</string>
     <!-- Splash Activity -->

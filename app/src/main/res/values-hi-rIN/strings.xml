@@ -32,12 +32,13 @@
     <string name="auto_update_summary">समय-समय पर नए संस्करणों की जाँच करें</string>
     <string name="update_over_wifi_title">केवल वाईफाई पर अपडेट जांचें</string>
     <string name="update_over_wifi_summary">वाईफाई से कनेक्ट होने पर ही बैकग्राउंड में अपडेट की जांच करें</string>
-    <string name="github_repo_title">गिटहब रिपॉजिटरी</string>
+    <string name="github_repo_title">हमारी GitHub रिपॉजिटरी</string>
+    <string name="github_original_repo_title">मूल GitHub रिपॉजिटरी</string>
     <string name="telegram_group_title">Telegram चैनल</string>
     <string name="usage_title">प्रयोग</string>
     <string name="usage_summary">विकि पृष्ठ खोलें</string>
-    <string name="crowdin_title">अपनी भाषा में अनुवाद करें</string>
-    <string name="crowdin_summary">%s का अपनी भाषा में अनुवाद करने में हमारी मदद करें</string>
+    <string name="weblate_title">अपनी भाषा में अनुवाद करें</string>
+    <string name="weblate_summary">%s का अपनी भाषा में अनुवाद करने में हमारी मदद करें</string>
     <string name="nothing_to_show">दिखाने के लिए कुछ नहीं है</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">लॉक स्क्रीन</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">LSPosed में सक्रिय करें</string>
     <string name="package_not_hook_enabled_info">ऐप इंस्टॉल है, लेकिन LSPosed को इसे हुक करने के लिए सेट नहीं किया गया है। \'%s\' पर टैप करके इसे चालू करें।</string>
     <string name="package_hook_bootlooped_info">ऐप के हुक से बूटलूप हुआ, इसलिए आगे की समस्याएँ रोकने के लिए इसे बंद कर दिया गया है।</string>
-    <string name="package_hook_no_response_info">ऐप हुक की स्थिति का जवाब नहीं दे रहा है। हो सकता है कि ऐप अभी चल नहीं रहा हो या हमारे कनेक्शन से हुक न हुआ हो।</string>
+    <string name="package_hook_no_response_info">ऐप हुक की स्थिति का जवाब नहीं दे रहा है। हो सकता है कि यह हमारे कनेक्शन से हुक न हुआ हो।</string>
     <string name="whats_wrong">क्या समस्या है?</string>
     <string name="package_not_launchable">यह पैकेज शुरू नहीं किया जा सकता</string>
     <string name="menu_launch_app">ऐप खोलें</string>
 	<string name="menu_stop_app">ऐप रोकें</string>
     <string name="menu_restart_app">ऐप फिर से शुरू करें</string>
+    <string name="menu_hot_reload_module">मॉड्यूल को तुरंत रीलोड करें</string>
+    <string name="hot_reload_requested">तुरंत रीलोड करने का अनुरोध किया गया</string>
+    <string name="hot_reload_succeeded">मॉड्यूल रीलोड हो गया</string>
+    <string name="hot_reload_failed">तुरंत रीलोड करना विफल रहा</string>
     <string name="why">क्यों?</string>
     <string name="okay">ठीक है</string>
     <!-- Splash Activity -->

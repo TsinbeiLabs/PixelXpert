@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Verifică din când în când versiunile noi</string>
     <string name="update_over_wifi_title">Verifică actualizările numai prin WiFi</string>
     <string name="update_over_wifi_summary">Verifică dacă există actualizări în fundal doar când ești conectat la WiFi</string>
-    <string name="github_repo_title">Depozitul GitHub</string>
+    <string name="github_repo_title">Depozitul nostru GitHub</string>
+    <string name="github_original_repo_title">Depozitul GitHub original</string>
     <string name="telegram_group_title">Canal Telegram</string>
     <string name="usage_title">Utilizare</string>
     <string name="usage_summary">Deschide pagina wiki</string>
-    <string name="crowdin_title">Tradu în limba ta</string>
-    <string name="crowdin_summary">Ajută-ne să traducem %s în limba ta</string>
+    <string name="weblate_title">Tradu în limba ta</string>
+    <string name="weblate_summary">Ajută-ne să traducem %s în limba ta</string>
     <string name="nothing_to_show">Nimic de afișat</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Ecran de blocare</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Activează în LSPosed</string>
     <string name="package_not_hook_enabled_info">Aplicația este instalată, dar LSPosed nu este configurată pentru a fi atașată. Activeaz-o făcând clic pe \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Atașarea aplicației a cauzat o buclă de pornire (bootloop), astfel încât a fost dezactivată pentru a preveni alte probleme.</string>
-    <string name="package_hook_no_response_info">Aplicația nu răspunde la starea atașării. Este posibil să nu ruleze, sau este posibil să nu fie atașată de conexiunea noastră.</string>
+    <string name="package_hook_no_response_info">Aplicația nu răspunde la starea atașării. Este posibil să nu fie atașată la conexiunea noastră.</string>
     <string name="whats_wrong">Ce s-a întâmplat?</string>
     <string name="package_not_launchable">Pachetul nu poate fi lansat</string>
     <string name="menu_launch_app">Lansează aplicația</string>
 	<string name="menu_stop_app">Oprește aplicația</string>
     <string name="menu_restart_app">Repornește aplicația</string>
+    <string name="menu_hot_reload_module">Reîncarcă modulul din mers</string>
+    <string name="hot_reload_requested">Reîncărcare din mers solicitată</string>
+    <string name="hot_reload_succeeded">Modul reîncărcat</string>
+    <string name="hot_reload_failed">Reîncărcarea din mers a eșuat</string>
     <string name="why">de ce?</string>
     <string name="okay">Bine</string>
     <!-- Splash Activity -->
@@ -640,7 +645,7 @@
     <string name="recents_clear_all">Șterge tot</string>
     <string name="launcher_header">Lansator</string>
     <string name="launcher_header_summary">Îmbunătățiri pentru sarcinile recente și ecranul de pornire</string>
-    <string name="launcher_home_section">Ecran de pornire</string><string name="launcher_drawer_section">Sertar de aplicații</string><string name="launcher_recents_section">Sarcini recente</string><string name="launcher_hide_desktop_labels">Ascunde numele pictogramelor de pe ecranul de pornire</string><string name="launcher_hide_desktop_search">Ascunde bara de căutare de pe ecranul de pornire</string><string name="launcher_hide_drawer_labels">Ascunde numele pictogramelor din sertar</string><string name="launcher_hide_drawer_search">Ascunde bara de căutare din sertar</string><string name="recents_remove_screenshot">Elimină acțiunea Captură de ecran</string><string name="recents_equal_action_widths">Folosește butoane de acțiune cu lățime egală</string>
+    <string name="launcher_home_section">Ecran de pornire</string><string name="launcher_drawer_section">Meniul de aplicații</string><string name="launcher_recents_section">Sarcini recente</string><string name="launcher_hide_desktop_labels">Ascunde numele pictogramelor de pe ecranul de pornire</string><string name="launcher_hide_desktop_search">Ascunde bara de căutare de pe ecranul de pornire</string><string name="launcher_hide_drawer_labels">Ascunde numele pictogramelor din meniul de aplicații</string><string name="launcher_hide_drawer_search">Ascunde bara de căutare din meniul de aplicații</string><string name="recents_remove_screenshot">Elimină acțiunea Captură de ecran</string><string name="recents_equal_action_widths">Folosește butoane de acțiune cu lățime egală</string>
 	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
 	<string name="home_category_personalization">Personalizare</string>
 	<string name="home_category_system_interface">Interfața sistemului</string>

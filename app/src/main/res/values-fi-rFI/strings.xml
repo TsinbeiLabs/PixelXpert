@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Tarkista uudet versiot silloin tällöin</string>
     <string name="update_over_wifi_title">Tarkista päivitykset vain WiFin kautta</string>
     <string name="update_over_wifi_summary">Tarkista päivitykset taustalla vain, kun olet yhteydessä wifi-verkkoon</string>
-    <string name="github_repo_title">GitHub-tietovarasto</string>
+    <string name="github_repo_title">Oma GitHub-tietovarastomme</string>
+    <string name="github_original_repo_title">Alkuperäinen GitHub-tietovarasto</string>
     <string name="telegram_group_title">Telegram-kanava</string>
     <string name="usage_title">Käyttö</string>
     <string name="usage_summary">Avaa wikisivu</string>
-    <string name="crowdin_title">Käännä kielellesi</string>
-    <string name="crowdin_summary">Auta meitä kääntämään %s omalle kielellesi</string>
+    <string name="weblate_title">Käännä kielellesi</string>
+    <string name="weblate_summary">Auta meitä kääntämään %s omalle kielellesi</string>
     <string name="nothing_to_show">Ei näytettävää</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Lukitusnäyttö</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Aktivoi LSPosedissa</string>
     <string name="package_not_hook_enabled_info">Sovellus on asennettu, mutta LSPosed ei ole konfiguroitu koukuttamaan sitä. Ota se käyttöön napsauttamalla \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Sovelluksen koukutus aiheutti käynnistyssilmukan, joten se poistettiin käytöstä lisäongelmien estämiseksi.</string>
-    <string name="package_hook_no_response_info">Sovellus ei vastaa koukutuksen tilakyselyyn. Se ei ehkä ole käynnissä tai yhteyttä tähän moduuliin ei ole muodostettu.</string>
+    <string name="package_hook_no_response_info">Sovellus ei vastaa koukutuksen tilakyselyyn. Yhteyttä tähän moduuliin ei ehkä ole muodostettu.</string>
     <string name="whats_wrong">Mikä on vialla?</string>
     <string name="package_not_launchable">Paketti ei ole käynnistettävissä</string>
     <string name="menu_launch_app">Käynnistä sovellus</string>
 	<string name="menu_stop_app">Pysäytä sovellus</string>
     <string name="menu_restart_app">Käynnistä sovellus uudelleen</string>
+    <string name="menu_hot_reload_module">Lataa moduuli uudelleen lennossa</string>
+    <string name="hot_reload_requested">Lennossa uudelleenlatausta pyydetty</string>
+    <string name="hot_reload_succeeded">Moduuli ladattu uudelleen</string>
+    <string name="hot_reload_failed">Lennossa uudelleenlataus epäonnistui</string>
     <string name="why">miksi?</string>
     <string name="okay">Okei</string>
     <!-- Splash Activity -->

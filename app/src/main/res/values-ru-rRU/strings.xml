@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Периодически проверять наличие новых версий</string>
     <string name="update_over_wifi_title">Проверять наличие обновления только при подключенном WiFi</string>
     <string name="update_over_wifi_summary">Проверять наличие обновлений в фоновом режиме только при подключенном Wi-Fi</string>
-    <string name="github_repo_title">Репозиторий Github</string>
+    <string name="github_repo_title">Наш репозиторий GitHub</string>
+    <string name="github_original_repo_title">Оригинальный репозиторий GitHub</string>
     <string name="telegram_group_title">Наш Telegram</string>
     <string name="usage_title">Использование</string>
     <string name="usage_summary">Открыть wiki страницу</string>
-    <string name="crowdin_title">Помогите с переводом</string>
-    <string name="crowdin_summary">Помогите нам в переводе %s на ваш язык</string>
+    <string name="weblate_title">Помогите с переводом</string>
+    <string name="weblate_summary">Помогите нам в переводе %s на ваш язык</string>
     <string name="nothing_to_show">Нечего показывать</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Экран блокировки</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Активировать в LSPosed</string>
     <string name="package_not_hook_enabled_info">Приложение установлено, но LSPosed не настроен для подключения к нему. Включите его, нажав \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Перехват приложения вызвал циклическую перезагрузку, поэтому оно было отключено, чтобы предотвратить дальнейшие проблемы.</string>
-    <string name="package_hook_no_response_info">Приложение не отвечает на состояние хука. Возможно, оно не работает активно или возможно, что оно не подключено к нашему соединению.</string>
+    <string name="package_hook_no_response_info">Приложение не отвечает на состояние хука. Возможно, оно не подключено к нашему соединению.</string>
     <string name="whats_wrong">Что-то не так?</string>
     <string name="package_not_launchable">Пакет не может быть запущен</string>
     <string name="menu_launch_app">Запустить приложение</string>
 	<string name="menu_stop_app">Остановить приложение</string>
     <string name="menu_restart_app">Перезапустить приложение</string>
+    <string name="menu_hot_reload_module">Горячая перезагрузка модуля</string>
+    <string name="hot_reload_requested">Запрошена горячая перезагрузка</string>
+    <string name="hot_reload_succeeded">Модуль перезагружен</string>
+    <string name="hot_reload_failed">Не удалось выполнить горячую перезагрузку</string>
     <string name="why">Как?</string>
     <string name="okay">Хорошо</string>
     <!-- Splash Activity -->

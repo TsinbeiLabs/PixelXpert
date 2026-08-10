@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Ελέγξτε για νέες εκδόσεις κάθε τόσο</string>
     <string name="update_over_wifi_title">Ελέγξτε τις ενημερώσεις μόνο μέσω WiFi</string>
     <string name="update_over_wifi_summary">Ελέγξτε για ενημερώσεις στο παρασκήνιο μόνο όταν είστε συνδεδεμένοι σε wifi</string>
-    <string name="github_repo_title">Αποθετήριο GitHub</string>
+    <string name="github_repo_title">Το αποθετήριό μας στο GitHub</string>
+    <string name="github_original_repo_title">Αρχικό αποθετήριο στο GitHub</string>
     <string name="telegram_group_title">Κανάλι Telegram</string>
     <string name="usage_title">Χρήση</string>
     <string name="usage_summary">Άνοιγμα σελίδας wiki</string>
-    <string name="crowdin_title">Μεταφράστε στη γλώσσα σας</string>
-    <string name="crowdin_summary">Βοηθήστε μας να μεταφράσουμε το %s στη δική σας γλώσσα</string>
+    <string name="weblate_title">Μεταφράστε στη γλώσσα σας</string>
+    <string name="weblate_summary">Βοηθήστε μας να μεταφράσουμε το %s στη δική σας γλώσσα</string>
     <string name="nothing_to_show">Δεν υπάρχει κάτι για εμφάνιση</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Οθόνη κλειδώματος</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Ενεργοποίηση στο LSPosed</string>
     <string name="package_not_hook_enabled_info">Η εφαρμογή είναι εγκατεστημένη, αλλά LSPosed δεν έχει ρυθμιστεί για να συνδέσετε σε αυτήν. Ενεργοποιήστε την κάνοντας κλικ στο \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Το άγκιστρο για την εφαρμογή προκάλεσε ένα bootloop, οπότε έχει απενεργοποιηθεί για την πρόληψη περαιτέρω προβλημάτων.</string>
-    <string name="package_hook_no_response_info">Η εφαρμογή δεν ανταποκρίνεται στην κατάσταση του γάντζου. Μπορεί να μην εκτελείται ενεργά, ή είναι πιθανό ότι δεν είναι συνδεδεμένο με τη σύνδεσή μας.</string>
+    <string name="package_hook_no_response_info">Η εφαρμογή δεν ανταποκρίνεται στην κατάσταση του hook. Είναι πιθανό να μην είναι συνδεδεμένη με τη σύνδεσή μας.</string>
     <string name="whats_wrong">Τι είναι λάθος?</string>
     <string name="package_not_launchable">Το πακέτο δεν μπορεί να ξεκινήσει</string>
     <string name="menu_launch_app">Εκκίνηση εφαρμογής</string>
 	<string name="menu_stop_app">Διακοπή εφαρμογής</string>
     <string name="menu_restart_app">Επανεκκίνηση εφαρμογής</string>
+    <string name="menu_hot_reload_module">Άμεση επαναφόρτωση λειτουργικής μονάδας</string>
+    <string name="hot_reload_requested">Ζητήθηκε άμεση επαναφόρτωση</string>
+    <string name="hot_reload_succeeded">Η λειτουργική μονάδα επαναφορτώθηκε</string>
+    <string name="hot_reload_failed">Η άμεση επαναφόρτωση απέτυχε</string>
     <string name="why">γιατί?</string>
     <string name="okay">Εντάξει</string>
     <!-- Splash Activity -->

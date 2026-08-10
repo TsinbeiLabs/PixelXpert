@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Tjek efter nye versioner en gang imellem</string>
     <string name="update_over_wifi_title">Tjek kun opdateringer via WiFi</string>
     <string name="update_over_wifi_summary">Tjek kun for opdateringer i baggrunden, når du er tilsluttet wifi</string>
-    <string name="github_repo_title">GitHub-depot</string>
+    <string name="github_repo_title">Vores GitHub-depot</string>
+    <string name="github_original_repo_title">Oprindeligt GitHub-depot</string>
     <string name="telegram_group_title">Telegram-kanal</string>
     <string name="usage_title">Brug</string>
     <string name="usage_summary">Åbn wiki-side</string>
-    <string name="crowdin_title">Oversæt til dit sprog</string>
-    <string name="crowdin_summary">Hjælp os med at oversætte %s til dit eget sprog</string>
+    <string name="weblate_title">Oversæt til dit sprog</string>
+    <string name="weblate_summary">Hjælp os med at oversætte %s til dit eget sprog</string>
     <string name="nothing_to_show">Intet at vise</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Låse skærm</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Aktiver i LSPosed</string>
     <string name="package_not_hook_enabled_info">Appen er installeret, men LSPosed er ikke konfigureret til at tilslutte sig den. Aktiver den ved at klikke på \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Krogen til appen forårsagede en bootloop, så det er blevet deaktiveret for at forhindre yderligere problemer.</string>
-    <string name="package_hook_no_response_info">Appen reagerer ikke på krogstatus. Det kører måske ikke aktivt, eller det er muligt, at den ikke er tilsluttet vores forbindelse.</string>
+    <string name="package_hook_no_response_info">Appen reagerer ikke på krogstatus. Det er muligt, at den ikke er tilsluttet vores forbindelse.</string>
     <string name="whats_wrong">Hvad er forkert?</string>
     <string name="package_not_launchable">Pakken kan ikke startes</string>
     <string name="menu_launch_app">Start app</string>
 	<string name="menu_stop_app">Stop app</string>
     <string name="menu_restart_app">Genstart app</string>
+    <string name="menu_hot_reload_module">Genindlæs modul direkte</string>
+    <string name="hot_reload_requested">Direkte genindlæsning anmodet</string>
+    <string name="hot_reload_succeeded">Modul genindlæst</string>
+    <string name="hot_reload_failed">Direkte genindlæsning mislykkedes</string>
     <string name="why">hvorfor?</string>
     <string name="okay">Okay</string>
     <!-- Splash Activity -->

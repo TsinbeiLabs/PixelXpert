@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Se etter nye versjoner en gang i blant</string>
     <string name="update_over_wifi_title">Sjekk kun oppdateringer over WiFi</string>
     <string name="update_over_wifi_summary">Se etter oppdateringer i bakgrunnen bare når du er koblet til wifi</string>
-    <string name="github_repo_title">GitHub-depot</string>
+    <string name="github_repo_title">Vårt GitHub-depot</string>
+    <string name="github_original_repo_title">Opprinnelig GitHub-depot</string>
     <string name="telegram_group_title">Telegram-kanal</string>
     <string name="usage_title">Bruk</string>
     <string name="usage_summary">Åpne wiki-siden</string>
-    <string name="crowdin_title">Oversett til ditt språk</string>
-    <string name="crowdin_summary">Hjelp oss med å oversette %s til ditt eget språk</string>
+    <string name="weblate_title">Oversett til ditt språk</string>
+    <string name="weblate_summary">Hjelp oss med å oversette %s til ditt eget språk</string>
     <string name="nothing_to_show">Ingenting å vise</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Låseskjerm</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Aktiver i LSPosed</string>
     <string name="package_not_hook_enabled_info">Appen er installert, men LSPosed er ikke konfigurert til å kroke inn. Aktiver den ved å klikke \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Koken for appen forårsaket en bootloop, så den har blitt deaktivert for å forhindre ytterligere problemer.</string>
-    <string name="package_hook_no_response_info">Appen svarer ikke på krokstatus. Den kjører kanskje ikke aktivt, eller det er mulig at den ikke er koblet til vår forbindelse.</string>
+    <string name="package_hook_no_response_info">Appen svarer ikke på krokstatus. Det er mulig at den ikke er koblet til vår forbindelse.</string>
     <string name="whats_wrong">Hva er feil?</string>
     <string name="package_not_launchable">Pakken er ikke startbar</string>
     <string name="menu_launch_app">Start app</string>
 	<string name="menu_stop_app">Stopp app</string>
     <string name="menu_restart_app">Starte appen på nytt</string>
+    <string name="menu_hot_reload_module">Last inn modulen på nytt</string>
+    <string name="hot_reload_requested">Ny innlasting forespurt</string>
+    <string name="hot_reload_succeeded">Modulen er lastet inn på nytt</string>
+    <string name="hot_reload_failed">Ny innlasting mislyktes</string>
     <string name="why">hvorfor?</string>
     <string name="okay">Ok</string>
     <!-- Splash Activity -->

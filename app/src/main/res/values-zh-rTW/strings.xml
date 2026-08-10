@@ -32,14 +32,15 @@
     <string name="auto_update_summary">偶爾檢查是否有新版本</string>
     <string name="update_over_wifi_title">僅透過 Wi-Fi 檢查更新</string>
     <string name="update_over_wifi_summary">僅在連上 Wi-Fi 時於背景檢查更新</string>
-    <string name="github_repo_title">GitHub 儲存庫</string>
+    <string name="github_repo_title">我們的 GitHub 儲存庫</string>
+    <string name="github_original_repo_title">原版 GitHub 儲存庫</string>
 	<string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
 	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
     <string name="telegram_group_title">Telegram 頻道</string>
     <string name="usage_title">使用說明</string>
     <string name="usage_summary">開啟 Wiki 頁面</string>
-    <string name="crowdin_title">翻譯成你的語言</string>
-    <string name="crowdin_summary">幫助我們將 %s 翻譯成自己的語言</string>
+    <string name="weblate_title">翻譯成你的語言</string>
+    <string name="weblate_summary">幫助我們將 %s 翻譯成自己的語言</string>
     <string name="nothing_to_show">沒有任何內容可顯示</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">鎖定畫面</string>
@@ -482,12 +483,16 @@
     <string name="activate_in_lsposed">在 LSPosed 中啟用</string>
     <string name="package_not_hook_enabled_info">應用程式已安裝，但 LSPosed 尚未設定為對其套用模組。請點選「%s」啟用。</string>
     <string name="package_hook_bootlooped_info">對此應用程式套用模組後造成開機循環，因此已停用以避免再次發生問題。</string>
-    <string name="package_hook_no_response_info">應用程式未回報模組狀態。它可能尚未執行，或尚未連線至模組。</string>
+    <string name="package_hook_no_response_info">應用程式未回報模組狀態，可能尚未連線至模組。</string>
     <string name="whats_wrong">遇到了什麼問題嗎？</string>
     <string name="package_not_launchable">無法啟動此套件</string>
     <string name="menu_launch_app">啟動應用程式</string>
 	<string name="menu_stop_app">停止應用程式</string>
     <string name="menu_restart_app">重新啟動應用程式</string>
+    <string name="menu_hot_reload_module">熱重載模組</string>
+    <string name="hot_reload_requested">已要求熱重載</string>
+    <string name="hot_reload_succeeded">模組已重新載入</string>
+    <string name="hot_reload_failed">熱重載失敗</string>
     <string name="why">為什麼？</string>
     <string name="okay">可以</string>
     <!-- Splash Activity -->

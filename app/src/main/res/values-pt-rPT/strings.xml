@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Procurar por novas versões ocasionalmente</string>
     <string name="update_over_wifi_title">Procurar atualizações apenas por Wi-Fi</string>
     <string name="update_over_wifi_summary">Procurar atualizações apenas por WiFi</string>
-    <string name="github_repo_title">Repositório GitHub</string>
+    <string name="github_repo_title">O nosso repositório GitHub</string>
+    <string name="github_original_repo_title">Repositório GitHub original</string>
     <string name="telegram_group_title">Canal do Telegram</string>
     <string name="usage_title">Utilização</string>
     <string name="usage_summary">Abrir página wiki</string>
-    <string name="crowdin_title">Traduza para o seu idioma</string>
-    <string name="crowdin_summary">Ajude-nos a traduzir %s para o seu idioma</string>
+    <string name="weblate_title">Traduza para o seu idioma</string>
+    <string name="weblate_summary">Ajude-nos a traduzir %s para o seu idioma</string>
     <string name="nothing_to_show">Nada a mostrar</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Ecrã de bloqueio</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Ativar no LSPosed</string>
     <string name="package_not_hook_enabled_info">A aplicação está instalada mas a LSPosed não está configurada para ligá-la. Habilite clicando em \'%s\'.</string>
     <string name="package_hook_bootlooped_info">O hook para a aplicação causou um bootloop, assim foi desativado para evitar mais problemas.</string>
-    <string name="package_hook_no_response_info">A app não consegue determinar o estado do hook. Ele pode não estar ativamente em execução, ou pode não estar ligado à nossa ligação.</string>
+    <string name="package_hook_no_response_info">A app não consegue determinar o estado do hook. Pode não estar ligada à nossa ligação.</string>
     <string name="whats_wrong">O que está errado?</string>
     <string name="package_not_launchable">O pacote não pode ser lançado</string>
     <string name="menu_launch_app">Iniciar aplicação</string>
 	<string name="menu_stop_app">Parar aplicação</string>
     <string name="menu_restart_app">Reiniciar aplicação</string>
+    <string name="menu_hot_reload_module">Recarregar módulo em tempo real</string>
+    <string name="hot_reload_requested">Recarga em tempo real solicitada</string>
+    <string name="hot_reload_succeeded">Módulo recarregado</string>
+    <string name="hot_reload_failed">A recarga em tempo real falhou</string>
     <string name="why">porquê?</string>
     <string name="okay">Ok</string>
     <!-- Splash Activity -->

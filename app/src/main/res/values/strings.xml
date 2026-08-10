@@ -33,15 +33,16 @@
     <string name="auto_update_summary">Check for new versions once in a while</string>
     <string name="update_over_wifi_title">Check updates over WiFi only</string>
     <string name="update_over_wifi_summary">Check for updates in background only when connected to wifi</string>
-    <string name="github_repo_title">GitHub repository</string>
+    <string name="github_repo_title">Our GitHub repository</string>
+    <string name="github_original_repo_title">Original GitHub repository</string>
     <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
 	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
     <string name="telegram_group_title">Telegram channel</string>
     <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
     <string name="usage_title">Usage</string>
     <string name="usage_summary">Open wiki page</string>
-    <string name="crowdin_title">Translate to your language</string>
-    <string name="crowdin_summary">Help us in translating %s into your own language</string>
+    <string name="weblate_title">Translate to your language</string>
+    <string name="weblate_summary">Help us translate %s into your own language</string>
     <string name="nothing_to_show">Nothing to show</string>
     <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
 
@@ -589,12 +590,16 @@
     <string name="activate_in_lsposed">Activate in LSPosed</string>
     <string name="package_not_hook_enabled_info">The app is installed, but LSPosed is not configured to hook into it. Enable it by clicking \'%s\'.</string>
     <string name="package_hook_bootlooped_info">The hook for the app caused a bootloop, so it has been disabled to prevent further issues.</string>
-    <string name="package_hook_no_response_info">The app is not responding to the hook status. It may not be actively running, or it\'s possible that it\'s not hooked to our connection.</string>
+    <string name="package_hook_no_response_info">The app is not responding to the hook status. It may not be hooked to our connection.</string>
     <string name="whats_wrong">What\'s wrong?</string>
     <string name="package_not_launchable">Package is not launch-able</string>
     <string name="menu_launch_app">Launch app</string>
 	<string name="menu_stop_app">Stop app</string>
     <string name="menu_restart_app">Restart app</string>
+    <string name="menu_hot_reload_module">Hot reload module</string>
+    <string name="hot_reload_requested">Hot reload requested</string>
+    <string name="hot_reload_succeeded">Module reloaded</string>
+    <string name="hot_reload_failed">Hot reload failed</string>
     <string name="why">why?</string>
     <string name="okay">Okay</string>
 

@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Vérifiez les nouvelles versions de temps en temps</string>
     <string name="update_over_wifi_title">Vérifier les mises à jour via WiFi uniquement</string>
     <string name="update_over_wifi_summary">Vérifiez les mises à jour en arrière-plan uniquement lorsque vous êtes connecté au wifi</string>
-    <string name="github_repo_title">Dépôt GitHub</string>
+    <string name="github_repo_title">Notre dépôt GitHub</string>
+    <string name="github_original_repo_title">Dépôt GitHub d’origine</string>
     <string name="telegram_group_title">Canal Telegram</string>
-    <string name="usage_title">Usage</string>
+    <string name="usage_title">Utilisation</string>
     <string name="usage_summary">Ouvrir la page wiki</string>
-    <string name="crowdin_title">Traduire dans votre langue</string>
-    <string name="crowdin_summary">Aidez-nous à traduire %s dans votre propre langue</string>
+    <string name="weblate_title">Traduire dans votre langue</string>
+    <string name="weblate_summary">Aidez-nous à traduire %s dans votre propre langue</string>
     <string name="nothing_to_show">Rien à afficher</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Écran de verrouillage</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Activer dans LSPosed</string>
     <string name="package_not_hook_enabled_info">L\'application est installée, mais LSPosed n\'est pas configurée pour s\'y connecter. Activez-la en cliquant sur «%s».</string>
     <string name="package_hook_bootlooped_info">Le point d\'accroche de l\'application a causé un bootloop, donc il a été désactivé pour éviter d\'autres problèmes.</string>
-    <string name="package_hook_no_response_info">L\'application ne répond pas au statut de hook. Il se peut qu\'elle ne soit pas en cours d\'exécution, ou il est possible qu\'elle ne soit pas branchée sur notre connexion.</string>
+    <string name="package_hook_no_response_info">L\'application ne répond pas au statut du hook. Il est possible qu\'elle ne soit pas connectée à notre connexion.</string>
     <string name="whats_wrong">Qu\'est-ce qui ne va pas?</string>
     <string name="package_not_launchable">Le paquet ne peut pas être lancé</string>
     <string name="menu_launch_app">Lancer l\'application</string>
 	<string name="menu_stop_app">Arrêter l\'application</string>
     <string name="menu_restart_app">Redémarrez l\'application</string>
+    <string name="menu_hot_reload_module">Recharger le module à chaud</string>
+    <string name="hot_reload_requested">Rechargement à chaud demandé</string>
+    <string name="hot_reload_succeeded">Module rechargé</string>
+    <string name="hot_reload_failed">Échec du rechargement à chaud</string>
     <string name="why">Pourquoi?</string>
     <string name="okay">Ok</string>
     <!-- Splash Activity -->

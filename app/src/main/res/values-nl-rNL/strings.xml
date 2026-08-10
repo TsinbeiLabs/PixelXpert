@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Controleer af en toe of er nieuwe versies zijn</string>
     <string name="update_over_wifi_title">Controleer updates alleen via WiFi</string>
     <string name="update_over_wifi_summary">Controleer alleen op updates op de achtergrond als u verbonden bent met wifi</string>
-    <string name="github_repo_title">GitHub-opslagplaats</string>
+    <string name="github_repo_title">Onze GitHub-opslagplaats</string>
+    <string name="github_original_repo_title">Oorspronkelijke GitHub-opslagplaats</string>
     <string name="telegram_group_title">Telegram-kanaal</string>
     <string name="usage_title">Gebruik</string>
     <string name="usage_summary">Open wikipagina</string>
-    <string name="crowdin_title">Vertaal naar je eigen taal</string>
-    <string name="crowdin_summary">Help ons om %s naar je eigen taal te vertalen</string>
+    <string name="weblate_title">Vertaal naar je eigen taal</string>
+    <string name="weblate_summary">Help ons om %s naar je eigen taal te vertalen</string>
     <string name="nothing_to_show">Niets om te tonen</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Vergrendel scherm</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Activeer in LSPosed</string>
     <string name="package_not_hook_enabled_info">De app is geïnstalleerd, maar Vervallen is niet geconfigureerd om er in te hken. Schakel het in door te klikken op \'%s\'.</string>
     <string name="package_hook_bootlooped_info">De haak voor de app veroorzaakte een bootloop, dus het is uitgeschakeld om verdere problemen te voorkomen.</string>
-    <string name="package_hook_no_response_info">De app reageert niet op de hook status. Het is mogelijk niet actief of het is mogelijk dat deze niet verbonden is met onze verbinding.</string>
+    <string name="package_hook_no_response_info">De app reageert niet op de hookstatus. Mogelijk is deze niet verbonden met onze verbinding.</string>
     <string name="whats_wrong">Wat is verkeerd?</string>
     <string name="package_not_launchable">Pakket is niet startbaar</string>
     <string name="menu_launch_app">App openen</string>
 	<string name="menu_stop_app">App stoppen</string>
     <string name="menu_restart_app">Herstart app</string>
+    <string name="menu_hot_reload_module">Module direct opnieuw laden</string>
+    <string name="hot_reload_requested">Direct opnieuw laden aangevraagd</string>
+    <string name="hot_reload_succeeded">Module opnieuw geladen</string>
+    <string name="hot_reload_failed">Direct opnieuw laden mislukt</string>
     <string name="why">Waarom?</string>
     <string name="okay">OK</string>
     <!-- Splash Activity -->

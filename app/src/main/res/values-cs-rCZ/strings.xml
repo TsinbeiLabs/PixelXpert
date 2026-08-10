@@ -32,16 +32,17 @@
     <string name="auto_update_summary">Jednou za čas zkontrolujte nové verze</string>
     <string name="update_over_wifi_title">Kontrolujte aktualizace pouze přes WiFi</string>
     <string name="update_over_wifi_summary">Kontrolovat aktualizace na pozadí pouze při připojení k wifi</string>
-    <string name="github_repo_title">úložiště GitHub</string>
+    <string name="github_repo_title">Naše úložiště GitHub</string>
+    <string name="github_original_repo_title">Původní úložiště GitHub</string>
     <string name="telegram_group_title">Kanál Telegram</string>
     <string name="usage_title">Používání</string>
     <string name="usage_summary">Otevřete stránku wiki</string>
-    <string name="crowdin_title">Přeložit do svého jazyka</string>
-    <string name="crowdin_summary">Pomozte nám přeložit %s do vašeho jazyka</string>
+    <string name="weblate_title">Přeložit do svého jazyka</string>
+    <string name="weblate_summary">Pomozte nám přeložit %s do vašeho jazyka</string>
     <string name="nothing_to_show">Není co zobrazit</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Uzamknout obrazovku</string>
-    <string name="lockscreen_header_summary">Změňte svou klávesnici tak, aby odpovídala vaší chuti</string>
+    <string name="lockscreen_header_summary">Upravte zamykací obrazovku podle svého vkusu</string>
     <string name="statusbar_header">Stavový řádek</string>
     <string name="statusbar_header_summary">Tento tenký pruh, který zobrazuje užitečné údaje</string>
     <string name="nav_header">Navigační lišta</string>
@@ -143,8 +144,8 @@
     <string name="network_mode_title">Styl monitoru</string>
     <string name="network_colorful_title">Udělejte to pestré</string>
     <string name="network_download_top">Rychlost stahování nahoře</string>
-    <string name="network_download_color_title">Stáhnout barvu</string>
-    <string name="network_upload_color_title">Nahrajte barvu</string>
+    <string name="network_download_color_title">Barva stahování</string>
+    <string name="network_upload_color_title">Barva nahrávání</string>
     <string name="network_opacity_title">Neprůhlednost</string>
     <string name="network_interval_title">Interval obnovování (sekundy)</string>
     <string name="network_show_icons_title">Zobrazit ikony směru dopravy</string>
@@ -478,14 +479,18 @@
     <string name="package_activation_failed">Aktivace balíčku se nezdařila</string>
     <string name="lsposed_not_found">LSPosed není nainstalován</string>
     <string name="activate_in_lsposed">Aktivujte v LSPosed</string>
-    <string name="package_not_hook_enabled_info">Aplikace je nainstalována, ale LSPosed není nakonfigurován, aby do ní vložil. Povolte ji kliknutím na \'%s\'.</string>
-    <string name="package_hook_bootlooped_info">Háček pro aplikaci způsobil bootloop, takže byl zakázán pro zabránění dalším problémům.</string>
-    <string name="package_hook_no_response_info">Aplikace nereaguje na stav háčku. Nemusí to být aktivní nebo je možné, že není připojena k našemu připojení.</string>
+    <string name="package_not_hook_enabled_info">Aplikace je nainstalována, ale LSPosed není nastaven pro její hookování. Povolte ho kliknutím na \'%s\'.</string>
+    <string name="package_hook_bootlooped_info">Hook aplikace způsobil bootloop, proto byl deaktivován, aby se předešlo dalším problémům.</string>
+    <string name="package_hook_no_response_info">Aplikace nereaguje na stav hooku. Možná není připojena k našemu hooku.</string>
     <string name="whats_wrong">Co je špatně?</string>
     <string name="package_not_launchable">Balíček není možné spustit</string>
     <string name="menu_launch_app">Spustit aplikaci</string>
 	<string name="menu_stop_app">Zastavit aplikaci</string>
     <string name="menu_restart_app">Restartovat aplikaci</string>
+    <string name="menu_hot_reload_module">Načíst modul za běhu</string>
+    <string name="hot_reload_requested">Požadavek na načtení za běhu byl odeslán</string>
+    <string name="hot_reload_succeeded">Modul byl znovu načten</string>
+    <string name="hot_reload_failed">Načtení za běhu se nezdařilo</string>
     <string name="why">proč?</string>
     <string name="okay">Dobře</string>
     <!-- Splash Activity -->
@@ -497,7 +502,7 @@
     <!-- Bottom Navigation -->
     <string name="navigation_home">Domů</string>
     <string name="navigation_update">Aktualizovat</string>
-    <string name="navigation_hooks">Háčky</string>
+    <string name="navigation_hooks">Hooky</string>
     <string name="navigation_settings">Nastavení</string>
     <!-- Remap Physical Buttons -->
     <string name="while_screen_is_off_title">Při vypnuté obrazovce</string>

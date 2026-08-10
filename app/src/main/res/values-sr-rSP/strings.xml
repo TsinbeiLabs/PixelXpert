@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Повремено проверава да ли постоји нова верзија</string>
     <string name="update_over_wifi_title">Тражи ажурирања само преко Wi-Fi-а</string>
     <string name="update_over_wifi_summary">Проверава да ли постоји нова верзија само када сте повезани на Wi-Fi</string>
-    <string name="github_repo_title">Репозиторијум на GitHub-у</string>
+    <string name="github_repo_title">Наш GitHub репозиторијум</string>
+    <string name="github_original_repo_title">Оригинални GitHub репозиторијум</string>
     <string name="telegram_group_title">Telegram канал</string>
     <string name="usage_title">Документација</string>
     <string name="usage_summary">Отвара вики страницу</string>
-    <string name="crowdin_title">Преведите на свој језик</string>
-    <string name="crowdin_summary">Помозите нам да преведемо %s на ваш језик</string>
+    <string name="weblate_title">Преведите на свој језик</string>
+    <string name="weblate_summary">Помозите нам да преведемо %s на ваш језик</string>
     <string name="nothing_to_show">Нема шта да се прикаже</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Закључани екран</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Активирајте у LSPosed-у</string>
     <string name="package_not_hook_enabled_info">Апликација је инсталирана, али LSPosed није подешен да је повеже. Омогућите је кликом на \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Повезивање апликације изазвало је петљу покретања, па је онемогућено ради спречавања даљих проблема.</string>
-    <string name="package_hook_no_response_info">Апликација не одговара на проверу стања повезивања. Можда није покренута или није повезана са нашом везом.</string>
+    <string name="package_hook_no_response_info">Апликација не одговара на проверу стања повезивања. Можда није повезана са нашом везом.</string>
     <string name="whats_wrong">Шта није у реду?</string>
     <string name="package_not_launchable">Пакет се не може покренути</string>
     <string name="menu_launch_app">Покрени апликацију</string>
 	<string name="menu_stop_app">Заустави апликацију</string>
     <string name="menu_restart_app">Поново покрени апликацију</string>
+    <string name="menu_hot_reload_module">Вруће поновно учитавање модула</string>
+    <string name="hot_reload_requested">Затражено је вруће поновно учитавање</string>
+    <string name="hot_reload_succeeded">Модул је поново учитан</string>
+    <string name="hot_reload_failed">Вруће поновно учитавање није успело</string>
     <string name="why">зашто?</string>
     <string name="okay">У реду</string>
     <!-- Splash Activity -->

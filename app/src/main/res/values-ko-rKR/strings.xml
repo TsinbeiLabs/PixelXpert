@@ -32,12 +32,13 @@
     <string name="auto_update_summary">가끔씩 새 버전을 확인하세요.</string>
     <string name="update_over_wifi_title">Wi-Fi를 통해서만 업데이트 확인</string>
     <string name="update_over_wifi_summary">Wi-Fi에 연결된 경우에만 백그라운드에서 업데이트를 확인하세요.</string>
-    <string name="github_repo_title">GitHub 저장소</string>
+    <string name="github_repo_title">우리 GitHub 저장소</string>
+    <string name="github_original_repo_title">원본 GitHub 저장소</string>
     <string name="telegram_group_title">텔레그램 채널</string>
     <string name="usage_title">용법</string>
     <string name="usage_summary">위키 페이지 열기</string>
-    <string name="crowdin_title">당신의 언어로 번역하세요</string>
-    <string name="crowdin_summary">%s를 당신의 언어로 번역하는것을 도와주세요</string>
+    <string name="weblate_title">당신의 언어로 번역하세요</string>
+    <string name="weblate_summary">%s를 당신의 언어로 번역하는것을 도와주세요</string>
     <string name="nothing_to_show">항목 없음</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">잠금 화면</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">LSPosed에서 활성화</string>
     <string name="package_not_hook_enabled_info">앱은 설치되어 있지만 LSPosed가 이 앱을 후킹하도록 설정되지 않았습니다. \'%s\'을(를) 눌러 활성화하세요.</string>
     <string name="package_hook_bootlooped_info">이 앱의 후킹으로 부팅 반복이 발생하여 추가 문제를 방지하기 위해 비활성화되었습니다.</string>
-    <string name="package_hook_no_response_info">앱이 후킹 상태에 응답하지 않습니다. 앱이 실행 중이 아니거나 연결 후킹이 적용되지 않았을 수 있습니다.</string>
+    <string name="package_hook_no_response_info">앱이 후킹 상태에 응답하지 않습니다. 연결 후킹이 적용되지 않았을 수 있습니다.</string>
     <string name="whats_wrong">무슨 문제 있나요?</string>
     <string name="package_not_launchable">실행할 수 없는 패키지입니다</string>
     <string name="menu_launch_app">애플리케이션 실행</string>
 	<string name="menu_stop_app">앱 중지</string>
     <string name="menu_restart_app">앱 다시 시작</string>
+    <string name="menu_hot_reload_module">모듈 핫 리로드</string>
+    <string name="hot_reload_requested">핫 리로드 요청됨</string>
+    <string name="hot_reload_succeeded">모듈이 다시 로드됨</string>
+    <string name="hot_reload_failed">핫 리로드 실패</string>
     <string name="why">왜 그런가요?</string>
     <string name="okay">확인</string>
     <!-- Splash Activity -->

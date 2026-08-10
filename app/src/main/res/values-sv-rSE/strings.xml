@@ -32,12 +32,13 @@
     <string name="auto_update_summary">Kolla efter nya versioner då och då</string>
     <string name="update_over_wifi_title">Kontrollera endast uppdateringar via WiFi</string>
     <string name="update_over_wifi_summary">Sök efter uppdateringar i bakgrunden endast när du är ansluten till wifi</string>
-    <string name="github_repo_title">GitHub-förråd</string>
+    <string name="github_repo_title">Vårt GitHub-förråd</string>
+    <string name="github_original_repo_title">Ursprungligt GitHub-förråd</string>
     <string name="telegram_group_title">Telegram-kanal</string>
     <string name="usage_title">Användande</string>
     <string name="usage_summary">Öppna wikisidan</string>
-    <string name="crowdin_title">Översätt till ditt språk</string>
-    <string name="crowdin_summary">Hjälp oss att översätta %s till ditt eget språk</string>
+    <string name="weblate_title">Översätt till ditt språk</string>
+    <string name="weblate_summary">Hjälp oss att översätta %s till ditt eget språk</string>
     <string name="nothing_to_show">Inget att visa</string>
     <!--Category titles-->
     <string name="lockscreen_header_title">Låsskärm</string>
@@ -480,12 +481,16 @@
     <string name="activate_in_lsposed">Aktivera i LSPosed</string>
     <string name="package_not_hook_enabled_info">Appen är installerad, men LSPosed är inte konfigurerad att ansluta till den. Aktivera den genom att klicka på \'%s\'.</string>
     <string name="package_hook_bootlooped_info">Appens krok orsakade en bootloop, så den har inaktiverats för att förhindra ytterligare problem.</string>
-    <string name="package_hook_no_response_info">Appen svarar inte på krokstatus. Den kanske inte körs aktivt, eller så är det möjligt att den inte är ansluten till vår anslutning.</string>
+    <string name="package_hook_no_response_info">Appen svarar inte på krokstatus. Det är möjligt att den inte är ansluten till vår anslutning.</string>
     <string name="whats_wrong">Vad är fel?</string>
     <string name="package_not_launchable">Paketet kan inte startas</string>
     <string name="menu_launch_app">Starta app</string>
 	<string name="menu_stop_app">Stoppa app</string>
     <string name="menu_restart_app">Starta om appen</string>
+    <string name="menu_hot_reload_module">Ladda om modulen direkt</string>
+    <string name="hot_reload_requested">Direkt omladdning begärd</string>
+    <string name="hot_reload_succeeded">Modulen har laddats om</string>
+    <string name="hot_reload_failed">Direkt omladdning misslyckades</string>
     <string name="why">varför?</string>
     <string name="okay">Okej</string>
     <!-- Splash Activity -->
@@ -497,7 +502,7 @@
     <!-- Bottom Navigation -->
     <string name="navigation_home">Hem</string>
     <string name="navigation_update">Uppdatera</string>
-    <string name="navigation_hooks">Hooks</string>
+    <string name="navigation_hooks">Modulkopplingar</string>
     <string name="navigation_settings">Inställningar</string>
     <!-- Remap Physical Buttons -->
     <string name="while_screen_is_off_title">Medan skärmen är avstängd</string>
