@@ -60,7 +60,7 @@ tasks.register<Zip>("createZip") {
 	mustRunAfter("assembleRelease")
 
 	from(file("../MagiskModBase")) {
-		exclude("system/priv-app/PixelXpert/**")
+		exclude("system/priv-app/TsinbeiPixelXpert/**")
 	}
 	from(file("build/outputs/apk/release/PixelXpert.apk")){into("system/priv-app/TsinbeiPixelXpert")}
 

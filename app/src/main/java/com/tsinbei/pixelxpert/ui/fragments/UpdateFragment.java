@@ -61,7 +61,7 @@ import com.tsinbei.pixelxpert.xposed.utils.ModuleFolderOperations;
 
 
 public class UpdateFragment extends BaseFragment {
-	public static final String MOD_NAME = "PixelXpert";
+	public static final String MOD_NAME = "TsinbeiPixelXpert";
 	public static final String MAGISK_UPDATE_DIR = "/data/adb/modules_update";
 	public static final String MAGISK_MODULES_DIR = "/data/adb/modules";
 	private static final String updateRoot = String.format("%s/%s", MAGISK_UPDATE_DIR, MOD_NAME);
@@ -309,9 +309,19 @@ public class UpdateFragment extends BaseFragment {
 				throw new Exception();
 			}
 		} catch (Exception ignored) {
-			rebootPending = false;
 			currentVersionName = BuildConfig.VERSION_NAME;
 			currentVersionCode = BuildConfig.VERSION_CODE;
+
+			// KernelSU applies updates directly to the active module directory. Its APK is
+			// already installed, so a version mismatch here still means the overlay needs rebooting.
+			List<String> moduleLines = Shell.cmd(String.format("cat %s/module.prop | grep version", moduleDir)).exec().getOut();
+			if (moduleLines.size() >= 2) {
+				for (String line : moduleLines) {
+					if (line.toLowerCase().contains("code")) {
+						rebootPending = Integer.parseInt(line.substring(line.indexOf("=") + 1)) != currentVersionCode;
+					}
+				}
+			}
 		}
 	}
 

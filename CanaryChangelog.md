@@ -1,3 +1,9 @@
+**canary-524**
+
+- Fixed in-app module updates to install the bundled APK as well as the Magisk or KernelSU module
+- Fixed update status detection by using the TsinbeiPixelXpert module ID and pending-update path
+- Aligned debug and release module packaging with the TsinbeiPixelXpert priv-app directory
+
 **canary-523**
 
 - Migrated Xposed hooks to libxposed API 102 while retaining API 101 compatibility

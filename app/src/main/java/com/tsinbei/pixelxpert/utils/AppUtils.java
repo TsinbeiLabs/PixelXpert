@@ -20,6 +20,8 @@ import com.tsinbei.pixelxpert.PixelXpert;
 import com.tsinbei.pixelxpert.Constants;
 
 public class AppUtils {
+	private static final String MODULE_APK_PATH = "system/priv-app/TsinbeiPixelXpert/PixelXpert.apk";
+
 	public static void restart(String what) {
 		switch (what.toLowerCase())
 		{
@@ -121,37 +123,58 @@ public class AppUtils {
 
 	public static boolean installDoubleZip(String DoubleZipped) //installs the zip magisk module. even if it's zipped inside another zip
 	{
+		File tempFile = null;
+		File unzippedFile = null;
+		File apkFile = null;
 		try {
 			//copy it to somewhere under our control
-			File tempFile = File.createTempFile("doubleZ", ".zip");
-			Shell.cmd(String.format("cp %s %s", DoubleZipped, tempFile.getAbsolutePath())).exec();
+			tempFile = File.createTempFile("doubleZ", ".zip");
+			Shell.cmd(String.format("cp '%s' '%s'", DoubleZipped, tempFile.getAbsolutePath())).exec();
 
 			//unzip once, IF double zipped
-			ZipFile unzipper = new ZipFile(tempFile);
-
-			File unzippedFile;
-			if (unzipper.stream().count() == 1) {
-				unzippedFile = File.createTempFile("singleZ", "zip");
-				FileOutputStream unzipOutputStream = new FileOutputStream(unzippedFile);
-				FileUtils.copy(unzipper.getInputStream(unzipper.entries().nextElement()), unzipOutputStream);
-				unzipOutputStream.close();
-			} else {
-				unzippedFile = tempFile;
+			try (ZipFile unzipper = new ZipFile(tempFile)) {
+				if (unzipper.stream().count() == 1) {
+					unzippedFile = File.createTempFile("singleZ", ".zip");
+					try (FileOutputStream unzipOutputStream = new FileOutputStream(unzippedFile)) {
+						FileUtils.copy(unzipper.getInputStream(unzipper.entries().nextElement()), unzipOutputStream);
+					}
+				} else {
+					unzippedFile = tempFile;
+				}
 			}
 
-			//install
-			Shell.cmd(String.format("magisk --install-module %s", unzippedFile.getAbsolutePath())).exec(); //magisk
-			Shell.cmd(String.format("ksud module install %s", unzippedFile.getAbsolutePath())).exec(); //ksu
+			if (!Shell.cmd(String.format("if command -v magisk >/dev/null 2>&1; then magisk --install-module '%s'; " +
+					"elif command -v ksud >/dev/null 2>&1; then ksud module install '%s'; else exit 1; fi",
+					unzippedFile.getAbsolutePath(), unzippedFile.getAbsolutePath())).exec().isSuccess()) {
+				return false;
+			}
 
-			//cleanup
-			//noinspection ResultOfMethodCallIgnored
-			tempFile.delete();
-			//noinspection ResultOfMethodCallIgnored
-			unzippedFile.delete();
+			try (ZipFile moduleZip = new ZipFile(unzippedFile)) {
+				if (moduleZip.getEntry(MODULE_APK_PATH) == null) {
+					throw new IllegalStateException("Module APK is missing");
+				}
+				apkFile = File.createTempFile("PixelXpert-update", ".apk");
+				try (FileOutputStream apkOutputStream = new FileOutputStream(apkFile)) {
+					FileUtils.copy(moduleZip.getInputStream(moduleZip.getEntry(MODULE_APK_PATH)), apkOutputStream);
+				}
+			}
+
+			String installPath = "/data/local/tmp/PixelXpert-update.apk";
+			// PackageInstaller cannot read the root-only module directory or our private cache.
+			// Stage the APK in a system-readable directory before asking Package Manager to replace it.
+			if (!Shell.cmd(String.format("cp '%s' '%s' && chmod 0644 '%s' && pm install -r --user 0 '%s'; result=$?; rm -f '%s'; exit $result",
+					apkFile.getAbsolutePath(), installPath, installPath, installPath, installPath)).exec().isSuccess()) {
+				return false;
+			}
+
 			return true;
 		} catch (Exception e) {
 			Log.e("PixelXpert Installer", "PixelXpert zip install error: ", e);
 			return false;
+		} finally {
+			if (apkFile != null) apkFile.delete();
+			if (unzippedFile != null && !unzippedFile.equals(tempFile)) unzippedFile.delete();
+			if (tempFile != null) tempFile.delete();
 		}
 	}
 }
