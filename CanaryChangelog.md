@@ -1,7 +1,55 @@
+**canary-523**
+
+- Migrated Xposed hooks to libxposed API 102 while retaining API 101 compatibility
+- Added API 102-only module hot reload controls to the hooked packages screen
+- Fixed `system_server` static scope and hooked-package heartbeat reporting
+- Fixed device-encrypted preference access before first unlock
+- Fixed Compose lock-screen PIN scrambling during first-unlock recomposition
+- Added static scope support for SukiSU, SukiSU Pro, and ReSukiSU
+- Refreshed translations and removed obsolete Crowdin workflows
+
+**canary-522**
+
+- Added launcher enhancements and additional module improvements
+- Added package manager controls
+- Added support for additional KernelSU manager variants
+- Added DocumentsUI sort persistence and Dialer call recording support
+- Added Landscape Split Shade and further lock-screen, Gboard, and SystemUI enhancements
+
 **canary-518**
 
 - Established the Tsinbei PixelXpert Canary baseline for Android Canary ZP11.260717.006
-- Added package manager, lock screen security, and Gboard enhancements
+- Added package manager, lock-screen security, and Gboard enhancements
+
+**canary-516**
+
+- Canary baseline checkpoint; no functional changes after canary-512
+
+**canary-512**
+
+- Canary baseline checkpoint; no functional changes after canary-510
+
+**canary-510**
+
+- Canary baseline checkpoint; no functional changes after canary-508
+
+**canary-508**
+
+- Canary baseline checkpoint; no functional changes after canary-504
+
+**canary-504**
+
+- Canary baseline checkpoint; no functional changes after canary-502
+
+**canary-502**
+
+- Canary baseline checkpoint; no functional changes after canary-500
+
+**canary-500**
+
+- Rebranded the module as Tsinbei PixelXpert and established the current Canary build and release pipeline
+- Added package manager enhancements, lock-screen security controls, Gboard features, DocumentsUI support, and expanded SystemUI customizations
+- Added KernelSU manager integration, launcher/taskbar enhancements, and updated module packaging
 
 **canary-499**  
 - Reverted some unintentional changes  

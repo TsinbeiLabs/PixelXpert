@@ -87,7 +87,7 @@ jobs:
           echo "version_name=canary-$VERSION_CODE" >> "$GITHUB_OUTPUT"
       
     - name: Gradle Build
-      run: ./gradlew buildCanary -Pchannel=canary
+      run: ./gradlew buildCanary -Pchannel=canary --no-configuration-cache
 
     - name: Shell Scripts Permissions
       run: chmod +x .github/*.sh
