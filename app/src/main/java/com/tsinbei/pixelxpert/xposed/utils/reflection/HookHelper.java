@@ -9,7 +9,6 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Set;
 
-import de.robv.android.xposed.XposedHelpers;
 import io.github.libxposed.api.XposedInterface;
 
 public class HookHelper {
@@ -33,12 +32,12 @@ public class HookHelper {
 	@SuppressWarnings("unchecked")
 	@CanIgnoreReturnValue
 	public static <T> T callMethod(Object obj, String methodName, Object... args) {
-		return (T) XposedHelpers.callMethod(obj, methodName, args);
+		return XposedCompat.callMethod(obj, methodName, args);
 	}
 
 	@SuppressWarnings("unchecked")
 	public static <T> T getObjectField(Object obj, String fieldName) {
-		return (T) XposedHelpers.getObjectField(obj, fieldName);
+		return (T) XposedCompat.getObjectField(obj, fieldName);
 	}
 
 	public static XposedInterface.HookHandle hookMethod(Executable hookMethod, ReflectedClass.ReflectionConsumer callback, boolean runBefore, XposedInterface xposedInterface) {
@@ -65,7 +64,7 @@ public class HookHelper {
 
 	private static Set<Executable> findConstructors(Class<?> clazz)
 	{
-		return new ArraySet<>(clazz.getDeclaredConstructors());
+		return Arrays.stream(clazz.getDeclaredConstructors()).collect(ArraySet::new, ArraySet::add, ArraySet::addAll);
 	}
 
 	private static Set<Method> findMethods(Class<?> clazz, String name) {

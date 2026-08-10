@@ -1,7 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.utils.reflection;
 
-import static de.robv.android.xposed.XposedBridge.invokeOriginalMethod;
-import static de.robv.android.xposed.XposedHelpers.findMethodExact;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.invokeOriginalMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findMethodExact;
 
 
 import java.lang.reflect.Method;

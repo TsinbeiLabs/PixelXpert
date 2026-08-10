@@ -4,12 +4,12 @@ import static android.content.Context.RECEIVER_EXPORTED;
 import static android.content.res.Configuration.UI_MODE_NIGHT_YES;
 import static android.media.AudioManager.STREAM_MUSIC;
 import static java.lang.Math.round;
-import static de.robv.android.xposed.XposedBridge.invokeOriginalMethod;
-import static de.robv.android.xposed.XposedBridge.log;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.invokeOriginalMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.log;
 
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.getStaticObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getStaticObjectField;
 import static com.tsinbei.pixelxpert.Constants.SYSTEM_UI_PACKAGE;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 

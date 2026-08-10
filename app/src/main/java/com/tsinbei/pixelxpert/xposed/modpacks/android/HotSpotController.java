@@ -1,7 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.android;
 
 
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.Context;

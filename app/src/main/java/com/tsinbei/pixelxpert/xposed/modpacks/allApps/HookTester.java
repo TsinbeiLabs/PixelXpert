@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.UserHandle;
 
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.BuildConfig;
@@ -37,9 +38,17 @@ public class HookTester extends XposedModPack {
 
 					broadcast.setPackage(BuildConfig.APPLICATION_ID);
 
-					mContext.sendBroadcast(broadcast);
+					try {
+						if (XPLauncher.isSystemServer) {
+							mContext.sendBroadcastAsUser(broadcast, UserHandle.getUserHandleForUid(1000));
+						} else {
+							mContext.sendBroadcast(broadcast);
+						}
 
-					log("PixelXpert hook test successful for " + broadcast.getStringExtra("packageName"));
+						log("PixelXpert hook test successful for " + broadcast.getStringExtra("packageName"));
+					} catch (Throwable throwable) {
+						log(throwable);
+					}
 				}).start();
 			}
 		};

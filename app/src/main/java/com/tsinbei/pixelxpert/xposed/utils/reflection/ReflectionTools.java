@@ -1,6 +1,6 @@
 package com.tsinbei.pixelxpert.xposed.utils.reflection;
 
-import static de.robv.android.xposed.XposedBridge.log;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.log;
 
 import android.view.View;
 import android.view.ViewGroup;

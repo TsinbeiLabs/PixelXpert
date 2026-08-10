@@ -32,12 +32,16 @@ object CallRecordingDexResolver {
 
     @JvmStatic
     fun resolve(context: Context, classLoader: ClassLoader, callback: Callback) {
-        Thread({ callback.accept(resolveInternal(context, classLoader)) }, "PixelXpert-CallRecording").start()
+        Thread({
+            callback.accept(runCatching { resolveInternal(context, classLoader) }
+                .getOrElse { ResolvedMethods(null, null, null, null) })
+        }, "PixelXpert-CallRecording").start()
     }
 
     private fun resolveInternal(context: Context, classLoader: ClassLoader): ResolvedMethods {
         val versionCode = runCatching { context.packageManager.getPackageInfo(context.packageName, 0).longVersionCode }.getOrDefault(-1L)
-        val cache = context.getSharedPreferences(CACHE_FILE, Context.MODE_PRIVATE)
+        val cache = context.createDeviceProtectedStorageContext()
+            .getSharedPreferences(CACHE_FILE, Context.MODE_PRIVATE)
 
         if (cache.getLong(CACHE_VERSION, -1L) == versionCode) {
             val canRecordCall = cache.getString(CACHE_CAN_RECORD_CALL, null)?.let { DexMethod(it).getMethodInstance(classLoader) }

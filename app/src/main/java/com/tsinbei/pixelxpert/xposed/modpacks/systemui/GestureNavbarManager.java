@@ -1,9 +1,9 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
 import static android.view.MotionEvent.ACTION_DOWN;
-import static de.robv.android.xposed.XposedHelpers.getFloatField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getFloatField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 

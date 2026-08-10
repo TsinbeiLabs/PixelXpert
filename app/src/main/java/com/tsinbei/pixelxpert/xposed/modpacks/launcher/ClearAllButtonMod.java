@@ -1,7 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.launcher;
 
-import static de.robv.android.xposed.XposedHelpers.findMethodBestMatch;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findMethodBestMatch;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.Context;

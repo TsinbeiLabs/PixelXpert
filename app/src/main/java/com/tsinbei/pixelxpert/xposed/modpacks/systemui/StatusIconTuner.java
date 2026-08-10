@@ -1,6 +1,6 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 import static com.tsinbei.pixelxpert.xposed.modpacks.systemui.StatusbarMods.APP_SWITCH_SLOT;
 

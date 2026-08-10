@@ -1,9 +1,9 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.launcher;
 
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
-import static de.robv.android.xposed.XposedHelpers.getIntField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 
 import android.content.Context;
 import android.content.ComponentName;
@@ -95,7 +95,7 @@ public class LauncherVisualMods extends XposedModPack {
 				bitmapInfo.after("newIcon").run(hook -> {
 					if (!hideShortcutBadge || hook.getResult() == null) return;
 					try { setObjectField(hook.getResult(), "badge", null); } catch (Throwable ignored) { }
-					try { de.robv.android.xposed.XposedHelpers.callMethod(hook.getResult(), "updateFilter"); } catch (Throwable ignored) { }
+					try { com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod(hook.getResult(), "updateFilter"); } catch (Throwable ignored) { }
 				});
 			}
 		} catch (Throwable throwable) { log("LauncherVisualMods: shortcut badge hook unavailable", throwable); }
@@ -111,7 +111,7 @@ public class LauncherVisualMods extends XposedModPack {
 			ReflectedClass.of("com.android.launcher3.dragndrop.DragController")
 				.before("onControllerInterceptTouchEvent").run(hook -> {
 					if (!lockDesktop) return;
-					try { de.robv.android.xposed.XposedHelpers.callMethod(hook.thisObject, "cancelDrag"); } catch (Throwable ignored) { }
+					try { com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod(hook.thisObject, "cancelDrag"); } catch (Throwable ignored) { }
 					hook.setResult(false);
 				});
 			ReflectedClass.ofIfPossible("com.android.launcher3.widget.LauncherAppWidgetHostView")

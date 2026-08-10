@@ -7,7 +7,7 @@ import android.view.WindowManager;
 
 import java.lang.reflect.Array;
 
-import de.robv.android.xposed.XposedHelpers;
+import com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat;
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.xposed.XposedModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.LauncherModPack;
@@ -39,10 +39,10 @@ public class HideNavigationBarInsets extends XposedModPack {
                     if (!HideNavbarInsets)
                         return;
 
-                    WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) XposedHelpers.getObjectField(param.thisObject, "mWindowLayoutParams");
+                    WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) XposedCompat.getObjectField(param.thisObject, "mWindowLayoutParams");
                     transformLayoutParams(layoutParams);
 
-                    WindowManager.LayoutParams[] rotationParams = (WindowManager.LayoutParams[]) XposedHelpers.getObjectField(layoutParams, "paramsForRotation");
+                    WindowManager.LayoutParams[] rotationParams = (WindowManager.LayoutParams[]) XposedCompat.getObjectField(layoutParams, "paramsForRotation");
                     if (rotationParams == null)
                         return;
 
@@ -55,7 +55,7 @@ public class HideNavigationBarInsets extends XposedModPack {
         if (layoutParams == null)
             return;
 
-        Object providedInsets = XposedHelpers.getObjectField(layoutParams, "providedInsets");
+        Object providedInsets = XposedCompat.getObjectField(layoutParams, "providedInsets");
         if (providedInsets == null)
             return;
 
@@ -68,7 +68,7 @@ public class HideNavigationBarInsets extends XposedModPack {
             if (!insetsFrame.toString().contains("type=navigationBars")) // no constants, maximum compatibility with Android versions
                 continue;
 
-            XposedHelpers.callMethod(insetsFrame, "setInsetsSize", android.graphics.Insets.NONE);
+            XposedCompat.callMethod(insetsFrame, "setInsetsSize", android.graphics.Insets.NONE);
         }
     }
 }

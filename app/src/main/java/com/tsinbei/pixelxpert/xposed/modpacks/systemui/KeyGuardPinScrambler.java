@@ -1,9 +1,9 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.getIntField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 
@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
 import java.util.regex.Pattern;
 
 import io.github.libxposed.api.XposedModuleInterface;
@@ -30,7 +28,7 @@ import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass.ReflectionC
 @SystemUIModPack
 public class KeyGuardPinScrambler extends XposedModPack {
 	private static boolean shufflePinEnabled = false;
-	private static final Map<Object, int[]> composeDigitMaps = Collections.synchronizedMap(new WeakHashMap<>());
+	private static final int[] composeDigitMap = shuffledDigits();
 	private static final ThreadLocal<ComposePinPadState> composePinPadState = new ThreadLocal<>();
 
 	public KeyGuardPinScrambler(Context context) {
@@ -69,16 +67,14 @@ public class KeyGuardPinScrambler extends XposedModPack {
 		KeyguardPinBasedInputViewClass.after("onFinishInflate").run(pinShuffleHook);
 		KeyguardPinBasedInputViewClass.after("resetPasswordText").run(pinShuffleHook);
 
-		// Android 16 QPR moved the PIN bouncer from Views to Compose. Map by button slot,
-		// not by the incoming digit, because Compose can feed our previous value back during recomposition.
+		// Android 16 QPR moved the PIN bouncer from Views to Compose. The first unlock can
+		// replace its view model during recomposition, so keep one SystemUI-process mapping.
 		PinBouncerKtClass
 				.before(Pattern.compile("PinPad-.*"))
 				.run(param -> {
 					if (!shufflePinEnabled) return;
 
-					Object viewModel = param.args[0];
-					composePinPadState.set(new ComposePinPadState(
-							composeDigitMaps.computeIfAbsent(viewModel, ignored -> shuffledDigits())));
+					composePinPadState.set(new ComposePinPadState(composeDigitMap));
 				});
 
 		PinBouncerKtClass
@@ -91,16 +87,17 @@ public class KeyGuardPinScrambler extends XposedModPack {
 					if (!shufflePinEnabled) return;
 
 					ComposePinPadState state = composePinPadState.get();
-					if (state != null && state.nextSlot < state.digitMap.length) {
-						param.args[0] = state.digitMap[state.nextSlot++];
+					if (state != null && param.args[0] instanceof Integer) {
+						int originalDigit = (int) param.args[0];
+						if (originalDigit >= 0 && originalDigit < state.digitMap.length) {
+							param.args[0] = state.digitMap[originalDigit];
+						}
 					}
 				});
 	}
 
 	private static final class ComposePinPadState {
 		private final int[] digitMap;
-		private int nextSlot;
-
 		private ComposePinPadState(int[] digitMap) {
 			this.digitMap = digitMap;
 		}

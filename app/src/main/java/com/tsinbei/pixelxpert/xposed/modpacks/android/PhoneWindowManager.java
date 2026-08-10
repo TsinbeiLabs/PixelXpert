@@ -3,9 +3,9 @@ package com.tsinbei.pixelxpert.xposed.modpacks.android;
 import static android.content.Context.RECEIVER_EXPORTED;
 
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.getIntField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.PackageManager;
 
 import android.annotation.SuppressLint;

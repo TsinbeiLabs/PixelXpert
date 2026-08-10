@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.unit.sp
-import de.robv.android.xposed.XposedHelpers
+import com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat
 
 class ComposeFontUtils {
 	companion object {
@@ -20,7 +20,7 @@ class ComposeFontUtils {
 		{
 			try {
 				var originalSpanStyle = SpanStyle(fontSize = 1.sp)
-				XposedHelpers.setObjectField(originalSpanStyle, "fontSize", currentSize)
+				XposedCompat.setObjectField(originalSpanStyle, "fontSize", currentSize)
 
 				var originalFontSizeSP = originalSpanStyle.fontSize.value
 
@@ -37,7 +37,7 @@ class ComposeFontUtils {
 
 				var scaledSpanStyle = SpanStyle(fontSize = scaledFontSizeSP.sp)
 
-				return XposedHelpers.getObjectField(scaledSpanStyle.fontSize, "packedValue") as Long
+				return XposedCompat.getObjectField(scaledSpanStyle.fontSize, "packedValue") as Long
 			}
 			catch (_ : Throwable)
 			{

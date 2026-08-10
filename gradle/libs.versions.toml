@@ -1,5 +1,5 @@
 [versions]
-agp = "9.1.0"
+    agp = "9.3.1"
 activity = "1.13.0"
 annotation = "1.9.1"
 appcompat = "1.7.1"
@@ -39,8 +39,8 @@ workRuntime = "2.11.2"
 kotlin = "2.2.21"
 ksp = "2.3.6"
 hilt = "2.59.2"
-lsposed-api = "101.0.1"
-lsposed-service = "101.0.0"
+    lsposed-api = "102.0.0"
+    lsposed-service = "102.0.0"
 dexkit = "2.2.0"
 
 [libraries]

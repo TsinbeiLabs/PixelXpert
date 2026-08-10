@@ -1,9 +1,9 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
-import static de.robv.android.xposed.XposedHelpers.getAdditionalInstanceField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.setAdditionalInstanceField;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getAdditionalInstanceField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setAdditionalInstanceField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 

@@ -1,12 +1,12 @@
 package com.tsinbei.pixelxpert.xposed.utils;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static de.robv.android.xposed.XposedBridge.log;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.log;
 
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.findFieldIfExists;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findFieldIfExists;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.dimenIdOf;
 import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.idOf;
 

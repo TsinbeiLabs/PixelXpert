@@ -2,6 +2,7 @@
 import com.android.build.api.artifact.SingleArtifact
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.gradle.api.tasks.Copy
+import org.gradle.api.tasks.compile.JavaCompile
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -20,6 +21,8 @@ val copyProjectLicense = tasks.register<Copy>("copyProjectLicense") {
 	into(generatedLicenseResources.map { it.dir("META-INF/licenses") })
 }
 
+var hasReleaseSigning = false
+
 kotlin {
 	compilerOptions {
 		jvmTarget = JvmTarget.JVM_17
@@ -28,7 +31,7 @@ kotlin {
 
 android {
 	namespace = "com.tsinbei.pixelxpert"
-	compileSdk = 36
+	compileSdk = 37
 
 	defaultConfig {
 		applicationId = "com.tsinbei.pixelxpert"
@@ -54,14 +57,16 @@ android {
 		}
 	}
 	val requiredSigningProperties = listOf("keyAlias", "keyPassword", "storeFile", "storePassword")
-	require(requiredSigningProperties.all { keystoreProperties.getProperty(it).isNullOrBlank().not() }) {
-		"Release signing requires ReleaseKey.properties or PIXELXPERT_* signing environment variables."
-	}
-	val releaseSigning = signingConfigs.create("release") {
-		keyAlias = keystoreProperties.getProperty("keyAlias")
-		keyPassword = keystoreProperties.getProperty("keyPassword")
-		storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
-		storePassword = keystoreProperties.getProperty("storePassword")
+	hasReleaseSigning = requiredSigningProperties.all { keystoreProperties.getProperty(it).isNullOrBlank().not() }
+	val releaseSigning = if (hasReleaseSigning) {
+		signingConfigs.create("release") {
+			keyAlias = keystoreProperties.getProperty("keyAlias")
+			keyPassword = keystoreProperties.getProperty("keyPassword")
+			storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
+			storePassword = keystoreProperties.getProperty("storePassword")
+		}
+	} else {
+		null
 	}
 
 	buildTypes {
@@ -69,7 +74,9 @@ android {
 			isMinifyEnabled = true
 			isShrinkResources = true
 			proguardFiles("proguard-android-optimize.txt", "proguard.pro", "proguard-rules.pro")
-			signingConfig = releaseSigning
+			if (releaseSigning != null) {
+				signingConfig = releaseSigning
+			}
 		}
 		debug {
 			isDebuggable = true
@@ -85,7 +92,7 @@ android {
 	}
 
 	sourceSets.getByName("main") {
-		resources.srcDir("build/generated/licenseResources")
+		resources.directories.add("build/generated/licenseResources")
 	}
 
 	compileOptions {
@@ -102,11 +109,23 @@ android {
 	}
 }
 
+tasks.withType<JavaCompile>().configureEach {
+	options.compilerArgs.add("-Xlint:-processing")
+}
+
 tasks.configureEach {
+		if (name.contains("Release", ignoreCase = true)) {
+			doFirst {
+				require(hasReleaseSigning) {
+					"Release signing requires ReleaseKey.properties or PIXELXPERT_* signing environment variables."
+				}
+			}
+		}
 	if (name.startsWith("process") && name.endsWith("JavaRes")) {
 		dependsOn(copyProjectLicense)
 	}
 }
+
 
 androidComponents {
 	val apkName = "PixelXpert.apk"
@@ -151,9 +170,6 @@ dependencies {
 	implementation(project(":annotations"))
 	annotationProcessor(project(":annotationProcessor"))
 	coreLibraryDesugaring(libs.desugar.jdk.libs)
-
-	compileOnly(files("lib/api-82.jar"))
-	compileOnly(files("lib/api-82-sources.jar"))
 
 	implementation(project(":Submodules:RangeSliderPreference"))
 

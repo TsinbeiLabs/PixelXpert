@@ -2,8 +2,8 @@ package com.tsinbei.pixelxpert.xposed.modpacks.android;
 
 
 
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.getStaticObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getStaticObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.annotation.SuppressLint;

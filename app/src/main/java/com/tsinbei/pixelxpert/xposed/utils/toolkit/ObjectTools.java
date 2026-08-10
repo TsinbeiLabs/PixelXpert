@@ -2,7 +2,7 @@ package com.tsinbei.pixelxpert.xposed.utils.toolkit;
 
 
 
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 
 import android.graphics.Color;
 import android.text.SpannableString;

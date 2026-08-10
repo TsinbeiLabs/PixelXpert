@@ -3,7 +3,7 @@ package com.tsinbei.pixelxpert.xposed.modpacks.launcher;
 import android.content.Context;
 import android.os.UserHandle;
 
-import de.robv.android.xposed.XposedHelpers;
+import com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat;
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.BuildConfig;
 import com.tsinbei.pixelxpert.xposed.XposedModPack;
@@ -31,7 +31,7 @@ public class PixelXpertIconUpdater extends XposedModPack {
 				.after("onResume")
 				.run(param -> {
 					try {
-						XposedHelpers.callMethod(LauncherModel, "onAppIconChanged", BuildConfig.APPLICATION_ID, UserHandle.getUserHandleForUid(0));
+						XposedCompat.callMethod(LauncherModel, "onAppIconChanged", BuildConfig.APPLICATION_ID, UserHandle.getUserHandleForUid(0));
 					}catch (Throwable ignored){}
 				});
 

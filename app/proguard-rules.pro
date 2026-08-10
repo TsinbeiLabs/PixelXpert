@@ -13,8 +13,12 @@
     public static int d(...);
 }
 
-# Xposed
--keep class de.robv.android.xposed.**
+# libxposed
+-dontwarn io.github.libxposed.annotation.**
+-adaptresourcefilecontents META-INF/xposed/java_init.list
+-keep,allowoptimization,allowobfuscation public class * extends io.github.libxposed.api.XposedModule {
+    public <init>();
+}
 
 # PixelXpert - for debug and trace
 -keep class com.tsinbei.pixelxpert.** { public protected private *; }

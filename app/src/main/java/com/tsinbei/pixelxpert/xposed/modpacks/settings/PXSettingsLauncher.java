@@ -1,7 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.settings;
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.annotation.SuppressLint;

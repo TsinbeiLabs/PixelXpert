@@ -1,11 +1,11 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.launcher;
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.getBooleanField;
-import static de.robv.android.xposed.XposedHelpers.getIntField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.getStaticObjectField;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getBooleanField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getStaticObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.idOf;
 

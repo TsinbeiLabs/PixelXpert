@@ -3,7 +3,7 @@ package com.tsinbei.pixelxpert.xposed.modpacks.ksu;
 import static android.content.Context.RECEIVER_EXPORTED;
 
 
-import static de.robv.android.xposed.XposedHelpers.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

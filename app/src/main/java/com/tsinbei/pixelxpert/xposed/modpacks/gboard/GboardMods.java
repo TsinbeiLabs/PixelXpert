@@ -4,6 +4,7 @@ import static com.tsinbei.pixelxpert.Constants.GBOARD_PACKAGE;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.ContentValues;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -18,7 +19,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Locale;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -61,8 +61,6 @@ public class GboardMods extends XposedModPack {
 	private static volatile int clipboardSize = 10;
 	private static volatile long clipboardDuration = 3L * 24 * 60 * 60 * 1000;
 	private static volatile boolean currentFieldSecure;
-	private static volatile String clipboardLoaderClass;
-	private static volatile String clipboardLoaderMethod;
 
 	private static final Set<String> AI_FLAGS = Set.of(
 			"enable_ai_core_llm", "enable_ai_core_smart_reply", "enable_emojify",
@@ -156,13 +154,11 @@ public class GboardMods extends XposedModPack {
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam param) throws Throwable {
 		if (!GBOARD_PACKAGE.equals(Application.getProcessName())) return;
 		hookAmoledTheme();
-		hookInputPrivacy();
+		 hookInputPrivacy();
+		hookClipboardResolver();
 		hookClipboardProvider(param.getClassLoader());
 		GboardDexResolver.resolve(mContext, param.getClassLoader(), method -> {
 			if (method != null) hookFlagReader(method);
-		});
-		GboardDexResolver.resolveClipboardLoader(mContext, param.getClassLoader(), method -> {
-			if (method != null) hookClipboardGroupLimit(method);
 		});
 	}
 
@@ -259,12 +255,40 @@ public class GboardMods extends XposedModPack {
 		}
 	}
 
+	private void hookClipboardResolver() throws NoSuchMethodException {
+		Method query = ContentResolver.class.getDeclaredMethod("query", Uri.class, String[].class,
+				String.class, String[].class, String.class);
+		ReflectedClass.of(ContentResolver.class).before(query).run(param -> {
+			if (!clipboardHistory) return;
+			String[] projection = param.getArg(1);
+			String selection = param.getArg(2);
+			String[] selectionArgs = param.getArg(3);
+			String sortOrder = param.getArg(4);
+			if (!isClipboardQuery(projection, selection, sortOrder)) return;
+			modifyClipboardQuery(param.args);
+			if (sortOrder == null || !sortOrder.matches("(?i).*\\blimit\\s+\\d+.*")) {
+				param.args[4] = (sortOrder == null ? "" : sortOrder + " ") + "LIMIT " + clipboardSize;
+			}
+		});
+	}
+
+	private static boolean isClipboardQuery(String[] projection, String selection, String sortOrder) {
+		String query = (selection == null ? "" : selection) + " " + (sortOrder == null ? "" : sortOrder);
+		if (query.matches("(?i).*timestamp.*")) return true;
+		if (projection != null) {
+			for (String column : projection) {
+				if (column != null && column.matches("(?i).*timestamp.*")) return true;
+			}
+		}
+		return false;
+	}
+
 	private static void modifyClipboardQuery(Object[] args) {
 		if (!clipboardHistory || args.length < 5) return;
 		String selection = args[2] instanceof String ? (String) args[2] : "";
 		String[] selectionArgs = args[3] instanceof String[] ? (String[]) args[3] : null;
 		String sortOrder = args[4] instanceof String ? (String) args[4] : null;
-		int timestampIndex = selection.indexOf("timestamp >= ?");
+		int timestampIndex = selection.toLowerCase(Locale.ROOT).indexOf("timestamp >= ?");
 		if (timestampIndex >= 0 && selectionArgs != null) {
 			int argumentIndex = 0;
 			for (int i = 0; i < timestampIndex; i++) if (selection.charAt(i) == '?') argumentIndex++;
@@ -274,7 +298,7 @@ public class GboardMods extends XposedModPack {
 				args[3] = selectionArgs;
 			}
 		}
-		if (sortOrder != null && sortOrder.matches("(?i).*timestamp\\s+desc\\s+limit\\s+\\d+.*")) {
+		if (sortOrder != null && sortOrder.matches("(?i).*\\blimit\\s+\\d+.*")) {
 			args[4] = sortOrder.replaceFirst("(?i)limit\\s+\\d+", "limit " + clipboardSize);
 		}
 	}
@@ -305,31 +329,6 @@ public class GboardMods extends XposedModPack {
 			Object override = evaluateFlag(name);
 			if (override != null) param.setResult(override);
 		});
-	}
-
-	private static void hookClipboardGroupLimit(Method method) {
-		clipboardLoaderClass = method.getDeclaringClass().getName();
-		clipboardLoaderMethod = method.getName();
-		try {
-			Method size = HashSet.class.getDeclaredMethod("size");
-			ReflectedClass.of(HashSet.class).after(size).run(param -> {
-				if (!clipboardHistory || !isClipboardLoaderCall()) return;
-				int actualSize = param.getResult();
-				if (actualSize <= clipboardSize) param.setResult(5);
-			});
-		} catch (Throwable ignored) { }
-	}
-
-	private static boolean isClipboardLoaderCall() {
-		String targetClass = clipboardLoaderClass;
-		String targetMethod = clipboardLoaderMethod;
-		if (targetClass == null || targetMethod == null) return false;
-		for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
-			if (targetClass.equals(element.getClassName()) && targetMethod.equals(element.getMethodName())) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	private static String findKnownFlagName(Object flag) {

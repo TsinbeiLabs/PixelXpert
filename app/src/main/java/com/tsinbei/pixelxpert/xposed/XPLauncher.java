@@ -1,8 +1,8 @@
 package com.tsinbei.pixelxpert.xposed;
 
 import static android.content.Context.CONTEXT_IGNORE_SECURITY;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.BuildConfig.APPLICATION_ID;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 import static com.tsinbei.pixelxpert.xposed.utils.BootLoopProtector.isBootLooped;
@@ -30,6 +30,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.github.libxposed.api.XposedModule;
 import io.github.libxposed.api.XposedModuleInterface;
+import io.github.libxposed.api.XposedInterface;
 import com.tsinbei.pixelxpert.BuildConfig;
 import com.tsinbei.pixelxpert.Constants;
 import com.tsinbei.pixelxpert.IPixelXpertProxy;
@@ -38,6 +39,7 @@ import com.tsinbei.pixelxpert.service.PixelXpertProxy;
 import com.tsinbei.pixelxpert.xposed.utils.SystemUtils;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
 import com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger;
+import com.tsinbei.pixelxpert.xposed.modpacks.allApps.HookTester;
 
 public class XPLauncher extends XposedModule implements ServiceConnection {
 	public static String processName = "";
@@ -52,6 +54,9 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 	private static IPixelXpertProxy rootProxyIPC;
 	private static final Queue<ProxyRunnable> proxyQueue = new LinkedList<>();
 	private static boolean TELECOM_SERVER_LOADED = false;
+	private static final int PREFS_LOAD_MAX_ATTEMPTS = 30;
+	private static final int PREFS_LOAD_RETRY_DELAY_MILLIS = 1000;
+	private boolean hookTesterLoaded = false;
 	public static Resources moduleResources;
 
 	public XPLauncher()
@@ -72,6 +77,16 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 	public void onSystemServerStarting(@NonNull XposedModuleInterface.SystemServerStartingParam SSSP)
 	{
 		ReflectedClass.setFrameworkClassloader(SSSP.getClassLoader());
+	}
+
+	@Override
+	public boolean onHotReloading(@NonNull XposedModuleInterface.HotReloadingParam param) {
+		return true;
+	}
+
+	@Override
+	public void onHotReloaded(@NonNull XposedModuleInterface.HotReloadedParam param) {
+		param.getOldHookHandles().forEach(XposedInterface.HookHandle::unhook);
 	}
 
 	private static void hook17BetaAudioManagerSRWorkaround(PackageReadyParam PRParam) {
@@ -153,19 +168,42 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 		moduleResources = mContext.createPackageContext(APPLICATION_ID, CONTEXT_IGNORE_SECURITY)
 				.getResources();
 		XPrefs.init(mContext);
+		loadHookTester(PRParam);
 		CompletableFuture.runAsync(() -> waitForXprefsLoad(PRParam));
 	}
 
+	private void loadHookTester(PackageReadyParam PRParam) {
+		if (hookTesterLoaded) return;
+		try {
+			XposedModPack hookTester = new HookTester(mContext);
+			hookTester.onPackageLoaded(PRParam);
+			runningMods.add(hookTester);
+			hookTesterLoaded = true;
+		} catch (Throwable throwable) {
+			Logger.log("Start Error Dump - Occurred in " + HookTester.class.getName());
+			Logger.log(throwable);
+		}
+	}
+
 	private void waitForXprefsLoad(PackageReadyParam PRParam) {
-		while (true) {
+		Throwable lastError = null;
+		for (int attempt = 0; attempt < PREFS_LOAD_MAX_ATTEMPTS; attempt++) {
 			try {
 				Xprefs.getBoolean("LoadTestBooleanValue", false);
-				break;
-			} catch (Throwable ignored) {
-				SystemUtils.threadSleep(1000);
+				loadPrefsAndModPacks(PRParam);
+				return;
+			} catch (Throwable throwable) {
+				lastError = throwable;
+				SystemUtils.threadSleep(PREFS_LOAD_RETRY_DELAY_MILLIS);
 			}
 		}
 
+		Logger.log("PixelXpert preferences were unavailable after " + PREFS_LOAD_MAX_ATTEMPTS
+				+ " attempts on " + PRParam.getPackageName());
+		if (lastError != null) Logger.log(lastError);
+	}
+
+	private void loadPrefsAndModPacks(PackageReadyParam PRParam) {
 		Logger.log(String.format("Loading PixelXpert version: %s on %s", BuildConfig.VERSION_NAME, PRParam.getPackageName()));
 		try {
 			Logger.log("PixelXpert Records: " + Xprefs.getAll().size());
@@ -210,6 +248,7 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 	}
 
 	private void loadModPack(Class<? extends XposedModPack> thisClass, PackageReadyParam PRParam) {
+		if (thisClass == HookTester.class && hookTesterLoaded) return;
 		try {
 			XposedModPack instance = thisClass.getConstructor(Context.class).newInstance(mContext);
 			try {

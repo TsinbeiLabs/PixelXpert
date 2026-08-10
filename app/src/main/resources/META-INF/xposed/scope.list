@@ -1,5 +1,6 @@
 com.android.systemui
 com.google.android.apps.nexuslauncher
+system
 android
 com.android.settings
 com.google.android.dialer
@@ -7,3 +8,6 @@ com.google.android.inputmethod.latin
 com.google.android.documentsui
 me.weishu.kernelsu
 com.rifsxd.ksunext
+com.sukisu.ultra
+com.sukisu.ultra.pr
+com.resukisu.resukisu
