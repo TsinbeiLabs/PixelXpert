@@ -1,3 +1,8 @@
+**canary-527**
+
+- Made physical button remapping hooks independent so an Android framework API change cannot disable every key action
+- Updated wake-state detection for Android 17 method overloads and added diagnostics for unavailable key hooks
+
 **canary-526**
 
 - Fixed the flashlight Quick Settings tile getting stuck on after the torch was turned off
