@@ -99,9 +99,8 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 		setContentView(binding.getRoot());
 
 		createNotificationChannel();
-		setupNavigation(savedInstanceState);
-
 		PreferenceHelper.init();
+		setupNavigation(savedInstanceState);
 
 		if (getIntent() != null) {
 			if (getIntent().getBooleanExtra("updateTapped", false)) {
