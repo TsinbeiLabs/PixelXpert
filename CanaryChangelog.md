@@ -1,3 +1,8 @@
+**canary-526**
+
+- Fixed the flashlight Quick Settings tile getting stuck on after the torch was turned off
+- Stopped the lock-screen flashlight animation hook from intercepting all SystemUI torch requests
+
 **canary-525**
 
 - Reject downloaded update ZIPs whose module version does not match the advertised update

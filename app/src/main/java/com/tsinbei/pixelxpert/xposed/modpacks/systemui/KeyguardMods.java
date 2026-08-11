@@ -23,7 +23,6 @@ import android.graphics.ColorFilter;
 import android.graphics.Outline;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.hardware.camera2.CameraManager;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,8 +93,6 @@ public class KeyguardMods extends XposedModPack {
 	private static boolean ForceAODwCharging = false;
 	//endregion
 
-	private static boolean AnimateFlashlight = false;
-
 	public KeyguardMods(Context context) {
 		super(context);
 	}
@@ -119,8 +116,6 @@ public class KeyguardMods extends XposedModPack {
 		KeyGuardDimAmount = Xprefs.getSliderFloat( "KeyGuardDimAmount", -1f) / 100f;
 
 		transparentBGcolor = Xprefs.getBoolean("KeyguardBottomButtonsTransparent", false);
-
-		AnimateFlashlight = Xprefs.getBoolean("AnimateFlashlight", false);
 
 		if (Key.length > 0) {
 			switch (Key[0]) {
@@ -214,13 +209,6 @@ public class KeyguardMods extends XposedModPack {
 		KeyguardQuickAffordanceViewClass
 				.after("setBackground")
 				.run(param -> ControlledLaunchableImageViewBackgroundDrawable.captureDrawable(param.getThisObject()));
-
-		ReflectedClass.of(CameraManager.class)
-				.before("setTorchMode")
-				.run(param -> {
-					SystemUtils.setFlash((Boolean) param.args[1], AnimateFlashlight);
-					param.setResult(null);
-				});
 
 		DefaultShortcutsSectionClass
 				.after("addViews")
