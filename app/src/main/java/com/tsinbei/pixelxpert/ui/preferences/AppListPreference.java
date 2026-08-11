@@ -68,7 +68,13 @@ public class AppListPreference extends MaterialListPreference {
 
 	private void updateSelectedIcon() {
 		int index = findIndexOfValue(getValue());
-		setIcon(entryIcons != null && index >= 0 && index < entryIcons.length ? entryIcons[index] : null);
+		setIcon(entryIcons != null && index >= 0 && index < entryIcons.length ? copyIcon(entryIcons[index]) : null);
+	}
+
+	private Drawable copyIcon(Drawable icon) {
+		if (icon == null) return null;
+		Drawable.ConstantState state = icon.getConstantState();
+		return state == null ? icon : state.newDrawable(getContext().getResources()).mutate();
 	}
 
 	private class AppChoiceAdapter extends RecyclerView.Adapter<AppChoiceAdapter.ViewHolder> {
@@ -92,7 +98,7 @@ public class AppListPreference extends MaterialListPreference {
 				String[] text = entries[position].toString().split("\\n", 2);
 				binding.name.setText(text[0]);
 				binding.packageName.setText(text.length > 1 ? text[1] : values[position]);
-				binding.icon.setImageDrawable(entryIcons != null && position < entryIcons.length ? entryIcons[position] : null);
+				binding.icon.setImageDrawable(entryIcons != null && position < entryIcons.length ? copyIcon(entryIcons[position]) : null);
 				binding.selected.setChecked(position == checkedItem);
 				binding.getRoot().setOnClickListener(view -> listener.onSelected(position));
 				binding.selected.setOnClickListener(view -> listener.onSelected(position));

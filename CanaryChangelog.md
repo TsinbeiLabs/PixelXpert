@@ -1,3 +1,7 @@
+**canary-528**
+
+- Fixed installer and uninstaller target app icons disappearing after changing a selection
+
 **canary-527**
 
 - Made physical button remapping hooks independent so an Android framework API change cannot disable every key action
