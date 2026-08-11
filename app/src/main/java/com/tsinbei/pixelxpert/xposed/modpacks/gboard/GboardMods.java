@@ -1,7 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.gboard;
 
-import static com.tsinbei.pixelxpert.Constants.GBOARD_PACKAGE;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 
 import android.content.ContentValues;
 import android.content.ContentResolver;
@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.app.Application;
 import android.inputmethodservice.InputMethodService;
 import android.net.Uri;
 import android.text.InputType;
@@ -18,7 +17,9 @@ import android.view.inputmethod.EditorInfo;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -152,11 +153,11 @@ public class GboardMods extends XposedModPack {
 
 	@Override
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam param) throws Throwable {
-		if (!GBOARD_PACKAGE.equals(Application.getProcessName())) return;
 		hookAmoledTheme();
-		 hookInputPrivacy();
+		hookInputPrivacy();
 		hookClipboardResolver();
 		hookClipboardProvider(param.getClassLoader());
+		hookClipboardSizeCompatibility();
 		GboardDexResolver.resolve(mContext, param.getClassLoader(), method -> {
 			if (method != null) hookFlagReader(method);
 		});
@@ -272,6 +273,20 @@ public class GboardMods extends XposedModPack {
 		});
 	}
 
+	private void hookClipboardSizeCompatibility() throws NoSuchMethodException {
+		Method size = HashSet.class.getDeclaredMethod("size");
+		ReflectedClass.of(HashSet.class).before(size).run(param -> {
+			if (!clipboardHistory) return;
+			HashSet<?> set = param.getThisObject();
+			Object first = set.isEmpty() ? null : set.iterator().next();
+			if (first == null || !"j$.time.Instant".equals(first.getClass().getName())) return;
+			Object backingMap = getObjectField(set, "map");
+			if (backingMap instanceof Map<?, ?> map && map.size() <= clipboardSize) {
+				param.setResult(5);
+			}
+		});
+	}
+
 	private static boolean isClipboardQuery(String[] projection, String selection, String sortOrder) {
 		String query = (selection == null ? "" : selection) + " " + (sortOrder == null ? "" : sortOrder);
 		if (query.matches("(?i).*timestamp.*")) return true;
@@ -348,6 +363,10 @@ public class GboardMods extends XposedModPack {
 	private static Object evaluateFlag(String name) {
 		Object enabled = stringFlag(name) ? "*" : Boolean.TRUE;
 		Object disabled = stringFlag(name) ? "" : Boolean.FALSE;
+		if (clipboardHistory
+				&& (name.equals("enable_clipboard_entity_extraction") || name.equals("enable_clipboard_query_refactoring"))) {
+			return disabled;
+		}
 		if (privacyFlags && PRIVACY_TRUE_FLAGS.contains(name)) return enabled;
 		if (privacyFlags && PRIVACY_FALSE_FLAGS.contains(name)) return disabled;
 		if (aiFeatures && AI_FLAGS.contains(name)) return enabled;
@@ -362,10 +381,6 @@ public class GboardMods extends XposedModPack {
 		if (clipboardChips && CLIPBOARD_CHIP_FLAGS.contains(name)) return enabled;
 		if (tfliteEngine && TFLITE_FLAGS.contains(name)) return enabled;
 		if (fastAccessBar && FAST_ACCESS_FLAGS.contains(name)) return enabled;
-		if (clipboardHistory && !clipboardChips
-				&& (name.equals("enable_clipboard_entity_extraction") || name.equals("enable_clipboard_query_refactoring"))) {
-			return disabled;
-		}
 		return null;
 	}
 

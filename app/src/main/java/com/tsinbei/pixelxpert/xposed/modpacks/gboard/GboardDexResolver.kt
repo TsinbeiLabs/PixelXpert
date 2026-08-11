@@ -46,7 +46,6 @@ object GboardDexResolver {
                 matcher {
                     usingStrings("Invalid flag: ")
                     returnType("java.lang.Object")
-                    paramTypes()
                 }
             }
             if (matches.size != 1) return@use null
