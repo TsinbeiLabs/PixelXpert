@@ -6,9 +6,11 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.ImageViewCompat;
 import androidx.preference.PreferenceViewHolder;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -63,7 +65,12 @@ public class AppListPreference extends MaterialListPreference {
 	@Override
 	public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
 		super.onBindViewHolder(holder);
-		updateSelectedIcon();
+		ImageView iconView = (ImageView) holder.findViewById(android.R.id.icon);
+		int index = findIndexOfValue(getValue());
+		Drawable icon = entryIcons != null && index >= 0 && index < entryIcons.length ? copyIcon(entryIcons[index]) : null;
+		ImageViewCompat.setImageTintList(iconView, null);
+		iconView.setImageDrawable(icon);
+		iconView.setVisibility(icon == null ? View.GONE : View.VISIBLE);
 	}
 
 	private void updateSelectedIcon() {
