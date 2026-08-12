@@ -109,8 +109,12 @@ android {
 	}
 }
 
-tasks.withType<JavaCompile>().configureEach {
-	options.compilerArgs.add("-Xlint:-processing")
+afterEvaluate {
+	tasks.withType<JavaCompile>().configureEach {
+		options.compilerArgumentProviders.removeIf {
+			it.javaClass.name == "dagger.hilt.android.plugin.HiltCommandLineArgumentProvider"
+		}
+	}
 }
 
 tasks.configureEach {
@@ -232,7 +236,6 @@ dependencies {
 	implementation (libs.gson)
 
 	implementation(libs.androidx.ui)
-	implementation(libs.androidx.localbroadcastmanager)
 
 	implementation(libs.hilt.android)
 	ksp(libs.hilt.android.compiler)

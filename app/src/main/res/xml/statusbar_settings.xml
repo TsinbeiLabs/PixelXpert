@@ -191,6 +191,29 @@
         </com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
     </com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/work_clone_profile_header"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="StatusbarLongpressAppSwitch"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/statusbar_long_press_app_switch"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="StatusbarAppSwitchIconEnabled"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/statusbar_app_switch_icon"
+			app:iconSpaceReserved="false" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
     <com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
         android:title="@string/sb_ignored_icons_category"
         app:iconSpaceReserved="false">

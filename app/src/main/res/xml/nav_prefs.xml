@@ -25,6 +25,12 @@
 		app:fragment="com.tsinbei.pixelxpert.ui.fragments.TaskbarNavFragment"
 		app:iconSpaceReserved="false" />
 
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+		android:key="remap_physical_buttons"
+		android:title="@string/remap_physical_buttons_title"
+		app:fragment="com.tsinbei.pixelxpert.ui.fragments.PhysicalButtonRemapFragment"
+		app:iconSpaceReserved="false" />
+
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 		android:defaultValue="false"
 		android:key="HideNavbar"

@@ -1,6 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
@@ -19,7 +20,7 @@ import androidx.core.content.res.ResourcesCompat;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
+import java.util.List;
 
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.R;
@@ -64,16 +65,13 @@ public class PowerMenu extends XposedModPack {
 					if(!advancedPowerMenu) return;
 
 
-					//noinspection unchecked
-					ArrayList<Object> mItems = (ArrayList<Object>) getObjectField(param.thisObject, "mItems");
-					mItems.add(PowerOptionsAction.getClazz().getConstructors()[0].newInstance(param.thisObject));
-
-					//noinspection unchecked
-					ArrayList<Object> mPowerItems = (ArrayList<Object>) getObjectField(param.thisObject, "mPowerItems");
-
-					mPowerItems.add(getAction(new BootloaderAction()));
-					mPowerItems.add(getAction(new SoftRebootAction()));
-					mPowerItems.add(getAction(new SystemUIRebootAction()));
+					Object itemsValue = getObjectField(param.thisObject, "mItems");
+					Object powerItemsValue = getObjectField(param.thisObject, "mPowerItems");
+					if (!(itemsValue instanceof List<?> mItems) || !(powerItemsValue instanceof List<?> mPowerItems)) return;
+					callMethod(mItems, "add", PowerOptionsAction.getClazz().getConstructors()[0].newInstance(param.thisObject));
+					callMethod(mPowerItems, "add", getAction(new BootloaderAction()));
+					callMethod(mPowerItems, "add", getAction(new SoftRebootAction()));
+					callMethod(mPowerItems, "add", getAction(new SystemUIRebootAction()));
 				});
 	}
 

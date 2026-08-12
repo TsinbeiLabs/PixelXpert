@@ -1,3 +1,18 @@
+**canary-530**
+
+- Reorganized flashlight, notification, work-profile, and physical-button settings into their corresponding sections
+- Fixed bottom navigation and navigation rail selection after opening nested settings pages
+- Updated Quick Settings row and column overrides to avoid replacing SystemUI resource objects
+- Replaced deprecated local broadcasts and Android APIs, and hardened reflected collection handling
+- Vendored RangeSliderPreference so Canary builds no longer depend on its Git submodule
+
+**canary-529**
+
+- Fixed Gboard clipboard history hooks on current app versions
+- Refreshed conditional preferences immediately after their controlling values change
+- Fixed selected app preference icons after changing installer and uninstaller targets
+- Fixed Canary workflow artifact uploads to publish a single ZIP file
+
 **canary-528**
 
 - Fixed installer and uninstaller target app icons disappearing after changing a selection

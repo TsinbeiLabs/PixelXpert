@@ -66,8 +66,7 @@ public abstract class AlertSlider implements SystemUtils.ChangeListener {
 
 		callMethod(sliderLayout, "createSlider", 0);
 
-		//noinspection rawtypes
-		Map slidersMaps = (Map) getObjectField(sliderLayout, "mSideToSliderMap");
+		Map<?, ?> slidersMaps = getObjectField(sliderLayout, "mSideToSliderMap");
 		View sliderView = (View) slidersMaps.values().iterator().next();
 
 		TextView mTitle = sliderView.findViewById(idOf("ambient_volume_slider_title"));
@@ -127,10 +126,10 @@ public abstract class AlertSlider implements SystemUtils.ChangeListener {
 		ReflectedClass OnSliderTouchListenerClass = ReflectedClass.of("com.google.android.material.slider.Slider$OnSliderTouchListener");
 		ReflectedClass OnSliderChangeListenerClass = ReflectedClass.of("com.google.android.material.slider.Slider$OnChangeListener");
 
-		//noinspection unchecked
-		List<Object> touchListeners = (List<Object>) getObjectField(slider, "touchListeners");
-		//noinspection unchecked
-		List<Object> changeListeners = (List<Object>) getObjectField(slider, "changeListeners");
+		Object touchListenersValue = getObjectField(slider, "touchListeners");
+		Object changeListenersValue = getObjectField(slider, "changeListeners");
+		if (!(touchListenersValue instanceof List<?> touchListeners)
+				|| !(changeListenersValue instanceof List<?> changeListeners)) return;
 
 		//Cleanup whatever listener is on this slider
 		touchListeners.clear();
@@ -141,8 +140,8 @@ public abstract class AlertSlider implements SystemUtils.ChangeListener {
 				new Class[]{OnSliderTouchListenerClass.getClazz(), OnSliderChangeListenerClass.getClazz()},
 				new SliderEventListener(sliderEventCallback));
 
-		touchListeners.add(combinedSliderListener);
-		changeListeners.add(combinedSliderListener);
+		callMethod(touchListeners, "add", combinedSliderListener);
+		callMethod(changeListeners, "add", combinedSliderListener);
 	}
 
 	/** @noinspection SameParameterValue*/

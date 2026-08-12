@@ -228,6 +228,13 @@
 			app:popExitAnim="@anim/nav_default_pop_exit_anim"
 			android:id="@+id/action_navFragment_to_taskbarNavFragment"
 			app:destination="@id/taskbarNavFragment" />
+		<action
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			android:id="@+id/action_navFragment_to_physicalButtonRemapFragment"
+			app:destination="@id/physicalButtonRemapFragment" />
 	</fragment>
 	<fragment
 		android:id="@+id/dialerFragment"
@@ -247,13 +254,6 @@
 	<fragment
 		android:id="@+id/miscFragment"
 		android:name="com.tsinbei.pixelxpert.ui.fragments.MiscFragment" >
-		<action
-			app:enterAnim="@anim/nav_default_enter_anim"
-			app:exitAnim="@anim/nav_default_exit_anim"
-			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-			app:popExitAnim="@anim/nav_default_pop_exit_anim"
-			android:id="@+id/action_miscFragment_to_physicalButtonRemapFragment"
-			app:destination="@id/physicalButtonRemapFragment" />
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"

@@ -13,9 +13,9 @@ import static com.tsinbei.pixelxpert.xposed.utils.reflection.HookHelper.callMeth
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.hardware.camera2.CameraManager;
 
 import androidx.annotation.NonNull;
@@ -270,7 +270,7 @@ public class FlashlightTile extends XposedModPack {
 
 		alertSlider.show();
 	}
-	public static class LevelDrawable extends Drawable {
+	public static class LevelDrawable extends LayerDrawable {
 		private final Context mContext;
 		private int mCurrentLevel;
 		private int mMinLevel;
@@ -284,6 +284,7 @@ public class FlashlightTile extends XposedModPack {
 		private Drawable mLoadedFilledDrawable;
 		private Drawable mLoadedOutlineDrawable;
 		public LevelDrawable(Context context) {
+			super(new Drawable[0]);
 			this.mContext = context;
 		}
 
@@ -374,11 +375,6 @@ public class FlashlightTile extends XposedModPack {
 			mLoadedFilledDrawable.setColorFilter(colorFilter);
 			mLoadedOutlineDrawable.setColorFilter(colorFilter);
 			invalidateSelf();
-		}
-
-		@Override
-		public int getOpacity() {
-			return PixelFormat.TRANSLUCENT;
 		}
 
 		@Override

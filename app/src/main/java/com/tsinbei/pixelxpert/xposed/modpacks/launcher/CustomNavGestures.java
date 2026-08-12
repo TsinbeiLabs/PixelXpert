@@ -235,9 +235,9 @@ public class CustomNavGestures extends XposedModPack {
 						if(!f.isAccessible()) {
 							f.setAccessible(true);
 						}
-						//noinspection unchecked
-						List<Object> list = (List<Object>) f.get(recentTaskList.get(0));
-						if(list != null && findFieldIfExists(list.get(0).getClass(), "isFocused") != null) {
+						Object fieldValue = f.get(recentTaskList.get(0));
+						if(fieldValue instanceof List<?> list && !list.isEmpty()
+								&& findFieldIfExists(list.get(0).getClass(), "isFocused") != null) {
 							mTasksFieldName = f.getName();
 							mTasksIsList = true;
 						}

@@ -1,6 +1,7 @@
 package com.tsinbei.pixelxpert.ui.activities;
 
 import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
+import static android.content.Context.RECEIVER_NOT_EXPORTED;
 import static com.tsinbei.pixelxpert.Constants.LAUNCH_REASON_EXTRA;
 import static com.tsinbei.pixelxpert.Constants.LAUNCH_REASON_XPOSED_SERVICE_FAIL;
 import static com.tsinbei.pixelxpert.R.string.update_channel_name;
@@ -34,7 +35,6 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
 import androidx.navigation.fragment.NavHostFragment;
@@ -371,6 +371,9 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 			NavigationUI.setupWithNavController(binding.bottomNavigationView, navControllerMain);
 		}
 
+		navControllerMain.addOnDestinationChangedListener((controller, destination, arguments) ->
+			syncNavigationSelection(destination.getId()));
+
 		ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (view, windowInsets) -> {
 			Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout());
 			boolean isRtl = view.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
@@ -386,6 +389,17 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 
 			return windowInsets;
 		});
+	}
+
+	private void syncNavigationSelection(int destinationId) {
+		int selectedId = destinationId == R.id.updateFragment
+				|| destinationId == R.id.hooksFragment
+				|| destinationId == R.id.ownPrefsFragment
+				? destinationId
+				: R.id.headerFragment;
+		MenuItem item = (isTabletDevice ? binding.navigationRailView : binding.bottomNavigationView)
+				.getMenu().findItem(selectedId);
+		if (item != null && !item.isChecked()) item.setChecked(true);
 	}
 
 	private boolean setupOnItemSelectedListener(MenuItem item) {
@@ -539,7 +553,7 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 			case "gesturenav_header" ->
 					navigateTo(navController, R.id.action_navFragment_to_gestureNavFragment);
 			case "remap_physical_buttons" ->
-					navigateTo(navController, R.id.action_miscFragment_to_physicalButtonRemapFragment);
+					navigateTo(navController, R.id.action_navFragment_to_physicalButtonRemapFragment);
 			case "netstat_header" ->
 					navigateTo(navController, R.id.action_miscFragment_to_networkStatFragment);
 			case "SleepOnFlatScreen" ->
@@ -576,21 +590,19 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 		setIntent(intent);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void onResume() {
 		super.onResume();
-		LocalBroadcastManager.getInstance(this).registerReceiver(
+		registerReceiver(
 				updateCheckReceiver,
-				new IntentFilter(BuildConfig.APPLICATION_ID + ".UPDATE_CHECK")
-		);
+				new IntentFilter(BuildConfig.APPLICATION_ID + ".UPDATE_CHECK"),
+				RECEIVER_NOT_EXPORTED);
 		handleUpdateBadge(PXPreferences.getInt("latestVersionCode", -1));
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void onPause() {
 		super.onPause();
-		LocalBroadcastManager.getInstance(this).unregisterReceiver(updateCheckReceiver);
+		unregisterReceiver(updateCheckReceiver);
 	}
 }

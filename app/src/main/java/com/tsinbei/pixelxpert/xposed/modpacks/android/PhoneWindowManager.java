@@ -113,15 +113,22 @@ public class PhoneWindowManager extends XposedModPack {
 	}
 
 	private boolean isPackageAvailableForUser(String packageName, UserHandle userHandle) {
-		//noinspection unchecked
-		return ((List<PackageInfo>) callMethod(mContext.getPackageManager(), "getInstalledPackagesAsUser", PackageManager.PackageInfoFlags.of(PackageManager.GET_META_DATA), getObjectField(userHandle, "mHandle"))).stream().anyMatch(packageInfo -> packageInfo.packageName.equals(packageName) && packageInfo.applicationInfo.enabled);
+		Object result = callMethod(mContext.getPackageManager(), "getInstalledPackagesAsUser",
+				PackageManager.PackageInfoFlags.of(PackageManager.GET_META_DATA), getObjectField(userHandle, "mHandle"));
+		if (!(result instanceof List<?> packages)) return false;
+		return packages.stream()
+				.filter(PackageInfo.class::isInstance)
+				.map(PackageInfo.class::cast)
+				.anyMatch(packageInfo -> packageInfo.packageName.equals(packageName) && packageInfo.applicationInfo.enabled);
 	}
 
 	@SuppressLint("WrongConstant")
 	@Override
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) throws Throwable {
-		//noinspection unchecked
-		userHandleList = (List<UserHandle>) callMethod(SystemUtils.UserManager(), "getProfiles", true);
+		Object profiles = callMethod(SystemUtils.UserManager(), "getProfiles", true);
+		userHandleList = profiles instanceof List<?> list
+				? list.stream().filter(UserHandle.class::isInstance).map(UserHandle.class::cast).toList()
+				: List.of();
 
 //		Collections.addAll(screenshotChords, KEYCODE_POWER, KEYCODE_VOLUME_DOWN);
 

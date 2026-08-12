@@ -192,8 +192,8 @@ public class LauncherVisualMods extends XposedModPack {
 			alphabeticalApps.after("onAppsUpdated").run(hook -> {
 				if (!hideDrawerApps || hiddenApps == null || hiddenApps.isEmpty()) return;
 				Object value = getObjectField(hook.thisObject, "mAdapterItems");
-				if (!(value instanceof ArrayList)) return;
-				ArrayList<Object> items = new ArrayList<>((ArrayList<Object>) value);
+				if (!(value instanceof ArrayList<?> originalItems)) return;
+				ArrayList<Object> items = new ArrayList<>(originalItems);
 				items.removeIf(item -> isHiddenItem(item));
 				setObjectField(hook.thisObject, "mAdapterItems", items);
 			});
@@ -203,8 +203,8 @@ public class LauncherVisualMods extends XposedModPack {
 				search.before("getTitleMatchResult").run(hook -> {
 					if (!hideDrawerApps || searchHiddenApps || hiddenApps == null || hiddenApps.isEmpty()) return;
 					for (int index = 0; index < hook.args.length; index++) {
-						if (!(hook.args[index] instanceof java.util.List)) continue;
-						ArrayList<Object> apps = new ArrayList<>((java.util.List<Object>) hook.args[index]);
+						if (!(hook.args[index] instanceof java.util.List<?> originalApps)) continue;
+						ArrayList<Object> apps = new ArrayList<>(originalApps);
 						apps.removeIf(this::isHiddenAppInfo);
 						hook.args[index] = apps;
 						break;

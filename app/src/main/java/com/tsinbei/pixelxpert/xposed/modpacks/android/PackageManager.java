@@ -26,6 +26,8 @@ import com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger;
 
 @FrameworkModPack
 public class PackageManager extends XposedModPack {
+	private static final String ACTION_INSTALL_PACKAGE = "android.intent.action.INSTALL_PACKAGE";
+	private static final String ACTION_UNINSTALL_PACKAGE = "android.intent.action.UNINSTALL_PACKAGE";
 	private static final String ALLOW_SIGNATURE_PREF = "PM_AllowMismatchedSignature";
 	private static final String ALLOW_DOWNGRADE_PREF = "PM_AllowDowngrade";
 	private static final String ALLOW_EXACT_SIGNATURE_PREF = "PM_AllowExactSignatureMismatch";
@@ -116,7 +118,7 @@ public class PackageManager extends XposedModPack {
 	private boolean redirectInstallerIntent(Intent intent) {
 		if (intent == null || !isInstallerIntent(intent)) return false;
 		boolean uninstall = Intent.ACTION_DELETE.equals(intent.getAction())
-				|| Intent.ACTION_UNINSTALL_PACKAGE.equals(intent.getAction());
+				|| ACTION_UNINSTALL_PACKAGE.equals(intent.getAction());
 		boolean session = ACTION_CONFIRM_INSTALL.equals(intent.getAction())
 				|| ACTION_CONFIRM_PERMISSIONS.equals(intent.getAction());
 		if (uninstall && !interceptUninstall) return false;
@@ -142,7 +144,7 @@ public class PackageManager extends XposedModPack {
 			intent.setComponent(null);
 			intent.setPackage(component.getPackageName());
 		}
-		if (Intent.ACTION_INSTALL_PACKAGE.equals(intent.getAction())) intent.setAction(Intent.ACTION_VIEW);
+		if (ACTION_INSTALL_PACKAGE.equals(intent.getAction())) intent.setAction(Intent.ACTION_VIEW);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
 				| Intent.FLAG_GRANT_READ_URI_PERMISSION);
 		return true;
@@ -151,14 +153,14 @@ public class PackageManager extends XposedModPack {
 	private boolean isInstallerIntent(Intent intent) {
 		String action = intent.getAction();
 		if (!Intent.ACTION_VIEW.equals(action)
-				&& !Intent.ACTION_INSTALL_PACKAGE.equals(action)
+				&& !ACTION_INSTALL_PACKAGE.equals(action)
 				&& !Intent.ACTION_DELETE.equals(action)
-				&& !Intent.ACTION_UNINSTALL_PACKAGE.equals(action)
+				&& !ACTION_UNINSTALL_PACKAGE.equals(action)
 				&& !ACTION_CONFIRM_INSTALL.equals(action)
 				&& !ACTION_CONFIRM_PERMISSIONS.equals(action)) return false;
-		if (Intent.ACTION_DELETE.equals(action) || Intent.ACTION_UNINSTALL_PACKAGE.equals(action)
+		if (Intent.ACTION_DELETE.equals(action) || ACTION_UNINSTALL_PACKAGE.equals(action)
 				|| ACTION_CONFIRM_INSTALL.equals(action) || ACTION_CONFIRM_PERMISSIONS.equals(action)
-				|| Intent.ACTION_INSTALL_PACKAGE.equals(action)) return true;
+				|| ACTION_INSTALL_PACKAGE.equals(action)) return true;
 		if ("application/vnd.android.package-archive".equals(intent.getType())) return true;
 		Uri data = intent.getData();
 		if (data == null || !("content".equals(data.getScheme()) || "file".equals(data.getScheme()))) return false;

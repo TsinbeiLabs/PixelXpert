@@ -9,7 +9,7 @@ import android.content.Context;
 import android.util.ArraySet;
 import android.view.View;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import io.github.libxposed.api.XposedModuleInterface;
@@ -82,15 +82,15 @@ public class StatusIconTuner extends XposedModPack {
 	private void setIgnoredIcons(Object container, Set<String> ignorableSlots){
 		try
 		{
-			//noinspection unchecked
-			ArrayList<String> ignoredSlots = (ArrayList<String>) getObjectField(container, "mIgnoredSlots");
+			Object value = getObjectField(container, "mIgnoredSlots");
+			if (!(value instanceof List<?> ignoredSlots)) return;
 
 			ignoredSlots.clear();
 
 			for (String slot : ignorableSlots) {
 				if(!ignoredSlots.contains(slot))
 				{
-					ignoredSlots.add(slot);
+					com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod(ignoredSlots, "add", slot);
 				}
 			}
 

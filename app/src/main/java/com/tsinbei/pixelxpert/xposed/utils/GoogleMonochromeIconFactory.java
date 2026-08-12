@@ -32,6 +32,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.content.res.Resources;
 
 import androidx.annotation.WorkerThread;
 
@@ -56,8 +57,8 @@ public class GoogleMonochromeIconFactory extends BitmapDrawable {
 	private final Paint mDrawPaint;
 	private final Rect mSrcRect;
 
-	/** @noinspection deprecation*/
 	public GoogleMonochromeIconFactory(Drawable icon, int iconBitmapSize) {
+		super((Resources) null, (Bitmap) null);
 		float extraFactor = AdaptiveIconDrawable.getExtraInsetFraction();
 		float viewPortScale = 1 / (1 + 2 * extraFactor);
 		mBitmapSize = Math.round(iconBitmapSize * 2 * viewPortScale);

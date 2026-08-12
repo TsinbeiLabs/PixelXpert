@@ -23,6 +23,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Outline;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableWrapper;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -473,7 +474,7 @@ public class KeyguardMods extends XposedModPack {
 		}
 	}
 
-	public static class ControlledLaunchableImageViewBackgroundDrawable extends Drawable
+	public static class ControlledLaunchableImageViewBackgroundDrawable extends DrawableWrapper
 	{
 		Context mContext;
 		Drawable mDrawable;
@@ -499,6 +500,7 @@ public class KeyguardMods extends XposedModPack {
 		}
 		public ControlledLaunchableImageViewBackgroundDrawable(Drawable drawable, ImageView parentView)
 		{
+			super(drawable);
 			parentImageViewReference = new WeakReference<>(parentView);
 			mContext = parentView.getContext();
 			mDrawable = drawable;
@@ -559,12 +561,6 @@ public class KeyguardMods extends XposedModPack {
 			{
 				mDrawable.setColorFilter(colorFilter);
 			}
-		}
-
-		@Override
-		public int getOpacity() {
-			//noinspection deprecation
-			return mDrawable.getOpacity();
 		}
 
 		@Override

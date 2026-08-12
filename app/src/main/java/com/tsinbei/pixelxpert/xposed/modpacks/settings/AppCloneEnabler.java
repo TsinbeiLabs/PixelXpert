@@ -77,13 +77,15 @@ public class AppCloneEnabler extends XposedModPack {
 
 					List<String> clonePackageNames = new ArrayList<>();
 					if (cloneUserID > 0) {
-						//noinspection unchecked
-						List<PackageInfo> cloneUserPackages = (List<PackageInfo>) callMethod(packageManager, "getInstalledPackagesAsUser", PackageManager.GET_ACTIVITIES, cloneUserID);
-
-						cloneUserPackages.forEach(clonePackage -> {
-							if (clonePackage.packageName != null)
-								clonePackageNames.add(clonePackage.packageName);
-						});
+						Object result = callMethod(packageManager, "getInstalledPackagesAsUser", PackageManager.GET_ACTIVITIES, cloneUserID);
+						if (result instanceof List<?> cloneUserPackages) {
+							cloneUserPackages.stream()
+									.filter(PackageInfo.class::isInstance)
+									.map(PackageInfo.class::cast)
+									.map(clonePackage -> clonePackage.packageName)
+									.filter(java.util.Objects::nonNull)
+									.forEach(clonePackageNames::add);
+						}
 					}
 
 					for (PackageInfo installedPackage : packageManager.getInstalledPackages(PackageManager.GET_ACTIVITIES)) {

@@ -193,9 +193,7 @@ public class VolumeTile extends XposedModPack {
 		boolean bluetoothFound = false;
 
 		for (AudioPlaybackConfiguration config : activeConfigurations) {
-			//noinspection deprecation
-			AudioDeviceInfo deviceInfo = config.getAudioDeviceInfo();
-			if (deviceInfo != null) {
+			for (AudioDeviceInfo deviceInfo : AudioManager().getAudioDevicesForAttributes(config.getAudioAttributes())) {
 				deviceInfoFound = true;
 				int deviceType = deviceInfo.getType();
 				if (deviceInfo.isSink() &&
@@ -204,6 +202,7 @@ public class VolumeTile extends XposedModPack {
 					break;
 				}
 			}
+			if (bluetoothFound) break;
 		}
 
 		if (deviceInfoFound) {

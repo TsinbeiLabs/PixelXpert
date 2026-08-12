@@ -241,8 +241,7 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 					if((modPackData.targetPackage.equals(PRParam.getPackageName()) || modPackData.targetPackage.isEmpty() /*common mod packs*/ || (modPackData.targetPackage.equals(Constants.SYSTEM_FRAMEWORK_PACKAGE) && isSystemServer))
 							   && processName.contains(partOfProcessName))
 					{
-						//noinspection unchecked
-						loadModPack((Class<? extends XposedModPack>) modPackData.clazz, PRParam);
+						loadModPack(modPackData.clazz.asSubclass(XposedModPack.class), PRParam);
 					}
 				});
 	}
