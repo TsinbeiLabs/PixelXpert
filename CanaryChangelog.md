@@ -1,3 +1,8 @@
+**canary-531**
+
+- Fixed notification expand and collapse buttons crashing SystemUI on Android 17 Canary builds
+- Made Canary prerelease notes match the corresponding version section in `CanaryChangelog.md`
+
 **canary-530**
 
 - Reorganized flashlight, notification, work-profile, and physical-button settings into their corresponding sections

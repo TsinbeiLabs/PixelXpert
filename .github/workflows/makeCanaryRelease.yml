@@ -92,11 +92,11 @@ jobs:
     - name: Shell Scripts Permissions
       run: chmod +x .github/*.sh
 
-    - name: Changelog Generation
-      run: .github/extractCanaryChanges.sh
+    - name: Extract Version Changelog
+      run: .github/extractCanaryChanges.sh '${{ steps.version.outputs.version_name }}'
 
-    - name: Version Bump
-      run: .github/prepareCanaryChangelog.sh ${{ github.run_id }}
+    - name: Prepare Release Announcement
+      run: .github/prepareCanaryChangelog.sh '${{ steps.version.outputs.version_name }}'
 
     - name: Prepare Release Artifacts
       run: cp output/PixelXpert.zip "output/PixelXpert-${{ steps.version.outputs.version_name }}.zip"
