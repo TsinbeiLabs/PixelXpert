@@ -1,5 +1,5 @@
 PKGNAME="com.tsinbei.pixelxpert"
-PKGPATH="/system/priv-app/TsinbeiPixelXpert/PixelXpert.apk"
+APKNAME="PixelXpert.apk"
 LSPDDBPATH="/data/adb/lspd/config/modules_config.db"
 MAGISKDBPATH="/data/adb/magisk.db"
 
@@ -17,6 +17,10 @@ runSQL(){
 
 #grant silent root access to given UID
 grantRootUID(){
+	if [ -z "$1" ]; then
+		ui_print "- Error: No UID provided for root grant"
+		return 1
+	fi
 	DBPATH=$MAGISKDBPATH
 
 	#new record - older magisk compatibility
@@ -41,32 +45,31 @@ grantRootApps(){
 	grantRootPkg $PKGNAME
 }
 
-migratePrefs(){
-	am start -n "$PKGNAME/.ui.activities.SettingsActivity" -e migratePrefs true > /dev/null
-}
-
-testKernelSU()
-{
-	if [[ $(ksud -V 2>&1 | grep "not found" | wc -c) -eq 0 ]]; then #KSU installed
-		if [[ $(pm list packages | grep $PKGNAME | wc -c) -eq 0 ]]; then #PixelXpert NOT installed yet
-			ui_print ''
-			ui_print '*******************************'
-			ui_print 'KernelSU binaries found!'
-			ui_print ''
-			ui_print '                CAUTION!:'
-			ui_print 'Before installation, you MUST disable'
-			ui_print '"Umount modules by default"'
-			ui_print 'Otherwise, your device will fall into BOOTLOOP!'
-			ui_print ''
-			ui_print 'Do you wish to continue?'
-			ui_print 'Volume Up: Continue'
-			ui_print 'Volume Down: Abort'
-			if [[ "$(getevent -l | grep -m 1 KEY_VOLUME)" == *"VOLUMEDOWN"* ]]; then
-				abort 'Installation cancelled'
-			fi
-		fi
-	fi
-}
+#obsolete since the app is installed as a user app: KernelSU's "Umount modules by
+#default" can no longer hide the app or bootloop the device, since the module
+#doesn't mount anything into /system anymore
+#testKernelSU()
+#{
+#	if [[ $(ksud -V 2>&1 | grep "not found" | wc -c) -eq 0 ]]; then #KSU installed
+#		if [[ $(pm list packages | grep $PKGNAME | wc -c) -eq 0 ]]; then #PixelXpert NOT installed yet
+#			ui_print ''
+#			ui_print '*******************************'
+#			ui_print 'KernelSU binaries found!'
+#			ui_print ''
+#			ui_print '                CAUTION!:'
+#			ui_print 'Before installation, you MUST disable'
+#			ui_print '"Umount modules by default"'
+#			ui_print 'Otherwise, your device will fall into BOOTLOOP!'
+#			ui_print ''
+#			ui_print 'Do you wish to continue?'
+#			ui_print 'Volume Up: Continue'
+#			ui_print 'Volume Down: Abort'
+#			if [[ "$(getevent -l | grep -m 1 KEY_VOLUME)" == *"VOLUMEDOWN"* ]]; then
+#				abort 'Installation cancelled'
+#			fi
+#		fi
+#	fi
+#}
 
 assertPixelRom()
 {
@@ -96,20 +99,60 @@ assertPixelRom
 
 assertSupportedAndroid
 
-testKernelSU
-
 prepareSQL
 
 ui_print ''
 ui_print ''
 
-if command -v magisk > /dev/null 2>&1; then
+#only grant here if the app is already installed; fresh installs are granted after pm install below
+if command -v magisk > /dev/null 2>&1 && pm list packages | grep -q "package:$PKGNAME"; then
 	grantRootApps
 fi
 
 set_perm $MODPATH/service.sh 0 0 0755
 
-if [ $(ls $LSPDDBPATH) = $LSPDDBPATH ]; then
+ui_print ''
+ui_print ''
+
+#install the app as a regular user app instead of mounting it as a priv-app.
+#user apps live in /data/app and survive OTAs and temporary root loss.
+ui_print '- Installing Pixel Xpert app...'
+APK_PATH="$MODPATH/$APKNAME"
+if [ -f "$APK_PATH" ]; then
+	pm install -r -d -g "$APK_PATH" > /dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		ui_print '- App installed successfully!'
+		#the UID may be new (fresh install): make sure root is granted now
+		if command -v magisk > /dev/null 2>&1; then
+			grantRootApps
+		fi
+	else
+		ui_print '- Failed to install app! Will retry on boot.'
+		touch "$MODPATH/install_needed"
+	fi
+else
+	ui_print '- APK not found in zip!'
+fi
+
+#migration from the old priv-app mount model: once the system folder stops being
+#mounted, Android wipes the system app and its data on the next boot. Back the
+#device-protected preferences up now; service.sh reinstalls and restores them.
+if pm list packages -s | grep -q "package:$PKGNAME"; then
+	if [ -d "/data/user_de/0/$PKGNAME/shared_prefs" ]; then
+		ui_print '- System app detected. Backing up preferences for migration...'
+		mkdir -p "$MODPATH/px_backup_de"
+		cp -af "/data/user_de/0/$PKGNAME/shared_prefs" "$MODPATH/px_backup_de/"
+	fi
+	#Android wipes the app on boot because the system base disappears: reinstall then
+	touch "$MODPATH/install_needed"
+	ui_print '- Migrating from system app: after the first reboot,'
+	ui_print '  please reboot once more to activate all features.'
+fi
+
+#make sure no system folder remains, so nothing mounts as priv-app
+rm -rf "$MODPATH/system"
+
+if [ -f "$LSPDDBPATH" ]; then
 	ui_print ''
 	ui_print ''
 

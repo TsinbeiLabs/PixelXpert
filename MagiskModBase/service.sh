@@ -1,5 +1,5 @@
 PKGNAME="com.tsinbei.pixelxpert"
-PKGPATH="/system/priv-app/TsinbeiPixelXpert/PixelXpert.apk"
+APKNAME="PixelXpert.apk"
 LSPDDBPATH="/data/adb/lspd/config/modules_config.db"
 MAGISKDBPATH="/data/adb/magisk.db"
 MODDIR=${0%/*}
@@ -16,6 +16,9 @@ runSQL(){
 
 #grant silent root access to given UID
 grantRootUID(){
+	if [ -z "$1" ]; then
+		return 1
+	fi
 	DBPATH=$MAGISKDBPATH
 
 	#new record - older magisk compatibility
@@ -44,4 +47,38 @@ prepareSQL
 
 if command -v magisk > /dev/null 2>&1; then
 	grantRootApps
+fi
+
+# Wait for boot to finish before touching the package manager
+until [ "$(getprop sys.boot_completed)" = "1" ]; do
+	sleep 1
+done
+
+if [ -f "$MODDIR/install_needed" ]; then
+	APP_EXISTS=$(pm list packages | grep "package:$PKGNAME")
+
+	pm install -r -d -g "$MODDIR/$APKNAME" > /dev/null 2>&1
+	rm -f "$MODDIR/install_needed"
+
+	# Only restore backup if the app was actually wiped by Android (migration from system app)
+	if [ -z "$APP_EXISTS" ] && [ -d "$MODDIR/px_backup_de/shared_prefs" ]; then
+		mkdir -p "/data/user_de/0/$PKGNAME"
+		cp -af "$MODDIR/px_backup_de/shared_prefs" "/data/user_de/0/$PKGNAME/"
+
+		APP_UID=$(pm list packages -U $PKGNAME --user 0 | grep ":$PKGNAME " | awk -F 'uid:' '{ print $2 }' | cut -d ',' -f 1)
+		if [ -n "$APP_UID" ]; then
+			chown -R $APP_UID:$APP_UID "/data/user_de/0/$PKGNAME"
+			restorecon -R "/data/user_de/0/$PKGNAME"
+		fi
+	fi
+
+	# Cleanup backup regardless
+	rm -rf "$MODDIR/px_backup_de"
+
+	# The app was (re)installed after zygote started, so running processes have no
+	# module hooks yet: restart SystemUI now. Framework hooks need one more reboot.
+	if command -v magisk > /dev/null 2>&1; then
+		grantRootApps
+	fi
+	killall com.android.systemui
 fi

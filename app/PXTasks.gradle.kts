@@ -59,10 +59,9 @@ tasks.register<Zip>("createZip") {
 	mustRunAfter("incrementStableVersion")
 	mustRunAfter("assembleRelease")
 
-	from(file("../MagiskModBase")) {
-		exclude("system/priv-app/TsinbeiPixelXpert/**")
-	}
-	from(file("build/outputs/apk/release/PixelXpert.apk")){into("system/priv-app/TsinbeiPixelXpert")}
+	from(file("../MagiskModBase"))
+	//the app installs as a regular user app now: bundle the APK at the zip root
+	from(file("build/outputs/apk/release/PixelXpert.apk")){into("")}
 
 	destinationDirectory.set(file("../output"))
 	archiveFileName.set("PixelXpert.zip")
