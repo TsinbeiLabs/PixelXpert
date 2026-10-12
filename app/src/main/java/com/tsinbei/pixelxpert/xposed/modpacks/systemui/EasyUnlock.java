@@ -38,9 +38,8 @@ public class EasyUnlock extends XposedModPack {
 
 	@Override
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) throws Throwable {
-		ReflectedClass KeyguardAbsKeyInputViewControllerClass = ReflectedClass.of("com.android.keyguard.KeyguardAbsKeyInputViewController");
-		ReflectedClass LockscreenCredentialClass = ReflectedClass.of("com.android.internal.widget.LockscreenCredential");
-		ReflectedClass StatusBarKeyguardViewManagerClass = ReflectedClass.of("com.android.systemui.statusbar.phone.StatusBarKeyguardViewManager");
+		ReflectedClass StatusBarKeyguardViewManagerClass = ReflectedClass.ofIfPossible("com.android.systemui.statusbar.phone.StatusBarKeyguardViewManager");
+		ReflectedClass LockPatternUtilsClass = ReflectedClass.ofIfPossible("com.android.internal.widget.LockPatternUtils");
 
 		StatusBarKeyguardViewManagerClass
 				.before("onDozingChanged")
@@ -51,6 +50,39 @@ public class EasyUnlock extends XposedModPack {
 						callMethod(param.thisObject, "showPrimaryBouncer", /*reason*/"PXAsked", true);
 					}
 				});
+
+		// Android 14+ natively supports auto-confirming the PIN once fully typed.
+		boolean autoPinConfirmHooked = false;
+		if (LockPatternUtilsClass.getClazz() != null) {
+			try {
+				autoPinConfirmHooked = !LockPatternUtilsClass
+						.after("isAutoPinConfirmEnabled")
+						.run(param -> {
+							if (easyUnlockEnabled) {
+								try {
+									// During FBE (direct boot) the CE storage is locked, so the PIN length
+									// can't be verified. Forcing true then would make SystemUI auto-submit
+									// a single digit and fail. Mimic stock behavior: require Enter on first boot.
+									int userId = (int) param.args[0];
+									int pinLength = (int) callMethod(param.thisObject, "getPinLength", userId);
+									param.setResult(pinLength > 0);
+								} catch (Throwable e) {
+									param.setResult(false);
+								}
+							}
+						}).isEmpty();
+			} catch (Throwable ignored) {
+			}
+		}
+		if (!autoPinConfirmHooked) {
+			legacyEasyUnlock(); //fallback for older Android versions without isAutoPinConfirmEnabled
+		}
+	}
+
+	private void legacyEasyUnlock() {
+		ReflectedClass KeyguardAbsKeyInputViewControllerClass = ReflectedClass.ofIfPossible("com.android.keyguard.KeyguardAbsKeyInputViewController");
+		ReflectedClass LockscreenCredentialClass = ReflectedClass.ofIfPossible("com.android.internal.widget.LockscreenCredential");
+		if (KeyguardAbsKeyInputViewControllerClass.getClazz() == null || LockscreenCredentialClass.getClazz() == null) return;
 
 		KeyguardAbsKeyInputViewControllerClass
 				.after("onUserInput")

@@ -129,20 +129,25 @@ public class ScreenOffKeys extends XposedModPack {
 			PowerKeyRuleClass
 					.before("onLongPress")
 					.run(param -> {
+						int actionType = ACTION_COMPLETE;
 						try { //TODO: no need to try/catch once QPR1 stable is released
-							if ((int) callMethod(
+							actionType = (int) callMethod(
 									param.args[0],
-									"getAction")
-									!= ACTION_COMPLETE)
-								return;
+									"getAction");
 						} catch (Throwable ignored){}
 
 						boolean screenIsOn = screenIsOn();
+						int customAction = resolveAction(KEYCODE_POWER, screenIsOn);
 
-						if (launchAction(resolveAction(KEYCODE_POWER, screenIsOn),
-								screenIsOn,
-								false))
+						if (customAction != PHYSICAL_ACTION_DEFAULT) {
+							// Suppress OS handling of this long press (both ACTION_START and ACTION_COMPLETE)
 							param.setResult(null);
+
+							// Only trigger the custom action when the long press is complete
+							if (actionType == ACTION_COMPLETE && customAction != PHYSICAL_ACTION_NONE) {
+								launchAction(customAction, screenIsOn, false);
+							}
+						}
 					});
 		} catch (Throwable throwable) {
 			log("ScreenOffKeys: power long-press hook unavailable", throwable);

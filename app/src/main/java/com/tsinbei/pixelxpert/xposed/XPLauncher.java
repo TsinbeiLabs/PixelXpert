@@ -19,12 +19,12 @@ import android.os.RemoteException;
 
 import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -45,7 +45,7 @@ public class XPLauncher extends XposedModule implements ServiceConnection {
 	public static String processName = "";
 	public static boolean isSystemServer = false;
 
-	public static ArrayList<XposedModPack> runningMods = new ArrayList<>();
+	public static CopyOnWriteArrayList<XposedModPack> runningMods = new CopyOnWriteArrayList<>();
 	public Context mContext = null;
 	@SuppressLint("StaticFieldLeak")
 	static XPLauncher instance;

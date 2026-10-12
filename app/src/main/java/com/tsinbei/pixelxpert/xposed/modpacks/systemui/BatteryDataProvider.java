@@ -1,6 +1,6 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
-import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callStaticMethod;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getBooleanField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
@@ -101,8 +101,20 @@ public class BatteryDataProvider extends XposedModPack {
 					if(FastChargingWattage <= USB_5_WATT)
 						return; //it's default value
 
-					int curr = (int) param.args[0];
-					int volt = (int) param.args[1];
+					int curr = 0;
+					int volt = 0;
+
+					if (param.args.length > 2) {
+						if (param.args[0] instanceof Integer) {
+							// Old signature: (int current, int voltage, Context context)
+							curr = (int) param.args[0];
+							volt = (int) param.args[1];
+						} else {
+							// New signature: (Context context, int current, int voltage)
+							curr = (int) param.args[1];
+							volt = (int) param.args[2];
+						}
+					}
 
 					if(volt < 0)
 					{
@@ -126,7 +138,11 @@ public class BatteryDataProvider extends XposedModPack {
 						int current = batteryIntent.getIntExtra(EXTRA_MAX_CHARGING_CURRENT, -1);
 						int voltage = batteryIntent.getIntExtra(EXTRA_MAX_CHARGING_VOLTAGE, -1);
 
-						mIsFastCharging = callMethod(param.thisObject, "calculateChargingSpeed", current, voltage, mContext).equals(CHARGING_FAST);
+						try { //A17 QPR: (Context context, int current, int voltage)
+							mIsFastCharging = callStaticMethod(param.thisObject.getClass(), "calculateChargingSpeed", mContext, current, voltage).equals(CHARGING_FAST);
+						} catch (Throwable t) { //older: (int current, int voltage, Context context)
+							mIsFastCharging = callStaticMethod(param.thisObject.getClass(), "calculateChargingSpeed", current, voltage, mContext).equals(CHARGING_FAST);
+						}
 
 						onBatteryStatusChanged((int) getObjectField(param.thisObject, "status"), (Intent) param.args[0]);
 					}

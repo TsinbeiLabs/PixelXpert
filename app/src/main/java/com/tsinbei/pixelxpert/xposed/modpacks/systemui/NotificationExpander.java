@@ -72,14 +72,14 @@ public class NotificationExpander extends XposedModPack {
 		ReflectedClass NotificationStackScrollLayoutClass = ReflectedClass.of("com.android.systemui.statusbar.notification.stack.NotificationStackScrollLayout");
 		ReflectedClass FooterViewButtonClass = ReflectedClass.of("com.android.systemui.statusbar.notification.row.FooterViewButton");
 		ReflectedClass NotifCollectionClass = ReflectedClass.ofIfPossible("com.android.systemui.statusbar.notification.collection.NotifCollection");
-		ReflectedClass NotificationPanelViewControllerClass = ReflectedClass.of("com.android.systemui.shade.NotificationPanelViewController");
 		ReflectedClass FooterViewClass = ReflectedClass.of("com.android.systemui.statusbar.notification.footer.ui.view.FooterView");
 
 		//region default notification state
-		NotificationPanelViewControllerClass
-				.before("notifyExpandingStarted")
+		NotificationStackScrollLayoutClass //notifyExpandingStarted was removed on CP3A/CP41
+				.before("setIsExpanded")
 				.run(param -> {
-					if(notificationDefaultExpansion != DEFAULT)
+					boolean isExpanded = (boolean) param.args[0];
+					if(isExpanded && notificationDefaultExpansion != DEFAULT)
 						expandAll(notificationDefaultExpansion == EXPAND_ALWAYS);
 				});
 		//endregion

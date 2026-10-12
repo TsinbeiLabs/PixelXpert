@@ -5,6 +5,10 @@
     <string name="xposed_desc">Customizations for Google Pixel devices</string>
     <string name="title_activity_settings" translatable="false">@string/app_name</string>
     <string name="volume_tile_title">Media Volume</string>
+    <string name="caffeine_tile_title">Caffeine</string>
+    <string name="high_brightness_flashlight_tile_title">High Brightness Flashlight</string>
+    <string name="enable_high_brightness_flashlight_title">High Brightness Flashlight</string>
+    <string name="enable_high_brightness_flashlight_summary">Utilizes camera to reach higher brightness than what the system allows. Uses more power!</string>
     <string name="sliding_tile_subtitle">Tap to adjust</string>
     <string name="app_switch_tile_title">Switch App Profile</string>
     <string name="hide_default">Hide (Default)</string>
@@ -127,6 +131,7 @@
     <string name="double_tap_sleep_title">Double-tap to sleep</string>
     <string name="sb_multi_row_system_icons">Multi-row system icons (needs raised statusbar height)</string>
     <string name="sb_multi_row_notification_icons">Multi-row notification icons (needs raised statusbar height)</string>
+    <string name="sb_multi_row_clock_bottom">Move clock to bottom row</string>
     <string name="sb_double_row_category">Double Statusbar rows</string>
     <string name="sb_icon_sort_mode">Icon placement method</string>
     <string name="sort_clean">Sort in a grid</string>
@@ -731,4 +736,14 @@
     <string name="pm_intercept_uninstall_summary">Send ACTION_DELETE and ACTION_UNINSTALL_PACKAGE requests to the selected app</string>
     <string name="pm_uninstall_follow_installer_title">Use installer for uninstall requests</string>
     <string name="pm_uninstaller_target_title">Uninstaller</string>
+
+    <string name="pin_wireless_adb_title">Pin Wireless ADB Port</string>
+    <string name="pin_wireless_adb_summary">Forward a specific static port to the randomized Wireless Debugging TLS port, allowing easy connections like "adb connect ip:port"</string>
+    <string name="pinned_adb_port_title">Pinned ADB Port</string>
+    <string name="pinned_adb_port_summary">The static port to listen on (default 5555)</string>
+
+    <string name="qs_brightness_slider_bottom_title">Brightness Slider Below Tiles</string>
+    <string name="qs_brightness_slider_bottom_desc">Move the brightness slider below the quick settings tiles</string>
+    <string name="qqs_brightness_slider_title">Always Show Brightness Slider</string>
+    <string name="qqs_brightness_slider_desc">Show the brightness slider in collapsed quick settings and share it with expanded quick settings</string>
 </resources>

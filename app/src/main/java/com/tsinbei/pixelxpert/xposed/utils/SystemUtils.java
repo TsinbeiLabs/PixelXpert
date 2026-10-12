@@ -34,6 +34,7 @@ import android.media.AudioManager;
 import android.media.AudioPlaybackConfiguration;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
+import android.os.Binder;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.PowerManager;
@@ -124,7 +125,24 @@ public class SystemUtils {
 	}
 
 	public static boolean isFlashOn() {
+		return instance != null && instance.isTorchOnInternal();
+	}
+
+	private boolean isTorchOnInternal() {
+		if (isHighBrightnessFlashlightActive() && HighBrightnessTorchController.getInstance().isOn()) {
+			return true;
+		}
+		if (getCameraManager() == null) {
+			return false;
+		}
 		return isTorchOn;
+	}
+
+	//High Brightness Flashlight (Pixel experimental Camera2 API) takes over the torch when enabled and supported
+	private static boolean isHighBrightnessFlashlightActive() {
+		return Xprefs.getBoolean("enable_high_brightness_flashlight", false)
+				&& HighBrightnessTorchController.getInstance() != null
+				&& HighBrightnessTorchController.getInstance().isSupported();
 	}
 
 	public static void toggleFlash(boolean animate) {
@@ -264,8 +282,13 @@ public class SystemUtils {
 		if (instance != null)
 		{
 			try {
-				callMethod(PowerManager(), "goToSleep", SystemClock.uptimeMillis());
-			} catch (Throwable ignored) {}
+				// 4 = GO_TO_SLEEP_REASON_POWER_BUTTON, forces immediate lock
+				callMethod(PowerManager(), "goToSleep", SystemClock.uptimeMillis(), 4, 0);
+			} catch (Throwable ignored) {
+				try {
+					callMethod(PowerManager(), "goToSleep", SystemClock.uptimeMillis());
+				} catch (Throwable ignored2) {}
+			}
 		}
 	}
 
@@ -274,6 +297,7 @@ public class SystemUtils {
 
 		instance = this;
 
+		HighBrightnessTorchController.init(context);
 		registerVolumeChangeReceiver();
 	}
 	public static void threadSleep(int millis)
@@ -337,6 +361,15 @@ public class SystemUtils {
 	private void setFlashInternal(boolean enabled, boolean animate) {
 		if(getCameraManager() == null)
 			return;
+
+		if (isHighBrightnessFlashlightActive()) {
+			if (enabled) {
+				HighBrightnessTorchController.getInstance().toggle();
+			} else {
+				HighBrightnessTorchController.getInstance().closeCamera();
+			}
+			return;
+		}
 
 		try {
 			String flashID = getFlashID(getCameraManager());
@@ -444,9 +477,21 @@ public class SystemUtils {
 				return;
 			}
 			if (maxFlashLevel == -1) {
-				@SuppressWarnings("unchecked")
-				CameraCharacteristics.Key<Integer> FLASH_INFO_STRENGTH_MAXIMUM_LEVEL = (CameraCharacteristics.Key<Integer>) getStaticObjectField(CameraCharacteristics.class, "FLASH_INFO_STRENGTH_MAXIMUM_LEVEL");
-				maxFlashLevel = getCameraManager().getCameraCharacteristics(flashID).get(FLASH_INFO_STRENGTH_MAXIMUM_LEVEL);
+				//A17QPR1 blocks background camera queries: run as system identity and fall back to the
+				//value cached by processes that could read it (SystemUI populates it via the QS tile)
+				long token = Binder.clearCallingIdentity();
+				try {
+					@SuppressWarnings("unchecked")
+					CameraCharacteristics.Key<Integer> FLASH_INFO_STRENGTH_MAXIMUM_LEVEL = (CameraCharacteristics.Key<Integer>) getStaticObjectField(CameraCharacteristics.class, "FLASH_INFO_STRENGTH_MAXIMUM_LEVEL");
+					maxFlashLevel = getCameraManager().getCameraCharacteristics(flashID).get(FLASH_INFO_STRENGTH_MAXIMUM_LEVEL);
+					try {
+						Xprefs.edit().putInt("cachedMaxFlashLevel", maxFlashLevel).apply();
+					} catch (Throwable ignored) {}
+				} catch (Throwable t) {
+					maxFlashLevel = Xprefs.getInt("cachedMaxFlashLevel", 45);
+				} finally {
+					Binder.restoreCallingIdentity(token);
+				}
 			}
 		} catch (Throwable ignored) {}
 	}
@@ -459,6 +504,9 @@ public class SystemUtils {
 	}
 
 	private int getMaxFlashLevelInternal() {
+		if (isHighBrightnessFlashlightActive()) {
+			return HighBrightnessTorchController.getInstance().getMaxBrightness();
+		}
 		if(maxFlashLevel == -1)
 		{
 			refreshFlashLevel();
@@ -479,16 +527,33 @@ public class SystemUtils {
 	}
 
 		private void setFlashLevel(boolean enabled, int level) {
+		if (isHighBrightnessFlashlightActive()) {
+			if (enabled) {
+				HighBrightnessTorchController.getInstance().setBrightness(level);
+			} else {
+				HighBrightnessTorchController.getInstance().closeCamera();
+			}
+			return;
+		}
 		try {
 			String flashID = getFlashID(getCameraManager());
 			if (enabled) {
 				if (supportsFlashLevels()) //good news. we can set levels
 				{
-					ReflectedMethod.ofName( //16QPR3 leveled flashlight uses this method and we hook it. have to run it manually
-							ReflectedClass.of(CameraManager.class),
-							"turnOnTorchWithStrengthLevel").invokeOriginal(getCameraManager(),
-							flashID,
-							Math.max(level, 1));
+					try {
+						long token = Binder.clearCallingIdentity();
+						try {
+							ReflectedMethod.ofName( //16QPR3 leveled flashlight uses this method and we hook it. have to run it manually
+									ReflectedClass.of(CameraManager.class),
+									"turnOnTorchWithStrengthLevel").invokeOriginal(getCameraManager(),
+									flashID,
+									Math.max(level, 1));
+						} finally {
+							Binder.restoreCallingIdentity(token);
+						}
+					} catch (Throwable t) {
+						setFlashInternalNoLevel(true, false);
+					}
 				} else //flash doesn't support levels: go normal
 				{
 					setFlashInternalNoLevel(true, false);
@@ -516,17 +581,24 @@ public class SystemUtils {
 	}
 
 	private String getFlashID(@NonNull CameraManager cameraManager) throws CameraAccessException {
-		String[] ids = cameraManager.getCameraIdList();
-		for (String id : ids) {
-			//noinspection DataFlowIssue
-			if (cameraManager.getCameraCharacteristics(id).get(CameraCharacteristics.LENS_FACING) == CameraMetadata.LENS_FACING_BACK) {
+		long token = Binder.clearCallingIdentity();
+		try {
+			String[] ids = cameraManager.getCameraIdList();
+			for (String id : ids) {
 				//noinspection DataFlowIssue
-				if (cameraManager.getCameraCharacteristics(id).get(CameraCharacteristics.FLASH_INFO_AVAILABLE)) {
-					return id;
+				if (cameraManager.getCameraCharacteristics(id).get(CameraCharacteristics.LENS_FACING) == CameraMetadata.LENS_FACING_BACK) {
+					//noinspection DataFlowIssue
+					if (cameraManager.getCameraCharacteristics(id).get(CameraCharacteristics.FLASH_INFO_AVAILABLE)) {
+						return id;
+					}
 				}
 			}
+		} catch (Throwable t) {
+			return "0"; //A17QPR1 may block the scan entirely: fall back to the primary back camera
+		} finally {
+			Binder.restoreCallingIdentity(token);
 		}
-		return "";
+		return "0";
 	}
 
 	/** @noinspection unused*/
@@ -542,10 +614,20 @@ public class SystemUtils {
 
 	private int getFlashStrengthInternal()
 	{
+		if (isHighBrightnessFlashlightActive()) {
+			return HighBrightnessTorchController.getInstance().getCurrentBrightness();
+		}
+		long token = Binder.clearCallingIdentity();
 		try {
-			return getCameraManager().getTorchStrengthLevel(getFlashID(getCameraManager()));
-		} catch (CameraAccessException e) {
-			return 0;
+			int level = getCameraManager().getTorchStrengthLevel(getFlashID(getCameraManager()));
+			try {
+				Xprefs.edit().putInt("cachedFlashLevel", level).apply();
+			} catch (Throwable ignored) {}
+			return level;
+		} catch (Throwable e) {
+			return Xprefs.getInt("cachedFlashLevel", Math.round(Xprefs.getInt("flashPCT", 50) / 100f * getMaxFlashLevel()));
+		} finally {
+			Binder.restoreCallingIdentity(token);
 		}
 	}
 

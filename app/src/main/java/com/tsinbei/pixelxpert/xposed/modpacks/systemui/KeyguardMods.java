@@ -68,6 +68,7 @@ public class KeyguardMods extends XposedModPack {
 	private static boolean customCarrierTextEnabled = false;
 	private static String customCarrierText = "";
 	private static Object carrierTextController;
+	private static boolean isCarrierCallbackHooked = false;
 
 	final StringFormatter carrierStringFormatter = new StringFormatter();
 	final StringFormatter clockStringFormatter = new StringFormatter();
@@ -129,9 +130,7 @@ public class KeyguardMods extends XposedModPack {
 						setCarrierText();
 					} else {
 						try {
-							callMethod(
-									getObjectField(carrierTextController, "mCarrierTextManager"),
-									"updateCarrierText");
+							callMethod(getCarrierTextManager(), "updateCarrierText");
 						} catch (Throwable ignored) {
 						} //probably not initiated yet
 					}
@@ -246,6 +245,25 @@ public class KeyguardMods extends XposedModPack {
 				.after("addViews")
 				.run(this::run);
 
+		//A17 fallback: capture the keyguard root view directly when it attaches
+		ReflectedClass.ofIfPossible("com.android.systemui.keyguard.ui.view.KeyguardRootView")
+				.afterConstruction()
+				.run(param -> {
+					View view = (View) param.thisObject;
+					view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+						@Override
+						public void onViewAttachedToWindow(View v) {
+							mKeyguardRootView = (ViewGroup) v;
+							createMiddleTextViews();
+							updateMiddleTexts();
+						}
+
+						@Override
+						public void onViewDetachedFromWindow(View v) {
+						}
+					});
+				});
+
 		AmbientDisplayConfigurationClass
 				.after("alwaysOnEnabled")
 				.run(param -> {
@@ -341,24 +359,34 @@ public class KeyguardMods extends XposedModPack {
 
 //		clockStringFormatter.registerCallback(this::updateMiddleTexts);
 
-		CarrierTextControllerClass
-				.after("onInit")
-				.run(param -> {
-					carrierTextController = param.thisObject;
-					applyCarrierTextOffset();
-					Object carrierTextCallback = getObjectField(carrierTextController, "mCarrierTextCallback");
-					ReflectedClass.of(carrierTextCallback.getClass())
-							.before("updateCarrierInfo")
-							.run(param1 -> {
-								if (customCarrierTextEnabled && param1.args.length > 0 && param1.args[0] != null) {
-									setObjectField(
-											param1.args[0],
-											"carrierText",
-											trimInvisibleEdges(carrierStringFormatter.formatString(customCarrierText)));
-								}
-							});
-					setCarrierText();
-				});
+		ReflectedClass.ReflectionConsumer carrierInitHook = param -> {
+			carrierTextController = param.thisObject;
+			applyCarrierTextOffset();
+			Object carrierTextCallback;
+			try {
+				carrierTextCallback = getObjectField(carrierTextController, "mCarrierTextCallback");
+			} catch (Throwable t) { //field was renamed in newer SysUI versions
+				carrierTextCallback = getObjectField(carrierTextController, "carrierTextCallback");
+			}
+			//onViewAttached fires on every attach: hook the callback only once
+			if (!isCarrierCallbackHooked && carrierTextCallback != null) {
+				ReflectedClass.of(carrierTextCallback.getClass())
+						.before("updateCarrierInfo")
+						.run(param1 -> {
+							if (customCarrierTextEnabled && param1.args.length > 0 && param1.args[0] != null) {
+								setObjectField(
+										param1.args[0],
+										"carrierText",
+										trimInvisibleEdges(carrierStringFormatter.formatString(customCarrierText)));
+							}
+						});
+				isCarrierCallbackHooked = true;
+			}
+			setCarrierText();
+		};
+
+		CarrierTextControllerClass.after("onInit").run(carrierInitHook);
+		CarrierTextControllerClass.after("onViewAttached").run(carrierInitHook);
 
 		//a way to know when the device goes to AOD/dozing
 		KeyguardIndicationControllerClass
@@ -400,8 +428,16 @@ public class KeyguardMods extends XposedModPack {
 	private void setCarrierText() {
 		try {
 			applyCarrierTextOffset();
-			callMethod(getObjectField(carrierTextController, "mCarrierTextManager"), "updateCarrierText");
+			callMethod(getCarrierTextManager(), "updateCarrierText");
 		} catch (Throwable ignored) {} //probably not initiated yet
+	}
+
+	private static Object getCarrierTextManager() {
+		try {
+			return getObjectField(carrierTextController, "mCarrierTextManager");
+		} catch (Throwable t) { //field was renamed in newer SysUI versions
+			return getObjectField(carrierTextController, "carrierTextManager");
+		}
 	}
 
 	private void applyCarrierTextOffset() {

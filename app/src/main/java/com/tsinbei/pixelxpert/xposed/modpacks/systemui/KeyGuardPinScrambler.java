@@ -1,17 +1,15 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
-import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findFieldIfExists;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 
-
-
-
 import android.content.Context;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,8 +26,7 @@ import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass.ReflectionC
 @SystemUIModPack
 public class KeyGuardPinScrambler extends XposedModPack {
 	private static boolean shufflePinEnabled = false;
-	private static final int[] composeDigitMap = shuffledDigits();
-	private static final ThreadLocal<ComposePinPadState> composePinPadState = new ThreadLocal<>();
+	private static final List<Integer> composeDigits = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 0));
 
 	public KeyGuardPinScrambler(Context context) {
 		super(context);
@@ -38,12 +35,18 @@ public class KeyGuardPinScrambler extends XposedModPack {
 	@Override
 	public void onPreferenceUpdated(String... Key) {
 		shufflePinEnabled = Xprefs.getBoolean("shufflePinEnabled", false);
+		if (shufflePinEnabled) {
+			synchronized (composeDigits) {
+				Collections.shuffle(composeDigits);
+			}
+		}
 	}
 
 	@Override
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) throws Throwable {
 		ReflectedClass KeyguardPinBasedInputViewClass = ReflectedClass.ofIfPossible("com.android.keyguard.KeyguardPinBasedInputView");
 		ReflectedClass PinBouncerKtClass = ReflectedClass.ofIfPossible("com.android.systemui.bouncer.ui.composable.PinBouncerKt");
+		ReflectedClass PinBouncerViewModelClass = ReflectedClass.ofIfPossible("com.android.systemui.bouncer.ui.viewmodel.PinBouncerViewModel");
 
 		ReflectionConsumer pinShuffleHook = param -> {
 			if (!shufflePinEnabled) return;
@@ -67,40 +70,60 @@ public class KeyGuardPinScrambler extends XposedModPack {
 		KeyguardPinBasedInputViewClass.after("onFinishInflate").run(pinShuffleHook);
 		KeyguardPinBasedInputViewClass.after("resetPasswordText").run(pinShuffleHook);
 
-		// Android 16 QPR moved the PIN bouncer from Views to Compose. The first unlock can
-		// replace its view model during recomposition, so keep one SystemUI-process mapping.
-		PinBouncerKtClass
-				.before(Pattern.compile("PinPad-.*"))
-				.run(param -> {
-					if (!shufflePinEnabled) return;
-
-					composePinPadState.set(new ComposePinPadState(composeDigitMap));
-				});
-
-		PinBouncerKtClass
-				.after(Pattern.compile("PinPad-.*"))
-				.run(param -> composePinPadState.remove());
-
+		// Android 16 QPR moved the PIN bouncer from Views to Compose (PinBouncerKt).
+		// Digits are remapped at the DigitButton level, so what's displayed is what gets submitted.
 		PinBouncerKtClass
 				.before(Pattern.compile("DigitButton-.*"))
 				.run(param -> {
 					if (!shufflePinEnabled) return;
+					if (param.args == null || param.args.length == 0 || !(param.args[0] instanceof Integer)) return;
 
-					ComposePinPadState state = composePinPadState.get();
-					if (state != null && param.args[0] instanceof Integer) {
-						int originalDigit = (int) param.args[0];
-						if (originalDigit >= 0 && originalDigit < state.digitMap.length) {
-							param.args[0] = state.digitMap[originalDigit];
+					int original = (int) param.args[0];
+
+					// R8 can merge the onClick lambda of button 0 into a class that hardcodes
+					// submitting 0 ($r8$classId == 1), ignoring the remapped digit. Reset it so
+					// the lambda honors the digit we inject.
+					if (original == 0 && param.args.length > 2 && param.args[2] != null) {
+						try {
+							Field classIdField = findFieldIfExists(param.args[2].getClass(), "$r8$classId");
+							if (classIdField != null) {
+								if (classIdField.getType() == byte.class) {
+									classIdField.setByte(param.args[2], (byte) 0);
+								} else if (classIdField.getType() == int.class) {
+									classIdField.setInt(param.args[2], 0);
+								}
+							}
+						} catch (Throwable ignored) {}
+					}
+
+					// Compose passes a $changed bitmask as the trailing argument. Bit 0 marks a
+					// self-recomposition (e.g. touch ripple): skip it so digits don't shift under
+					// the user's finger. Clear the digit's static bits (0x0E) otherwise, so Compose
+					// registers the injected digit as a change and recreates the click lambda.
+					if (param.args.length >= 10 && param.args[param.args.length - 1] instanceof Integer) {
+						int changed = (int) param.args[param.args.length - 1];
+						if ((changed & 1) != 0) return;
+						param.args[param.args.length - 1] = changed & ~0x0E;
+					}
+
+					int index = (original == 0) ? 9 : (original - 1);
+					synchronized (composeDigits) {
+						if (index >= 0 && index < composeDigits.size()) {
+							param.args[0] = composeDigits.get(index);
 						}
 					}
 				});
-	}
 
-	private static final class ComposePinPadState {
-		private final int[] digitMap;
-		private ComposePinPadState(int[] digitMap) {
-			this.digitMap = digitMap;
-		}
+		// Reshuffle only when the bouncer activates, so digits never rearrange while the
+		// user is retrying a failed PIN.
+		PinBouncerViewModelClass
+				.before("onActivated")
+				.run(param -> {
+					if (!shufflePinEnabled) return;
+					synchronized (composeDigits) {
+						Collections.shuffle(composeDigits);
+					}
+				});
 	}
 
 	private static int[] shuffledDigits() {

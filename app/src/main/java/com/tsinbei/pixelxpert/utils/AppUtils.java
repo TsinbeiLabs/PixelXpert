@@ -14,13 +14,17 @@ import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.regex.Pattern;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import com.tsinbei.pixelxpert.PixelXpert;
 import com.tsinbei.pixelxpert.Constants;
 
 public class AppUtils {
-	private static final String MODULE_APK_PATH = "system/priv-app/TsinbeiPixelXpert/PixelXpert.apk";
+	//user-app module layout: the APK sits at the zip root
+	private static final String MODULE_APK_PATH = "PixelXpert.apk";
+	//older releases mounted the APK as a priv-app inside the module
+	private static final String LEGACY_MODULE_APK_PATH = "system/priv-app/TsinbeiPixelXpert/PixelXpert.apk";
 
 	public static void restart(String what) {
 		switch (what.toLowerCase())
@@ -113,7 +117,7 @@ public class AppUtils {
 			//noinspection ResultOfMethodCallIgnored
 			process.getInputStream().read(buffer);
 			String result = new String(buffer, StandardCharsets.US_ASCII).replace("\n", "");
-			return Pattern.matches("^[TUAB][A-Z]([A-Z0-9]){2}\\.[0-9]{6}\\.[0-9]{3}(\\.[A-Z0-9]{2})?$", result); //Pixel standard build number of A13/14 + new weird build numbers of 'A,B,...' prefix
+			return Pattern.matches("^[TUABCZ][A-Z]([A-Z0-9]){2}\\.[0-9]{6}\\.[0-9]{3}(\\.[A-Z0-9]{2})?$", result); //Pixel standard build number of A13/14 + new weird build numbers of 'A,B,C,...' prefix (C=A17, Z=canary)
 		}
 		catch (Throwable ignored)
 		{
@@ -150,19 +154,23 @@ public class AppUtils {
 			}
 
 			try (ZipFile moduleZip = new ZipFile(unzippedFile)) {
-				if (moduleZip.getEntry(MODULE_APK_PATH) == null) {
+				ZipEntry apkEntry = moduleZip.getEntry(MODULE_APK_PATH);
+				if (apkEntry == null) {
+					apkEntry = moduleZip.getEntry(LEGACY_MODULE_APK_PATH); //older priv-app layout
+				}
+				if (apkEntry == null) {
 					throw new IllegalStateException("Module APK is missing");
 				}
 				apkFile = File.createTempFile("PixelXpert-update", ".apk");
 				try (FileOutputStream apkOutputStream = new FileOutputStream(apkFile)) {
-					FileUtils.copy(moduleZip.getInputStream(moduleZip.getEntry(MODULE_APK_PATH)), apkOutputStream);
+					FileUtils.copy(moduleZip.getInputStream(apkEntry), apkOutputStream);
 				}
 			}
 
 			String installPath = "/data/local/tmp/PixelXpert-update.apk";
 			// PackageInstaller cannot read the root-only module directory or our private cache.
 			// Stage the APK in a system-readable directory before asking Package Manager to replace it.
-			if (!Shell.cmd(String.format("cp '%s' '%s' && chmod 0644 '%s' && pm install -r --user 0 '%s'; result=$?; rm -f '%s'; exit $result",
+			if (!Shell.cmd(String.format("cp '%s' '%s' && chmod 0644 '%s' && pm install -r -d --user 0 '%s'; result=$?; rm -f '%s'; exit $result",
 					apkFile.getAbsolutePath(), installPath, installPath, installPath, installPath)).exec().isSuccess()) {
 				return false;
 			}

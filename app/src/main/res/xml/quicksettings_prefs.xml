@@ -46,6 +46,13 @@
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
+			android:key="enable_high_brightness_flashlight"
+			android:summary="@string/enable_high_brightness_flashlight_summary"
+			android:title="@string/enable_high_brightness_flashlight_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
 			android:key="AnimateFlashlight"
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"
@@ -157,6 +164,20 @@
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"
 			android:title="@string/qs_pullup_switch_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="qs_brightness_slider_bottom"
+			android:summary="@string/qs_brightness_slider_bottom_desc"
+			android:title="@string/qs_brightness_slider_bottom_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="qqs_brightness_slider"
+			android:summary="@string/qqs_brightness_slider_desc"
+			android:title="@string/qqs_brightness_slider_title"
 			app:iconSpaceReserved="false" />
 
 	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>

@@ -1,6 +1,5 @@
 package com.tsinbei.pixelxpert.xposed.utils.reflection;
 
-import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findClass;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findClassIfExists;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.HookHelper.hookAllMethods;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.HookHelper.hookMethod;
@@ -40,13 +39,12 @@ public class ReflectedClass
 	}
 
 	public static ReflectedClass of(String name, ClassLoader loader) {
-		try {
-			return new ReflectedClass(findClass(name, loader));
+		//null-safe: missing classes are wrapped instead of throwing ClassNotFoundException
+		Class<?> c = findClassIfExists(name, loader);
+		if (c == null) {
+			c = findClassIfExists(name, frameworkClassloader);
 		}
-		catch (Throwable ignored)
-		{
-			return new ReflectedClass(findClass(name, frameworkClassloader));
-		}
+		return new ReflectedClass(c);
 	}
 
 	public static ReflectedClass of(String name) {
