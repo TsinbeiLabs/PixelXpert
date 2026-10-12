@@ -1,3 +1,7 @@
+**canary-533**
+
+- Fixed the app-profile switcher failing to initialize on Android 17 (UserManager.getProfiles signature change), which also disabled home/back/sleep broadcast actions in the framework
+
 **canary-532**
 
 - Added Caffeine Quick Settings tile to keep the screen awake for 5/10/30 minutes or indefinitely

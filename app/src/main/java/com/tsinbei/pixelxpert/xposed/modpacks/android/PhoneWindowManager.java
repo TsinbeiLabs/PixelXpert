@@ -4,6 +4,7 @@ import static android.content.Context.RECEIVER_EXPORTED;
 
 
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callStaticMethod;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.PackageManager;
@@ -19,6 +20,7 @@ import android.os.UserHandle;
 import android.view.Display;
 import android.view.WindowManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.github.libxposed.api.XposedModuleInterface;
@@ -125,10 +127,7 @@ public class PhoneWindowManager extends XposedModPack {
 	@SuppressLint("WrongConstant")
 	@Override
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) throws Throwable {
-		Object profiles = callMethod(SystemUtils.UserManager(), "getProfiles", true);
-		userHandleList = profiles instanceof List<?> list
-				? list.stream().filter(UserHandle.class::isInstance).map(UserHandle.class::cast).toList()
-				: List.of();
+		userHandleList = resolveUserProfiles();
 
 //		Collections.addAll(screenshotChords, KEYCODE_POWER, KEYCODE_VOLUME_DOWN);
 
@@ -181,6 +180,35 @@ public class PhoneWindowManager extends XposedModPack {
 					.run(param -> windowMan = param.thisObject);
 		} catch (Throwable ignored) {
 		}
+	}
+
+	private List<UserHandle> resolveUserProfiles() {
+		Object profiles = null;
+		try {
+			profiles = callMethod(SystemUtils.UserManager(), "getUserProfiles"); //List<UserHandle>
+		} catch (Throwable ignored) {
+		}
+
+		if (profiles instanceof List<?> handles && !handles.isEmpty() && handles.get(0) instanceof UserHandle) {
+			return handles.stream().filter(UserHandle.class::isInstance).map(UserHandle.class::cast).toList();
+		}
+
+		try { //older variants: getProfiles(int) returns UserInfo objects
+			Object infos = callMethod(SystemUtils.UserManager(), "getProfiles", 0);
+			if (infos instanceof List<?> list) {
+				List<UserHandle> result = new ArrayList<>();
+				for (Object info : list) {
+					try { //UserHandle.of is @hide: resolve it at runtime
+						result.add(callStaticMethod(UserHandle.class, "of", getIntField(info, "id")));
+					} catch (Throwable ignored) {
+					}
+				}
+				if (!result.isEmpty()) return result;
+			}
+		} catch (Throwable ignored) {
+		}
+
+		return List.of();
 	}
 
 	@SuppressLint("MissingPermission")
