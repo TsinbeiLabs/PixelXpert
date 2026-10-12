@@ -75,6 +75,7 @@ import com.tsinbei.pixelxpert.xposed.utils.StringFormatter.FormattedStringCallba
 import com.tsinbei.pixelxpert.xposed.utils.SystemUtils;
 import com.tsinbei.pixelxpert.xposed.utils.batteryStyles.BatteryBarView;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
+import com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger;
 import com.tsinbei.pixelxpert.xposed.utils.toolkit.ResourceTools;
 
 /**
@@ -91,6 +92,10 @@ public class StatusbarMods extends XposedModPack {
 	private static final int AM_PM_STYLE_SMALL = 1;
 	private static final int AM_PM_STYLE_GONE = 2;
 	private final int leftClockPadding, rightClockPadding;
+	//A17: the clock renders inside a Jetpack Compose view that has to be moved as a whole
+	private static boolean isJetpackClock = false;
+	public static boolean isMovingClock = false;
+	private View mJetpackClockView = null;
 	private static int clockPosition = POSITION_LEFT;
 	private static int mAmPmStyle = AM_PM_STYLE_GONE;
 	private static boolean mShowSeconds = false;
@@ -134,6 +139,7 @@ public class StatusbarMods extends XposedModPack {
 	private static final ArrayList<ClockVisibilityCallback> clockVisibilityCallbacks = new ArrayList<>();
 	private Object mActivityStarter;
 	private static boolean notificationAreaMultiRow = false;
+	private static boolean multiRowClockBottom = false;
 	private static int NotificationAODIconLimit = 3;
 	private static int NotificationIconLimit = 4;
 	private Object AODNIC;
@@ -243,7 +249,14 @@ public class StatusbarMods extends XposedModPack {
 				SystemUtils.killSelf();
 			}
 		}
+		if (Key.length > 0 && Key[0].equals("multiRowClockBottom")) {
+			boolean newMultiRowClockBottom = Xprefs.getBoolean("multiRowClockBottom", false);
+			if (newMultiRowClockBottom != multiRowClockBottom) {
+				SystemUtils.killSelf();
+			}
+		}
 		notificationAreaMultiRow = Xprefs.getBoolean("notificationAreaMultiRow", false);
+		multiRowClockBottom = Xprefs.getBoolean("multiRowClockBottom", false);
 
 		try {
 			NotificationIconLimit = Integer.parseInt(Xprefs.getString("NotificationIconLimit", "").trim());
@@ -404,6 +417,18 @@ public class StatusbarMods extends XposedModPack {
 			}
 		}
 
+		//A17 Jetpack clock reads the seconds setting from SysUI Tuner's secure setting
+		if (mContext != null && isJetpackClock) {
+			try {
+				int current = android.provider.Settings.Secure.getInt(mContext.getContentResolver(), "clock_seconds", 0);
+				int desired = mShowSeconds ? 1 : 0;
+				if (current != desired) {
+					android.provider.Settings.Secure.putInt(mContext.getContentResolver(), "clock_seconds", desired);
+				}
+			} catch (Throwable ignored) {
+			}
+		}
+
 		try {
 			placeClock();
 			updateClock();
@@ -466,6 +491,18 @@ public class StatusbarMods extends XposedModPack {
 		ReflectedClass PhoneStatusBarViewClass = ReflectedClass.of("com.android.systemui.statusbar.phone.PhoneStatusBarView");
 		ReflectedClass NotificationIconContainerClass = ReflectedClass.of("com.android.systemui.statusbar.phone.NotificationIconContainer");
 		ReflectedClass TunerServiceImplClass = ReflectedClass.of("com.android.systemui.tuner.TunerServiceImpl");
+
+		//A17: reparenting a ComposeView disposes its composition and blanks the clock.
+		//Suppress disposal only while we are the ones moving it.
+		try {
+			ReflectedClass AbstractComposeViewClass = ReflectedClass.of("androidx.compose.ui.platform.AbstractComposeView");
+			AbstractComposeViewClass.before("disposeComposition").run(param -> {
+				if (isMovingClock) {
+					param.setResult(null);
+				}
+			});
+		} catch (Throwable ignored) {}
+
 		ReflectedClass ConnectivityCallbackHandlerClass = ReflectedClass.of("com.android.systemui.statusbar.connectivity.CallbackHandler");
 		ReflectedClass NotificationIconContainerAlwaysOnDisplayViewModelClass = ReflectedClass.ofIfPossible("com.android.systemui.statusbar.notification.icon.ui.viewmodel.NotificationIconContainerAlwaysOnDisplayViewModel");
 		ReflectedClass NotificationIconContainerStatusBarViewModelClass = ReflectedClass.ofIfPossible("com.android.systemui.statusbar.notification.icon.ui.viewmodel.NotificationIconContainerStatusBarViewModel");
@@ -682,6 +719,73 @@ public class StatusbarMods extends XposedModPack {
 				});
 
 		//clock mods
+		//A17: the statusbar clock is composed by Jetpack Compose. Formats come from
+		//ClockInteractor instead of the legacy Clock view, so hook it when present.
+		try {
+			ReflectedClass clockInteractorClass = ReflectedClass.of("com.android.systemui.clock.domain.interactor.ClockInteractor");
+			java.util.Set<?> clockFormatHooks = clockInteractorClass.after("getClockTextFormatString").run(param -> {
+				String orig = (String) param.getResult();
+				String customFormat = orig;
+
+				// Force leading zero for 24-hour format (e.g. 00:23 instead of 0:23)
+				customFormat = customFormat.replaceAll("(?<!H)H(?!H)", "HH");
+
+				// apply am/pm (Since Compose renders as String, this will be 100% size)
+				if (mAmPmStyle != AM_PM_STYLE_GONE && !customFormat.contains("a")) {
+					customFormat = customFormat + "\u202fa";
+				} else if (mAmPmStyle == AM_PM_STYLE_GONE && customFormat.contains("a")) {
+					customFormat = customFormat.replace("\u202fa", "").replace(" a", "").replace("a", "");
+				}
+
+				// Fix native SystemUI bug: remove trailing spaces left over from removing seconds or AM/PM
+				customFormat = customFormat.trim();
+
+				// custom text before / after
+				java.util.function.Function<String, String> escapeAll = (input) -> {
+					if (input == null || input.isEmpty()) return "";
+					return "'" + input.replace("'", "''") + "'";
+				};
+
+				if (!mStringFormatBefore.isEmpty()) {
+					customFormat = escapeAll.apply(mStringFormatBefore.trim()) + "\u202f" + customFormat;
+				}
+				if (!mStringFormatAfter.isEmpty()) {
+					customFormat = customFormat + "\u202f" + escapeAll.apply(mStringFormatAfter.trim());
+				}
+				param.setResult(customFormat);
+			});
+
+			clockInteractorClass.after("createFormatters").run(param -> {
+				Object formatters = param.getResult();
+				if (formatters == null) return;
+
+				java.text.SimpleDateFormat amPmShown = (java.text.SimpleDateFormat) getObjectField(formatters, "clockTextAmPmShown");
+				java.text.SimpleDateFormat amPmGone = (java.text.SimpleDateFormat) getObjectField(formatters, "clockTextAmPmGone");
+
+				//route the composed clock text through our formatter so custom
+				//variables (temperature, date, network stats...) keep working
+				class PXClockFormatter extends java.text.SimpleDateFormat {
+					public PXClockFormatter(String pattern) {
+						super(pattern);
+					}
+
+					@Override
+					public StringBuffer format(java.util.Date date, StringBuffer toAppendTo, java.text.FieldPosition pos) {
+						StringBuffer original = super.format(date, new StringBuffer(), pos);
+						CharSequence formatted = stringFormatter.formatString(original.toString());
+						toAppendTo.append(formatted);
+						return toAppendTo;
+					}
+				}
+
+				setObjectField(formatters, "clockTextAmPmShown", new PXClockFormatter(amPmShown.toPattern()));
+				setObjectField(formatters, "clockTextAmPmGone", new PXClockFormatter(amPmGone.toPattern()));
+			});
+			isJetpackClock = (clockFormatHooks != null && !clockFormatHooks.isEmpty());
+		} catch (Throwable t) {
+			Logger.log("ClockInteractor not found, skipping Android 17 Compose clock hooks.", t);
+		}
+
 		ClockClass
 				.before("getSmallTime")
 				.run(param -> {
@@ -817,13 +921,19 @@ public class StatusbarMods extends XposedModPack {
 		mLeftVerticalSplitContainer.setLayoutTransition(layoutTransition);
 
 		mLeftExtraRowContainer = new ShyLinearLayout(mContext);
-		mLeftVerticalSplitContainer.addView(mLeftExtraRowContainer, 0);
+		if (!multiRowClockBottom) {
+			mLeftVerticalSplitContainer.addView(mLeftExtraRowContainer, 0);
+		}
 
 		ViewGroup parent = (ViewGroup) mNotificationIconContainer.getParent();
 
 		parent.addView(mLeftVerticalSplitContainer, parent.indexOfChild(mNotificationIconContainer));
 		parent.removeView(mNotificationIconContainer);
 		mLeftVerticalSplitContainer.addView(mNotificationContainerContainer);
+
+		if (multiRowClockBottom) {
+			mLeftVerticalSplitContainer.addView(mLeftExtraRowContainer);
+		}
 
 		repositionOngoingChip();
 
@@ -852,15 +962,17 @@ public class StatusbarMods extends XposedModPack {
 	}
 
 	private void repositionOngoingChip() {
+		if (isJetpackClock) return; // In Android 17, the ComposeView contains the Clock, so we can't move it!
 		View ongoingChipComposeView = findComposeView(mPhoneStatusbarView.findViewById(idOf("status_bar_start_side_except_heads_up")));
 		reAddView(mNotificationContainerContainer, ongoingChipComposeView);
 	}
 
 	private View findComposeView(ViewGroup parent) {
+		if (parent == null) return null;
 		for(int i = 0; i < parent.getChildCount(); i++)
 		{
 			View child = parent.getChildAt(i);
-			if(child.getClass().getName().endsWith("ComposeView"))
+			if(child != null && child.getClass().getName().endsWith("ComposeView"))
 				return child;
 		}
 		return null;
@@ -1046,7 +1158,11 @@ public class StatusbarMods extends XposedModPack {
 			LinearLayout.LayoutParams ntsbLayoutP;
 			switch (networkTrafficPosition) {
 				case POSITION_RIGHT:
-					((ViewGroup) mSystemIconArea.getParent()).addView(networkTrafficSB, 0);
+					ViewGroup systemIcons = (ViewGroup) mSystemIconArea.getParent();
+					ViewGroup endSideContent = (ViewGroup) systemIcons.getParent();
+					int insertIndex = endSideContent.indexOfChild(systemIcons);
+					if (insertIndex == -1) insertIndex = 0;
+					endSideContent.addView(networkTrafficSB, insertIndex);
 					networkTrafficSB.setPadding(rightClockPadding, 0, leftClockPadding, 0);
 					break;
 				case POSITION_LEFT:
@@ -1104,7 +1220,25 @@ public class StatusbarMods extends XposedModPack {
 
 	//region clock and date related
 	private void placeClock() {
-		ViewGroup parent = (ViewGroup) mClockView.getParent();
+		//A17: the legacy Clock view no longer renders the statusbar time; the whole
+		//ComposeView that hosts it has to be moved instead.
+		View viewToMove = mClockView;
+		if (isJetpackClock) {
+			if (mJetpackClockView != null && mJetpackClockView.getParent() == null) {
+				mJetpackClockView = null; // View is detached or destroyed, find it again
+			}
+			if (mJetpackClockView == null) {
+				// The clock is natively created in mStatusbarStartSide, search there.
+				// If it's already moved, mJetpackClockView would not be null.
+				// We don't search the right side to avoid accidentally matching the battery ComposeView.
+				mJetpackClockView = findComposeView(mStatusbarStartSide);
+			}
+			if (mJetpackClockView != null) {
+				viewToMove = mJetpackClockView;
+			}
+		}
+
+		ViewGroup parent = (ViewGroup) viewToMove.getParent();
 		ViewGroup targetArea = null;
 		Integer index = null;
 
@@ -1117,23 +1251,46 @@ public class StatusbarMods extends XposedModPack {
 					targetArea = mStatusbarStartSide;
 					index = 1;
 				}
-				mClockView.setPadding(0, 0, leftClockPadding, 0);
+				viewToMove.setPadding(0, 0, leftClockPadding, 0);
 				break;
 			case POSITION_CENTER:
 				targetArea = (ViewGroup) mCenteredIconArea;
-				mClockView.setPadding(rightClockPadding, 0, rightClockPadding, 0);
+				viewToMove.setPadding(rightClockPadding, 0, rightClockPadding, 0);
 				break;
 			case POSITION_RIGHT:
-				mClockView.setPadding(rightClockPadding, 0, 0, 0);
+				viewToMove.setPadding(rightClockPadding, 0, 0, 0);
 				targetArea = ((ViewGroup) mSystemIconArea.getParent());
+				// Leaving index as null appends it to the very end (right-most element)
 				break;
 		}
-		parent.removeView(mClockView);
-		if (index != null) {
-			targetArea.addView(mClockView, index);
-		} else {
-			//noinspection DataFlowIssue
-			targetArea.addView(mClockView);
+
+		if (targetArea == null || targetArea == parent) return;
+
+		if (isJetpackClock) {
+			isMovingClock = true;
+		}
+		try {
+			if (parent != null) parent.removeView(viewToMove);
+
+			if (isJetpackClock && viewToMove == mJetpackClockView) {
+				ViewGroup.LayoutParams lp = viewToMove.getLayoutParams();
+				if (lp != null) {
+					if (clockPosition == POSITION_RIGHT) {
+						lp.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+					} else {
+						lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+					}
+					viewToMove.setLayoutParams(lp);
+				}
+			}
+
+			if (index != null) {
+				targetArea.addView(viewToMove, index);
+			} else {
+				targetArea.addView(viewToMove);
+			}
+		} finally {
+			isMovingClock = false;
 		}
 	}
 
