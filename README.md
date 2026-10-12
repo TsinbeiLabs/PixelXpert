@@ -1,90 +1,47 @@
-### For Pixel Stock Android 16 QPR1 and newer:
+## Tsinbei Pixel Xpert
 
-[![Latest Release](https://img.shields.io/github/v/release/siavash79/PixelXpert?color=green&include_prereleases&label=Download%20Latest%20Stable)](https://github.com/siavash79/PixelXpert/releases/latest)
-[![Latest Canary Release](https://img.shields.io/badge/Download%20Latest-Canary-blue)](https://github.com/siavash79/PixelXpert/releases/tag/canary_builds)
+This is a **personal fork** of [siavash79/PixelXpert](https://github.com/siavash79/PixelXpert), maintained for our own Pixel devices. It is not distributed through any module repository and no support is offered — build and flash it at your own risk.
 
-![Downloads - Stable channel](https://img.shields.io/github/downloads/siavash79/PixelXpert/total?color=red&label=Downloads%20-%20Stable%20Channel)
+For the original project introduction, feature list, compatibility chart, installation steps, and release channels, see the [upstream repository](https://github.com/siavash79/PixelXpert).
 
-[![Telegram URL](https://img.shields.io/badge/Telegram-Join-2CA5E?style=social&logo=telegram)](https://t.me/PixelXpert_Github)
+### Differences from upstream
 
-![Header Image](https://github.com/siavash79/PixelXpert/blob/canary/.github/PixelXpert_Banner_1280.jpg?raw=true)
+- Application ID and module renamed to `com.tsinbei.pixelxpert` / `TsinbeiPixelXpert`
+- Xposed hooks migrated to the libxposed API (102)
+- The app installs as a regular **user app** (like PixelXpert-Next) instead of being mounted as a system priv-app, so it survives OTAs and temporary root loss; existing system-app installs migrate automatically (device-protected preferences are backed up during flashing and restored on the next boot)
+- Various fixes and enhancements of our own; see `CanaryChangelog.md` and the git history
 
-This is a mixed Xposed+Magisk module, which is made to allow customizations that are not originally designed in AOSP (Android Open Source Project). Please read thorough below before reaching to download links
+### Backported from PixelXpert-Next
 
-<hr>
+The following features and fixes were ported from [anirudhgupta109/PixelXpert-Next](https://github.com/anirudhgupta109/PixelXpert-Next/):
 
-### **Features:**
+- Caffeine QS tile (keep the screen awake, timed or infinite)
+- High Brightness Flashlight QS tile and gesture integration, using the Pixel experimental torch API
+- Brightness slider below QS tiles / always-visible brightness slider in collapsed (Quick) QS
+- Pin wireless ADB to a static port via an internal TCP forwarder
+- Easy Unlock through the native `LockPatternUtils` auto-confirm mechanism, with a direct-boot (FBE) safeguard
+- Shuffle PIN fix for the Compose-based lock screen bouncer
+- Android 17 Compose status bar clock support: clock repositioning (left/center/right), custom clock formats and custom text variables, show-seconds and 24-hour leading-zero handling, plus a new "move clock to bottom row" option for multi-row notification icons
+- Carrier text hook fixes (duplicate hooks, renamed SystemUI fields, keyguard root view fallback)
+- Android 17 fixes: background camera/torch access from the framework, network traffic freeze and fake spikes, `calculateChargingSpeed` signature change, one-finger QS pulldown on CP3A/CP41, status bar icon hiding, default notification expansion, immediate lock on double-tap-to-sleep, long-press power remapping, and A17 build-ID detection
+- Hardening: concurrent-safe modpack list, null-safe class reflection, dialer call-recording/notes TTS suppression
 
-Currently, PixelXpert offers customizations on different aspects of system framework and SystemUI, including:
+### Build
 
-- Status bar
-- Quick Settings panel
-- Lock screen
-- Notifications
-- Gesture Navigations
-- Phone & Dialer
-- Gboard
-- Hotspot
-- Package Manager
-- Screen properties
+```
+./gradlew build          # or: gradlew.bat build on Windows
+./makeMagisk.bat         # packages PixelXpert.zip from MagiskModBase + built APK
+```
 
-### **Compatibility:**
+Requires the Android SDK and a JDK 21+. Release builds additionally need `ReleaseKey.properties` or `PIXELXPERT_*` signing environment variables.
 
-PixelXpert is ONLY compatible with pixel stock firmware on Google Pixel devices. Any custom ROM (including PE, PE plus, pixel plus ui and etc) or stock ROM outside stock pixel firmware on Google pixel devices (e.g. OneUI on Samsung, MIUI on Xiaomi and etc) is not supported and may not be fully (or even at all) compatible.
+### Credits / Thanks
 
-Here is the compatibility chart according to different android versions and QPRs:
-
-- Android 12/12.1 and 13 (up to Nov 2022): [final version: v2.4.1](https://github.com/siavash79/PixelXpert/releases/tag/v2.4.1).
-- Android 13 stable QPR3 to Android 16 (June 2022): [final version: v.4.3.0](https://github.com/siavash79/PixelXpert/releases/tag/v4.3.0).
-- Android 16 stable QPR1 and newer: [latest stable version](https://github.com/siavash79/PixelXpert/releases/latest)
-
-### **Prerequisites:**
-
-- Compatible ROM (see Compatibility text above)
-- Device Rooted with Magisk 24.2+ or KSU
-- LSPosed (Zygisk Version preferred) (For Android 14+ use [LSPosed fork by JingMatrix](https://github.com/JingMatrix/LSPosed/releases))
-
-### **How to install:**
-
-- Download the stable magisk module according to your firmware as mentioned above
-- Install in magisk/KSU
-- Reboot (no bootloops are expected)
-- Open PixelXpert app and apply changes
-
-P.S. For KSU, there is an extra step of granting root access to PixelXpert as it doesn't request automatically as in Magisk
-
-### **Release Variants:**
-
-The module is also released in 2 flavors with different manual download and update procedures. But both can utilize automated updates through magisk manager, or through in-app updater (for canary, updates will not count against the module's download count).
-
-<ins>Stable release:</ins>
-
-- Manual Install/Update: through repository's Github release page (link below) AND through in-app updater
-
-<ins>Canary release:</ins>
-
-- Manual Install/Update: through repository's Actions page and [telegram channel](https://t.me/PixelXpert_Github) (latest version is available from [here](https://github.com/siavash79/PixelXpert/releases/tag/canary_builds) also)
-
-\*No matter which flavor you're on, you can always switch to the other one with in-app updater
-
-### **Translations:**
-
-Want to help translate PixelXpert to your language? Visit [Weblate](https://weblate.milthm.com/)
-
-### **Donations:**
-
-This project is open source and free for usage, build or copy. However, if you really feel like it, you can donate to your favorite charity on our behalf, or help funding education for children in need, at [Child Foundation](https://mycf.childfoundation.org/s/donate)
-
-### For Pixel Stock Android 12 and 13 (Up to Nov 2022 - AOSP 13R8):
-
-[![Latest Release for A12 & A13 up to Nov 2022](https://img.shields.io/badge/Download-v2.4.1-blue)](https://github.com/siavash79/PixelXpert/releases/tag/v2.4.1)
-
-### For Pixel Stock Android 13 (Dec 2022) to Android 16 (June 2025):
-
-[![Latest Release A13 up to A16](https://img.shields.io/badge/Download-v4.3.0-blue)](https://github.com/siavash79/PixelXpert/releases/tag/v4.3.0)
-
-### **Credits / Thanks:**
-
+- [PixelXpert](https://github.com/siavash79/PixelXpert) — brought to you by @siavash79 & @ElTifo
+- [anirudhgupta109/PixelXpert-Next](https://github.com/anirudhgupta109/PixelXpert-Next/) by Anirudh Gupta and contributors, for the features and fixes backported into this fork (GPLv3)
+- [chenxiaolong/PixelLight](https://github.com/chenxiaolong/PixelLight) by Andrew Gunnerson, for the High Brightness Flashlight implementation (GPLv3)
+- [LineageOS](https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/491217) contributors (Keith Mok, chillger, Michael Bestas, Pranav Vashi; icon by Mayur Varde) for the original Caffeine tile implementation
+- DrDisagree (@Mahmud0808) for the original QS brightness slider implementation in Iconify
 - Android Team
 - @topjohnwu for Magisk
 - @rovo89 for Xposed
@@ -106,6 +63,3 @@ This project is open source and free for usage, build or copy. However, if you r
 
 - JstormZx@Telegram (Icon and Banner)
 - RKBDI@Telegram (Icon)
-
-**Brought to you by:**
-@siavash79 & @ElTifo

@@ -1,3 +1,19 @@
+**canary-532**
+
+- Added Caffeine Quick Settings tile to keep the screen awake for 5/10/30 minutes or indefinitely
+- Added High Brightness Flashlight tile and gesture integration using the Pixel experimental torch API
+- Added options to move the QS brightness slider below the tiles and to always show it in collapsed QS
+- Added option to pin wireless ADB to a static port through an internal TCP forwarder
+- Easy Unlock now uses the native auto-confirm PIN mechanism, with a safeguard for the first boot after a reboot
+- Fixed shuffle PIN on the Compose-based lock screen bouncer so tapped digits submit what they display
+- Added Android 17 Compose status bar clock support: repositioning, custom clock formats and text variables, show seconds, and 24-hour leading zeros
+- Added an option to move the clock to the bottom row when multi-row notification icons are enabled
+- Fixed duplicated carrier-text hooks and added fallbacks for renamed SystemUI fields
+- Fixed Android 17 regressions: torch control from the framework, network traffic freezes and fake spikes, fast-charging detection, one-finger QS pulldown, status bar icon hiding, default notification expansion, and long-press power remapping
+- Suppressed call recording and call notes announcements, including TTS, in the dialer
+- Hardened module loading against concurrent preference updates and missing SystemUI classes
+- The app now installs as a regular user app instead of mounting as a system app, so it survives OTAs and temporary root loss; existing installs migrate automatically on the next boot (preferences are kept, reboot twice once after migrating)
+
 **canary-531**
 
 - Fixed notification expand and collapse buttons crashing SystemUI on Android 17 Canary builds
