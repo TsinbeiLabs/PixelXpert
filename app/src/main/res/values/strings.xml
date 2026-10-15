@@ -746,4 +746,21 @@
     <string name="qs_brightness_slider_bottom_desc">Move the brightness slider below the quick settings tiles</string>
     <string name="qqs_brightness_slider_title">Always Show Brightness Slider</string>
     <string name="qqs_brightness_slider_desc">Show the brightness slider in collapsed quick settings and share it with expanded quick settings</string>
+
+    <string name="taskbar_scale_title">Taskbar scale</string>
+    <string name="taskbar_scale_summary">Scale the whole taskbar visually (touch targets and app insets follow)</string>
+    <string name="taskbar_icon_count_title">Dock icon count</string>
+    <string name="taskbar_icon_count_summary">How many apps the taskbar dock shows at most (restarts launcher)</string>
+    <string name="mobile_recents_title">Mobile-style recents</string>
+    <string name="mobile_recents_summary">Show recents in the classic phone carousel even while the taskbar is enabled</string>
+    <string name="grid_header_scale_title">Recents header scale (grid)</string>
+    <string name="mobile_header_scale_title">Recents header scale (mobile)</string>
+    <string name="reverse_bubble_title">Bottom bubble layout</string>
+    <string name="reverse_bubble_summary">Move the bubble icons row to the bottom and grow the expanded view from the top for one-handed use</string>
+    <string name="bubble_dismiss_position_title">Bubble dismiss position</string>
+    <string name="bubble_dismiss_bottom">Bottom</string>
+    <string name="bubble_dismiss_top">Top</string>
+    <string name="bubble_dismiss_left">Left</string>
+    <string name="bubble_dismiss_right">Right</string>
+    <string name="bubble_dismiss_center">Center</string>
 </resources>

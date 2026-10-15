@@ -11,6 +11,15 @@ For the original project introduction, feature list, compatibility chart, instal
 - The app installs as a regular **user app** (like PixelXpert-Next) instead of being mounted as a system priv-app, so it survives OTAs and temporary root loss; existing system-app installs migrate automatically (device-protected preferences are backed up during flashing and restored on the next boot)
 - Various fixes and enhancements of our own; see `CanaryChangelog.md` and the git history
 
+### Backported from Pixel Taskbar Enabler
+
+Taskbar and bubble enhancements ported from [beymans-code/pixel-taskbar-enabler](https://github.com/beymans-code/pixel-taskbar-enabler):
+
+- Whole-taskbar visual scaling (touch targets and app insets follow) with Android 17 support
+- Taskbar dock icon count control
+- Mobile-style recents while the taskbar is enabled, bottom-aligned grid rows, and recents header icon scaling
+- Bottom bubble layout (one-handed bubbles) with a configurable dismiss target position
+
 ### Backported from PixelXpert-Next
 
 The following features and fixes were ported from [anirudhgupta109/PixelXpert-Next](https://github.com/anirudhgupta109/PixelXpert-Next/):
@@ -39,6 +48,7 @@ Requires the Android SDK and a JDK 21+. Release builds additionally need `Releas
 
 - [PixelXpert](https://github.com/siavash79/PixelXpert) — brought to you by @siavash79 & @ElTifo
 - [anirudhgupta109/PixelXpert-Next](https://github.com/anirudhgupta109/PixelXpert-Next/) by Anirudh Gupta and contributors, for the features and fixes backported into this fork (GPLv3)
+- [beymans-code/pixel-taskbar-enabler](https://github.com/beymans-code/pixel-taskbar-enabler) by beyman-dev, for the taskbar scaling, dock icon count, mobile recents, and bubble layout enhancements (GPLv3)
 - [chenxiaolong/PixelLight](https://github.com/chenxiaolong/PixelLight) by Andrew Gunnerson, for the High Brightness Flashlight implementation (GPLv3)
 - [LineageOS](https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/491217) contributors (Keith Mok, chillger, Michael Bestas, Pranav Vashi; icon by Mayur Varde) for the original Caffeine tile implementation
 - DrDisagree (@Mahmud0808) for the original QS brightness slider implementation in Iconify

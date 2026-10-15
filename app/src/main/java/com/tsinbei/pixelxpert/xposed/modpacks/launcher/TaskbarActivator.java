@@ -5,6 +5,7 @@ import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getBoo
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getStaticObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setBooleanField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.idOf;
@@ -23,9 +24,15 @@ import java.util.regex.Pattern;
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.xposed.XposedModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.LauncherModPack;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.BaseLauncherMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.IconsMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.RecentsMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.TaskbarMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.TaskbarSettings;
 import com.tsinbei.pixelxpert.xposed.utils.SystemUtils;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass.ReflectionConsumer;
+import com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger;
 
 @LauncherModPack
 public class TaskbarActivator extends XposedModPack {
@@ -48,6 +55,9 @@ public class TaskbarActivator extends XposedModPack {
 	private ReflectedClass TopTaskTrackerClass;
 	private Object mCurrentTopTask;
 	private Object mDeviceProfile;
+
+	//shared state for the taskbar sub-mods (structure from Pixel Taskbar Enabler)
+	private final TaskbarSettings taskbarSettings = new TaskbarSettings();
 
 	public TaskbarActivator(Context context) {
 		super(context);
@@ -90,11 +100,14 @@ public class TaskbarActivator extends XposedModPack {
 				"taskbarHeightOverride",
 				"TaskbarRadiusOverride",
 				"TaskbarHideAllAppsIcon",
-				"EnableGoogleRecents");
+				"EnableGoogleRecents",
+				"taskbar_icon_count");
 
 		if (Key.length > 0 && restartKeys.contains(Key[0])) {
 			SystemUtils.killSelf();
 		}
+
+		taskbarSettings.update(Key);
 
 		taskbarMode = Integer.parseInt(Xprefs.getString("taskBarMode", String.valueOf(TASKBAR_DEFAULT)));
 
@@ -170,7 +183,10 @@ public class TaskbarActivator extends XposedModPack {
 				.afterConstruction()
 				.run(param -> {
 					if(taskbarMode == TASKBAR_ON) {
-						setObjectField(param.thisObject, "isPhone", false);
+						trySetBooleanField(param.thisObject, "isPhone", false);
+						trySetBooleanField(param.thisObject, "isTablet", true); //A15 and below
+						trySetBooleanField(param.thisObject, "isLargeScreen", true); //A17+
+						trySetBooleanField(param.thisObject, "isTaskbarPresent", true);
 					}
 				});
 
@@ -348,12 +364,56 @@ public class TaskbarActivator extends XposedModPack {
 						param.setResult(true);
 					}
 				});
+
+		//taskbar sub-mods (structure adapted from Pixel Taskbar Enabler by beyman-dev, GPLv3)
+		List<BaseLauncherMod> mods = Arrays.asList(
+				new TaskbarMod(this, mContext, taskbarSettings),
+				new RecentsMod(this, mContext, taskbarSettings),
+				new IconsMod(this, mContext, taskbarSettings)
+		);
+
+		for (BaseLauncherMod mod : mods) {
+			try {
+				mod.applyHooks();
+			} catch (Throwable t) {
+				Logger.log("TaskbarActivator: " + mod.getClass().getSimpleName() + " failed to apply", t);
+			}
+		}
+	}
+
+	private static void trySetBooleanField(Object target, String field, boolean value) {
+		try {
+			setBooleanField(target, field, value);
+		} catch (Throwable ignored) {
+		}
+	}
+
+	public void setDeviceProfile(Object deviceProfile) {
+		this.mDeviceProfile = deviceProfile;
+	}
+
+	public Object getDeviceProfile() {
+		return mDeviceProfile;
 	}
 
 	public int getNumShownHotseatIcons()
 	{
-		Object hotSeatProfile = getObjectField(mDeviceProfile, "mHotseatProfile");
-		return getIntField(hotSeatProfile, "numShownIcons");
+		if (mDeviceProfile == null) return taskbarSettings.taskbarIconCount;
+		Object hotSeatProfile;
+		try {
+			hotSeatProfile = getObjectField(mDeviceProfile, "mHotseatProfile");
+		} catch (Throwable t) { //field was renamed in newer launcher versions
+			try {
+				hotSeatProfile = getObjectField(mDeviceProfile, "hotseatProfile");
+			} catch (Throwable t2) {
+				return taskbarSettings.taskbarIconCount;
+			}
+		}
+		try {
+			return getIntField(hotSeatProfile, "numShownIcons");
+		} catch (Throwable t) {
+			return taskbarSettings.taskbarIconCount;
+		}
 	}
 
 	public Object getCurrentTopTask()

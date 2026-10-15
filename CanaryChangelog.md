@@ -1,3 +1,8 @@
+**canary-534**
+
+- Added taskbar enhancements from Pixel Taskbar Enabler: whole-taskbar scaling, dock icon count, mobile-style recents with bottom-aligned grid rows, and recents header icon scaling (Android 17 supported)
+- Added bubble chat options: bottom bubble layout for one-handed use and a configurable dismiss target position
+
 **canary-533**
 
 - Fixed the app-profile switcher failing to initialize on Android 17 (UserManager.getProfiles signature change), which also disabled home/back/sleep broadcast actions in the framework

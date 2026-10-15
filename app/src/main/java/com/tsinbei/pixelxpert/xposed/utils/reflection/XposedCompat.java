@@ -81,6 +81,10 @@ public final class XposedCompat {
 		}
 	}
 
+	public static void setBooleanField(Object object, String name, boolean value) { setObjectField(object, name, value); }
+	public static void setIntField(Object object, String name, int value) { setObjectField(object, name, value); }
+	public static void setFloatField(Object object, String name, float value) { setObjectField(object, name, value); }
+
 	public static Field findFieldIfExists(Class<?> type, String name) {
 		try {
 			return findField(type, name);

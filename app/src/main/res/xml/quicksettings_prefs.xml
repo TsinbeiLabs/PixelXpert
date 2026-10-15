@@ -127,6 +127,23 @@
 			android:title="@string/notif_default_expansion_title"
 			app:iconSpaceReserved="false" />
 
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="enable_reverse_bubble"
+			android:summary="@string/reverse_bubble_summary"
+			android:title="@string/reverse_bubble_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="CENTER"
+			android:dependency="enable_reverse_bubble"
+			android:entries="@array/bubble_dismiss_position_names"
+			android:entryValues="@array/bubble_dismiss_position_values"
+			android:key="dismiss_position"
+			android:summary="%s"
+			android:title="@string/bubble_dismiss_position_title"
+			app:iconSpaceReserved="false" />
+
 	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory

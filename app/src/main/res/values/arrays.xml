@@ -359,4 +359,20 @@
 		<!--item>@string/status_bar_clock</item-->
 	</string-array>
 
+	<string-array name="bubble_dismiss_position_names">
+		<item>@string/bubble_dismiss_bottom</item>
+		<item>@string/bubble_dismiss_top</item>
+		<item>@string/bubble_dismiss_left</item>
+		<item>@string/bubble_dismiss_right</item>
+		<item>@string/bubble_dismiss_center</item>
+	</string-array>
+
+	<string-array name="bubble_dismiss_position_values">
+		<item>BOTTOM_MIDDLE</item>
+		<item>TOP_MIDDLE</item>
+		<item>LEFT_MIDDLE</item>
+		<item>RIGHT_MIDDLE</item>
+		<item>CENTER</item>
+	</string-array>
+
 </resources>
