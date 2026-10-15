@@ -1,3 +1,7 @@
+**canary-536**
+
+- Fixed a preference type mismatch that crashed the taskbar modpack on load, disabling all taskbar customizations (regression since the taskbar integration in canary-534)
+
 **canary-535**
 
 - Added a batch of Pixel tweaks backported from the community (all with their own toggles): skip face-unlock confirmation, unlimited concurrent QS tiles, background clipboard allow-list, screenshot app-name pill (PillShot), hide launcher search bar, custom empty-shade message (Android 17), and three-finger swipe-down screenshot

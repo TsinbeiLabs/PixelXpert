@@ -25,11 +25,16 @@ public class TaskbarSettings {
 
 	public void update(String... key) {
 		if (Xprefs == null) return;
-		taskbarMode = Integer.parseInt(Xprefs.getString("taskBarMode", String.valueOf(TASKBAR_DEFAULT)));
-		mobileRecents = Xprefs.getBoolean("mobile_recents", false);
-		taskbarScale = Xprefs.getInt("taskbar_scale", 100) / 100f;
-		gridHeaderScale = Xprefs.getInt("grid_header_scale", 100) / 100f;
-		mobileHeaderScale = Xprefs.getInt("mobile_header_scale", 100) / 100f;
-		taskbarIconCount = Math.min(Xprefs.getInt("taskbar_icon_count", 4), 5);
+		try {
+			taskbarMode = Integer.parseInt(Xprefs.getString("taskBarMode", String.valueOf(TASKBAR_DEFAULT)));
+			mobileRecents = Xprefs.getBoolean("mobile_recents", false);
+			// MaterialRangeSliderPreference stores values in slider format: must read via getSliderInt
+			taskbarScale = Xprefs.getSliderInt("taskbar_scale", 100) / 100f;
+			gridHeaderScale = Xprefs.getSliderInt("grid_header_scale", 100) / 100f;
+			mobileHeaderScale = Xprefs.getSliderInt("mobile_header_scale", 100) / 100f;
+			taskbarIconCount = Math.min(Xprefs.getSliderInt("taskbar_icon_count", 4), 5);
+		} catch (Throwable ignored) {
+			// a preference type mismatch must never take down the whole taskbar modpack
+		}
 	}
 }
