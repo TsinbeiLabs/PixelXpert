@@ -11,6 +11,13 @@ For the original project introduction, feature list, compatibility chart, instal
 - The app installs as a regular **user app** (like PixelXpert-Next) instead of being mounted as a system priv-app, so it survives OTAs and temporary root loss; existing system-app installs migrate automatically (device-protected preferences are backed up during flashing and restored on the next boot)
 - Various fixes and enhancements of our own; see `CanaryChangelog.md` and the git history
 
+### Backported from other Pixel modules
+
+Assorted Pixel tweaks ported from the community (all GPL/MIT compatible):
+
+- Skip face-unlock confirmation, unlimited concurrent QS tiles, background clipboard allow-list, screenshot app-name pill (PillShot), hide launcher search bar, and a custom empty-shade message — from [hxreborn/PixelInjector](https://github.com/hxreborn/PixelInjector), [biometric-bypass](https://github.com/hxreborn/biometric-bypass), and [qs-boundless-tiles](https://github.com/hxreborn/qs-boundless-tiles)
+- Three-finger swipe-down screenshot — from [RovianDev/PixelSuite](https://github.com/RovianDev/PixelSuite)
+
 ### Backported from Pixel Taskbar Enabler
 
 Taskbar and bubble enhancements ported from [beymans-code/pixel-taskbar-enabler](https://github.com/beymans-code/pixel-taskbar-enabler):
@@ -49,6 +56,9 @@ Requires the Android SDK and a JDK 21+. Release builds additionally need `Releas
 - [PixelXpert](https://github.com/siavash79/PixelXpert) — brought to you by @siavash79 & @ElTifo
 - [anirudhgupta109/PixelXpert-Next](https://github.com/anirudhgupta109/PixelXpert-Next/) by Anirudh Gupta and contributors, for the features and fixes backported into this fork (GPLv3)
 - [beymans-code/pixel-taskbar-enabler](https://github.com/beymans-code/pixel-taskbar-enabler) by beyman-dev, for the taskbar scaling, dock icon count, mobile recents, and bubble layout enhancements (GPLv3)
+- [hxreborn/PixelInjector](https://github.com/hxreborn/PixelInjector), [biometric-bypass](https://github.com/hxreborn/biometric-bypass) and [qs-boundless-tiles](https://github.com/hxreborn/qs-boundless-tiles) by hxreborn, for the biometric bypass, unlimited QS tiles, background clipboard, PillShot, hide search bar, and empty-shade message tweaks (GPLv3 / MIT)
+- [RovianDev/PixelSuite](https://github.com/RovianDev/PixelSuite) by RovianDev, for the three-finger screenshot gesture (GPLv3)
+- eXtreames for the original PillShot screenshot app-name stamp
 - [chenxiaolong/PixelLight](https://github.com/chenxiaolong/PixelLight) by Andrew Gunnerson, for the High Brightness Flashlight implementation (GPLv3)
 - [LineageOS](https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/491217) contributors (Keith Mok, chillger, Michael Bestas, Pranav Vashi; icon by Mayur Varde) for the original Caffeine tile implementation
 - DrDisagree (@Mahmud0808) for the original QS brightness slider implementation in Iconify

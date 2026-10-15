@@ -763,4 +763,27 @@
     <string name="bubble_dismiss_left">Left</string>
     <string name="bubble_dismiss_right">Right</string>
     <string name="bubble_dismiss_center">Center</string>
+
+    <string name="biometric_bypass_title">Skip face unlock confirmation</string>
+    <string name="biometric_bypass_summary">Auto-tap confirm on the biometric prompt after a successful face unlock</string>
+    <string name="warm_tiles_title">Unlimited QS tiles</string>
+    <string name="warm_tiles_summary">Raise the limit of 3 concurrently bound third-party Quick Settings tiles</string>
+    <string name="clipboard_background_title">Clipboard in background</string>
+    <string name="clipboard_background_summary">Let selected apps read the clipboard while in the background</string>
+    <string name="clipboard_background_apps_title">Allowed apps</string>
+    <string name="clipboard_background_apps_summary">Apps that may read the clipboard in the background</string>
+    <string name="three_finger_screenshot_title">Three-finger screenshot</string>
+    <string name="three_finger_screenshot_summary">Swipe down with three fingers to take a screenshot</string>
+    <string name="pill_shot_title">Screenshot app name (PillShot)</string>
+    <string name="pill_shot_summary">Draw the source app name as a pill on screenshots</string>
+    <string name="pill_shot_only_selected_title">Only selected apps</string>
+    <string name="pill_shot_only_selected_summary">When on, stamp only the selected apps; when off, stamp all except them</string>
+    <string name="pill_shot_apps_title">Selected apps</string>
+    <string name="pill_shot_apps_summary">Apps for the PillShot allow/deny list</string>
+    <string name="hide_search_bar_title">Hide launcher search bar</string>
+    <string name="hide_search_bar_summary">Hide the search bar above the hotseat and reclaim its row</string>
+    <string name="empty_shade_title">Custom empty shade message</string>
+    <string name="empty_shade_summary">Replace the empty notification shade text (Android 17 only)</string>
+    <string name="empty_shade_text_title">Empty shade text</string>
+    <string name="empty_shade_text_summary">Text shown when there are no notifications</string>
 </resources>

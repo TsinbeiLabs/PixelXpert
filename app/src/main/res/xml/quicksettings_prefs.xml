@@ -65,6 +65,15 @@
 			app:fragment="com.tsinbei.pixelxpert.ui.fragments.QSTileQtyFragment"
 			app:iconSpaceReserved="false" />
 
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="warmTilesEnabled"
+			android:summary="@string/warm_tiles_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/warm_tiles_title"
+			app:iconSpaceReserved="false" />
+
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="QSLabelScaleFactor"
 			android:title="@string/qs_tile_label_size"
@@ -142,6 +151,22 @@
 			android:key="dismiss_position"
 			android:summary="%s"
 			android:title="@string/bubble_dismiss_position_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="emptyShadeEnabled"
+			android:summary="@string/empty_shade_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/empty_shade_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
+			android:dependency="emptyShadeEnabled"
+			android:key="emptyShadeText"
+			android:summary="@string/empty_shade_text_summary"
+			android:title="@string/empty_shade_text_title"
 			app:iconSpaceReserved="false" />
 
 	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>

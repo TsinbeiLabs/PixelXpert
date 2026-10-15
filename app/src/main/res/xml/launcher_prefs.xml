@@ -108,6 +108,15 @@
 			android:summary="@string/launcher_search_hidden_apps_summary"
 			android:title="@string/launcher_search_hidden_apps"
 			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="hideLauncherSearchBar"
+			android:summary="@string/hide_search_bar_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/hide_search_bar_title"
+			app:iconSpaceReserved="false" />
 	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory

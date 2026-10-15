@@ -3,8 +3,11 @@ package com.tsinbei.pixelxpert.ui.fragments;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.preference.MultiSelectListPreference;
+
 import com.tsinbei.pixelxpert.R;
 import com.tsinbei.pixelxpert.utils.ControlledPreferenceFragmentCompat;
+import com.tsinbei.pixelxpert.utils.InstalledAppsHelper;
 import com.tsinbei.pixelxpert.utils.NTPTimeSyncer;
 import com.tsinbei.pixelxpert.utils.TimeSyncScheduler;
 
@@ -29,6 +32,9 @@ public class MiscFragment extends ControlledPreferenceFragmentCompat {
 
 					return true;
 				});
+
+		InstalledAppsHelper.populateMultiSelect(findPreference("clipboardBackgroundApps"), getContext());
+		InstalledAppsHelper.populateMultiSelect(findPreference("pillShotApps"), getContext());
 	}
 
 	@Override

@@ -1,3 +1,7 @@
+**canary-535**
+
+- Added a batch of Pixel tweaks backported from the community (all with their own toggles): skip face-unlock confirmation, unlimited concurrent QS tiles, background clipboard allow-list, screenshot app-name pill (PillShot), hide launcher search bar, custom empty-shade message (Android 17), and three-finger swipe-down screenshot
+
 **canary-534**
 
 - Added taskbar enhancements from Pixel Taskbar Enabler: whole-taskbar scaling, dock icon count, mobile-style recents with bottom-aligned grid rows, and recents header icon scaling (Android 17 supported)

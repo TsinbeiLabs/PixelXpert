@@ -137,6 +137,15 @@
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
+			android:key="biometricBypassEnabled"
+			android:summary="@string/biometric_bypass_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/biometric_bypass_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
 			android:key="ShowChargingInfo"
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"

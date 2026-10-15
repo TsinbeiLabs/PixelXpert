@@ -54,10 +54,61 @@
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
+			android:key="threeFingerScreenshotEnabled"
+			android:summary="@string/three_finger_screenshot_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/three_finger_screenshot_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="pillShotEnabled"
+			android:summary="@string/pill_shot_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/pill_shot_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:dependency="pillShotEnabled"
+			android:key="pillShotOnlySelected"
+			android:summary="@string/pill_shot_only_selected_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/pill_shot_only_selected_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+			android:dependency="pillShotEnabled"
+			android:key="pillShotApps"
+			android:summary="@string/pill_shot_apps_summary"
+			android:title="@string/pill_shot_apps_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
 			android:key="EnableClipboardSmartActions"
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"
 			android:title="@string/clipboard_smart_actions_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="clipboardBackgroundEnabled"
+			android:summary="@string/clipboard_background_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/clipboard_background_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+			android:dependency="clipboardBackgroundEnabled"
+			android:key="clipboardBackgroundApps"
+			android:summary="@string/clipboard_background_apps_summary"
+			android:title="@string/clipboard_background_apps_title"
 			app:iconSpaceReserved="false" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
