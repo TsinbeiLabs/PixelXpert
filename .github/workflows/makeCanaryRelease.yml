@@ -134,6 +134,20 @@ jobs:
         commit: '${{ steps.source.outputs.sha }}'
         artifacts: 'output/PixelXpert.zip'
 
+    - name: Commit Version Metadata Back
+      if: ${{ github.event_name != 'workflow_dispatch' || inputs.update_latest }}
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add version.properties MagiskModBase/module.prop latestCanary.json MagiskModuleUpdate_Xposed.json MagiskModuleUpdate_Full.json
+        if git diff --cached --quiet; then
+          echo "No version metadata changes to commit."
+        else
+          git commit -m "Version update: Publish ${{ steps.version.outputs.version_name }} metadata [skip ci]"
+          git push origin HEAD:canary
+        fi
+
     - name: Telegram Channel Post
       if: ${{ env.TELEGRAM_TOKEN != '' && env.AOSPMODS_CHANNEL_ID != '' }}
       uses: appleboy/telegram-action@master
