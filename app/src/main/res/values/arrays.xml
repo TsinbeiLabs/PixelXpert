@@ -375,4 +375,56 @@
 		<item>CENTER</item>
 	</string-array>
 
+	<string-array name="launcher_gesture_action_names">
+		<item>@string/gesture_action_none</item>
+		<item>@string/gesture_action_sleep</item>
+		<item>@string/gesture_action_notifications</item>
+		<item>@string/gesture_action_quick_settings</item>
+		<item>@string/gesture_action_recents</item>
+		<item>@string/gesture_action_app_drawer</item>
+		<item>@string/gesture_action_screenshot</item>
+		<item>@string/gesture_action_flashlight</item>
+		<item>@string/gesture_action_assistant</item>
+	</string-array>
+
+	<string-array name="launcher_gesture_action_values">
+		<item>none</item>
+		<item>sleep</item>
+		<item>notifications</item>
+		<item>quick_settings</item>
+		<item>recents</item>
+		<item>app_drawer</item>
+		<item>screenshot</item>
+		<item>flashlight</item>
+		<item>assistant</item>
+	</string-array>
+
+	<string-array name="launcher_drawer_swipe_action_names">
+		<item>@string/drawer_swipe_block</item>
+		<item>@string/drawer_swipe_search</item>
+	</string-array>
+
+	<string-array name="launcher_drawer_swipe_action_values">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+
+	<string-array name="launcher_freeform_mode_names">
+		<item>@string/freeform_mode_aosp</item>
+		<item>@string/freeform_mode_sunshine</item>
+		<item>@string/freeform_mode_lmo</item>
+		<item>@string/freeform_mode_yamf</item>
+		<item>@string/freeform_mode_reyamf</item>
+		<item>@string/freeform_mode_bubble</item>
+	</string-array>
+
+	<string-array name="launcher_freeform_mode_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
 </resources>

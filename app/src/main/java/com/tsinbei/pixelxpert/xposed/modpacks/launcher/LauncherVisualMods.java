@@ -7,6 +7,8 @@ import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObj
 
 import android.content.Context;
 import android.content.ComponentName;
+import android.content.res.Resources;
+import android.util.SparseIntArray;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +43,11 @@ public class LauncherVisualMods extends XposedModPack {
 	private Set<String> hiddenApps;
 	private View desktopSearchBar;
 	private View drawerSearchBar;
+
+	private static final int UNKNOWN = 0;
+	private static final int ZERO = 1;
+	private static final int KEEP = 2;
+	private static final SparseIntArray qsbDimensionVerdicts = new SparseIntArray();
 
 	public LauncherVisualMods(Context context) {
 		super(context);
@@ -255,9 +262,42 @@ public class LauncherVisualMods extends XposedModPack {
 			ReflectedClass hotseat = ReflectedClass.of("com.android.launcher3.Hotseat");
 			hotseat.afterConstruction().run(hook -> captureDesktopSearch(hook.thisObject));
 			hotseat.after("setInsets").run(hook -> captureDesktopSearch(hook.thisObject));
+
+			// Zero the reserved search-bar height so the hotseat reclaims the row
+			// (from PixelInjector / Pixel Launcher Enhanced, GPLv3)
+			ReflectedClass.of(Resources.class)
+					.before("getDimensionPixelSize")
+					.run(hook -> {
+						if (!hideDesktopSearch) return;
+						if (!(hook.thisObject instanceof Resources)) return;
+						if (hook.args.length == 0 || !(hook.args[0] instanceof Integer)) return;
+						if (isQsbHeight((Resources) hook.thisObject, (int) hook.args[0])) {
+							hook.setResult(0);
+						}
+					});
 		} catch (Throwable throwable) {
 			log("LauncherVisualMods: desktop search hook unavailable", throwable);
 		}
+	}
+
+	private static boolean isQsbHeight(Resources resources, int id) {
+		int cached;
+		synchronized (qsbDimensionVerdicts) {
+			cached = qsbDimensionVerdicts.get(id, UNKNOWN);
+		}
+		if (cached != UNKNOWN) return cached == ZERO;
+
+		String name;
+		try {
+			name = resources.getResourceEntryName(id);
+		} catch (Throwable t) {
+			name = "";
+		}
+		boolean zero = "qsb_widget_height".equals(name);
+		synchronized (qsbDimensionVerdicts) {
+			qsbDimensionVerdicts.put(id, zero ? ZERO : KEEP);
+		}
+		return zero;
 	}
 
 	private void captureDesktopSearch(Object hotseat) {

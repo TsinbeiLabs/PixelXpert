@@ -108,14 +108,349 @@
 			android:summary="@string/launcher_search_hidden_apps_summary"
 			android:title="@string/launcher_search_hidden_apps"
 			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/launcher_appearance_section"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
-			android:key="hideLauncherSearchBar"
-			android:summary="@string/hide_search_bar_summary"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/hide_search_bar_title"
+			android:key="LauncherHideStatusbar"
+			android:summary="@string/launcher_hide_statusbar_summary"
+			android:title="@string/launcher_hide_statusbar_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherDarkStatusbar"
+			android:summary="@string/launcher_dark_statusbar_summary"
+			android:title="@string/launcher_dark_statusbar_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherHideTopShadow"
+			android:summary="@string/launcher_hide_top_shadow_summary"
+			android:title="@string/launcher_hide_top_shadow_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherDarkPageIndicator"
+			android:title="@string/launcher_dark_page_indicator_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherHidePageIndicator"
+			android:title="@string/launcher_hide_page_indicator_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherPreventWallpaperDimRestart"
+			android:summary="@string/launcher_prevent_wallpaper_dim_restart_summary"
+			android:title="@string/launcher_prevent_wallpaper_dim_restart_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherSearchBarOpacity"
+			android:title="@string/launcher_search_bar_opacity_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="100"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherDrawerOpacity"
+			android:title="@string/launcher_drawer_opacity_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="100"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherRecentsOpacity"
+			android:title="@string/launcher_recents_opacity_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="100"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherFolderOpacity"
+			android:title="@string/launcher_folder_opacity_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="100"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/launcher_grid_section"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherHomeGridRows"
+			android:title="@string/launcher_home_rows_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="20"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherHomeGridColumns"
+			android:title="@string/launcher_home_columns_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="20"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherDrawerGridColumns"
+			android:title="@string/launcher_drawer_columns_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="20"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherDrawerRowHeight"
+			android:title="@string/launcher_drawer_row_height_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="150"
+			app:minVal="50"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherFolderGridRows"
+			android:title="@string/launcher_folder_rows_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="10"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherFolderGridColumns"
+			android:title="@string/launcher_folder_columns_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="10"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherFreeWidgetResize"
+			android:summary="@string/launcher_free_widget_resize_summary"
+			android:title="@string/launcher_free_widget_resize_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/launcher_icons_section"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherIconSize"
+			android:title="@string/launcher_icon_size_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="150"
+			app:minVal="50"
+			app:tickInterval="5"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherTextSize"
+			android:title="@string/launcher_text_size_title"
+			app:defaultValue="100"
+			app:iconSpaceReserved="false"
+			app:maxVal="150"
+			app:minVal="50"
+			app:tickInterval="5"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherNotificationDotCount"
+			android:summary="@string/launcher_notification_dot_count_summary"
+			android:title="@string/launcher_notification_dot_count_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherNotificationDotBlockEnabled"
+			android:summary="@string/launcher_notification_dot_block_summary"
+			android:title="@string/launcher_notification_dot_block_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+			android:dependency="LauncherNotificationDotBlockEnabled"
+			android:key="LauncherNotificationDotBlockList"
+			android:summary="@string/launcher_notification_dot_block_list_summary"
+			android:title="@string/launcher_notification_dot_block_list_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="ThemedIconCustomColor"
+			android:summary="@string/launcher_themed_icon_color_summary"
+			android:title="@string/launcher_themed_icon_color_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialColorPreference
+			android:defaultValue="-16777216"
+			android:dependency="ThemedIconCustomColor"
+			android:key="ThemedIconFgColorLight"
+			android:title="@string/launcher_themed_fg_light_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialColorPreference
+			android:defaultValue="-1"
+			android:dependency="ThemedIconCustomColor"
+			android:key="ThemedIconBgColorLight"
+			android:title="@string/launcher_themed_bg_light_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialColorPreference
+			android:defaultValue="-1"
+			android:dependency="ThemedIconCustomColor"
+			android:key="ThemedIconFgColorDark"
+			android:title="@string/launcher_themed_fg_dark_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialColorPreference
+			android:defaultValue="-16777216"
+			android:dependency="ThemedIconCustomColor"
+			android:key="ThemedIconBgColorDark"
+			android:title="@string/launcher_themed_bg_dark_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialColorPreference
+			android:defaultValue="-1"
+			android:dependency="ThemedIconCustomColor"
+			android:key="FolderCustomColorLight"
+			android:title="@string/launcher_folder_color_light_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialColorPreference
+			android:defaultValue="-16777216"
+			android:dependency="ThemedIconCustomColor"
+			android:key="FolderCustomColorDark"
+			android:title="@string/launcher_folder_color_dark_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/launcher_dock_section"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherDisableDock"
+			android:summary="@string/launcher_disable_dock_summary"
+			android:title="@string/launcher_disable_dock_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherDockTopSpacing"
+			android:title="@string/launcher_dock_top_spacing_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="100"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="LauncherDockBottomSpacing"
+			android:title="@string/launcher_dock_bottom_spacing_title"
+			app:defaultValue="0"
+			app:iconSpaceReserved="false"
+			app:maxVal="100"
+			app:minVal="0"
+			app:tickInterval="1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherHideDrawerScrollbar"
+			android:title="@string/launcher_hide_drawer_scrollbar_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherDisableAppDrawer"
+			android:summary="@string/launcher_disable_app_drawer_summary"
+			android:title="@string/launcher_disable_app_drawer_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="0"
+			android:dependency="LauncherDisableAppDrawer"
+			android:entries="@array/launcher_drawer_swipe_action_names"
+			android:entryValues="@array/launcher_drawer_swipe_action_values"
+			android:key="LauncherNoDrawerSwipeAction"
+			android:summary="%s"
+			android:title="@string/launcher_no_drawer_swipe_action_title"
+			app:iconSpaceReserved="false" />
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/launcher_gestures_section"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="none"
+			android:entries="@array/launcher_gesture_action_names"
+			android:entryValues="@array/launcher_gesture_action_values"
+			android:key="LauncherGestureDoubleTap"
+			android:summary="%s"
+			android:title="@string/launcher_gesture_double_tap_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="none"
+			android:entries="@array/launcher_gesture_action_names"
+			android:entryValues="@array/launcher_gesture_action_values"
+			android:key="LauncherGesturePinchIn"
+			android:summary="%s"
+			android:title="@string/launcher_gesture_pinch_in_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="none"
+			android:entries="@array/launcher_gesture_action_names"
+			android:entryValues="@array/launcher_gesture_action_values"
+			android:key="LauncherGesturePinchOut"
+			android:summary="%s"
+			android:title="@string/launcher_gesture_pinch_out_title"
 			app:iconSpaceReserved="false" />
 	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
@@ -146,6 +481,69 @@
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"
 			android:title="@string/recents_equal_action_widths"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="RecentMemInfo"
+			android:summary="@string/recents_meminfo_summary"
+			android:title="@string/recents_meminfo_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:dependency="RecentMemInfo"
+			android:key="RecentMemInfoZram"
+			android:title="@string/recents_meminfo_zram_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:dependency="RecentMemInfo"
+			android:key="RecentMemInfoChip"
+			android:title="@string/recents_meminfo_chip_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="RecentAppLockEnabled"
+			android:summary="@string/recents_app_lock_summary"
+			android:title="@string/recents_app_lock_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+			android:dependency="RecentAppLockEnabled"
+			android:key="RecentLockedApps"
+			android:summary="@string/recents_locked_apps_summary"
+			android:title="@string/recents_locked_apps_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="LauncherFreeformGesture"
+			android:summary="@string/launcher_freeform_gesture_summary"
+			android:title="@string/launcher_freeform_gesture_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:dependency="LauncherFreeformGesture"
+			android:key="LauncherFreeformProgress"
+			android:title="@string/launcher_freeform_progress_title"
+			app:defaultValue="3"
+			app:iconSpaceReserved="false"
+			app:maxVal="5"
+			app:minVal="1"
+			app:tickInterval="0.1"
+			app:updatesContinuously="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="0"
+			android:dependency="LauncherFreeformGesture"
+			android:entries="@array/launcher_freeform_mode_names"
+			android:entryValues="@array/launcher_freeform_mode_values"
+			android:key="LauncherFreeformMode"
+			android:summary="%s"
+			android:title="@string/launcher_freeform_mode_title"
 			app:iconSpaceReserved="false" />
 	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 </PreferenceScreen>

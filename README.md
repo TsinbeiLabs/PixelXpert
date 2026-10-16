@@ -18,6 +18,16 @@ Assorted Pixel tweaks ported from the community (all GPL/MIT compatible):
 - Skip face-unlock confirmation, unlimited concurrent QS tiles, background clipboard allow-list, screenshot app-name pill (PillShot), hide launcher search bar, and a custom empty-shade message — from [hxreborn/PixelInjector](https://github.com/hxreborn/PixelInjector), [biometric-bypass](https://github.com/hxreborn/biometric-bypass), and [qs-boundless-tiles](https://github.com/hxreborn/qs-boundless-tiles)
 - Three-finger swipe-down screenshot — from [RovianDev/PixelSuite](https://github.com/RovianDev/PixelSuite)
 
+### Backported from Pixel Launcher Enhanced
+
+Launcher customizations ported from [Mahmud0808/PixelLauncherEnhanced](https://github.com/Mahmud0808/PixelLauncherEnhanced) (GPL-3.0):
+
+- Status bar / top shadow / page indicator appearance, wallpaper-dim restart prevention, and opacity controls for the search bar, drawer, recents, and folders
+- Home, drawer, and folder grid layout (rows/columns), icon/text size, and free widget resizing
+- Notification dot count and per-app dot blocking, custom themed icon colors
+- Dock disable and spacing, drawer scrollbar hiding, and app-drawer disable
+- Home double-tap and pinch gestures, recents memory info, recents app locking, and freeform gestures
+
 ### Backported from Pixel Taskbar Enabler
 
 Taskbar and bubble enhancements ported from [beymans-code/pixel-taskbar-enabler](https://github.com/beymans-code/pixel-taskbar-enabler):
@@ -58,6 +68,7 @@ Requires the Android SDK and a JDK 21+. Release builds additionally need `Releas
 - [beymans-code/pixel-taskbar-enabler](https://github.com/beymans-code/pixel-taskbar-enabler) by beyman-dev, for the taskbar scaling, dock icon count, mobile recents, and bubble layout enhancements (GPLv3)
 - [hxreborn/PixelInjector](https://github.com/hxreborn/PixelInjector), [biometric-bypass](https://github.com/hxreborn/biometric-bypass) and [qs-boundless-tiles](https://github.com/hxreborn/qs-boundless-tiles) by hxreborn, for the biometric bypass, unlimited QS tiles, background clipboard, PillShot, hide search bar, and empty-shade message tweaks (GPLv3 / MIT)
 - [RovianDev/PixelSuite](https://github.com/RovianDev/PixelSuite) by RovianDev, for the three-finger screenshot gesture (GPLv3)
+- [Mahmud0808/PixelLauncherEnhanced](https://github.com/Mahmud0808/PixelLauncherEnhanced) by Mahmud0808 (DrDisagree), for the launcher grid, appearance, icon, dock, gesture, and recents enhancements (GPLv3)
 - eXtreames for the original PillShot screenshot app-name stamp
 - [chenxiaolong/PixelLight](https://github.com/chenxiaolong/PixelLight) by Andrew Gunnerson, for the High Brightness Flashlight implementation (GPLv3)
 - [LineageOS](https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/491217) contributors (Keith Mok, chillger, Michael Bestas, Pranav Vashi; icon by Mayur Varde) for the original Caffeine tile implementation

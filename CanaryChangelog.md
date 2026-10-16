@@ -1,3 +1,7 @@
+**canary-537**
+
+- Integrated a large batch of launcher features from Pixel Launcher Enhanced: hide/dark status bar, hide top shadow, dark/hide page indicator, wallpaper-dim restart prevention, opacity controls (search bar, drawer, recents, folder), home/drawer/folder grid rows & columns, icon/text size, free widget resizing, notification dot count & blocking, custom themed icon colors, disable dock, dock spacing, drawer scrollbar hiding, disable app drawer, home double-tap/pinch gestures, recents memory info, recents app lock, and freeform gesture
+
 **canary-536**
 
 - Fixed a preference type mismatch that crashed the taskbar modpack on load, disabling all taskbar customizations (regression since the taskbar integration in canary-534)

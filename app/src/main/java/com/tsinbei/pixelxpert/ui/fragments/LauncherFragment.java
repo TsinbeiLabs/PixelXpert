@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 
 import com.tsinbei.pixelxpert.R;
 import com.tsinbei.pixelxpert.utils.ControlledPreferenceFragmentCompat;
+import com.tsinbei.pixelxpert.utils.InstalledAppsHelper;
 
 public class LauncherFragment extends ControlledPreferenceFragmentCompat {
 	@Override
@@ -21,5 +22,8 @@ public class LauncherFragment extends ControlledPreferenceFragmentCompat {
 	@Override
 	public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
 		super.onCreatePreferences(savedInstanceState, rootKey);
+
+		InstalledAppsHelper.populateMultiSelect(findPreference("LauncherNotificationDotBlockList"), getContext());
+		InstalledAppsHelper.populateMultiSelect(findPreference("RecentLockedApps"), getContext());
 	}
 }
