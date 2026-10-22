@@ -58,6 +58,12 @@ public class GestureNavbarManager extends XposedModPack {
 				.before("updateIsEnabled")
 				.run(param -> EdgeBackGestureHandler = param.thisObject);
 
+		//The navbar builds each display's gesture handler through this method, on the
+		//same edge handler the gesture will be routed through.
+		EdgeBackGestureHandlerClass
+				.before("createDisplayBackGestureHandler")
+				.run(param -> EdgeBackGestureHandler = param.thisObject);
+
 		BackPanelControllerClass
 				.before("onMotionEvent")
 				.run(param -> {

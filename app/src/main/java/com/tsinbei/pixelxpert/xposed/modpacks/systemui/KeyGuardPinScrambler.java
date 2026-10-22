@@ -76,7 +76,13 @@ public class KeyGuardPinScrambler extends XposedModPack {
 				.before(Pattern.compile("DigitButton-.*"))
 				.run(param -> {
 					if (!shufflePinEnabled) return;
-					if (param.args == null || param.args.length == 0 || !(param.args[0] instanceof Integer)) return;
+					if (param.args == null || param.args.length <= 2 || !(param.args[0] instanceof Integer)) return;
+
+					// DigitButton is shared between the keyguard bouncer pad (PinBouncerKt) and the
+					// device-credential pad an app lock or BiometricPrompt fallback shows
+					// (CredentialPinPadKt). Only shuffle the bouncer's own pad.
+					Object onClick = param.args[2];
+					if (onClick == null || !onClick.getClass().getName().contains("PinBouncerKt")) return;
 
 					int original = (int) param.args[0];
 

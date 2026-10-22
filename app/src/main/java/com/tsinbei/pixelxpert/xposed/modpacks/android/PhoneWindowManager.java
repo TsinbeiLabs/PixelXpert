@@ -217,6 +217,7 @@ public class PhoneWindowManager extends XposedModPack {
 			Intent broadcast = new Intent();
 			broadcast.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
 			broadcast.setAction(Constants.ACTION_PROFILE_SWITCH_AVAILABLE);
+			broadcast.setPackage(Constants.SYSTEM_UI_PACKAGE);
 			broadcast.putExtra("available", isAvailable);
 			mContext.sendBroadcast(broadcast);
 		}).start();

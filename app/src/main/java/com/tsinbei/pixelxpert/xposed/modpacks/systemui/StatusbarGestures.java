@@ -128,19 +128,30 @@ public class StatusbarGestures extends XposedModPack {
 					ReflectedClass.of(mTouchHandler.getClass())
 							.before("onTouchEvent")
 							.run(param2 -> {
+								if (!(param2.args[0] instanceof MotionEvent)) return;
 								MotionEvent motionEvent = (MotionEvent) param2.args[0];
 
 								if (oneFingerPullupEnabled
 										&& !isKeyguard(NotificationPanelViewController)) {
-									if(SystemClock.uptimeMillis() - lastPullupTouchTime[0] > 1000)
-									{
-										motionEvent.setAction(MotionEvent.ACTION_DOWN);
-										lastPullupTouchTime[0] = SystemClock.uptimeMillis();
-										mDownEvent = MotionEvent.obtain(motionEvent);
-										return;
-									}
-									else if (MotionEvent.ACTION_UP == motionEvent.getAction()) {
-										lastPullupTouchTime[0] = 0;
+									switch (motionEvent.getActionMasked()) {
+										case MotionEvent.ACTION_OUTSIDE:
+											//Never rewrite ACTION_OUTSIDE into a pull-up gesture
+											return;
+										case MotionEvent.ACTION_DOWN:
+										case MotionEvent.ACTION_MOVE:
+											if (SystemClock.uptimeMillis() - lastPullupTouchTime[0] > 1000)
+											{
+												motionEvent.setAction(MotionEvent.ACTION_DOWN);
+												lastPullupTouchTime[0] = SystemClock.uptimeMillis();
+												if (mDownEvent != null) mDownEvent.recycle();
+												mDownEvent = MotionEvent.obtain(motionEvent);
+												return;
+											}
+											break;
+										case MotionEvent.ACTION_UP:
+										case MotionEvent.ACTION_CANCEL:
+											lastPullupTouchTime[0] = 0;
+											break;
 									}
 									pullUpDetector.onTouchEvent(motionEvent);
 								}

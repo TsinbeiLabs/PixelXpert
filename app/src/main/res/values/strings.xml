@@ -874,4 +874,7 @@
     <string name="freeform_mode_yamf">YAMF</string>
     <string name="freeform_mode_reyamf">ReYAMF</string>
     <string name="freeform_mode_bubble">Bubble</string>
+
+    <string name="keyboard_space_hide_buttons_title">Hide keyboard space row</string>
+    <string name="keyboard_space_hide_buttons_summary">Remove the back chevron and keyboard switcher row under the keyboard in gesture navigation</string>
 </resources>

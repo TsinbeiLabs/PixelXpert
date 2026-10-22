@@ -159,4 +159,11 @@
 		android:summaryOn="@string/general_on"
 		android:title="@string/hide_navbar_insets_title"
 		app:iconSpaceReserved="false" />
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+		android:defaultValue="false"
+		android:key="KeyboardSpaceHideButtons"
+		android:summary="@string/keyboard_space_hide_buttons_summary"
+		android:title="@string/keyboard_space_hide_buttons_title"
+		app:iconSpaceReserved="false" />
 </PreferenceScreen>

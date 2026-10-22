@@ -1,3 +1,9 @@
+**canary-538**
+
+- Followed up on more PixelXpert-Next changes: fix profile-switch broadcast targeting, capture the edge gesture handler on newer builds, and never rewrite ACTION_OUTSIDE in the one-finger pull-up gesture
+- Shuffle PIN now leaves the device-credential pad untouched (only the keyguard bouncer pad is shuffled)
+- Added an option to hide the keyboard space row (back chevron + switcher) under the keyboard in gesture navigation
+
 **canary-537**
 
 - Integrated a large batch of launcher features from Pixel Launcher Enhanced: hide/dark status bar, hide top shadow, dark/hide page indicator, wallpaper-dim restart prevention, opacity controls (search bar, drawer, recents, folder), home/drawer/folder grid rows & columns, icon/text size, free widget resizing, notification dot count & blocking, custom themed icon colors, disable dock, dock spacing, drawer scrollbar hiding, disable app drawer, home double-tap/pinch gestures, recents memory info, recents app lock, and freeform gesture
