@@ -1,6 +1,6 @@
 {
-  "version": "canary-538",
-  "versionCode": 538,
+  "version": "canary-539",
+  "versionCode": 539,
   "zipUrl": "https://github.com/TsinbeiLabs/PixelXpert/releases/download/canary_builds/PixelXpert.zip",
   "changelog": "https://raw.githubusercontent.com/TsinbeiLabs/PixelXpert/canary/CanaryChangelog.md"
 }
