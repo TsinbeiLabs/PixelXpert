@@ -102,21 +102,19 @@ public class KeyGuardPinScrambler extends XposedModPack {
 						} catch (Throwable ignored) {}
 					}
 
-					// Compose passes $changed then $default after the Composer parameter. Bit 0 of
-					// $changed marks a self-recomposition (e.g. touch ripple): skip it so digits
-					// don't shift under the user's finger. Clear the digit's static bits (0x0E)
-					// otherwise so Compose registers the injected digit and recreates the lambda.
-					int changedIndex = locateChangedIndex(param);
-					if (changedIndex >= 0) {
-						int changed = (int) param.args[changedIndex];
-						if ((changed & 1) != 0) return;
-						param.args[changedIndex] = changed & ~0x0E;
-					}
-
+					// Always remap: the scramble is fixed during a bouncer session, so re-remapping
+					// when the parent re-invokes with the same original digit is idempotent. Do NOT
+					// gate on the $changed bitmask, whose layout is unstable across builds.
 					int index = (original == 0) ? 9 : (original - 1);
 					synchronized (composeDigits) {
 						if (index >= 0 && index < composeDigits.size()) {
-							param.args[0] = composeDigits.get(index);
+							int scrambled = composeDigits.get(index);
+							int changedIndex = locateChangedIndex(param);
+							int changed = changedIndex >= 0 ? (int) param.args[changedIndex] : -1;
+							android.util.Log.d("PxPinDebug", "orig=" + original + " -> " + scrambled
+									+ " onClick=" + onClick.getClass().getSimpleName()
+									+ " changed=" + Integer.toHexString(changed));
+							param.args[0] = scrambled;
 						}
 					}
 				});

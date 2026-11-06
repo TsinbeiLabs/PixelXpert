@@ -1,3 +1,7 @@
+**canary-540**
+
+- Fixed shuffle PIN display on the latest Android 17 canary: the digit was remapped inconsistently (reverting on release) because the hook gated on the unstable Compose $changed bitmask; it now always remaps, which is idempotent for a fixed shuffle
+
 **canary-539**
 
 - Fixed shuffle PIN on the latest Android 17 canary (Compose DigitButton gained parameters, shifting the $changed bitmask; the hook now locates it by scanning for the Composer parameter)
