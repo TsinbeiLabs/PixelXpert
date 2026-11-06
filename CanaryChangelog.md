@@ -2,6 +2,7 @@
 
 - Correct Compose PIN scrambling to distinguish parent composition (slot digit) from restart composition (already mapped digit); resolve the change-mask index from the target method at hook registration
 - Keep the Compose permutation unchanged on unrelated preference updates
+- Restore the zero-slot R8 callback's argument-respecting branch, verified against the Android 17 SystemUI dex; its specialized branch otherwise always submits literal zero
 - Withdraw canary-539, canary-540, canary-541, and canary-543 releases following the unresolved PIN shuffle regression (canary-542 was not published)
 
 **canary-543** (withdrawn)

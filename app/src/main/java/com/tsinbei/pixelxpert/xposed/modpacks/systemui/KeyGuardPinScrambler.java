@@ -1,6 +1,7 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findFieldIfExists;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
@@ -8,6 +9,7 @@ import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.Context;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -102,6 +104,19 @@ public class KeyGuardPinScrambler extends XposedModPack {
 				if ((changed & 1) != 0) return;
 
 				int original = (int) param.args[0];
+				// R8 specializes the zero-slot Function1 to ignore its argument and submit
+				// literal 0. In the merged class, discriminator 0 is the general branch
+				// that submits Integer.intValue(); use it for the shuffled zero slot too.
+				if (original == 0) {
+					Field classId = findFieldIfExists(onClick.getClass(), "$r8$classId");
+					if (classId != null) {
+						if (classId.getType() == byte.class) {
+							classId.setByte(onClick, (byte) 0);
+						} else if (classId.getType() == int.class) {
+							classId.setInt(onClick, 0);
+						}
+					}
+				}
 				int index = (original == 0) ? 9 : (original - 1);
 				int[] digits = composeDigits;
 				if (index >= 0 && index < digits.length) {
