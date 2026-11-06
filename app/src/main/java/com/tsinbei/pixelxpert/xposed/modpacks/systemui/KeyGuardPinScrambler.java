@@ -1,7 +1,6 @@
 package com.tsinbei.pixelxpert.xposed.modpacks.systemui;
 
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
-import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.findFieldIfExists;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
 import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
 import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
@@ -9,7 +8,6 @@ import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.Context;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -72,6 +70,9 @@ public class KeyGuardPinScrambler extends XposedModPack {
 
 		// Android 16 QPR moved the PIN bouncer from Views to Compose (PinBouncerKt).
 		// Digits are remapped at the DigitButton level, so what's displayed is what gets submitted.
+		// Compose always re-invokes DigitButton with the original digit (verified on A17: the
+		// hook receives 1..9,0 every time, never an already-scrambled value), so remapping
+		// unconditionally is idempotent for the fixed shuffle of the current bouncer session.
 		PinBouncerKtClass
 				.before(Pattern.compile("DigitButton-.*"))
 				.run(param -> {
@@ -85,37 +86,10 @@ public class KeyGuardPinScrambler extends XposedModPack {
 					if (onClick == null || !onClick.getClass().getName().contains("PinBouncerKt")) return;
 
 					int original = (int) param.args[0];
-
-					// R8 can merge the onClick lambda of button 0 into a class that hardcodes
-					// submitting 0 ($r8$classId == 1), ignoring the remapped digit. Reset it so
-					// the lambda honors the digit we inject.
-					if (original == 0 && param.args.length > 2 && param.args[2] != null) {
-						try {
-							Field classIdField = findFieldIfExists(param.args[2].getClass(), "$r8$classId");
-							if (classIdField != null) {
-								if (classIdField.getType() == byte.class) {
-									classIdField.setByte(param.args[2], (byte) 0);
-								} else if (classIdField.getType() == int.class) {
-									classIdField.setInt(param.args[2], 0);
-								}
-							}
-						} catch (Throwable ignored) {}
-					}
-
-					// Always remap: the scramble is fixed during a bouncer session, so re-remapping
-					// when the parent re-invokes with the same original digit is idempotent. Do NOT
-					// gate on the $changed bitmask, whose layout is unstable across builds.
 					int index = (original == 0) ? 9 : (original - 1);
 					synchronized (composeDigits) {
 						if (index >= 0 && index < composeDigits.size()) {
-							int scrambled = composeDigits.get(index);
-							int changedIndex = locateChangedIndex(param);
-							int changed = changedIndex >= 0 ? (int) param.args[changedIndex] : -1;
-							com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger.log("PinShuffle digit=" + original
-									+ " scrambled=" + scrambled
-									+ " onClick=" + onClick.getClass().getSimpleName()
-									+ " changed=0x" + Integer.toHexString(changed));
-							param.args[0] = scrambled;
+							param.args[0] = composeDigits.get(index);
 						}
 					}
 				});
@@ -141,22 +115,5 @@ public class KeyGuardPinScrambler extends XposedModPack {
 			result[i] = digits.get(i);
 		}
 		return result;
-	}
-
-	/** Finds the $changed bitmask: the int parameter immediately after the Compose Composer. */
-	private static int locateChangedIndex(com.tsinbei.pixelxpert.xposed.utils.reflection.HookHelper.RunParam param) {
-		try {
-			if (!(param.method instanceof java.lang.reflect.Method method)) return -1;
-			Class<?>[] parameterTypes = method.getParameterTypes();
-			for (int i = 0; i < parameterTypes.length; i++) {
-				if ("androidx.compose.runtime.Composer".equals(parameterTypes[i].getName())
-						&& i + 1 < param.args.length
-						&& param.args[i + 1] instanceof Integer) {
-					return i + 1;
-				}
-			}
-		} catch (Throwable ignored) {
-		}
-		return -1;
 	}
 }

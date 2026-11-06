@@ -1,3 +1,7 @@
+**canary-542**
+
+- Fixed the "0" PIN button changing on every press/release on Android 17 canary: removed the stale R8 `$r8$classId` workaround that corrupted the shared click lambda
+
 **canary-541**
 
 - Additional shuffle PIN diagnostic logging for the Android 17 canary Compose bouncer
