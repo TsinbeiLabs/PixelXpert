@@ -8,6 +8,7 @@ import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
 
 import android.content.Context;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,12 +20,13 @@ import com.tsinbei.pixelxpert.xposed.XposedModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.SystemUIModPack;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass.ReflectionConsumer;
+import com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger;
 
 @SuppressWarnings("RedundantThrows")
 @SystemUIModPack
 public class KeyGuardPinScrambler extends XposedModPack {
-	private static boolean shufflePinEnabled = false;
-	private static final List<Integer> composeDigits = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 0));
+	private static volatile boolean shufflePinEnabled = false;
+	private static volatile int[] composeDigits = shuffledDigits();
 
 	public KeyGuardPinScrambler(Context context) {
 		super(context);
@@ -32,12 +34,11 @@ public class KeyGuardPinScrambler extends XposedModPack {
 
 	@Override
 	public void onPreferenceUpdated(String... Key) {
-		shufflePinEnabled = Xprefs.getBoolean("shufflePinEnabled", false);
-		if (shufflePinEnabled) {
-			synchronized (composeDigits) {
-				Collections.shuffle(composeDigits);
-			}
+		boolean enabled = Xprefs.getBoolean("shufflePinEnabled", false);
+		if (enabled && !shufflePinEnabled) {
+			composeDigits = shuffledDigits();
 		}
+		shufflePinEnabled = enabled;
 	}
 
 	@Override
@@ -67,37 +68,50 @@ public class KeyGuardPinScrambler extends XposedModPack {
 		KeyguardPinBasedInputViewClass.after("onFinishInflate").run(pinShuffleHook);
 		KeyguardPinBasedInputViewClass.after("resetPasswordText").run(pinShuffleHook);
 
-		// Android 16 QPR moved the PIN bouncer from Views to Compose (PinBouncerKt).
-		// Digits are remapped at the DigitButton level, so what's displayed is what gets submitted.
-		// Compose always re-invokes DigitButton with the original digit (verified on A17: the
-		// hook receives 1..9,0 every time, never an already-scrambled value), so remapping
-		// unconditionally is idempotent for the fixed shuffle of the current bouncer session.
-		PinBouncerKtClass
-				.before(Pattern.compile("DigitButton-.*"))
-				.run(param -> {
-					if (!shufflePinEnabled) return;
-					if (param.args == null || param.args.length <= 2 || !(param.args[0] instanceof Integer)) return;
+		// Parent composition supplies a slot digit. The restart scope captures the mapped
+		// digit and calls us with it again on press/release. Those are different inputs:
+		// mapping a restart would apply the permutation twice and change the visible key.
+		for (Method method : PinBouncerKtClass.findMethods(Pattern.compile("DigitButton-.*"))) {
+			Class<?>[] types = method.getParameterTypes();
+			int composerIndex = -1;
+			for (int i = 0; i < types.length; i++) {
+				if (types[i].getName().equals("androidx.compose.runtime.Composer")) {
+					composerIndex = i;
+					break;
+				}
+			}
+			if (composerIndex < 0 || composerIndex + 1 >= types.length
+					|| types[composerIndex + 1] != int.class) {
+				throw new IllegalStateException("DigitButton has no Compose change mask: " + method);
+			}
+			// Resolve against the actual target Method at registration, not the framework's
+			// runtime hook executable (which may be a generated trampoline).
+			final int changedIndex = composerIndex + 1;
+			Logger.log("PinShuffle: " + method.getName() + " changedIndex=" + changedIndex);
+			PinBouncerKtClass.before(method).run(param -> {
+				if (!shufflePinEnabled) return;
+				if (param.args == null || param.args.length <= 2 || !(param.args[0] instanceof Integer)) return;
 
-					// DigitButton is shared between the keyguard bouncer pad (PinBouncerKt) and the
-					// device-credential pad an app lock or BiometricPrompt fallback shows
-					// (CredentialPinPadKt). Only shuffle the bouncer's own pad.
-					Object onClick = param.args[2];
-					if (onClick == null || !onClick.getClass().getName().contains("PinBouncerKt")) return;
+				// DigitButton is shared between the keyguard bouncer pad (PinBouncerKt) and the
+				// device-credential pad an app lock or BiometricPrompt fallback shows
+				// (CredentialPinPadKt). Only shuffle the bouncer's own pad.
+				Object onClick = param.args[2];
+				if (onClick == null || !onClick.getClass().getName().contains("PinBouncerKt")) return;
 
-					int original = (int) param.args[0];
-					int index = (original == 0) ? 9 : (original - 1);
-					synchronized (composeDigits) {
-						if (index >= 0 && index < composeDigits.size()) {
-							param.args[0] = composeDigits.get(index);
-						}
-					}
-				});
+				int changed = (int) param.args[changedIndex];
+				if ((changed & 1) != 0) return;
 
-		// Do NOT reshuffle on PinBouncerViewModel.onActivated: it fires after the pad has
-		// already been composed, so the reshuffle only shows up once a touch forces a
-		// recomposition (digits visibly change on first tap). The shuffle set in
-		// onPreferenceUpdated is stable for the whole SystemUI session, so the display
-		// and the submitted digit always agree.
+				int original = (int) param.args[0];
+				int index = (original == 0) ? 9 : (original - 1);
+				int[] digits = composeDigits;
+				if (index >= 0 && index < digits.length) {
+					param.args[0] = digits[index];
+					// The caller's mask describes the original digit. Let Composer compare
+					// the injected value so remembered click/content lambdas stay in sync.
+					param.args[changedIndex] = changed & ~0x0E;
+				}
+			});
+		}
 	}
 
 	private static int[] shuffledDigits() {

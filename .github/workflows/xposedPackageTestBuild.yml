@@ -26,30 +26,31 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Build with Gradle
-        run: ./gradlew build
-
-      - uses: r0adkll/sign-android-release@v1
-        name: Sign app APK
-
-        id: sign_app
-        with:
-          releaseDirectory: app/build/outputs/apk/debug
-          signingKeyBase64: ${{ secrets.KEYSTORE_BASE64 }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+      - name: Prepare release signing
         env:
-          BUILD_TOOLS_VERSION: "33.0.0"
-          
-      - name: Magisk Module Generation
-        run: .github/make_debug_zip.sh
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: echo "$KEYSTORE_BASE64" | base64 --decode > ReleaseKey.jks
+
+      # Exercise the same signed, R8-optimized APK and module layout as a release,
+      # without publishing a release or changing the updater metadata.
+      - name: Build signed test module
+        env:
+          PIXELXPERT_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          PIXELXPERT_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          PIXELXPERT_STORE_FILE: ReleaseKey.jks
+          PIXELXPERT_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          TEST_CODE=$(($(grep '^VERSION_CODE=' version.properties | cut -d= -f2) + 1))
+          TEST_VERSION="canary-$TEST_CODE-test-${GITHUB_SHA::8}"
+          sed -i "s/^version=.*/version=$TEST_VERSION/" MagiskModBase/module.prop
+          sed -i "s/^versionCode=.*/versionCode=$TEST_CODE/" MagiskModBase/module.prop
+          ./gradlew :app:assembleRelease :app:createZip -Pchannel=canary --no-configuration-cache
 
       - name: Upload APK file
         uses: actions/upload-artifact@v7.0.1
         with:
           name: PixelXpert_Xposed.apk
-          path: ${{steps.sign_app.outputs.signedReleaseFile}}
+          path: app/build/outputs/apk/release/PixelXpert.apk
         
       - name: Upload Xposed Artifact to Actions
         uses: actions/upload-artifact@v7.0.1

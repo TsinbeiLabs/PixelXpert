@@ -1,20 +1,26 @@
-**canary-543**
+**Unreleased — device verification pending**
+
+- Correct Compose PIN scrambling to distinguish parent composition (slot digit) from restart composition (already mapped digit); resolve the change-mask index from the target method at hook registration
+- Keep the Compose permutation unchanged on unrelated preference updates
+- Withdraw canary-539, canary-540, canary-541, and canary-543 releases following the unresolved PIN shuffle regression (canary-542 was not published)
+
+**canary-543** (withdrawn)
 
 - Fixed the shuffle PIN digits (1-9) changing on first tap on Android 17 canary: the bouncer no longer reshuffles after the pad has already been composed, so the shown digit stays the same before and after a tap
 
-**canary-542**
+**canary-542** (not published)
 
 - Fixed the "0" PIN button changing on every press/release on Android 17 canary: removed the stale R8 `$r8$classId` workaround that corrupted the shared click lambda
 
-**canary-541**
+**canary-541** (withdrawn)
 
 - Additional shuffle PIN diagnostic logging for the Android 17 canary Compose bouncer
 
-**canary-540**
+**canary-540** (withdrawn)
 
 - Fixed shuffle PIN display on the latest Android 17 canary: the digit was remapped inconsistently (reverting on release) because the hook gated on the unstable Compose $changed bitmask; it now always remaps, which is idempotent for a fixed shuffle
 
-**canary-539**
+**canary-539** (withdrawn)
 
 - Fixed shuffle PIN on the latest Android 17 canary (Compose DigitButton gained parameters, shifting the $changed bitmask; the hook now locates it by scanning for the Composer parameter)
 - Hardened a batch of hook points against the canary's SystemUI/framework/launcher changes (verified against the decompiled builds): status bar header clock/date, status icon container, screen gestures fields, screenshot helper signature, ADB port argument, keyboard quick-switch argument, taskbar recents guards, and more
