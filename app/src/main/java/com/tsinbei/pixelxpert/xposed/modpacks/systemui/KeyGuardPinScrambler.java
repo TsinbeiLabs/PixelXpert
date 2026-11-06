@@ -111,9 +111,10 @@ public class KeyGuardPinScrambler extends XposedModPack {
 							int scrambled = composeDigits.get(index);
 							int changedIndex = locateChangedIndex(param);
 							int changed = changedIndex >= 0 ? (int) param.args[changedIndex] : -1;
-							android.util.Log.d("PxPinDebug", "orig=" + original + " -> " + scrambled
+							com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger.log("PinShuffle digit=" + original
+									+ " scrambled=" + scrambled
 									+ " onClick=" + onClick.getClass().getSimpleName()
-									+ " changed=" + Integer.toHexString(changed));
+									+ " changed=0x" + Integer.toHexString(changed));
 							param.args[0] = scrambled;
 						}
 					}
