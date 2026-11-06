@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -219,6 +218,7 @@ public class TaskbarActivator extends XposedModPack {
 		TaskbarViewClass
 				.before("updateRecents")
 				.run(param -> {
+					if (param.args.length < 2 || !(param.args[1] instanceof List)) return;
 					@SuppressWarnings("unchecked")
 					List<Object> recents = (List<Object>) param.args[1];
 					param.args[1] = recents.stream().filter(t -> !t.getClass().getName().contains("Split")).toList();
@@ -227,8 +227,11 @@ public class TaskbarActivator extends XposedModPack {
 		KeyboardQuickSwitchControllerClass
 				.before("openQuickSwitchView")
 				.run(param -> {
+					//A17 has two overloads: openQuickSwitchView() and openQuickSwitchView(Set, boolean).
+					//The exclusion set is the first parameter of the latter.
+					if (param.args.length == 0 || !(param.args[0] instanceof Set)) return;
 					@SuppressWarnings("unchecked")
-					HashSet<Object> exclusionList = (HashSet<Object>) param.args[1];
+					Set<Object> exclusionList = (Set<Object>) param.args[0];
 					if(notInHomeScreen())
 					{
 						exclusionList.add(callMethod(mCurrentTopTask, "getTaskId"));
@@ -425,6 +428,7 @@ public class TaskbarActivator extends XposedModPack {
 
 	public boolean notInHomeScreen()
 	{
+		if (mCurrentTopTask == null) return false;
 		return !((boolean) callMethod(mCurrentTopTask, "isHomeTask"));
 	}
 	@SuppressWarnings("unused")

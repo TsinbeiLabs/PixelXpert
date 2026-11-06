@@ -49,34 +49,63 @@ public class StatusIconTuner extends XposedModPack {
 		{
 			IconManagerClass = ReflectedClass.ofIfPossible("com.android.systemui.statusbar.phone.StatusBarIconController$IconManager");
 		}
-//		ReflectedClass StatusIconContainerClass = ReflectedClass.of("com.android.systemui.statusbar.phone.StatusIconContainer");
 
-		IconManagerClass
-				.beforeConstruction()
-				.run(param -> {
-					try {
-						View iconContainer = (View) param.args[0];
+		if (IconManagerClass.getClazz() != null) {
+			IconManagerClass
+					.beforeConstruction()
+					.run(param -> {
+						try {
+							classifyAndIgnore((View) param.args[0]);
+						}
+						catch (Throwable ignored){}
+					});
+		} else {
+			//A17: IconManager was removed; the ignored-slots Set now lives directly on StatusIconContainer.
+			ReflectedClass.ofIfPossible("com.android.systemui.statusbar.phone.StatusIconContainer")
+					.afterConstruction()
+					.run(param -> {
+						try {
+							classifyAndIgnore((View) param.thisObject);
+						}
+						catch (Throwable ignored){}
+					});
+		}
+	}
 
-						String id = mContext.getResources().getResourceName(((View) iconContainer.getParent().getParent()).getId()); //helps getting exception if it's in QS
+	private void classifyAndIgnore(View iconContainer) {
+		//Walks up the view tree so it keeps working whether the identifying id sits on the
+		//container itself (A17) or on one of its ancestors (legacy IconManager layout).
+		View candidate = iconContainer;
+		while (candidate != null) {
+			String id;
+			try {
+				id = mContext.getResources().getResourceName(candidate.getId());
+			} catch (Throwable ignored) {
+				candidate = (View) candidate.getParent();
+				continue;
+			}
 
-						if (id.contains("status_bar_end_side_content")) //statusbar specific id
-						{
-							mSBIconContainer = iconContainer;
-							setIgnoredIcons(iconContainer, SBIgnoredIcons);
-						}
-						else if(id.contains("shade_header_system_icons")) //QS specific id
-						{
-							mQSIconContainer = iconContainer;
-							setIgnoredIcons(iconContainer, QSIgnoredIcons);
-						}
-						else if(id.contains("system_icons_container")) //KG specific id
-						{
-							mKGIconContainer = iconContainer;
-							setIgnoredIcons(iconContainer, KGIgnoredIcons);
-						}
-					}
-					catch (Throwable ignored){}
-				});
+			if (id.contains("status_bar_end_side_content")) //statusbar specific id
+			{
+				mSBIconContainer = iconContainer;
+				setIgnoredIcons(iconContainer, SBIgnoredIcons);
+				return;
+			}
+			else if(id.contains("shade_header_system_icons")) //QS specific id
+			{
+				mQSIconContainer = iconContainer;
+				setIgnoredIcons(iconContainer, QSIgnoredIcons);
+				return;
+			}
+			else if(id.contains("system_icons_container")) //KG specific id
+			{
+				mKGIconContainer = iconContainer;
+				setIgnoredIcons(iconContainer, KGIgnoredIcons);
+				return;
+			}
+
+			candidate = (View) candidate.getParent();
+		}
 	}
 
 	private void setIgnoredIcons(Object container, Set<String> ignorableSlots){

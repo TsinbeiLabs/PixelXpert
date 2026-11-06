@@ -1,3 +1,8 @@
+**canary-539**
+
+- Fixed shuffle PIN on the latest Android 17 canary (Compose DigitButton gained parameters, shifting the $changed bitmask; the hook now locates it by scanning for the Composer parameter)
+- Hardened a batch of hook points against the canary's SystemUI/framework/launcher changes (verified against the decompiled builds): status bar header clock/date, status icon container, screen gestures fields, screenshot helper signature, ADB port argument, keyboard quick-switch argument, taskbar recents guards, and more
+
 **canary-538**
 
 - Followed up on more PixelXpert-Next changes: fix profile-switch broadcast targeting, capture the edge gesture handler on newer builds, and never rewrite ACTION_OUTSIDE in the one-finger pull-up gesture

@@ -194,6 +194,7 @@ public class RecentsMod extends BaseLauncherMod {
 		// Give the bottom mobile-recents UI room below the actions ("Clear all") view
 		if (OverviewActionsViewClass.getClazz() != null) {
 			OverviewActionsViewClass.before("updateHiddenFlags").run(param -> {
+				if (param.args.length < 2) return;
 				if (mSettings.mobileRecents && (int) param.args[0] == 32) {
 					param.args[1] = false;
 				}

@@ -296,7 +296,7 @@ public class BubblesMods extends XposedModPack {
 			if (!enableReverseBubble) return;
 			try {
 				FrameLayout dismissView = (FrameLayout) param.thisObject;
-				applyDismissLayout(dismissView, getIntField(param.args[0], "floatingGradientHeightResId"));
+				applyDismissLayout(dismissView, gradientHeightResId(param.args[0]));
 			} catch (Throwable t) {
 				Logger.log("BubblesMods: dismiss setup hook failed: " + t);
 			}
@@ -319,7 +319,7 @@ public class BubblesMods extends XposedModPack {
 				if (config == null) return;
 
 				int gradientHeight = dismissView.getResources().getDimensionPixelSize(
-						getIntField(config, "floatingGradientHeightResId"));
+						gradientHeightResId(config));
 
 				FrameLayout.LayoutParams dvParams = (FrameLayout.LayoutParams) dismissView.getLayoutParams();
 				switch (dismissPosition) {
@@ -344,6 +344,15 @@ public class BubblesMods extends XposedModPack {
 				Logger.log("BubblesMods: dismiss updateResources hook failed: " + t);
 			}
 		});
+	}
+
+	private static int gradientHeightResId(Object config) {
+		try {
+			return getIntField(config, "floatingGradientHeightResId");
+		} catch (Throwable t) {
+			//A17: renamed to bottomMarginResId
+			return getIntField(config, "bottomMarginResId");
+		}
 	}
 
 	private static void applyDismissLayout(FrameLayout dismissView, int floatingGradientHeightResId) {

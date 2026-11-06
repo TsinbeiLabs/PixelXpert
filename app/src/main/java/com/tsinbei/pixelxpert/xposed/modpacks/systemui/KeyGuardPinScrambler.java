@@ -102,14 +102,15 @@ public class KeyGuardPinScrambler extends XposedModPack {
 						} catch (Throwable ignored) {}
 					}
 
-					// Compose passes a $changed bitmask as the trailing argument. Bit 0 marks a
-					// self-recomposition (e.g. touch ripple): skip it so digits don't shift under
-					// the user's finger. Clear the digit's static bits (0x0E) otherwise, so Compose
-					// registers the injected digit as a change and recreates the click lambda.
-					if (param.args.length >= 10 && param.args[param.args.length - 1] instanceof Integer) {
-						int changed = (int) param.args[param.args.length - 1];
+					// Compose passes $changed then $default after the Composer parameter. Bit 0 of
+					// $changed marks a self-recomposition (e.g. touch ripple): skip it so digits
+					// don't shift under the user's finger. Clear the digit's static bits (0x0E)
+					// otherwise so Compose registers the injected digit and recreates the lambda.
+					int changedIndex = locateChangedIndex(param);
+					if (changedIndex >= 0) {
+						int changed = (int) param.args[changedIndex];
 						if ((changed & 1) != 0) return;
-						param.args[param.args.length - 1] = changed & ~0x0E;
+						param.args[changedIndex] = changed & ~0x0E;
 					}
 
 					int index = (original == 0) ? 9 : (original - 1);
@@ -141,5 +142,22 @@ public class KeyGuardPinScrambler extends XposedModPack {
 			result[i] = digits.get(i);
 		}
 		return result;
+	}
+
+	/** Finds the $changed bitmask: the int parameter immediately after the Compose Composer. */
+	private static int locateChangedIndex(com.tsinbei.pixelxpert.xposed.utils.reflection.HookHelper.RunParam param) {
+		try {
+			if (!(param.method instanceof java.lang.reflect.Method method)) return -1;
+			Class<?>[] parameterTypes = method.getParameterTypes();
+			for (int i = 0; i < parameterTypes.length; i++) {
+				if ("androidx.compose.runtime.Composer".equals(parameterTypes[i].getName())
+						&& i + 1 < param.args.length
+						&& param.args[i + 1] instanceof Integer) {
+					return i + 1;
+				}
+			}
+		} catch (Throwable ignored) {
+		}
+		return -1;
 	}
 }

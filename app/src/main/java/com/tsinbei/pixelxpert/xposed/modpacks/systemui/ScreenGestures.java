@@ -178,21 +178,30 @@ public class ScreenGestures extends XposedModPack {
 					if (!doubleTapToSleepStatusbarEnabled) return;
 
 					//double tap to sleep, statusbar only
-					//noinspection ConstantValue
-					if (NotificationPanelViewController == null || //if ViewController is null it means it's not initiated. meaning it's 17QPR1+
-							    (!(boolean) getObjectField(NotificationPanelViewController, "mPulsing") && !(boolean) getObjectField(NotificationPanelViewController, "mDozing") && (int) getObjectField(NotificationPanelViewController, "mBarState") == SHADE && (boolean) callMethod(NotificationPanelViewController, "isFullyCollapsed"))) {
+					boolean allow;
+					try {
+						//noinspection ConstantValue
+						allow = NotificationPanelViewController == null || //if ViewController is null it means it's not initiated. meaning it's 17QPR1+
+								(!(boolean) getObjectField(NotificationPanelViewController, "mPulsing") && !(boolean) getObjectField(NotificationPanelViewController, "mDozing") && (int) getObjectField(NotificationPanelViewController, "mBarState") == SHADE && (boolean) callMethod(NotificationPanelViewController, "isFullyCollapsed"));
+					} catch (Throwable ignored) { //A17: mPulsing/mDozing/mBarState were removed
+						allow = true;
+					}
+					if (allow) {
 						mLockscreenDoubleTapToSleep.onTouchEvent((MotionEvent) param.args[param.args.length - 1]);
 					}
-		});
+				});
 
 		TriggerSensorClass
 				.afterConstruction()
 				.run(param -> {
-					if(getObjectField(param.thisObject, "mPulseReason").equals(REASON_SENSOR_TAP))
-					{
-						mDozeTouchTrigger = param.thisObject;
-					}
-
+					try {
+						//A17: mPulseReason became a byte; compare numerically so boxed Byte/Integer don't break equals()
+						int pulseReason = ((Number) getObjectField(param.thisObject, "mPulseReason")).intValue();
+						if (pulseReason == REASON_SENSOR_TAP)
+						{
+							mDozeTouchTrigger = param.thisObject;
+						}
+					} catch (Throwable ignored) {}
 				});
 
 		//double tap detector for screen off AOD disabled sensor
@@ -208,7 +217,8 @@ public class ScreenGestures extends XposedModPack {
 
 					if (doubleTapToWake && ((int) param.args[0]) == REASON_SENSOR_TAP) {
 						if (!mDoubleTap) {
-							callMethod(mDozeTouchTrigger, "updateListening"); //we wasted the event! let's listen again
+							if (mDozeTouchTrigger != null) //A17: may be null if the tap trigger wasn't captured
+								callMethod(mDozeTouchTrigger, "updateListening"); //we wasted the event! let's listen again
 							mDoubleTap = true;
 							mTimer = new Timer();
 							mTimer.schedule(new TimerTask() {
@@ -254,7 +264,11 @@ public class ScreenGestures extends XposedModPack {
 				.run(param -> {
 					NotificationPanelViewController = param.thisObject;
 
-					mStatusBarKeyguardViewManager = getObjectField(param.thisObject, "mStatusBarKeyguardViewManager");
+					try { //A17: mStatusBarKeyguardViewManager was removed
+						mStatusBarKeyguardViewManager = getObjectField(param.thisObject, "mStatusBarKeyguardViewManager");
+					} catch (Throwable ignored) {
+						mStatusBarKeyguardViewManager = null;
+					}
 				});
 
 		NotificationPanelViewControllerClass

@@ -262,7 +262,9 @@ public class StatusbarGestures extends XposedModPack {
 			callMethod(NotificationPanelViewController, "collapse", true, 1f);
 		}
 		catch (Throwable ignored) {
-			callMethod(NotificationPanelViewController, "collapse", 1f, true);
+			try { //A17: collapse() was removed
+				callMethod(NotificationPanelViewController, "collapse", 1f, true);
+			} catch (Throwable ignored2) {}
 		}
 	}
 

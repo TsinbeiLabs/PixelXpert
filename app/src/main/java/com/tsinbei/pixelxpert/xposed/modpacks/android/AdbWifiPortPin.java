@@ -65,7 +65,9 @@ public class AdbWifiPortPin extends XposedModPack {
 		AdbDebuggingHandlerClass
 				.before("onAdbdWifiServerConnected")
 				.run(param -> {
-					currentTargetPort = (int) param.args[0];
+					int port = findIntArg(param.args);
+					if (port <= 0) return;
+					currentTargetPort = port;
 					if (pinWirelessAdb) {
 						startTcpForwarder(currentTargetPort, pinnedAdbPort);
 					}
@@ -77,6 +79,14 @@ public class AdbWifiPortPin extends XposedModPack {
 					currentTargetPort = -1;
 					stopTcpForwarder();
 				});
+	}
+
+	private int findIntArg(Object[] args) {
+		if (args == null) return -1;
+		for (Object arg : args) {
+			if (arg instanceof Integer) return (int) arg;
+		}
+		return -1;
 	}
 
 	private void startTcpForwarder(int targetPort, int listenPort) {

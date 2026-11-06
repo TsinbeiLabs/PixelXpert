@@ -149,7 +149,7 @@ public class PhoneWindowManager extends XposedModPack {
 			PhoneWindowManagerClass
 					.before("onDefaultDisplayFocusChangedLw")
 					.run(param -> {
-						if (param.args[0] == null) return;
+						if (param.args == null || param.args.length == 0 || param.args[0] == null) return;
 
 						new Thread(() -> {
 							if (callMethod(param.args[0], "getBaseType").equals(WindowManager.LayoutParams.FIRST_APPLICATION_WINDOW)) {

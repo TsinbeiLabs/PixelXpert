@@ -668,13 +668,16 @@ public class StatusbarMods extends XposedModPack {
 		ShadeHeaderControllerClass
 				.after("onInit")
 				.run(param -> {
-					View mView = (View) getObjectField(param.thisObject, "mView");
+					//A17: the root header view field was renamed from mView; use the
+					//clock/date views directly instead of looking them up by id.
+					View clock = (View) getObjectField(param.thisObject, "clock");
+					View date = (View) getObjectField(param.thisObject, "date");
 
-					mView.findViewById(idOf("clock")).setOnClickListener(clickListener);
-					mView.findViewById(idOf("clock")).setOnLongClickListener(clickListener);
+					clock.setOnClickListener(clickListener);
+					clock.setOnLongClickListener(clickListener);
 
-					mView.findViewById(idOf("date")).setOnClickListener(clickListener);
-					mView.findViewById(idOf("date")).setOnLongClickListener(clickListener);
+					date.setOnClickListener(clickListener);
+					date.setOnLongClickListener(clickListener);
 				});
 
 		//modding clock, adding additional objects,

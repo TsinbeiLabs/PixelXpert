@@ -47,6 +47,7 @@ public class IconsMod extends BaseLauncherMod {
 		if (TaskbarModelCallbacksClass.getClazz() != null) {
 			TaskbarModelCallbacksClass.before("commitHotseatItemUpdates").run(param -> {
 				if (mSettings.taskbarMode != TaskbarSettings.TASKBAR_ON) return;
+				if (param.args.length < 3) return;
 
 				Object[] originalPinned = (Object[]) param.args[0];
 				if (originalPinned == null) return;

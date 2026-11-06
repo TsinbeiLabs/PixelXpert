@@ -211,8 +211,15 @@ public class ThreeFingerScreenshot extends XposedModPack {
 							.invoke(helper, request, h, null);
 					return;
 				}
-				helper.getClass().getMethod("takeScreenshot", int.class, int.class, Handler.class, consumer)
-						.invoke(helper, TAKE_SCREENSHOT_FULLSCREEN, SCREENSHOT_VENDOR_GESTURE, h, null);
+				try {
+					// Android 13+: single source-type int (builds a fullscreen request internally)
+					helper.getClass().getMethod("takeScreenshot", int.class, Handler.class, consumer)
+							.invoke(helper, SCREENSHOT_VENDOR_GESTURE, h, null);
+				} catch (NoSuchMethodException legacy) {
+					// Android <=12: (type, source) ints
+					helper.getClass().getMethod("takeScreenshot", int.class, int.class, Handler.class, consumer)
+							.invoke(helper, TAKE_SCREENSHOT_FULLSCREEN, SCREENSHOT_VENDOR_GESTURE, h, null);
+				}
 			} catch (Throwable t) {
 				Logger.log("ThreeFingerScreenshot: request failed", t);
 			}
