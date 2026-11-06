@@ -1,3 +1,7 @@
+**canary-541**
+
+- Additional shuffle PIN diagnostic logging for the Android 17 canary Compose bouncer
+
 **canary-540**
 
 - Fixed shuffle PIN display on the latest Android 17 canary: the digit was remapped inconsistently (reverting on release) because the hook gated on the unstable Compose $changed bitmask; it now always remaps, which is idempotent for a fixed shuffle
