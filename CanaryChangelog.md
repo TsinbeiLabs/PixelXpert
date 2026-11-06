@@ -1,3 +1,7 @@
+**canary-543**
+
+- Fixed the shuffle PIN digits (1-9) changing on first tap on Android 17 canary: the bouncer no longer reshuffles after the pad has already been composed, so the shown digit stays the same before and after a tap
+
 **canary-542**
 
 - Fixed the "0" PIN button changing on every press/release on Android 17 canary: removed the stale R8 `$r8$classId` workaround that corrupted the shared click lambda

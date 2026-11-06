@@ -44,7 +44,6 @@ public class KeyGuardPinScrambler extends XposedModPack {
 	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) throws Throwable {
 		ReflectedClass KeyguardPinBasedInputViewClass = ReflectedClass.ofIfPossible("com.android.keyguard.KeyguardPinBasedInputView");
 		ReflectedClass PinBouncerKtClass = ReflectedClass.ofIfPossible("com.android.systemui.bouncer.ui.composable.PinBouncerKt");
-		ReflectedClass PinBouncerViewModelClass = ReflectedClass.ofIfPossible("com.android.systemui.bouncer.ui.viewmodel.PinBouncerViewModel");
 
 		ReflectionConsumer pinShuffleHook = param -> {
 			if (!shufflePinEnabled) return;
@@ -94,16 +93,11 @@ public class KeyGuardPinScrambler extends XposedModPack {
 					}
 				});
 
-		// Reshuffle only when the bouncer activates, so digits never rearrange while the
-		// user is retrying a failed PIN.
-		PinBouncerViewModelClass
-				.before("onActivated")
-				.run(param -> {
-					if (!shufflePinEnabled) return;
-					synchronized (composeDigits) {
-						Collections.shuffle(composeDigits);
-					}
-				});
+		// Do NOT reshuffle on PinBouncerViewModel.onActivated: it fires after the pad has
+		// already been composed, so the reshuffle only shows up once a touch forces a
+		// recomposition (digits visibly change on first tap). The shuffle set in
+		// onPreferenceUpdated is stable for the whole SystemUI session, so the display
+		// and the submitted digit always agree.
 	}
 
 	private static int[] shuffledDigits() {
