@@ -73,11 +73,14 @@ public class KeyGuardPinScrambler extends XposedModPack {
 		// Parent composition supplies a slot digit. The restart scope captures the mapped
 		// digit and calls us with it again on press/release. Those are different inputs:
 		// mapping a restart would apply the permutation twice and change the visible key.
+		Class<?> composerClass = ReflectedClass.ofIfPossible("androidx.compose.runtime.Composer").getClazz();
 		for (Method method : PinBouncerKtClass.findMethods(Pattern.compile("DigitButton-.*"))) {
 			Class<?>[] types = method.getParameterTypes();
 			int composerIndex = -1;
 			for (int i = 0; i < types.length; i++) {
-				if (types[i].getName().equals("androidx.compose.runtime.Composer")) {
+				// The target process owns its Compose classes. Comparing their names to a
+				// literal lets R8 fold the match away using the module's closed-world types.
+				if (types[i] == composerClass) {
 					composerIndex = i;
 					break;
 				}
@@ -86,8 +89,7 @@ public class KeyGuardPinScrambler extends XposedModPack {
 					|| types[composerIndex + 1] != int.class) {
 				throw new IllegalStateException("DigitButton has no Compose change mask: " + method);
 			}
-			// Resolve against the actual target Method at registration, not the framework's
-			// runtime hook executable (which may be a generated trampoline).
+			// Resolve once from the target signature and retain the index in the callback.
 			final int changedIndex = composerIndex + 1;
 			Logger.log("PinShuffle: " + method.getName() + " changedIndex=" + changedIndex);
 			PinBouncerKtClass.before(method).run(param -> {
