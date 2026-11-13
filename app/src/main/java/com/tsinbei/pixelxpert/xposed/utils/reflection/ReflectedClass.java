@@ -66,7 +66,7 @@ public class ReflectedClass
 		defaultXposedInterface = xposedInterface;
 	}
 
-	static XposedInterface getDefaultXposedInterface() {
+	public static XposedInterface getDefaultXposedInterface() {
 		return defaultXposedInterface;
 	}
 

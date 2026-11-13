@@ -1003,20 +1003,10 @@ public class RecentsEnhancements extends XposedModPack {
 			Object task = callOf(container, "getTask");
 			if (task == null) return false;
 
-			Rect bounds = null;
-			Object snapshot = callOf(container, "getSnapshotView");
-			if (snapshot instanceof View) {
-				View snapshotView = (View) snapshot;
-				int[] position = new int[2];
-				snapshotView.getLocationOnScreen(position);
-				bounds = new Rect(position[0], position[1],
-						position[0] + snapshotView.getWidth(), position[1] + snapshotView.getHeight());
-			}
-
 			boolean launched;
 			switch (freeformMode) {
 				case MODE_AOSP:
-					launched = startFreeformFromRecents(task, bounds);
+					launched = startFreeformFromRecents(task);
 					break;
 				case MODE_BUBBLE:
 					launched = startAppBubble(task);
@@ -1041,14 +1031,14 @@ public class RecentsEnhancements extends XposedModPack {
 		}
 	}
 
-	private boolean startFreeformFromRecents(Object task, Rect bounds) {
+	private boolean startFreeformFromRecents(Object task) {
 		try {
 			Object wrapper = newActivityManagerWrapper();
 			if (wrapper == null) return false;
 			Object key = getObjectField(task, "key");
 			ActivityOptions options = ActivityOptions.makeBasic();
 			callMethod(options, "setLaunchWindowingMode", WINDOWING_MODE_FREEFORM);
-			if (bounds != null) callMethod(options, "setLaunchBounds", bounds);
+			options.setLaunchBounds(com.tsinbei.pixelxpert.xposed.utils.FreeformBounds.forDisplay(mContext));
 			callMethod(wrapper, "startActivityFromRecents", key, options);
 			return true;
 		} catch (Throwable throwable) {

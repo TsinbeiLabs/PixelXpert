@@ -1,0 +1,42 @@
+NativeComplements
+https://github.com/AIXINJUELUOAI/NativeComplements
+Reference revision: 9e8f16e3 (0.9.19-signal-test1)
+License: Apache License, Version 2.0 (see NativeComplements-LICENSE.txt)
+
+Adapted implementations:
+- StatusBarOffset: content-only vertical positioning; integrated with PixelXpert preferences.
+- RotationSuggestion / LauncherRotationSuggestion: native proposal ownership and
+  presentation principle; PixelXpert styles the native button instead of replacing
+  its lifecycle or adding the original cross-process proposal bridge.
+- NotificationWindow and SystemUiHost.notificationForegroundPackage: notification
+  body-click admission and exclusion of floating-window foreground tasks;
+  PixelXpert sends native AOSP freeform ActivityOptions instead of using the custom engine.
+- SignalDisplay.installStacked and StackedSignalDisplay: module-owned Compose revision,
+  reversible presentation-copy identity tracking and caller deoptimization;
+  PixelXpert applies visibility rules without modifying native signal levels or DualSim IDs.
+- IconArchive and IconLayerModule: dual-layer package archive format, data-only import,
+  per-package icon replacement and launcher cache invalidation. PixelXpert normalizes
+  layers and integrates a read-only provider and its existing preference framework.
+
+Relevant upstream attribution retained from NativeComplements NOTICE.md:
+
+Feature-entry, menu, quick-function and suggestion icons: Google Material Symbols
+Rounded, filled 24px Android vectors, Apache-2.0.
+Source: https://github.com/google/material-design-icons/tree/10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7/symbols/android
+The screen_rotation vector is retained as ic_rotation_suggestion.xml.
+
+Geometry.java adapts the mini-window scale constants, 9:16 canvas ratio and
+opposite-orientation scale factor from WindowResizingAlgorithm.java,
+Copyright (C) 2023-2024 The Nameless-AOSP Project,
+SPDX-License-Identifier: Apache-2.0.
+Source: https://github.com/SunOS-Project/android_sun-sdk/blob/1f4bd2d7494dc2c317d86d156dcb3fc234a88aae/services/src/com/android/server/wm/WindowResizingAlgorithm.java
+PixelXpert's FreeformBounds uses the portrait canvas ratio with native display,
+system-bar and cutout insets; it does not include SunOS custom window modes.
+
+0.9.12: the status-bar vertical offset and the suggestion-row rotation replacement
+are original module adapters written against read-only inspection of the target
+Android 17 SystemUI; no framework code is bundled. The rotation glyph is Material
+Symbols Rounded screen_rotation from the same Apache-2.0 snapshot cited above.
+
+No external icon artwork, decompiled system implementation, or NativeComplements
+mini-window engine is bundled. Users supply their own appropriately licensed icon packs.

@@ -29,6 +29,13 @@
 			android:title="@string/landscape_split_shade_title"
 			app:iconSpaceReserved="false" />
 
+        <com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+            android:key="NotificationFreeform"
+            android:defaultValue="false"
+            android:title="@string/notification_freeform"
+            android:summary="@string/notification_freeform_summary"
+            app:iconSpaceReserved="false" />
+
         <!--SeekBarPreference
             android:layout_width="wrap_content"
             android:defaultValue="50"
@@ -60,6 +67,17 @@
             app:maxVal="200"
             app:minVal="50"
             app:updatesContinuously="true" />
+
+        <com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+            android:key="StatusBarContentOffset"
+            android:title="@string/status_bar_content_offset"
+            android:summary="@string/status_bar_content_offset_summary"
+            app:defaultValue="0"
+            app:minVal="-32"
+            app:maxVal="32"
+            app:tickInterval="1"
+            app:updatesContinuously="true"
+            app:iconSpaceReserved="false" />
 
         <com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
             android:defaultValue="4"

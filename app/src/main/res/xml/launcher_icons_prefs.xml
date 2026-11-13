@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+        android:key="LauncherIconOverridesEnabled" android:defaultValue="false"
+		android:title="@string/launcher_icons_enable" app:iconSpaceReserved="false" />
+    <com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+        android:key="LauncherIconSource" android:title="@string/launcher_icons_source"
+        app:iconSpaceReserved="false" />
+    <com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+        android:key="LauncherIconsImport" android:title="@string/launcher_icons_import"
+        android:summary="@string/launcher_icons_import_summary" app:iconSpaceReserved="false" />
+    <com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+        android:key="LauncherIconOriginals" android:title="@string/launcher_icons_originals"
+        android:summary="@string/launcher_icons_originals_summary" app:iconSpaceReserved="false" />
+    <com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+        android:key="LauncherIconsClear" android:title="@string/launcher_icons_clear"
+        app:iconSpaceReserved="false" />
+</PreferenceScreen>

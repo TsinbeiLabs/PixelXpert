@@ -115,6 +115,12 @@
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
+        <com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+            android:key="LauncherImportedIcons"
+            android:title="@string/launcher_icons_title"
+            app:fragment="com.tsinbei.pixelxpert.ui.fragments.LauncherIconsFragment"
+            app:iconSpaceReserved="false" />
+
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="LauncherHideStatusbar"

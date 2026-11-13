@@ -51,6 +51,31 @@ The following features and fixes were ported from [anirudhgupta109/PixelXpert-Ne
 - Carrier text hook fixes (duplicate hooks, renamed SystemUI fields, keyguard root view fallback)
 - Android 17 fixes: background camera/torch access from the framework, network traffic freeze and fake spikes, `calculateChargingSpeed` signature change, one-finger QS pulldown on CP3A/CP41, status bar icon hiding, default notification expansion, immediate lock on double-tap-to-sleep, long-press power remapping, and A17 build-ID detection
 - Hardening: concurrent-safe modpack list, null-safe class reflection, dialer call-recording/notes TTS suppression
+- Compose right-side clock placement and right-side network traffic container resolution
+
+### Backported from NativeComplements
+
+Selected implementations adapted from [AIXINJUELUOAI/NativeComplements](https://github.com/AIXINJUELUOAI/NativeComplements) (Apache-2.0):
+
+- Status bar content vertical offset, independent of status bar height
+- Simple native rotation suggestion glyph and icon scaling in SystemUI and Pixel Launcher
+- Notification body-click AOSP freeform windows for background apps, excluding fullscreen foreground tasks, calls and alarms; shared inset-aware window bounds for launcher and notification entry points
+- Stacked Compose dual-SIM support for existing combined-signal and mobile-icon hiding preferences, retaining native signal levels and subscription identities
+- ZIP/MTZ dual-layer launcher icon imports, theme-directory selection, per-app original-icon exclusions, monochrome foreground masks and per-package cache refresh/restoration
+
+Sources, changes, and upstream resource credits are recorded in [NativeComplements-NOTICE.txt](app/src/main/resources/META-INF/licenses/NativeComplements-NOTICE.txt); its Apache license and notice are included in the APK. Third-party icon artwork is supplied by the user.
+
+### AOSP Perfect Icons integration
+
+Under **Launcher → Appearance → Launcher icon overrides**, choose **Icon source → AOSP Perfect Icons**, then enable **Use selected icons**. Install the [AOSP Perfect Icons APK](https://github.com/TsinbeiLabs/AOSP-Perfect-Icons) separately; its adaptive resources and component mappings are read directly from the installed package. Existing ZIP/MTZ imports remain selectable, and importing an archive selects that library.
+
+The integration preserves the pack's background and foreground layout, matches activity components before explicit package mappings, supports per-app original-icon exclusions, and refreshes affected packages on source or package changes. Missing monochrome layers are derived from the transparent foreground for themed icons. Disabling overrides restores affected native icons. Use one Launcher icon replacement module at a time; remove Launcher from Global Icon Pack's scope when validating this integration.
+
+Artwork originates from [elliana-wt/Pixel-Launcher-Icons](https://github.com/elliana-wt/Pixel-Launcher-Icons), maintained and extended by Hsukqi Lee in **TsinbeiLabs/AOSP-Perfect-Icons** (GPL-3.0). PixelXpert does not bundle the pack's artwork. See [the icon pack review](ICON_PACK_REVIEW.md) for device findings and validation steps.
+
+### Community update review
+
+See [the November 2026 review](COMMUNITY_REVIEW.md) for the latest PixelXpert-Next follow-up items and an assessment of NativeComplements features and implementation tradeoffs.
 
 ### Build
 
@@ -85,6 +110,9 @@ Requires the Android SDK and a JDK 21+. Release builds additionally need `Releas
 - [gboard-material-expressive-black](https://github.com/hxreborn/gboard-material-expressive-black) by rafareborn for the AMOLED Material Expressive color-matching design (MIT License)
 - [chenyue404/GboardHook](https://github.com/chenyue404/GboardHook) by chenyue404 for the Gboard clipboard history query and compatibility research (GPLv3)
 - [NawafCode/KeyFlux](https://github.com/NawafCode/KeyFlux) contributors for Gboard feature-flag, privacy, clipboard, and input enhancement research (MIT License)
+- [AIXINJUELUOAI/NativeComplements](https://github.com/AIXINJUELUOAI/NativeComplements) for the status-bar offset, native rotation presentation, notification freeform admission, stacked Compose signal adaptation, and launcher icon import/cache implementations adapted into this fork (Apache License 2.0)
+- [TsinbeiLabs/AOSP-Perfect-Icons](https://github.com/TsinbeiLabs/AOSP-Perfect-Icons) by Hsukqi Lee and [elliana-wt/Pixel-Launcher-Icons](https://github.com/elliana-wt/Pixel-Launcher-Icons) for the separately installed adaptive icon pack and artwork used by the Launcher integration (GPL-3.0)
+- [RichardLuo0/global-icon-pack-android](https://github.com/RichardLuo0/global-icon-pack-android) for Launcher IconProvider overload and activity-component handling reference during the AOSP Perfect Icons integration, and for the device-side icon replacement used in compatibility investigation
 
 **UI design:**
 

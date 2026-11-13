@@ -1,3 +1,14 @@
+**canary-545**
+
+- Added installed AOSP Perfect Icons as a Launcher icon source, with exact activity/package mappings, native adaptive color layers, foreground-derived themed masks, per-app exclusions and cache restoration
+- Adapted NativeComplements status-bar vertical offset and native rotation suggestion icon styling/scaling
+- Added opt-in notification body-click AOSP freeform windows for background apps, with foreground/freeform task filtering and inset-aware window bounds shared with the launcher gesture
+- Enable AOSP freeform support for module freeform entry points and restore the native capability when they are disabled
+- Applied combined-signal and mobile-icon hiding preferences to Stacked Compose dual-SIM rendering while retaining native signal levels and subscription identities
+- Added ZIP/MTZ layered launcher icon imports, theme selection, per-app original-icon exclusions, themed masks, and per-package cache refresh/restoration
+- Included NativeComplements Apache-2.0 license, source/change notices and README attribution
+- Followed PixelXpert-Next's Compose right-side clock and network traffic container fixes
+
 **canary-544**
 
 - Fixed shuffle PIN on Android 17 canary: shuffled digits now remain unchanged on press and release, and the displayed digit is the one submitted, including the bottom zero-slot button

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_bar_content_offset">状态栏内容垂直偏移（dp）</string>
+    <string name="status_bar_content_offset_summary">移动状态栏内容，不改变状态栏高度。设为零恢复原始位置。</string>
+    <string name="rotation_suggestion_simple_icon">简洁旋转建议图标</string>
+    <string name="rotation_suggestion_style_summary">自定义系统原生按钮，保留系统旋转建议、点击和超时逻辑。</string>
+    <string name="rotation_suggestion_scale">旋转建议图标大小（%）</string>
+    <string name="notification_freeform">从通知打开后台应用小窗</string>
+    <string name="notification_freeform_summary">点击通知正文时以 AOSP 小窗打开后台应用。前台应用、来电、闹钟及全屏通知保持原生行为，需要系统支持 freeform。</string>
+    <string name="launcher_icons_title">桌面图标覆盖</string>
+    <string name="launcher_icons_enable">使用所选图标</string>
+    <string name="launcher_icons_source">图标来源</string>
+    <string name="launcher_icons_source_imported">导入的 ZIP / MTZ 图标库</string>
+    <string name="launcher_icons_pack_unavailable">请安装或更新 AOSP Perfect Icons 至包含自适应图标索引的版本。</string>
+    <string name="launcher_icons_import">导入图标压缩包</string>
+    <string name="launcher_icons_import_summary">支持 ZIP 或 MTZ：包名目录下的 0.png 为背景、1.png 为前景。含多个主题时可选择目录，模块不附带第三方图标素材。</string>
+    <string name="launcher_icons_originals">为所选应用保留原生图标</string>
+    <string name="launcher_icons_originals_summary">所选应用保留原生图标，包括主题图标。</string>
+    <string name="launcher_icons_clear">恢复原生图标库</string>
+    <string name="launcher_icons_choose_source">选择图标目录</string>
+    <string name="launcher_icons_imported">已导入 %1$d 个图标并选择导入图标库，开启图标覆盖后生效。</string>
+</resources>

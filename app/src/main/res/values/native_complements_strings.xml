@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_bar_content_offset">Status bar content vertical offset (dp)</string>
+    <string name="status_bar_content_offset_summary">Move status bar contents without changing its height. Zero restores the original position.</string>
+    <string name="rotation_suggestion_simple_icon">Simple rotation suggestion icon</string>
+    <string name="rotation_suggestion_style_summary">Customize the native button; system rotation proposals, clicks and timeouts are preserved.</string>
+    <string name="rotation_suggestion_scale">Rotation suggestion icon size (%)</string>
+    <string name="notification_freeform">Open background notification apps in a window</string>
+    <string name="notification_freeform_summary">Notification body clicks open AOSP freeform windows. Foreground apps, calls, alarms and fullscreen notifications keep native behavior. Requires freeform support.</string>
+    <string name="launcher_icons_title">Launcher icon overrides</string>
+    <string name="launcher_icons_enable">Use selected icons</string>
+    <string name="launcher_icons_source">Icon source</string>
+    <string name="launcher_icons_source_imported">Imported ZIP / MTZ library</string>
+    <string name="launcher_icons_pack_unavailable">Install or update AOSP Perfect Icons to a version with its adaptive icon index.</string>
+    <string name="launcher_icons_import">Import icon archive</string>
+    <string name="launcher_icons_import_summary">ZIP or MTZ with package-name folders containing 0.png (background) and 1.png (foreground). Choose a theme if several exist. No icon artwork is bundled.</string>
+    <string name="launcher_icons_originals">Keep original icons for selected apps</string>
+    <string name="launcher_icons_originals_summary">Excluded apps retain their native icons, including themed icons.</string>
+    <string name="launcher_icons_clear">Restore original library</string>
+    <string name="launcher_icons_choose_source">Choose icon directory</string>
+    <string name="launcher_icons_imported">Imported %1$d icons. The imported library is now selected; enable icon overrides to apply.</string>
+</resources>

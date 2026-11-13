@@ -1161,8 +1161,12 @@ public class StatusbarMods extends XposedModPack {
 			LinearLayout.LayoutParams ntsbLayoutP;
 			switch (networkTrafficPosition) {
 				case POSITION_RIGHT:
-					ViewGroup systemIcons = (ViewGroup) mSystemIconArea.getParent();
-					ViewGroup endSideContent = (ViewGroup) systemIcons.getParent();
+					ViewGroup systemIcons = mSystemIconArea == null ? null : (ViewGroup) mSystemIconArea.getParent();
+					ViewGroup endSideContent = mPhoneStatusbarView.findViewById(idOf("status_bar_end_side_content"));
+					if (endSideContent == null && systemIcons != null) {
+						endSideContent = (ViewGroup) systemIcons.getParent();
+					}
+					if (endSideContent == null) return;
 					int insertIndex = endSideContent.indexOfChild(systemIcons);
 					if (insertIndex == -1) insertIndex = 0;
 					endSideContent.addView(networkTrafficSB, insertIndex);
@@ -1241,6 +1245,7 @@ public class StatusbarMods extends XposedModPack {
 			}
 		}
 
+		if (viewToMove == null) return;
 		ViewGroup parent = (ViewGroup) viewToMove.getParent();
 		ViewGroup targetArea = null;
 		Integer index = null;
@@ -1262,7 +1267,16 @@ public class StatusbarMods extends XposedModPack {
 				break;
 			case POSITION_RIGHT:
 				viewToMove.setPadding(rightClockPadding, 0, 0, 0);
-				targetArea = ((ViewGroup) mSystemIconArea.getParent());
+				ViewGroup systemIcons = mSystemIconArea == null ? null : (ViewGroup) mSystemIconArea.getParent();
+				ViewGroup endSideContent = mPhoneStatusbarView.findViewById(idOf("status_bar_end_side_content"));
+				if (endSideContent == null && systemIcons != null) {
+					endSideContent = (ViewGroup) systemIcons.getParent();
+				}
+				// PixelXpert-Next e1c9a403: Compose renders the end-side icons
+				// outside system_icons, which SystemUI sets GONE in this pipeline.
+				targetArea = systemIcons != null && systemIcons.getVisibility() != GONE
+						&& (endSideContent == null || findComposeView(endSideContent) == null)
+						? systemIcons : endSideContent;
 				// Leaving index as null appends it to the very end (right-most element)
 				break;
 		}
@@ -1287,11 +1301,19 @@ public class StatusbarMods extends XposedModPack {
 				}
 			}
 
-			if (index != null) {
+			if (clockPosition == POSITION_RIGHT) {
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+						ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+				lp.gravity = Gravity.CENTER_VERTICAL;
+				viewToMove.setLayoutParams(lp);
+			}
+
+			if (index != null && index <= targetArea.getChildCount()) {
 				targetArea.addView(viewToMove, index);
 			} else {
 				targetArea.addView(viewToMove);
 			}
+			targetArea.requestLayout();
 		} finally {
 			isMovingClock = false;
 		}
