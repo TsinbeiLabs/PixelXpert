@@ -1,6 +1,22 @@
 name: Make Canary Release
 
 on:
+  workflow_dispatch:
+    inputs:
+      version_code:
+        description: 'Canary version code to publish'
+        required: true
+        type: number
+      source_ref:
+        description: 'Commit, tag, or branch to build'
+        required: true
+        default: 'canary'
+        type: string
+      update_latest:
+        description: 'Also replace the canary_builds latest release'
+        required: true
+        default: true
+        type: boolean
   push:
     branches:
       - 'canary'
@@ -11,62 +27,102 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      AOSPMODS_CHANNEL_ID: ${{ secrets.AOSPMODS_CHANNEL_ID }}
+
     permissions:
       contents: write
 
     steps:
     - name: Source Code Download
-      run: git clone --branch canary --single-branch --recurse-submodules https://github.com/siavash79/PixelXpert.git .
-      
-    - name: JDK 17 Setup
-      uses: actions/setup-java@v4.1.0
+      uses: actions/checkout@v4
       with:
-        java-version: '17'
-        distribution: 'temurin'
+        ref: ${{ github.event_name == 'workflow_dispatch' && inputs.source_ref || github.ref }}
+        fetch-depth: 0
+        submodules: recursive
+
+    - name: Record Source Revision
+      id: source
+      shell: bash
+      run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      
+    - name: JDK 21 Setup
+      uses: actions/setup-java@v5.2.0
+      with:
+        java-version: '21'
+        distribution: 'jetbrains'
         cache: gradle
-        
-    - name: Shell Scripts Permissions
-      run: chmod +x .github/*.sh
-
-    - name: Changelog Generation
-      run: .github/extractChanges.sh
-
-    - name: Version Bump
-      run: .github/bumpVersion.sh ${{ github.run_id }}
 
     - name: Gradlew Permissions
       run: chmod +x gradlew
 
     - name: Signature files preparation
       run: |
-          if [ ! -z "${{ secrets.SIGNING_KEY }}" ]; then
-            echo storePassword='${{ secrets.KEY_STORE_PASSWORD }}' >> ReleaseKey.properties
-            echo keyAlias='${{ secrets.ALIAS }}' >> ReleaseKey.properties
+          if [ ! -z "${{ secrets.KEYSTORE_BASE64 }}" ]; then
+            echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> ReleaseKey.properties
+            echo keyAlias='${{ secrets.KEY_ALIAS }}' >> ReleaseKey.properties
             echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> ReleaseKey.properties
             echo storeFile='${{ github.workspace }}/ReleaseKey.jks' >> ReleaseKey.properties
-            echo ${{ secrets.SIGNING_KEY }} | base64 --decode > ${{ github.workspace }}/ReleaseKey.jks
+            echo ${{ secrets.KEYSTORE_BASE64 }} | base64 --decode > ${{ github.workspace }}/ReleaseKey.jks
           fi
+
+    - name: Select Canary Version
+      id: version
+      shell: bash
+      run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION_CODE='${{ inputs.version_code }}'
+          else
+            VERSION_CODE=$(($(grep '^VERSION_CODE=' version.properties | cut -d= -f2) + 1))
+          fi
+          if [ "$VERSION_CODE" -lt 1 ]; then
+            echo "Invalid version code: $VERSION_CODE" >&2
+            exit 1
+          fi
+          BASE_VERSION_CODE=$((VERSION_CODE - 1))
+          sed -i "s/^VERSION_CODE=.*/VERSION_CODE=$BASE_VERSION_CODE/" version.properties
+          sed -i "s/^VERSION_NAME=.*/VERSION_NAME=canary-$BASE_VERSION_CODE/" version.properties
+          echo "version_code=$VERSION_CODE" >> "$GITHUB_OUTPUT"
+          echo "version_name=canary-$VERSION_CODE" >> "$GITHUB_OUTPUT"
       
     - name: Gradle Build
-      run: ./gradlew assembleRelease
+      run: ./gradlew buildCanary -Pchannel=canary --no-configuration-cache
 
-    - name: Magisk Module Generation
-      run: .github/make_zip.sh
+    - name: Shell Scripts Permissions
+      run: chmod +x .github/*.sh
+
+    - name: Extract Version Changelog
+      run: .github/extractCanaryChanges.sh '${{ steps.version.outputs.version_name }}'
+
+    - name: Prepare Release Announcement
+      run: .github/prepareCanaryChangelog.sh '${{ steps.version.outputs.version_name }}'
+
+    - name: Prepare Release Artifacts
+      run: cp output/PixelXpert.zip "output/PixelXpert-${{ steps.version.outputs.version_name }}.zip"
 
     - name: Upload Xposed Artifact to Actions
-      uses: actions/upload-artifact@v4.3.1
+      uses: actions/upload-artifact@v7.0.1
       with: 
-        name: PixelXpert.zip
-        path: output
+        name: PixelXpert-${{ steps.version.outputs.version_name }}
+        path: output/PixelXpert-${{ steps.version.outputs.version_name }}.zip
 
-#    - name: Previous Release Deletion
-#      continue-on-error: true
-#      run: gh release delete canary_builds -y -R siavash79/PixelXpert
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Historical Canary Release
+      uses: ncipollo/release-action@v1.21.0
+      with:
+        tag: '${{ steps.version.outputs.version_name }}'
+        name: '${{ steps.version.outputs.version_name }}'
+        bodyFile: 'changeLog.md'
+        prerelease: true
+        allowUpdates: true
+        replacesArtifacts: true
+        draft: false
+        commit: '${{ steps.source.outputs.sha }}'
+        artifacts: 'output/PixelXpert-${{ steps.version.outputs.version_name }}.zip'
 
     - name: Canary Binary Release
-      uses: ncipollo/release-action@v1.14.0
+      if: ${{ github.event_name != 'workflow_dispatch' || inputs.update_latest }}
+      uses: ncipollo/release-action@v1.21.0
       with:
         tag: 'canary_builds'
         name: 'Latest Canary'
@@ -75,27 +131,33 @@ jobs:
         allowUpdates: true
         replacesArtifacts: true
         draft: false
-        artifacts: 'output/*.*'
+        commit: '${{ steps.source.outputs.sha }}'
+        artifacts: 'output/PixelXpert.zip'
 
-    - name: Version Bump Commit
-      uses: github-actions-x/commit@v2.9
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: 'canary'
-        commit-message: 'Version update: Release'
-        force-add: 'true'
-        files: MagiskModBase/module.prop app/build.gradle.kts latestVersion.json CanaryChangelog.md latestCanary.json MagiskModuleUpdate_Xposed.json MagiskModuleUpdate_Full.json
-        name: GitHub
-        email: PixelXpert@siava.sh
+    - name: Commit Version Metadata Back
+      if: ${{ github.event_name != 'workflow_dispatch' || inputs.update_latest }}
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add version.properties MagiskModBase/module.prop latestCanary.json MagiskModuleUpdate_Xposed.json MagiskModuleUpdate_Full.json
+        if git diff --cached --quiet; then
+          echo "No version metadata changes to commit."
+        else
+          git commit -m "Version update: Publish ${{ steps.version.outputs.version_name }} metadata [skip ci]"
+          git push origin HEAD:canary
+        fi
 
     - name: Telegram Channel Post
+      if: ${{ env.TELEGRAM_TOKEN != '' && env.AOSPMODS_CHANNEL_ID != '' }}
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.AOSPMODS_CHANNEL_ID }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        to: ${{ env.AOSPMODS_CHANNEL_ID }}
+        token: ${{ env.TELEGRAM_TOKEN }}
         message: ${{ env.TMessage }}
         format: markdown
 
     - name: Telegram File Attachment
+      if: ${{ env.TELEGRAM_TOKEN != '' && env.AOSPMODS_CHANNEL_ID != '' }}
       run: |
-        curl -v "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMediaGroup?chat_id=${{ secrets.AOSPMODS_CHANNEL_ID }}&media=%5B%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2FXposed%22%7D%5D" -F Xposed="@output/PixelXpert.zip"
+          curl -v "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMediaGroup?chat_id=${{ env.AOSPMODS_CHANNEL_ID }}&media=%5B%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2FXposed%22%7D%5D" -F Xposed="@output/PixelXpert.zip"

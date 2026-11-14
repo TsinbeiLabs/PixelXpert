@@ -1,3 +1,268 @@
+**canary-547**
+
+- Fixed Gboard clipboard history limits and age filtering on Android 17 Gboard 18.6
+- Added installed AOSP Perfect Icons as a Launcher icon source, with exact activity/package mappings, native adaptive color layers, foreground-derived themed masks, per-app exclusions and cache restoration
+- Fixed in-app module updates by detaching the complete module and APK installation transaction from the app process before Package Manager replaces it
+- Adapted NativeComplements status-bar vertical offset and native rotation suggestion icon styling/scaling
+- Added opt-in notification body-click AOSP freeform windows for background apps, with foreground/freeform task filtering and inset-aware window bounds shared with the launcher gesture
+- Enable AOSP freeform support for module freeform entry points and restore the native capability when they are disabled
+- Applied combined-signal and mobile-icon hiding preferences to Stacked Compose dual-SIM rendering while retaining native signal levels and subscription identities
+- Added ZIP/MTZ layered launcher icon imports, theme selection, per-app original-icon exclusions, themed masks, and per-package cache refresh/restoration
+- Included NativeComplements Apache-2.0 license, source/change notices and README attribution
+- Followed PixelXpert-Next's Compose right-side clock and network traffic container fixes
+
+**canary-544**
+
+- Fixed shuffle PIN on Android 17 canary: shuffled digits now remain unchanged on press and release, and the displayed digit is the one submitted, including the bottom zero-slot button
+- Fixed R8 optimizing away Compose parameter detection in release builds by resolving the target-process Composer class at runtime
+- Keep the Compose PIN layout stable when unrelated preferences change
+- Verified the signed, R8-optimized build on a Pixel 9 Pro running ZP11.261016.008
+- Replaces the withdrawn canary-539, canary-540, canary-541, and canary-543 releases (canary-542 was not published)
+
+**canary-543**
+
+_Withdrawn._
+
+- Fixed the shuffle PIN digits (1-9) changing on first tap on Android 17 canary: the bouncer no longer reshuffles after the pad has already been composed, so the shown digit stays the same before and after a tap
+
+**canary-542**
+
+_Not published._
+
+- Fixed the "0" PIN button changing on every press/release on Android 17 canary: removed the stale R8 `$r8$classId` workaround that corrupted the shared click lambda
+
+**canary-541**
+
+_Withdrawn._
+
+- Additional shuffle PIN diagnostic logging for the Android 17 canary Compose bouncer
+
+**canary-540**
+
+_Withdrawn._
+
+- Fixed shuffle PIN display on the latest Android 17 canary: the digit was remapped inconsistently (reverting on release) because the hook gated on the unstable Compose $changed bitmask; it now always remaps, which is idempotent for a fixed shuffle
+
+**canary-539**
+
+_Withdrawn._
+
+- Fixed shuffle PIN on the latest Android 17 canary (Compose DigitButton gained parameters, shifting the $changed bitmask; the hook now locates it by scanning for the Composer parameter)
+- Hardened a batch of hook points against the canary's SystemUI/framework/launcher changes (verified against the decompiled builds): status bar header clock/date, status icon container, screen gestures fields, screenshot helper signature, ADB port argument, keyboard quick-switch argument, taskbar recents guards, and more
+
+**canary-538**
+
+- Followed up on more PixelXpert-Next changes: fix profile-switch broadcast targeting, capture the edge gesture handler on newer builds, and never rewrite ACTION_OUTSIDE in the one-finger pull-up gesture
+- Shuffle PIN now leaves the device-credential pad untouched (only the keyguard bouncer pad is shuffled)
+- Added an option to hide the keyboard space row (back chevron + switcher) under the keyboard in gesture navigation
+
+**canary-537**
+
+- Integrated a large batch of launcher features from Pixel Launcher Enhanced: hide/dark status bar, hide top shadow, dark/hide page indicator, wallpaper-dim restart prevention, opacity controls (search bar, drawer, recents, folder), home/drawer/folder grid rows & columns, icon/text size, free widget resizing, notification dot count & blocking, custom themed icon colors, disable dock, dock spacing, drawer scrollbar hiding, disable app drawer, home double-tap/pinch gestures, recents memory info, recents app lock, and freeform gesture
+
+**canary-536**
+
+- Fixed a preference type mismatch that crashed the taskbar modpack on load, disabling all taskbar customizations (regression since the taskbar integration in canary-534)
+
+**canary-535**
+
+- Added a batch of Pixel tweaks backported from the community (all with their own toggles): skip face-unlock confirmation, unlimited concurrent QS tiles, background clipboard allow-list, screenshot app-name pill (PillShot), hide launcher search bar, custom empty-shade message (Android 17), and three-finger swipe-down screenshot
+
+**canary-534**
+
+- Added taskbar enhancements from Pixel Taskbar Enabler: whole-taskbar scaling, dock icon count, mobile-style recents with bottom-aligned grid rows, and recents header icon scaling (Android 17 supported)
+- Added bubble chat options: bottom bubble layout for one-handed use and a configurable dismiss target position
+
+**canary-533**
+
+- Fixed the app-profile switcher failing to initialize on Android 17 (UserManager.getProfiles signature change), which also disabled home/back/sleep broadcast actions in the framework
+
+**canary-532**
+
+- Added Caffeine Quick Settings tile to keep the screen awake for 5/10/30 minutes or indefinitely
+- Added High Brightness Flashlight tile and gesture integration using the Pixel experimental torch API
+- Added options to move the QS brightness slider below the tiles and to always show it in collapsed QS
+- Added option to pin wireless ADB to a static port through an internal TCP forwarder
+- Easy Unlock now uses the native auto-confirm PIN mechanism, with a safeguard for the first boot after a reboot
+- Fixed shuffle PIN on the Compose-based lock screen bouncer so tapped digits submit what they display
+- Added Android 17 Compose status bar clock support: repositioning, custom clock formats and text variables, show seconds, and 24-hour leading zeros
+- Added an option to move the clock to the bottom row when multi-row notification icons are enabled
+- Fixed duplicated carrier-text hooks and added fallbacks for renamed SystemUI fields
+- Fixed Android 17 regressions: torch control from the framework, network traffic freezes and fake spikes, fast-charging detection, one-finger QS pulldown, status bar icon hiding, default notification expansion, and long-press power remapping
+- Suppressed call recording and call notes announcements, including TTS, in the dialer
+- Hardened module loading against concurrent preference updates and missing SystemUI classes
+- The app now installs as a regular user app instead of mounting as a system app, so it survives OTAs and temporary root loss; existing installs migrate automatically on the next boot (preferences are kept, reboot twice once after migrating)
+
+**canary-531**
+
+- Fixed notification expand and collapse buttons crashing SystemUI on Android 17 Canary builds
+- Made Canary prerelease notes match the corresponding version section in `CanaryChangelog.md`
+
+**canary-530**
+
+- Reorganized flashlight, notification, work-profile, and physical-button settings into their corresponding sections
+- Fixed bottom navigation and navigation rail selection after opening nested settings pages
+- Updated Quick Settings row and column overrides to avoid replacing SystemUI resource objects
+- Replaced deprecated local broadcasts and Android APIs, and hardened reflected collection handling
+- Vendored RangeSliderPreference so Canary builds no longer depend on its Git submodule
+
+**canary-529**
+
+- Fixed Gboard clipboard history hooks on current app versions
+- Refreshed conditional preferences immediately after their controlling values change
+- Fixed selected app preference icons after changing installer and uninstaller targets
+- Fixed Canary workflow artifact uploads to publish a single ZIP file
+
+**canary-528**
+
+- Fixed installer and uninstaller target app icons disappearing after changing a selection
+
+**canary-527**
+
+- Made physical button remapping hooks independent so an Android framework API change cannot disable every key action
+- Updated wake-state detection for Android 17 method overloads and added diagnostics for unavailable key hooks
+
+**canary-526**
+
+- Fixed the flashlight Quick Settings tile getting stuck on after the torch was turned off
+- Stopped the lock-screen flashlight animation hook from intercepting all SystemUI torch requests
+
+**canary-525**
+
+- Reject downloaded update ZIPs whose module version does not match the advertised update
+- Show the download-failed notification instead of offering installation while the new Canary binary is not yet available
+
+**canary-524**
+
+- Fixed in-app module updates to install the bundled APK as well as the Magisk or KernelSU module
+- Fixed update status detection by using the TsinbeiPixelXpert module ID and pending-update path
+- Aligned debug and release module packaging with the TsinbeiPixelXpert priv-app directory
+
+**canary-523**
+
+- Migrated Xposed hooks to libxposed API 102 while retaining API 101 compatibility
+- Added API 102-only module hot reload controls to the hooked packages screen
+- Fixed `system_server` static scope and hooked-package heartbeat reporting
+- Fixed device-encrypted preference access before first unlock
+- Fixed Compose lock-screen PIN scrambling during first-unlock recomposition
+- Added static scope support for SukiSU, SukiSU Pro, and ReSukiSU
+- Refreshed translations and removed obsolete Crowdin workflows
+
+**canary-522**
+
+- Added launcher enhancements and additional module improvements
+- Added package manager controls
+- Added support for additional KernelSU manager variants
+- Added DocumentsUI sort persistence and Dialer call recording support
+- Added Landscape Split Shade and further lock-screen, Gboard, and SystemUI enhancements
+
+**canary-518**
+
+- Established the Tsinbei PixelXpert Canary baseline for Android Canary ZP11.260717.006
+- Added package manager, lock-screen security, and Gboard enhancements
+
+**canary-516**
+
+- Canary baseline checkpoint; no functional changes after canary-512
+
+**canary-512**
+
+- Canary baseline checkpoint; no functional changes after canary-510
+
+**canary-510**
+
+- Canary baseline checkpoint; no functional changes after canary-508
+
+**canary-508**
+
+- Canary baseline checkpoint; no functional changes after canary-504
+
+**canary-504**
+
+- Canary baseline checkpoint; no functional changes after canary-502
+
+**canary-502**
+
+- Canary baseline checkpoint; no functional changes after canary-500
+
+**canary-500**
+
+- Rebranded the module as Tsinbei PixelXpert and established the current Canary build and release pipeline
+- Added package manager enhancements, lock-screen security controls, Gboard features, DocumentsUI support, and expanded SystemUI customizations
+- Added KernelSU manager integration, launcher/taskbar enhancements, and updated module packaging
+
+**canary-499**  
+- Reverted some unintentional changes  
+  
+**canary-498**  
+- fixed compatibility with official LSposed. (For reasons unknown to me, they prefer to block remote activation. So, from now on, no automated activation for you: do it yourself. Do let me know if you managed to understand their mindset)  
+  
+**canary-497**  
+- Fixed PX boot-looping in certain conditions  
+  
+**canary-496**  
+- A17qpr1b4: Fixed icon transparency (I couldn't make a fix, but Gemini could!)  
+  
+**canary-495**  
+- A17QPR1b3: Fixed statusbar gestures  
+- A17QPR1b3: Fixed Screen gestures and related system UI crash  
+- Added option to hide navigation bar insets (Thanks to eXtreames@Github)  
+  
+**canary-494**  
+- A17b4 - Fixed physical button remap when screen is off  
+  
+**canary-493**  
+- Fixing kill forground app (by pushing nexus launcher to work the way it should)  
+  
+**canary-492**  
+- Temporary workaround for hooks page not able to connect to Xposed service (until they fix it)  
+  
+**canary-491**  
+- testing the new canary buildscript - no module changes  
+  
+**canary-490**  
+- A17b3: fixed auto sleep on face-up mode  
+  
+**canary-489**  
+- Fixed muting the screenshot sound  
+- Statusbar long press to switch between app profiles no longer triggers QS  
+  
+**canary-488**  
+- IMPORTANT NOTICE: This build will only run on the newest Lsposed API (Api 101). If you are not running the newest Lsposed module, this canary version will NOT work on your device  
+- A17b3: Fixed taskbar  
+- Migration to the new lsposed service for module activation  
+- (initial) migration to the new LSposed api 100  
+  
+**canary-487**  
+- A17b1: (emergency workaround) Fixed soft reboot when making calls  
+  
+**canary-486**  
+- A16qpr3b2 - Fixed volume tile slider  
+- A16qpr3b2 - Fixed quick qs pull-up  
+- A16qpr3b1 - Fixed a bug in taskbar  
+  
+**canary-485**  
+- A16qpr3b1 - Fixed taskbar in recents mode  
+  
+**canary-484**  
+- Improved notification collapse/expand buttons + fixed colors  
+  
+**canary-483**  
+- A16QPR3b1 - Adopted the new flashlight tile to PX  
+  
+**canary-482**  
+- A16QPR3b1 - fixed volume tile long press  
+  
+**canary-481**  
+- A16QPR3b1 - fixed easyUnlock  
+- A16QPR3b1 - fixed module not recognizing qpr3  
+  
+**canary-480**  
+- A16QPR3b1 - fixed network traffic on statusbar  
+- A16QPR3b1 - fixed notification expand/collapse buttons  
+- A16QPR3b1 - fixed sysui crash on flashlight change  
+- A16QPR3b1 - fixed back gesture detection  
+  
 **canary-479**  
 - A16QRP2: Fixed navigation pill mods  
   
@@ -644,7 +909,7 @@
   
 **canary-294**  
 - Recents taskbar now shows suggested apps if there's no recent app to show  
-- New language: Arabic (You can contribute to translations on: https://crowdin.com/project/aospmods)  
+- New language: Arabic (translation contributions are welcome)  
   
 **canary-293**  
 - A14: Added option to disable lockscreen customization pill  
@@ -653,12 +918,12 @@
 - UI Improvement  
 - removed the remaining "reduce keyboard space" option from the app  
 - A14QPR1: Fixed taskbar (Note: Activating the taskbar with this release will trigger "tablet mode" on pixel launcher)  
-- New language: Hungarian! (translate your language via: https://crowdin.com/project/aospmods)  
+- New language: Hungarian! (translation contributions are welcome)  
   
 **canary-291**  
 - Added option to disable dismissing the ongoing notifications (A14+)  
 - A14: Fixed lockscreen customization button showing up during lockscreen double-tap-torch  
-- Moved translations to crowdin  
+- Moved translations to an external translation platform  
   
 **canary-290**  
 - Introducing Pixel Xpert! From the beginning, AOSPMods was designed using AOSP source code, with Pixel phones in mind. But the name was confusing to many people running AOSP based custom roms. So, in favor of more clarity, we've decided to rename to module to Pixel Xpert Also, since we are not maintaining the fonts and overlays which were part of "Full Package", they are now removed from the module permanently.  

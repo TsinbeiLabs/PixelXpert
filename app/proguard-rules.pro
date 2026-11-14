@@ -13,11 +13,15 @@
     public static int d(...);
 }
 
-# Xposed
--keep class de.robv.android.xposed.**
+# libxposed
+-dontwarn io.github.libxposed.annotation.**
+-adaptresourcefilecontents META-INF/xposed/java_init.list
+-keep,allowoptimization,allowobfuscation public class * extends io.github.libxposed.api.XposedModule {
+    public <init>();
+}
 
 # PixelXpert - for debug and trace
--keep class sh.siava.pixelxpert.** { public protected private *; }
+-keep class com.tsinbei.pixelxpert.** { public protected private *; }
 
 # AndroidX
 -keepnames class androidx.compose.ui.**
@@ -41,11 +45,11 @@
 -keep interface **.I* { *; }
 -keep class **.I*$Stub { *; }
 -keep class **.I*$Stub$Proxy { *; }
--keep class sh.siava.pixelxpert.service.* { *; }
+-keep class com.tsinbei.pixelxpert.service.* { *; }
 
 # Keep all inner classes and their names within the specified package
 # but allow optimization of their internal code
--keep class sh.siava.pixelxpert.**$* {
+-keep class com.tsinbei.pixelxpert.**$* {
     public protected private *;
 }
 
@@ -61,7 +65,8 @@
 # Keep all annotation types
 -keep @interface ** { *; }
 
-# Markdown View
--dontwarn java.awt.image.RGBImageFilter
--keep class br.tiagohm.markdownview.**
--keep class com.vladsch.flexmark.**
+# AndroidX Window
+-dontwarn androidx.window.extensions.area.ExtensionWindowAreaPresentation
+-dontwarn androidx.window.extensions.core.util.function.Consumer
+-dontwarn androidx.window.extensions.core.util.function.Function
+-dontwarn androidx.window.extensions.core.util.function.Predicate

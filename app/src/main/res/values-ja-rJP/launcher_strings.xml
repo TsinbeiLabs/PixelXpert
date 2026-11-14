@@ -1,0 +1,13 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">ショートカットの提供元バッジを非表示</string><string name="launcher_hide_shortcut_badge_summary">ショートカット上の提供元アプリの小さなアイコンを非表示にします</string>
+	<string name="launcher_lock_desktop">ホーム画面をロック</string><string name="launcher_lock_desktop_summary">アプリ、ショートカット、ウィジェットの追加、削除、移動を防止します</string>
+	<string name="launcher_hide_at_a_glance">「At a Glance」を非表示</string><string name="launcher_hide_at_a_glance_summary">ホーム画面から「At a Glance」ウィジェットを非表示にします</string>
+	<string name="launcher_wallpaper_zooming">壁紙のズーム</string><string name="launcher_wallpaper_zooming_summary">アプリドロワーと概要画面を開いたときに壁紙をズームします</string>
+	<string name="launcher_quick_launch">Enter キーで最初の検索結果を起動</string><string name="launcher_quick_launch_summary">アプリドロワーの検索で Enter キーを押すと、最初のアプリ結果を起動します</string>
+	<string name="launcher_hide_drawer_apps">アプリドロワーからアプリを非表示</string><string name="launcher_hide_drawer_apps_summary">選択したアプリをアプリドロワーと候補から非表示にします</string>
+	<string name="launcher_hidden_apps">非表示のアプリ</string><string name="launcher_search_hidden_apps">検索に非表示のアプリを表示</string><string name="launcher_search_hidden_apps_summary">非表示のアプリをアプリドロワーの検索結果でも利用可能にします</string>
+    <string name="launcher_hidden_apps_search">アプリまたはパッケージ名を検索</string>
+    <string name="launcher_apps_all">すべて</string>
+    <string name="launcher_apps_user">ユーザー</string>
+    <string name="launcher_apps_system">システム</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:search="http://schemas.android.com/apk/com.tsinbei.pixelxpert.ui.preferencesearch">
+
+	<com.tsinbei.pixelxpert.ui.preferences.IllustrationPreference
+		android:key="documentsui_illustration"
+		app:lottie_rawRes="@raw/documentsui_sort"
+		search:ignore="true" />
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+		android:defaultValue="false"
+		android:key="DocumentsUIRememberSort"
+		android:summary="@string/documentsui_remember_sort_summary"
+		android:title="@string/documentsui_remember_sort_title"
+		app:iconSpaceReserved="false" />
+
+	<Preference
+		android:selectable="false"
+		android:summary="@string/documentsui_remember_sort_usage"
+		app:iconSpaceReserved="false" />
+</PreferenceScreen>

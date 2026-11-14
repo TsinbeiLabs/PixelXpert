@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:search="http://schemas.android.com/apk/sh.siava.pixelxpert.ui.preferencesearch">
+	xmlns:search="http://schemas.android.com/apk/com.tsinbei.pixelxpert.ui.preferencesearch">
 
-	<sh.siava.pixelxpert.ui.preferences.IllustrationPreference
+	<com.tsinbei.pixelxpert.ui.preferences.IllustrationPreference
 		android:key="misc_illustration"
 		app:lottie_rawRes="@raw/android_device"
 		search:ignore="true" />
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/general_section"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="true"
 			android:key="PXInSettings"
 			android:summaryOff="@string/general_off"
@@ -21,7 +21,22 @@
 			android:title="@string/px_in_settings_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="pin_wireless_adb"
+			android:summary="@string/pin_wireless_adb_summary"
+			android:title="@string/pin_wireless_adb_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
+			android:defaultValue="5555"
+			android:dependency="pin_wireless_adb"
+			android:key="pinned_adb_port"
+			android:summary="@string/pinned_adb_port_summary"
+			android:title="@string/pinned_adb_port_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="advancedPowerMenu"
 			android:summaryOff="@string/general_off"
@@ -29,7 +44,7 @@
 			android:title="@string/advanced_power_menu_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="disableScreenshotSound"
 			android:summaryOff="@string/general_off"
@@ -37,7 +52,42 @@
 			android:title="@string/screenshot_sound_disable_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="threeFingerScreenshotEnabled"
+			android:summary="@string/three_finger_screenshot_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/three_finger_screenshot_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="pillShotEnabled"
+			android:summary="@string/pill_shot_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/pill_shot_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:dependency="pillShotEnabled"
+			android:key="pillShotOnlySelected"
+			android:summary="@string/pill_shot_only_selected_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/pill_shot_only_selected_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+			android:dependency="pillShotEnabled"
+			android:key="pillShotApps"
+			android:summary="@string/pill_shot_apps_summary"
+			android:title="@string/pill_shot_apps_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="EnableClipboardSmartActions"
 			android:summaryOff="@string/general_off"
@@ -45,7 +95,23 @@
 			android:title="@string/clipboard_smart_actions_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="clipboardBackgroundEnabled"
+			android:summary="@string/clipboard_background_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/clipboard_background_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialMultiSelectListPreference
+			android:dependency="clipboardBackgroundEnabled"
+			android:key="clipboardBackgroundApps"
+			android:summary="@string/clipboard_background_apps_summary"
+			android:title="@string/clipboard_background_apps_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="ScreenshotChordInsecure"
 			android:summaryOff="@string/general_off"
@@ -53,7 +119,7 @@
 			android:title="@string/screenshot_insecure"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="InsecureScreenRecord"
 			android:summaryOff="@string/general_off"
@@ -61,7 +127,7 @@
 			android:title="@string/screen_record_insecure"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="allScreenRotations"
 			android:summary="@string/allow_all_screen_rotations_summary"
@@ -70,7 +136,7 @@
 			android:title="@string/allow_all_screen_rotations"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="noCutoutEnabled"
 			android:summaryOff="@string/general_off"
@@ -78,7 +144,7 @@
 			android:title="@string/force_no_cutout"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="BrightnessRange"
 			android:summary="@string/brightness_range_not_linear"
 			android:title="@string/brightness_range_title"
@@ -89,14 +155,14 @@
 			app:tickInterval=".01"
 			app:valueCount="2" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="displayOverrideEnabled"
 			android:summary="@string/display_resolution_switch_summary"
 			android:title="@string/display_resolution_switch_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="displayOverride"
 			android:title="@string/display_resolution_title"
 			app:defaultValue="100"
@@ -106,7 +172,7 @@
 			app:tickInterval="5"
 			app:valueCount="1" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="FastChargingWattage"
 			android:title="@string/fast_charging_threshold_title"
 			app:defaultValue="5"
@@ -116,7 +182,7 @@
 			app:tickInterval="5"
 			app:valueCount="1" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="sysui_tuner"
 			android:summaryOff="@string/general_off"
@@ -124,60 +190,23 @@
 			android:title="SystemUI Tuner"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialPreference
-			android:key="remap_physical_buttons"
-			android:title="@string/remap_physical_buttons_title"
-			app:fragment="sh.siava.pixelxpert.ui.fragments.PhysicalButtonRemapFragment"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPrimarySwitchPreference
 			android:defaultValue="false"
-			android:key="controlFlashWithVolKeys"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/control_flashlight_with_volume_keys"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="AnimateFlashlight"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/flashlight_fade_effect"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialPrimarySwitchPreference
-			android:defaultValue="false"
-			android:fragment="sh.siava.pixelxpert.ui.fragments.SleepOnFlatFragment"
+			android:fragment="com.tsinbei.pixelxpert.ui.fragments.SleepOnFlatFragment"
 			android:key="SleepOnFlatScreen"
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"
 			android:title="@string/sleep_on_flat_screen_title"
 			app:iconSpaceReserved="false" />
 
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
-		android:title="@string/launcher_section"
-		app:iconSpaceReserved="false"
-		search:ignore="true">
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="RecentClearAllReposition"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/clear_all_reposition_title"
-			app:iconSpaceReserved="false" />
-
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
-
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/volume_panel_category"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:layout_width="wrap_content"
 			android:key="volumeStps"
 			android:title="@string/volume_button_step_title"
@@ -188,141 +217,27 @@
 			app:seekBarIncrement="5"
 			app:updatesContinuously="true" />
 
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
-		android:title="@string/work_clone_profile_header"
-		app:iconSpaceReserved="false"
-		search:ignore="true">
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="StatusbarLongpressAppSwitch"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/statusbar_long_press_app_switch"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="StatusbarAppSwitchIconEnabled"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/statusbar_app_switch_icon"
-			app:iconSpaceReserved="false" />
-
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
-
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
-		android:title="@string/doze_header"
-		app:iconSpaceReserved="false"
-		search:ignore="true">
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialEditTextPreference
-			android:defaultValue="3"
-			android:key="NotificationAODIconLimit"
-			android:selectAllOnFocus="true"
-			android:singleLine="true"
-			android:title="@string/sb_notification_limit"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="true"
-			android:key="fingerprintWhileDozing"
-			android:title="@string/so_fingerprint_sensor_enabled"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="doubleTapToWake"
-			android:summary="@string/so_double_tap_wake_summary"
-			android:title="@string/so_double_tap_wake_title"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="TapToShowAmbient"
-			android:summary="@string/so_tap_to_show_ambient_summary"
-			android:title="@string/so_tap_to_show_ambient_title"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="PickToShowAmbient"
-			android:summary="@string/so_pick_to_show_ambient_summary"
-			android:title="@string/so_pick_to_show_ambient_title"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="ForceAODwCharging"
-			android:summary="@string/force_aod_while_charging_summary"
-			android:title="@string/force_aod_while_charging_title"
-			app:iconSpaceReserved="false" />
-
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
-
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
-		android:title="@string/notifications_header"
-		app:iconSpaceReserved="false"
-		search:ignore="true">
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="notificationExpandallEnabled"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/expand_notifications_icons_title"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
-			android:defaultValue="false"
-			android:key="DisableOngoingNotifDismiss"
-			android:summaryOff="@string/general_off"
-			android:summaryOn="@string/general_on"
-			android:title="@string/disbale_ongoing_notif_dismiss_title"
-			app:iconSpaceReserved="false" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
-			android:key="HeadupAutoDismissNotificationDecay"
-			android:title="@string/heads_up_notification_duration"
-			app:defaultValue="5000"
-			app:iconSpaceReserved="false"
-			app:maxVal="10000"
-			app:minVal="1000"
-			app:tickInterval="500"
-			app:valueCount="1" />
-
-		<sh.siava.pixelxpert.ui.preferences.MaterialListPreference
-			android:defaultValue="0"
-			android:entries="@array/notif_default_expansion_entries"
-			android:entryValues="@array/notif_default_expansion_values"
-			android:key="notificationDefaultExpansion"
-			android:summary="%s"
-			android:title="@string/notif_default_expansion_title"
-			app:iconSpaceReserved="false" />
-
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
-
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/monitoring_category_title"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
 			android:key="netstat_header"
 			android:title="@string/netstat_header"
-			app:fragment="sh.siava.pixelxpert.ui.fragments.NetworkStatFragment"
+			app:fragment="com.tsinbei.pixelxpert.ui.fragments.NetworkStatFragment"
 			app:iconSpaceReserved="false" />
 
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/system_time_title"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="SyncNTPTime"
 			android:summaryOff="@string/general_off"
@@ -330,7 +245,7 @@
 			android:title="@string/sync_ntp_time_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="TimeSyncInterval"
 			android:title="@string/ntp_time_interval_title"
 			app:defaultValue="24"
@@ -340,7 +255,7 @@
 			app:tickInterval="12"
 			app:valueCount="1" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialEditTextPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
 			android:key="NTPServers"
 			android:selectAllOnFocus="true"
 			android:singleLine="true"
@@ -349,10 +264,10 @@
 			app:defaultValue="0.pool.ntp.org;1.pool.ntp.org"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
 			android:key="SyncNTPTimeNow"
 			android:title="@string/sync_ntp_time_now_title"
 			app:iconSpaceReserved="false" />
 
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 </PreferenceScreen>

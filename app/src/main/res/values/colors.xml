@@ -21,12 +21,16 @@
 	<color name="main_preference_on_color_6">#00522c</color>
 	<color name="main_preference_color_7">#e3e3e3</color>
 	<color name="main_preference_on_color_7">#474747</color>
-	<color name="main_preference_color_8">#acedff</color>
-	<color name="main_preference_on_color_8">#004e5d</color>
+	<color name="main_preference_color_8">#d7e2ff</color>
+	<color name="main_preference_on_color_8">#203a80</color>
 	<color name="main_preference_color_9">#ffdadc</color>
 	<color name="main_preference_on_color_9">#8a1a16</color>
 	<color name="main_preference_color_10">#eedcfe</color>
 	<color name="main_preference_on_color_10">#5629a4</color>
+	<color name="main_preference_color_11">#b7f0df</color>
+	<color name="main_preference_on_color_11">#00513f</color>
+	<color name="main_preference_color_12">#f5e3aa</color>
+	<color name="main_preference_on_color_12">#5a4300</color>
 
 	<!-- Launcher icon -->
 	<color name="launcher_fg">@android:color/system_neutral2_700</color>

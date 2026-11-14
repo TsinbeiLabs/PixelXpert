@@ -1,0 +1,7 @@
+<!-- Google Material Symbols Rounded screen_rotation, Apache-2.0.
+     Source: google/material-design-icons, as attributed by NativeComplements. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M12.18,21.4L3.75,13H6.6l7,7l5,-5H16V13h6v6H20V16.4l-5,5q-0.57,0.58 -1.41,0.58T12.18,21.4ZM2,11V5H4V7.6l5,-5q0.58,-0.57 1.41,-0.57T11.83,2.6L20.25,11H17.4l-7,-7l-5,5H8v2H2Z" />
+</vector>

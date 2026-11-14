@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Kısayol rozetini gizle</string>
+    <string name="launcher_hide_shortcut_badge_summary">Kısayollardaki kaynak uygulamanın küçük simgesini gizle</string>
+    <string name="launcher_lock_desktop">Ana ekranı kilitle</string>
+    <string name="launcher_lock_desktop_summary">Uygulamaların, kısayolların ve araç takımlarının eklenmesini, kaldırılmasını veya taşınmasını engelle</string>
+    <string name="launcher_hide_at_a_glance">"Bir Bakışta"yı gizle</string>
+    <string name="launcher_hide_at_a_glance_summary">"Bir Bakışta" araç takımını ana ekrandan gizle</string>
+    <string name="launcher_wallpaper_zooming">Duvar kağıdını yakınlaştır</string>
+    <string name="launcher_wallpaper_zooming_summary">Uygulama çekmecesi ve genel bakış açılırken duvar kağıdını yakınlaştır</string>
+    <string name="launcher_quick_launch">İlk arama sonucunu Enter ile başlat</string>
+    <string name="launcher_quick_launch_summary">İlk uygulama sonucunu başlatmak için uygulama aramasında Enter\'a basın</string>
+    <string name="launcher_hide_drawer_apps">Uygulama çekmecesinden uygulamaları gizle</string>
+    <string name="launcher_hide_drawer_apps_summary">Seçili uygulamaları uygulama çekmecesinden ve önerilerden gizle</string>
+    <string name="launcher_hidden_apps">Gizli uygulamalar</string>
+    <string name="launcher_search_hidden_apps">Gizli uygulamaları aramada göster</string>
+    <string name="launcher_search_hidden_apps_summary">Gizli uygulamaları uygulama çekmecesi arama sonuçlarında göstermeye devam et</string>
+	<string name="launcher_hidden_apps_search">Uygulama veya paket adı ara</string>
+	<string name="launcher_apps_all">Tümü</string>
+	<string name="launcher_apps_user">Kullanıcı</string>
+	<string name="launcher_apps_system">Sistem</string>
+</resources>

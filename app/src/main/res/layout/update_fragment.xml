@@ -169,12 +169,11 @@
 						android:isScrollContainer="true"
 						android:scrollbars="vertical">
 
-						<br.tiagohm.markdownview.MarkdownView
+						<com.mukesh.MarkdownView
 							android:id="@+id/changelogView"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:minHeight="40dp"
-							app:escapeHtml="false" />
+							android:minHeight="40dp" />
 
 					</androidx.core.widget.NestedScrollView>
 				</LinearLayout>

@@ -1,0 +1,10 @@
+GboardHook
+Copyright and authorship: chenyue404
+Source: https://github.com/chenyue404/GboardHook
+License: GNU General Public License version 3
+
+PixelXpert, itself distributed under GPLv3, uses GboardHook as a reference for
+Gboard clipboard history query behavior and recent compatibility research. The
+implementation was rewritten for PixelXpert's libxposed API and excludes the
+upstream global HashSet.size() hook. The full GPLv3 license is included as the
+PixelXpert root LICENSE and applies to this combined work.

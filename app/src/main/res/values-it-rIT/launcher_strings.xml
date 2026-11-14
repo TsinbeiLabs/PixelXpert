@@ -1,0 +1,21 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">Nascondi i badge di origine delle scorciatoie</string>
+	<string name="launcher_hide_shortcut_badge_summary">Nasconde la piccola icona dell\'app di origine sulle scorciatoie</string>
+	<string name="launcher_lock_desktop">Blocca schermata Home</string>
+	<string name="launcher_lock_desktop_summary">Impedisce di aggiungere, rimuovere o spostare app, scorciatoie e widget</string>
+	<string name="launcher_hide_at_a_glance">Nascondi "A colpo d\'occhio"</string>
+	<string name="launcher_hide_at_a_glance_summary">Nasconde il widget "A colpo d\'occhio" dalla schermata Home</string>
+	<string name="launcher_wallpaper_zooming">Zoom dello sfondo</string>
+	<string name="launcher_wallpaper_zooming_summary">Ingrandisce lo sfondo quando apri il drawer app e la panoramica</string>
+	<string name="launcher_quick_launch">Avvia il primo risultato con Invio</string>
+	<string name="launcher_quick_launch_summary">Premi Invio nella ricerca del drawer per avviare la prima app trovata</string>
+	<string name="launcher_hide_drawer_apps">Nascondi app dal drawer</string>
+	<string name="launcher_hide_drawer_apps_summary">Nasconde le app selezionate dal drawer e dai suggerimenti</string>
+	<string name="launcher_hidden_apps">App nascoste</string>
+	<string name="launcher_search_hidden_apps">Mostra app nascoste nella ricerca</string>
+	<string name="launcher_search_hidden_apps_summary">Mantiene le app nascoste disponibili nei risultati di ricerca del drawer</string>
+	<string name="launcher_hidden_apps_search">Cerca app o nomi dei pacchetti</string>
+	<string name="launcher_apps_all">Tutte</string>
+	<string name="launcher_apps_user">Utente</string>
+	<string name="launcher_apps_system">Sistema</string>
+</resources>

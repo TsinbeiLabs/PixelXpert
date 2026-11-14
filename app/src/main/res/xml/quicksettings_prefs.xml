@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:search="http://schemas.android.com/apk/sh.siava.pixelxpert.ui.preferencesearch"
+	xmlns:search="http://schemas.android.com/apk/com.tsinbei.pixelxpert.ui.preferencesearch"
 	android:visibility="visible">
 
-	<sh.siava.pixelxpert.ui.preferences.IllustrationPreference
+	<com.tsinbei.pixelxpert.ui.preferences.IllustrationPreference
 		android:key="quick_settings_illustration"
 		app:lottie_rawRes="@raw/lottie_quick_settings"
 		search:ignore="true" />
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/quick_settings_tiles_category"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="UnMuteVolumePCT"
 			android:title="@string/qs_volume_unmute_title"
 			app:defaultValue="50"
 			app:iconSpaceReserved="false"
 			app:updatesContinuously="true" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="leveledFlashTile"
 			android:summary="@string/qs_leveled_flashlight_summary"
 			android:title="@string/qs_leveled_flashlight_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="isFlashLevelGlobal"
 			android:summaryOff="@string/general_off"
@@ -36,13 +36,45 @@
 			android:title="@string/qs_flashlight_level_global_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialPreference
-			android:key="qs_tile_qty"
-			android:title="@string/qs_tile_qty_title"
-			app:fragment="sh.siava.pixelxpert.ui.fragments.QSTileQtyFragment"
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="controlFlashWithVolKeys"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/control_flashlight_with_volume_keys"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="enable_high_brightness_flashlight"
+			android:summary="@string/enable_high_brightness_flashlight_summary"
+			android:title="@string/enable_high_brightness_flashlight_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="AnimateFlashlight"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/flashlight_fade_effect"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+			android:key="qs_tile_qty"
+			android:title="@string/qs_tile_qty_title"
+			app:fragment="com.tsinbei.pixelxpert.ui.fragments.QSTileQtyFragment"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="warmTilesEnabled"
+			android:summary="@string/warm_tiles_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/warm_tiles_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="QSLabelScaleFactor"
 			android:title="@string/qs_tile_label_size"
 			app:defaultValue="0"
@@ -52,7 +84,7 @@
 			app:tickInterval="5"
 			app:updatesContinuously="true" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="QSSecondaryLabelScaleFactor"
 			android:title="@string/qs_tile_secondary_label_size"
 			app:defaultValue="0"
@@ -62,14 +94,89 @@
 			app:tickInterval="5"
 			app:updatesContinuously="true" />
 
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 
-	<sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
+		android:title="@string/notifications_header"
+		app:iconSpaceReserved="false"
+		search:ignore="true">
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="notificationExpandallEnabled"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/expand_notifications_icons_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="DisableOngoingNotifDismiss"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/disbale_ongoing_notif_dismiss_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+			android:key="HeadupAutoDismissNotificationDecay"
+			android:title="@string/heads_up_notification_duration"
+			app:defaultValue="5000"
+			app:iconSpaceReserved="false"
+			app:maxVal="10000"
+			app:minVal="1000"
+			app:tickInterval="500"
+			app:valueCount="1" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="0"
+			android:entries="@array/notif_default_expansion_entries"
+			android:entryValues="@array/notif_default_expansion_values"
+			android:key="notificationDefaultExpansion"
+			android:summary="%s"
+			android:title="@string/notif_default_expansion_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="enable_reverse_bubble"
+			android:summary="@string/reverse_bubble_summary"
+			android:title="@string/reverse_bubble_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
+			android:defaultValue="CENTER"
+			android:dependency="enable_reverse_bubble"
+			android:entries="@array/bubble_dismiss_position_names"
+			android:entryValues="@array/bubble_dismiss_position_values"
+			android:key="dismiss_position"
+			android:summary="%s"
+			android:title="@string/bubble_dismiss_position_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="emptyShadeEnabled"
+			android:summary="@string/empty_shade_summary"
+			android:summaryOff="@string/general_off"
+			android:summaryOn="@string/general_on"
+			android:title="@string/empty_shade_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialEditTextPreference
+			android:dependency="emptyShadeEnabled"
+			android:key="emptyShadeText"
+			android:summary="@string/empty_shade_text_summary"
+			android:title="@string/empty_shade_text_title"
+			app:iconSpaceReserved="false" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory
 		android:title="@string/qs_pulldown_category"
 		app:iconSpaceReserved="false"
 		search:ignore="true">
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="QSPullodwnEnabled"
 			android:summaryOff="@string/general_off"
@@ -77,14 +184,14 @@
 			android:title="@string/qs_pulldown_switch_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialRangeSliderPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialRangeSliderPreference
 			android:key="QSPulldownPercent"
 			android:title="@string/qs_pulldown_size"
 			app:defaultValue="25"
 			app:iconSpaceReserved="false"
 			app:updatesContinuously="true" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialListPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialListPreference
 			android:defaultValue="1"
 			android:entries="@array/qs_pulldown_side_names"
 			android:entryValues="@array/qs_pulldown_side_left"
@@ -93,7 +200,7 @@
 			android:title="@string/qs_pulldown_side_title"
 			app:iconSpaceReserved="false" />
 
-		<sh.siava.pixelxpert.ui.preferences.MaterialSwitchPreference
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
 			android:defaultValue="false"
 			android:key="oneFingerPullupEnabled"
 			android:summaryOff="@string/general_off"
@@ -101,5 +208,19 @@
 			android:title="@string/qs_pullup_switch_title"
 			app:iconSpaceReserved="false" />
 
-	</sh.siava.pixelxpert.ui.preferences.MaterialPreferenceCategory>
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="qs_brightness_slider_bottom"
+			android:summary="@string/qs_brightness_slider_bottom_desc"
+			android:title="@string/qs_brightness_slider_bottom_title"
+			app:iconSpaceReserved="false" />
+
+		<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference
+			android:defaultValue="false"
+			android:key="qqs_brightness_slider"
+			android:summary="@string/qqs_brightness_slider_desc"
+			android:title="@string/qqs_brightness_slider_title"
+			app:iconSpaceReserved="false" />
+
+	</com.tsinbei.pixelxpert.ui.preferences.MaterialPreferenceCategory>
 </PreferenceScreen>

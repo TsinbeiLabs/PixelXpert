@@ -77,6 +77,26 @@
 			</intent-filter>
 		</service>
 		<service
+			android:name=".service.tileServices.CaffeineTileService"
+			android:exported="true"
+			android:icon="@drawable/ic_qs_caffeine"
+			android:label="@string/caffeine_tile_title"
+			android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+			<intent-filter>
+				<action android:name="android.service.quicksettings.action.QS_TILE" />
+			</intent-filter>
+		</service>
+		<service
+			android:name=".service.tileServices.HighBrightnessFlashlightTileService"
+			android:exported="true"
+			android:icon="@drawable/ic_qs_flashlight"
+			android:label="@string/high_brightness_flashlight_tile_title"
+			android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+			<intent-filter>
+				<action android:name="android.service.quicksettings.action.QS_TILE" />
+			</intent-filter>
+		</service>
+		<service
 			android:name=".service.tileServices.AppProfileSwitchTileService"
 			android:exported="true"
 			android:icon="@drawable/ic_app_switch"
@@ -120,24 +140,21 @@
 
 		<provider
 			android:name=".utils.RemotePrefProvider"
-			android:authorities="sh.siava.pixelxpert"
+			android:authorities="${applicationId}"
 			android:directBootAware="true"
 			android:exported="true"
 			tools:ignore="ExportedContentProvider" />
 
+		<provider
+            android:name=".utils.LauncherIconProvider"
+            android:authorities="${applicationId}.launcher-icons"
+            android:directBootAware="true"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
 		<meta-data
 			android:name="com.google.mlkit.vision.DEPENDENCIES"
 			android:value="subject_segment" />
-
-		<meta-data
-			android:name="xposeddescription"
-			android:value="@string/xposed_desc" />
-		<meta-data
-			android:name="xposedminversion"
-			android:value="82" />
-		<meta-data
-			android:name="xposedscope"
-			android:resource="@array/module_scope" />
-	</application>
+    </application>
 
 </manifest>

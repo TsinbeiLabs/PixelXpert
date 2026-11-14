@@ -1,0 +1,13 @@
+<resources>
+	<string name="launcher_hide_shortcut_badge">바로가기 출처 배지 숨기기</string><string name="launcher_hide_shortcut_badge_summary">바로가기에 있는 출처 앱의 작은 아이콘을 숨깁니다</string>
+	<string name="launcher_lock_desktop">홈 화면 잠그기</string><string name="launcher_lock_desktop_summary">앱, 바로가기, 위젯을 추가, 삭제 또는 이동하지 못하게 합니다</string>
+	<string name="launcher_hide_at_a_glance">At a Glance 숨기기</string><string name="launcher_hide_at_a_glance_summary">홈 화면에서 At a Glance 위젯을 숨깁니다</string>
+	<string name="launcher_wallpaper_zooming">배경화면 확대</string><string name="launcher_wallpaper_zooming_summary">앱 서랍과 최근 앱 화면을 열 때 배경화면을 확대합니다</string>
+	<string name="launcher_quick_launch">Enter로 첫 검색 결과 실행</string><string name="launcher_quick_launch_summary">앱 서랍 검색에서 Enter를 누르면 첫 번째 앱 결과를 실행합니다</string>
+	<string name="launcher_hide_drawer_apps">앱 서랍에서 앱 숨기기</string><string name="launcher_hide_drawer_apps_summary">선택한 앱을 앱 서랍과 추천에서 숨깁니다</string>
+	<string name="launcher_hidden_apps">숨겨진 앱</string><string name="launcher_search_hidden_apps">검색에 숨겨진 앱 표시</string><string name="launcher_search_hidden_apps_summary">숨겨진 앱을 앱 서랍 검색 결과에서 계속 표시합니다</string>
+    <string name="launcher_hidden_apps_search">앱 또는 패키지 이름 검색</string>
+    <string name="launcher_apps_all">전체</string>
+    <string name="launcher_apps_user">사용자</string>
+    <string name="launcher_apps_system">시스템</string>
+</resources>

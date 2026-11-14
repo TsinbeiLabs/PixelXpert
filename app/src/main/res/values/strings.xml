@@ -5,6 +5,10 @@
     <string name="xposed_desc">Customizations for Google Pixel devices</string>
     <string name="title_activity_settings" translatable="false">@string/app_name</string>
     <string name="volume_tile_title">Media Volume</string>
+    <string name="caffeine_tile_title">Caffeine</string>
+    <string name="high_brightness_flashlight_tile_title">High Brightness Flashlight</string>
+    <string name="enable_high_brightness_flashlight_title">High Brightness Flashlight</string>
+    <string name="enable_high_brightness_flashlight_summary">Utilizes camera to reach higher brightness than what the system allows. Uses more power!</string>
     <string name="sliding_tile_subtitle">Tap to adjust</string>
     <string name="app_switch_tile_title">Switch App Profile</string>
     <string name="hide_default">Hide (Default)</string>
@@ -33,18 +37,24 @@
     <string name="auto_update_summary">Check for new versions once in a while</string>
     <string name="update_over_wifi_title">Check updates over WiFi only</string>
     <string name="update_over_wifi_summary">Check for updates in background only when connected to wifi</string>
-    <string name="github_repo_title">GitHub repository</string>
-    <string name="github_repo_summary" translatable="false">siavash79/PixelXpert</string>
+    <string name="github_repo_title">Our GitHub repository</string>
+    <string name="github_original_repo_title">Original GitHub repository</string>
+    <string name="github_repo_summary" translatable="false">TsinbeiLabs/PixelXpert</string>
+	<string name="github_original_repo_summary" translatable="false">siavash79/PixelXpert</string>
     <string name="telegram_group_title">Telegram channel</string>
     <string name="telegram_group_summary" translatable="false">\@PixelXpert_Github</string>
     <string name="usage_title">Usage</string>
     <string name="usage_summary">Open wiki page</string>
-    <string name="crowdin_title">Translate to your language</string>
-    <string name="crowdin_summary">Help us in translating %s into your own language</string>
+    <string name="weblate_title">Translate to your language</string>
+    <string name="weblate_summary">Help us translate %s into your own language</string>
     <string name="nothing_to_show">Nothing to show</string>
     <string name="shrug" translatable="false">¯\\_(シ)_/¯</string>
 
     <!--Category titles-->
+	<string name="home_category_personalization">Personalization</string>
+	<string name="home_category_system_interface">System interface</string>
+	<string name="home_category_app_enhancements">App enhancements</string>
+	<string name="home_category_system_tools">System tools</string>
     <string name="lockscreen_header_title">Lock screen</string>
     <string name="lockscreen_header_summary">Change your keyguard to match your taste</string>
     <string name="statusbar_header">Status bar</string>
@@ -103,6 +113,16 @@
     <string name="wakeup_to_security_title">Show security input on device wake</string>
     <string name="easy_unlock_title">Easy unlock (Pin/Password)</string>
     <string name="easy_unlock_summary">If it didn\'t work the first time, try again</string>
+    <string name="lockscreen_security_category">Lockscreen security</string>
+    <string name="lockscreen_block_power_menu_title">Block power menu while locked</string>
+    <string name="lockscreen_block_power_menu_summary">Also blocks the Quick Settings power button and hardware shortcut</string>
+    <string name="lockscreen_block_internet_title">Block Internet controls while locked</string>
+    <string name="lockscreen_block_airplane_title">Block Airplane mode while locked</string>
+    <string name="lockscreen_block_bluetooth_title">Block Bluetooth while locked</string>
+    <string name="lockscreen_block_hotspot_title">Block hotspot while locked</string>
+    <string name="lockscreen_block_dnd_title">Block Do Not Disturb while locked</string>
+    <string name="lockscreen_block_ringer_title">Block ringer mode changes while locked</string>
+    <string name="lockscreen_unlock_to_use">Unlock to use</string>
     <string name="charging_info_title">Charging information on lockscreen</string>
     <string name="disable_lockscreen_pill_title">Don\'t show \"Customize Lock Screen\" pill</string>
     <string name="imperial_units_title">Use imperial units</string>
@@ -111,6 +131,7 @@
     <string name="double_tap_sleep_title">Double-tap to sleep</string>
     <string name="sb_multi_row_system_icons">Multi-row system icons (needs raised statusbar height)</string>
     <string name="sb_multi_row_notification_icons">Multi-row notification icons (needs raised statusbar height)</string>
+    <string name="sb_multi_row_clock_bottom">Move clock to bottom row</string>
     <string name="sb_double_row_category">Double Statusbar rows</string>
     <string name="sb_icon_sort_mode">Icon placement method</string>
     <string name="sort_clean">Sort in a grid</string>
@@ -162,6 +183,8 @@
     <string name="nt_mode_txonly">Upload only</string>
     <string name="nt_unit_show_bits">Show in bits/s</string>
     <string name="statusbar_general_options">Status Bar Options</string>
+    <string name="landscape_split_shade_title">Tablet-style notification shade in landscape</string>
+    <string name="landscape_split_shade_summary">Show Quick Settings and notifications side by side when the phone is rotated horizontally</string>
     <string name="status_bar_height">Status bar height (rotate screen to apply)</string>
     <string name="sb_padding_title">Status bar Padding</string>
     <string name="sb_padding_summary">Setting the values to min/max is equivalent to device Default</string>
@@ -285,6 +308,7 @@
     <string name="three_button_right_title">Right button</string>
     <string name="pill_width_summary" translatable="false">@string/percent_of_default_size</string>
     <string name="hide_navbar_title">Hide navigation bar</string>
+    <string name="hide_navbar_insets_title">Hide navigation bar insets</string>
     <string name="taskbar_as_recents_title">Convert Taskbar to PixelXpert recents bar</string>
     <string name="taskbar_enable_google_recents">Enable Android recents on the Taskbar</string>
     <string name="taskbar_height_title">Taskbar height</string>
@@ -301,10 +325,49 @@
     <!-- Package manager -->
     <string name="pm_bypass_signature_title">Bypass package signature check</string>
     <string name="pm_allow_downgrade_title">Allow app downgrade</string>
+    <string name="pm_advanced_category">Advanced installation checks</string>
+    <string name="pm_exact_signature_title">Bypass exact split signature matching</string>
+    <string name="pm_exact_signature_summary">High risk: allows base and split APK signing details to differ during installation</string>
+    <string name="pm_shared_uid_title">Bypass shared UID signature checks</string>
+    <string name="pm_shared_uid_summary">High risk: allows differently signed user apps to update while using a shared UID; platform shared UID restrictions remain</string>
+    <string name="app_info_enhancements_category">App info</string>
+    <string name="app_info_show_version_code_title">Show version code</string>
+    <string name="app_info_allow_disable_user_apps_title">Allow disabling user apps</string>
+    <string name="app_info_allow_disable_user_apps_summary">Adds an enable/disable action to app info for non-system apps</string>
     <string name="auto_off_five_minutes">Enabled for the next 5 minutes</string>
 
     <!--Miscellaneous section related-->
     <string name="launcher_section">Launcher options</string>
+    <string name="launcher_header">Launcher</string>
+    <string name="launcher_header_summary">Overview and home screen enhancements</string>
+    <string name="launcher_home_section">Home screen</string>
+    <string name="launcher_drawer_section">App drawer</string>
+    <string name="launcher_recents_section">Recent tasks</string>
+    <string name="launcher_hide_desktop_labels">Hide home screen icon labels</string>
+	<string name="launcher_hide_shortcut_badge">Hide shortcut source badges</string>
+	<string name="launcher_hide_shortcut_badge_summary">Hide the small source app icon on shortcuts</string>
+	<string name="launcher_lock_desktop">Lock home screen</string>
+	<string name="launcher_lock_desktop_summary">Prevent adding, removing, or moving apps, shortcuts, and widgets</string>
+	<string name="launcher_hide_at_a_glance">Hide At a Glance</string>
+	<string name="launcher_hide_at_a_glance_summary">Hide the At a Glance widget from the home screen</string>
+	<string name="launcher_wallpaper_zooming">Wallpaper zooming</string>
+	<string name="launcher_wallpaper_zooming_summary">Zoom the wallpaper when opening the app drawer and overview</string>
+    <string name="launcher_hide_desktop_search">Hide home screen search bar</string>
+    <string name="launcher_hide_drawer_labels">Hide app drawer icon labels</string>
+    <string name="launcher_hide_drawer_search">Hide app drawer search bar</string>
+	<string name="launcher_quick_launch">Launch first search result with Enter</string>
+	<string name="launcher_quick_launch_summary">Press Enter in app drawer search to launch the first app result</string>
+	<string name="launcher_hide_drawer_apps">Hide apps from app drawer</string>
+	<string name="launcher_hide_drawer_apps_summary">Hide selected apps from the app drawer and predictions</string>
+	<string name="launcher_hidden_apps">Hidden apps</string>
+	<string name="launcher_search_hidden_apps">Show hidden apps in search</string>
+	<string name="launcher_search_hidden_apps_summary">Keep hidden apps available in app drawer search results</string>
+	<string name="launcher_hidden_apps_search">Search apps or package names</string>
+	<string name="launcher_apps_all">All</string>
+	<string name="launcher_apps_user">User</string>
+	<string name="launcher_apps_system">System</string>
+    <string name="recents_remove_screenshot">Remove Screenshot action</string>
+    <string name="recents_equal_action_widths">Use equal action button widths</string>
     <string name="screenshot_sound_disable_title">Disable screenshot sound</string>
     <!--string name="screenshot_chord_insecure">VolDown+Power unrestricted screenshot</string-->
     <string name="screenshot_insecure">Allow screenshot from restricted content</string>
@@ -313,7 +376,8 @@
     <string name="allow_all_screen_rotations">Force-unlock all screen rotations</string>
     <string name="allow_all_screen_rotations_summary">Will also ignore manual rotation floating button</string>
     <string name="force_no_cutout">Ignore the camera cutout</string>
-    <string name="clear_all_reposition_title">Add an accessible clear-all button to recents page</string>
+    <string name="clear_all_reposition_title">Add Clear all below overview actions</string>
+    <string name="recents_clear_all">Clear all</string>
     <string name="force_themed_icons_title">Auto-generate missing themed icons</string>
     <string name="force_themed_icons_summary">Pixel launcher only</string>
     <string name="volume_button_step_title">Volume steps (0 to 100%)</string>
@@ -385,6 +449,8 @@
     <string name="vibration_type_notification">Intensity defined by system notification vibration settings</string>
     <string name="dialer_mute_record_message_title">Remove call recording announcement</string>
     <string name="dialer_mute_record_message_summary">Only applies to Google phone app with call recording enabled</string>
+    <string name="dialer_force_enable_call_recording_title">Force enable call recording</string>
+    <string name="dialer_force_enable_call_recording_summary">Unlocks native call recording in Google phone app in unsupported regions</string>
     <string name="radio_force_volte_nr">Force VoLTE/NR in unsupported regions</string>
 
     <!-- Arrays strings -->
@@ -517,20 +583,28 @@
     <string name="hooked_packages_title">Connected packages</string>
     <string name="package_hooked_successful">Package responsive</string>
     <string name="package_not_hook_enabled">Package not enabled in LSposed</string>
+    <string name="enable_px_manually">Pixel Xpert is not yet activated in LSposed. Please open LSposed manager and enable Pixel Xpert, then restart this app</string>
     <string name="package_hook_bootlooped">Hook failed due to bootloop</string>
     <string name="package_hook_no_response">Package not responding</string>
+	<string name="package_not_running">App not running</string>
     <string name="package_not_found">Package not found</string>
     <string name="package_checking">Loading%s</string>
     <string name="package_activated">Package successfully activated</string>
     <string name="package_activation_failed">Package activation failed</string>
+    <string name="lsposed_not_found">LSPosed not installed</string>
     <string name="activate_in_lsposed">Activate in LSPosed</string>
     <string name="package_not_hook_enabled_info">The app is installed, but LSPosed is not configured to hook into it. Enable it by clicking \'%s\'.</string>
     <string name="package_hook_bootlooped_info">The hook for the app caused a bootloop, so it has been disabled to prevent further issues.</string>
-    <string name="package_hook_no_response_info">The app is not responding to the hook status. It may not be actively running, or it\'s possible that it\'s not hooked to our connection.</string>
+    <string name="package_hook_no_response_info">The app is not responding to the hook status. It may not be hooked to our connection.</string>
     <string name="whats_wrong">What\'s wrong?</string>
     <string name="package_not_launchable">Package is not launch-able</string>
     <string name="menu_launch_app">Launch app</string>
+	<string name="menu_stop_app">Stop app</string>
     <string name="menu_restart_app">Restart app</string>
+    <string name="menu_hot_reload_module">Hot reload module</string>
+    <string name="hot_reload_requested">Hot reload requested</string>
+    <string name="hot_reload_succeeded">Module reloaded</string>
+    <string name="hot_reload_failed">Hot reload failed</string>
     <string name="why">why?</string>
     <string name="okay">Okay</string>
 
@@ -595,4 +669,212 @@
     <string name="watts">Watts</string>
     <string name="fast_charging_threshold_title">Fast charging threshold</string>
 
+    <!-- Gboard -->
+    <string name="gboard_header">Gboard</string>
+    <string name="gboard_header_summary">Theme, clipboard, privacy, and experimental typing features</string>
+    <string name="gboard_theme_category">Theme</string>
+    <string name="gboard_amoled_black_title">AMOLED black in dark mode</string>
+    <string name="gboard_amoled_black_summary">Turn Material Expressive surface containers pure black while retaining accent colors</string>
+    <string name="gboard_clipboard_category">Clipboard</string>
+    <string name="gboard_clipboard_history_title">Customize clipboard history</string>
+    <string name="gboard_clipboard_history_summary">Change the number and age of entries requested by Gboard; older entries already deleted by Gboard cannot be restored</string>
+    <string name="gboard_clipboard_size_title">Maximum visible entries</string>
+    <string name="gboard_clipboard_size_summary">Allowed range: 5 to 100</string>
+    <string name="gboard_clipboard_days_title">Visible history in days</string>
+    <string name="gboard_clipboard_days_summary">Allowed range: 0 to 3650; 0 requests all retained entries</string>
+    <string name="gboard_secure_clipboard_title">Keep sensitive text out of Gboard history</string>
+    <string name="gboard_secure_clipboard_summary">Block entries copied from password fields and likely verification codes, PINs, or long account numbers</string>
+    <string name="gboard_clipboard_chips_title">Clipboard action chips</string>
+    <string name="gboard_clipboard_chips_summary">Enable Gboard action chips, entity extraction, and copy-to-reply experiments</string>
+    <string name="gboard_privacy_category">Privacy</string>
+    <string name="gboard_force_incognito_title">Disable personalized learning</string>
+    <string name="gboard_force_incognito_summary">Request no personalized learning for every input field; this does not force the complete Gboard Incognito UI</string>
+    <string name="gboard_privacy_flags_title">Reduce telemetry and training</string>
+    <string name="gboard_privacy_flags_summary">Override known Gboard flags for correction storage, content capture, logging, metrics, and training caches</string>
+    <string name="gboard_input_category">Input enhancements</string>
+    <string name="gboard_multilingual_title">Multilingual typing</string>
+    <string name="gboard_multilingual_summary">Enable known multilingual typing, candidate, Pixel, and speech enhancement experiments</string>
+    <string name="gboard_ai_title">AI and smart input</string>
+    <string name="gboard_ai_summary">Enable known Smart Reply, Smart Compose, emojify, sticker, and AI Core experiments</string>
+    <string name="gboard_grammar_title">Grammar and proofreading</string>
+    <string name="gboard_grammar_summary">Enable known on-device proofread, grammar checker, writing tools, and text conversion experiments</string>
+    <string name="gboard_floating_title">Floating and split keyboard</string>
+    <string name="gboard_floating_summary">Enable landscape, multi-window, freeform, tablet split keyboard, size slider, and transition experiments</string>
+    <string name="gboard_emoji_kitchen_title">Emoji Kitchen enhancements</string>
+    <string name="gboard_emoji_kitchen_summary">Enable browse, search, recommendation, animation, and embedded picker experiments</string>
+    <string name="gboard_access_point_title">Shortcut menu redesign</string>
+    <string name="gboard_access_point_summary">Enable access point menu, Silk theme, system font, Google Sans, custom theme, and animation experiments</string>
+    <string name="gboard_metered_downloads_title">Allow downloads on metered networks</string>
+    <string name="gboard_metered_downloads_summary">Allow known language, language ID, and speech pack downloads over mobile or other metered data</string>
+    <string name="gboard_experimental_category">Experimental engines</string>
+    <string name="gboard_experimental_summary">Uses private Gboard flags and may change or stop working after an update; restart Gboard after changing</string>
+    <string name="gboard_inline_suggestions_title">Inline multiword suggestions</string>
+    <string name="gboard_proactive_emoji_title">Proactive emoji suggestions</string>
+    <string name="gboard_tflite_title">TFLite prediction engines</string>
+    <string name="gboard_fast_access_title">Fast access bar</string>
+
+    <!-- DocumentsUI sorting -->
+    <string name="documentsui_header">Files &amp; document picker</string>
+    <string name="documentsui_header_summary">File browsing and sorting behavior</string>
+    <string name="documentsui_remember_sort_title">Remember sort order</string>
+    <string name="documentsui_remember_sort_summary">Keep a global sort order and optional per-folder overrides in the system file picker</string>
+    <string name="documentsui_remember_sort_usage">In the file picker sort menu, tap normally to update the global sort. Long-press a sort option to save it only for the current folder. A normal selection also clears that folder override.</string>
+
+    <!-- Package installer redirection -->
+    <string name="pm_installer_redirect_category">Installer redirection</string>
+    <string name="pm_installer_redirect_title">Redirect package installer</string>
+    <string name="pm_installer_redirect_summary">Send APK installation requests and optional uninstall requests to a selected app</string>
+    <string name="pm_installer_target_title">Installer</string>
+    <string name="pm_installer_system_default">System default</string>
+    <string name="pm_force_explicit_installer_title">Override explicitly selected installer</string>
+    <string name="pm_force_explicit_installer_summary">Also redirect requests hard-coded to a specific installer component</string>
+    <string name="pm_intercept_session_title">Redirect session installation confirmation</string>
+    <string name="pm_intercept_session_summary">Intercept CONFIRM_INSTALL and CONFIRM_PERMISSIONS requests</string>
+    <string name="pm_fix_session_permissions_title">Fix session APK path access</string>
+    <string name="pm_fix_session_permissions_summary">Experimental Android 14+ compatibility fix for external installers</string>
+    <string name="pm_intercept_uninstall_title">Redirect uninstall requests</string>
+    <string name="pm_intercept_uninstall_summary">Send ACTION_DELETE and ACTION_UNINSTALL_PACKAGE requests to the selected app</string>
+    <string name="pm_uninstall_follow_installer_title">Use installer for uninstall requests</string>
+    <string name="pm_uninstaller_target_title">Uninstaller</string>
+
+    <string name="pin_wireless_adb_title">Pin Wireless ADB Port</string>
+    <string name="pin_wireless_adb_summary">Forward a specific static port to the randomized Wireless Debugging TLS port, allowing easy connections like "adb connect ip:port"</string>
+    <string name="pinned_adb_port_title">Pinned ADB Port</string>
+    <string name="pinned_adb_port_summary">The static port to listen on (default 5555)</string>
+
+    <string name="qs_brightness_slider_bottom_title">Brightness Slider Below Tiles</string>
+    <string name="qs_brightness_slider_bottom_desc">Move the brightness slider below the quick settings tiles</string>
+    <string name="qqs_brightness_slider_title">Always Show Brightness Slider</string>
+    <string name="qqs_brightness_slider_desc">Show the brightness slider in collapsed quick settings and share it with expanded quick settings</string>
+
+    <string name="taskbar_scale_title">Taskbar scale</string>
+    <string name="taskbar_scale_summary">Scale the whole taskbar visually (touch targets and app insets follow)</string>
+    <string name="taskbar_icon_count_title">Dock icon count</string>
+    <string name="taskbar_icon_count_summary">How many apps the taskbar dock shows at most (restarts launcher)</string>
+    <string name="mobile_recents_title">Mobile-style recents</string>
+    <string name="mobile_recents_summary">Show recents in the classic phone carousel even while the taskbar is enabled</string>
+    <string name="grid_header_scale_title">Recents header scale (grid)</string>
+    <string name="mobile_header_scale_title">Recents header scale (mobile)</string>
+    <string name="reverse_bubble_title">Bottom bubble layout</string>
+    <string name="reverse_bubble_summary">Move the bubble icons row to the bottom and grow the expanded view from the top for one-handed use</string>
+    <string name="bubble_dismiss_position_title">Bubble dismiss position</string>
+    <string name="bubble_dismiss_bottom">Bottom</string>
+    <string name="bubble_dismiss_top">Top</string>
+    <string name="bubble_dismiss_left">Left</string>
+    <string name="bubble_dismiss_right">Right</string>
+    <string name="bubble_dismiss_center">Center</string>
+
+    <string name="biometric_bypass_title">Skip face unlock confirmation</string>
+    <string name="biometric_bypass_summary">Auto-tap confirm on the biometric prompt after a successful face unlock</string>
+    <string name="warm_tiles_title">Unlimited QS tiles</string>
+    <string name="warm_tiles_summary">Raise the limit of 3 concurrently bound third-party Quick Settings tiles</string>
+    <string name="clipboard_background_title">Clipboard in background</string>
+    <string name="clipboard_background_summary">Let selected apps read the clipboard while in the background</string>
+    <string name="clipboard_background_apps_title">Allowed apps</string>
+    <string name="clipboard_background_apps_summary">Apps that may read the clipboard in the background</string>
+    <string name="three_finger_screenshot_title">Three-finger screenshot</string>
+    <string name="three_finger_screenshot_summary">Swipe down with three fingers to take a screenshot</string>
+    <string name="pill_shot_title">Screenshot app name (PillShot)</string>
+    <string name="pill_shot_summary">Draw the source app name as a pill on screenshots</string>
+    <string name="pill_shot_only_selected_title">Only selected apps</string>
+    <string name="pill_shot_only_selected_summary">When on, stamp only the selected apps; when off, stamp all except them</string>
+    <string name="pill_shot_apps_title">Selected apps</string>
+    <string name="pill_shot_apps_summary">Apps for the PillShot allow/deny list</string>
+    <string name="empty_shade_title">Custom empty shade message</string>
+    <string name="empty_shade_summary">Replace the empty notification shade text (Android 17 only)</string>
+    <string name="empty_shade_text_title">Empty shade text</string>
+    <string name="empty_shade_text_summary">Text shown when there are no notifications</string>
+
+    <string name="launcher_appearance_section">Appearance</string>
+    <string name="launcher_grid_section">Grid</string>
+    <string name="launcher_icons_section">Icons</string>
+    <string name="launcher_dock_section">Dock and drawer</string>
+    <string name="launcher_gestures_section">Home gestures</string>
+
+    <string name="launcher_hide_statusbar_title">Hide status bar</string>
+    <string name="launcher_hide_statusbar_summary">Hide the status bar on the home screen (visible in overview)</string>
+    <string name="launcher_dark_statusbar_title">Dark status bar icons</string>
+    <string name="launcher_dark_statusbar_summary">Force dark status bar icons in the launcher</string>
+    <string name="launcher_hide_top_shadow_title">Hide top shadow</string>
+    <string name="launcher_hide_top_shadow_summary">Remove the shadow gradient at the top of the home screen</string>
+    <string name="launcher_dark_page_indicator_title">Dark page indicator</string>
+    <string name="launcher_hide_page_indicator_title">Hide page indicator</string>
+    <string name="launcher_prevent_wallpaper_dim_restart_title">Prevent wallpaper dim restart</string>
+    <string name="launcher_prevent_wallpaper_dim_restart_summary">Stop the launcher from restarting when the wallpaper dims</string>
+    <string name="launcher_search_bar_opacity_title">Search bar opacity</string>
+    <string name="launcher_drawer_opacity_title">App drawer opacity</string>
+    <string name="launcher_recents_opacity_title">Recents background opacity</string>
+    <string name="launcher_folder_opacity_title">Folder background opacity</string>
+
+    <string name="launcher_home_rows_title">Home screen rows</string>
+    <string name="launcher_home_columns_title">Home screen columns</string>
+    <string name="launcher_drawer_columns_title">App drawer columns</string>
+    <string name="launcher_drawer_row_height_title">App drawer row height</string>
+    <string name="launcher_folder_rows_title">Folder rows</string>
+    <string name="launcher_folder_columns_title">Folder columns</string>
+    <string name="launcher_free_widget_resize_title">Free widget resizing</string>
+    <string name="launcher_free_widget_resize_summary">Allow resizing any widget to any size</string>
+
+    <string name="launcher_icon_size_title">Icon size</string>
+    <string name="launcher_text_size_title">Icon text size</string>
+    <string name="launcher_notification_dot_count_title">Notification dot count</string>
+    <string name="launcher_notification_dot_count_summary">Show the number of notifications inside the dot</string>
+    <string name="launcher_notification_dot_block_title">Block notification dots</string>
+    <string name="launcher_notification_dot_block_summary">Hide notification dots for the selected apps</string>
+    <string name="launcher_notification_dot_block_list_title">Blocked apps</string>
+    <string name="launcher_notification_dot_block_list_summary">Apps whose notification dots stay hidden</string>
+    <string name="launcher_themed_icon_color_title">Custom themed icon colors</string>
+    <string name="launcher_themed_icon_color_summary">Override the default themed icon colors</string>
+    <string name="launcher_themed_fg_light_title">Icon foreground (light)</string>
+    <string name="launcher_themed_bg_light_title">Icon background (light)</string>
+    <string name="launcher_themed_fg_dark_title">Icon foreground (dark)</string>
+    <string name="launcher_themed_bg_dark_title">Icon background (dark)</string>
+    <string name="launcher_folder_color_light_title">Folder color (light)</string>
+    <string name="launcher_folder_color_dark_title">Folder color (dark)</string>
+
+    <string name="launcher_disable_dock_title">Disable dock</string>
+    <string name="launcher_disable_dock_summary">Hide the dock entirely</string>
+    <string name="launcher_dock_top_spacing_title">Dock top spacing</string>
+    <string name="launcher_dock_bottom_spacing_title">Dock bottom spacing</string>
+    <string name="launcher_hide_drawer_scrollbar_title">Hide drawer scrollbar</string>
+    <string name="launcher_disable_app_drawer_title">Disable app drawer</string>
+    <string name="launcher_disable_app_drawer_summary">Turn off the app drawer</string>
+    <string name="launcher_no_drawer_swipe_action_title">Swipe up action</string>
+    <string name="drawer_swipe_block">Do nothing</string>
+    <string name="drawer_swipe_search">Open search</string>
+
+    <string name="launcher_gesture_double_tap_title">Double tap action</string>
+    <string name="launcher_gesture_pinch_in_title">Pinch in action</string>
+    <string name="launcher_gesture_pinch_out_title">Pinch out action</string>
+    <string name="gesture_action_none">None</string>
+    <string name="gesture_action_sleep">Sleep</string>
+    <string name="gesture_action_notifications">Notifications</string>
+    <string name="gesture_action_quick_settings">Quick settings</string>
+    <string name="gesture_action_recents">Recents</string>
+    <string name="gesture_action_app_drawer">App drawer</string>
+    <string name="gesture_action_screenshot">Screenshot</string>
+    <string name="gesture_action_flashlight">Flashlight</string>
+    <string name="gesture_action_assistant">Assistant</string>
+
+    <string name="recents_meminfo_title">Memory info</string>
+    <string name="recents_meminfo_summary">Show available/total memory in the recents screen</string>
+    <string name="recents_meminfo_zram_title">Include zram</string>
+    <string name="recents_meminfo_chip_title">Chip style</string>
+    <string name="recents_app_lock_title">Lock apps in recents</string>
+    <string name="recents_app_lock_summary">Protect selected apps from being cleared by "Clear all"</string>
+    <string name="recents_locked_apps_title">Locked apps</string>
+    <string name="recents_locked_apps_summary">Apps that stay after clearing all</string>
+    <string name="launcher_freeform_gesture_title">Freeform gesture</string>
+    <string name="launcher_freeform_gesture_summary">Start freeform windows by swiping up on a recents card</string>
+    <string name="launcher_freeform_progress_title">Freeform gesture threshold</string>
+    <string name="launcher_freeform_mode_title">Freeform mode</string>
+    <string name="freeform_mode_aosp">AOSP</string>
+    <string name="freeform_mode_sunshine">Sunshine</string>
+    <string name="freeform_mode_lmo">LMO</string>
+    <string name="freeform_mode_yamf">YAMF</string>
+    <string name="freeform_mode_reyamf">ReYAMF</string>
+    <string name="freeform_mode_bubble">Bubble</string>
+
+    <string name="keyboard_space_hide_buttons_title">Hide keyboard space row</string>
+    <string name="keyboard_space_hide_buttons_summary">Remove the back chevron and keyboard switcher row under the keyboard in gesture navigation</string>
 </resources>

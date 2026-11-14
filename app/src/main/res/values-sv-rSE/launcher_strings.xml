@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Dölj genvägsmärke</string>
+    <string name="launcher_hide_shortcut_badge_summary">Dölj den lilla ikonen för källappen på genvägar</string>
+    <string name="launcher_lock_desktop">Lås startskärmen</string>
+    <string name="launcher_lock_desktop_summary">Förhindra att appar, genvägar och widgetar läggs till, tas bort eller flyttas</string>
+    <string name="launcher_hide_at_a_glance">Dölj "Med en blick"</string>
+    <string name="launcher_hide_at_a_glance_summary">Dölj widgeten "Med en blick" från startskärmen</string>
+    <string name="launcher_wallpaper_zooming">Zooma bakgrundsbild</string>
+    <string name="launcher_wallpaper_zooming_summary">Zooma bakgrundsbilden när applådan och översikten öppnas</string>
+    <string name="launcher_quick_launch">Starta första sökresultatet med Enter</string>
+    <string name="launcher_quick_launch_summary">Tryck på Enter i appsökningen för att starta det första appresultatet</string>
+    <string name="launcher_hide_drawer_apps">Dölj appar från applådan</string>
+    <string name="launcher_hide_drawer_apps_summary">Dölj valda appar från applådan och förslag</string>
+    <string name="launcher_hidden_apps">Dolda appar</string>
+    <string name="launcher_search_hidden_apps">Visa dolda appar i sökningen</string>
+    <string name="launcher_search_hidden_apps_summary">Fortsätt visa dolda appar i applådans sökresultat</string>
+    <string name="launcher_hidden_apps_search">Sök efter appar eller paketnamn</string>
+    <string name="launcher_apps_all">Alla</string>
+    <string name="launcher_apps_user">Användare</string>
+    <string name="launcher_apps_system">System</string>
+</resources>

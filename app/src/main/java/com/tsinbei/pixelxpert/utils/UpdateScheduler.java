@@ -1,0 +1,52 @@
+package com.tsinbei.pixelxpert.utils;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+
+import androidx.work.BackoffPolicy;
+import androidx.work.Configuration;
+import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
+
+import java.util.concurrent.TimeUnit;
+
+import com.tsinbei.pixelxpert.BuildConfig;
+import com.tsinbei.pixelxpert.PixelXpert;
+
+public class UpdateScheduler {
+	private static final String UPDATE_WORK_NAME = BuildConfig.APPLICATION_ID + ".UpdateSchedule";
+
+	public static void scheduleUpdates(Context context)
+	{
+		if(BuildConfig.DEBUG)
+			Log.d("Update Scheduler", "Updating update schedule...");
+
+		if(!WorkManager.isInitialized())
+		{
+			WorkManager.initialize(context, new Configuration.Builder().build());
+		}
+
+		WorkManager workManager = WorkManager.getInstance(context);
+
+		SharedPreferences prefs = PixelXpert.get().getDefaultPreferences();
+
+		boolean autoUpdate = prefs.getBoolean("AutoUpdate", true);
+
+		if(autoUpdate)
+		{
+			PeriodicWorkRequest.Builder builder = new PeriodicWorkRequest.Builder(UpdateWorker.class, 12, TimeUnit.HOURS)
+					.setBackoffCriteria(BackoffPolicy.LINEAR, 1, TimeUnit.HOURS);
+
+			workManager.enqueueUniquePeriodicWork(
+					UPDATE_WORK_NAME,
+					ExistingPeriodicWorkPolicy.UPDATE,
+					builder.build());
+		}
+		else
+		{
+			workManager.cancelUniqueWork(UPDATE_WORK_NAME);
+		}
+	}
+}

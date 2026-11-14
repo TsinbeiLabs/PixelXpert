@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Skjul genvejsmærke</string>
+    <string name="launcher_hide_shortcut_badge_summary">Skjul det lille ikon for kildeappen på genveje</string>
+    <string name="launcher_lock_desktop">Lås startskærm</string>
+    <string name="launcher_lock_desktop_summary">Forhindr tilføjelse, fjernelse eller flytning af apps, genveje og widgets</string>
+    <string name="launcher_hide_at_a_glance">Skjul "Med et blik"</string>
+    <string name="launcher_hide_at_a_glance_summary">Skjul widgetten "Med et blik" fra startskærmen</string>
+    <string name="launcher_wallpaper_zooming">Zoom baggrund</string>
+    <string name="launcher_wallpaper_zooming_summary">Zoom baggrunden, når appskuffen og oversigten åbnes</string>
+    <string name="launcher_quick_launch">Start første søgeresultat med Enter</string>
+    <string name="launcher_quick_launch_summary">Tryk på Enter i appsøgningen for at starte det første appresultat</string>
+    <string name="launcher_hide_drawer_apps">Skjul apps fra appskuffen</string>
+    <string name="launcher_hide_drawer_apps_summary">Skjul valgte apps fra appskuffen og forslag</string>
+    <string name="launcher_hidden_apps">Skjulte apps</string>
+    <string name="launcher_search_hidden_apps">Vis skjulte apps i søgning</string>
+    <string name="launcher_search_hidden_apps_summary">Vis fortsat skjulte apps i appskuffens søgeresultater</string>
+    <string name="launcher_hidden_apps_search">Søg efter apps eller pakkenavne</string>
+    <string name="launcher_apps_all">Alle</string>
+    <string name="launcher_apps_user">Bruger</string>
+    <string name="launcher_apps_system">System</string>
+</resources>

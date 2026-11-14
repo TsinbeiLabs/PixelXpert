@@ -7,4 +7,5 @@ java {
 }
 dependencies {
 	implementation(project(":annotations"))
+	implementation(libs.javapoet)
 }

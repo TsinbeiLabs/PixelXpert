@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Ẩn huy hiệu lối tắt</string>
+    <string name="launcher_hide_shortcut_badge_summary">Ẩn biểu tượng nhỏ của ứng dụng nguồn trên các lối tắt</string>
+    <string name="launcher_lock_desktop">Khóa màn hình chính</string>
+    <string name="launcher_lock_desktop_summary">Ngăn thêm, xóa hoặc di chuyển ứng dụng, lối tắt và tiện ích</string>
+    <string name="launcher_hide_at_a_glance">Ẩn "Trong nháy mắt"</string>
+    <string name="launcher_hide_at_a_glance_summary">Ẩn tiện ích "Trong nháy mắt" khỏi màn hình chính</string>
+    <string name="launcher_wallpaper_zooming">Phóng to hình nền</string>
+    <string name="launcher_wallpaper_zooming_summary">Phóng to hình nền khi mở ngăn ứng dụng và màn hình tổng quan</string>
+    <string name="launcher_quick_launch">Mở kết quả tìm kiếm đầu tiên bằng Enter</string>
+    <string name="launcher_quick_launch_summary">Nhấn Enter trong phần tìm kiếm ứng dụng để mở kết quả ứng dụng đầu tiên</string>
+    <string name="launcher_hide_drawer_apps">Ẩn ứng dụng khỏi ngăn ứng dụng</string>
+    <string name="launcher_hide_drawer_apps_summary">Ẩn các ứng dụng đã chọn khỏi ngăn ứng dụng và đề xuất</string>
+    <string name="launcher_hidden_apps">Ứng dụng đã ẩn</string>
+    <string name="launcher_search_hidden_apps">Hiện ứng dụng đã ẩn trong tìm kiếm</string>
+    <string name="launcher_search_hidden_apps_summary">Tiếp tục hiện ứng dụng đã ẩn trong kết quả tìm kiếm của ngăn ứng dụng</string>
+    <string name="launcher_hidden_apps_search">Tìm kiếm ứng dụng hoặc tên gói</string>
+    <string name="launcher_apps_all">Tất cả</string>
+    <string name="launcher_apps_user">Người dùng</string>
+    <string name="launcher_apps_system">Hệ thống</string>
+</resources>

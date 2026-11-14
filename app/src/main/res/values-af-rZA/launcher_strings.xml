@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">Versteek kortpadkenteken</string>
+    <string name="launcher_hide_shortcut_badge_summary">Versteek die klein ikoon van die bronprogram op kortpaaie</string>
+    <string name="launcher_lock_desktop">Sluit tuisskerm</string>
+    <string name="launcher_lock_desktop_summary">Verhoed dat programme, kortpaaie en legstukke bygevoeg, verwyder of geskuif word</string>
+    <string name="launcher_hide_at_a_glance">Versteek "In een oogopslag"</string>
+    <string name="launcher_hide_at_a_glance_summary">Versteek die "In een oogopslag"-legstuk van die tuisskerm</string>
+    <string name="launcher_wallpaper_zooming">Zoem muurpapier</string>
+    <string name="launcher_wallpaper_zooming_summary">Zoem die muurpapier wanneer die programlaai en oorsig oopgemaak word</string>
+    <string name="launcher_quick_launch">Begin eerste soekresultaat met Enter</string>
+    <string name="launcher_quick_launch_summary">Druk Enter in programsoektog om die eerste programresultaat te begin</string>
+    <string name="launcher_hide_drawer_apps">Versteek programme uit programlaai</string>
+    <string name="launcher_hide_drawer_apps_summary">Versteek gekose programme uit die programlaai en voorstelle</string>
+    <string name="launcher_hidden_apps">Versteekte programme</string>
+    <string name="launcher_search_hidden_apps">Wys versteekte programme in soektog</string>
+    <string name="launcher_search_hidden_apps_summary">Wys steeds versteekte programme in die programlaai se soekresultate</string>
+    <string name="launcher_hidden_apps_search">Soek programme of pakketname</string>
+    <string name="launcher_apps_all">Almal</string>
+    <string name="launcher_apps_user">Gebruiker</string>
+    <string name="launcher_apps_system">Stelsel</string>
+</resources>

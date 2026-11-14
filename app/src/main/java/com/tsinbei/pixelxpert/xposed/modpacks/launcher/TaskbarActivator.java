@@ -1,0 +1,449 @@
+package com.tsinbei.pixelxpert.xposed.modpacks.launcher;
+
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.callMethod;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getBooleanField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getIntField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.getStaticObjectField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setBooleanField;
+import static com.tsinbei.pixelxpert.xposed.utils.reflection.XposedCompat.setObjectField;
+import static com.tsinbei.pixelxpert.xposed.XPrefs.Xprefs;
+import static com.tsinbei.pixelxpert.xposed.utils.SystemUtils.idOf;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.view.ViewGroup;
+
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.regex.Pattern;
+
+import io.github.libxposed.api.XposedModuleInterface;
+import com.tsinbei.pixelxpert.xposed.XposedModPack;
+import com.tsinbei.pixelxpert.xposed.annotations.LauncherModPack;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.BaseLauncherMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.IconsMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.RecentsMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.TaskbarMod;
+import com.tsinbei.pixelxpert.xposed.modpacks.launcher.mods.TaskbarSettings;
+import com.tsinbei.pixelxpert.xposed.utils.SystemUtils;
+import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
+import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass.ReflectionConsumer;
+import com.tsinbei.pixelxpert.xposed.utils.toolkit.Logger;
+
+@LauncherModPack
+public class TaskbarActivator extends XposedModPack {
+	public static final int TASKBAR_DEFAULT = 0;
+	public static final int TASKBAR_ON = 1;
+	/**
+	 * @noinspection unused
+	 */
+	public static final int TASKBAR_OFF = 2;
+
+	private static int taskbarMode = 0;
+	private static boolean TaskbarAsRecents = false;
+	private static boolean TaskbarOnLauncher = false;
+	private static boolean GoogleRecents = false;
+	private static float taskbarHeightOverride = 1f;
+	private static float TaskbarRadiusOverride = 1f;
+
+	private boolean ThreeButtonLayoutMod;
+	private String ThreeButtonLeft, ThreeButtonCenter, ThreeButtonRight;
+	private ReflectedClass TopTaskTrackerClass;
+	private Object mCurrentTopTask;
+	private Object mDeviceProfile;
+
+	//shared state for the taskbar sub-mods (structure from Pixel Taskbar Enabler)
+	private final TaskbarSettings taskbarSettings = new TaskbarSettings();
+
+	public TaskbarActivator(Context context) {
+		super(context);
+	}
+
+	@Override
+	public void onPreferenceUpdated(String... Key) {
+
+		//3button nav has moved to taskbar since 15QPR2
+		ThreeButtonLayoutMod = Xprefs.getBoolean("ThreeButtonLayoutMod", false);
+		ThreeButtonLeft = Xprefs.getString("ThreeButtonLeft", "back").replace("recent", "recent_apps");
+		ThreeButtonCenter = Xprefs.getString("ThreeButtonCenter", "home").replace("recent", "recent_apps");
+		ThreeButtonRight = Xprefs.getString("ThreeButtonRight", "recent").replace("recent", "recent_apps");
+
+		boolean noToggle = false;
+		try
+		{
+			//noinspection ResultOfMethodCallIgnored
+			Set.of(ThreeButtonLeft, ThreeButtonCenter, ThreeButtonRight);
+		}
+		catch (Throwable ignored){
+			noToggle = true;
+			ThreeButtonLayoutMod = false;
+		}
+
+		List<String> darkToggleKeys = Arrays.asList(
+				"ThreeButtonLayoutMod",
+				"ThreeButtonLeft",
+				"ThreeButtonCenter",
+				"ThreeButtonRight");
+
+		if (Key.length > 0 && !noToggle && darkToggleKeys.contains(Key[0])) {
+			SystemUtils.doubleToggleDarkMode();
+		}
+
+
+		List<String> restartKeys = Arrays.asList(
+				"taskBarMode",
+				"TaskbarAsRecents",
+				"taskbarHeightOverride",
+				"TaskbarRadiusOverride",
+				"TaskbarHideAllAppsIcon",
+				"EnableGoogleRecents",
+				"taskbar_icon_count");
+
+		if (Key.length > 0 && restartKeys.contains(Key[0])) {
+			SystemUtils.killSelf();
+		}
+
+		taskbarSettings.update(Key);
+
+		taskbarMode = Integer.parseInt(Xprefs.getString("taskBarMode", String.valueOf(TASKBAR_DEFAULT)));
+
+		TaskbarAsRecents = Xprefs.getBoolean("TaskbarAsRecents", false);
+
+		TaskbarRadiusOverride = Xprefs.getSliderFloat("TaskbarRadiusOverride", 1f);
+
+		taskbarHeightOverride = Xprefs.getSliderFloat("taskbarHeightOverride", 100f) / 100f;
+
+		taskbarMode = Integer.parseInt(Xprefs.getString("taskBarMode", "0"));
+
+		TaskbarOnLauncher = Xprefs.getBoolean("TaskbarOnLauncher", false);
+
+		GoogleRecents = Xprefs.getBoolean("EnableGoogleRecents", false);
+	}
+
+
+	@SuppressLint("DiscouragedApi")
+	@Override
+	public void onPackageLoaded(XposedModuleInterface.PackageReadyParam PRParam) throws Throwable {
+		ReflectedClass DeviceProfileBuilderClass = ReflectedClass.of("com.android.launcher3.DeviceProfile$Builder");
+		ReflectedClass TaskbarActivityContextClass = ReflectedClass.of("com.android.launcher3.taskbar.TaskbarActivityContext");
+//		ReflectedClass LauncherModelClass = ReflectedClass.of("com.android.launcher3.LauncherModel");
+//		ReflectedClass LauncherModelFactoryClass = ReflectedClass.of("com.android.launcher3.LauncherModel_Factory");
+//		ReflectedClass BaseActivityClass = ReflectedClass.of("com.android.launcher3.BaseActivity");
+		ReflectedClass DisplayControllerInfoClass = ReflectedClass.of("com.android.launcher3.display.LauncherDisplayInfo");
+		ReflectedClass StateControllerClass = ReflectedClass.of("com.android.launcher3.taskbar.TaskbarLauncherStateController");
+		ReflectedClass AbstractNavButtonLayoutterClass = ReflectedClass.of("com.android.launcher3.taskbar.navbutton.AbstractNavButtonLayoutter");
+		ReflectedClass RecentAppsControllerClass = ReflectedClass.of("com.android.launcher3.taskbar.TaskbarRecentAppsController");
+		ReflectedClass QuickSwitchStateClass = ReflectedClass.of("com.android.launcher3.uioverrides.states.QuickSwitchState");
+		ReflectedClass TaskbarUiControllerClass = ReflectedClass.of("com.android.launcher3.taskbar.FallbackTaskbarUIController");
+		ReflectedClass TaskbarProfileClass = ReflectedClass.of("com.android.launcher3.deviceprofile.TaskbarProfile");
+		ReflectedClass TaskbarOverlayDragLayerClass = ReflectedClass.of("com.android.launcher3.taskbar.overlay.TaskbarOverlayDragLayer");
+		ReflectedClass KeyboardQuickSwitchControllerClass = ReflectedClass.of("com.android.launcher3.taskbar.KeyboardQuickSwitchController");
+		ReflectedClass TaskbarViewClass = ReflectedClass.of("com.android.launcher3.taskbar.TaskbarView");
+		TopTaskTrackerClass = ReflectedClass.of("com.android.quickstep.TopTaskTracker");
+		ReflectedClass DevicePropertiesClass = ReflectedClass.ofIfPossible("com.android.launcher3.deviceprofile.DeviceProperties");
+		ReflectedClass TaskbarConfigurationClass = ReflectedClass.ofIfPossible("com.android.launcher3.deviceprofile.TaskbarConfiguration");
+
+		//3 button nav order on A15+
+		AbstractNavButtonLayoutterClass
+				.afterConstruction()
+				.run(param -> {
+					if(!ThreeButtonLayoutMod) return;
+
+					ViewGroup navButtonContainer = (ViewGroup) getObjectField(param.thisObject, "navButtonContainer");
+
+					setObjectField(param.thisObject, "backButton", navButtonContainer.findViewById(idOf(ThreeButtonLeft)));
+					setObjectField(param.thisObject, "homeButton", navButtonContainer.findViewById(idOf( ThreeButtonCenter)));
+					setObjectField(param.thisObject, "recentsButton", navButtonContainer.findViewById(idOf( ThreeButtonRight)));
+				});
+
+		//enable taskbar
+		DisplayControllerInfoClass
+				.before("isTablet")
+				.run(param -> {
+					if (taskbarMode == TASKBAR_DEFAULT) return;
+
+					param.setResult(taskbarMode == TASKBAR_ON);
+				});
+
+		//enable taskbar
+		TaskbarConfigurationClass
+				.afterConstruction()
+				.run(param -> {
+					if(taskbarMode == TASKBAR_ON) {
+						setObjectField(param.thisObject, "isTaskbarPresent", true);
+					}
+				});
+
+		//enable taskbar
+		DevicePropertiesClass
+				.afterConstruction()
+				.run(param -> {
+					if(taskbarMode == TASKBAR_ON) {
+						trySetBooleanField(param.thisObject, "isPhone", false);
+						trySetBooleanField(param.thisObject, "isTablet", true); //A15 and below
+						trySetBooleanField(param.thisObject, "isLargeScreen", true); //A17+
+						trySetBooleanField(param.thisObject, "isTaskbarPresent", true);
+					}
+				});
+
+
+		//workaround of taskbar recents overflow fails to capture touch events for no known reason
+		TaskbarOverlayDragLayerClass
+				.findFirstInstance(instance ->
+				{
+					if(!TaskbarAsRecents) return;
+
+					ReflectedClass.of(
+									getObjectField(instance, "mTaskbarInsetsComputer").getClass())
+							.before("onComputeInternalInsets")
+							.run(param -> {
+								//doesn't seem to reach its end at all. may for desktop mode?
+//								onComputeInternalInsets(instance, param.args[0]);
+								param.setResult(null);
+							});
+				});
+
+		//workaround of taskbar recents overflow falsely showing "no recent items"
+		KeyboardQuickSwitchControllerClass
+				.before("processLoadedTasks")
+				.run(param -> {
+							 if(TaskbarAsRecents)
+						        param.args[0] = false;
+				});
+
+		//temp workaround of launcher crash bug on split tasks
+		TaskbarViewClass
+				.before("updateRecents")
+				.run(param -> {
+					if (param.args.length < 2 || !(param.args[1] instanceof List)) return;
+					@SuppressWarnings("unchecked")
+					List<Object> recents = (List<Object>) param.args[1];
+					param.args[1] = recents.stream().filter(t -> !t.getClass().getName().contains("Split")).toList();
+				});
+
+		KeyboardQuickSwitchControllerClass
+				.before("openQuickSwitchView")
+				.run(param -> {
+					//A17 has two overloads: openQuickSwitchView() and openQuickSwitchView(Set, boolean).
+					//The exclusion set is the first parameter of the latter.
+					if (param.args.length == 0 || !(param.args[0] instanceof Set)) return;
+					@SuppressWarnings("unchecked")
+					Set<Object> exclusionList = (Set<Object>) param.args[0];
+					if(notInHomeScreen())
+					{
+						exclusionList.add(callMethod(mCurrentTopTask, "getTaskId"));
+					}
+				});
+
+		//show on home screen
+		StateControllerClass
+				.before("isInLauncher")
+				.run(param -> {
+					if (TaskbarOnLauncher) {
+						param.setResult(false);
+					}
+				});
+
+		//show on home screen
+		QuickSwitchStateClass
+				.before("isTaskbarStashed")
+				.run(param -> {
+					if (TaskbarOnLauncher) {
+						param.setResult(false);
+					}
+				});
+
+		//show on home screen
+		TaskbarUiControllerClass
+				.before("isIn3pHomeOrRecents")
+				.run(param -> {
+					if (TaskbarOnLauncher) {
+						param.setResult(false);
+					}
+				});
+
+		//region taskbar corner radius
+		ReflectionConsumer cornerRadiusConsumer = param -> {
+			if (taskbarMode == TASKBAR_ON && TaskbarRadiusOverride != 1f) {
+				param.setResult(
+						Math.round((int) param.getResult() * TaskbarRadiusOverride));
+			}
+		};
+
+		TaskbarActivityContextClass.after("getLeftCornerRadius").run(cornerRadiusConsumer);
+		TaskbarActivityContextClass.after("getRightCornerRadius").run(cornerRadiusConsumer);
+		//endregion
+
+		//region recentbar
+		DeviceProfileBuilderClass
+				.after("build")
+				.run(param -> {
+					if (taskbarMode == TASKBAR_DEFAULT) return;
+
+					boolean taskbarEnabled = taskbarMode == TASKBAR_ON;
+
+					if (taskbarEnabled) {
+						mDeviceProfile = param.getResult();
+					}
+
+				});
+
+		TaskbarProfileClass
+				.after("getHeight")
+				.run(param -> {
+					if(taskbarMode == TASKBAR_ON && taskbarHeightOverride != 1f)
+					{
+						param.setResult(Math.round((int)param.getResult() * taskbarHeightOverride));
+					}
+				});
+
+		RecentAppsControllerClass
+				.afterConstruction()
+				.run(param -> {
+					if (GoogleRecents || (taskbarMode == TASKBAR_ON && TaskbarAsRecents)) { //on 16+ we use the builtin recent tasks
+						//noinspection OptionalGetWithoutIsPresent
+						RecentAppsControllerClass.findMethods(
+								Pattern.compile("setCanShowRecentApps")).stream().findFirst().get()
+								.invoke(param.thisObject, true);
+					}
+				});
+
+		@SuppressWarnings("OptionalGetWithoutIsPresent") Method reloadRecentTasksIfNeeded = RecentAppsControllerClass
+				           .findMethods(Pattern.compile(".*reloadRecentTasksIfNeeded.*")).stream().findFirst().get();
+
+		RecentAppsControllerClass.before("isReplacingPredictions").run(param -> {
+			if(TaskbarAsRecents && taskbarMode == TASKBAR_ON)
+				param.setResult(true);
+		});
+		RecentAppsControllerClass
+				.before("onRecentsOrHotseatChanged")
+				.run(param -> {
+					if(taskbarMode == TASKBAR_ON && TaskbarAsRecents) {
+						List<?> allRecentTasks = (List<?>) getObjectField(param.thisObject, "allRecentTasks");
+
+						if (allRecentTasks.size() < 2) //there's nothing to show as recent
+						{
+							return;
+						}
+
+						List<?> shownHotseatItems = (List<?>) getObjectField(param.thisObject, "shownHotseatItems");
+						if (!shownHotseatItems.isEmpty()) {
+							shownHotseatItems.clear();
+						}
+
+						mCurrentTopTask = getCurrentTopTask();
+
+						List<?> newShownTasks = allRecentTasks.subList(Math.max(0, allRecentTasks.size() - getNumShownHotseatIcons() - 1), Math.max(allRecentTasks.size(), 0));
+
+						if(notInHomeScreen()) //hiding running task from taskbar
+						{
+							newShownTasks = newShownTasks.subList(0, Math.max(0, newShownTasks.size() - 1));
+						}
+
+						List<?> oldShownTasks = (List<?>) getObjectField(param.thisObject, "shownTasks");
+
+						if(newShownTasks.equals(oldShownTasks))
+						{
+							param.setResult(false);
+							return;
+						}
+
+						setObjectField(param.thisObject, "shownTasks", newShownTasks);
+
+						try { //16qpr3
+							callMethod(param.thisObject, "fetchIcons", false);
+						}
+						catch (Throwable ignored) { //16qpr2
+							callMethod(param.thisObject, "fetchIcons");
+						}
+
+						setObjectField(param.thisObject, "needsRecentsTasksReload", true);
+
+						reloadRecentTasksIfNeeded.invoke(param.thisObject, param.thisObject);
+
+						param.setResult(true);
+					}
+				});
+
+		//taskbar sub-mods (structure adapted from Pixel Taskbar Enabler by beyman-dev, GPLv3)
+		List<BaseLauncherMod> mods = Arrays.asList(
+				new TaskbarMod(this, mContext, taskbarSettings),
+				new RecentsMod(this, mContext, taskbarSettings),
+				new IconsMod(this, mContext, taskbarSettings)
+		);
+
+		for (BaseLauncherMod mod : mods) {
+			try {
+				mod.applyHooks();
+			} catch (Throwable t) {
+				Logger.log("TaskbarActivator: " + mod.getClass().getSimpleName() + " failed to apply", t);
+			}
+		}
+	}
+
+	private static void trySetBooleanField(Object target, String field, boolean value) {
+		try {
+			setBooleanField(target, field, value);
+		} catch (Throwable ignored) {
+		}
+	}
+
+	public void setDeviceProfile(Object deviceProfile) {
+		this.mDeviceProfile = deviceProfile;
+	}
+
+	public Object getDeviceProfile() {
+		return mDeviceProfile;
+	}
+
+	public int getNumShownHotseatIcons()
+	{
+		if (mDeviceProfile == null) return taskbarSettings.taskbarIconCount;
+		Object hotSeatProfile;
+		try {
+			hotSeatProfile = getObjectField(mDeviceProfile, "mHotseatProfile");
+		} catch (Throwable t) { //field was renamed in newer launcher versions
+			try {
+				hotSeatProfile = getObjectField(mDeviceProfile, "hotseatProfile");
+			} catch (Throwable t2) {
+				return taskbarSettings.taskbarIconCount;
+			}
+		}
+		try {
+			return getIntField(hotSeatProfile, "numShownIcons");
+		} catch (Throwable t) {
+			return taskbarSettings.taskbarIconCount;
+		}
+	}
+
+	public Object getCurrentTopTask()
+	{
+		Object INSTANCE = getStaticObjectField(TopTaskTrackerClass.getClazz(), "INSTANCE");
+		Object topTaskTracker = callMethod(INSTANCE, "get", mContext);
+		return callMethod(topTaskTracker, "getCachedTopTask", true, mContext.getDisplay().getDisplayId());
+	}
+
+	public boolean notInHomeScreen()
+	{
+		if (mCurrentTopTask == null) return false;
+		return !((boolean) callMethod(mCurrentTopTask, "isHomeTask"));
+	}
+	@SuppressWarnings("unused")
+	public void onComputeInternalInsets(Object thisObject, Object internalInsetsInfo) {
+		Object mOverlayController = getObjectField(getObjectField(thisObject, "mContainer"), "mOverlayController");
+		Object mOverlayContext = getObjectField(mOverlayController, "mOverlayContext");
+		if (mOverlayContext == null) return;
+		Object mDragController = getObjectField(mOverlayContext, "mDragController");
+		Object mTaskbarContext = getObjectField(mOverlayController, "mTaskbarContext");
+		Object mControllers = getObjectField(mTaskbarContext, "mControllers");
+		Object taskbarDragController = getObjectField(mControllers, "taskbarDragController");
+		if ((mOverlayContext == null || !getBooleanField(mDragController, "mIsSystemDragInProgress")) && !getBooleanField(taskbarDragController, "mIsSystemDragInProgress")) {
+			return;
+		}
+		callMethod(getIntField(internalInsetsInfo,"touchableRegion"), "setEmpty");
+		callMethod(internalInsetsInfo, "setTouchableInsets", 3); //from android.view.ViewTreeObserver
+	}
+}

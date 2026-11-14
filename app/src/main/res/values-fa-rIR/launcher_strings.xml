@@ -1,0 +1,21 @@
+<resources>
+    <string name="launcher_hide_shortcut_badge">پنهان کردن نشان میانبر</string>
+    <string name="launcher_hide_shortcut_badge_summary">پنهان کردن نماد کوچک برنامه مبدأ روی میانبرها</string>
+    <string name="launcher_lock_desktop">قفل کردن صفحه اصلی</string>
+    <string name="launcher_lock_desktop_summary">جلوگیری از افزودن، حذف یا جابه‌جایی برنامه‌ها، میانبرها و ویجت‌ها</string>
+    <string name="launcher_hide_at_a_glance">پنهان کردن «در یک نگاه»</string>
+    <string name="launcher_hide_at_a_glance_summary">پنهان کردن ویجت «در یک نگاه» از صفحه اصلی</string>
+    <string name="launcher_wallpaper_zooming">بزرگ‌نمایی کاغذدیواری</string>
+    <string name="launcher_wallpaper_zooming_summary">بزرگ‌نمایی کاغذدیواری هنگام باز کردن کشوی برنامه‌ها و نمای کلی</string>
+    <string name="launcher_quick_launch">اجرای اولین نتیجه جستجو با Enter</string>
+    <string name="launcher_quick_launch_summary">برای اجرای اولین نتیجه برنامه، در جستجوی برنامه‌ها Enter را فشار دهید</string>
+    <string name="launcher_hide_drawer_apps">پنهان کردن برنامه‌ها از کشوی برنامه‌ها</string>
+    <string name="launcher_hide_drawer_apps_summary">پنهان کردن برنامه‌های انتخاب‌شده از کشوی برنامه‌ها و پیشنهادها</string>
+    <string name="launcher_hidden_apps">برنامه‌های پنهان</string>
+    <string name="launcher_search_hidden_apps">نمایش برنامه‌های پنهان در جستجو</string>
+    <string name="launcher_search_hidden_apps_summary">ادامه نمایش برنامه‌های پنهان در نتایج جستجوی کشوی برنامه‌ها</string>
+    <string name="launcher_hidden_apps_search">جستجوی برنامه‌ها یا نام بسته‌ها</string>
+    <string name="launcher_apps_all">همه</string>
+    <string name="launcher_apps_user">کاربر</string>
+    <string name="launcher_apps_system">سیستم</string>
+</resources>
