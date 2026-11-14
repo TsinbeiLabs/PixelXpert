@@ -1,0 +1,60 @@
+name: Make Stable Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Source Code Download
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: JDK 21 Setup
+        uses: actions/setup-java@v5.2.0
+        with:
+          java-version: '21'
+          distribution: 'jetbrains'
+          cache: gradle
+
+      - name: Signature files preparation
+        shell: bash
+        run: |
+          if [ -n "${{ secrets.KEYSTORE_BASE64 }}" ]; then
+            echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> ReleaseKey.properties
+            echo keyAlias='${{ secrets.KEY_ALIAS }}' >> ReleaseKey.properties
+            echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> ReleaseKey.properties
+            echo storeFile='${{ github.workspace }}/ReleaseKey.jks' >> ReleaseKey.properties
+            echo '${{ secrets.KEYSTORE_BASE64 }}' | base64 --decode > '${{ github.workspace }}/ReleaseKey.jks'
+          fi
+
+      - name: Gradlew Permissions
+        run: chmod +x gradlew
+
+      - name: Stable Build
+        run: ./gradlew buildStable -Pchannel=stable --no-configuration-cache
+
+      - name: Upload Stable Artifact
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: PixelXpert-${{ github.ref_name }}
+          path: output/PixelXpert.zip
+
+      - name: Stable Release
+        uses: ncipollo/release-action@v1.21.0
+        with:
+          tag: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          prerelease: false
+          draft: false
+          allowUpdates: false
+          artifacts: output/PixelXpert.zip
+          body: 'PixelXpert 6.0.0 stable release.'
