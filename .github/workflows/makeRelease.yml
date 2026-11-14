@@ -58,3 +58,16 @@ jobs:
           allowUpdates: false
           artifacts: output/PixelXpert.zip
           body: 'PixelXpert 6.0.0 stable release.'
+
+      - name: Commit stable metadata back
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add MagiskModBase/module.prop MagiskModuleUpdate_Full.json MagiskModuleUpdate_Xposed.json latestStable.json
+          if git diff --cached --quiet; then
+            echo "No stable metadata changes."
+          else
+            git commit -m "Version update: Publish ${{ github.ref_name }} metadata [skip ci]"
+            git push origin HEAD:stable
+          fi
