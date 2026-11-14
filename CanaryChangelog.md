@@ -1,6 +1,7 @@
-**canary-545**
+**canary-546**
 
 - Added installed AOSP Perfect Icons as a Launcher icon source, with exact activity/package mappings, native adaptive color layers, foreground-derived themed masks, per-app exclusions and cache restoration
+- Fixed in-app module updates by detaching the complete module and APK installation transaction from the app process before Package Manager replaces it
 - Adapted NativeComplements status-bar vertical offset and native rotation suggestion icon styling/scaling
 - Added opt-in notification body-click AOSP freeform windows for background apps, with foreground/freeform task filtering and inset-aware window bounds shared with the launcher gesture
 - Enable AOSP freeform support for module freeform entry points and restore the native capability when they are disabled

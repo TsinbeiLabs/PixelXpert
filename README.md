@@ -114,6 +114,8 @@ Requires the Android SDK and a JDK 21+. Release builds additionally need `Releas
 - [TsinbeiLabs/AOSP-Perfect-Icons](https://github.com/TsinbeiLabs/AOSP-Perfect-Icons) by Hsukqi Lee and [elliana-wt/Pixel-Launcher-Icons](https://github.com/elliana-wt/Pixel-Launcher-Icons) for the separately installed adaptive icon pack and artwork used by the Launcher integration (GPL-3.0)
 - [RichardLuo0/global-icon-pack-android](https://github.com/RichardLuo0/global-icon-pack-android) for Launcher IconProvider overload and activity-component handling reference during the AOSP Perfect Icons integration, and for the device-side icon replacement used in compatibility investigation
 
+The in-app updater stages the downloaded module and APK, then starts one detached root transaction. The module installation completes before the APK replacement can terminate the running PixelXpert process.
+
 **UI design:**
 
 - @Mahmud0808

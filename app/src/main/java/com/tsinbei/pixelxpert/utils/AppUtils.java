@@ -11,6 +11,7 @@ import com.topjohnwu.superuser.Shell;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.regex.Pattern;
@@ -130,6 +131,7 @@ public class AppUtils {
 		File tempFile = null;
 		File unzippedFile = null;
 		File apkFile = null;
+		File installerFile = null;
 		try {
 			//copy it to somewhere under our control
 			tempFile = File.createTempFile("doubleZ", ".zip");
@@ -147,12 +149,6 @@ public class AppUtils {
 				}
 			}
 
-			if (!Shell.cmd(String.format("if command -v magisk >/dev/null 2>&1; then magisk --install-module '%s'; " +
-					"elif command -v ksud >/dev/null 2>&1; then ksud module install '%s'; else exit 1; fi",
-					unzippedFile.getAbsolutePath(), unzippedFile.getAbsolutePath())).exec().isSuccess()) {
-				return false;
-			}
-
 			try (ZipFile moduleZip = new ZipFile(unzippedFile)) {
 				ZipEntry apkEntry = moduleZip.getEntry(MODULE_APK_PATH);
 				if (apkEntry == null) {
@@ -167,22 +163,47 @@ public class AppUtils {
 				}
 			}
 
-			String installPath = "/data/local/tmp/PixelXpert-update.apk";
-			// PackageInstaller cannot read the root-only module directory or our private cache.
-			// Stage the APK in a system-readable directory before asking Package Manager to replace it.
-			if (!Shell.cmd(String.format("cp '%s' '%s' && chmod 0644 '%s' && pm install -r -d --user 0 '%s'; result=$?; rm -f '%s'; exit $result",
-					apkFile.getAbsolutePath(), installPath, installPath, installPath, installPath)).exec().isSuccess()) {
-				return false;
-			}
-
-			return true;
+			// The current app must not own the install chain. pm install replaces this
+			// package and kills its process before the module installer can finish.
+			// Stage all inputs in a root-readable location, then hand the complete
+			// transaction to a detached root shell before returning to the UI.
+			String token = "px-update-" + System.currentTimeMillis();
+			String root = "/data/local/tmp/" + token;
+			String modulePath = root + ".zip", apkPath = root + ".apk", scriptPath = root + ".sh";
+			installerFile = File.createTempFile(token, ".sh");
+			writeInstaller(installerFile, modulePath, apkPath, scriptPath);
+			String stage = "cp " + quote(unzippedFile.getAbsolutePath()) + " " + quote(modulePath)
+					+ " && cp " + quote(apkFile.getAbsolutePath()) + " " + quote(apkPath)
+					+ " && cp " + quote(installerFile.getAbsolutePath()) + " " + quote(scriptPath)
+					+ " && chmod 0700 " + quote(scriptPath) + " && nohup sh " + quote(scriptPath) + " >/dev/null 2>&1 </dev/null &";
+			return Shell.cmd(stage).exec().isSuccess();
 		} catch (Exception e) {
 			Log.e("PixelXpert Installer", "PixelXpert zip install error: ", e);
 			return false;
 		} finally {
 			if (apkFile != null) apkFile.delete();
+			if (installerFile != null) installerFile.delete();
 			if (unzippedFile != null && !unzippedFile.equals(tempFile)) unzippedFile.delete();
 			if (tempFile != null) tempFile.delete();
 		}
+	}
+
+	private static void writeInstaller(File file, String modulePath, String apkPath, String scriptPath) throws IOException {
+		StringBuilder script = new StringBuilder("#!/system/bin/sh\n")
+				.append("MODULE=").append(quote(modulePath)).append("\n")
+				.append("APK=").append(quote(apkPath)).append("\n")
+				.append("SCRIPT=").append(quote(scriptPath)).append("\n")
+				.append("ok=0\n")
+				.append("if command -v magisk >/dev/null 2>&1; then magisk --install-module \"$MODULE\" && ok=1; ")
+				.append("elif command -v ksud >/dev/null 2>&1; then ksud module install \"$MODULE\" && ok=1; fi\n")
+				.append("if [ \"$ok\" = 1 ]; then cp \"$APK\" /data/local/tmp/PixelXpert-update.apk && chmod 0644 /data/local/tmp/PixelXpert-update.apk && pm install -r -d --user 0 /data/local/tmp/PixelXpert-update.apk; fi\n")
+				.append("rm -f \"$MODULE\" \"$APK\" \"$SCRIPT\" /data/local/tmp/PixelXpert-update.apk\n");
+		try (FileOutputStream output = new FileOutputStream(file)) {
+			output.write(script.toString().getBytes(StandardCharsets.UTF_8));
+		}
+	}
+
+	private static String quote(String value) {
+		return "'" + value.replace("'", "'\\''") + "'";
 	}
 }
