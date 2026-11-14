@@ -1,5 +1,6 @@
-**canary-546**
+**canary-547**
 
+- Fixed Gboard clipboard history limits and age filtering on Android 17 Gboard 18.6
 - Added installed AOSP Perfect Icons as a Launcher icon source, with exact activity/package mappings, native adaptive color layers, foreground-derived themed masks, per-app exclusions and cache restoration
 - Fixed in-app module updates by detaching the complete module and APK installation transaction from the app process before Package Manager replaces it
 - Adapted NativeComplements status-bar vertical offset and native rotation suggestion icon styling/scaling

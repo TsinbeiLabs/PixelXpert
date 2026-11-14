@@ -303,18 +303,20 @@ public class GboardMods extends XposedModPack {
 		String selection = args[2] instanceof String ? (String) args[2] : "";
 		String[] selectionArgs = args[3] instanceof String[] ? (String[]) args[3] : null;
 		String sortOrder = args[4] instanceof String ? (String) args[4] : null;
-		int timestampIndex = selection.toLowerCase(Locale.ROOT).indexOf("timestamp >= ?");
-		if (timestampIndex >= 0 && selectionArgs != null) {
+		java.util.regex.Matcher timestamp = Pattern.compile("(?i)\\btimestamp\\s*(?:>=|>)\\s*\\?").matcher(selection);
+		if (timestamp.find() && selectionArgs != null) {
 			int argumentIndex = 0;
-			for (int i = 0; i < timestampIndex; i++) if (selection.charAt(i) == '?') argumentIndex++;
+			for (int i = 0; i < timestamp.start(); i++) if (selection.charAt(i) == '?') argumentIndex++;
 			if (argumentIndex < selectionArgs.length) {
 				long after = clipboardDuration < 0 ? 0 : System.currentTimeMillis() - clipboardDuration;
 				selectionArgs[argumentIndex] = Long.toString(after);
 				args[3] = selectionArgs;
 			}
 		}
-		if (sortOrder != null && sortOrder.matches("(?i).*\\blimit\\s+\\d+.*")) {
-			args[4] = sortOrder.replaceFirst("(?i)limit\\s+\\d+", "limit " + clipboardSize);
+		if (sortOrder != null && sortOrder.matches("(?i).*\\blimit\\s+(?:\\d+|%d).*")) {
+			args[4] = sortOrder.replaceFirst("(?i)limit\\s+(?:\\d+|%d)", "limit " + clipboardSize);
+		} else if (sortOrder != null && sortOrder.toLowerCase(Locale.ROOT).contains("timestamp")) {
+			args[4] = sortOrder + " limit " + clipboardSize;
 		}
 	}
 
