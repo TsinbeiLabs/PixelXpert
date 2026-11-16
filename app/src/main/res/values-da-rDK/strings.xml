@@ -518,7 +518,7 @@
     <string name="skip_media_next">Mediekontrol - Skip</string>
     <string name="skip_media_prev">Mediekontrol - Forrige</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Ikon pakker</string>
+    <string name="icon_packs_title">Ikonpakker til systemets brugerflade</string>
     <string name="icon_pack_selection_title">Vælg pakke</string>
     <string name="icon_pack_customization_title">Tilpas ikoner</string>
     <string name="menu_more_info">Mere info</string>

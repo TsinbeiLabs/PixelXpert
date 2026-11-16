@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Desplazamiento vertical de la barra de estado (dp)</string>
+    <string name="status_bar_content_offset_summary">Mueve el contenido sin cambiar la altura. Cero restaura la posición original.</string>
+    <string name="rotation_suggestion_simple_icon">Icono sencillo de sugerencia de rotación</string>
+    <string name="rotation_suggestion_style_summary">Personaliza el botón nativo manteniendo las sugerencias, pulsaciones y tiempos de espera del sistema.</string>
+    <string name="rotation_suggestion_scale">Tamaño del icono de rotación (%)</string>
+    <string name="notification_freeform">Abrir en ventanas las apps de las notificaciones</string>
+    <string name="notification_freeform_summary">Pulsar el contenido abre ventanas libres AOSP. Las apps en primer plano, llamadas, alarmas y notificaciones a pantalla completa mantienen su comportamiento. Requiere compatibilidad con ventanas libres.</string>
+    <string name="launcher_icons_title">Sustitución de iconos del lanzador</string>
+    <string name="launcher_icons_enable">Usar los iconos seleccionados</string>
+    <string name="launcher_icons_source">Origen de los iconos</string>
+    <string name="launcher_icons_source_imported">Biblioteca ZIP / MTZ importada</string>
+    <string name="launcher_icons_pack_unavailable">Instala o actualiza AOSP Perfect Icons a una versión con su índice de iconos adaptativos.</string>
+    <string name="launcher_icons_import">Importar archivo de iconos</string>
+    <string name="launcher_icons_import_summary">ZIP o MTZ con carpetas nombradas por paquete que contengan 0.png (fondo) y 1.png (primer plano). Elige un tema si hay varios. No se incluyen imágenes de iconos.</string>
+    <string name="launcher_icons_originals">Conservar iconos originales de las apps seleccionadas</string>
+    <string name="launcher_icons_originals_summary">Las apps excluidas conservan sus iconos nativos, incluidos los temáticos.</string>
+    <string name="launcher_icons_clear">Restaurar la biblioteca original</string>
+    <string name="launcher_icons_choose_source">Elegir carpeta de iconos</string>
+    <string name="launcher_icons_imported">Se han importado %1$d iconos. La biblioteca está seleccionada; activa la sustitución para aplicarla.</string>
+    <string name="system_icon_packs_summary">Sustituir recursos gráficos de la interfaz del sistema y Ajustes con paquetes compatibles</string>
+    <string name="launcher_icon_overrides_summary">Sustituir iconos de apps con AOSP Perfect Icons o paquetes ZIP/MTZ importados</string>
+    <string name="qs_auto_brightness_title">Acceso directo a brillo adaptativo</string>
+    <string name="qs_auto_brightness_desc">Añadir un interruptor de brillo adaptativo junto al control de brillo</string>
+    <string name="sb_portrait_padding_title">Márgenes de la barra de estado en vertical</string>
+    <string name="sb_landscape_padding_title">Márgenes de la barra de estado en horizontal</string>
+</resources>

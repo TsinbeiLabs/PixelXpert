@@ -518,7 +518,7 @@
     <string name="skip_media_next">التحكم في الوسائط - تخطي</string>
     <string name="skip_media_prev">التحكم في الوسائط - السابق</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">حزم الأيقونات</string>
+    <string name="icon_packs_title">حزم أيقونات واجهة النظام</string>
     <string name="icon_pack_selection_title">اختر حزمة</string>
     <string name="icon_pack_customization_title">تخصيص الأيقونات</string>
     <string name="menu_more_info">المزيد من المعلومات</string>

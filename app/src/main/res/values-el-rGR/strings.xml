@@ -518,7 +518,7 @@
     <string name="skip_media_next">Έλεγχος μέσων - Παράλειψη</string>
     <string name="skip_media_prev">Έλεγχος πολυμέσων - Προηγούμενο</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Πακέτα εικονιδίων</string>
+    <string name="icon_packs_title">Πακέτα εικονιδίων συστήματος</string>
     <string name="icon_pack_selection_title">Επιλογή πακέτου</string>
     <string name="icon_pack_customization_title">Προσαρμογή εικονιδίων</string>
     <string name="menu_more_info">Περισσότερες πληροφορίες</string>

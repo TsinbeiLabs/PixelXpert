@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Svislý posun obsahu stavového řádku (dp)</string>
+    <string name="status_bar_content_offset_summary">Posune obsah bez změny výšky. Nula obnoví původní polohu.</string>
+    <string name="rotation_suggestion_simple_icon">Jednoduchá ikona návrhu otočení</string>
+    <string name="rotation_suggestion_style_summary">Upraví systémové tlačítko při zachování návrhů otočení, kliknutí a časových limitů.</string>
+    <string name="rotation_suggestion_scale">Velikost ikony otočení (%)</string>
+    <string name="notification_freeform">Otevírat aplikace z oznámení v okně</string>
+    <string name="notification_freeform_summary">Klepnutí na obsah otevře volné okno AOSP. Aplikace v popředí, hovory, budíky a celoobrazovková oznámení si zachovají původní chování. Vyžaduje podporu volných oken.</string>
+    <string name="launcher_icons_title">Nahrazení ikon spouštěče</string>
+    <string name="launcher_icons_enable">Použít vybrané ikony</string>
+    <string name="launcher_icons_source">Zdroj ikon</string>
+    <string name="launcher_icons_source_imported">Importovaná knihovna ZIP / MTZ</string>
+    <string name="launcher_icons_pack_unavailable">Nainstalujte nebo aktualizujte AOSP Perfect Icons na verzi s indexem adaptivních ikon.</string>
+    <string name="launcher_icons_import">Importovat archiv ikon</string>
+    <string name="launcher_icons_import_summary">ZIP nebo MTZ se složkami podle názvů balíčků obsahujícími 0.png (pozadí) a 1.png (popředí). Je-li motivů více, vyberte jeden. Obrázky ikon nejsou přibaleny.</string>
+    <string name="launcher_icons_originals">Ponechat původní ikony vybraných aplikací</string>
+    <string name="launcher_icons_originals_summary">Vyloučené aplikace si ponechají původní ikony včetně tematických.</string>
+    <string name="launcher_icons_clear">Obnovit původní knihovnu</string>
+    <string name="launcher_icons_choose_source">Vybrat složku ikon</string>
+    <string name="launcher_icons_imported">Importováno ikon: %1$d. Knihovna je vybrána; pro použití zapněte nahrazení ikon.</string>
+    <string name="system_icon_packs_summary">Nahradit grafiku systémového rozhraní a nastavení kompatibilními balíčky</string>
+    <string name="launcher_icon_overrides_summary">Nahradit ikony aplikací pomocí AOSP Perfect Icons nebo importovaných ZIP/MTZ</string>
+    <string name="qs_auto_brightness_title">Zkratka adaptivního jasu</string>
+    <string name="qs_auto_brightness_desc">Přidat přepínač adaptivního jasu vedle posuvníku</string>
+    <string name="sb_portrait_padding_title">Odsazení stavového řádku na výšku</string>
+    <string name="sb_landscape_padding_title">Odsazení stavového řádku na šířku</string>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">狀態列內容垂直位移（dp）</string>
+    <string name="status_bar_content_offset_summary">移動狀態列內容而不改變高度。設為零可還原原始位置。</string>
+    <string name="rotation_suggestion_simple_icon">簡潔的旋轉建議圖示</string>
+    <string name="rotation_suggestion_style_summary">自訂原生按鈕外觀，保留系統旋轉建議、點擊與逾時行為。</string>
+    <string name="rotation_suggestion_scale">旋轉建議圖示大小（%）</string>
+    <string name="notification_freeform">以視窗開啟背景通知應用程式</string>
+    <string name="notification_freeform_summary">點擊通知內容可開啟 AOSP 自由視窗。前景應用程式、來電、鬧鐘與全螢幕通知保留原生行為。需要自由視窗支援。</string>
+    <string name="launcher_icons_title">桌面圖示覆寫</string>
+    <string name="launcher_icons_enable">使用所選圖示</string>
+    <string name="launcher_icons_source">圖示來源</string>
+    <string name="launcher_icons_source_imported">匯入的 ZIP / MTZ 圖示庫</string>
+    <string name="launcher_icons_pack_unavailable">請安裝或更新 AOSP Perfect Icons 至包含自適應圖示索引的版本。</string>
+    <string name="launcher_icons_import">匯入圖示封存檔</string>
+    <string name="launcher_icons_import_summary">ZIP 或 MTZ 中以套件名稱命名的資料夾須包含 0.png（背景）與 1.png（前景）。如有多個主題，可選擇其一。本模組未內附圖示素材。</string>
+    <string name="launcher_icons_originals">為所選應用程式保留原始圖示</string>
+    <string name="launcher_icons_originals_summary">排除的應用程式保留原生圖示，包含主題圖示。</string>
+    <string name="launcher_icons_clear">還原原始圖示庫</string>
+    <string name="launcher_icons_choose_source">選擇圖示目錄</string>
+    <string name="launcher_icons_imported">已匯入 %1$d 個圖示並選取該圖示庫；啟用圖示覆寫即可套用。</string>
+    <string name="system_icon_packs_summary">使用相容圖示包取代系統介面與設定中的圖形資源</string>
+    <string name="launcher_icon_overrides_summary">使用 AOSP Perfect Icons 或匯入的 ZIP/MTZ 圖示包取代桌面應用程式圖示</string>
+    <string name="qs_auto_brightness_title">自動調整亮度捷徑</string>
+    <string name="qs_auto_brightness_desc">在亮度滑桿旁新增自動調整亮度開關</string>
+    <string name="sb_portrait_padding_title">直向狀態列內距</string>
+    <string name="sb_landscape_padding_title">橫向狀態列內距</string>
+</resources>

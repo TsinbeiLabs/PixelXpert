@@ -11,7 +11,15 @@
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
 		android:key="icon_packs"
 		android:title="@string/icon_packs_title"
+		android:summary="@string/system_icon_packs_summary"
 		app:fragment="com.tsinbei.pixelxpert.ui.fragments.iconpack.IconPackFragment"
+		app:iconSpaceReserved="false" />
+
+	<com.tsinbei.pixelxpert.ui.preferences.MaterialPreference
+		android:key="LauncherImportedIcons"
+		android:title="@string/launcher_icons_title"
+		android:summary="@string/launcher_icon_overrides_summary"
+		app:fragment="com.tsinbei.pixelxpert.ui.fragments.LauncherIconsFragment"
 		app:iconSpaceReserved="false" />
 
 	<com.tsinbei.pixelxpert.ui.preferences.MaterialSwitchPreference

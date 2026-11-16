@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Verticale verschuiving van statusbalkinhoud (dp)</string>
+    <string name="status_bar_content_offset_summary">Verplaatst de inhoud zonder de hoogte te wijzigen. Nul herstelt de oorspronkelijke positie.</string>
+    <string name="rotation_suggestion_simple_icon">Eenvoudig pictogram voor draaivoorstellen</string>
+    <string name="rotation_suggestion_style_summary">Past de systeemknop aan en behoudt draaivoorstellen, klikken en time-outs.</string>
+    <string name="rotation_suggestion_scale">Grootte van draaipictogram (%)</string>
+    <string name="notification_freeform">Apps uit meldingen in een venster openen</string>
+    <string name="notification_freeform_summary">Tikken op de inhoud opent vrije AOSP-vensters. Voorgrondapps, oproepen, alarmen en schermvullende meldingen behouden hun gedrag. Vereist ondersteuning voor vrije vensters.</string>
+    <string name="launcher_icons_title">Launcher-pictogrammen vervangen</string>
+    <string name="launcher_icons_enable">Geselecteerde pictogrammen gebruiken</string>
+    <string name="launcher_icons_source">Bron van pictogrammen</string>
+    <string name="launcher_icons_source_imported">Geïmporteerde ZIP-/MTZ-bibliotheek</string>
+    <string name="launcher_icons_pack_unavailable">Installeer of update AOSP Perfect Icons naar een versie met de index voor adaptieve pictogrammen.</string>
+    <string name="launcher_icons_import">Pictogramarchief importeren</string>
+    <string name="launcher_icons_import_summary">ZIP of MTZ met mappen op pakketnaam die 0.png (achtergrond) en 1.png (voorgrond) bevatten. Kies een thema als er meerdere zijn. Geen pictogramafbeeldingen inbegrepen.</string>
+    <string name="launcher_icons_originals">Oorspronkelijke pictogrammen van geselecteerde apps behouden</string>
+    <string name="launcher_icons_originals_summary">Uitgesloten apps behouden hun oorspronkelijke pictogrammen, ook themapictogrammen.</string>
+    <string name="launcher_icons_clear">Oorspronkelijke bibliotheek herstellen</string>
+    <string name="launcher_icons_choose_source">Pictogrammap kiezen</string>
+    <string name="launcher_icons_imported">%1$d pictogrammen geïmporteerd. De bibliotheek is geselecteerd; schakel vervanging in om deze toe te passen.</string>
+    <string name="system_icon_packs_summary">Afbeeldingen in de systeeminterface en instellingen vervangen met compatibele pakketten</string>
+    <string name="launcher_icon_overrides_summary">App-pictogrammen vervangen met AOSP Perfect Icons of geïmporteerde ZIP-/MTZ-pakketten</string>
+    <string name="qs_auto_brightness_title">Snelkoppeling voor adaptieve helderheid</string>
+    <string name="qs_auto_brightness_desc">Schakelaar voor adaptieve helderheid naast de schuifregelaar toevoegen</string>
+    <string name="sb_portrait_padding_title">Statusbalkmarges in staande stand</string>
+    <string name="sb_landscape_padding_title">Statusbalkmarges in liggende stand</string>
+</resources>

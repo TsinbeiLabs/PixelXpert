@@ -518,7 +518,7 @@
     <string name="skip_media_next">Medya kontrolü - Sonraki</string>
     <string name="skip_media_prev">Medya kontrolü - Önceki</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Simge paketleri</string>
+    <string name="icon_packs_title">Sistem arayüzü simge paketleri</string>
     <string name="icon_pack_selection_title">Paket seç</string>
     <string name="icon_pack_customization_title">Simgeleri özelleştir</string>
     <string name="menu_more_info">Daha fazla bilgi</string>

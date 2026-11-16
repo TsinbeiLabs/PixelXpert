@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">상태 표시줄 내용의 세로 위치 조정 (dp)</string>
+    <string name="status_bar_content_offset_summary">높이를 바꾸지 않고 내용을 이동합니다. 0으로 설정하면 원래 위치로 돌아갑니다.</string>
+    <string name="rotation_suggestion_simple_icon">간단한 회전 제안 아이콘</string>
+    <string name="rotation_suggestion_style_summary">기본 버튼의 모양을 바꿉니다. 시스템 회전 제안, 클릭, 시간 제한은 유지됩니다.</string>
+    <string name="rotation_suggestion_scale">회전 제안 아이콘 크기 (%)</string>
+    <string name="notification_freeform">알림의 백그라운드 앱을 창으로 열기</string>
+    <string name="notification_freeform_summary">알림 본문을 누르면 AOSP 자유형 창으로 열립니다. 전면 앱, 전화, 알람, 전체 화면 알림은 기본 동작을 유지합니다. 자유형 창 지원이 필요합니다.</string>
+    <string name="launcher_icons_title">런처 아이콘 교체</string>
+    <string name="launcher_icons_enable">선택한 아이콘 사용</string>
+    <string name="launcher_icons_source">아이콘 출처</string>
+    <string name="launcher_icons_source_imported">가져온 ZIP / MTZ 라이브러리</string>
+    <string name="launcher_icons_pack_unavailable">적응형 아이콘 색인이 포함된 버전의 AOSP Perfect Icons를 설치하거나 업데이트하세요.</string>
+    <string name="launcher_icons_import">아이콘 압축 파일 가져오기</string>
+    <string name="launcher_icons_import_summary">패키지 이름 폴더에 0.png(배경)와 1.png(전경)가 있는 ZIP 또는 MTZ입니다. 테마가 여러 개면 선택할 수 있습니다. 아이콘 이미지는 포함되지 않습니다.</string>
+    <string name="launcher_icons_originals">선택한 앱의 원래 아이콘 유지</string>
+    <string name="launcher_icons_originals_summary">제외한 앱은 테마 아이콘을 포함한 기본 아이콘을 유지합니다.</string>
+    <string name="launcher_icons_clear">원래 라이브러리 복원</string>
+    <string name="launcher_icons_choose_source">아이콘 폴더 선택</string>
+    <string name="launcher_icons_imported">아이콘 %1$d개를 가져왔습니다. 가져온 라이브러리가 선택되었습니다. 아이콘 교체를 켜면 적용됩니다.</string>
+    <string name="system_icon_packs_summary">호환 아이콘 팩으로 시스템 UI와 설정의 그래픽 리소스 교체</string>
+    <string name="launcher_icon_overrides_summary">AOSP Perfect Icons 또는 가져온 ZIP/MTZ 팩으로 앱 아이콘 교체</string>
+    <string name="qs_auto_brightness_title">자동 밝기 바로가기</string>
+    <string name="qs_auto_brightness_desc">밝기 슬라이더 옆에 자동 밝기 스위치 추가</string>
+    <string name="sb_portrait_padding_title">세로 모드 상태 표시줄 안쪽 여백</string>
+    <string name="sb_landscape_padding_title">가로 모드 상태 표시줄 안쪽 여백</string>
+</resources>

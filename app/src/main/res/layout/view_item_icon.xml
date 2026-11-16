@@ -22,7 +22,6 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Debugging purposes"
-        tools:ignore="HardcodedText" />
+        tools:text="Debugging purposes" />
 
 </LinearLayout>

@@ -518,7 +518,7 @@
     <string name="skip_media_next">Mediakontroll - Hoppa över</string>
     <string name="skip_media_prev">Mediakontroll - Föregående</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Ikon paket</string>
+    <string name="icon_packs_title">Ikonpaket för systemgränssnittet</string>
     <string name="icon_pack_selection_title">Välj paket</string>
     <string name="icon_pack_customization_title">Anpassa ikoner</string>
     <string name="menu_more_info">Mer information</string>

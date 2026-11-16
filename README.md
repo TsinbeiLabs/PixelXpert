@@ -67,7 +67,7 @@ Sources, changes, and upstream resource credits are recorded in [NativeComplemen
 
 ### AOSP Perfect Icons integration
 
-Under **Launcher → Appearance → Launcher icon overrides**, choose **Icon source → AOSP Perfect Icons**, then enable **Use selected icons**. Install the [AOSP Perfect Icons APK](https://github.com/TsinbeiLabs/AOSP-Perfect-Icons) separately; its adaptive resources and component mappings are read directly from the installed package. Existing ZIP/MTZ imports remain selectable, and importing an archive selects that library.
+Under **Theme → Launcher icon overrides**, choose **Icon source → AOSP Perfect Icons**, then enable **Use selected icons**. Install the [AOSP Perfect Icons APK](https://github.com/TsinbeiLabs/AOSP-Perfect-Icons) separately; its adaptive resources and component mappings are read directly from the installed package. Existing ZIP/MTZ imports remain selectable, and importing an archive selects that library. The separate **System UI icon packs** page handles compatible packs for System UI and Settings graphic resources.
 
 The integration preserves the pack's background and foreground layout, matches activity components before explicit package mappings, supports per-app original-icon exclusions, and refreshes affected packages on source or package changes. Missing monochrome layers are derived from the transparent foreground for themed icons. Disabling overrides restores affected native icons. Use one Launcher icon replacement module at a time; remove Launcher from Global Icon Pack's scope when validating this integration.
 
@@ -113,6 +113,7 @@ Requires the Android SDK and a JDK 21+. Release builds additionally need `Releas
 - [AIXINJUELUOAI/NativeComplements](https://github.com/AIXINJUELUOAI/NativeComplements) for the status-bar offset, native rotation presentation, notification freeform admission, stacked Compose signal adaptation, and launcher icon import/cache implementations adapted into this fork (Apache License 2.0)
 - [TsinbeiLabs/AOSP-Perfect-Icons](https://github.com/TsinbeiLabs/AOSP-Perfect-Icons) by Hsukqi Lee and [elliana-wt/Pixel-Launcher-Icons](https://github.com/elliana-wt/Pixel-Launcher-Icons) for the separately installed adaptive icon pack and artwork used by the Launcher integration (GPL-3.0)
 - [RichardLuo0/global-icon-pack-android](https://github.com/RichardLuo0/global-icon-pack-android) for Launcher IconProvider overload and activity-component handling reference during the AOSP Perfect Icons integration, and for the device-side icon replacement used in compatibility investigation
+- [Codecity001/PixelXpert](https://github.com/Codecity001/PixelXpert) for the adaptive-brightness QS shortcut and portrait/landscape status-bar padding ideas adapted into this fork
 
 The in-app updater stages the downloaded module and APK, then starts one detached root transaction. The module installation completes before the APK replacement can terminate the running PixelXpert process.
 

@@ -12,7 +12,7 @@
     <string name="sliding_tile_subtitle">Tap to adjust</string>
     <string name="app_switch_tile_title">Switch App Profile</string>
     <string name="hide_default">Hide (Default)</string>
-    <string name="percent_of_default_size">% of default size</string>
+    <string name="percent_of_default_size" formatted="false">% of default size</string>
     <string name="overlay_none_title">(Default)</string>
     <string name="general_section">General options</string>
     <string name="general_on">On</string>
@@ -468,8 +468,8 @@
 
     <!-- AM/PM style -->
     <string name="am_pm_default" translatable="false">@string/hide_default</string>
-    <string name="am_pm_normal">100% size of the clock</string>
-    <string name="am_pm_small">70% size of the clock</string>
+    <string name="am_pm_normal" formatted="false">100% size of the clock</string>
+    <string name="am_pm_small" formatted="false">70% size of the clock</string>
 
     <!-- Date position -->
     <string name="date_default" translatable="false">@string/hide_default</string>
@@ -637,7 +637,9 @@
     <string name="skip_media_prev">Media control - Previous</string>
 
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Icon packs</string>
+    <string name="icon_packs_title">System UI icon packs</string>
+    <string name="system_icon_packs_summary">Replace graphic resources in System UI and Settings with compatible packs</string>
+    <string name="launcher_icon_overrides_summary">Replace launcher app icons using AOSP Perfect Icons or imported ZIP/MTZ packs</string>
     <string name="icon_pack_selection_title">Select pack</string>
     <string name="icon_pack_customization_title">Customize icons</string>
     <string name="menu_more_info">More info</string>
@@ -686,6 +688,10 @@
     <string name="gboard_secure_clipboard_summary">Block entries copied from password fields and likely verification codes, PINs, or long account numbers</string>
     <string name="gboard_clipboard_chips_title">Clipboard action chips</string>
     <string name="gboard_clipboard_chips_summary">Enable Gboard action chips, entity extraction, and copy-to-reply experiments</string>
+    <string name="qs_auto_brightness_title">Adaptive brightness shortcut</string>
+    <string name="qs_auto_brightness_desc">Add a toggle for adaptive brightness next to the brightness slider</string>
+    <string name="sb_portrait_padding_title">Portrait status bar padding</string>
+    <string name="sb_landscape_padding_title">Landscape status bar padding</string>
     <string name="gboard_privacy_category">Privacy</string>
     <string name="gboard_force_incognito_title">Disable personalized learning</string>
     <string name="gboard_force_incognito_summary">Request no personalized learning for every input field; this does not force the complete Gboard Incognito UI</string>

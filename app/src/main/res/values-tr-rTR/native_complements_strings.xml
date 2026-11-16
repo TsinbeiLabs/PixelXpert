@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Durum çubuğu içeriğinin dikey kaydırılması (dp)</string>
+    <string name="status_bar_content_offset_summary">Yüksekliği değiştirmeden içeriği taşır. Sıfır, özgün konumu geri yükler.</string>
+    <string name="rotation_suggestion_simple_icon">Basit döndürme önerisi simgesi</string>
+    <string name="rotation_suggestion_style_summary">Sistem önerilerini, dokunuşları ve zaman aşımlarını koruyarak özgün düğmeyi özelleştirir.</string>
+    <string name="rotation_suggestion_scale">Döndürme önerisi simgesi boyutu (%)</string>
+    <string name="notification_freeform">Bildirim uygulamalarını pencerede aç</string>
+    <string name="notification_freeform_summary">İçeriğe dokunmak serbest AOSP penceresi açar. Ön plandaki uygulamalar, aramalar, alarmlar ve tam ekran bildirimleri özgün davranışı korur. Serbest pencere desteği gerekir.</string>
+    <string name="launcher_icons_title">Başlatıcı simgelerini değiştir</string>
+    <string name="launcher_icons_enable">Seçilen simgeleri kullan</string>
+    <string name="launcher_icons_source">Simge kaynağı</string>
+    <string name="launcher_icons_source_imported">İçe aktarılan ZIP / MTZ kitaplığı</string>
+    <string name="launcher_icons_pack_unavailable">Uyarlanabilir simge dizini içeren bir AOSP Perfect Icons sürümü yükleyin veya güncelleyin.</string>
+    <string name="launcher_icons_import">Simge arşivi içe aktar</string>
+    <string name="launcher_icons_import_summary">Paket adlarıyla adlandırılan klasörlerde 0.png (arka plan) ve 1.png (ön plan) içeren ZIP veya MTZ. Birden fazla tema varsa birini seçin. Simge görselleri dahil değildir.</string>
+    <string name="launcher_icons_originals">Seçilen uygulamaların özgün simgelerini koru</string>
+    <string name="launcher_icons_originals_summary">Hariç tutulan uygulamalar, temalı simgeler dahil özgün simgelerini korur.</string>
+    <string name="launcher_icons_clear">Özgün kitaplığı geri yükle</string>
+    <string name="launcher_icons_choose_source">Simge klasörü seç</string>
+    <string name="launcher_icons_imported">%1$d simge içe aktarıldı. Kitaplık seçildi; uygulamak için simge değiştirmeyi etkinleştirin.</string>
+    <string name="system_icon_packs_summary">Sistem arayüzü ve ayarların görsellerini uyumlu paketlerle değiştir</string>
+    <string name="launcher_icon_overrides_summary">Uygulama simgelerini AOSP Perfect Icons veya içe aktarılan ZIP/MTZ paketleriyle değiştir</string>
+    <string name="qs_auto_brightness_title">Uyarlanabilir parlaklık kısayolu</string>
+    <string name="qs_auto_brightness_desc">Parlaklık kaydırıcısının yanına uyarlanabilir parlaklık anahtarı ekle</string>
+    <string name="sb_portrait_padding_title">Dikey durum çubuğu iç boşluğu</string>
+    <string name="sb_landscape_padding_title">Yatay durum çubuğu iç boşluğu</string>
+</resources>

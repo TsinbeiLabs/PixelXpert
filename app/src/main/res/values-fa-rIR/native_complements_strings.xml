@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">جابجایی عمودی محتوای نوار وضعیت (dp)</string>
+    <string name="status_bar_content_offset_summary">محتوا را بدون تغییر ارتفاع جابجا می‌کند. صفر موقعیت اصلی را برمی‌گرداند.</string>
+    <string name="rotation_suggestion_simple_icon">نماد سادهٔ پیشنهاد چرخش</string>
+    <string name="rotation_suggestion_style_summary">دکمهٔ اصلی را با حفظ پیشنهادهای چرخش، لمس‌ها و مهلت‌های سیستم شخصی‌سازی می‌کند.</string>
+    <string name="rotation_suggestion_scale">اندازهٔ نماد چرخش (%)</string>
+    <string name="notification_freeform">باز کردن برنامه‌های اعلان‌ها در پنجره</string>
+    <string name="notification_freeform_summary">لمس محتوا پنجرهٔ آزاد AOSP را باز می‌کند. برنامه‌های پیش‌زمینه، تماس‌ها، زنگ‌ها و اعلان‌های تمام‌صفحه رفتار اصلی را حفظ می‌کنند. به پشتیبانی پنجرهٔ آزاد نیاز دارد.</string>
+    <string name="launcher_icons_title">جایگزینی نمادهای راه‌انداز</string>
+    <string name="launcher_icons_enable">استفاده از نمادهای انتخاب‌شده</string>
+    <string name="launcher_icons_source">منبع نمادها</string>
+    <string name="launcher_icons_source_imported">کتابخانهٔ ZIP / MTZ واردشده</string>
+    <string name="launcher_icons_pack_unavailable">AOSP Perfect Icons را به نسخه‌ای دارای فهرست نمادهای تطبیقی نصب یا به‌روزرسانی کنید.</string>
+    <string name="launcher_icons_import">وارد کردن بایگانی نمادها</string>
+    <string name="launcher_icons_import_summary">ZIP یا MTZ با پوشه‌هایی به نام بسته‌ها، شامل 0.png برای پس‌زمینه و 1.png برای پیش‌زمینه. در صورت وجود چند زمینه، یکی را انتخاب کنید. تصویر نمادی همراه ماژول نیست.</string>
+    <string name="launcher_icons_originals">حفظ نماد اصلی برنامه‌های انتخاب‌شده</string>
+    <string name="launcher_icons_originals_summary">برنامه‌های مستثنا نمادهای اصلی، از جمله نمادهای زمینه‌دار را حفظ می‌کنند.</string>
+    <string name="launcher_icons_clear">بازیابی کتابخانهٔ اصلی</string>
+    <string name="launcher_icons_choose_source">انتخاب پوشهٔ نمادها</string>
+    <string name="launcher_icons_imported">%1$d نماد وارد شد. کتابخانه انتخاب شده است؛ برای اعمال، جایگزینی نمادها را فعال کنید.</string>
+    <string name="system_icon_packs_summary">جایگزینی منابع تصویری رابط سیستم و تنظیمات با بسته‌های سازگار</string>
+    <string name="launcher_icon_overrides_summary">جایگزینی نماد برنامه‌ها با AOSP Perfect Icons یا بسته‌های ZIP/MTZ واردشده</string>
+    <string name="qs_auto_brightness_title">میان‌بر روشنایی تطبیقی</string>
+    <string name="qs_auto_brightness_desc">افزودن کلید روشنایی تطبیقی کنار لغزندهٔ روشنایی</string>
+    <string name="sb_portrait_padding_title">فاصلهٔ داخلی نوار وضعیت در حالت عمودی</string>
+    <string name="sb_landscape_padding_title">فاصلهٔ داخلی نوار وضعیت در حالت افقی</string>
+</resources>

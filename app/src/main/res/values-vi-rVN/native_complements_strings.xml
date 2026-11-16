@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Độ lệch dọc của nội dung thanh trạng thái (dp)</string>
+    <string name="status_bar_content_offset_summary">Di chuyển nội dung mà không đổi chiều cao. Đặt bằng 0 để khôi phục vị trí ban đầu.</string>
+    <string name="rotation_suggestion_simple_icon">Biểu tượng gợi ý xoay đơn giản</string>
+    <string name="rotation_suggestion_style_summary">Tùy chỉnh nút gốc, giữ nguyên gợi ý xoay, thao tác chạm và thời gian chờ của hệ thống.</string>
+    <string name="rotation_suggestion_scale">Kích thước biểu tượng xoay (%)</string>
+    <string name="notification_freeform">Mở ứng dụng từ thông báo trong cửa sổ</string>
+    <string name="notification_freeform_summary">Chạm nội dung để mở cửa sổ tự do AOSP. Ứng dụng đang ở trước, cuộc gọi, báo thức và thông báo toàn màn hình giữ hành vi gốc. Cần hỗ trợ cửa sổ tự do.</string>
+    <string name="launcher_icons_title">Thay biểu tượng màn hình chính</string>
+    <string name="launcher_icons_enable">Dùng biểu tượng đã chọn</string>
+    <string name="launcher_icons_source">Nguồn biểu tượng</string>
+    <string name="launcher_icons_source_imported">Thư viện ZIP / MTZ đã nhập</string>
+    <string name="launcher_icons_pack_unavailable">Cài đặt hoặc cập nhật AOSP Perfect Icons lên phiên bản có chỉ mục biểu tượng thích ứng.</string>
+    <string name="launcher_icons_import">Nhập tệp nén biểu tượng</string>
+    <string name="launcher_icons_import_summary">ZIP hoặc MTZ có thư mục theo tên gói, chứa 0.png (nền) và 1.png (lớp trước). Chọn chủ đề nếu có nhiều chủ đề. Không kèm hình ảnh biểu tượng.</string>
+    <string name="launcher_icons_originals">Giữ biểu tượng gốc cho ứng dụng đã chọn</string>
+    <string name="launcher_icons_originals_summary">Ứng dụng bị loại trừ giữ biểu tượng gốc, kể cả biểu tượng theo chủ đề.</string>
+    <string name="launcher_icons_clear">Khôi phục thư viện gốc</string>
+    <string name="launcher_icons_choose_source">Chọn thư mục biểu tượng</string>
+    <string name="launcher_icons_imported">Đã nhập %1$d biểu tượng. Thư viện đã được chọn; bật thay biểu tượng để áp dụng.</string>
+    <string name="system_icon_packs_summary">Thay tài nguyên đồ họa của giao diện hệ thống và Cài đặt bằng gói tương thích</string>
+    <string name="launcher_icon_overrides_summary">Thay biểu tượng ứng dụng bằng AOSP Perfect Icons hoặc gói ZIP/MTZ đã nhập</string>
+    <string name="qs_auto_brightness_title">Lối tắt độ sáng thích ứng</string>
+    <string name="qs_auto_brightness_desc">Thêm công tắc độ sáng thích ứng bên cạnh thanh trượt độ sáng</string>
+    <string name="sb_portrait_padding_title">Khoảng đệm thanh trạng thái khi dọc</string>
+    <string name="sb_landscape_padding_title">Khoảng đệm thanh trạng thái khi ngang</string>
+</resources>

@@ -1,11 +1,11 @@
 <resources>
 
-    <string-array name="qs_pulldown_side_names">
+    <string-array name="qs_pulldown_side_names" translatable="false">
 		<item>@string/pull_down_left</item>
 		<item>@string/pull_down_right</item>
 	</string-array>
 
-	<string-array name="qs_pulldown_side_left">
+	<string-array name="qs_pulldown_side_left" translatable="false">
 		<item>2</item>
 		<item>1</item>
 	</string-array>
@@ -34,7 +34,7 @@
 		<item>Vietnamese</item>
 	</string-array>
 
-	<string-array name="languages_values">
+	<string-array name="languages_values" translatable="false">
 		<item>ar</item>
 		<item>zh-CN</item>
 		<item>zh-TW</item>
@@ -58,13 +58,13 @@
 		<item>vi</item>
 	</string-array>
 
-	<string-array name="three_button_nav_buttons">
+	<string-array name="three_button_nav_buttons" translatable="false">
 		<item>back</item>
 		<item>home</item>
 		<item>recent</item>
 	</string-array>
 
-	<string-array name="custom_action_titles">
+	<string-array name="custom_action_titles" translatable="false">
 		<item>@string/none</item>
 		<item>@string/screenshot</item>
 		<!--item>@string/insecure_screenshot</item-->
@@ -76,7 +76,7 @@
 		<item>@string/app_switch_tile_title</item>
 	</string-array>
 
-	<string-array name="custom_action_codes">
+	<string-array name="custom_action_codes" translatable="false">
 		<item>-1</item>
 		<item>1</item>
 		<!--item>6</item-->
@@ -88,32 +88,32 @@
 		<item>8</item>
 	</string-array>
 
-    <string-array name="sbc_position_names">
+    <string-array name="sbc_position_names" translatable="false">
 		<item>@string/clock_default</item>
 		<item>@string/clock_center</item>
 		<item>@string/clock_right</item>
 	</string-array>
 
-	<string-array name="sbc_position_codes">
+	<string-array name="sbc_position_codes" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array name="sbc_ampm_style_names">
+	<string-array name="sbc_ampm_style_names" translatable="false">
 		<item>@string/am_pm_default</item>
 		<item>@string/am_pm_normal</item>
 		<item>@string/am_pm_small</item>
 	</string-array>
 
-	<string-array name="sbc_ampm_style_codes">
+	<string-array name="sbc_ampm_style_codes" translatable="false">
 		<item>2</item>
 		<item>0</item>
 		<item>1</item>
 	</string-array>
 
 
-	<string-array name="sbc_day_week_names">
+	<string-array name="sbc_day_week_names" translatable="false">
 		<item>@string/date_default</item>
 		<item>@string/date_before</item>
 		<item>@string/date_before_small</item>
@@ -121,7 +121,7 @@
 		<item>@string/date_after_small</item>
 	</string-array>
 
-	<string-array name="sbc_day_week_codes">
+	<string-array name="sbc_day_week_codes" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
@@ -129,47 +129,47 @@
 		<item>4</item>
 	</string-array>
 
-	<string-array name="lte4g_icon_names">
+	<string-array name="lte4g_icon_names" translatable="false">
 		<item>@string/fourg_lte_default</item>
 		<item>@string/fourg_lte_lte</item>
 		<item>@string/fourg_lte_fourg</item>
 	</string-array>
 
-	<string-array name="lte4g_icon_codes">
+	<string-array name="lte4g_icon_codes" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array name="sb_icon_sort_names">
+	<string-array name="sb_icon_sort_names" translatable="false">
 		<item>@string/sort_clean</item>
 		<item>@string/sort_tight</item>
 	</string-array>
 
-	<string-array name="sb_icon_sort_codes">
+	<string-array name="sb_icon_sort_codes" translatable="false">
 		<item>0</item>
 		<item>1</item>
 	</string-array>
 
-	<string-array name="network_sb_locations">
+	<string-array name="network_sb_locations" translatable="false">
 		<item>@string/ntsb_far_left</item>
 		<item>@string/ntsb_mid_left</item>
 		<item>@string/ntsb_mid_right</item>
 	</string-array>
 
-	<string-array name="network_stat_start_names">
+	<string-array name="network_stat_start_names" translatable="false">
 		<item>@string/nt_stat_mode_today</item>
 		<item>@string/nt_stat_mode_week</item>
 		<item>@string/nt_stat_mode_month</item>
 	</string-array>
 
-	<string-array name="network_stat_start_codes">
+	<string-array name="network_stat_start_codes" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array name="days_of_week_names">
+	<string-array name="days_of_week_names" translatable="false">
 		<item>@string/sunday</item>
 		<item>@string/monday</item>
 		<item>@string/tuesday</item>
@@ -179,7 +179,7 @@
 		<item>@string/saturday</item>
 	</string-array>
 
-	<string-array name="days_of_week_codes">
+	<string-array name="days_of_week_codes" translatable="false">
 		<item>1</item>
 		<item>2</item>
 		<item>3</item>
@@ -189,33 +189,33 @@
 		<item>7</item>
 	</string-array>
 
-	<string-array name="network_mode_names">
+	<string-array name="network_mode_names" translatable="false">
 		<item>@string/nt_mode_rxtx</item>
 		<item>@string/nt_mode_total</item>
 		<item>@string/nt_mode_rxonly</item>
 		<item>@string/nt_mode_txonly</item>
 	</string-array>
 
-	<string-array name="network_mode_codes">
+	<string-array name="network_mode_codes" translatable="false">
 		<item>0</item>
 		<item>3</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array name="taskbar_option_names">
+	<string-array name="taskbar_option_names" translatable="false">
 		<item>@string/overlay_none_title</item>
 		<item>@string/taskbar_force_enable_title</item>
 		<item>@string/taskbar_force_disable_title</item>
 	</string-array>
 
-	<string-array name="taskbar_option_value">
+	<string-array name="taskbar_option_value" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array name="physical_remap_action_names">
+	<string-array name="physical_remap_action_names" translatable="false">
 		<item>@string/none</item>
 		<item>@string/word_default</item>
 		<item>@string/torch</item>
@@ -227,7 +227,7 @@
 		<item>@string/skip_media_prev</item>
 	</string-array>
 
-	<string-array name="physical_remap_action_values">
+	<string-array name="physical_remap_action_values" translatable="false">
 		<item>-1</item>
 		<item>0</item>
 		<item>1</item>
@@ -240,29 +240,29 @@
 		<item>8</item>
 	</string-array>
 
-	<string-array name="notif_default_expansion_entries">
+	<string-array name="notif_default_expansion_entries" translatable="false">
 		<item>@string/word_default</item>
 		<item>@string/notif_always_expand</item>
 		<item>@string/notif_always_collapse</item>
 	</string-array>
 
-	<string-array name="notif_default_expansion_values">
+	<string-array name="notif_default_expansion_values" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array name="segmentor_ai_model_names">
+	<string-array name="segmentor_ai_model_names" translatable="false">
 		<item>ML Kit</item>
 		<item>Pytorch</item>
 	</string-array>
 
-	<string-array name="segmentor_ai_model_codes">
+	<string-array name="segmentor_ai_model_codes" translatable="false">
 		<item>0</item>
 		<item>1</item>
 	</string-array>
 
-	<string-array name="iconpack_preview_icons">
+	<string-array name="iconpack_preview_icons" translatable="false">
 		<item>ic_signal_cellular_3_4_bar</item>
 		<item>ic_wifi_signal_3</item>
 		<item>ic_audio_ring_notif</item>
@@ -273,7 +273,7 @@
 		<item>location</item>
 	</string-array>
 	
-	<string-array name="ignored_icons_values">
+	<string-array name="ignored_icons_values" translatable="false">
 		<item>volte</item>
 		<item>vowifi</item>
 		<item>no_calling</item>
@@ -316,7 +316,7 @@
 		<!--item>clock</item-->
 	</string-array>
 	
-	<string-array name="ignored_icons_entries">
+	<string-array name="ignored_icons_entries" translatable="false">
 		<item>@string/status_bar_volte</item>
 		<item>@string/status_bar_vowifi</item>
 		<item>@string/status_bar_no_calling</item>
@@ -359,7 +359,7 @@
 		<!--item>@string/status_bar_clock</item-->
 	</string-array>
 
-	<string-array name="bubble_dismiss_position_names">
+	<string-array name="bubble_dismiss_position_names" translatable="false">
 		<item>@string/bubble_dismiss_bottom</item>
 		<item>@string/bubble_dismiss_top</item>
 		<item>@string/bubble_dismiss_left</item>
@@ -367,7 +367,7 @@
 		<item>@string/bubble_dismiss_center</item>
 	</string-array>
 
-	<string-array name="bubble_dismiss_position_values">
+	<string-array name="bubble_dismiss_position_values" translatable="false">
 		<item>BOTTOM_MIDDLE</item>
 		<item>TOP_MIDDLE</item>
 		<item>LEFT_MIDDLE</item>
@@ -375,7 +375,7 @@
 		<item>CENTER</item>
 	</string-array>
 
-	<string-array name="launcher_gesture_action_names">
+	<string-array name="launcher_gesture_action_names" translatable="false">
 		<item>@string/gesture_action_none</item>
 		<item>@string/gesture_action_sleep</item>
 		<item>@string/gesture_action_notifications</item>
@@ -387,7 +387,7 @@
 		<item>@string/gesture_action_assistant</item>
 	</string-array>
 
-	<string-array name="launcher_gesture_action_values">
+	<string-array name="launcher_gesture_action_values" translatable="false">
 		<item>none</item>
 		<item>sleep</item>
 		<item>notifications</item>
@@ -399,17 +399,17 @@
 		<item>assistant</item>
 	</string-array>
 
-	<string-array name="launcher_drawer_swipe_action_names">
+	<string-array name="launcher_drawer_swipe_action_names" translatable="false">
 		<item>@string/drawer_swipe_block</item>
 		<item>@string/drawer_swipe_search</item>
 	</string-array>
 
-	<string-array name="launcher_drawer_swipe_action_values">
+	<string-array name="launcher_drawer_swipe_action_values" translatable="false">
 		<item>0</item>
 		<item>1</item>
 	</string-array>
 
-	<string-array name="launcher_freeform_mode_names">
+	<string-array name="launcher_freeform_mode_names" translatable="false">
 		<item>@string/freeform_mode_aosp</item>
 		<item>@string/freeform_mode_sunshine</item>
 		<item>@string/freeform_mode_lmo</item>
@@ -418,7 +418,7 @@
 		<item>@string/freeform_mode_bubble</item>
 	</string-array>
 
-	<string-array name="launcher_freeform_mode_values">
+	<string-array name="launcher_freeform_mode_values" translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>

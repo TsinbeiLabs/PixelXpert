@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Κατακόρυφη μετατόπιση περιεχομένου γραμμής κατάστασης (dp)</string>
+    <string name="status_bar_content_offset_summary">Μετακινεί το περιεχόμενο χωρίς αλλαγή ύψους. Το μηδέν επαναφέρει την αρχική θέση.</string>
+    <string name="rotation_suggestion_simple_icon">Απλό εικονίδιο πρότασης περιστροφής</string>
+    <string name="rotation_suggestion_style_summary">Προσαρμόζει το εγγενές κουμπί διατηρώντας προτάσεις, πατήματα και χρονικά όρια του συστήματος.</string>
+    <string name="rotation_suggestion_scale">Μέγεθος εικονιδίου περιστροφής (%)</string>
+    <string name="notification_freeform">Άνοιγμα εφαρμογών ειδοποιήσεων σε παράθυρο</string>
+    <string name="notification_freeform_summary">Το πάτημα στο περιεχόμενο ανοίγει ελεύθερα παράθυρα AOSP. Εφαρμογές προσκηνίου, κλήσεις, ξυπνητήρια και ειδοποιήσεις πλήρους οθόνης διατηρούν την εγγενή συμπεριφορά. Απαιτεί υποστήριξη ελεύθερων παραθύρων.</string>
+    <string name="launcher_icons_title">Αντικατάσταση εικονιδίων εκκινητή</string>
+    <string name="launcher_icons_enable">Χρήση επιλεγμένων εικονιδίων</string>
+    <string name="launcher_icons_source">Πηγή εικονιδίων</string>
+    <string name="launcher_icons_source_imported">Εισαγόμενη βιβλιοθήκη ZIP / MTZ</string>
+    <string name="launcher_icons_pack_unavailable">Εγκαταστήστε ή ενημερώστε το AOSP Perfect Icons σε έκδοση με ευρετήριο προσαρμοστικών εικονιδίων.</string>
+    <string name="launcher_icons_import">Εισαγωγή αρχείου εικονιδίων</string>
+    <string name="launcher_icons_import_summary">ZIP ή MTZ με φακέλους ονομάτων πακέτων που περιέχουν 0.png (φόντο) και 1.png (προσκήνιο). Επιλέξτε θέμα αν υπάρχουν πολλά. Δεν περιλαμβάνονται εικόνες εικονιδίων.</string>
+    <string name="launcher_icons_originals">Διατήρηση αρχικών εικονιδίων επιλεγμένων εφαρμογών</string>
+    <string name="launcher_icons_originals_summary">Οι εξαιρούμενες εφαρμογές διατηρούν τα εγγενή εικονίδια, μαζί με τα θεματικά.</string>
+    <string name="launcher_icons_clear">Επαναφορά αρχικής βιβλιοθήκης</string>
+    <string name="launcher_icons_choose_source">Επιλογή φακέλου εικονιδίων</string>
+    <string name="launcher_icons_imported">Εισήχθησαν %1$d εικονίδια. Η βιβλιοθήκη επιλέχθηκε· ενεργοποιήστε την αντικατάσταση για εφαρμογή.</string>
+    <string name="system_icon_packs_summary">Αντικατάσταση γραφικών του συστήματος και των ρυθμίσεων με συμβατά πακέτα</string>
+    <string name="launcher_icon_overrides_summary">Αντικατάσταση εικονιδίων εφαρμογών με AOSP Perfect Icons ή εισαγόμενα ZIP/MTZ</string>
+    <string name="qs_auto_brightness_title">Συντόμευση προσαρμοστικής φωτεινότητας</string>
+    <string name="qs_auto_brightness_desc">Προσθήκη διακόπτη προσαρμοστικής φωτεινότητας δίπλα στο ρυθμιστικό</string>
+    <string name="sb_portrait_padding_title">Εσωτερικά περιθώρια γραμμής κατάστασης σε κατακόρυφη προβολή</string>
+    <string name="sb_landscape_padding_title">Εσωτερικά περιθώρια γραμμής κατάστασης σε οριζόντια προβολή</string>
+</resources>

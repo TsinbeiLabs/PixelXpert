@@ -187,7 +187,7 @@
 			android:key="sysui_tuner"
 			android:summaryOff="@string/general_off"
 			android:summaryOn="@string/general_on"
-			android:title="SystemUI Tuner"
+			android:title="@string/systemui_tuner_title"
 			app:iconSpaceReserved="false" />
 
 		<com.tsinbei.pixelxpert.ui.preferences.MaterialPrimarySwitchPreference

@@ -23,6 +23,8 @@ import java.util.Optional;
 
 import io.github.libxposed.api.XposedModuleInterface;
 import com.tsinbei.pixelxpert.Constants;
+import com.tsinbei.pixelxpert.R;
+import com.tsinbei.pixelxpert.xposed.XPLauncher;
 import com.tsinbei.pixelxpert.xposed.XposedModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.LauncherModPack;
 import com.tsinbei.pixelxpert.xposed.utils.SystemUtils;
@@ -311,7 +313,7 @@ public class CustomNavGestures extends XposedModPack {
 
 		try
 		{
-			Toast.makeText(mContext, "App Killed", Toast.LENGTH_SHORT).show();
+			Toast.makeText(mContext, XPLauncher.moduleResources.getString(R.string.foreground_app_stopped), Toast.LENGTH_SHORT).show();
 
 			callMethod(mContext.getSystemService(Context.ACTIVITY_SERVICE),
 					"forceStopPackageAsUser",

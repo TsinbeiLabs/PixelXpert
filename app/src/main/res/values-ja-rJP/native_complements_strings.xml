@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">ステータスバー内容の垂直位置（dp）</string>
+    <string name="status_bar_content_offset_summary">高さを変えずに内容を移動します。0 にすると元の位置に戻ります。</string>
+    <string name="rotation_suggestion_simple_icon">シンプルな回転提案アイコン</string>
+    <string name="rotation_suggestion_style_summary">標準ボタンの外観を変更します。システムの回転提案、タップ、タイムアウトは維持されます。</string>
+    <string name="rotation_suggestion_scale">回転提案アイコンのサイズ（%）</string>
+    <string name="notification_freeform">通知のバックグラウンドアプリをウィンドウで開く</string>
+    <string name="notification_freeform_summary">通知本文をタップすると AOSP フリーフォームウィンドウで開きます。前面アプリ、着信、アラーム、全画面通知は標準動作を維持します。フリーフォーム対応が必要です。</string>
+    <string name="launcher_icons_title">ホームのアイコン置換</string>
+    <string name="launcher_icons_enable">選択したアイコンを使用</string>
+    <string name="launcher_icons_source">アイコンの取得元</string>
+    <string name="launcher_icons_source_imported">インポートした ZIP / MTZ ライブラリ</string>
+    <string name="launcher_icons_pack_unavailable">アダプティブアイコンのインデックスを含むバージョンの AOSP Perfect Icons をインストールまたは更新してください。</string>
+    <string name="launcher_icons_import">アイコンアーカイブをインポート</string>
+    <string name="launcher_icons_import_summary">パッケージ名のフォルダに 0.png（背景）と 1.png（前景）を含む ZIP または MTZ。テーマが複数ある場合は選択できます。アイコン画像は同梱されていません。</string>
+    <string name="launcher_icons_originals">選択したアプリの元のアイコンを保持</string>
+    <string name="launcher_icons_originals_summary">除外したアプリはテーマアイコンを含め、標準アイコンを維持します。</string>
+    <string name="launcher_icons_clear">元のライブラリに戻す</string>
+    <string name="launcher_icons_choose_source">アイコンフォルダを選択</string>
+    <string name="launcher_icons_imported">%1$d 個のアイコンをインポートし、ライブラリを選択しました。アイコン置換を有効にすると適用されます。</string>
+    <string name="system_icon_packs_summary">対応パックでシステム UI と設定の画像リソースを置換</string>
+    <string name="launcher_icon_overrides_summary">AOSP Perfect Icons またはインポートした ZIP/MTZ でアプリアイコンを置換</string>
+    <string name="qs_auto_brightness_title">明るさ自動調節のショートカット</string>
+    <string name="qs_auto_brightness_desc">明るさスライダーの横に自動調節スイッチを追加</string>
+    <string name="sb_portrait_padding_title">縦向きのステータスバー余白</string>
+    <string name="sb_landscape_padding_title">横向きのステータスバー余白</string>
+</resources>

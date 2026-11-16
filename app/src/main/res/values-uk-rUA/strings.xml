@@ -518,7 +518,7 @@
     <string name="skip_media_next">Управління медіа - Пропустити</string>
     <string name="skip_media_prev">Управління медіа - Попереднє</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Набори значків</string>
+    <string name="icon_packs_title">Набори значків системного інтерфейсу</string>
     <string name="icon_pack_selection_title">Виберіть набір</string>
     <string name="icon_pack_customization_title">Персоналізація значків</string>
     <string name="menu_more_info">Детальніше</string>

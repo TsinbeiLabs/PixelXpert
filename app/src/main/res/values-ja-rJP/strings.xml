@@ -518,7 +518,7 @@
     <string name="skip_media_next">再生中のメディアをスキップ</string>
     <string name="skip_media_prev">前のメディアに戻る</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">アイコンパック</string>
+    <string name="icon_packs_title">システム UI のアイコンパック</string>
     <string name="icon_pack_selection_title">パックを選択</string>
     <string name="icon_pack_customization_title">アイコンをカスタマイズ</string>
     <string name="menu_more_info">詳細情報</string>

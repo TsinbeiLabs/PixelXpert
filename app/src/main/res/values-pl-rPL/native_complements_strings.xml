@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Pionowe przesunięcie zawartości paska stanu (dp)</string>
+    <string name="status_bar_content_offset_summary">Przesuwa zawartość bez zmiany wysokości. Zero przywraca pozycję początkową.</string>
+    <string name="rotation_suggestion_simple_icon">Prosta ikona sugestii obrotu</string>
+    <string name="rotation_suggestion_style_summary">Dostosowuje przycisk systemowy, zachowując sugestie obrotu, kliknięcia i limity czasu.</string>
+    <string name="rotation_suggestion_scale">Rozmiar ikony obrotu (%)</string>
+    <string name="notification_freeform">Otwieraj aplikacje z powiadomień w oknie</string>
+    <string name="notification_freeform_summary">Dotknięcie treści otwiera swobodne okno AOSP. Aktywne aplikacje, połączenia, alarmy i powiadomienia pełnoekranowe zachowują działanie systemowe. Wymaga obsługi swobodnych okien.</string>
+    <string name="launcher_icons_title">Zastępowanie ikon pulpitu</string>
+    <string name="launcher_icons_enable">Używaj wybranych ikon</string>
+    <string name="launcher_icons_source">Źródło ikon</string>
+    <string name="launcher_icons_source_imported">Zaimportowana biblioteka ZIP / MTZ</string>
+    <string name="launcher_icons_pack_unavailable">Zainstaluj lub zaktualizuj AOSP Perfect Icons do wersji z indeksem ikon adaptacyjnych.</string>
+    <string name="launcher_icons_import">Importuj archiwum ikon</string>
+    <string name="launcher_icons_import_summary">ZIP lub MTZ z folderami nazwanymi według pakietów, zawierającymi 0.png (tło) i 1.png (pierwszy plan). Jeśli jest kilka motywów, wybierz jeden. Grafiki ikon nie są dołączone.</string>
+    <string name="launcher_icons_originals">Zachowaj oryginalne ikony wybranych aplikacji</string>
+    <string name="launcher_icons_originals_summary">Wykluczone aplikacje zachowują ikony systemowe, także tematyczne.</string>
+    <string name="launcher_icons_clear">Przywróć oryginalną bibliotekę</string>
+    <string name="launcher_icons_choose_source">Wybierz folder ikon</string>
+    <string name="launcher_icons_imported">Zaimportowano %1$d ikon. Biblioteka jest wybrana; włącz zastępowanie ikon, aby ją zastosować.</string>
+    <string name="system_icon_packs_summary">Zastępuj grafikę interfejsu systemowego i ustawień zgodnymi pakietami</string>
+    <string name="launcher_icon_overrides_summary">Zastępuj ikony aplikacji z AOSP Perfect Icons lub importowanych pakietów ZIP/MTZ</string>
+    <string name="qs_auto_brightness_title">Skrót jasności adaptacyjnej</string>
+    <string name="qs_auto_brightness_desc">Dodaj przełącznik jasności adaptacyjnej obok suwaka jasności</string>
+    <string name="sb_portrait_padding_title">Odstępy paska stanu w pionie</string>
+    <string name="sb_landscape_padding_title">Odstępy paska stanu w poziomie</string>
+</resources>

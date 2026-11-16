@@ -518,7 +518,7 @@
     <string name="skip_media_next">Median hallinta - Ohita</string>
     <string name="skip_media_prev">Median hallinta - Edellinen</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Kuvakepaketit</string>
+    <string name="icon_packs_title">Järjestelmäkäyttöliittymän kuvakepaketit</string>
     <string name="icon_pack_selection_title">Valitse paketti</string>
     <string name="icon_pack_customization_title">Muokkaa kuvakkeita</string>
     <string name="menu_more_info">Lisää tietoja</string>

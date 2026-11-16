@@ -518,7 +518,7 @@
     <string name="skip_media_next">Řízení médií - přeskočit</string>
     <string name="skip_media_prev">Kontrola médií - Předchozí</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Balíčky ikon</string>
+    <string name="icon_packs_title">Balíčky ikon systémového rozhraní</string>
     <string name="icon_pack_selection_title">Vybrat balíček</string>
     <string name="icon_pack_customization_title">Přizpůsobit ikony</string>
     <string name="menu_more_info">Více informací</string>

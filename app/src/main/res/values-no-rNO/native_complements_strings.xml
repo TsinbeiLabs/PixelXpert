@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Vertikal forskyvning av statuslinjens innhold (dp)</string>
+    <string name="status_bar_content_offset_summary">Flytter innholdet uten å endre høyden. Null gjenoppretter opprinnelig plassering.</string>
+    <string name="rotation_suggestion_simple_icon">Enkelt ikon for rotasjonsforslag</string>
+    <string name="rotation_suggestion_style_summary">Tilpasser systemknappen og beholder rotasjonsforslag, trykk og tidsavbrudd.</string>
+    <string name="rotation_suggestion_scale">Størrelse på rotasjonsikon (%)</string>
+    <string name="notification_freeform">Åpne apper fra varsler i vinduer</string>
+    <string name="notification_freeform_summary">Trykk på innholdet åpner frie AOSP-vinduer. Forgrunnsapper, anrop, alarmer og fullskjermsvarsler beholder vanlig oppførsel. Krever støtte for frie vinduer.</string>
+    <string name="launcher_icons_title">Erstatt startskjermens ikoner</string>
+    <string name="launcher_icons_enable">Bruk valgte ikoner</string>
+    <string name="launcher_icons_source">Ikonkilde</string>
+    <string name="launcher_icons_source_imported">Importert ZIP-/MTZ-bibliotek</string>
+    <string name="launcher_icons_pack_unavailable">Installer eller oppdater AOSP Perfect Icons til en versjon med indeks for adaptive ikoner.</string>
+    <string name="launcher_icons_import">Importer ikonarkiv</string>
+    <string name="launcher_icons_import_summary">ZIP eller MTZ med mapper navngitt etter pakker som inneholder 0.png (bakgrunn) og 1.png (forgrunn). Velg et tema hvis det finnes flere. Ingen ikonbilder følger med.</string>
+    <string name="launcher_icons_originals">Behold originalikonene for valgte apper</string>
+    <string name="launcher_icons_originals_summary">Unntatte apper beholder sine opprinnelige ikoner, også temaikoner.</string>
+    <string name="launcher_icons_clear">Gjenopprett opprinnelig bibliotek</string>
+    <string name="launcher_icons_choose_source">Velg ikonmappe</string>
+    <string name="launcher_icons_imported">%1$d ikoner importert. Biblioteket er valgt; aktiver ikonerstatning for å bruke det.</string>
+    <string name="system_icon_packs_summary">Erstatt grafikk i systemgrensesnittet og innstillingene med kompatible pakker</string>
+    <string name="launcher_icon_overrides_summary">Erstatt appikoner med AOSP Perfect Icons eller importerte ZIP-/MTZ-pakker</string>
+    <string name="qs_auto_brightness_title">Snarvei for adaptiv lysstyrke</string>
+    <string name="qs_auto_brightness_desc">Legg til en bryter for adaptiv lysstyrke ved siden av glidebryteren</string>
+    <string name="sb_portrait_padding_title">Statuslinjens avstand i stående retning</string>
+    <string name="sb_landscape_padding_title">Statuslinjens avstand i liggende retning</string>
+</resources>

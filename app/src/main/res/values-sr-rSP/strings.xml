@@ -518,7 +518,7 @@
     <string name="skip_media_next">Контрола медија – следеће</string>
     <string name="skip_media_prev">Контрола медија – претходно</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Пакети икона</string>
+    <string name="icon_packs_title">Пакети икона системског интерфејса</string>
     <string name="icon_pack_selection_title">Изаберите пакет</string>
     <string name="icon_pack_customization_title">Прилагодите иконе</string>
     <string name="menu_more_info">Више информација</string>

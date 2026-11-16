@@ -518,7 +518,7 @@
     <string name="skip_media_next">کنترل رسانه - رد شوید</string>
     <string name="skip_media_prev">کنترل رسانه - قبلی</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">بسته های آیکون</string>
+    <string name="icon_packs_title">بسته‌های نماد رابط سیستم</string>
     <string name="icon_pack_selection_title">بسته را انتخاب کنید</string>
     <string name="icon_pack_customization_title">سفارشی کردن آیکون ها</string>
     <string name="menu_more_info">اطلاعات بیشتر</string>

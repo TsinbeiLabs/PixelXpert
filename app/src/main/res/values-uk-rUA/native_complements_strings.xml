@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Вертикальне зміщення вмісту рядка стану (dp)</string>
+    <string name="status_bar_content_offset_summary">Переміщує вміст без зміни висоти. Нуль відновлює початкове положення.</string>
+    <string name="rotation_suggestion_simple_icon">Простий значок пропозиції повороту</string>
+    <string name="rotation_suggestion_style_summary">Налаштовує стандартну кнопку, зберігаючи системні пропозиції, натискання й тайм-аути.</string>
+    <string name="rotation_suggestion_scale">Розмір значка повороту (%)</string>
+    <string name="notification_freeform">Відкривати застосунки сповіщень у вікні</string>
+    <string name="notification_freeform_summary">Натискання на текст відкриває вільне вікно AOSP. Активні застосунки, дзвінки, будильники й повноекранні сповіщення зберігають стандартну поведінку. Потрібна підтримка вільних вікон.</string>
+    <string name="launcher_icons_title">Заміна значків робочого столу</string>
+    <string name="launcher_icons_enable">Використовувати вибрані значки</string>
+    <string name="launcher_icons_source">Джерело значків</string>
+    <string name="launcher_icons_source_imported">Імпортована бібліотека ZIP / MTZ</string>
+    <string name="launcher_icons_pack_unavailable">Установіть або оновіть AOSP Perfect Icons до версії з індексом адаптивних значків.</string>
+    <string name="launcher_icons_import">Імпортувати архів значків</string>
+    <string name="launcher_icons_import_summary">ZIP або MTZ з папками за назвами пакетів, що містять 0.png (тло) і 1.png (передній план). Якщо тем кілька, виберіть одну. Зображення значків не входять до модуля.</string>
+    <string name="launcher_icons_originals">Зберегти початкові значки вибраних застосунків</string>
+    <string name="launcher_icons_originals_summary">Виключені застосунки зберігають стандартні значки, зокрема тематичні.</string>
+    <string name="launcher_icons_clear">Відновити початкову бібліотеку</string>
+    <string name="launcher_icons_choose_source">Вибрати папку значків</string>
+    <string name="launcher_icons_imported">Імпортовано значків: %1$d. Бібліотеку вибрано; увімкніть заміну значків для застосування.</string>
+    <string name="system_icon_packs_summary">Заміна графіки системного інтерфейсу й налаштувань сумісними наборами</string>
+    <string name="launcher_icon_overrides_summary">Заміна значків застосунків з AOSP Perfect Icons або імпортованих ZIP/MTZ</string>
+    <string name="qs_auto_brightness_title">Перемикач адаптивної яскравості</string>
+    <string name="qs_auto_brightness_desc">Додати перемикач адаптивної яскравості поруч із повзунком</string>
+    <string name="sb_portrait_padding_title">Відступи рядка стану в портретному режимі</string>
+    <string name="sb_landscape_padding_title">Відступи рядка стану в альбомному режимі</string>
+</resources>

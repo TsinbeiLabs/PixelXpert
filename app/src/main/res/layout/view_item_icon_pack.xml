@@ -124,7 +124,7 @@
             android:fadingEdge="horizontal"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
-            android:text="Icon pack name"
+            tools:text="Icon pack name"
             android:textColor="?attr/colorOnSurface"
             android:textSize="16sp"
             android:textStyle="normal" />
@@ -138,7 +138,7 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif"
             android:maxLines="1"
-            android:text="by author"
+            tools:text="by author"
             android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="14sp"
             android:textStyle="normal" />

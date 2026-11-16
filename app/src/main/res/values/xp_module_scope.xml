@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="module_scope">
+    <string-array name="module_scope" translatable="false">
         <item>com.android.systemui</item> <!-- systemUI -->
         <item>com.google.android.apps.nexuslauncher</item> <!-- Pixel Launcher - Taskbar -->
         <item>android</item>  <!-- System Framework -->
@@ -14,7 +14,7 @@
         <item>com.sukisu.ultra.pr</item> <!-- SukiSU PR Manager -->
         <item>com.resukisu.resukisu</item> <!-- ReSukiSU Manager -->
     </string-array>
-	<string-array name="root_requirement">
+	<string-array name="root_requirement" translatable="false">
 		<item>com.android.systemui</item> <!-- systemUI -->
 		<item>com.google.android.apps.nexuslauncher</item>
 	</string-array>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">الإزاحة الرأسية لمحتوى شريط الحالة (dp)</string>
+    <string name="status_bar_content_offset_summary">نقل المحتوى دون تغيير الارتفاع. تعيد القيمة صفر الموضع الأصلي.</string>
+    <string name="rotation_suggestion_simple_icon">أيقونة مبسطة لاقتراح التدوير</string>
+    <string name="rotation_suggestion_style_summary">تخصيص زر النظام مع الحفاظ على اقتراحات التدوير والنقرات والمهل الزمنية.</string>
+    <string name="rotation_suggestion_scale">حجم أيقونة التدوير (%)</string>
+    <string name="notification_freeform">فتح تطبيقات الإشعارات في نافذة</string>
+    <string name="notification_freeform_summary">يفتح النقر على المحتوى نافذة حرة من AOSP. تحتفظ التطبيقات الأمامية والمكالمات والمنبهات وإشعارات ملء الشاشة بسلوكها الأصلي. يتطلب دعم النوافذ الحرة.</string>
+    <string name="launcher_icons_title">استبدال أيقونات المشغّل</string>
+    <string name="launcher_icons_enable">استخدام الأيقونات المحددة</string>
+    <string name="launcher_icons_source">مصدر الأيقونات</string>
+    <string name="launcher_icons_source_imported">مكتبة ZIP / MTZ المستوردة</string>
+    <string name="launcher_icons_pack_unavailable">ثبّت أو حدّث AOSP Perfect Icons إلى إصدار يتضمن فهرس الأيقونات التكيفية.</string>
+    <string name="launcher_icons_import">استيراد أرشيف الأيقونات</string>
+    <string name="launcher_icons_import_summary">ملف ZIP أو MTZ بمجلدات تحمل أسماء الحزم وتحتوي على 0.png للخلفية و1.png للمقدمة. اختر سمة إن وُجدت عدة سمات. لا تُرفق صور أيقونات.</string>
+    <string name="launcher_icons_originals">الاحتفاظ بالأيقونات الأصلية للتطبيقات المحددة</string>
+    <string name="launcher_icons_originals_summary">تحتفظ التطبيقات المستثناة بأيقوناتها الأصلية، بما فيها الأيقونات ذات السمات.</string>
+    <string name="launcher_icons_clear">استعادة المكتبة الأصلية</string>
+    <string name="launcher_icons_choose_source">اختيار مجلد الأيقونات</string>
+    <string name="launcher_icons_imported">تم استيراد %1$d أيقونة. المكتبة المستوردة محددة الآن؛ فعّل استبدال الأيقونات لتطبيقها.</string>
+    <string name="system_icon_packs_summary">استبدال الموارد الرسومية لواجهة النظام والإعدادات بحزم متوافقة</string>
+    <string name="launcher_icon_overrides_summary">استبدال أيقونات التطبيقات باستخدام AOSP Perfect Icons أو حزم ZIP/MTZ المستوردة</string>
+    <string name="qs_auto_brightness_title">اختصار السطوع التكيفي</string>
+    <string name="qs_auto_brightness_desc">إضافة مفتاح للسطوع التكيفي بجوار شريط السطوع</string>
+    <string name="sb_portrait_padding_title">الحشو الداخلي لشريط الحالة في الوضع العمودي</string>
+    <string name="sb_landscape_padding_title">الحشو الداخلي لشريط الحالة في الوضع الأفقي</string>
+</resources>

@@ -518,7 +518,7 @@
     <string name="skip_media_next">미디어 제어 - 다음</string>
     <string name="skip_media_prev">미디어 제어 - 이전</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">아이콘 팩</string>
+    <string name="icon_packs_title">시스템 UI 아이콘 팩</string>
     <string name="icon_pack_selection_title">팩 선택</string>
     <string name="icon_pack_customization_title">아이콘 맞춤설정</string>
     <string name="menu_more_info">자세한 정보</string>

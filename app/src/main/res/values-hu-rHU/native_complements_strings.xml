@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Az állapotsáv tartalmának függőleges eltolása (dp)</string>
+    <string name="status_bar_content_offset_summary">A magasság változtatása nélkül mozgatja a tartalmat. A nulla visszaállítja az eredeti helyzetet.</string>
+    <string name="rotation_suggestion_simple_icon">Egyszerű forgatási javaslatikon</string>
+    <string name="rotation_suggestion_style_summary">Testreszabja a rendszer gombját, megőrizve a forgatási javaslatokat, érintéseket és időkorlátokat.</string>
+    <string name="rotation_suggestion_scale">Forgatási ikon mérete (%)</string>
+    <string name="notification_freeform">Értesítések alkalmazásainak megnyitása ablakban</string>
+    <string name="notification_freeform_summary">A tartalom megérintése szabad AOSP-ablakot nyit. Az előtérben lévő alkalmazások, hívások, ébresztők és teljes képernyős értesítések megtartják működésüket. Szabadablak-támogatást igényel.</string>
+    <string name="launcher_icons_title">Kezdőképernyő ikonjainak cseréje</string>
+    <string name="launcher_icons_enable">Kiválasztott ikonok használata</string>
+    <string name="launcher_icons_source">Ikonok forrása</string>
+    <string name="launcher_icons_source_imported">Importált ZIP / MTZ könyvtár</string>
+    <string name="launcher_icons_pack_unavailable">Telepítse vagy frissítse az AOSP Perfect Icons alkalmazást adaptív ikonindexet tartalmazó verzióra.</string>
+    <string name="launcher_icons_import">Ikonarchívum importálása</string>
+    <string name="launcher_icons_import_summary">ZIP vagy MTZ csomagnév szerinti mappákkal, bennük 0.png (háttér) és 1.png (előtér). Több téma esetén válasszon egyet. Ikonképek nincsenek mellékelve.</string>
+    <string name="launcher_icons_originals">Kiválasztott alkalmazások eredeti ikonjainak megtartása</string>
+    <string name="launcher_icons_originals_summary">A kizárt alkalmazások megtartják eredeti ikonjaikat, a témázottakat is.</string>
+    <string name="launcher_icons_clear">Eredeti könyvtár visszaállítása</string>
+    <string name="launcher_icons_choose_source">Ikonmappa kiválasztása</string>
+    <string name="launcher_icons_imported">%1$d ikon importálva. A könyvtár ki van választva; alkalmazásához kapcsolja be az ikoncserét.</string>
+    <string name="system_icon_packs_summary">Rendszerfelület és beállítások grafikáinak cseréje kompatibilis csomagokkal</string>
+    <string name="launcher_icon_overrides_summary">Alkalmazásikonok cseréje AOSP Perfect Icons vagy importált ZIP/MTZ csomagok használatával</string>
+    <string name="qs_auto_brightness_title">Adaptív fényerő parancsikonja</string>
+    <string name="qs_auto_brightness_desc">Adaptívfényerő-kapcsoló hozzáadása a csúszka mellé</string>
+    <string name="sb_portrait_padding_title">Állapotsáv belső margói álló nézetben</string>
+    <string name="sb_landscape_padding_title">Állapotsáv belső margói fekvő nézetben</string>
+</resources>

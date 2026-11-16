@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Vertikaler Versatz des Statusleisteninhalts (dp)</string>
+    <string name="status_bar_content_offset_summary">Verschiebt den Inhalt ohne Änderung der Höhe. Null stellt die ursprüngliche Position wieder her.</string>
+    <string name="rotation_suggestion_simple_icon">Einfaches Symbol für Drehvorschläge</string>
+    <string name="rotation_suggestion_style_summary">Passt die native Schaltfläche an. Drehvorschläge, Klicks und Zeitlimits des Systems bleiben erhalten.</string>
+    <string name="rotation_suggestion_scale">Symbolgröße für Drehvorschläge (%)</string>
+    <string name="notification_freeform">Benachrichtigungs-Apps im Fenster öffnen</string>
+    <string name="notification_freeform_summary">Tippen auf den Inhalt öffnet freie AOSP-Fenster. Vordergrund-Apps, Anrufe, Wecker und Vollbildbenachrichtigungen behalten ihr Verhalten. Unterstützung für freie Fenster erforderlich.</string>
+    <string name="launcher_icons_title">Launcher-Symbole ersetzen</string>
+    <string name="launcher_icons_enable">Ausgewählte Symbole verwenden</string>
+    <string name="launcher_icons_source">Symbolquelle</string>
+    <string name="launcher_icons_source_imported">Importierte ZIP-/MTZ-Bibliothek</string>
+    <string name="launcher_icons_pack_unavailable">AOSP Perfect Icons mit einem Index für adaptive Symbole installieren oder aktualisieren.</string>
+    <string name="launcher_icons_import">Symbolarchiv importieren</string>
+    <string name="launcher_icons_import_summary">ZIP oder MTZ mit nach Paketnamen benannten Ordnern, die 0.png (Hintergrund) und 1.png (Vordergrund) enthalten. Bei mehreren Designs eines auswählen. Keine Symbolgrafiken enthalten.</string>
+    <string name="launcher_icons_originals">Originalsymbole für ausgewählte Apps behalten</string>
+    <string name="launcher_icons_originals_summary">Ausgeschlossene Apps behalten ihre nativen Symbole, einschließlich thematischer Symbole.</string>
+    <string name="launcher_icons_clear">Originalbibliothek wiederherstellen</string>
+    <string name="launcher_icons_choose_source">Symbolordner auswählen</string>
+    <string name="launcher_icons_imported">%1$d Symbole importiert. Die Bibliothek ist ausgewählt; zum Anwenden die Symbolersetzung aktivieren.</string>
+    <string name="system_icon_packs_summary">Grafiken der Systemoberfläche und Einstellungen mit kompatiblen Symbolpaketen ersetzen</string>
+    <string name="launcher_icon_overrides_summary">App-Symbole mit AOSP Perfect Icons oder importierten ZIP-/MTZ-Paketen ersetzen</string>
+    <string name="qs_auto_brightness_title">Kurzbefehl für adaptive Helligkeit</string>
+    <string name="qs_auto_brightness_desc">Schalter für adaptive Helligkeit neben dem Helligkeitsregler hinzufügen</string>
+    <string name="sb_portrait_padding_title">Statusleistenabstand im Hochformat</string>
+    <string name="sb_landscape_padding_title">Statusleistenabstand im Querformat</string>
+</resources>

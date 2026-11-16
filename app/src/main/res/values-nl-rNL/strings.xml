@@ -518,7 +518,7 @@
     <string name="skip_media_next">Mediacontrole - Overslaan</string>
     <string name="skip_media_prev">Media controle - Vorige</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Pictogram pakketten</string>
+    <string name="icon_packs_title">Pictogrampakketten voor de systeeminterface</string>
     <string name="icon_pack_selection_title">Selecteer pakket</string>
     <string name="icon_pack_customization_title">Pictogrammen aanpassen</string>
     <string name="menu_more_info">Meer informatie</string>

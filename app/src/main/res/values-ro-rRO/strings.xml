@@ -518,7 +518,7 @@
     <string name="skip_media_next">Control media - Omitere</string>
     <string name="skip_media_prev">Control media - Precedent</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Set de pictograme</string>
+    <string name="icon_packs_title">Pachete de pictograme ale interfeței sistemului</string>
     <string name="icon_pack_selection_title">Selectează pachetul</string>
     <string name="icon_pack_customization_title">Personalizează pictogramele</string>
     <string name="menu_more_info">Mai multe informații</string>

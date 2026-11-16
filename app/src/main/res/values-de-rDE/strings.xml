@@ -518,7 +518,7 @@
     <string name="skip_media_next">Medien überspringen</string>
     <string name="skip_media_prev">Medien zurück</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Icon-Pakete</string>
+    <string name="icon_packs_title">Symbolpakete für die Systemoberfläche</string>
     <string name="icon_pack_selection_title">Paket auswählen</string>
     <string name="icon_pack_customization_title">Icons anpassen</string>
     <string name="menu_more_info">Mehr Info</string>

@@ -518,7 +518,7 @@
     <string name="skip_media_next">मीडिया नियंत्रण - अगला</string>
     <string name="skip_media_prev">मीडिया नियंत्रण - पिछला</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">आइकन पैक</string>
+    <string name="icon_packs_title">सिस्टम इंटरफ़ेस के आइकन पैक</string>
     <string name="icon_pack_selection_title">पैक चुनें</string>
     <string name="icon_pack_customization_title">आइकन पसंद के मुताबिक बनाएँ</string>
     <string name="menu_more_info">ज़्यादा जानकारी</string>

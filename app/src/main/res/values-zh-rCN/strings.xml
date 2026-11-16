@@ -564,7 +564,9 @@
     <string name="skip_media_next">媒体控制 - 跳过</string>
     <string name="skip_media_prev">媒体控制 - 上一个</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">图标包</string>
+    <string name="icon_packs_title">系统界面图标包</string>
+    <string name="system_icon_packs_summary">使用兼容图标包替换系统界面与设置中的图形资源</string>
+    <string name="launcher_icon_overrides_summary">使用 AOSP Perfect Icons 或导入的 ZIP/MTZ 图标包替换桌面应用图标</string>
     <string name="icon_pack_selection_title">选择图标包</string>
     <string name="icon_pack_customization_title">自定义图标</string>
     <string name="menu_more_info">更多信息</string>
@@ -610,6 +612,10 @@
     <string name="gboard_secure_clipboard_summary">阻止密码框内容及疑似验证码、PIN 或长账号数字写入 Gboard 历史</string>
     <string name="gboard_clipboard_chips_title">剪贴板操作建议</string>
     <string name="gboard_clipboard_chips_summary">启用操作建议、实体提取和复制后回复实验功能</string>
+    <string name="qs_auto_brightness_title">自动亮度快捷按钮</string>
+    <string name="qs_auto_brightness_desc">在亮度条旁添加自动亮度开关</string>
+    <string name="sb_portrait_padding_title">竖屏状态栏边距</string>
+    <string name="sb_landscape_padding_title">横屏状态栏边距</string>
     <string name="gboard_privacy_category">隐私</string>
     <string name="gboard_force_incognito_title">禁用个性化学习</string>
     <string name="gboard_force_incognito_summary">对所有输入框请求不进行个性化学习；这不等同于完整的 Gboard 无痕模式界面</string>

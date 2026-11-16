@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Deplasarea verticală a conținutului barei de stare (dp)</string>
+    <string name="status_bar_content_offset_summary">Mută conținutul fără a schimba înălțimea. Zero restabilește poziția inițială.</string>
+    <string name="rotation_suggestion_simple_icon">Pictogramă simplă pentru sugestia de rotire</string>
+    <string name="rotation_suggestion_style_summary">Personalizează butonul nativ păstrând sugestiile, apăsările și limitele de timp ale sistemului.</string>
+    <string name="rotation_suggestion_scale">Dimensiunea pictogramei de rotire (%)</string>
+    <string name="notification_freeform">Deschide aplicațiile notificărilor în fereastră</string>
+    <string name="notification_freeform_summary">Apăsarea conținutului deschide ferestre libere AOSP. Aplicațiile din prim-plan, apelurile, alarmele și notificările pe tot ecranul își păstrează comportamentul nativ. Necesită suport pentru ferestre libere.</string>
+    <string name="launcher_icons_title">Înlocuirea pictogramelor lansatorului</string>
+    <string name="launcher_icons_enable">Folosește pictogramele selectate</string>
+    <string name="launcher_icons_source">Sursa pictogramelor</string>
+    <string name="launcher_icons_source_imported">Bibliotecă ZIP / MTZ importată</string>
+    <string name="launcher_icons_pack_unavailable">Instalează sau actualizează AOSP Perfect Icons la o versiune cu indexul pictogramelor adaptive.</string>
+    <string name="launcher_icons_import">Importă arhivă de pictograme</string>
+    <string name="launcher_icons_import_summary">ZIP sau MTZ cu dosare numite după pachete, conținând 0.png (fundal) și 1.png (prim-plan). Alege o temă dacă există mai multe. Nu sunt incluse imagini de pictograme.</string>
+    <string name="launcher_icons_originals">Păstrează pictogramele originale ale aplicațiilor selectate</string>
+    <string name="launcher_icons_originals_summary">Aplicațiile excluse păstrează pictogramele native, inclusiv cele tematice.</string>
+    <string name="launcher_icons_clear">Restabilește biblioteca originală</string>
+    <string name="launcher_icons_choose_source">Alege dosarul pictogramelor</string>
+    <string name="launcher_icons_imported">S-au importat %1$d pictograme. Biblioteca este selectată; activează înlocuirea pentru a o aplica.</string>
+    <string name="system_icon_packs_summary">Înlocuiește grafica interfeței sistemului și a setărilor cu pachete compatibile</string>
+    <string name="launcher_icon_overrides_summary">Înlocuiește pictogramele aplicațiilor cu AOSP Perfect Icons sau pachete ZIP/MTZ importate</string>
+    <string name="qs_auto_brightness_title">Comandă rapidă pentru luminozitate adaptivă</string>
+    <string name="qs_auto_brightness_desc">Adaugă un comutator pentru luminozitate adaptivă lângă glisor</string>
+    <string name="sb_portrait_padding_title">Spațierea interioară a barei de stare în portret</string>
+    <string name="sb_landscape_padding_title">Spațierea interioară a barei de stare în peisaj</string>
+</resources>

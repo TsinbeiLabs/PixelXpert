@@ -17,6 +17,8 @@ import android.view.Window;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.tsinbei.pixelxpert.R;
+import com.tsinbei.pixelxpert.xposed.XPLauncher;
 import com.tsinbei.pixelxpert.xposed.XposedModPack;
 import com.tsinbei.pixelxpert.xposed.annotations.DocumentsUIModPack;
 import com.tsinbei.pixelxpert.xposed.utils.reflection.ReflectedClass;
@@ -137,7 +139,7 @@ public class RememberDocumentsUISort extends XposedModPack {
 		if (perFolderSortPending && dialogFolderKey != null) {
 			perFolderSortPending = false;
 			if (saveFolderPreference(dialogFolderKey, preference)) {
-				showToast("Sort saved for this folder");
+				showToast(XPLauncher.moduleResources.getString(R.string.documentsui_folder_sort_saved));
 			}
 			return;
 		}
@@ -146,7 +148,9 @@ public class RememberDocumentsUISort extends XposedModPack {
 		String folderKey = folderKeyForModel(sortModel);
 		boolean clearedOverride = folderKey != null && deleteFolderPreference(folderKey);
 		if (saveGlobalPreference(preference) || clearedOverride) {
-			showToast(clearedOverride ? "Global sort saved; folder override cleared" : "Global sort saved");
+			showToast(XPLauncher.moduleResources.getString(clearedOverride
+					? R.string.documentsui_global_sort_override_cleared
+					: R.string.documentsui_global_sort_saved));
 		}
 	}
 

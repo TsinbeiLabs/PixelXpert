@@ -1,0 +1,8 @@
+<resources>
+    <string name="update_package_title">PixelXpert update package</string>
+    <string name="foreground_app_stopped">App stopped</string>
+    <string name="systemui_tuner_title">SystemUI tuner</string>
+    <string name="documentsui_folder_sort_saved">Sort saved for this folder</string>
+    <string name="documentsui_global_sort_saved">Global sort saved</string>
+    <string name="documentsui_global_sort_override_cleared">Global sort saved; folder override cleared</string>
+</resources>

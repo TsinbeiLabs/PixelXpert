@@ -336,7 +336,7 @@ public class CaffeineTile extends XposedModPack {
 			if (isHeld) {
 				tile.setContentDescription(label + ": " + formatted);
 			} else {
-				tile.setContentDescription(label + ": Off");
+				tile.setContentDescription(label + ": " + XPLauncher.moduleResources.getString(R.string.general_off));
 			}
 
 			callMethod(this.mTile, "refreshState", new Object[]{null});

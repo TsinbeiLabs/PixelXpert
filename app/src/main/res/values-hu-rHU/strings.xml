@@ -7,7 +7,7 @@
     <string name="sliding_tile_subtitle">Érintse meg a beállításhoz</string>
     <string name="app_switch_tile_title">Alkalmazás profil váltás</string>
     <string name="hide_default">Elrejtés (alapértelmezett)</string>
-    <string name="percent_of_default_size">az alapértelmezett méret %-a</string>
+    <string name="percent_of_default_size" formatted="false">az alapértelmezett méret %-a</string>
     <string name="overlay_none_title">(Alapértelmezett)</string>
     <string name="general_section">Általános opciók</string>
     <string name="general_on">Be</string>
@@ -372,8 +372,8 @@
     <string name="clock_center">Központ</string>
     <string name="clock_right">Jobb</string>
     <!-- AM/PM style -->
-    <string name="am_pm_normal">100%-os az óra mérete</string>
-    <string name="am_pm_small">Az óra mérete 70%-a</string>
+    <string name="am_pm_normal" formatted="false">100%-os az óra mérete</string>
+    <string name="am_pm_small" formatted="false">Az óra mérete 70%-a</string>
     <!-- Date position -->
     <string name="date_before">Óra előtt (100%)</string>
     <string name="date_before_small">Óra előtt (70%)</string>
@@ -518,7 +518,7 @@
     <string name="skip_media_next">Médiavezérlés – következő</string>
     <string name="skip_media_prev">Médiavezérlés – előző</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Ikoncsomagok</string>
+    <string name="icon_packs_title">Rendszerfelület ikoncsomagjai</string>
     <string name="icon_pack_selection_title">Csomag kiválasztása</string>
     <string name="icon_pack_customization_title">Ikonok testreszabása</string>
     <string name="menu_more_info">További információ</string>

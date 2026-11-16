@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Vertikale verskuiwing van statusbalkinhoud (dp)</string>
+    <string name="status_bar_content_offset_summary">Skuif die inhoud sonder om die hoogte te verander. Nul herstel die oorspronklike posisie.</string>
+    <string name="rotation_suggestion_simple_icon">Eenvoudige draaivoorstel-ikoon</string>
+    <string name="rotation_suggestion_style_summary">Pas die stelselknoppie aan en behou draaivoorstelle, klikke en tydperke.</string>
+    <string name="rotation_suggestion_scale">Draaivoorstel-ikoongrootte (%)</string>
+    <string name="notification_freeform">Maak kennisgewingtoepassings in ’n venster oop</string>
+    <string name="notification_freeform_summary">Tik op die inhoud om vrye AOSP-vensters oop te maak. Voorgrondtoepassings, oproepe, wekkers en volskermkennisgewings behou hul oorspronklike gedrag. Vereis ondersteuning vir vrye vensters.</string>
+    <string name="launcher_icons_title">Vervang tuisskermikone</string>
+    <string name="launcher_icons_enable">Gebruik gekose ikone</string>
+    <string name="launcher_icons_source">Ikoonbron</string>
+    <string name="launcher_icons_source_imported">Ingevoerde ZIP / MTZ-biblioteek</string>
+    <string name="launcher_icons_pack_unavailable">Installeer of werk AOSP Perfect Icons by na ’n weergawe met ’n aanpasbare-ikoonindeks.</string>
+    <string name="launcher_icons_import">Voer ikoonargief in</string>
+    <string name="launcher_icons_import_summary">ZIP of MTZ met vouers volgens pakketname wat 0.png (agtergrond) en 1.png (voorgrond) bevat. Kies ’n tema indien daar meer as een is. Geen ikoonprente is ingesluit nie.</string>
+    <string name="launcher_icons_originals">Behou oorspronklike ikone vir gekose toepassings</string>
+    <string name="launcher_icons_originals_summary">Uitgeslote toepassings behou hul oorspronklike ikone, ook tema-ikone.</string>
+    <string name="launcher_icons_clear">Herstel oorspronklike biblioteek</string>
+    <string name="launcher_icons_choose_source">Kies ikoonvouer</string>
+    <string name="launcher_icons_imported">%1$d ikone ingevoer. Die biblioteek is gekies; aktiveer ikoonvervanging om dit toe te pas.</string>
+    <string name="system_icon_packs_summary">Vervang grafika van die stelselkoppelvlak en instellings met versoenbare pakkette</string>
+    <string name="launcher_icon_overrides_summary">Vervang toepassingsikone met AOSP Perfect Icons of ingevoerde ZIP/MTZ-pakkette</string>
+    <string name="qs_auto_brightness_title">Aanpasbare helderheid-kortpad</string>
+    <string name="qs_auto_brightness_desc">Voeg ’n skakelaar vir aanpasbare helderheid langs die skuifbalk by</string>
+    <string name="sb_portrait_padding_title">Statusbalk se binnespasiëring in portret</string>
+    <string name="sb_landscape_padding_title">Statusbalk se binnespasiëring in landskap</string>
+</resources>

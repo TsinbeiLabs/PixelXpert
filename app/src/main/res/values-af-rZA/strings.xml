@@ -518,7 +518,7 @@
     <string name="skip_media_next">Mediabeheer - Volgende</string>
     <string name="skip_media_prev">Mediabeheer - Vorige</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Ikoonpakke</string>
+    <string name="icon_packs_title">Stelselkoppelvlak-ikoonpakke</string>
     <string name="icon_pack_selection_title">Kies pakket</string>
     <string name="icon_pack_customization_title">Pas ikone aan</string>
     <string name="menu_more_info">Meer inligting</string>

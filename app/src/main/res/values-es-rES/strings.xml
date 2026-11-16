@@ -518,7 +518,7 @@
     <string name="skip_media_next">Control multimedia - Saltar</string>
     <string name="skip_media_prev">Control multimedia - Anterior</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Paquetes de iconos</string>
+    <string name="icon_packs_title">Paquetes de iconos de la interfaz del sistema</string>
     <string name="icon_pack_selection_title">Seleccionar paquete</string>
     <string name="icon_pack_customization_title">Personalizar iconos</string>
     <string name="menu_more_info">Más información</string>

@@ -340,7 +340,7 @@ public class UpdateFragment extends BaseFragment {
 		filters.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED);
 
 		downloadID = downloadManager.enqueue(new DownloadManager.Request(Uri.parse(zipURL))
-				.setTitle("PixelXpert Update Package")
+				.setTitle(getString(R.string.update_package_title))
 				.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, String.format("PixelXpert-%s.zip", versionNumber))
 				.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE));
 

@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Tilapalkin sisällön pystysiirtymä (dp)</string>
+    <string name="status_bar_content_offset_summary">Siirtää sisältöä muuttamatta korkeutta. Nolla palauttaa alkuperäisen sijainnin.</string>
+    <string name="rotation_suggestion_simple_icon">Yksinkertainen kiertoehdotuksen kuvake</string>
+    <string name="rotation_suggestion_style_summary">Mukauttaa järjestelmän painiketta säilyttäen kiertoehdotukset, painallukset ja aikakatkaisut.</string>
+    <string name="rotation_suggestion_scale">Kiertokuvakkeen koko (%)</string>
+    <string name="notification_freeform">Avaa ilmoitusten sovellukset ikkunassa</string>
+    <string name="notification_freeform_summary">Sisällön napautus avaa vapaan AOSP-ikkunan. Etualan sovellukset, puhelut, hälytykset ja koko näytön ilmoitukset säilyttävät normaalin toimintansa. Vaatii vapaiden ikkunoiden tuen.</string>
+    <string name="launcher_icons_title">Aloitusnäytön kuvakkeiden korvaus</string>
+    <string name="launcher_icons_enable">Käytä valittuja kuvakkeita</string>
+    <string name="launcher_icons_source">Kuvakkeiden lähde</string>
+    <string name="launcher_icons_source_imported">Tuotu ZIP-/MTZ-kirjasto</string>
+    <string name="launcher_icons_pack_unavailable">Asenna tai päivitä AOSP Perfect Icons versioon, jossa on mukautuvien kuvakkeiden hakemisto.</string>
+    <string name="launcher_icons_import">Tuo kuvakearkisto</string>
+    <string name="launcher_icons_import_summary">ZIP tai MTZ, jonka pakettinimien mukaiset kansiot sisältävät 0.png-tiedoston (tausta) ja 1.png-tiedoston (etuala). Valitse teema, jos niitä on useita. Kuvakkeiden kuvia ei toimiteta mukana.</string>
+    <string name="launcher_icons_originals">Säilytä valittujen sovellusten alkuperäiset kuvakkeet</string>
+    <string name="launcher_icons_originals_summary">Poissuljetut sovellukset säilyttävät alkuperäiset kuvakkeensa, myös teemakuvakkeet.</string>
+    <string name="launcher_icons_clear">Palauta alkuperäinen kirjasto</string>
+    <string name="launcher_icons_choose_source">Valitse kuvakekansio</string>
+    <string name="launcher_icons_imported">Tuotu %1$d kuvaketta. Kirjasto on valittu; ota kuvakkeiden korvaus käyttöön.</string>
+    <string name="system_icon_packs_summary">Korvaa järjestelmäkäyttöliittymän ja asetusten grafiikka yhteensopivilla paketeilla</string>
+    <string name="launcher_icon_overrides_summary">Korvaa sovelluskuvakkeet AOSP Perfect Iconsilla tai tuoduilla ZIP-/MTZ-paketeilla</string>
+    <string name="qs_auto_brightness_title">Mukautuvan kirkkauden pikavalinta</string>
+    <string name="qs_auto_brightness_desc">Lisää mukautuvan kirkkauden kytkin liukusäätimen viereen</string>
+    <string name="sb_portrait_padding_title">Tilapalkin sisämarginaalit pystyasennossa</string>
+    <string name="sb_landscape_padding_title">Tilapalkin sisämarginaalit vaaka-asennossa</string>
+</resources>

@@ -161,9 +161,11 @@
 		<action android:id="@+id/action_launcherFragment_to_hiddenAppsFragment" app:destination="@id/hiddenAppsFragment" />
 	</fragment>
 	<fragment android:id="@+id/hiddenAppsFragment" android:name="com.tsinbei.pixelxpert.ui.fragments.HiddenAppsFragment" />
+	<fragment android:id="@+id/launcherIconsFragment" android:name="com.tsinbei.pixelxpert.ui.fragments.LauncherIconsFragment" />
 	<fragment
 		android:id="@+id/themingFragment"
 		android:name="com.tsinbei.pixelxpert.ui.fragments.ThemingFragment" >
+		<action android:id="@+id/action_themingFragment_to_launcherIconsFragment" app:destination="@id/launcherIconsFragment" />
 		<action
 			app:enterAnim="@anim/nav_default_enter_anim"
 			app:exitAnim="@anim/nav_default_exit_anim"

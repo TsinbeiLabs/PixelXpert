@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">स्थिति बार की सामग्री का लंबवत खिसकाव (dp)</string>
+    <string name="status_bar_content_offset_summary">ऊँचाई बदले बिना सामग्री खिसकाएँ। शून्य रखने पर मूल स्थान बहाल होता है।</string>
+    <string name="rotation_suggestion_simple_icon">घुमाव सुझाव का सरल आइकन</string>
+    <string name="rotation_suggestion_style_summary">सिस्टम के घुमाव सुझाव, टैप और समय-सीमा बनाए रखते हुए मूल बटन का रूप बदलें।</string>
+    <string name="rotation_suggestion_scale">घुमाव सुझाव आइकन का आकार (%)</string>
+    <string name="notification_freeform">सूचनाओं के ऐप विंडो में खोलें</string>
+    <string name="notification_freeform_summary">सूचना की सामग्री पर टैप करने से AOSP मुक्त विंडो खुलती है। सामने खुले ऐप, कॉल, अलार्म और पूर्ण-स्क्रीन सूचनाएँ मूल व्यवहार बनाए रखते हैं। मुक्त विंडो समर्थन आवश्यक है।</string>
+    <string name="launcher_icons_title">लॉन्चर आइकन बदलें</string>
+    <string name="launcher_icons_enable">चुने हुए आइकन इस्तेमाल करें</string>
+    <string name="launcher_icons_source">आइकन का स्रोत</string>
+    <string name="launcher_icons_source_imported">आयात की गई ZIP / MTZ लाइब्रेरी</string>
+    <string name="launcher_icons_pack_unavailable">अनुकूली आइकन सूचकांक वाला AOSP Perfect Icons संस्करण इंस्टॉल या अपडेट करें।</string>
+    <string name="launcher_icons_import">आइकन संग्रह आयात करें</string>
+    <string name="launcher_icons_import_summary">पैकेज नाम के फ़ोल्डरों वाली ZIP या MTZ, जिनमें 0.png (पृष्ठभूमि) और 1.png (अग्रभूमि) हों। कई थीम होने पर एक चुनें। आइकन चित्र साथ नहीं दिए गए हैं।</string>
+    <string name="launcher_icons_originals">चुने हुए ऐप के मूल आइकन रखें</string>
+    <string name="launcher_icons_originals_summary">बाहर रखे गए ऐप थीम वाले आइकन सहित अपने मूल आइकन बनाए रखते हैं।</string>
+    <string name="launcher_icons_clear">मूल लाइब्रेरी बहाल करें</string>
+    <string name="launcher_icons_choose_source">आइकन फ़ोल्डर चुनें</string>
+    <string name="launcher_icons_imported">%1$d आइकन आयात हुए। आयात की गई लाइब्रेरी चुनी गई है; लागू करने के लिए आइकन बदलना चालू करें।</string>
+    <string name="system_icon_packs_summary">संगत पैक से सिस्टम इंटरफ़ेस और सेटिंग के चित्र संसाधन बदलें</string>
+    <string name="launcher_icon_overrides_summary">AOSP Perfect Icons या आयात किए गए ZIP/MTZ पैक से ऐप आइकन बदलें</string>
+    <string name="qs_auto_brightness_title">अनुकूली चमक का शॉर्टकट</string>
+    <string name="qs_auto_brightness_desc">चमक स्लाइडर के पास अनुकूली चमक का स्विच जोड़ें</string>
+    <string name="sb_portrait_padding_title">पोर्ट्रेट में स्थिति बार की अंदरूनी दूरी</string>
+    <string name="sb_landscape_padding_title">लैंडस्केप में स्थिति बार की अंदरूनी दूरी</string>
+</resources>

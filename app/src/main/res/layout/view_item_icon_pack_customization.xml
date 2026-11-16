@@ -42,7 +42,7 @@
             android:fadingEdge="horizontal"
             android:fontFamily="sans-serif-medium"
             android:singleLine="true"
-            android:text="Icon name"
+            tools:text="Icon name"
             android:textColor="?attr/colorOnSurface"
             android:textSize="14sp"
             android:textStyle="bold" />

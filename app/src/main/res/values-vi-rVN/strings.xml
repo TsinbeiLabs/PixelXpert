@@ -518,7 +518,7 @@
     <string name="skip_media_next">Điều khiển đa phương tiện - Bỏ qua</string>
     <string name="skip_media_prev">Điều khiển đa phương tiện - Về trước</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Các gói biểu tượng</string>
+    <string name="icon_packs_title">Gói biểu tượng giao diện hệ thống</string>
     <string name="icon_pack_selection_title">Chọn gói</string>
     <string name="icon_pack_customization_title">Tùy chỉnh biểu tượng</string>
     <string name="menu_more_info">Thông tin chi tiết</string>

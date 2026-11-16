@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Vertikal förskjutning av statusfältets innehåll (dp)</string>
+    <string name="status_bar_content_offset_summary">Flyttar innehållet utan att ändra höjden. Noll återställer ursprunglig position.</string>
+    <string name="rotation_suggestion_simple_icon">Enkel ikon för rotationsförslag</string>
+    <string name="rotation_suggestion_style_summary">Anpassar systemknappen och behåller rotationsförslag, tryck och tidsgränser.</string>
+    <string name="rotation_suggestion_scale">Storlek på rotationsikon (%)</string>
+    <string name="notification_freeform">Öppna appar från aviseringar i fönster</string>
+    <string name="notification_freeform_summary">Tryck på innehållet öppnar fria AOSP-fönster. Förgrundsappar, samtal, alarm och helskärmsaviseringar behåller normalt beteende. Kräver stöd för fria fönster.</string>
+    <string name="launcher_icons_title">Ersätt startskärmens ikoner</string>
+    <string name="launcher_icons_enable">Använd valda ikoner</string>
+    <string name="launcher_icons_source">Ikonkälla</string>
+    <string name="launcher_icons_source_imported">Importerat ZIP-/MTZ-bibliotek</string>
+    <string name="launcher_icons_pack_unavailable">Installera eller uppdatera AOSP Perfect Icons till en version med index för adaptiva ikoner.</string>
+    <string name="launcher_icons_import">Importera ikonarkiv</string>
+    <string name="launcher_icons_import_summary">ZIP eller MTZ med mappar namngivna efter paket som innehåller 0.png (bakgrund) och 1.png (förgrund). Välj ett tema om det finns flera. Inga ikonbilder medföljer.</string>
+    <string name="launcher_icons_originals">Behåll originalikoner för valda appar</string>
+    <string name="launcher_icons_originals_summary">Undantagna appar behåller sina ursprungliga ikoner, även temaikoner.</string>
+    <string name="launcher_icons_clear">Återställ ursprungligt bibliotek</string>
+    <string name="launcher_icons_choose_source">Välj ikonmapp</string>
+    <string name="launcher_icons_imported">%1$d ikoner importerade. Biblioteket är valt; aktivera ikonbyte för att tillämpa det.</string>
+    <string name="system_icon_packs_summary">Ersätt grafik i systemgränssnittet och inställningarna med kompatibla paket</string>
+    <string name="launcher_icon_overrides_summary">Ersätt appikoner med AOSP Perfect Icons eller importerade ZIP-/MTZ-paket</string>
+    <string name="qs_auto_brightness_title">Genväg för adaptiv ljusstyrka</string>
+    <string name="qs_auto_brightness_desc">Lägg till en omkopplare för adaptiv ljusstyrka bredvid reglaget</string>
+    <string name="sb_portrait_padding_title">Statusfältets marginaler i stående läge</string>
+    <string name="sb_landscape_padding_title">Statusfältets marginaler i liggande läge</string>
+</resources>

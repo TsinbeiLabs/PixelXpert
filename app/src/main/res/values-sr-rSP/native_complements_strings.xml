@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Вертикално померање садржаја статусне траке (dp)</string>
+    <string name="status_bar_content_offset_summary">Помера садржај без промене висине. Нула враћа првобитни положај.</string>
+    <string name="rotation_suggestion_simple_icon">Једноставна икона предлога ротације</string>
+    <string name="rotation_suggestion_style_summary">Прилагођава системско дугме уз очување предлога ротације, додира и временских ограничења.</string>
+    <string name="rotation_suggestion_scale">Величина иконе ротације (%)</string>
+    <string name="notification_freeform">Отварај апликације обавештења у прозору</string>
+    <string name="notification_freeform_summary">Додир садржаја отвара слободан AOSP прозор. Апликације у првом плану, позиви, аларми и обавештења преко целог екрана задржавају изворно понашање. Захтева подршку за слободне прозоре.</string>
+    <string name="launcher_icons_title">Замена икона покретача</string>
+    <string name="launcher_icons_enable">Користи изабране иконе</string>
+    <string name="launcher_icons_source">Извор икона</string>
+    <string name="launcher_icons_source_imported">Увезена ZIP / MTZ библиотека</string>
+    <string name="launcher_icons_pack_unavailable">Инсталирајте или ажурирајте AOSP Perfect Icons на верзију са индексом прилагодљивих икона.</string>
+    <string name="launcher_icons_import">Увези архиву икона</string>
+    <string name="launcher_icons_import_summary">ZIP или MTZ са фасциклама по називима пакета које садрже 0.png (позадина) и 1.png (предњи план). Ако има више тема, изаберите једну. Слике икона нису приложене.</string>
+    <string name="launcher_icons_originals">Задржи изворне иконе изабраних апликација</string>
+    <string name="launcher_icons_originals_summary">Изузете апликације задржавају изворне иконе, укључујући тематске.</string>
+    <string name="launcher_icons_clear">Врати изворну библиотеку</string>
+    <string name="launcher_icons_choose_source">Изабери фасциклу икона</string>
+    <string name="launcher_icons_imported">Увезено икона: %1$d. Библиотека је изабрана; укључите замену икона да бисте је применили.</string>
+    <string name="system_icon_packs_summary">Замени графику системског интерфејса и подешавања компатибилним пакетима</string>
+    <string name="launcher_icon_overrides_summary">Замени иконе апликација помоћу AOSP Perfect Icons или увезених ZIP/MTZ пакета</string>
+    <string name="qs_auto_brightness_title">Пречица за прилагодљиву осветљеност</string>
+    <string name="qs_auto_brightness_desc">Додај прекидач за прилагодљиву осветљеност поред клизача</string>
+    <string name="sb_portrait_padding_title">Унутрашњи размак статусне траке усправно</string>
+    <string name="sb_landscape_padding_title">Унутрашњи размак статусне траке водоравно</string>
+</resources>

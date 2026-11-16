@@ -518,7 +518,7 @@
     <string name="skip_media_next">Kontrola mediów - Pomiń</string>
     <string name="skip_media_prev">Kontrola mediów - Poprzednia</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Pakiety ikon</string>
+    <string name="icon_packs_title">Pakiety ikon interfejsu systemowego</string>
     <string name="icon_pack_selection_title">Wybierz paczkę</string>
     <string name="icon_pack_customization_title">Dostosuj ikony</string>
     <string name="menu_more_info">Więcej informacji</string>

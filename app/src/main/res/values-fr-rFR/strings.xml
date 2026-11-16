@@ -518,7 +518,7 @@
     <string name="skip_media_next">Contrôle des médias - Passer</string>
     <string name="skip_media_prev">Contrôle du média - Précédent</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Packs d\'icônes</string>
+    <string name="icon_packs_title">Packs d’icônes de l’interface système</string>
     <string name="icon_pack_selection_title">Sélectionnez le pack</string>
     <string name="icon_pack_customization_title">Personnaliser les icônes</string>
     <string name="menu_more_info">Plus d\'infos</string>

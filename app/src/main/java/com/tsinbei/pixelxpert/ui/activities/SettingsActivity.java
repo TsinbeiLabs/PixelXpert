@@ -562,6 +562,8 @@ public class SettingsActivity extends BaseActivity implements PreferenceFragment
 					navigateTo(navController, R.id.action_themingFragment_to_iconPackFragment);
 			case "LauncherHiddenApps" ->
 					navigateTo(navController, R.id.action_launcherFragment_to_hiddenAppsFragment);
+			case "LauncherImportedIcons" ->
+					navigateTo(navController, R.id.action_themingFragment_to_launcherIconsFragment);
 			default -> false;
 		};
 	}

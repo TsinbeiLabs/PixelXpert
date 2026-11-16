@@ -1,0 +1,27 @@
+<resources>
+    <string name="status_bar_content_offset">Décalage vertical du contenu de la barre d’état (dp)</string>
+    <string name="status_bar_content_offset_summary">Déplace le contenu sans modifier la hauteur. Zéro rétablit la position initiale.</string>
+    <string name="rotation_suggestion_simple_icon">Icône de suggestion de rotation simplifiée</string>
+    <string name="rotation_suggestion_style_summary">Personnalise le bouton natif en conservant les suggestions, les clics et les délais du système.</string>
+    <string name="rotation_suggestion_scale">Taille de l’icône de rotation (%)</string>
+    <string name="notification_freeform">Ouvrir les applications des notifications en fenêtre</string>
+    <string name="notification_freeform_summary">Toucher le contenu ouvre une fenêtre libre AOSP. Les applications au premier plan, appels, alarmes et notifications plein écran conservent leur comportement. Nécessite la prise en charge des fenêtres libres.</string>
+    <string name="launcher_icons_title">Remplacement des icônes du lanceur</string>
+    <string name="launcher_icons_enable">Utiliser les icônes sélectionnées</string>
+    <string name="launcher_icons_source">Source des icônes</string>
+    <string name="launcher_icons_source_imported">Bibliothèque ZIP / MTZ importée</string>
+    <string name="launcher_icons_pack_unavailable">Installez ou mettez à jour AOSP Perfect Icons vers une version contenant son index d’icônes adaptatives.</string>
+    <string name="launcher_icons_import">Importer une archive d’icônes</string>
+    <string name="launcher_icons_import_summary">ZIP ou MTZ contenant des dossiers nommés par paquet avec 0.png (fond) et 1.png (premier plan). Choisissez un thème si plusieurs sont présents. Aucune image d’icône n’est fournie.</string>
+    <string name="launcher_icons_originals">Conserver les icônes originales des applications choisies</string>
+    <string name="launcher_icons_originals_summary">Les applications exclues conservent leurs icônes natives, y compris les icônes thématiques.</string>
+    <string name="launcher_icons_clear">Rétablir la bibliothèque originale</string>
+    <string name="launcher_icons_choose_source">Choisir le dossier d’icônes</string>
+    <string name="launcher_icons_imported">%1$d icônes importées. La bibliothèque est sélectionnée ; activez le remplacement pour l’appliquer.</string>
+    <string name="system_icon_packs_summary">Remplacer les ressources graphiques de l’interface système et des paramètres avec des packs compatibles</string>
+    <string name="launcher_icon_overrides_summary">Remplacer les icônes des applications avec AOSP Perfect Icons ou des packs ZIP/MTZ importés</string>
+    <string name="qs_auto_brightness_title">Raccourci de luminosité adaptative</string>
+    <string name="qs_auto_brightness_desc">Ajouter un interrupteur de luminosité adaptative à côté du curseur</string>
+    <string name="sb_portrait_padding_title">Marges de la barre d’état en portrait</string>
+    <string name="sb_landscape_padding_title">Marges de la barre d’état en paysage</string>
+</resources>

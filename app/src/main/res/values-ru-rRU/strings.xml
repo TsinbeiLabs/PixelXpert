@@ -518,7 +518,7 @@
     <string name="skip_media_next">Управление мультимедиа – Пропустить</string>
     <string name="skip_media_prev">Управление мультимедиа - Предыдущий</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">Наборы иконок</string>
+    <string name="icon_packs_title">Наборы значков системного интерфейса</string>
     <string name="icon_pack_selection_title">Выберите набор</string>
     <string name="icon_pack_customization_title">Настроить иконки</string>
     <string name="menu_more_info">Подробнее</string>

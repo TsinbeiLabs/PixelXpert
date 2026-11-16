@@ -520,7 +520,7 @@
     <string name="skip_media_next">媒體控制 - 跳過</string>
     <string name="skip_media_prev">媒體控制 - 上一項</string>
     <!-- Icon Packs -->
-    <string name="icon_packs_title">圖示包</string>
+    <string name="icon_packs_title">系統介面圖示包</string>
     <string name="icon_pack_selection_title">選擇圖示包</string>
     <string name="icon_pack_customization_title">自訂圖示</string>
     <string name="menu_more_info">更多資訊</string>
